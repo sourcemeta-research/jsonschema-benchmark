@@ -35,8 +35,12 @@ async function validateSchema(schemaPath, instancePath) {
   ajv.addMetaSchema(draft4schema);
   const validate = ajv.compile(schema);
 
-  const startTime = performance.now();
+  const instances = [];
   for await (const instance of readJSONLines(instancePath)) {
+    instances.push(instance);
+  }
+  const startTime = performance.now();
+  for (const instance of instances) {
     if (!validate(instance)) {
       process.exit(1);
     }
