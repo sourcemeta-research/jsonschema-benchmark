@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
   const std::filesystem::path example{argv[1]};
   const auto schema{sourcemeta::jsontoolkit::from_file(example / "schema.json")};
-  const auto instance{sourcemeta::jsontoolkit::from_file(example / "instance.json")};
+  const auto instance{sourcemeta::jsontoolkit::from_file(example / "instances.jsonl")};
 
   const auto schema_template{sourcemeta::jsontoolkit::compile(
       schema, sourcemeta::jsontoolkit::default_schema_walker,
