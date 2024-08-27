@@ -1,7 +1,8 @@
-const Ajv = require('ajv');
-const draft4schema = require('ajv/lib/refs/json-schema-draft-04.json');
-const fs = require('fs');
-const { performance } = require('perf_hooks');
+import Ajv from 'ajv';
+import draft4schema from 'ajv/lib/refs/json-schema-draft-04.json' assert { type: 'json' };
+import fs from 'fs';
+import readline from 'readline';
+import { performance } from 'perf_hooks';
 
 function readJSONFile(filePath) {
   try {
@@ -12,7 +13,16 @@ function readJSONFile(filePath) {
   }
 }
 
-function validateSchema(schemaPath, instancePath) {
+async function* readJSONLines(filePath) {
+  const rl = readline.createInterface({
+    input: fs.createReadStream(filePath),
+  });
+  for await (const line of rl) {
+    yield JSON.parse(line);
+  }
+}
+
+async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
   const instance = readJSONFile(instancePath);
 
@@ -25,9 +35,15 @@ function validateSchema(schemaPath, instancePath) {
   ajv.addMetaSchema(draft4schema);
   const validate = ajv.compile(schema);
 
+  const instances = [];
+  for await (const instance of readJSONLines(instancePath)) {
+    instances.push(instance);
+  }
   const startTime = performance.now();
-  if (!validate(instance)) {
-    process.exit(1);
+  for (const instance of instances) {
+    if (!validate(instance)) {
+      process.exit(1);
+    }
   }
 
   const endTime = performance.now();
@@ -43,4 +59,4 @@ if (process.argv.length !== 4) {
 const schemaPath = process.argv[2];
 const instancePath = process.argv[3];
 
-validateSchema(schemaPath, instancePath);
+await validateSchema(schemaPath, instancePath);
