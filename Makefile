@@ -24,7 +24,7 @@ dist/results/jsontoolkit/%: \
 	implementations/jsontoolkit/CMakeLists.txt \
 	implementations/jsontoolkit/main.cc \
 	schemas/%/schema.json \
-	schemas/%/instance.json \
+	schemas/%/instances.json \
 	| dist/results/jsontoolkit dist/temp/jsontoolkit
 	[ -d $(word 2,$|)/repo ] && git -C $(word 2,$|)/repo pull || git clone https://github.com/sourcemeta/jsontoolkit $(word 2,$|)/repo
 	cmake -S $(dir $<) -B $(word 2,$|)/build -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=OFF
@@ -34,9 +34,9 @@ dist/results/jsontoolkit/%: \
 # AJV
 
 dist/results/ajv/%: \
-	implementations/ajv/main.js \
+	implementations/ajv/main.mjs \
 	schemas/%/schema.json \
-	schemas/%/instance.json \
+	schemas/%/instances.json \
 	node_modules \
 	| dist/results/ajv
 	node $< $(word 2,$^) $(word 3,$^) > $@
