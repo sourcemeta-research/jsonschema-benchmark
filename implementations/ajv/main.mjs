@@ -24,7 +24,6 @@ async function* readJSONLines(filePath) {
 
 async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
-  const instance = readJSONFile(instancePath);
 
   const ajv = new Ajv({
     schemaId: 'id',
