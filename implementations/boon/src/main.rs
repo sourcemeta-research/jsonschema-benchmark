@@ -21,17 +21,20 @@ fn main() -> Result<(), Box<dyn Error>> {
   let mut compiler = Compiler::new();
   let sch_index = compiler.compile(schema_file.to_str().ok_or("NULL")?, &mut schemas)?;
 
-  // Validate each instance
-  let start = Instant::now();
+  // Serialize instance lines
+  let mut serde_lines = std::vec::Vec::new();
   for line in reader.lines() {
       let line = line?;
       let instance: Value = serde_json::from_str(&line)?;
-
-      // Validate each JSON objec
-      let result = schemas.validate(&instance, sch_index);
-      assert!(result.is_ok(), "Validation failed for instance: {}", line);
+      serde_lines.push(instance);
   }
 
+  // Validate the instances
+  let start = Instant::now();
+  for line in serde_lines {
+    let result = schemas.validate(&line, sch_index);
+    assert!(result.is_ok(), "Validation failed for line: {}", line);
+  }
   let duration = start.elapsed().as_nanos();
   println!("{:?}", duration);
 
