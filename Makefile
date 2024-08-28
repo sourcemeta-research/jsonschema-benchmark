@@ -7,14 +7,24 @@ node_modules: package.json package-lock.json ; npm ci
 clean: ; rm -rf dist node_modules
 dist: ; mkdir $@
 dist/results: | dist ; mkdir $@
+dist/results/plots: | dist/results ; mkdir $@
 dist/temp: | dist ; mkdir $@
 define PREPARE_IMPLEMENTATION
 dist/results/$1: | dist/results ; mkdir $$@
 dist/temp/$1: | dist/temp ; mkdir $$@
 ALL_TARGETS += $$(addprefix dist/results/$1/,$(SCHEMAS))
 endef
+ALL_PLOTS := $(foreach schema,$(SCHEMAS),dist/results/plots/$(schema).png)
 $(foreach implementation,$(IMPLEMENTATIONS),$(eval $(call PREPARE_IMPLEMENTATION,$(implementation))))
 dist/report.csv: report.sh $(ALL_TARGETS) | dist ; ./$< $(ALL_TARGETS) > $@
+dist/results/plots/%.png: \
+	dist/results/plots \
+	dist/report.csv \
+	plot.py \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl
+	uv run python plot.py
+plots: $(ALL_PLOTS)
 .PHONY: all
 all: dist/report.csv ; cat $<
 
