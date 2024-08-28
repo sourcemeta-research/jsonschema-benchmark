@@ -12,6 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install uv
+        run: |
+          pipx install uv
+          touch README.md
+          mkdir -p src/jsonschema_benchmark
+          touch src/jsonschema_benchmark/__init__.py
+
       - run: make
       - run: cat dist/report.csv
       - name: Read CSV
@@ -29,3 +36,14 @@ jobs:
           MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
         run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
 
+      - run: make plots
+      - name: Upload plots
+        id: imgur
+        uses: devicons/public-upload-to-imgur@v2.2.2
+        with:
+          path: dist/results/plots/*.png
+          client_id: ${{secrets.IMGUR_CLIENT_ID}}
+      - name: Add plots to summary
+        env:
+          IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
+        run: python .github/plot_markdown.py >> $GITHUB_STEP_SUMMARY
