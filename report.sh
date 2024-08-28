@@ -9,12 +9,13 @@ then
   exit 1
 fi
 
-echo "implementation,name,nanoseconds"
+echo "implementation,version,name,nanoseconds"
 
 for argument in "$@"
 do
   IMPLEMENTATION="$(basename "$(dirname "$argument")")"
   EXAMPLE="$(basename "$argument")"
   NANOSECONDS="$(tr -d '\n\r' < "$argument")"
-  echo "$IMPLEMENTATION,$EXAMPLE,$NANOSECONDS"
+  VERSION="$("./implementations/$IMPLEMENTATION/version.sh")"
+  echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$NANOSECONDS"
 done
