@@ -13,3 +13,18 @@ jobs:
       - uses: actions/checkout@v4
       - run: make
       - run: cat dist/report.csv
+      - name: Read CSV
+        id: csv
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: dist/report.csv
+      - name: Create MD
+        uses: petems/csv-to-md-table-action@master
+        id: csv-table-output
+        with:
+          csvinput: ${{ steps.csv.outputs.content }}
+      - name: Output summary
+        env:
+          MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
+        run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
+
