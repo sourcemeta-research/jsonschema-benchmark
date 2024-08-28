@@ -1,2 +1,4 @@
 /dist
 /node_modules
+/implementations/boon/target/
+/.DS_Store

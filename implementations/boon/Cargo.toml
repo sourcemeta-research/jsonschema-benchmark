@@ -1,0 +1,10 @@
+[package]
+name = "boon_benchmark"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+boon = "0.6"
+serde = "1"
+serde_json = "1"
+url = "2"
