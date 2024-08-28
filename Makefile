@@ -40,3 +40,14 @@ dist/results/ajv/%: \
 	node_modules \
 	| dist/results/ajv
 	node $< $(word 2,$^) $(word 3,$^) > $@
+
+# BOON
+
+dist/results/boon/%: \
+	implementations/boon/src/main.rs \
+	implementations/boon/Cargo.toml \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/boon
+	cd implementations/boon && cargo run --release ../../$(dir $(word 3,$^)) > ../../$@
+
