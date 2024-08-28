@@ -49,5 +49,5 @@ dist/results/boon/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
-	cd implementations/boon && cargo run --release ../../$(dir $(word 3,$^)) > ../../$@
+	cargo run --manifest-path implementations/boon/Cargo.toml --release $(dir $(word 3,$^)) > $@
 
