@@ -27,7 +27,12 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "price", "category"],
+        "required": [
+          "id",
+          "name",
+          "price",
+          "category"
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -76,12 +81,20 @@
                 "minimum": 0
               }
             },
-            "required": ["average", "count"]
+            "required": [
+              "average",
+              "count"
+            ]
           }
         }
       },
       "minItems": 1
     }
   },
-  "required": ["storeName", "lastUpdated", "categories", "products"]
+  "required": [
+    "storeName",
+    "lastUpdated",
+    "categories",
+    "products"
+  ]
 }
