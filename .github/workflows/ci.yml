@@ -10,6 +10,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      CC: clang
+      CXX: clang++
     steps:
       - uses: actions/checkout@v4
       - name: Install uv
