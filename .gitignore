@@ -2,3 +2,4 @@
 /implementations/ajv/node_modules
 /implementations/boon/target/
 /.DS_Store
+/node_modules

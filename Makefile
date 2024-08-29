@@ -70,6 +70,7 @@ dist/results/json_schemer/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/json_schemer
+	bundle install --gemfile implementations/json_schemer/Gemfile
 	bundle exec --gemfile implementations/json_schemer/Gemfile ruby implementations/json_schemer/main.rb schemas/example $(dir $(word 3,$^)) > $@
 
 # JSONSCHEMA
