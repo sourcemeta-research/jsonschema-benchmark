@@ -1,7 +1,6 @@
 require 'json_schemer'
 require 'json'
 
-
 path = ARGV[0]
 
 # Load the schema and build a validator
