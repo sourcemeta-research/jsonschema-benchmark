@@ -13,10 +13,15 @@ jobs:
     env:
       CC: clang
       CXX: clang++
+      BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
     steps:
       - uses: actions/checkout@v4
       - name: Install uv
         run: pipx install uv
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.5'
+          bundler-cache: true
 
       - run: make
       - run: cat dist/report.csv
