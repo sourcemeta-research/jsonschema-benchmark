@@ -3,7 +3,7 @@ SCHEMAS = $(notdir $(wildcard schemas/*))
 IMPLEMENTATIONS = $(notdir $(wildcard implementations/*))
 
 .PHONY: clean
-clean: ; rm -rf dist implementations/ajv/node_modules
+clean: ; rm -rf dist implementations/*/.dockertimestamp
 dist: ; mkdir $@
 dist/results: | dist ; mkdir $@
 dist/results/plots: | dist/results ; mkdir $@
@@ -29,57 +29,83 @@ all: dist/report.csv ; cat $<
 
 # JSON Toolkit
 
-dist/results/jsontoolkit/%: \
+implementations/jsontoolkit/.dockertimestamp: \
 	implementations/jsontoolkit/CMakeLists.txt \
 	implementations/jsontoolkit/main.cc \
+	implementations/jsontoolkit/Dockerfile
+	docker build -t jsonschema-benchmark/jsontoolkit implementations/jsontoolkit
+	touch $@
+
+dist/results/jsontoolkit/%: \
+	implementations/jsontoolkit/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
-	| dist/results/jsontoolkit dist/temp/jsontoolkit
-	[ -d $(word 2,$|)/repo ] && git -C $(word 2,$|)/repo pull || git clone https://github.com/sourcemeta/jsontoolkit $(word 2,$|)/repo
-	cmake -S $(dir $<) -B $(word 2,$|)/build -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=OFF
-	cmake --build $(word 2,$|)/build --config Release --parallel 4
-	$(word 2,$|)/build/jsontoolkit_benchmark $(dir $(word 3,$^)) > $@
+	| dist/results/jsontoolkit
+	docker run -v $(CURDIR):/workspace jsonschema-benchmark/jsontoolkit /workspace/$(dir $(word 2,$^)) > $@
 
 # AJV
 
-dist/results/ajv/%: \
+implementations/ajv/.dockertimestamp: \
 	implementations/ajv/main.mjs \
-	schemas/%/schema.json \
-	schemas/%/instances.jsonl \
 	implementations/ajv/package.json \
 	implementations/ajv/package-lock.json \
+	implementations/ajv/Dockerfile
+	docker build -t jsonschema-benchmark/ajv implementations/ajv
+	touch $@
+
+dist/results/ajv/%: \
+	implementations/ajv/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
 	| dist/results/ajv
-	npm ci --prefix implementations/ajv
-	node implementations/ajv/main.mjs $(word 2,$^) $(word 3,$^) > $@
+	docker run -v $(CURDIR):/workspace jsonschema-benchmark/ajv /workspace/$(word 2,$^) /workspace/$(word 3,$^) > $@
 
 # BOON
 
-dist/results/boon/%: \
+implementations/boon/.dockertimestamp: \
 	implementations/boon/src/main.rs \
 	implementations/boon/Cargo.toml \
+	implementations/boon/Dockerfile
+	docker build -t jsonschema-benchmark/boon implementations/boon
+	touch $@
+
+dist/results/boon/%: \
+	implementations/boon/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
-	cargo run --manifest-path implementations/boon/Cargo.toml --release $(dir $(word 3,$^)) > $@
+	docker run -v $(CURDIR):/workspace jsonschema-benchmark/boon /workspace/$(dir $(word 2,$^)) > $@
 
 # JSON_SCHEMER
 
-dist/results/json_schemer/%: \
+implementations/json_schemer/.dockertimestamp: \
 	implementations/json_schemer/main.rb \
+	implementations/json_schemer/Gemfile \
 	implementations/json_schemer/Gemfile.lock \
+	implementations/json_schemer/Dockerfile
+	docker build -t jsonschema-benchmark/json_schemer implementations/json_schemer
+	touch $@
+
+dist/results/json_schemer/%: \
+	implementations/json_schemer/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/json_schemer
-	bundle install --gemfile implementations/json_schemer/Gemfile
-	bundle exec --gemfile implementations/json_schemer/Gemfile ruby implementations/json_schemer/main.rb schemas/example $(dir $(word 3,$^)) > $@
+	docker run -v $(CURDIR):/workspace jsonschema-benchmark/json_schemer /workspace/$(dir $(word 3,$^)) > $@
 
 # JSONSCHEMA
 
-dist/results/python-jsonschema/%: \
+implementations/python-jsonschema/.dockertimestamp: \
 	implementations/python-jsonschema/validate.py \
 	implementations/python-jsonschema/pyproject.toml \
 	implementations/python-jsonschema/uv.lock \
+	implementations/python-jsonschema/Dockerfile
+	docker build -t jsonschema-benchmark/python-jsonschema implementations/python-jsonschema
+	touch $@
+
+dist/results/python-jsonschema/%: \
+	implementations/python-jsonschema/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/python-jsonschema
-	uv run --directory implementations/python-jsonschema validate.py $(shell pwd)/$(dir $(word 4,$^)) > $@
+	docker run -v $(CURDIR):/workspace jsonschema-benchmark/python-jsonschema /workspace/$(dir $(word 2,$^)) > $@

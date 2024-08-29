@@ -3,3 +3,4 @@
 /implementations/boon/target/
 /.DS_Store
 /node_modules
+.dockertimestamp
