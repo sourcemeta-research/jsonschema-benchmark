@@ -5,4 +5,5 @@ description = "Add your description here"
 requires-python = ">=3.12"
 dependencies = [
     "seaborn>=0.13.2",
+    "jsonschema>=4.23.0",
 ]

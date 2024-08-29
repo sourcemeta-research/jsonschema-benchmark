@@ -72,3 +72,12 @@ dist/results/json_schemer/%: \
 	| dist/results/json_schemer
 	bundle exec --gemfile implementations/json_schemer/Gemfile ruby implementations/json_schemer/main.rb schemas/example $(dir $(word 3,$^)) > $@
 
+# JSONSCHEMA
+
+dist/results/jsonschema/%: \
+	implementations/jsonschema/validate.py \
+	uv.lock \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsonschema
+	uv run implementations/jsonschema/validate.py $(dir $(word 3,$^)) > $@
