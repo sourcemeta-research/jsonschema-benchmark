@@ -2,9 +2,8 @@
 SCHEMAS = $(notdir $(wildcard schemas/*))
 IMPLEMENTATIONS = $(notdir $(wildcard implementations/*))
 
-node_modules: package.json package-lock.json ; npm ci
 .PHONY: clean
-clean: ; rm -rf dist node_modules
+clean: ; rm -rf dist implementations/ajv/node_modules
 dist: ; mkdir $@
 dist/results: | dist ; mkdir $@
 dist/results/plots: | dist/results ; mkdir $@
@@ -47,9 +46,11 @@ dist/results/ajv/%: \
 	implementations/ajv/main.mjs \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
-	node_modules \
+	implementations/ajv/package.json \
+	implementations/ajv/package-lock.json \
 	| dist/results/ajv
-	node $< $(word 2,$^) $(word 3,$^) > $@
+	npm ci --prefix implementations/ajv
+	node implementations/ajv/main.mjs $(word 2,$^) $(word 3,$^) > $@
 
 # BOON
 
