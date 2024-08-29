@@ -74,10 +74,11 @@ dist/results/json_schemer/%: \
 
 # JSONSCHEMA
 
-dist/results/jsonschema/%: \
-	implementations/jsonschema/validate.py \
-	uv.lock \
+dist/results/python-jsonschema/%: \
+	implementations/python-jsonschema/validate.py \
+	implementations/python-jsonschema/pyproject.toml \
+	implementations/python-jsonschema/uv.lock \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
-	| dist/results/jsonschema
-	uv run implementations/jsonschema/validate.py $(dir $(word 3,$^)) > $@
+	| dist/results/python-jsonschema
+	uv run --directory implementations/python-jsonschema validate.py $(shell pwd)/$(dir $(word 4,$^)) > $@
