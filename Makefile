@@ -61,3 +61,13 @@ dist/results/boon/%: \
 	| dist/results/boon
 	cargo run --manifest-path implementations/boon/Cargo.toml --release $(dir $(word 3,$^)) > $@
 
+# JSON_SCHEMER
+
+dist/results/json_schemer/%: \
+	implementations/json_schemer/main.rb \
+	implementations/json_schemer/Gemfile.lock \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/json_schemer
+	bundle exec --gemfile implementations/json_schemer/Gemfile ruby implementations/json_schemer/main.rb schemas/example $(dir $(word 3,$^)) > $@
+
