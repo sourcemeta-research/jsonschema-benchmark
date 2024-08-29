@@ -24,7 +24,8 @@ int main(int argc, char **argv) {
   const auto schema_template{sourcemeta::jsontoolkit::compile(
       schema, sourcemeta::jsontoolkit::default_schema_walker,
       sourcemeta::jsontoolkit::official_resolver,
-      sourcemeta::jsontoolkit::default_schema_compiler)};
+      sourcemeta::jsontoolkit::default_schema_compiler,
+      sourcemeta::jsontoolkit::SchemaCompilerCompilationMode::Optimized)};
 
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
