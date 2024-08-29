@@ -16,12 +16,19 @@ jobs:
       BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
     steps:
       - uses: actions/checkout@v4
-      - name: Install uv
-        run: pipx install uv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2.5'
           bundler-cache: true
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: '1.80.1'
+
+      - name: Install uv
+        run: pipx install uv
 
       - run: make
       - run: cat dist/report.csv
