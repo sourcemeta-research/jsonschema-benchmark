@@ -16,11 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install uv
-        run: |
-          pipx install uv
-          touch README.md
-          mkdir -p src/jsonschema_benchmark
-          touch src/jsonschema_benchmark/__init__.py
+        run: pipx install uv
 
       - run: make
       - run: cat dist/report.csv
