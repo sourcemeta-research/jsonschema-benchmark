@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     for (name, data) in examples.items():
         data = pd.DataFrame(data)
-        plt.figure(figsize=(4, 4), dpi=96)
+        plt.figure(figsize=(4, 6), dpi=96)
         plot = sns.barplot(data, x="implementation", y="milliseconds", errorbar=None)
         plot.set(xlabel=None)
         plot.tick_params(axis='x', rotation=30)
