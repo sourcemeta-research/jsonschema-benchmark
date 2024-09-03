@@ -15,7 +15,8 @@ for argument in "$@"
 do
   IMPLEMENTATION="$(basename "$(dirname "$argument")")"
   EXAMPLE="$(basename "$argument")"
-  NANOSECONDS="$(tr -d '\n\r' < "$argument")"
   VERSION="$("./implementations/$IMPLEMENTATION/version.sh")"
-  echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$NANOSECONDS"
+  while read NANOSECONDS; do
+    echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$NANOSECONDS"
+  done < "$argument"
 done
