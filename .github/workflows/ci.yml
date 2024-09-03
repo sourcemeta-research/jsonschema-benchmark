@@ -11,8 +11,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      CC: clang
-      CXX: clang++
       BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
     steps:
       - uses: actions/checkout@v4
