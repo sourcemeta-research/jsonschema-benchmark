@@ -93,7 +93,7 @@ dist/results/json_schemer/%: \
 	| dist/results/json_schemer
 	docker run -v $(CURDIR):/workspace jsonschema-benchmark/json_schemer /workspace/$(dir $(word 3,$^)) > $@
 
-# JSONSCHEMA
+# PYTHON / JSONSCHEMA
 
 implementations/python-jsonschema/.dockertimestamp: \
 	implementations/python-jsonschema/validate.py \
@@ -109,3 +109,20 @@ dist/results/python-jsonschema/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/python-jsonschema
 	docker run -v $(CURDIR):/workspace jsonschema-benchmark/python-jsonschema /workspace/$(dir $(word 2,$^)) > $@
+
+# GO / JSONSCHEMA
+
+implementations/go-jsonschema/.dockertimestamp: \
+	implementations/go-jsonschema/go.mod \
+	implementations/go-jsonschema/go.sum \
+	implementations/go-jsonschema/main.go \
+	implementations/go-jsonschema/Dockerfile
+	docker build -t jsonschema-benchmark/go-jsonschema implementations/go-jsonschema
+	touch $@
+
+dist/results/go-jsonschema/%: \
+	implementations/go-jsonschema/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/go-jsonschema
+	docker run -v $(CURDIR):/workspace jsonschema-benchmark/go-jsonschema /workspace/$(dir $(word 2,$^)) > $@
