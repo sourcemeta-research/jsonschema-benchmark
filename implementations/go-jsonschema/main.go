@@ -76,5 +76,5 @@ func main() {
 	duration := time.Since(start)
 
 	// Print timing
-	fmt.Printf("%v\n", duration)
+	fmt.Printf("%d\n", duration.Nanoseconds())
 }
