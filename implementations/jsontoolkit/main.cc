@@ -19,8 +19,7 @@ int validate(const std::filesystem::path &example) {
   const auto schema_template{sourcemeta::jsontoolkit::compile(
       schema, sourcemeta::jsontoolkit::default_schema_walker,
       sourcemeta::jsontoolkit::official_resolver,
-      sourcemeta::jsontoolkit::default_schema_compiler,
-      sourcemeta::jsontoolkit::SchemaCompilerCompilationMode::Optimized)};
+      sourcemeta::jsontoolkit::default_schema_compiler)};
 
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
