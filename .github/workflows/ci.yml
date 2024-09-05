@@ -23,11 +23,13 @@ jobs:
 
       - run: make
       - run: cat dist/report.csv
+      - name: Process CSV
+        run: python .github/csv_min.py > dist/report-min.csv
       - name: Read CSV
         id: csv
         uses: juliangruber/read-file-action@v1
         with:
-          path: dist/report.csv
+          path: dist/report-min.csv
       - name: Create MD
         uses: petems/csv-to-md-table-action@master
         id: csv-table-output
