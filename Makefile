@@ -29,19 +29,33 @@ all: dist/report.csv ; cat $<
 
 # JSON Toolkit
 
-implementations/jsontoolkit/.dockertimestamp: \
-	implementations/jsontoolkit/CMakeLists.txt \
-	implementations/jsontoolkit/main.cc \
-	implementations/jsontoolkit/Dockerfile
-	docker build -t jsonschema-benchmark/jsontoolkit implementations/jsontoolkit
+implementations/jsontoolkit-gcc/.dockertimestamp: \
+	implementations/jsontoolkit-gcc/CMakeLists.txt \
+	implementations/jsontoolkit-gcc/main.cc \
+	implementations/jsontoolkit-gcc/Dockerfile
+	docker build -t jsonschema-benchmark/jsontoolkit-gcc implementations/jsontoolkit-gcc
 	touch $@
 
-dist/results/jsontoolkit/%: \
-	implementations/jsontoolkit/.dockertimestamp \
+dist/results/jsontoolkit-gcc/%: \
+	implementations/jsontoolkit-gcc/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
-	| dist/results/jsontoolkit
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/jsontoolkit /workspace/$(dir $(word 2,$^)) > $@
+	| dist/results/jsontoolkit-gcc
+	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/jsontoolkit-gcc /workspace/$(dir $(word 2,$^)) > $@
+
+implementations/jsontoolkit-llvm/.dockertimestamp: \
+	implementations/jsontoolkit-llvm/CMakeLists.txt \
+	implementations/jsontoolkit-llvm/main.cc \
+	implementations/jsontoolkit-llvm/Dockerfile
+	docker build -t jsonschema-benchmark/jsontoolkit-llvm implementations/jsontoolkit-llvm
+	touch $@
+
+dist/results/jsontoolkit-llvm/%: \
+	implementations/jsontoolkit-llvm/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsontoolkit-llvm
+	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/jsontoolkit-llvm /workspace/$(dir $(word 2,$^)) > $@
 
 # AJV
 
