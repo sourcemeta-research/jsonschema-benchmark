@@ -2,6 +2,12 @@ name: Benchmark
 
 on:
   workflow_dispatch:
+    inputs:
+      runs:
+        description: 'Number of experimental runs'
+        required: true
+        default: 3
+        type: number
   push:
     branches:
       - main
@@ -21,7 +27,7 @@ jobs:
       - name: Install uv
         run: pipx install uv
 
-      - run: make
+      - run: make RUNS=${{ inputs.runs || 3 }}
       - run: cat dist/report.csv
       - name: Process CSV
         run: python .github/csv_min.py > dist/report-min.csv
@@ -40,7 +46,7 @@ jobs:
           MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
         run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
 
-      - run: make plots
+      - run: make RUNS=${{ inputs.runs || 3 }} plots
       - name: Upload plots
         id: imgur
         uses: devicons/public-upload-to-imgur@v2.2.2

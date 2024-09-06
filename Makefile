@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
 IMPLEMENTATIONS = $(notdir $(wildcard implementations/*))
+RUNS := 3
 
 .PHONY: clean
 clean: ; rm -rf dist implementations/*/.dockertimestamp
@@ -41,7 +42,7 @@ dist/results/jsontoolkit/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsontoolkit
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/jsontoolkit /workspace/$(dir $(word 2,$^)) > $@
+	(for i in $(shell seq 1 $(RUNS)); do docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/jsontoolkit /workspace/$(dir $(word 2,$^)); done) > $@
 
 # AJV
 
@@ -58,7 +59,7 @@ dist/results/ajv/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/ajv
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/ajv /workspace/$(word 2,$^) /workspace/$(word 3,$^) > $@
+	(for i in $(shell seq 1 $(RUNS)); do docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/ajv /workspace/$(word 2,$^) /workspace/$(word 3,$^); done) > $@
 
 # BOON
 
@@ -74,7 +75,7 @@ dist/results/boon/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/boon /workspace/$(dir $(word 2,$^)) > $@
+	(for i in $(shell seq 1 $(RUNS)); do docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/boon /workspace/$(dir $(word 2,$^)); done) > $@
 
 # JSON_SCHEMER
 
@@ -91,7 +92,7 @@ dist/results/json_schemer/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/json_schemer
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/json_schemer /workspace/$(dir $(word 3,$^)) > $@
+	(for i in $(shell seq 1 $(RUNS)); do docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/json_schemer /workspace/$(dir $(word 3,$^)); done) > $@
 
 # PYTHON / JSONSCHEMA
 
@@ -108,7 +109,7 @@ dist/results/python-jsonschema/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/python-jsonschema
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/python-jsonschema /workspace/$(dir $(word 2,$^)) > $@
+	(for i in $(shell seq 1 $(RUNS)); do docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/python-jsonschema /workspace/$(dir $(word 2,$^)); done) > $@
 
 # GO / JSONSCHEMA
 
@@ -125,4 +126,4 @@ dist/results/go-jsonschema/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/go-jsonschema
-	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/go-jsonschema /workspace/$(dir $(word 2,$^)) > $@
+	(for i in $(shell seq 1 $(RUNS)); do docker run -v $(CURDIR):/workspace jsonschema-benchmark/go-jsonschema /workspace/$(dir $(word 2,$^)); done) > $@
