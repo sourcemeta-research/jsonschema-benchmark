@@ -21,7 +21,9 @@ jobs:
       - name: Install uv
         run: pipx install uv
 
-      - run: make
+      - name: Run benchmarks
+        continue-on-error: true
+        run: make dist/report.csv
       - run: cat dist/report.csv
       - name: Process CSV
         run: python .github/csv_min.py > dist/report-min.csv

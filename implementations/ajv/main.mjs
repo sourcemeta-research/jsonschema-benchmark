@@ -38,11 +38,11 @@ async function validateSchema(schemaPath, instancePath) {
   for await (const instance of readJSONLines(instancePath)) {
     instances.push(instance);
   }
+  let failed = false;
   const startTime = performance.now();
   for (const instance of instances) {
     if (!validate(instance)) {
-      // XXX Temporarily allow failures
-      // process.exit(1);
+      failed = true;
     }
   }
 
@@ -50,6 +50,11 @@ async function validateSchema(schemaPath, instancePath) {
 
   const durationNs = (endTime - startTime) * 1e6;
   console.log(durationNs.toFixed(0));
+
+  // Exit with non-zero status on validation failure
+  if (failed) {
+    process.exit(1);
+  }
 }
 
 if (process.argv.length !== 4) {

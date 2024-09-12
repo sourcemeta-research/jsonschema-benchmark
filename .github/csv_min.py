@@ -16,4 +16,6 @@ writer.writeheader()
 for row in reader:
     if min_impl[row['name']] == row['implementation']:
         row['name'] += ' :white_check_mark:'
+    if row['exit_status'] != '0':
+        row['name'] += ' :x:'
     writer.writerow(row)

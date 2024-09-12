@@ -18,7 +18,11 @@ if __name__ == "__main__":
     for (name, data) in examples.items():
         data = pd.DataFrame(data)
         plt.figure(figsize=(4, 6), dpi=96)
-        plot = sns.barplot(data, x="implementation", y="milliseconds", errorbar=None)
+
+        # Mark with gray if the command failed
+        colors = ['green' if s == '0' else 'gray' for s in data.exit_status]
+
+        plot = sns.barplot(data, x="implementation", y="milliseconds", palette=colors, errorbar=None)
         plot.set(xlabel=None)
         plot.tick_params(axis='x', rotation=30)
         plt.tight_layout()
