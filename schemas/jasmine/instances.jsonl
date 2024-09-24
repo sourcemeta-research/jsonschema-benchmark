@@ -1,0 +1,838 @@
+{"spec_dir": "test", "spec_files": ["**/*-spec.js"], "helpers": ["helpers/helpers.js"], "jsLoader": "import", "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["**/*_test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "e2e", "spec_files": ["**/*[eE]2[eE].js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"failSpecWithNoExpectations": true, "stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "externaltests", "spec_files": ["notToErrorCaughtError.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"]}
+{"spec_dir": "dist/specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/jsdom.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["generic/*[sS]pec.js", "node/*[sS]pec.js"], "helpers": ["helpers/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["*.test.js"], "helpers": []}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./test", "spec_files": ["spec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["**/*.!(spec).js"]}
+{"spec_dir": "", "spec_files": ["firebase-search.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["unit/**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src/jigsaw", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "externaltests", "spec_files": ["forgotToReturnPendingPromiseFromSuccessfulItBlock.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "server/*/*Spec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "test", "spec_files": ["**/*[sS]pec.ts"]}
+{"spec_dir": "/src/sqlite3orm/spec", "spec_files": ["**/*spec.ts"]}
+{"helpers": ["test/helpers/**/*.js"], "random": true, "spec_dir": "src", "spec_files": ["**/*test.node.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec/security", "spec_files": ["**/*.js"]}
+{"spec_dir": "/src/asyncctx/spec", "spec_files": ["**/*.spec.ts"]}
+{"spec_dir": "dist", "spec_files": ["client/src/tests/*_spec.js", "common/tests/*_spec.js", "server/src/tests/*_spec.js"]}
+{"spec_dir": ".", "spec_files": ["!(node_modules)**/**/*[sS]pec.js", "*[sS]pec.js"], "helpers": ["spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/test", "spec_files": ["**/*_spec.js"]}
+{"spec_dir": "spec", "spec_files": ["out/**.js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "tests", "spec_files": ["**/*.spec.ts"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*_spec.js"]}
+{"spec_dir": "dist", "spec_files": ["**/*[sP]pec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["helper.js"]}
+{"spec_dir": "server", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[tT]est.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["../jasmine.helper.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[tT]est.js"], "helpers": []}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["./**/*[sS]pec.js"]}
+{"spec_dir": "./bin", "spec_files": ["./bin/Omid-Tests.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["./**/*[sS]pec.js"]}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test/specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.ts", "!e2e/*"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "tests", "spec_files": ["*"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "random": true, "stopSpecOnExpectationFailure": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*-spec.js"], "helpers": ["helpers/helpers.js"], "jsLoader": "import", "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*-spec.js"], "helpers": ["helpers/helpers.js"], "jsLoader": "import", "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*-spec.js"], "helpers": ["helpers/helpers.js"], "jsLoader": "import", "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*-spec.js"], "helpers": ["helpers/helpers.js"], "jsLoader": "import", "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["**/*_test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["**/*_test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["**/*_test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["**/*_test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["generic/*[sS]pec.js", "node/*[sS]pec.js"], "helpers": ["helpers/*.js"]}
+{"spec_dir": "spec", "spec_files": ["generic/*[sS]pec.js", "node/*[sS]pec.js"], "helpers": ["helpers/*.js"]}
+{"spec_dir": "spec", "spec_files": ["generic/*[sS]pec.js", "node/*[sS]pec.js"], "helpers": ["helpers/*.js"]}
+{"spec_dir": "spec", "spec_files": ["generic/*[sS]pec.js", "node/*[sS]pec.js"], "helpers": ["helpers/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./test", "spec_files": ["spec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["**/*.!(spec).js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["**/*.!(spec).js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["**/*.!(spec).js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["**/*.!(spec).js"]}
+{"spec_dir": "", "spec_files": ["firebase-search.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["unit/**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"helpers": ["test/helpers/**/*.js"], "random": true, "spec_dir": "src", "spec_files": ["**/*test.node.js"], "stopSpecOnExpectationFailure": true}
+{"helpers": ["test/helpers/**/*.js"], "random": true, "spec_dir": "src", "spec_files": ["**/*test.node.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["helper.js"]}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["helper.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[tT]est.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[tT]est.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "lib", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "lib", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "tests", "spec_files": ["*"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["*"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*Spec.[c|m]*js", "**/*Spec.js"], "helpers": ["helpers/**/*.js"], "env": {"random": false}}
+{"spec_dir": "spec", "spec_files": ["unit/**/*[sS]pec.js"], "helpers": ["helper.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"random": false, "spec_dir": "spec", "spec_files": ["**/*.spec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.ts"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "./tests", "spec_files": ["**/*.test.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "stopSpecOnExpectationFailure": false}
+{"spec_dir": "spec", "spec_files": ["**/**.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./../backend", "spec_files": ["src/routes/**/*[sS]pec.js", "src/public/**/*[sS]pec.js", "src/services/**/*[sS]pec.js"], "helpers": ["spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "src_files": ["../src/**/*.js"], "helpers": ["helpers/**/*.js", "../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "tests", "spec_files": ["**/*.[tT]est.js"], "stopSpecOnExpectationFailure": false, "random": true, "helpers": ["../node_modules/@babel/register/lib/node.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "random": false}
+{"spec_dir": "spec/build/", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*Spec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./dist", "spec_files": ["**/*.spec.js"], "helpers": ["./tests.init.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"], "helpers": ["helpers/**/*.ts"], "oneFailurePerSpec": false, "random": true}
+{"spec_dir": "", "spec_files": ["./src/**/*.spec.ts"], "helpers": ["./node_modules/ts-node/register/type-check.js", "./test/jasmine/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["integration/**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false, "autoWatch": true}
+{"spec_dir": "build", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["**/*.helpers.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*[sS]pec.js", "reporters/**/*[sS]pec.js", "filters/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "random": true, "alwaysListPendingSpecs": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true, "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helper/**/*.js", "../node_modules/jasmine-test-helpers/lib/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["wordcounttest.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"]}
+{"spec_dir": "dependencies/com.etauker.security/test/persistence/", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}, {"name": "jasmine-reporters#JUnitXmlReporter", "options": {"savePath": "spec/", "filePrefix": "TestResults", "consolidateAll": true}}], "spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"]}
+{"spec_dir": "dist/tests", "spec_files": ["**/**/*.?*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "build", "spec_files": ["**/__tests__/*[sP]pec.js"], "helpers": ["spec/helpers/*.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.jsx"], "helpers": ["../spec/helpers/babel.js", "../spec/helpers/enzyme.js", "../spec/helpers/jsdom.js", "../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./dist-spec", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "helpers": ["jasmine/*.ts"]}
+{"spec_dir": "./spec", "spec_files": ["**/*Spec.ts"], "stopSpecOnExpectationFailure": true, "failFast": true, "random": false}
+{"spec_dir": "build", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.cjs"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "lib", "spec_files": ["**/*[tT]est.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["setup/PopulateProvidersCollections.js", "**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false, "defaultTimeoutInterval": 15000}
+{"spec_dir": "dist", "spec_files": ["**/*spec.js"], "helpers": ["utils/spec/helpers/**/*.js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "", "spec_files": ["test/**/*.test.ts"], "helpers": ["spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js", "!**/*nospec.js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"failSpecWithNoExpectations": false, "stopSpecOnExpectationFailure": false, "stopOnSpecFailure": false, "random": false}}
+{"spec_dir": "src", "spec_files": ["**/*.test.[jt]s"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["../src/tests/**/*[sS]pec.ts"], "helpers": ["../src/tests/helpers/**/*.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "bin", "spec_files": ["**/__tests__/*.test.js"], "helpers": ["**/__tests__/**/helpers/**/*.js", "../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.{js,ts}"], "helpers": ["support/configure.js", "helpers/**/*.{js,ts}"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["analytics.Spec.js", "articles.Spec.js", "database.Spec.js", "history.Spec.js"]}
+{"spec_dir": "./test", "spec_files": ["index.node.spec.js"]}
+{"spec_dir": ".", "spec_files": ["lib/**/*-test.js"]}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/support/jasmine.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/spec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": ".", "spec_files": ["spec/**/*[sS]pec.js"], "helpers": ["jasmine-bootstrap.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "libs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["../app/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["spec/helpers/**/*.js"]}
+{"spec_dir": "test", "spec_files": ["*.spec.js"], "helpers": ["hooks.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist", "spec_files": ["**/*Spec.js"], "helpers": [], "random": false}
+{"spec_dir": "spec", "spec_files": ["../js/spec/*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["./*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "src/keygen/", "spec_files": ["**/*.spec.ts"], "helpers": ["../node_modules/esm", "../node_modules/ts-node/register/index.js"]}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../../node_modules/lodash/lodash.min.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": ".", "spec_files": ["**/unit.js", "!**/node_modules/**"], "oneFailurePerSpec": true, "random": true}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.spec.js"], "helpers": ["../node_modules/@babel/register/lib/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist-test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*.spec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["test/*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["*.spec.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "test/", "spec_files": ["**/*_test.js"], "stopSpecOnExpectationFailure": false, "failSpecWithNoExpectations": true, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["specHelpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.[tj]s"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["../lib/**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "showColors": true, "random": false}
+{"spec_dir": "test", "spec_files": ["e2e/*.js"], "helpers": ["driver.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "tests", "spec_files": ["UtilsTests.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "src/test", "spec_files": ["**/*_spec.ts"], "stopSpecOnExpectationFailure": false}
+{"spec_dir": "lib/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*spec.js"], "stopSpecOnExpectationFailure": false, "random": true, "jsLoader": "import"}
+{"spec_dir": "tests", "spec_files": ["**/*.spec.ts"]}
+{"spec_dir": "spec", "spec_files": ["../src/**/*.spec.js", "./**/*.spec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "built/spec", "spec_files": ["**/*_spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["../spec/helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "dist/__tests__", "spec_files": ["**/*[sS]pec.?(m)js", "!**/*nospec.js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"failSpecWithNoExpectations": false, "stopSpecOnExpectationFailure": false, "stopOnSpecFailure": false, "random": false}}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "../node_modules/jasmine-expect/index.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.integration.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./tests", "spec_files": ["*.spec.ts"], "stopSpecOnExpectationFailure": false, "random": false, "reporters": [], "no-color": false}
+{"spec_dir": "test/specs", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["../bin/spec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/tests", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": ".", "spec_files": ["./spec/**/*.spec.js"]}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts", "**/*.e2e.ts"], "helpers": ["../spec/support/timeout.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src/spec", "spec_files": ["**/*[sS]pec.js", "utils/**/*[sS]pec.js"], "helpers": ["../../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["spec/**/*.js"], "helpers": ["./node_modules/babel-core/register.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/tests/*[s]pec.ts"], "helpers": ["../**/spec/helpers/**/*.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.ts", "!node_modules/**/*"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/**.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "dist/*", "spec_files": ["**/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "dist/tests", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["../dist/**/*[sS]pec.js"], "helpers": ["../dist/tests/helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/tests", "spec_files": ["**/*-[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["dist/**/*_test.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src/test/javascript", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helper.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": [], "helpers": ["test.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "", "spec_files": ["*_test.js", "binary/*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js", "google/protobuf/any.js", "google/protobuf/struct.js", "google/protobuf/timestamp.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "_comment": "**/*[sS]pec.js", "spec_files": ["**/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[tT]est.js", "../test/***.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "dist/jasmal/spec", "spec_files": ["complexNumberSpec.js", "tensorBasicSpec.js", "tensorIndexingSpec.js", "coreSpec.js", "arithmeticSpec.js", "mathSpec.js", "mathSpecialSpec.js", "logicCompSpec.js", "binarySpec.js", "matrixBaseSpec.js", "matrixDecompSpec.js", "dataSpec.js", "polySpec.js", "setSpec.js", "compositeSpec.js"]}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "modules", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["spec/toolSpec.js", "spec/UserSpec.js", "spec/LocalUserSpec.js", "spec/PokerViewSpec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "", "spec_files": ["src/**/*[sS]pec.js", "build/**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": true, "timeoutInterval": 10000}
+{"spec_dir": "tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js", "../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist-test", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.[jt]s"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/test", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "e2e", "spec_files": ["**/*.e2e-spec.ts"], "helpers": ["node_modules/ts-node/register/type-check.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./spec", "spec_files": ["**/*spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["tests/**.js", "tests/game/**.js"], "helpers": ["helpers/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec/node", "spec_files": ["**/*[sS]pec.js"], "helpers": ["spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["code/**/*[sS]pec.js", "patterns/**/*[sS]pec.js"], "helpers": ["spec/helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "dist/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"random": false, "spec_dir": "test", "spec_files": ["*.spec.js"]}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*.tests.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "app", "spec_files": ["**/*.spec.js"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["./*Spec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test/js/specs", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["./../jasmine-typescript-helper.js"], "stopSpecOnExpectationFailure": false, "random": true, "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "spec", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "", "spec_files": ["*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["../node_modules/ts-node/register/type-check.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "support/spec", "spec_files": ["*-spec.js"]}
+{"spec_dir": "test", "spec_files": ["*test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./specs", "spec_files": ["**/*.spec.ts"], "helpers": ["../jasmine.helper.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["css-spec.js"]}
+{"spec_dir": ".", "spec_files": ["**/*_spec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["unit/**/*[sS]pec.js"], "helpers": ["helper.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["unit/**/*[sS]pec.js"], "helpers": ["helper.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["unit/**/*[sS]pec.js"], "helpers": ["helper.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "random": false}
+{"spec_dir": "spec/build/", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "./dist", "spec_files": ["**/*.spec.js"], "helpers": ["./tests.init.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"], "helpers": ["helpers/**/*.ts"], "oneFailurePerSpec": false, "random": true}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"], "helpers": ["helpers/**/*.ts"], "oneFailurePerSpec": false, "random": true}
+{"spec_dir": "build", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "bin", "spec_files": ["**/__tests__/*.test.js"], "helpers": ["**/__tests__/**/helpers/**/*.js", "../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/support/jasmine.js"]}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/support/jasmine.js"]}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/support/jasmine.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/spec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/spec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/spec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/spec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["../app/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["**/unit.js", "!**/node_modules/**"], "oneFailurePerSpec": true, "random": true}
+{"spec_dir": ".", "spec_files": ["**/unit.js", "!**/node_modules/**"], "oneFailurePerSpec": true, "random": true}
+{"spec_dir": ".", "spec_files": ["**/unit.js", "!**/node_modules/**"], "oneFailurePerSpec": true, "random": true}
+{"spec_dir": ".", "spec_files": ["**/unit.js", "!**/node_modules/**"], "oneFailurePerSpec": true, "random": true}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["*.spec.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["e2e/*.js"], "helpers": ["driver.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["e2e/*.js"], "helpers": ["driver.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["e2e/*.js"], "helpers": ["driver.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["e2e/*.js"], "helpers": ["driver.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "tests", "spec_files": ["UtilsTests.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["UtilsTests.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["UtilsTests.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "src/test", "spec_files": ["**/*_spec.ts"], "stopSpecOnExpectationFailure": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "src/test", "spec_files": ["**/*_spec.ts"], "stopSpecOnExpectationFailure": false}
+{"spec_dir": "built/spec", "spec_files": ["**/*_spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "built/spec", "spec_files": ["**/*_spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "built/spec", "spec_files": ["**/*_spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "built/spec", "spec_files": ["**/*_spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "../node_modules/jasmine-expect/index.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "../node_modules/jasmine-expect/index.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "../node_modules/jasmine-expect/index.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "../node_modules/jasmine-expect/index.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["./spec/**/*.spec.js"]}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/**.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": ".", "spec_files": ["dist/**/*_test.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["dist/**/*_test.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["dist/**/*_test.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": [], "helpers": ["test.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": [], "helpers": ["test.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "", "spec_files": ["*_test.js", "binary/*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js", "google/protobuf/any.js", "google/protobuf/struct.js", "google/protobuf/timestamp.js"]}
+{"spec_dir": "", "spec_files": ["*_test.js", "binary/*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js", "google/protobuf/any.js", "google/protobuf/struct.js", "google/protobuf/timestamp.js"]}
+{"spec_dir": "", "spec_files": ["*_test.js", "binary/*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js", "google/protobuf/any.js", "google/protobuf/struct.js", "google/protobuf/timestamp.js"]}
+{"spec_dir": "", "spec_files": ["*_test.js", "binary/*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js", "google/protobuf/any.js", "google/protobuf/struct.js", "google/protobuf/timestamp.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/test", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["code/**/*[sS]pec.js", "patterns/**/*[sS]pec.js"], "helpers": ["spec/helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"random": false, "spec_dir": "test", "spec_files": ["*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["./../jasmine-typescript-helper.js"], "stopSpecOnExpectationFailure": false, "random": true, "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "", "spec_files": ["*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js"]}
+{"spec_dir": "", "spec_files": ["*_test.js"], "helpers": ["node_modules/google-closure-library/closure/goog/bootstrap/nodejs.js", "node_loader.js", "deps.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "support/spec", "spec_files": ["*-spec.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "externaltests", "spec_files": ["forgotToReturnPendingPromiseFromFailingItBlock.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "tests", "spec_files": ["dice.spec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["env.js", "server.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.spec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "specs", "spec_files": ["**/*[sP]pec.ts"]}
+{"spec_dir": "src/test", "spec_files": ["**/*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.[sS]pec.ts"], "helpers": ["helpers/**/*.js", "helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*.test.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["core/**/*.js", "console/**/*.js"], "helpers": ["helpers/nodeDefineJasmineUnderTest.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["../spec/reporter.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["support/loadS.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["search.spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["helper.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*.[sS]pec.ts"], "helpers": ["javascripts/helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*spec.ts"]}
+{"spec_dir": "dist/server/models/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build_spec/spec", "spec_files": ["*.spec.js", "**/*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["../**/tests/**/*[s]pec.ts"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*.js"], "helpers": ["src/**/*.js", "mockContext.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "/", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../js/vector.js", "../js/matrix.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"name": "jasmine-spec-reporter", "options": {"displayStacktrace": "all"}, "spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["src/**/*[sS]pec.js"], "helpers": ["jasmine-bootstrap.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "e2e", "spec_files": ["**/*.js"], "helpers": ["config/**/*.js", "setup.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js", "*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "packages/jasmine-single/spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": [], "stopSpecOnExpectationFailure": true, "stopOnSpecFailure": true, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.specs.js"], "helpers": ["../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["../tests/test.jasmine.ts"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["meaningful.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/*.spec.js"], "helpers": ["../jasmine-reporter.js"]}
+{"spec_dir": "test/end2end/", "spec_files": ["**/*[sS]pec.js"], "helpers": []}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./spec", "spec_files": ["**/*.spec.ts"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "spec", "spec_files": ["**/*spec.ts"], "oneFailurePerSpec": false, "random": true}
+{"spec_dir": "lib", "spec_files": ["**/*.test.js"]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["*_spec.js", "utils/*spec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/models/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "projects", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "routes", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/helpers/cache.js", "../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.jsx"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./src/common", "spec_files": ["**/*spec.ts"]}
+{"spec_dir": "./", "spec_files": ["src/**/*.spec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"helpers": ["../spec/helpers/**/*.js"], "spec_dir": "src", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../../node_modules/jasmine-es6/lib/install.js", "../../node_modules/babel-core/register.js", "**/node_modules/jasmine-es6/lib/install.js", "**/node_modules/babel-core/register.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"stopSpecOnExpectationFailure": false, "spec_files": ["**/*.spec.ts"], "spec_dir": "spec", "helpers": [], "random": false}
+{"spec_dir": "dist/", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "packages", "spec_files": ["**/*[sS]pec.js", "!**/node_modules/**"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)ts"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../../node_modules/jasmine-es6/lib/install.js", "helpers/**/*.js"]}
+{"spec_dir": "spec/integration/node", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../../helpers/babel.js", "helpers/**/*.{js,ts}"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.spec.js"], "helpers": ["../helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "dist/tests", "spec_files": ["**/tests/[sS]pec.js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "test", "spec_files": ["**/*.test.js", "!**/browser/*.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["../node_modules/babel-core/register.js", "helper.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js", "node_modules/jasmine-promise-matchers/dist/jasmine-promise-matchers.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["**/[sS]pec/*.[sS]pec.js", "!**/*.nospec.js"], "helpers": ["./spec/helpers/**.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*[sS]pec.js", "*[sS]pec/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["../../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"random": false, "spec_dir": "test", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "src/*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "tasks", "spec_files": ["**/*.js"], "helpers": ["helpers/babel.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "Scripts/spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "helpers": ["_helpers/**/*.js"], "spec_files": ["**/*.spec.js"], "random": true}
+{"spec_dir": "spec", "spec_files": ["../test/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": ".", "spec_files": ["*.spec.ts"], "helpers": ["./jasmine-helper.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": ".", "spec_files": ["build/js/**/*.spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*_test.js"]}
+{"spec_dir": "spec", "spec_files": ["test-basic.js", "test-results.js"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./src/tests", "spec_files": ["**/*[sS]pec.ts"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec-tests", "spec_files": ["**/*-spec.js"], "helpers": ["helpers/helpers.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src/test/javascript", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "spec", "spec_files": ["*Spec.ts"], "random": false}
+{"spec_dir": "../spec/js", "spec_files": ["*-[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.?(m)js"]}
+{"spec_dir": "bin/", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "verbose": true}
+{"spec_dir": "", "spec_files": ["src/**/*.spec.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*/*[sS]pec.js", "setup/CleansUpTestResources.js"], "helpers": ["helpers/**/*.js"], "stopOnSpecFailure": false, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*.spec.{jsx,js}"], "helpers": ["setup.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["src/**/*.js"]}
+{"spec_dir": "src/tests", "spec_files": ["**/*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "bin", "spec_files": ["**/*[sS]pec.js"], "helpers": ["**/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["./*.spec.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/env.js", "helpers/module-alias.js", "helpers/ts.js", "helpers/reporter.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "!**/*nospec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "models", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "*src/test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": "tests/unit", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "e2e", "spec_files": ["**/*.js"], "helpers": ["config/**/*.js", "setup.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "testing", "spec_files": ["**/*[sS]pec.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "spec", "spec_files": ["../**/tests/*[s]pec.ts"], "helpers": ["helpers/**/*.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*spec.js", "**/**/*spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["server/***/*spec.js", "./server_spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./dist/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.mjs"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dev-build/tests", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "!**/*nospec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["./src/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src/api/spec", "spec_files": ["controllers/**/*[sS]pec.js", "models/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*-[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/*test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.ts"]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/nodeDefineJasmineUnderTest.js"]}
+{"spec_dir": ".", "spec_files": ["*.spec.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "spec/unit", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/spec/unit", "spec_files": ["**/*_spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src/2019", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "dist/__tests__", "spec_files": ["../**/__tests__/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["load-features.js", "load-files.js", "partial-input.js", "compatibility-reporter.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/*[sP]pec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*_spec.js"], "helpers": ["../../node_modules/babel-register/lib/node.js", "support/**/helper_*.js"]}
+{"spec_dir": "./src/app/modules", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tst/unit/", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true, "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "Src/Scripts/tests", "spec_files": ["**/*tests.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "code", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*_spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.?(m)js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["test.ts"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*.[Ss]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "", "spec_files": ["build/**/*[sS]pec.?(m)js"], "helpers": ["build/tests/helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "build/tests", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false, "isVerbose": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "test", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "test", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "specs", "spec_files": ["**/*[sP]pec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*.[sS]pec.ts"], "helpers": ["helpers/**/*.js", "helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*.test.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*.test.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*.test.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib", "spec_files": ["**/*.test.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["core/**/*.js", "console/**/*.js"], "helpers": ["helpers/nodeDefineJasmineUnderTest.js"]}
+{"spec_dir": "spec", "spec_files": ["core/**/*.js", "console/**/*.js"], "helpers": ["helpers/nodeDefineJasmineUnderTest.js"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["support/loadS.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["support/loadS.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["helper.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["helper.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../js/vector.js", "../js/matrix.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../js/vector.js", "../js/matrix.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "e2e", "spec_files": ["**/*.js"], "helpers": ["config/**/*.js", "setup.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "e2e", "spec_files": ["**/*.js"], "helpers": ["config/**/*.js", "setup.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["*_spec.js", "utils/*spec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../../node_modules/jasmine-es6/lib/install.js", "../../node_modules/babel-core/register.js", "**/node_modules/jasmine-es6/lib/install.js", "**/node_modules/babel-core/register.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)ts"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "src", "spec_files": ["**/*.spec.js"], "helpers": ["../helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"random": false, "spec_dir": "test", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": ".", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "Scripts/spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "helpers": ["_helpers/**/*.js"], "spec_files": ["**/*.spec.js"], "random": true}
+{"spec_dir": "spec", "spec_files": ["../test/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*_test.js"]}
+{"spec_dir": "tests", "spec_files": ["**/*_test.js"]}
+{"spec_dir": "spec", "spec_files": ["test-basic.js", "test-results.js"]}
+{"spec_dir": "spec", "spec_files": ["test-basic.js", "test-results.js"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./src/tests", "spec_files": ["**/*[sS]pec.ts"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./src/tests", "spec_files": ["**/*[sS]pec.ts"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./src/tests", "spec_files": ["**/*[sS]pec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "verbose": true}
+{"spec_dir": "spec", "spec_files": ["*/*[sS]pec.js", "setup/CleansUpTestResources.js"], "helpers": ["helpers/**/*.js"], "stopOnSpecFailure": false, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*/*[sS]pec.js", "setup/CleansUpTestResources.js"], "helpers": ["helpers/**/*.js"], "stopOnSpecFailure": false, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*/*[sS]pec.js", "setup/CleansUpTestResources.js"], "helpers": ["helpers/**/*.js"], "stopOnSpecFailure": false, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*/*[sS]pec.js", "setup/CleansUpTestResources.js"], "helpers": ["helpers/**/*.js"], "stopOnSpecFailure": false, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "!**/*nospec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests/unit", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["server/***/*spec.js", "./server_spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist", "spec_files": ["**/*[sP]pec.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "code", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["test.ts"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["test.ts"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["**/*.[Ss]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.[Ss]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.[Ss]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.[Ss]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["e2e/**/*[sS]pec.js"], "helpers": ["helper.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "packages", "spec_files": ["*/{src,test}/**/*.test.ts"], "stopSpecOnExpectationFailure": false, "random": false, "jsLoader": "import"}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.ts"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "src/server/spec", "spec_files": ["*[sS]pec.js"], "helpers": ["helper/**/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*.spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["../../../../core*/module_*/scripts/spec/*[sS]pec.js"], "helpers": ["helpers/dom_helper.js"]}
+{"spec_dir": "spec", "spec_files": ["e2e/**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": true, "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[tT]ests.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*.spec.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["spec/**/*[sS]pec.js"]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["../test.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["_test-helpers/babel.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "random": false, "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "spec", "spec_files": ["*spec.ts"], "helpers": ["helpers/**/*.ts", "node_modules/core-js", "node_modules/rxjs/testing/*.js", "node_modules/core-js/client/core.js"]}
+{"spec_dir": ".", "spec_files": []}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.mjs"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["jasmine/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "dist", "spec_files": ["**/index.js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "test/specs", "spec_files": ["js/**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*.js"]}
+{"random": false, "spec_dir": ".", "spec_files": ["!(node_modules)*[sS]pec.js", "!(node_modules)/**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false}
+{"spec_dir": "specs", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["support/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"helpers": ["helpers/**/*.ts"], "random": true, "spec_dir": "spec", "spec_files": ["**/*test.ts"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["../maariSpec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/jasmine-expect/index.js", "../node_modules/nock/index.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build", "spec_files": ["**/spec/*.[sS]pec.js"], "helpers": ["../spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "build/tests", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./tests/specs/", "spec_files": ["**/*.spec.js"], "helpers": ["./tests/helpers/jasmineSpecHelper.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "out", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/babel.js", "helpers/enzyme.js", "helpers/jsdom.js", "helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["tests.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/jasmine-sinon/node_modules/sinon/lib/sinon.js", "../node_modules/jasmine-sinon/lib/jasmine-sinon.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.[sS]pec.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "", "spec_files": ["bin/spec/**/*[sS]pec.js"], "helpers": ["spec/helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.{js,coffee}"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "!**/*nospec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": ".", "spec_files": ["*.test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.ts"], "helpers": ["../tools/reporter.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true, "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": ".", "spec_files": ["database/**/*spec.js", "lib/**/*spec.js", "render/**/*spec.js", "simulate/**/*spec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false}
+{"spec_dir": "../lib/spec", "spec_files": ["**/*Spec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": ".", "spec_files": ["!node_modules/**/*.spec.js", "!demo/**/*.spec.js", "./**/*.spec.js"], "helpers": ["jasmine-config/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["*spec.js"], "helpers": ["../node_modules/babel-core/register.js", "helper.js"], "random": false}
+{"spec_dir": "specs", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.test.*"], "helpers": ["../spec/helpers/babel.js", "../spec/helpers/**/*.{js,ts}"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.{js,es6}"], "helpers": ["helpers/**/*.{js,es6}"]}
+{"spec_dir": "__tests__", "spec_files": ["**/*.all.test.ts", "**/*.nodejs.test.ts"]}
+{"spec_dir": "spec", "spec_files": ["QB-ChatSpec.js", "QB-HelpersSpec.js", "QB-CoreSpec.js", "QB-DataSpec.js", "QB-WebRTCSpec.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "spec", "spec_files": ["8-27-*-[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "./", "spec_files": ["**/*[sS]pec.ts"]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["../node_modules/ts-node/register/type-check.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": false}}
+{"spec_dir": "tmp/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["app-spec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "src", "spec_files": ["**/*.test.js"], "helpers": ["node_modules/@babel/register/lib/index.js"]}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../node_modules/babel-core/register.js"]}
+{"spec_dir": "spec", "spec_files": ["core/**/*.js", "console/**/*.js", "npmPackage/**/*.js"], "helpers": ["helpers/nodeDefineJasmineUnderTest.js"], "random": true}
+{"spec_dir": "build/spec", "spec_files": ["**/*[sS]pec.js", "!**/*nospec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/tests", "spec_files": ["../**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/tests", "spec_files": ["**/*.tests.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src/test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["*[sS]pec.js"], "helpers": ["helpers/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["index.spec.js"], "helpers": ["wait_run.js"]}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"], "helpers": ["helpers/**/*.ts", "node_modules/jasmine-ajax/lib/mock-ajax.js"], "oneFailurePerSpec": false, "random": true}
+{"spec_dir": "test", "spec_files": ["**/*.test.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}]}
+{"spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.ts"], "oneFailurePerSpec": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["../node_modules/ts-node/register/type-check.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./release/tests/specs/", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "jasmineNodeOpts": {"showColors": true, "isVerbose": true}, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src/2016", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src/tests", "spec_files": ["**/*[sS]pec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "!**/*nospec.js"], "helpers": ["helpers/NodeHelper.js", "utils/compare.js"], "stop-on-failure": false, "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js"], "helpers": ["testing/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "oneFailurePerSpec": false, "randomizeTests": true}
+{"spec_dir": "dist/spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["../dist/tests/**/*Spec.js", "../dist/tests/**/*Program.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"jsLoader": "import", "spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "!fixtures/**"], "helpers": [], "random": true}
+{"spec_dir": "dist/tests", "spec_files": ["**/*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "test", "spec_files": ["*.spec.ts"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "tests", "spec_files": ["**/*[tT]est.ts"]}
+{"spec_dir": "src", "spec_files": ["**/*[s]pec.ts"], "helpers": ["../spec/helpers/**/*.ts"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./server/test/", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["specHelper.js", "helpers/**/*.js"]}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "./test", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["../../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./dist-test", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*[Tt]est.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "build", "spec_files": ["spec.js"], "helpers": ["node_modules/babel/node_modules/babel-core/browser-polyfill.js"]}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "test", "spec_files": ["**/*.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*-[sS]pec.js"], "helpers": ["helpers/**/*-addon.js"]}
+{"spec_dir": "./spec", "spec_files": ["**/*[sS]pec.ts"], "helpers": ["./jasimehelpers/**/*.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.mjs"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "tests", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.test.?(m)ts"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "test", "spec_files": ["**/*[tT]est*.js"], "helpers": ["../spec/helper/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec/build", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["test/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"helpers": ["../node_modules/jasmine-expect/index.js", "helpers/**/*.js"], "random": false, "spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false}
+{"spec_dir": "./", "spec_files": ["./output/**/*[sS]pec.js"], "helpers": ["./node_modules/requirejs/require.js", "./requirejsconfig.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "specs", "spec_files": ["**/*spec.ts"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js", "../node_modules/babel-register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "backend/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "lib", "spec_files": ["../lib/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["../build/**/*[sS]pec.js"], "helpers": ["../build/helpers/**/*.js"]}
+{"spec_dir": "Test", "spec_files": ["**/*Tests.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pec.ts", "!node_modules/**/*"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false, "configureDefaultReporter": {}}
+{"spec_dir": "build", "spec_files": ["**/__tests__/*[sP]pec.js"], "helpers": ["spec/helpers/*.js"], "stopSpecOnExpectationFailure": true}
+{"spec_dir": "spec", "spec_files": ["../server/**/*[sS]pec.js", "**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "src", "spec_files": ["**/*.jasmine.spec.js"], "helpers": ["../node_modules/babel-register/lib/node.js", "../config/jasmine.js"]}
+{"spec_dir": "dist/src/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test/jasmine/", "spec_files": ["**/*[sS]pec.js", "**/*[sS]pecCli.js"], "helpers": ["helpers/**/*.js"], "random": false, "seed": null, "stopSpecOnExpectationFailure": false}
+{"spec_dir": ".", "spec_files": ["**/evaluate.js"], "helpers": ["./node_modules/@babel/register/lib/node.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*.spec.js"]}
+{"spec_dir": ".", "spec_files": ["dist/**/*_test.js"], "helpers": [], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["*-spec.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["validator/**/*[sS]pec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "test", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "spec", "spec_files": ["../source/**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["support/runner.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "dist/test", "spec_files": ["**/*.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.ts"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["../node_modules/jasmine-es6/lib/install.js", "../node_modules/jasmine-expect/index.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "build/spec", "spec_files": ["**/*-spec.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist", "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "dist/spec/", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*_test.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": true, "random": false}
+{"spec_dir": "dist/tests", "spec_files": ["**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "src", "spec_files": ["models/tests/*[sS]pec.ts", "routes/tests/*[sS]pec.ts"], "helpers": ["helpers/**/*.js"], "reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": "bin/", "random": false, "spec_files": ["**/*[sS]pec.js"]}
+{"spec_dir": "spec", "spec_files": ["../*.[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./", "spec_files": ["src/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*[sS]pec.?(m)js"], "helpers": ["helpers/**/*_helper.?(m)js"], "env": {"stopSpecOnExpectationFailure": false, "random": true}}
+{"spec_dir": "src", "spec_files": ["**/*spec.ts"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "dist/spec", "spec_files": ["**/*_spec.js"], "helpers": ["helpers.js"]}
+{"spec_dir": "dist/test", "spec_files": ["**/*.test.js"], "stopSpecOnExpectationFailure": false, "random": true}
+{"spec_dir": ".", "spec_files": ["./spec/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["jasmine_tests/*[sS]pec.js"], "helpers": ["jasmine_helpers/*.js"], "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "./src", "spec_files": ["**/*.spec.js"], "jsLoader": "require"}
+{"reporters": [{"name": "jasmine-spec-reporter#SpecReporter", "options": {"displayStacktrace": "all"}}], "spec_dir": "src", "spec_files": ["**/*.spec.ts"], "helpers": ["../node_modules/ts-node/register/type-check.js"], "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*test.ts"], "helpers": ["helpers/**/*.ts"], "stopSpecOnExpectationFailure": true, "random": true}
+{"spec_dir": "spec", "spec_files": ["approved/**/*[sS]pec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "spec", "spec_files": ["**/*.spec.js"], "helpers": ["helpers/**/*.js"], "reporter": "spec", "stopSpecOnExpectationFailure": false, "random": false}
+{"spec_dir": "spec", "spec_files": ["**/*_spec.js"], "helpers": ["helpers/**/*.js"]}
+{"spec_dir": "./", "spec_files": ["src/**/*.test.js"], "helpers": ["test/env.js", "test/report.js", "test/common.js", "test/jasmine-helpers/**/*.js"], "random": false, "stopSpecOnExpectationFailure": false}
+{"spec_dir": "test", "spec_files": ["startup.ts", "specs/**/*.[sS]pec.ts", "teardown.ts"]}

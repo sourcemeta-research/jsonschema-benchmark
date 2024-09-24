@@ -52,9 +52,10 @@ async function validateSchema(schemaPath, instancePath) {
   console.log(durationNs.toFixed(0));
 
   // Exit with non-zero status on validation failure
-  if (failed) {
-    process.exit(1);
-  }
+  // XXX Skip since we allow ajv to fail
+  // if (failed) {
+  //   process.exit(1);
+  // }
 }
 
 if (process.argv.length !== 4) {

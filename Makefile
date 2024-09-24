@@ -32,6 +32,7 @@ define docker_run
   $(eval $@_INPUT = $(2))
 				$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@)
 				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
+				@exit $(.SHELLSTATUS)
 endef
 
 # JSON Toolkit

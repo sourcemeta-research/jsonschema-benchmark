@@ -23,10 +23,13 @@ int validate(const std::filesystem::path &example) {
 
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
+  auto num = 0;
   for (const auto &instance : instances) {
+    num += 1;
     const auto result{
         sourcemeta::jsontoolkit::evaluate(schema_template, instance)};
     if (!result) {
+      std::cerr << "Error validating instance " << num << "\n";
       return EXIT_FAILURE;
     }
   }
