@@ -51,6 +51,20 @@ dist/results/jsontoolkit/%: \
 	| dist/results/jsontoolkit
 	@$(call docker_run,jsontoolkit,/workspace/$(dir $(word 2,$^)))
 
+implementations/jsontoolkit-llvm/.dockertimestamp: \
+	implementations/jsontoolkit-llvm/CMakeLists.txt \
+	implementations/jsontoolkit-llvm/main.cc \
+	implementations/jsontoolkit-llvm/Dockerfile
+	docker build -t jsonschema-benchmark/jsontoolkit-llvm implementations/jsontoolkit-llvm
+	touch $@
+
+dist/results/jsontoolkit-llvm/%: \
+	implementations/jsontoolkit-llvm/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsontoolkit-llvm
+	@$(call docker_run,jsontoolkit-llvm,/workspace/$(dir $(word 2,$^)))
+
 # AJV
 
 implementations/ajv/.dockertimestamp: \
