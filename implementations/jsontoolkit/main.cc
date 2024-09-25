@@ -21,13 +21,15 @@ int validate(const std::filesystem::path &example) {
       sourcemeta::jsontoolkit::official_resolver,
       sourcemeta::jsontoolkit::default_schema_compiler)};
 
+  sourcemeta::jsontoolkit::EvaluationContext context;
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
   auto num = 0;
   for (const auto &instance : instances) {
+    context.prepare(instance);
     num += 1;
     const auto result{
-        sourcemeta::jsontoolkit::evaluate(schema_template, instance)};
+        sourcemeta::jsontoolkit::evaluate(schema_template, context)};
     if (!result) {
       std::cerr << "Error validating instance " << num << "\n";
       return EXIT_FAILURE;
