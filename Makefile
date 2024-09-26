@@ -30,9 +30,9 @@ all: dist/report.csv ; cat $<
 define docker_run
   $(eval $@_TOOL = $(1))
   $(eval $@_INPUT = $(2))
-				$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@)
+				-$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@)
+				@if [ ! -s $@ ]; then echo "0" > $@ ; fi
 				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
-				@exit $(.SHELLSTATUS)
 endef
 
 # JSON Toolkit
