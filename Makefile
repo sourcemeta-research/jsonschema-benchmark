@@ -41,6 +41,12 @@ define docker_run
 	done
 endef
 
+schemas/%/schema-2020-12.json: \
+	schemas/%/schema.json
+	bunx alterschema --from draft4 --to 2020-12 $< > $@
+
+.PRECIOUS: schemas/%/schema-2020-12.json
+
 # Blaze
 
 implementations/blaze/.dockertimestamp: \
@@ -244,3 +250,21 @@ dist/results/kmp-json-schema-validator/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/kmp-json-schema-validator
 	@$(call docker_run,kmp-json-schema-validator,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# MJS
+
+implementations/mjs/.dockertimestamp: \
+	implementations/mjs/build.sbt \
+	implementations/mjs/Benchmark.scala \
+	implementations/mjs/project/build.properties \
+	implementations/mjs/project/plugins.sbt \
+	implementations/mjs/Dockerfile
+	docker build -t jsonschema-benchmark/mjs implementations/mjs
+	touch $@
+
+dist/results/mjs/%: \
+	implementations/mjs/.dockertimestamp \
+	schemas/%/schema-2020-12.json \
+	schemas/%/instances.jsonl \
+	| dist/results/mjs
+	@$(call docker_run,mjs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
