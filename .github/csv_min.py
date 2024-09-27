@@ -6,7 +6,8 @@ reader = csv.DictReader(open('dist/report.csv'))
 min_val = defaultdict(lambda: sys.maxsize)
 min_impl = {}
 for row in reader:
-    if int(row['nanoseconds']) < min_val[row['name']]:
+    if int(row['nanoseconds']) < min_val[row['name']] \
+            and row['exit_status'] == '0':
         min_val[row['name']] = int(row['nanoseconds'])
         min_impl[row['name']] = row['implementation']
 
