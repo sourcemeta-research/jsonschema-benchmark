@@ -35,6 +35,10 @@ define docker_run
 				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
 endef
 
+schemas/%/schema-2020-12.json: \
+	schemas/%/schema.json
+	bunx alterschema --from draft4 --to 2020-12 $< > $@
+
 # JSON Toolkit
 
 implementations/jsontoolkit/.dockertimestamp: \
@@ -134,3 +138,22 @@ dist/results/go-jsonschema/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/go-jsonschema
 	@$(call docker_run,go-jsonschema,/workspace/$(dir $(word 2,$^)))
+
+# MJS
+
+implementations/mjs/.dockertimestamp: \
+	implementations/mjs/build.sbt \
+	implementations/mjs/Benchmark.scala \
+	implementations/mjs/project/build.properties \
+	implementations/mjs/project/plugins.sbt \
+	implementations/mjs/Dockerfile
+	docker build -t jsonschema-benchmark/mjs implementations/mjs
+	touch $@
+
+dist/results/mjs/%: \
+	implementations/mjs/.dockertimestamp \
+	schemas/%/schema-2020-12.json \
+	schemas/%/instances.jsonl \
+	| dist/results/mjs
+	@$(call docker_run,mjs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
