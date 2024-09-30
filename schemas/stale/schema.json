@@ -1,8 +1,22 @@
 {
   "$comment": "https://probot.github.io/apps/stale/",
-  "$ref": "#/definitions/configuration",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A GitHub app that closes abandoned issues and pull requests",
+  "properties": {
+    "pulls": {
+      "title": "Pulls",
+      "description": "Specify configuration settings that are specific to pull requests.",
+      "$ref": "#/$defs/configuration"
+    },
+    "issues": {
+      "title": "Issues",
+      "description": "Specify configuration settings that are specific to issues.",
+      "$ref": "#/$defs/configuration"
+    }
+  },
+  "type": "object",
+  "$id": "https://json.schemastore.org/stale.json",
+  "$defs": {
     "configuration": {
       "properties": {
         "daysUntilStale": {
@@ -102,19 +116,5 @@
       }
     }
   },
-  "description": "A GitHub app that closes abandoned issues and pull requests",
-  "properties": {
-    "pulls": {
-      "title": "Pulls",
-      "description": "Specify configuration settings that are specific to pull requests.",
-      "$ref": "#/definitions/configuration"
-    },
-    "issues": {
-      "title": "Issues",
-      "description": "Specify configuration settings that are specific to issues.",
-      "$ref": "#/definitions/configuration"
-    }
-  },
-  "type": "object",
-  "$id": "https://json.schemastore.org/stale.json"
+  "$ref": "#/$defs/configuration"
 }

@@ -1,7 +1,131 @@
 {
   "$id": "https://json.schemastore.org/pre-commit-hooks.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "entry",
+      "language"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "description": "id of the hook - used in pre-commit-config.yaml.",
+        "type": "string"
+      },
+      "name": {
+        "description": "name of the hook - shown during hook execution.",
+        "type": "string"
+      },
+      "entry": {
+        "description": "entry point - the executable to run. Can also contain arguments that will not be overridden such as `entry: autopep8 -i`.",
+        "type": "string"
+      },
+      "language": {
+        "description": "language of the hook - tells pre-commit how to install the hook.",
+        "$ref": "#/$defs/language"
+      },
+      "alias": {
+        "description": "(optional) allows the hook to be referenced using an additional id.",
+        "type": "string"
+      },
+      "files": {
+        "description": "(optional) the pattern of files to run on.",
+        "type": "string",
+        "default": ""
+      },
+      "exclude": {
+        "description": "(optional) exclude files that were matched by files.",
+        "type": "string",
+        "default": "^$"
+      },
+      "types": {
+        "description": "(optional) list of file types to run on (AND).",
+        "default": [
+          "file"
+        ],
+        "$ref": "#/$defs/file_types"
+      },
+      "types_or": {
+        "description": "(optional) list of file types to run on (OR).",
+        "default": [],
+        "$ref": "#/$defs/file_types"
+      },
+      "exclude_types": {
+        "description": "(optional) pattern of files to exclude.",
+        "default": [],
+        "$ref": "#/$defs/file_types"
+      },
+      "additional_dependencies": {
+        "description": "(optional) a list of dependencies that will be installed in the environment where this hook gets run. One useful application is to install plugins for hooks such as eslint.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "always_run": {
+        "description": "(optional) if true this hook will run even if there are no matching files.",
+        "type": "boolean",
+        "default": false
+      },
+      "fail_fast": {
+        "description": "(optional) if true this hook will run even if there are no matching files.",
+        "type": "boolean",
+        "default": false
+      },
+      "verbose": {
+        "description": "(optional) if true, forces the output of the hook to be printed even when the hook passes.",
+        "type": "boolean",
+        "default": false
+      },
+      "pass_filenames": {
+        "description": "(optional) if false no filenames will be passed to the hook.",
+        "type": "boolean",
+        "default": true
+      },
+      "require_serial": {
+        "description": "(optional) if true this hook will execute using a single process instead of in parallel.",
+        "type": "boolean",
+        "default": false
+      },
+      "description": {
+        "description": "(optional) description of the hook. Used for metadata purposes only.",
+        "type": "string",
+        "default": ""
+      },
+      "language_version": {
+        "description": "(optional) see Overriding language version at https://pre-commit.com/#overriding-language-version",
+        "type": "string",
+        "default": "default"
+      },
+      "log_file": {
+        "description": "(optional) if present, the hook output will additionally be written to a file.",
+        "type": "string"
+      },
+      "minimum_pre_commit_version": {
+        "description": "(optional) allows one to indicate a minimum compatible pre-commit version.",
+        "type": "string",
+        "default": "0"
+      },
+      "args": {
+        "description": "(optional) list of additional parameters to pass to the hook.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      },
+      "stages": {
+        "description": "(optional) confines the hook to the commit, merge-commit, push, prepare-commit-msg, commit-msg, post-checkout, post-commit, post-merge, post-rewrite, or manual stage. See Confining hooks to run at certain stages in https://pre-commit.com/#confining-hooks-to-run-at-certain-stages",
+        "$ref": "#/$defs/stages"
+      }
+    }
+  },
+  "minItems": 1,
+  "type": "array",
+  "$defs": {
     "language": {
       "type": "string",
       "enum": [
@@ -279,7 +403,7 @@
     "file_types": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/file_type"
+        "$ref": "#/$defs/file_type"
       }
     },
     "stage": {
@@ -304,132 +428,8 @@
     "stages": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/stage"
+        "$ref": "#/$defs/stage"
       }
     }
-  },
-  "items": {
-    "type": "object",
-    "required": [
-      "id",
-      "name",
-      "entry",
-      "language"
-    ],
-    "additionalProperties": false,
-    "properties": {
-      "id": {
-        "description": "id of the hook - used in pre-commit-config.yaml.",
-        "type": "string"
-      },
-      "name": {
-        "description": "name of the hook - shown during hook execution.",
-        "type": "string"
-      },
-      "entry": {
-        "description": "entry point - the executable to run. Can also contain arguments that will not be overridden such as `entry: autopep8 -i`.",
-        "type": "string"
-      },
-      "language": {
-        "description": "language of the hook - tells pre-commit how to install the hook.",
-        "$ref": "#/definitions/language"
-      },
-      "alias": {
-        "description": "(optional) allows the hook to be referenced using an additional id.",
-        "type": "string"
-      },
-      "files": {
-        "description": "(optional) the pattern of files to run on.",
-        "type": "string",
-        "default": ""
-      },
-      "exclude": {
-        "description": "(optional) exclude files that were matched by files.",
-        "type": "string",
-        "default": "^$"
-      },
-      "types": {
-        "description": "(optional) list of file types to run on (AND).",
-        "$ref": "#/definitions/file_types",
-        "default": [
-          "file"
-        ]
-      },
-      "types_or": {
-        "description": "(optional) list of file types to run on (OR).",
-        "$ref": "#/definitions/file_types",
-        "default": []
-      },
-      "exclude_types": {
-        "description": "(optional) pattern of files to exclude.",
-        "$ref": "#/definitions/file_types",
-        "default": []
-      },
-      "additional_dependencies": {
-        "description": "(optional) a list of dependencies that will be installed in the environment where this hook gets run. One useful application is to install plugins for hooks such as eslint.",
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "always_run": {
-        "description": "(optional) if true this hook will run even if there are no matching files.",
-        "type": "boolean",
-        "default": false
-      },
-      "fail_fast": {
-        "description": "(optional) if true this hook will run even if there are no matching files.",
-        "type": "boolean",
-        "default": false
-      },
-      "verbose": {
-        "description": "(optional) if true, forces the output of the hook to be printed even when the hook passes.",
-        "type": "boolean",
-        "default": false
-      },
-      "pass_filenames": {
-        "description": "(optional) if false no filenames will be passed to the hook.",
-        "type": "boolean",
-        "default": true
-      },
-      "require_serial": {
-        "description": "(optional) if true this hook will execute using a single process instead of in parallel.",
-        "type": "boolean",
-        "default": false
-      },
-      "description": {
-        "description": "(optional) description of the hook. Used for metadata purposes only.",
-        "type": "string",
-        "default": ""
-      },
-      "language_version": {
-        "description": "(optional) see Overriding language version at https://pre-commit.com/#overriding-language-version",
-        "type": "string",
-        "default": "default"
-      },
-      "log_file": {
-        "description": "(optional) if present, the hook output will additionally be written to a file.",
-        "type": "string"
-      },
-      "minimum_pre_commit_version": {
-        "description": "(optional) allows one to indicate a minimum compatible pre-commit version.",
-        "type": "string",
-        "default": "0"
-      },
-      "args": {
-        "description": "(optional) list of additional parameters to pass to the hook.",
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "default": []
-      },
-      "stages": {
-        "description": "(optional) confines the hook to the commit, merge-commit, push, prepare-commit-msg, commit-msg, post-checkout, post-commit, post-merge, post-rewrite, or manual stage. See Confining hooks to run at certain stages in https://pre-commit.com/#confining-hooks-to-run-at-certain-stages",
-        "$ref": "#/definitions/stages"
-      }
-    }
-  },
-  "minItems": 1,
-  "type": "array"
+  }
 }

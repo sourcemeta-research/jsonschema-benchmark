@@ -1,35 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "branch-object": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "name"
-      ],
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "channel": {
-          "type": "string"
-        },
-        "range": {
-          "type": "string"
-        },
-        "prerelease": {
-          "oneOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        }
-      }
-    }
-  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "properties": {
     "extends": {
       "description": "List of modules or file paths containing a shareable configuration. If multiple shareable configurations are set, they will be imported in the order defined with each configuration option taking precedence over the options defined in a previous shareable configuration",
@@ -52,7 +22,7 @@
           "type": "string"
         },
         {
-          "$ref": "#/definitions/branch-object"
+          "$ref": "#/$defs/branch-object"
         },
         {
           "type": "array",
@@ -62,7 +32,7 @@
                 "type": "string"
               },
               {
-                "$ref": "#/definitions/branch-object"
+                "$ref": "#/$defs/branch-object"
               }
             ]
           }
@@ -124,5 +94,35 @@
   },
   "title": "semantic-release Schema",
   "type": "object",
-  "$id": "https://json.schemastore.org/semantic-release.json"
+  "$id": "https://json.schemastore.org/semantic-release.json",
+  "$defs": {
+    "branch-object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "channel": {
+          "type": "string"
+        },
+        "range": {
+          "type": "string"
+        },
+        "prerelease": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

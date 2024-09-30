@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Schema validation for KrakenD",
   "type": "object",
   "required": [
@@ -7,19 +7,19 @@
   ],
   "properties": {
     "async_agent": {
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1async_agent.json"
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1async_agent.json"
     },
     "cache_ttl": {
       "title": "Cache TTL",
       "description": "Sets a default `Cache-Control: public, max-age=%d` header to all endpoints where `%d` is the conversion to seconds of any duration you write, indicating for how long the client (or CDN) can cache the content of the request. You can override this value per endpoint, but setting an endpoint to 0 will use the default value instead. Notice that KrakenD does not cache the content with this parameter, but tells the client how to do it. Defaults to `0s` (no cache). **For KrakenD cache, see [backend caching](https://www.krakend.io/docs/backends/caching/)**.",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "client_tls": {
       "title": "TLS Client settings",
       "description": "Allows to set specific transport settings when using TLS in your upstream services. See [TLS Client](https://www.krakend.io/docs/service-settings/tls/) for more settings",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1client_tls.json"
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1client_tls.json"
     },
     "debug_endpoint": {
       "title": "Debug endpoint",
@@ -31,22 +31,22 @@
       "title": "Dialer fallback delay",
       "description": "Specifies the length of time to wait before spawning a RFC 6555 Fast Fallback connection. If zero, a default delay of 300ms is used.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/",
       "default": "300ms",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "dialer_keep_alive": {
       "title": "Dialer keep alive",
       "description": "The interval between keep-alive probes for an active network connection. If zero, keep-alive probes are sent with a default value (currently 15 seconds), if supported by the protocol and operating system. Network protocols or operating systems that do not support keep-alives ignore this field. If negative, keep-alive probes are disabled.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/",
       "default": "15s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "dialer_timeout": {
       "title": "Dialer Timeout",
       "description": "The timeout of the dial function for creating connections.The default is no timeout. With or without a timeout, the operating system may impose its own earlier timeout.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "disable_compression": {
       "title": "Disable compression",
@@ -70,8 +70,8 @@
       "title": "DNS Cache TTL",
       "description": "Sets the maximum time KrakenD can store the results of a query to the configured Service Discovery returning the available hosts list. For values under `1s` this setting is ignored.\n\nSee: https://www.krakend.io/docs/backends/service-discovery/",
       "default": "30s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "echo_endpoint": {
       "title": "Echo endpoint",
@@ -84,22 +84,22 @@
       "description": "Your API contract, or the list of all paths recognized by this gateway. The paths `/__health/`, `/__debug/`, `/__echo/`, `/__catchall`, and `/__stats/` are reserved by the system and you cannot declare them. Their existence depends on their respective settings.\n\nSee: https://www.krakend.io/docs/endpoints/",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1endpoint.json",
-        "type": "object"
+        "type": "object",
+        "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1endpoint.json"
       }
     },
     "expect_continue_timeout": {
       "title": "Expect_continue_timeout",
       "description": "If non-zero, specifies the amount of time to wait for a server's first response headers after fully writing the request headers if the request has an `Expect: 100-continue` header. Zero means no timeout and causes the body to be sent immediately, without waiting for the server to approve. This time does not include the time to send the request header.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "extra_config": {
       "title": "Extra configuration",
       "description": "The optional configuration that extends the core functionality of the gateway is specified here. The `extra_config` at this level enables service components, meaning that they apply globally to all endpoints or activity.",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1service_extra_config.json",
-      "type": "object"
+      "type": "object",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1service_extra_config.json"
     },
     "host": {
       "title": "Default host",
@@ -113,15 +113,15 @@
       "title": "HTTP Idle timeout",
       "description": "The maximum number of idle (keep-alive) connections across all hosts. Zero means no limit.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "idle_timeout": {
       "title": "HTTP Idle timeout",
       "description": "The maximum amount of time to wait for the next request when keep-alives are enabled. If `idle_timeout` is zero, the value of `read_timeout` is used. If both are zero, there is no timeout.\n\nSee: https://www.krakend.io/docs/service-settings/http-server-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "listen_ip": {
       "title": "Listen IP",
@@ -214,22 +214,22 @@
       "title": "HTTP Idle timeout",
       "description": "The amount of time allowed to read request headers. The connection's read deadline is reset after reading the headers and the Handler can decide what is considered too slow for the body.\n\nSee: https://www.krakend.io/docs/service-settings/http-server-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "read_timeout": {
       "title": "HTTP read timeout",
       "description": "Is the maximum duration for reading the entire request, including the body. Because `read_timeout` does not let Handlers make per-request decisions on each request body's acceptable deadline or upload rate, most users will prefer to use `read_header_timeout`. It is valid to use them both.\n\nSee: https://www.krakend.io/docs/service-settings/http-server-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "response_header_timeout": {
       "title": "Response header timeout",
       "description": "If non-zero, specifies the amount of time to wait for a server's response headers after fully writing the request (including its body, if any). This time does not include the time to read the response body.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "sequential_start": {
       "title": "Sequential start",
@@ -241,11 +241,11 @@
       "title": "Global timeout",
       "description": "Defines a default timeout for all endpoints. Can be overriden per endpoint.\n\nSee: https://www.krakend.io/docs/service-settings/http-transport-settings/#global-timeout",
       "default": "2s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     },
     "tls": {
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1tls.json"
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1tls.json"
     },
     "use_h2c": {
       "title": "Enable h2c",
@@ -262,17 +262,17 @@
       "title": "HTTP write timeout",
       "description": "Maximum duration before timing out writes of the response.\n\nSee: https://www.krakend.io/docs/service-settings/http-server-settings/",
       "default": "0s",
-      "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-      "type": "string"
+      "type": "string",
+      "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
     }
   },
   "patternProperties": {
-    "^[@$_#]": {}
+    "^[@$_#]": true
   },
   "additionalProperties": false,
-  "definitions": {
+  "$defs": {
     "https://www.krakend.io/schema/v2.7/async/amqp.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Async AMQP Driver",
       "description": "The Async AMQP component enables the AMQP driver for the Async functionality.\n\nSee: https://www.krakend.io/docs/async/amqp/",
       "type": "object",
@@ -348,12 +348,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/async_agent.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Async Agents",
       "description": "Async agents are routines listening to queues or PubSub systems that react to new events and push data to your backends. Through async agents, you can start a lot of consumers to process your events autonomously.\n\nSee: https://www.krakend.io/docs/async/",
       "type": "array",
@@ -370,7 +370,7 @@
             "description": "The [backend definition](https://www.krakend.io/docs/backends/) (as you might have in any endpoint) indicating where the event data is sent. It is a full backend object definition, with all its possible options, transformations, filters, validations, etc.",
             "type": "array",
             "items": {
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json"
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json"
             }
           },
           "connection": {
@@ -394,7 +394,7 @@
                 "title": "Health interval",
                 "description": "The time between pings checking that the agent is connected to the queue and alive. Regardless of the health interval, if an agent fails, KrakenD will restart it again immediately as defined by `max_retries`and `backoff_strategy`.\n\nSee: https://www.krakend.io/docs/async/",
                 "default": "1s",
-                "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+                "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
               },
               "max_retries": {
                 "title": "Max retries",
@@ -404,7 +404,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           },
@@ -424,7 +424,7 @@
               "timeout": {
                 "title": "Timeout",
                 "description": "The maximum time the agent will wait to process an event sent to the backend. If the backend fails to process it, the message is reinserted for later consumption. Defaults to the timeout in the root level, or to `2s` if no value is declared.\n\nSee: https://www.krakend.io/docs/async/",
-                "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+                "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
               },
               "topic": {
                 "title": "Topic",
@@ -461,7 +461,7 @@
               "async/amqp": {
                 "title": "Async Agent extra configuration",
                 "description": "See the configuration for async/amqp",
-                "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1async~1amqp.json"
+                "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1async~1amqp.json"
               }
             }
           },
@@ -472,17 +472,17 @@
           }
         },
         "patternProperties": {
-          "^[@$_#]": {}
+          "^[@$_#]": true
         },
         "additionalProperties": false
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/api-keys.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "API-key Authentication",
       "description": "Enterprise only. Enables a Role-Based Access Control (RBAC) mechanism by reading the `Authorization` header of incoming requests.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/api-keys/",
       "type": "object",
@@ -533,7 +533,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
@@ -567,12 +567,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/basic.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "description": "Enterprise only. The Basic Authentication component protects the access to selected endpoints using basic username and password credentials.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/basic-authentication/",
       "type": "object",
       "properties": {
@@ -603,12 +603,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/client-credentials.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "OAuth2 client-credentials",
       "description": "2-legged OAuth2 flow: Request to your authorization server an access token to reach protected resources.\n\nSee: https://www.krakend.io/docs/authorization/client-credentials/",
       "type": "object",
@@ -661,12 +661,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/gcp.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "GCP Authentication",
       "description": "Enterprise only. Enables GCP authentication between KrakenD and Google Cloud service account.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/gcp/",
       "type": "object",
@@ -732,12 +732,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/jose.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Shared JWK cache",
       "description": "Enables global configurations for the HTTP client responsible of downloading and caching the JWK URLs for token validation and signing.",
       "type": "object",
@@ -752,12 +752,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/ntlm.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "NTLM Authentication",
       "description": "Enterprise only. Enables NTLM authentication between KrakenD and a Microsoft server such as Dynamics.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/ntlm/",
       "type": "object",
@@ -784,12 +784,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/revoker.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Revoke Server",
       "description": "The API Gateway authorizes users that provide valid tokens according to your criteria, but at some point, you might want to change your mind and decide to revoke JWT tokens that are still valid.",
       "type": "object",
@@ -814,8 +814,8 @@
           "title": "Probability",
           "description": "The `P`robability of returning a false positive. E.g.,`1e-7` for one false positive every 10 million different tokens. The values `N` and `P` determine the size of the resulting bloom filter to fulfill your expectations. E.g: 0.0000001\n\nSee: https://www.krakend.io/docs/authorization/revoking-tokens/",
           "examples": [
-            1e-07,
-            1e-07
+            1e-7,
+            1e-7
           ],
           "type": "number"
         },
@@ -863,8 +863,8 @@
           "examples": [
             "30s"
           ],
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "revoke_server_ping_url": {
           "title": "Revoke Server Ping URL",
@@ -884,12 +884,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/signer.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "JWT signer",
       "description": "creates a wrapper for your login endpoint that signs with your secret key the selected fields of the backend payload right before returning the content to the end-user.\n\nSee: https://www.krakend.io/docs/authorization/jwt-signing/",
       "type": "object",
@@ -1042,8 +1042,8 @@
             "1s"
           ],
           "default": "1s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "secret_url": {
           "title": "Secret's URL",
@@ -1060,12 +1060,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/validator.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "JWT validator",
       "description": "Protect endpoints from public usage by validating JWT tokens generated by any industry-standard OpenID Connect (OIDC) integration.\n\nSee: https://www.krakend.io/docs/authorization/jwt-validation/",
       "type": "object",
@@ -1206,8 +1206,8 @@
             "10s",
             "1h"
           ],
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "issuer": {
           "title": "Issuer",
@@ -1265,8 +1265,8 @@
             "1s"
           ],
           "default": "1s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "operation_debug": {
           "title": "Debug",
@@ -1345,12 +1345,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Backend Object",
       "description": "A backend object is an array of all the services that an endpoint connects to. It defines the list of hostnames that connects to and the URL to send or receive the data.",
       "type": "object",
@@ -1406,8 +1406,8 @@
         "extra_config": {
           "title": "Backend Extra configuration",
           "description": "When there is additional configuration related to a specific component or middleware (like a circuit breaker, rate limit, etc.), it is declared under this section.",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend_extra_config.json",
-          "type": "object"
+          "type": "object",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend_extra_config.json"
         },
         "group": {
           "title": "Group (data manipulation)",
@@ -1526,12 +1526,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/amqp/consumer.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "AMQP Consumer",
       "description": "The AMQP component allows to send and receive messages to and from a queue through the API Gateway.\n\nSee: https://www.krakend.io/docs/backends/amqp-consumer/",
       "type": "object",
@@ -1622,12 +1622,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/amqp/producer.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "AMQP Producer",
       "description": "Send messages to a queue through the API Gateway.\n\nSee: https://www.krakend.io/docs/backends/amqp-producer/",
       "type": "object",
@@ -1746,12 +1746,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/graphql.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "GraphQL",
       "description": "Convert REST endpoints to GraphQL calls (adapter/transformer)",
       "type": "object",
@@ -1809,12 +1809,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/grpc.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "gRPC backend connection",
       "description": "Enterprise only. Handles the communication with a backend using gRPC, after having defined the protocol buffer definitions.\n\nSee: https://www.krakend.io/docs/backends/grpc/",
       "type": "object",
@@ -1822,7 +1822,7 @@
         "client_tls": {
           "title": "Enable TLS client options",
           "description": "Enables specific TLS connection options when using the gRPC service. Supports all options under [TLS client settings](https://www.krakend.io/docs/service-settings/tls/#client-tls-settings).\n\nSee: https://www.krakend.io/docs/backends/grpc/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1client_tls.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1client_tls.json"
         },
         "disable_query_params": {
           "title": "Disable query parameters",
@@ -1918,12 +1918,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/http_client.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "HTTP Client options",
       "description": "Enterprise only. Allows you to set the different HTTP client options with the backend, like TLS, no redirect or connect via a proxy.\n\nSee: https://www.krakend.io/docs/enterprise/backends/http-client/",
       "type": "object",
@@ -1931,7 +1931,7 @@
         "client_tls": {
           "title": "TLS Client settings",
           "description": "Allows to set specific transport settings when using TLS in your upstream services. See the global [Client TLS options](https://www.krakend.io/docs/service-settings/tls/#client-tls-settings) for the list of all supported options.",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1client_tls.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1client_tls.json"
         },
         "no_redirect": {
           "title": "No redirect",
@@ -1948,12 +1948,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/lambda.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "AWS Lambda functions",
       "description": "Invoke Amazon Lambda functions on a KrakenD endpoint call.\n\nSee: https://www.krakend.io/docs/backends/lambda/",
       "type": "object",
@@ -1990,12 +1990,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/pubsub/publisher.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Pubsub publisher",
       "description": "Publishes to a topic using the desired driver.\n\nSee: https://www.krakend.io/docs/backends/pubsub/",
       "type": "object",
@@ -2010,12 +2010,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/pubsub/subscriber.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Pubsub subscriber",
       "description": "Subscribes a backend using the desired driver.\n\nSee: https://www.krakend.io/docs/backends/pubsub/",
       "type": "object",
@@ -2030,12 +2030,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/soap.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "SOAP Template modifier",
       "description": "Enterprise only. Build and modify requests to communicate with SOAP services.\n\nSee: https://www.krakend.io/docs/backends/soap/",
       "type": "object",
@@ -2084,12 +2084,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/static-filesystem.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Static Filesystem",
       "description": "Enterprise only. Allows you to fetch and serve static content from the disk instead of a remote server, and you can use it to mock data.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/serve-static-content/",
       "type": "object",
@@ -2112,35 +2112,35 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Extra configuration for backends",
       "type": "object",
       "properties": {
         "auth/client-credentials": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1client-credentials.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1client-credentials.json"
         },
         "auth/gcp": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1gcp.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1gcp.json"
         },
         "auth/ntlm": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1ntlm.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1ntlm.json"
         },
         "backend/amqp/consumer": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1amqp~1consumer.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1amqp~1consumer.json"
         },
         "backend/amqp/producer": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1amqp~1producer.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1amqp~1producer.json"
         },
         "backend/graphql": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1graphql.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1graphql.json"
         },
         "backend/grpc": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1grpc.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1grpc.json"
         },
         "backend/http": {
           "oneOf": [
@@ -2169,55 +2169,55 @@
           }
         },
         "backend/http/client": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1http_client.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1http_client.json"
         },
         "backend/lambda": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1lambda.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1lambda.json"
         },
         "backend/pubsub/publisher": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1pubsub~1publisher.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1pubsub~1publisher.json"
         },
         "backend/pubsub/subscriber": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1pubsub~1subscriber.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1pubsub~1subscriber.json"
         },
         "backend/soap": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1soap.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1soap.json"
         },
         "backend/static-filesystem": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1static-filesystem.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend~1static-filesystem.json"
         },
         "modifier/body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "modifier/jmespath": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1jmespath.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1jmespath.json"
         },
         "modifier/lua-backend": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
         },
         "modifier/martian": {
           "title": "Martian modifiers",
           "description": "Transform requests and responses through a simple DSL definition in the configuration file.\n\nSee: https://www.krakend.io/docs/backends/martian/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-          "type": "object"
+          "type": "object",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
         },
         "modifier/request-body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "modifier/response-body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "plugin/http-client": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1http-client.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1http-client.json"
         },
         "plugin/req-resp-modifier": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1req-resp-modifier.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1req-resp-modifier.json"
         },
         "proxy": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy.json"
         },
         "qos/circuit-breaker": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1circuit-breaker.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1circuit-breaker.json"
         },
         "qos/http-cache": {
           "title": "Backend Cache",
@@ -2231,15 +2231,14 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
         "qos/ratelimit/proxy": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1proxy.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1proxy.json"
         },
         "security/policies": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1policies.json",
           "anyOf": [
             {
               "required": [
@@ -2258,30 +2257,31 @@
             ]
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1policies.json"
         },
         "telemetry/opentelemetry": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry-backend.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry-backend.json"
         },
         "validation/cel": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1validation~1cel.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1validation~1cel.json"
         },
         "workflow": {
           "title": "Workflow",
           "description": "Enterprise only. A whole new endpoint that is executed within this backend context.",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1workflow.json",
-          "type": "object"
+          "type": "object",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1workflow.json"
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/client_tls.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "TLS client settings",
       "description": "TLS options to connect to upstream services.\n\nSee: https://www.krakend.io/docs/service-settings/tls/",
       "properties": {
@@ -2336,7 +2336,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
@@ -2391,12 +2391,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/documentation/openapi.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Generate documentation using OpenAPI",
       "description": "Enterprise only. Generates OpenAPI documentation automatically through `krakend openapi export` command.\n\nSee: https://www.krakend.io/docs/enterprise/developer/openapi/",
       "type": "object",
@@ -2556,7 +2556,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
@@ -2597,7 +2597,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
@@ -2665,7 +2665,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
@@ -2737,7 +2737,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             }
@@ -2794,7 +2794,7 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
@@ -2822,12 +2822,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/endpoint.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Endpoint Object",
       "default": {
         "backend": [
@@ -2849,14 +2849,14 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json",
-            "type": "object"
+            "type": "object",
+            "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json"
           }
         },
         "cache_ttl": {
           "title": "Cache TTL",
           "description": "Sets or overrides the cache headers to inform for how long the client or CDN can cache the request to this endpoint. Setting this value to a zero-value will use the `cache_ttl` of the service if any. Related: [caching backend responses](https://www.krakend.io/docs/backends/caching/).",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "concurrent_calls": {
           "title": "Concurrent calls",
@@ -2880,8 +2880,8 @@
         "extra_config": {
           "title": "Extra configuration",
           "description": "Configuration entries for additional components that are executed within this endpoint, during the request, response or merge operations.",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1endpoint_extra_config.json",
-          "type": "object"
+          "type": "object",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1endpoint_extra_config.json"
         },
         "input_headers": {
           "title": "Allowed Headers In",
@@ -2947,17 +2947,17 @@
             "1500ms"
           ],
           "default": "2s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/endpoint_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Schema definition for extra_config of endpoints",
       "type": "object",
       "properties": {
@@ -2997,39 +2997,39 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
         "auth/basic": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1basic.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1basic.json"
         },
         "auth/signer": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1signer.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1signer.json"
         },
         "auth/validator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1validator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1validator.json"
         },
         "documentation/openapi": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1documentation~1openapi.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1documentation~1openapi.json"
         },
         "modifier/jmespath": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1jmespath.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1jmespath.json"
         },
         "modifier/lua-endpoint": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
         },
         "modifier/lua-proxy": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
         },
         "modifier/request-body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "modifier/response-body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "plugin/req-resp-modifier": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1req-resp-modifier.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1req-resp-modifier.json"
         },
         "proxy": {
           "title": "Proxy",
@@ -3046,8 +3046,8 @@
             "flatmap_filter": {
               "title": "Flatmap (Array manipulation)",
               "description": "The list of operations to **execute sequentially** (top down). Every operation is defined with an object containing two properties:\n\nSee: https://www.krakend.io/docs/backends/flatmap/",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy~1flatmap.json",
-              "type": "array"
+              "type": "array",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy~1flatmap.json"
             },
             "sequential": {
               "title": "Sequential proxy",
@@ -3082,41 +3082,41 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
         "qos/ratelimit/router": {
           "title": "Router Rate-limiting",
           "description": "The router rate limit feature allows you to set a number of maximum requests per second a KrakenD endpoint will accept.\n\nSee: https://www.krakend.io/docs/endpoints/rate-limit/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
         },
         "qos/ratelimit/tiered": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1tiered.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1tiered.json"
         },
         "security/bot-detector": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1bot-detector.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1bot-detector.json"
         },
         "security/cors": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1cors.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1cors.json"
         },
         "security/http": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1http.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1http.json"
         },
         "security/policies": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1policies.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1policies.json"
         },
         "telemetry/opentelemetry": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry-endpoint.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry-endpoint.json"
         },
         "validation/cel": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1validation~1cel.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1validation~1cel.json"
         },
         "validation/json-schema": {
           "title": "Validating the body with the JSON Schema",
@@ -3124,16 +3124,16 @@
           "type": "object"
         },
         "websocket": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1websocket.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1websocket.json"
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/grpc.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "gRPC server",
       "description": "Enterprise only. gRPC server integration",
       "type": "object",
@@ -3178,7 +3178,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -3202,8 +3202,8 @@
                           "type": "array",
                           "minItems": 1,
                           "items": {
-                            "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json",
-                            "type": "object"
+                            "type": "object",
+                            "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json"
                           }
                         },
                         "extra_config": {
@@ -3214,12 +3214,12 @@
                             "auth/validator": {
                               "title": "JWT validation",
                               "description": "The JWT validation for this method. The configuration underneath is exactly as in the [JWT validator](https://www.krakend.io/docs/enterprise/authorization/jwt-validation/)",
-                              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1validator.json",
-                              "type": "object"
+                              "type": "object",
+                              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1validator.json"
                             }
                           },
                           "patternProperties": {
-                            "^[@$_#]": {}
+                            "^[@$_#]": true
                           },
                           "additionalProperties": false
                         },
@@ -3256,7 +3256,7 @@
                         }
                       },
                       "patternProperties": {
-                        "^[@$_#]": {}
+                        "^[@$_#]": true
                       },
                       "additionalProperties": false
                     }
@@ -3271,25 +3271,25 @@
                   }
                 },
                 "patternProperties": {
-                  "^[@$_#]": {}
+                  "^[@$_#]": true
                 },
                 "additionalProperties": false
               }
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/body-generator.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Template-based body generator",
       "description": "Enterprise only. Crafts the body/payload using a templating system.\n\nSee: https://www.krakend.io/backends/body-generator/",
       "type": "object",
@@ -3339,13 +3339,13 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false,
       "@comment": "This schema is used by modifier/request-body-generator and modifier/body-generator simultaneously"
     },
     "https://www.krakend.io/schema/v2.7/modifier/jmespath.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": " JMESPath: Response manipulation with query language",
       "description": "The JMESPath query language allows you to select, slice, filter, map, project, flatten, sort, and all sorts of operations on data.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/jmespath/",
       "type": "object",
@@ -3360,12 +3360,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/lua.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Lua modifier",
       "description": "Scripting with Lua is an additional choice to extend your business logic, and is compatible with the rest of options such as CEL, Martian, or other Go plugins and middlewares.\n\nSee: https://www.krakend.io/docs/endpoints/lua/",
       "type": "object",
@@ -3422,12 +3422,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/martian.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Martian modifiers",
       "description": "The Martian component allows you to modify requests and responses with static data through a simple DSL definition in the configuration file.\n\nSee: https://www.krakend.io/docs/endpoints/martian/",
       "type": "object",
@@ -3487,13 +3487,13 @@
           "properties": {
             "else": {
               "description": "The modifier you want to execute when the condition does not match",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "modifier": {
               "description": "The modifier you want to execute when the cookie name (and value if provided) matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "name": {
               "description": "The name of the Cookie you want to check. Notice that the `input_headers` must contain `Cookie` in the list when you want to check cookies sent by the client.",
@@ -3601,7 +3601,7 @@
               "description": "The list of modifiers you want to execute in the declared order",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
+                "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
               }
             },
             "scope": {
@@ -3740,13 +3740,13 @@
           "properties": {
             "else": {
               "description": "The modifier you want to execute when the condition does not match",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "modifier": {
               "description": "The modifier you want to execute when the condition matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "name": {
               "description": "Name of the header you want to check. You must add under `input_headers` the `name` included in the filter.",
@@ -3852,8 +3852,8 @@
             },
             "modifier": {
               "description": "The modifier you want to execute when the condition matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "regex": {
               "description": "The regular expression you want to check against the header value",
@@ -3893,13 +3893,13 @@
           "properties": {
             "else": {
               "description": "The modifier you want to execute when the condition does not match",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "modifier": {
               "description": "The modifier you want to execute when the condition matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "port": {
               "description": "The port number you want to check",
@@ -3980,7 +3980,7 @@
                 "properties": {
                   "modifier": {
                     "description": "The modifier definition you want to execute",
-                    "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
+                    "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
                   },
                   "priority": {
                     "description": "The assigned priority number",
@@ -4019,13 +4019,13 @@
           "properties": {
             "else": {
               "description": "The modifier you want to execute when the condition does not match",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "modifier": {
               "description": "The modifier you want to execute when the condition matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "name": {
               "description": "Name of the query string you want to check",
@@ -4130,8 +4130,8 @@
           "properties": {
             "else": {
               "description": "The modifier you want to execute when the condition does not match",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "host": {
               "description": "The literal hostname that must match, including the port",
@@ -4142,8 +4142,8 @@
             },
             "modifier": {
               "description": "The modifier you want to execute when the condition matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "path": {
               "description": "The `/path` of the URL, without query strings.",
@@ -4245,13 +4245,13 @@
           "properties": {
             "else": {
               "description": "The modifier you want to execute when the condition does not match",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "modifier": {
               "description": "The modifier you want to execute when the condition matches",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json",
-              "type": "object"
+              "type": "object",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1martian.json"
             },
             "regex": {
               "description": "The regular expression you want to check against the URL",
@@ -4270,7 +4270,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/response-headers.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Response headers modifier",
       "description": "Enterprise only. Allows you to transform response headers declaratively.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/response-headers-modifier/",
       "type": "object",
@@ -4325,12 +4325,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/content-replacer.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Content Replacer",
       "description": "Enterprise only. The content replacer plugin allows you to modify the response of your services by doing literal replacements or more sophisticated replacements with regular expressions.\n\nSee: See: https://www.krakend.io/docs/enterprise/endpoints/content-replacer/",
       "type": "object",
@@ -4361,13 +4361,13 @@
           }
         },
         "patternProperties": {
-          "^[@$_#]": {}
+          "^[@$_#]": true
         },
         "additionalProperties": false
       }
     },
     "https://www.krakend.io/schema/v2.7/plugin/geoip.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "GeoIP",
       "description": "Enterprise only. The GeoIP integration allows you load Maxmind's GeoIP2 City database (payment and free versions) and enrich all KrakenD calls to your backends with geo data.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/geoip/",
       "type": "object",
@@ -4385,12 +4385,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/http-client.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "HTTP client plugins.\n\nSee: https://www.krakend.io/docs/extending/injecting-plugins/",
       "type": "object",
       "properties": {
@@ -4408,7 +4408,7 @@
       "additionalProperties": true
     },
     "https://www.krakend.io/schema/v2.7/plugin/http-server.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "HTTP Server plugins.\n\nSee: https://www.krakend.io/docs/extending/http-server-plugins/",
       "type": "object",
       "required": [
@@ -4416,13 +4416,13 @@
       ],
       "properties": {
         "geoip": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1geoip.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1geoip.json"
         },
         "ip-filter": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1ip-filter.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1ip-filter.json"
         },
         "jwk-aggregator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1jwk-aggregator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1jwk-aggregator.json"
         },
         "name": {
           "title": "Plugin name",
@@ -4434,25 +4434,25 @@
           "type": "array"
         },
         "redis-ratelimit": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1redis-ratelimit.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1redis-ratelimit.json"
         },
         "static-filesystem": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1static-filesystem.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1static-filesystem.json"
         },
         "url-rewrite": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1url-rewrite.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1url-rewrite.json"
         },
         "virtualhost": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1virtualhost.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1virtualhost.json"
         },
         "wildcard": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1wildcard.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1wildcard.json"
         }
       },
       "additionalProperties": true
     },
     "https://www.krakend.io/schema/v2.7/plugin/ip-filter.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "IP filter",
       "description": "Enterprise only. The IP filtering plugin allows you to restrict the traffic to your API gateway based on the IP address. It works in two different modes (allow or deny) where you define the list of IPs (CIDR blocks) that are authorized to use the API, or that are denied from using the API.\n\nSee: https://www.krakend.io/docs/enterprise/throttling/ipfilter/",
       "type": "object",
@@ -4502,12 +4502,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/jwk-aggregator.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "JWK aggregator",
       "description": "Enterprise only. The JWK aggregator plugin allows KrakenD to validate tokens issued by multiple Identity Providers.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/multiple-identity-providers/",
       "type": "object",
@@ -4536,12 +4536,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/redis-ratelimit.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Redis ratelimit",
       "description": "Enterprise only. The global rate limit functionality enables a Redis database store to centralize all KrakenD node counters. Instead of having each KrakenD node count its hits, the counters are global and stored in the database.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/global-rate-limit/",
       "type": "object",
@@ -4570,8 +4570,8 @@
         "period": {
           "title": "Period",
           "description": "For how long the content lives in the cache. Usually in seconds, minutes, or hours. E.g., use `120s` or `2m` for two minutes\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/global-rate-limit/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "rate": {
           "title": "Rate",
@@ -4598,20 +4598,20 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/req-resp-modifier.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Request-Response modifier plugins",
       "type": "object",
       "properties": {
         "content-replacer": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1content-replacer.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1content-replacer.json"
         },
         "ip-filter": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1ip-filter.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1ip-filter.json"
         },
         "name": {
           "title": "Plugin name",
@@ -4623,13 +4623,13 @@
           "type": "array"
         },
         "response-schema-validator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1response-schema-validator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1response-schema-validator.json"
         }
       },
       "additionalProperties": true
     },
     "https://www.krakend.io/schema/v2.7/plugin/response-schema-validator.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Response Schema Validator",
       "description": "Enterprise only. The response schema validator plugin adds a schema validation before the gateway returns the response to the end-user or before it’s merged in the endpoint with the rest of the backends.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/response-schema-validator/",
       "type": "object",
@@ -4662,7 +4662,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -4673,12 +4673,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/static-filesystem.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Static Filesystem",
       "description": "Enterprise only. Allows you to fetch and serve static content in two different use cases. When the plugin is used as an http server handler, the static content is for your end-users, giving them CSS, JS, images, or JSON files, to name a few examples. On the other side, when the plugin is used as an http client executor, the KrakenD endpoints use static content as if it were a backend.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/serve-static-content/",
       "deprecated": true,
@@ -4717,12 +4717,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/url-rewrite.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "URL rewrite",
       "description": "Enterprise only. Allows you to declare additional URLs other than the ones defined under the endpoints configuration, used as aliases of existing endpoints.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/url-rewrite/",
       "type": "object",
@@ -4760,12 +4760,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/virtualhost.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "VirtualHost",
       "description": "Enterprise only. The Virtual Host plugin allows you to run different configurations of KrakenD endpoints based on the host accessing the server.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/virtual-hosts/",
       "deprecated": true,
@@ -4790,12 +4790,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/wildcard.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Wildcard",
       "description": "Enterprise only. Enables wildcard processing of requests without declaring all endpoint subresrouces.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/wildcard/",
       "type": "object",
@@ -4818,12 +4818,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/proxy.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Proxy option",
       "type": "object",
       "properties": {
@@ -4836,8 +4836,8 @@
         "flatmap_filter": {
           "title": "Flatmap (Array manipulation)",
           "description": "The list of operations to **execute sequentially** (top down). Every operation is defined with an object containing two properties:\n\nSee: https://www.krakend.io/docs/backends/flatmap/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy~1flatmap.json",
-          "type": "array"
+          "type": "array",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy~1flatmap.json"
         },
         "max_payload": {
           "title": "Maximum Payload",
@@ -4853,12 +4853,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/proxy/flatmap.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Flatmap (Array manipulation)",
       "description": "The flatmap middleware allows you to manipulate collections (or arrays, or lists, you name it) from the backend response. While the basic manipulation operations allow you to work directly with objects, the collections require a different approach: the flatmap component.\n\nSee: https://www.krakend.io/docs/backend/flatmap/",
       "examples": [
@@ -4895,13 +4895,13 @@
           }
         },
         "patternProperties": {
-          "^[@$_#]": {}
+          "^[@$_#]": true
         },
         "additionalProperties": false
       }
     },
     "https://www.krakend.io/schema/v2.7/qos/circuit-breaker.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Circuit Breaker",
       "description": "The circuit breaker prevents sending more traffic to a failing backend.\n\nSee: https://www.krakend.io/docs/backends/circuit-breaker/",
       "type": "object",
@@ -4942,12 +4942,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/qos/ratelimit/proxy.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Backend Ratelimit",
       "description": "Restrict the rate of requests KrakenD makes to your backends.\n\nSee: https://www.krakend.io/docs/backends/rate-limit/",
       "type": "object",
@@ -4966,8 +4966,8 @@
           "title": "Time window",
           "description": "Time period in which the counter works. For instance, if you set an `every` of `10m` and a `max_rate` of `5`, you are allowing 5 requests every ten minutes.\n\nSee: https://www.krakend.io/docs/endpoints/rate-limit/",
           "default": "1s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "max_rate": {
           "title": "Max rate",
@@ -4979,12 +4979,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/qos/ratelimit/router.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Endpoint ratelimit",
       "type": "object",
       "anyOf": [
@@ -5010,8 +5010,8 @@
           "title": "Cleanup Period",
           "description": "The cleanup period is how often the routine(s) in charge of optimizing the memory dedicated will go iterate all counters looking for outdated TTL and remove them. A low value keeps the memory slightly decreasing, but as a trade-off, it will increase the CPU dedicated to achieving this optimization. This is an advanced micro-optimization setting that should be used with caution.\n\nSee: https://www.krakend.io/docs/endpoints/rate-limit/",
           "default": "1m",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "cleanup_threads": {
           "title": "Cleanup Threads",
@@ -5034,8 +5034,8 @@
           "title": "Time window",
           "description": "Time period in which the maximum rates operate. For instance, if you set an `every` of `10m` and a rate of `5`, you are allowing 5 requests every ten minutes.\n\nSee: https://www.krakend.io/docs/endpoints/rate-limit/",
           "default": "1s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "key": {
           "title": "Header or Param key",
@@ -5070,7 +5070,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/qos/ratelimit/tiered.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Tiered Rate Limit",
       "description": "Enterprise Only. Apply ratelimit based on tier match.",
       "type": "object",
@@ -5094,8 +5094,8 @@
               "ratelimit": {
                 "title": "Ratelimit",
                 "description": "The rate limit definition. This is an object with the same attributes the [service rate limit](https://www.krakend.io/docs/enterprise/service-settings/service-rate-limit/) has.\n\nSee: /docs/enterprise/service-settings/tiered-rate-limit/",
-                "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json",
-                "type": "object"
+                "type": "object",
+                "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
               },
               "tier_value": {
                 "title": "Tier value",
@@ -5126,7 +5126,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/router.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Router Options",
       "description": "The optional router configuration allows you to set global flags that change the way KrakenD processes the requests at the router layer.\n\nSee: https://www.krakend.io/docs/service-settings/router-options/",
       "type": "object",
@@ -5203,7 +5203,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -5276,12 +5276,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/bot-detector.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Bot detector",
       "description": "The bot detector module checks incoming connections to the gateway to determine if a bot made them, helping you detect and reject bots carrying out scraping, content theft, and form spam.\n\nSee: https://www.krakend.io/docs/throttling/botdetector/",
       "type": "object",
@@ -5332,12 +5332,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/cors.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "HTTP Security",
       "description": "Security through HTTP headers, including HSTS, HPKP, MIME-Sniffing prevention, Clickjacking protection, and others.\n\nSee: https://www.krakend.io/docs/service-settings/security/",
       "type": "object",
@@ -5411,8 +5411,8 @@
           "title": "Max Age",
           "description": "For how long the response can be cached. For zero values the `Access-Control-Max-Age` header is not set.\n\nSee: https://www.krakend.io/docs/service-settings/cors/",
           "default": "0h",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "options_passthrough": {
           "title": "OPTIONS Passthrough",
@@ -5431,12 +5431,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/http.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "HTTP Security",
       "description": "Security through HTTP headers, including HSTS, HPKP, MIME-Sniffing prevention, Clickjacking protection, and others.\n\nSee: https://www.krakend.io/docs/service-settings/security/",
       "type": "object",
@@ -5564,12 +5564,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/policies.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Securiy Policies",
       "description": "The policies engine allows you to write custom sets of policies that are validated during requests, responses, or token validation.\n\nSee: https://www.krakend.io/docs/enterprise/security-policies/",
       "type": "object",
@@ -5628,7 +5628,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -5674,7 +5674,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -5720,18 +5720,18 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/server/static-filesystem.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Static Filesystem",
       "description": "Enterprise only. Allows you to fetch and serve static content by registering a static web server for a set of defined paths (the prefixes).\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/serve-static-content/",
       "type": "object",
@@ -5774,12 +5774,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/server/virtualhost.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "VirtualHost",
       "description": "Enterprise only. The Virtual Host server allows you to run different configurations of KrakenD endpoints based on the host accessing the server.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/virtual-hosts/",
       "type": "object",
@@ -5829,60 +5829,60 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/service_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Schema definition for service extra_config",
       "type": "object",
       "properties": {
         "auth/api-keys": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1api-keys.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1api-keys.json"
         },
         "auth/basic": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1basic.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1basic.json"
         },
         "auth/revoker": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1revoker.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1revoker.json"
         },
         "auth/validator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1jose.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1auth~1jose.json"
         },
         "documentation/openapi": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1documentation~1openapi.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1documentation~1openapi.json"
         },
         "github_com/letgoapp/krakend-influx": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1influx.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1influx.json"
         },
         "grpc": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1grpc.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1grpc.json"
         },
         "modifier/lua-endpoint": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
         },
         "modifier/response-headers": {
           "title": "Response Headers modifier",
           "description": "Enterprise only. Allows you to transform response headers declaratively.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/response-headers-modifier/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1response-headers.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1response-headers.json"
         },
         "plugin/http-server": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1http-server.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1http-server.json"
         },
         "qos/ratelimit/service": {
           "title": "Service Rate-limiting",
           "description": "Enterprise Only. The service rate limit feature allows you to set the maximum requests per second a user or group of users can do to KrakenD and works analogously to the endpoint rate limit.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/service-rate-limit/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
         },
         "qos/ratelimit/tiered": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1tiered.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1tiered.json"
         },
         "router": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1router.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1router.json"
         },
         "security/bot-detector": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1bot-detector.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1bot-detector.json"
         },
         "security/cors": {
           "title": "Cross Origin Resource Sharing",
@@ -5963,58 +5963,58 @@
               "examples": [
                 "12h"
               ],
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-              "type": "string"
+              "type": "string",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
             }
           }
         },
         "security/http": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1http.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1http.json"
         },
         "server/static-filesystem": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1server~1static-filesystem.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1server~1static-filesystem.json"
         },
         "server/virtualhost": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1server~1virtualhost.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1server~1virtualhost.json"
         },
         "telemetry/gelf": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1gelf.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1gelf.json"
         },
         "telemetry/influx": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1influx.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1influx.json"
         },
         "telemetry/logging": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1logging.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1logging.json"
         },
         "telemetry/logstash": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1logstash.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1logstash.json"
         },
         "telemetry/metrics": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1metrics.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1metrics.json"
         },
         "telemetry/moesif": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1moesif.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1moesif.json"
         },
         "telemetry/newrelic": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1newrelic.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1newrelic.json"
         },
         "telemetry/opencensus": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opencensus.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opencensus.json"
         },
         "telemetry/opentelemetry": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry.json"
         },
         "telemetry/opentelemetry-security": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry-security.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1telemetry~1opentelemetry-security.json"
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/gelf.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "GELF",
       "description": "Send structured events in GELF format to your Graylog Cluster.\n\nSee: https://www.krakend.io/docs/logging/graylog-gelf/",
       "type": "object",
@@ -6035,12 +6035,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/influx.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Telemetry via influx",
       "description": "Enables the extended logging capabilities.\n\nSee: https://www.krakend.io/docs/telemetry/influxdb-native/",
       "type": "object",
@@ -6074,7 +6074,7 @@
         "ttl": {
           "title": "TTL",
           "description": "TTL against Influx.\n\nSee: https://www.krakend.io/docs/telemetry/influxdb-native/",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "username": {
           "title": "Username",
@@ -6083,12 +6083,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/logging.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Improved logging",
       "description": "Enables the extended logging capabilities.\n\nSee: https://www.krakend.io/docs/logging/",
       "type": "object",
@@ -6157,12 +6157,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/logstash.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Logstash",
       "description": "Enables logstash when the extra_config \"telemetry/logging\" is also present.\n\nSee: https://www.krakend.io/docs/logging/logstash/",
       "type": "object",
@@ -6177,12 +6177,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/metrics.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Extended metrics",
       "description": "Collects extended metrics to push to InfluxDB or expose them in the /__stats/ endpoint.\n\nSee: https://www.krakend.io/docs/telemetry/extended-metrics/",
       "type": "object",
@@ -6197,8 +6197,8 @@
           "title": "Collection time",
           "description": "The time window to consolidate collected metrics. Metrics are updated in their internal counters all the time, but the `/__stats/` endpoint, or the Influx reporter, won't see them updated until this window completes.\n\nSee: https://www.krakend.io/docs/telemetry/extended-metrics/",
           "default": "60s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "endpoint_disabled": {
           "title": "Endpoint disabled",
@@ -6227,12 +6227,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/moesif.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Moesif integration",
       "description": "The Moesif integration helps you understand and monetize API usage with a robust analytics and billing platform.\n\nSee: https://www.krakend.io/docs/enterprise/governance/moesif/",
       "type": "object",
@@ -6296,7 +6296,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -6398,12 +6398,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/newrelic.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "NewRelic exporter",
       "description": "The New Relic integration lets you push KrakenD metrics and distributed traces to your New Relic dashboard. It uses internally the official New Relic SDK and brings its features to your APM dashboard.\n\nSee: https://www.krakend.io/docs/enterprise/telemetry/newrelic/",
       "type": "object",
@@ -6434,12 +6434,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opencensus.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Telemetry via Opencensus",
       "description": "Enables the extended logging capabilities.\n\nSee: https://www.krakend.io/docs/telemetry/opencensus/",
       "type": "object",
@@ -6471,7 +6471,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -6546,7 +6546,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6589,8 +6589,8 @@
                   "examples": [
                     "2s"
                   ],
-                  "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-                  "type": "string"
+                  "type": "string",
+                  "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
                 },
                 "username": {
                   "title": "Username",
@@ -6602,7 +6602,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6656,7 +6656,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6679,7 +6679,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6726,8 +6726,8 @@
                   "title": "Reconnection",
                   "description": "The reconnection time\n\nSee: https://www.krakend.io/docs/telemetry/ocagent/",
                   "default": "2s",
-                  "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-                  "type": "string"
+                  "type": "string",
+                  "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
                 },
                 "service_name": {
                   "title": "Service name",
@@ -6736,7 +6736,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6787,7 +6787,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6827,7 +6827,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6889,7 +6889,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6920,13 +6920,13 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -6946,12 +6946,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry-backend.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "OpenTelemetry Backend Override",
       "description": "Enterprise only. Overrides metrics and traces declared by the OpenTelemetry service.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry-by-endpoint/",
       "type": "object",
@@ -6972,7 +6972,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -6987,13 +6987,13 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -7016,18 +7016,18 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry-endpoint.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "OpenTelemetry Endpoint Override",
       "description": "Enterprise only. Overrides metrics and traces declared by the OpenTelemetry service.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry-by-endpoint/",
       "type": "object",
@@ -7076,7 +7076,7 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -7099,18 +7099,18 @@
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry-security.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "OpenTelemetry Security",
       "description": "Enables the security layer needed to use OpenTelemetry through the Internet, like pushing data to a SaaS provider.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry-security/",
       "type": "object",
@@ -7152,19 +7152,19 @@
               }
             },
             "patternProperties": {
-              "^[@$_#]": {}
+              "^[@$_#]": true
             },
             "additionalProperties": false
           }
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "OpenTelemetry",
       "description": "Enables metrics and traces using OpenTelemetry.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry/",
       "type": "object",
@@ -7230,7 +7230,7 @@
                   }
                 },
                 "patternProperties": {
-                  "^[@$_#]": {}
+                  "^[@$_#]": true
                 },
                 "additionalProperties": false
               }
@@ -7290,14 +7290,14 @@
                   }
                 },
                 "patternProperties": {
-                  "^[@$_#]": {}
+                  "^[@$_#]": true
                 },
                 "additionalProperties": false
               }
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -7369,14 +7369,14 @@
                           }
                         },
                         "patternProperties": {
-                          "^[@$_#]": {}
+                          "^[@$_#]": true
                         },
                         "additionalProperties": false
                       }
                     }
                   },
                   "patternProperties": {
-                    "^[@$_#]": {}
+                    "^[@$_#]": true
                   },
                   "additionalProperties": false
                 },
@@ -7444,20 +7444,20 @@
                           }
                         },
                         "patternProperties": {
-                          "^[@$_#]": {}
+                          "^[@$_#]": true
                         },
                         "additionalProperties": false
                       }
                     }
                   },
                   "patternProperties": {
-                    "^[@$_#]": {}
+                    "^[@$_#]": true
                   },
                   "additionalProperties": false
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -7532,7 +7532,7 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             },
@@ -7601,13 +7601,13 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
@@ -7657,12 +7657,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/timeunits.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Time units / Duration patterns",
       "$defs": {
         "timeunit": {
@@ -7674,7 +7674,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/tls.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "TLS/SSL",
       "description": "Enabling TLS for HTTPS and HTTP/2.\n\nSee: https://www.krakend.io/docs/service-settings/tls/",
       "anyOf": [
@@ -7812,12 +7812,12 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/validation/cel.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Common Expression Language (CEL) validations",
       "description": "The Common Expression Language (CEL) middleware enables expression evaluation, when an expression returns false, KrakenD does not return the content as the condition has failed. Otherwise, if all expressions returned true, the content is served.\n\nSee: https://www.krakend.io/docs/endpoints/common-expression-language-cel/",
       "type": "array",
@@ -7839,13 +7839,13 @@
           }
         },
         "patternProperties": {
-          "^[@$_#]": {}
+          "^[@$_#]": true
         },
         "additionalProperties": false
       }
     },
     "https://www.krakend.io/schema/v2.7/websocket.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Schema definition for Websockets",
       "description": "Enterprise only. Enables websocket communication.\n\nSee: https://www.krakend.io/docs/enterprise/websockets/",
       "type": "object",
@@ -7917,13 +7917,13 @@
           "title": "Ping frequency",
           "description": "Sets the time between pings checking the health of the system.\n\nSee: https://www.krakend.io/docs/enterprise/websockets/",
           "default": "54s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "pong_wait": {
           "title": "Pong timeout",
           "description": "Sets the maximum time KrakenD will until the pong times out.\n\nSee: https://www.krakend.io/docs/enterprise/websockets/",
           "default": "60s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "read_buffer_size": {
           "title": "Read buffer size",
@@ -7941,7 +7941,7 @@
           "title": "Timeout",
           "description": "Sets the read timeout for the backend. After a read has timed out, the websocket connection is terminated and KrakenD will try to reconnect according the `backoff_strategy`. Minimum accepted time is one minute. This flag only applies when you use ' enable_direct_communication`.\n\nSee: https://www.krakend.io/docs/enterprise/websockets/",
           "default": "5m",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         },
         "write_buffer_size": {
           "title": "Write buffer size",
@@ -7953,16 +7953,16 @@
           "title": "Write timeout",
           "description": "Sets the maximum time KrakenD will wait until the write times out.\n\nSee: https://www.krakend.io/docs/enterprise/websockets/",
           "default": "10s",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/workflow.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Workflow Object",
       "type": "object",
       "required": [
@@ -7976,8 +7976,8 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json",
-            "type": "object"
+            "type": "object",
+            "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1backend.json"
           }
         },
         "concurrent_calls": {
@@ -7999,8 +7999,8 @@
         "extra_config": {
           "title": "Extra configuration",
           "description": "Configuration entries for additional components that are executed within this endpoint, during the request, response or merge operations.",
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1workflow_extra_config.json",
-          "type": "object"
+          "type": "object",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1workflow_extra_config.json"
         },
         "ignore_errors": {
           "title": "Ignore errors",
@@ -8028,34 +8028,34 @@
             "2s",
             "1500ms"
           ],
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
-          "type": "string"
+          "type": "string",
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit"
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/workflow_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
       "title": "Schema definition for extra_config of workflows",
       "type": "object",
       "properties": {
         "modifier/jmespath": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1jmespath.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1jmespath.json"
         },
         "modifier/lua-proxy": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1lua.json"
         },
         "modifier/request-body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "modifier/response-body-generator": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1modifier~1body-generator.json"
         },
         "plugin/req-resp-modifier": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1req-resp-modifier.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1plugin~1req-resp-modifier.json"
         },
         "proxy": {
           "title": "Proxy",
@@ -8072,8 +8072,8 @@
             "flatmap_filter": {
               "title": "Flatmap (Array manipulation)",
               "description": "The list of operations to **execute sequentially** (top down). Every operation is defined with an object containing two properties:\n\nSee: https://www.krakend.io/docs/backends/flatmap/",
-              "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy~1flatmap.json",
-              "type": "array"
+              "type": "array",
+              "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1proxy~1flatmap.json"
             },
             "sequential": {
               "title": "Sequential proxy",
@@ -8108,21 +8108,21 @@
                 }
               },
               "patternProperties": {
-                "^[@$_#]": {}
+                "^[@$_#]": true
               },
               "additionalProperties": false
             }
           },
           "patternProperties": {
-            "^[@$_#]": {}
+            "^[@$_#]": true
           },
           "additionalProperties": false
         },
         "security/policies": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1policies.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1policies.json"
         },
         "validation/cel": {
-          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1validation~1cel.json"
+          "$ref": "#/$defs/https%3A~1~1www.krakend.io~1schema~1v2.7~1validation~1cel.json"
         },
         "validation/json-schema": {
           "title": "Validating the body with the JSON Schema",
@@ -8131,7 +8131,7 @@
         }
       },
       "patternProperties": {
-        "^[@$_#]": {}
+        "^[@$_#]": true
       },
       "additionalProperties": false
     }

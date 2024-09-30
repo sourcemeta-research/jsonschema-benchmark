@@ -1,6 +1,6 @@
 {
   "$id": "https://gitpod.io/schemas/gitpod-schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Gitpod Config",
   "type": "object",
   "properties": {
@@ -264,36 +264,36 @@
           }
         },
         "intellij": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure IntelliJ integration"
+          "description": "Configure IntelliJ integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "goland": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure GoLand integration"
+          "description": "Configure GoLand integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "pycharm": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure PyCharm integration"
+          "description": "Configure PyCharm integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "phpstorm": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure PhpStorm integration"
+          "description": "Configure PhpStorm integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "rubymine": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure RubyMine integration"
+          "description": "Configure RubyMine integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "webstorm": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure WebStorm integration"
+          "description": "Configure WebStorm integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "rider": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure Rider integration"
+          "description": "Configure Rider integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         },
         "clion": {
-          "$ref": "#/definitions/jetbrainsProduct",
-          "description": "Configure CLion integration"
+          "description": "Configure CLion integration",
+          "$ref": "#/$defs/jetbrainsProduct"
         }
       }
     },
@@ -323,7 +323,7 @@
     }
   },
   "additionalProperties": false,
-  "definitions": {
+  "$defs": {
     "jetbrainsProduct": {
       "type": "object",
       "additionalProperties": false,

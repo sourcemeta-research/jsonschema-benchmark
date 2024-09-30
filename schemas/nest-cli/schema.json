@@ -1,8 +1,56 @@
 {
   "$comment": "https://docs.nestjs.com/cli/monorepo#cli-properties",
-  "$id": "#Configuration",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "language": {
+      "type": "string",
+      "default": "ts"
+    },
+    "collection": {
+      "type": "string",
+      "default": "@nestjs/schematics",
+      "description": "Points at the collection of schematics used to generate components. you generally should not change this value."
+    },
+    "sourceRoot": {
+      "type": "string",
+      "default": "src",
+      "description": "Points at the root of the source code for the single project in standard mode structures, or the default project in monorepo mode structures.",
+      "$comment": "https://github.com/nestjs/nest-cli/blob/master/actions/add.action.ts"
+    },
+    "entryFile": {
+      "type": "string",
+      "default": "main",
+      "description": "The entry file where 'nest start' work with. Default to 'main'.",
+      "$comment": "https://github.com/nestjs/nest-cli/blob/master/actions/start.action.ts"
+    },
+    "monorepo": {
+      "type": "boolean",
+      "description": "(monorepo only) For a monorepo mode structure, this value is always true.",
+      "default": false
+    },
+    "root": {
+      "type": "string",
+      "description": "(monorepo only) Points at the project root of the default project.",
+      "default": ""
+    },
+    "compilerOptions": {
+      "$ref": "#/$defs/CompilerOptions"
+    },
+    "generateOptions": {
+      "$ref": "#/$defs/GenerateOptions"
+    },
+    "projects": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/ProjectConfiguration"
+      },
+      "default": {}
+    }
+  },
+  "title": "Nest CLI configuration",
+  "type": "object",
+  "$anchor": "Configuration",
+  "$defs": {
     "CompilerOptions": {
       "type": "object",
       "description": "A map with keys specifying compiler options and values specifying the option setting. See https://docs.nestjs.com/cli/monorepo#global-compiler-options for details",
@@ -112,14 +160,14 @@
           "$comment": "https://docs.nestjs.com/openapi/cli-plugin#using-the-cli-plugin",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PluginItems"
+            "$ref": "#/$defs/PluginItems"
           }
         },
         "assets": {
           "default": [],
           "type": "array",
           "items": {
-            "$ref": "#/definitions/AssetsOptions"
+            "$ref": "#/$defs/AssetsOptions"
           },
           "description": "Enables automatically distributing non-TypeScript assets whenever a compilation step begins (asset distribution does not happen on incremental compiles in --watch mode). Accept glob-like string and object. See https://docs.nestjs.com/cli/monorepo#assets for details.",
           "$comment": "https://docs.nestjs.com/cli/monorepo#assets"
@@ -175,13 +223,13 @@
       "$comment": "https://docs.nestjs.com/cli/monorepo#global-generate-options",
       "properties": {
         "spec": {
-          "$ref": "#/definitions/GenerateSpecOptions"
+          "$ref": "#/$defs/GenerateSpecOptions"
         },
         "flat": {
-          "$ref": "#/definitions/GenerateFlatOptions"
+          "$ref": "#/$defs/GenerateFlatOptions"
         },
         "baseDir": {
-          "$ref": "#/definitions/GenerateBaseDirOptions"
+          "$ref": "#/$defs/GenerateBaseDirOptions"
         }
       },
       "default": {},
@@ -369,10 +417,10 @@
           "type": "string"
         },
         "compilerOptions": {
-          "$ref": "#/definitions/CompilerOptions"
+          "$ref": "#/$defs/CompilerOptions"
         },
         "generateOptions": {
-          "$ref": "#/definitions/GenerateOptions"
+          "$ref": "#/$defs/GenerateOptions"
         }
       },
       "additionalProperties": false
@@ -391,13 +439,13 @@
         "options": {
           "anyOf": [
             {
-              "$ref": "#/definitions/PluginOptions"
+              "$ref": "#/$defs/PluginOptions"
             },
             {
-              "$ref": "#/definitions/GraphQLPluginOptions"
+              "$ref": "#/$defs/GraphQLPluginOptions"
             },
             {
-              "$ref": "#/definitions/SwaggerPluginOptions"
+              "$ref": "#/$defs/SwaggerPluginOptions"
             }
           ]
         }
@@ -466,53 +514,5 @@
         }
       }
     }
-  },
-  "properties": {
-    "language": {
-      "type": "string",
-      "default": "ts"
-    },
-    "collection": {
-      "type": "string",
-      "default": "@nestjs/schematics",
-      "description": "Points at the collection of schematics used to generate components. you generally should not change this value."
-    },
-    "sourceRoot": {
-      "type": "string",
-      "default": "src",
-      "description": "Points at the root of the source code for the single project in standard mode structures, or the default project in monorepo mode structures.",
-      "$comment": "https://github.com/nestjs/nest-cli/blob/master/actions/add.action.ts"
-    },
-    "entryFile": {
-      "type": "string",
-      "default": "main",
-      "description": "The entry file where 'nest start' work with. Default to 'main'.",
-      "$comment": "https://github.com/nestjs/nest-cli/blob/master/actions/start.action.ts"
-    },
-    "monorepo": {
-      "type": "boolean",
-      "description": "(monorepo only) For a monorepo mode structure, this value is always true.",
-      "default": false
-    },
-    "root": {
-      "type": "string",
-      "description": "(monorepo only) Points at the project root of the default project.",
-      "default": ""
-    },
-    "compilerOptions": {
-      "$ref": "#/definitions/CompilerOptions"
-    },
-    "generateOptions": {
-      "$ref": "#/definitions/GenerateOptions"
-    },
-    "projects": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "#/definitions/ProjectConfiguration"
-      },
-      "default": {}
-    }
-  },
-  "title": "Nest CLI configuration",
-  "type": "object"
+  }
 }

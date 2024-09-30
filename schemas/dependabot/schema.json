@@ -1,6 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {},
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "properties": {
     "version": {
       "type": "integer",
@@ -278,5 +277,6 @@
   ],
   "title": "Dependabot configuration file",
   "type": "object",
-  "$id": "https://json.schemastore.org/dependabot.json"
+  "$id": "https://json.schemastore.org/dependabot.json",
+  "$defs": {}
 }

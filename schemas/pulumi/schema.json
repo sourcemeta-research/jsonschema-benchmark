@@ -1,90 +1,6 @@
 {
-  "definitions": {
-    "pluginOptions": {
-      "title": "PluginOptions",
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "name",
-        "path"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name of the plugin"
-        },
-        "path": {
-          "type": "string",
-          "description": "Path to the plugin folder"
-        },
-        "version": {
-          "type": "string",
-          "description": "Version of the plugin, if not set, will match any version the engine requests."
-        }
-      }
-    },
-    "simpleConfigType": {
-      "title": "SimpleConfigType",
-      "enum": [
-        "string",
-        "integer",
-        "boolean",
-        "array"
-      ]
-    },
-    "configItemsType": {
-      "type": "object",
-      "required": [
-        "type"
-      ],
-      "properties": {
-        "type": {
-          "oneOf": [
-            {
-              "$ref": "#/definitions/simpleConfigType"
-            },
-            {
-              "$ref": "#/definitions/configItemsType"
-            }
-          ]
-        },
-        "items": {
-          "$ref": "#/definitions/configItemsType"
-        }
-      },
-      "if": {
-        "properties": {
-          "type": {
-            "const": "array"
-          }
-        }
-      },
-      "then": {}
-    },
-    "configTypeDeclaration": {
-      "title": "ConfigTypeDeclaration",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "type": {
-          "$ref": "#/definitions/simpleConfigType"
-        },
-        "items": {
-          "$ref": "#/definitions/configItemsType"
-        },
-        "description": {
-          "type": "string"
-        },
-        "secret": {
-          "type": "boolean"
-        },
-        "default": {},
-        "value": {}
-      }
-    }
-  },
   "$id": "https://json.schemastore.org/pulumi.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "description": "A schema for Pulumi project files.",
   "properties": {
@@ -182,7 +98,7 @@
             "type": "array"
           },
           {
-            "$ref": "#/definitions/configTypeDeclaration"
+            "$ref": "#/$defs/configTypeDeclaration"
           }
         ]
       }
@@ -292,21 +208,21 @@
           "description": "Plugins for resource providers.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/pluginOptions"
+            "$ref": "#/$defs/pluginOptions"
           }
         },
         "analyzers": {
           "description": "Plugins for policy analyzers.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/pluginOptions"
+            "$ref": "#/$defs/pluginOptions"
           }
         },
         "languages": {
           "description": "Plugins for languages.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/pluginOptions"
+            "$ref": "#/$defs/pluginOptions"
           }
         }
       }
@@ -317,5 +233,89 @@
     "runtime"
   ],
   "title": "Pulumi Project",
-  "type": "object"
+  "type": "object",
+  "$defs": {
+    "pluginOptions": {
+      "title": "PluginOptions",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "path"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the plugin"
+        },
+        "path": {
+          "type": "string",
+          "description": "Path to the plugin folder"
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the plugin, if not set, will match any version the engine requests."
+        }
+      }
+    },
+    "simpleConfigType": {
+      "title": "SimpleConfigType",
+      "enum": [
+        "string",
+        "integer",
+        "boolean",
+        "array"
+      ]
+    },
+    "configItemsType": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/simpleConfigType"
+            },
+            {
+              "$ref": "#/$defs/configItemsType"
+            }
+          ]
+        },
+        "items": {
+          "$ref": "#/$defs/configItemsType"
+        }
+      },
+      "if": {
+        "properties": {
+          "type": {
+            "const": "array"
+          }
+        }
+      },
+      "then": true
+    },
+    "configTypeDeclaration": {
+      "title": "ConfigTypeDeclaration",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/simpleConfigType"
+        },
+        "items": {
+          "$ref": "#/$defs/configItemsType"
+        },
+        "description": {
+          "type": "string"
+        },
+        "secret": {
+          "type": "boolean"
+        },
+        "default": true,
+        "value": true
+      }
+    }
+  }
 }
