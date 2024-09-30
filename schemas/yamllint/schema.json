@@ -1,7 +1,7 @@
 {
   "$comment": "https://yamllint.readthedocs.io/en/stable/configuration.html",
   "$ref": "#/definitions/ignore",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "toggle": {
       "type": "string",
@@ -31,7 +31,6 @@
     }
   },
   "description": "yamllint uses a set of rules to check source files for problems.",
-  "id": "https://json.schemastore.org/yamllint.json",
   "properties": {
     "extends": {
       "title": "Extends",
@@ -80,9 +79,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "non-empty"
-                      ]
+                      "const": "non-empty"
                     }
                   ],
                   "default": false
@@ -139,9 +136,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "non-empty"
-                      ]
+                      "const": "non-empty"
                     }
                   ],
                   "default": false
@@ -469,9 +464,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "consistent"
-                      ]
+                      "const": "consistent"
                     }
                   ],
                   "default": "consistent"
@@ -687,9 +680,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "only-when-needed"
-                      ]
+                      "const": "only-when-needed"
                     }
                   ],
                   "default": true
@@ -799,5 +790,6 @@
     }
   },
   "title": "yamllint",
-  "type": "object"
+  "type": "object",
+  "$id": "https://json.schemastore.org/yamllint.json"
 }
