@@ -1,5 +1,4 @@
 import Ajv from 'ajv';
-import draft4schema from 'ajv/lib/refs/json-schema-draft-04.json' with { type: 'json' };
 import fs from 'fs';
 import readline from 'readline';
 import { performance } from 'perf_hooks';
@@ -31,7 +30,6 @@ async function validateSchema(schemaPath, instancePath) {
     validateSchema: false
   });
 
-  ajv.addMetaSchema(draft4schema);
   const validate = ajv.compile(schema);
 
   const instances = [];
