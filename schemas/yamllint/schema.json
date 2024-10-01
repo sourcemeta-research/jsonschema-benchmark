@@ -1,37 +1,7 @@
 {
   "$comment": "https://yamllint.readthedocs.io/en/stable/configuration.html",
-  "$ref": "#/definitions/ignore",
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "definitions": {
-    "toggle": {
-      "type": "string",
-      "enum": [
-        "enable",
-        "disable"
-      ]
-    },
-    "ignore": {
-      "properties": {
-        "ignore": {
-          "title": "Ignore",
-          "description": "Ignore files, so that the linter doesn't process them.",
-          "type": "string"
-        }
-      }
-    },
-    "allRules": {
-      "$ref": "#/definitions/ignore",
-      "properties": {
-        "level": {
-          "title": "Level",
-          "type": "string",
-          "default": "warning"
-        }
-      }
-    }
-  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "yamllint uses a set of rules to check source files for problems.",
-  "id": "https://json.schemastore.org/yamllint.json",
   "properties": {
     "extends": {
       "title": "Extends",
@@ -62,14 +32,13 @@
           "description": "Use this rule to control the use of flow mappings or number of spaces inside braces ({ and }).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "forbid": {
                   "title": "Forbid",
@@ -80,9 +49,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "non-empty"
-                      ]
+                      "const": "non-empty"
                     }
                   ],
                   "default": false
@@ -111,7 +78,8 @@
                   "type": "number",
                   "default": -1
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -121,14 +89,13 @@
           "description": "Use this rule to control the use of flow sequences or the number of spaces inside brackets ([ and ]).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "forbid": {
                   "title": "Forbid",
@@ -139,9 +106,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "non-empty"
-                      ]
+                      "const": "non-empty"
                     }
                   ],
                   "default": false
@@ -170,7 +135,8 @@
                   "type": "number",
                   "default": -1
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -180,14 +146,13 @@
           "description": "Use this rule to control the number of spaces before and after colons (:).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "max-spaces-before": {
                   "title": "Max Spaces Before",
@@ -201,7 +166,8 @@
                   "type": "number",
                   "default": 1
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -211,14 +177,13 @@
           "description": "Use this rule to control the number of spaces before and after commas (,).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "max-spaces-before": {
                   "title": "Max Spaces Before",
@@ -238,7 +203,8 @@
                   "type": "number",
                   "default": 1
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -248,14 +214,13 @@
           "description": "Use this rule to control the position and formatting of comments.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "require-starting-space": {
                   "title": "Require Starting Space",
@@ -275,7 +240,8 @@
                   "type": "number",
                   "default": 2
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": {
@@ -287,14 +253,14 @@
           "description": "Use this rule to force comments to be indented like content.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules"
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": {
@@ -306,14 +272,13 @@
           "description": "Use this rule to require or forbid the use of document end marker (...).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "present": {
                   "title": "Present",
@@ -321,7 +286,8 @@
                   "type": "boolean",
                   "default": true
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "disable"
@@ -331,14 +297,13 @@
           "description": "Use this rule to require or forbid the use of document start marker (---).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "present": {
                   "title": "Present",
@@ -346,7 +311,8 @@
                   "type": "boolean",
                   "default": true
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": {
@@ -358,14 +324,13 @@
           "description": "Use this rule to set a maximal number of allowed consecutive blank lines.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "max": {
                   "title": "Max",
@@ -385,7 +350,8 @@
                   "type": "number",
                   "default": 0
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -395,14 +361,13 @@
           "description": "Use this rule to prevent nodes with empty content, that implicitly result in null values.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "forbid-in-block-mappings": {
                   "title": "Forbid in Block Mappings",
@@ -416,7 +381,8 @@
                   "type": "boolean",
                   "default": true
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "disable"
@@ -426,14 +392,13 @@
           "description": "Use this rule to control the number of spaces after hyphens (-).",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "max-spaces-after": {
                   "title": "Max Spaces After",
@@ -441,7 +406,8 @@
                   "type": "number",
                   "default": 1
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -451,14 +417,13 @@
           "description": "Use this rule to control the indentation.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "spaces": {
                   "title": "Spaces",
@@ -469,9 +434,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "consistent"
-                      ]
+                      "const": "consistent"
                     }
                   ],
                   "default": "consistent"
@@ -499,7 +462,8 @@
                   "type": "boolean",
                   "default": false
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -509,14 +473,14 @@
           "description": "Use this rule to prevent multiple entries with the same key in mappings.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules"
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -526,14 +490,14 @@
           "description": "Use this rule to enforce alphabetical ordering of keys in mappings.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules"
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "disable"
@@ -543,14 +507,13 @@
           "description": "Use this rule to set a limit to lines length.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "max": {
                   "title": "Max",
@@ -570,7 +533,8 @@
                   "type": "boolean",
                   "default": true
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -580,14 +544,14 @@
           "description": "Use this rule to require a new line character (\n) at the end of files.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules"
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -597,14 +561,13 @@
           "description": "Use this rule to force the type of new line characters.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "type": {
                   "title": "Type",
@@ -617,7 +580,8 @@
                   ],
                   "default": "unix"
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -627,14 +591,13 @@
           "description": "Use this rule to prevent values with octal numbers.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "forbid-implicit-octal": {
                   "title": "Forbid Implicit Octal",
@@ -648,7 +611,8 @@
                   "type": "boolean",
                   "default": true
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "disable"
@@ -658,14 +622,13 @@
           "description": "Use this rule to forbid any string values that are not quoted, or to prevent quoted strings without needing it.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "quote-type": {
                   "title": "Quote Type",
@@ -687,9 +650,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": [
-                        "only-when-needed"
-                      ]
+                      "const": "only-when-needed"
                     }
                   ],
                   "default": true
@@ -714,7 +675,8 @@
                   },
                   "default": []
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "disable"
@@ -724,14 +686,14 @@
           "description": "Use this rule to forbid trailing spaces at the end of lines.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules"
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": "enable"
@@ -741,14 +703,13 @@
           "description": "Use this rule to forbid non-explictly typed truthy values other than allowed ones (by default: true and false), for example YES or off.",
           "anyOf": [
             {
-              "$ref": "#/definitions/toggle"
+              "$ref": "#/$defs/toggle"
             },
             {
               "type": "boolean"
             },
             {
               "type": "object",
-              "$ref": "#/definitions/allRules",
               "properties": {
                 "allowed-values": {
                   "title": "Allowed Values",
@@ -788,7 +749,8 @@
                   "type": "boolean",
                   "default": true
                 }
-              }
+              },
+              "$ref": "#/$defs/allRules"
             }
           ],
           "default": {
@@ -799,5 +761,35 @@
     }
   },
   "title": "yamllint",
-  "type": "object"
+  "type": "object",
+  "$id": "https://json.schemastore.org/yamllint.json",
+  "$defs": {
+    "toggle": {
+      "type": "string",
+      "enum": [
+        "enable",
+        "disable"
+      ]
+    },
+    "ignore": {
+      "properties": {
+        "ignore": {
+          "title": "Ignore",
+          "description": "Ignore files, so that the linter doesn't process them.",
+          "type": "string"
+        }
+      }
+    },
+    "allRules": {
+      "properties": {
+        "level": {
+          "title": "Level",
+          "type": "string",
+          "default": "warning"
+        }
+      },
+      "$ref": "#/$defs/ignore"
+    }
+  },
+  "$ref": "#/$defs/ignore"
 }

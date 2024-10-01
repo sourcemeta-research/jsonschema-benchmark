@@ -1,0 +1,326 @@
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "formats": "all"}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/conf.py", "fail_on_warning": true}, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.11"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}, "formats": []}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "submodules": {"include": "all", "recursive": true}}
+{"version": 2, "submodules": {"include": "all", "exclude": [], "recursive": true}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}, "jobs": {"post_create_environment": ["pip install . -c requirements/runtime-deps.txt -r requirements/doc.in -c requirements/doc.txt"]}}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/source/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "docs/requirements-doc.txt"}, {"method": "pip", "path": "."}]}, "sphinx": {"configuration": "docs/source/conf.py"}}
+{"version": 2, "sphinx": {"builder": "html"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10", "nodejs": "19"}, "jobs": {"post_install": ["npm install -g @mermaid-js/mermaid-cli"]}}, "sphinx": {"configuration": "docs/source/conf.py", "builder": "dirhtml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": ".", "extra_requirements": ["dev"]}]}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}, "jobs": {"post_install": ["pip install poetry", "poetry config virtualenvs.create false", "poetry install --all-extras --only=main,docs"]}}, "sphinx": {"configuration": "docs/conf.py", "builder": "dirhtml"}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10", "nodejs": "18"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "mambaforge-4.10"}, "jobs": {"post_checkout": ["git fetch --unshallow || true"], "pre_install": ["git update-index --assume-unchanged .rtd-environment.yml docs/conf.py"]}}, "conda": {"environment": ".rtd-environment.yml"}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}, "formats": ["htmlzip"], "python": {"install": [{"method": "pip", "extra_requirements": ["all", "docs"], "path": "."}]}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "submodules": {"include": "all"}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"requirements": "doc/requirements.txt"}]}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs", "redis"]}]}, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all"}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "conf.py"}, "formats": [], "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "setuptools", "path": "."}, {"requirements": "requirements_docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10", "nodejs": "18"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements-docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf", "epub"], "python": {"install": [{"requirements": "requirements_dev.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/conda_env.yml"}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "doc/source/conf.py"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "formats": ["pdf", "epub"], "python": {"install": [{"method": "pip", "path": "python"}, {"requirements": "doc/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": ["epub", "pdf"], "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "requirements.txt"}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"pre_create_environment": ["asdf plugin add poetry", "asdf install poetry latest", "asdf global poetry latest", "poetry config virtualenvs.create false"], "post_install": [". \"$(pwd | rev | sed 's/stuokcehc/svne/' | rev)/bin/activate\"\n&& cd '{{cookiecutter.project_name}}'\n&& poetry install --only main --only docs\n"]}}, "sphinx": {"configuration": "{{cookiecutter.project_name}}/docs/conf.py", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/sources/conf.py", "builder": "dirhtml"}, "formats": "all", "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "search": {"ranking": {"components/*": 2, "api/*": -2}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "doc/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}, "apt_packages": ["graphviz"]}, "sphinx": {"configuration": "doc/conf.py"}, "formats": ["htmlzip"], "python": {"install": [{"requirements": "doc/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"pre_create_environment": ["asdf plugin add poetry", "asdf install poetry latest", "asdf global poetry latest", "poetry config virtualenvs.create false"], "post_install": [". \"$(pwd | rev | sed 's/stuokcehc/svne/' | rev)/bin/activate\"\n&& poetry install --only main --only docs\n"]}}, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "conda-reqs/conda-lock-reqs/conda-requirements-riscv-tools-linux-64.conda-lock.yml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}, "apt_packages": ["graphviz"]}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "dirhtml", "configuration": "docs/conf.py"}, "formats": ["pdf", "epub"]}
+{"version": 2, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}, "formats": []}
+{"version": 2, "submodules": {"include": "all", "recursive": true}}
+{"version": 2, "submodules": {"include": "all", "recursive": true}}
+{"version": 2, "submodules": {"include": "all", "recursive": true}}
+{"version": 2, "submodules": {"include": "all", "recursive": true}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}, "jobs": {"post_install": ["pip install poetry", "poetry config virtualenvs.create false", "poetry install --all-extras --only=main,docs"]}}, "sphinx": {"configuration": "docs/conf.py", "builder": "dirhtml"}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "setuptools", "path": "."}, {"requirements": "requirements_docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "setuptools", "path": "."}, {"requirements": "requirements_docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "setuptools", "path": "."}, {"requirements": "requirements_docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "setuptools", "path": "."}, {"requirements": "requirements_docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/conda_env.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/conda_env.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/conda_env.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/conda_env.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"pre_create_environment": ["asdf plugin add poetry", "asdf install poetry latest", "asdf global poetry latest", "poetry config virtualenvs.create false"], "post_install": [". \"$(pwd | rev | sed 's/stuokcehc/svne/' | rev)/bin/activate\"\n&& cd '{{cookiecutter.project_name}}'\n&& poetry install --only main --only docs\n"]}}, "sphinx": {"configuration": "{{cookiecutter.project_name}}/docs/conf.py", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"pre_create_environment": ["asdf plugin add poetry", "asdf install poetry latest", "asdf global poetry latest", "poetry config virtualenvs.create false"], "post_install": [". \"$(pwd | rev | sed 's/stuokcehc/svne/' | rev)/bin/activate\"\n&& cd '{{cookiecutter.project_name}}'\n&& poetry install --only main --only docs\n"]}}, "sphinx": {"configuration": "{{cookiecutter.project_name}}/docs/conf.py", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"pre_create_environment": ["asdf plugin add poetry", "asdf install poetry latest", "asdf global poetry latest", "poetry config virtualenvs.create false"], "post_install": [". \"$(pwd | rev | sed 's/stuokcehc/svne/' | rev)/bin/activate\"\n&& cd '{{cookiecutter.project_name}}'\n&& poetry install --only main --only docs\n"]}}, "sphinx": {"configuration": "{{cookiecutter.project_name}}/docs/conf.py", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/sources/conf.py", "builder": "dirhtml"}, "formats": "all", "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "search": {"ranking": {"components/*": 2, "api/*": -2}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/sources/conf.py", "builder": "dirhtml"}, "formats": "all", "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "search": {"ranking": {"components/*": 2, "api/*": -2}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "conda-reqs/conda-lock-reqs/conda-requirements-riscv-tools-linux-64.conda-lock.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "conda-reqs/conda-lock-reqs/conda-requirements-riscv-tools-linux-64.conda-lock.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "conda-reqs/conda-lock-reqs/conda-requirements-riscv-tools-linux-64.conda-lock.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "conda-reqs/conda-lock-reqs/conda-requirements-riscv-tools-linux-64.conda-lock.yml"}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}, "jobs": {"post_checkout": ["git fetch --unshallow"], "pre_install": ["git update-index --assume-unchanged docs/requirements.txt docs/source/conf.py"], "pre_build": ["python -m pip install --no-deps --no-cache-dir --editable ."]}, "apt_packages": ["graphviz", "default-jre"]}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "formats": ["epub", "pdf", "htmlzip"]}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"method": "setuptools", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}, "apt_packages": ["gfortran"]}, "conda": {"environment": "docs/environment.yml"}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"method": "pip", "path": "."}]}, "submodules": {"include": "all"}}
+{"version": 2, "sphinx": {"builder": "html"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3", "rust": "1.61"}}, "formats": "all", "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}, "jobs": {"post_create_environment": ["pip install poetry", "poetry config virtualenvs.create false"], "post_install": ["poetry install --with docs"]}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "course/source/conf.py"}, "conda": {"environment": "environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "conda": {"environment": "conda_env/devtools/rtd_env.yml"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "devtools/conda-envs/test_env.yaml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}, "formats": "all", "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"requirements": "doc/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all"}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "formats": [], "conda": {"environment": "ci/requirements-py36-netcdf4-dev.yml"}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"requirements": "ci_build_requirements.txt"}, {"requirements": "doc/requirements.txt"}, {"requirements": "requirements-dev.txt"}, {"method": "pip", "path": "."}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}, "apt_packages": ["cmake", "build-essential", "libopenblas-base", "libopenblas-dev", "graphviz"], "jobs": {"pre_install": ["echo \"setuptools~=66.0\\npip~=22.0\" >> ci_build_requirements.txt"], "post_install": ["PL_BACKEND=\"lightning_kokkos\" pip install -e . -vv"]}}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": ["pdf"], "conda": {"environment": "conda-env/ci.yml"}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["dev", "docs"]}]}, "sphinx": {"builder": "dirhtml"}}
+{"version": 2, "build": {"image": "latest"}, "python": {"version": "3.7", "install": [{"requirements": "requirements.txt"}]}, "mkdocs": {"configuration": "mkdocs.yml", "fail_on_warning": false}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "source/conf.py"}, "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "version": 2}
+{"version": 2, "build": {"image": "latest"}, "conda": {"environment": "ci/requirements/doc.yml"}, "sphinx": {"fail_on_warning": true}, "formats": []}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}, {"path": "."}]}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "fail_on_warning": true}, "formats": ["epub", "pdf"]}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"requirements": "requirements.txt"}, {"method": "setuptools", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py", "fail_on_warning": true}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "formats": ["htmlzip", "epub"], "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "formats": "all", "python": {"version": "3.8"}, "sphinx": {"builder": "html", "configuration": "docs/conf.py"}, "submodules": {"include": "all"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "apt_packages": ["pandoc"]}, "sphinx": {"builder": "html", "configuration": "docs/source/conf.py", "fail_on_warning": false}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "formats": ["htmlzip", "pdf"]}
+{"version": 2, "conda": {"environment": "environment.docs.yaml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "mkdocs": {"configuration": ".mkdocs.yml"}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.11"}, "commands": ["./bin/rtd-docs"]}}
+{"version": 2, "mkdocs": {"configuration": "docs/mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}, "python": {"install": [{"requirements": "requirements_docs.txt"}, {"requirements": "requirements.txt"}, {"method": "setuptools", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/conf.py", "fail_on_warning": true}, "formats": ["htmlzip"], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "setuptools", "path": "."}]}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "doc/conf.py"}, "formats": "all", "submodules": {"include": "all", "recursive": true}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "python": {"install": [{"requirements": "requirements-dev.txt"}, {"method": "pip", "path": ".[docs]"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "python": {"install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs/source/requirements.txt"}]}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.7"}}, "submodules": {"exclude": "all", "recursive": false}, "sphinx": {"configuration": "docs/conf.py"}, "formats": [], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "python": {"version": "3", "install": [{"method": "pip", "path": ".", "extra_requirements": ["build"]}]}, "sphinx": {"fail_on_warning": true}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "client/docs/conf.py"}, "python": {"install": [{"requirements": "client/docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml", "fail_on_warning": false}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["visualize", "dev"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf"], "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "doc/source/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "mkdocs": {"configuration": "mkdocs.yml"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/local.txt"}]}}
+{"version": 2, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"requirements": "doc/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "conda": {"environment": "docs/environment.yaml"}, "sphinx": {"builder": "html", "configuration": "docs/source/conf.py", "fail_on_warning": false}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "conda": {"environment": "doc/environment.yml"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}, "jobs": {"post_checkout": ["git fetch --depth 1000"], "post_install": ["pip list"]}}}
+{"version": 2, "conda": {"environment": "ci/environment-docs.yml"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/source/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py", "builder": "html", "fail_on_warning": true}, "python": {"version": "3.8", "install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "environment.yml"}}
+{"build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "version": 2}
+{"build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "version": 2}
+{"build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "version": 2}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "mkdocs": {"configuration": ".mkdocs.yml"}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "docs/mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "docs/mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "docs/mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "docs/mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}, "python": {"install": [{"requirements": "requirements_docs.txt"}, {"requirements": "requirements.txt"}, {"method": "setuptools", "path": "."}]}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "fail_on_warning": true}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.7"}}, "submodules": {"exclude": "all", "recursive": false}, "sphinx": {"configuration": "docs/conf.py"}, "formats": [], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/local.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/local.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/local.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/local.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "doc/source/conf.py"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["develop"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "conda": {"environment": "docs/environment.yml"}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3"}}, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "conda": {"environment": "ci/environment-docs.yml"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["htmlzip", "epub", "pdf"], "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf"], "python": {"version": "3.8", "install": [{"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"requirements": "doc/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}, "jobs": {"post_create_environment": ["pip install poetry", "poetry config virtualenvs.create false"], "post_install": ["poetry install --with docs"]}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "environment.yaml"}, "sphinx": {"configuration": "source/conf.py"}}
+{"version": 2, "sphinx": {"configuration": "docs/docs_sphinx/conf.py"}, "formats": ["pdf", "epub"]}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"post_install": ["pip install poetry", "poetry config virtualenvs.create false", "poetry install --only docs"]}}, "sphinx": {"builder": "dirhtml", "configuration": "docs/conf.py", "fail_on_warning": false}}
+{"version": 2, "conda": {"environment": ".rtd-environment.yml"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": ["pdf"], "python": {"version": "3.8", "install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/docs_requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}, "jobs": {"pre_install": ["pip install git+https://github.com/angr/archinfo.git", "pip install git+https://github.com/angr/pyvex.git"]}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "mkdocs": {"configuration": "mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/environment.yml"}, "submodules": {"include": "all"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "apt_packages": ["graphviz"], "tools": {"python": "3.10"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs", "all"]}]}, "formats": []}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py", "builder": "html", "fail_on_warning": true}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": [], "sphinx": {"configuration": "docs/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"requirements": "requirements-docs.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf"], "python": {"version": "3.8", "install": [{"requirements": "requirements.readthedocs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "python": {"install": [{"method": "pip", "path": "."}]}, "conda": {"environment": "devtools/conda-envs/docs_env.yml"}, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "formats": ["epub"], "sphinx": {"configuration": "docs/conf.py"}, "submodules": {"exclude": "all"}}
+{"version": 2, "build": {"image": "latest"}, "python": {"version": "3.8", "install": [{"requirements": "requirements-doc.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "./requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/docs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["auth", "docs"]}]}, "sphinx": {"builder": "html", "fail_on_warning": true}}
+{"version": 2, "mkdocs": {"configuration": ".mkdocs.yml"}, "formats": ["pdf", "epub"], "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf", "epub"], "python": {"version": "3.7", "install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "conf.py"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "sphinx": {"configuration": "python/docs/conf.py"}, "python": {"install": [{"requirements": "requirements-readthedocs.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "mkdocs": {}, "python": {"install": [{"path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "conda": {"environment": "docs_env.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "requirements.txt"}, {"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}, "jobs": {"post_create_environment": ["pip install poetry", "poetry config virtualenvs.create false"], "post_install": ["poetry install --with docs"]}}, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}, "apt_packages": ["graphviz"]}, "sphinx": {"builder": "html", "configuration": "docs/source/conf.py", "fail_on_warning": true}, "formats": [], "python": {"install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs_requirements.txt"}]}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "docs/srbpy-doc/source/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"conda": {"environment": "docs/environment.yml"}, "version": 2, "build": {"image": "stable"}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "python": {"install": [{"method": "setuptools", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"path": ".", "method": "pip"}, {"requirements": "requirements-docs.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all"}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "python": {"install": [{"method": "setuptools", "path": "."}]}, "conda": {"environment": "devtools/conda-envs/docs_env.yaml"}, "formats": ["pdf"]}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf"], "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}, "jobs": {"post_install": ["pip install poetry", "poetry config virtualenvs.create false", "poetry install --only dev"]}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8", "nodejs": "16"}}, "sphinx": {"builder": "dirhtml", "configuration": "docs/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "python": {"install": [{"requirements": "doc/requirements-rtfd.txt"}, {"requirements": "requirements-dev.txt"}, {"method": "pip", "path": ".", "extra_requirements": ["midi", "ui"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}, "jobs": {"pre_build": ["rm -rf docs/source/api", "sphinx-apidoc --private --module-first --force --output-dir docs/source/api src/pylegendgeom src/pylegendgeom/_version.py"]}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all"}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "docs/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": [], "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": "."}, {"requirements": "docs/requirements.txt"}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3"}}, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["htmlzip", "epub", "pdf"], "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "apt_packages": ["graphviz"], "tools": {"python": "3.10"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs", "all"]}]}, "formats": []}
+{"version": 2, "build": {"os": "ubuntu-20.04", "apt_packages": ["graphviz"], "tools": {"python": "3.10"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs", "all"]}]}, "formats": []}
+{"version": 2, "build": {"os": "ubuntu-20.04", "apt_packages": ["graphviz"], "tools": {"python": "3.10"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": true}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs", "all"]}]}, "formats": []}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "requirements/docs.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf", "epub"], "python": {"version": "3.7", "install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf", "epub"], "python": {"version": "3.7", "install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2}
+{"version": 2}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"path": ".", "method": "pip"}, {"requirements": "requirements-docs.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": [], "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}}
+{"version": 2, "formats": "all", "mkdocs": {"fail_on_warning": false}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.7"}}}
+{"version": 2, "sphinx": {"configuration": "docs/sphinx/conf.py"}, "formats": "all", "submodules": {"exclude": "all"}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}, "jobs": {"post_checkout": ["git fetch --unshallow || true"]}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": "."}, {"method": "pip", "path": "./clients/python"}]}}
+{"version": 2, "python": {"install": [{"requirements": "docs-requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "conf.py"}, "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "conf.py"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "conda": {"environment": "ci/doc.yml"}, "python": {"install": [{"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "submodules": {"include": ["PVGeo"], "recursive": true}, "python": {"install": [{"requirements": "./requirements.txt"}]}, "sphinx": {"configuration": "./conf.py", "builder": "html", "fail_on_warning": false}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "conda": {"environment": "docs/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"requirements": "requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "fail_on_warning": false}}
+{"version": 2, "python": {"install": [{"method": "pip", "path": "."}]}, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "apt_packages": ["inkscape"]}, "formats": ["epub", "pdf", "htmlzip"]}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "doc-source/conf.py"}, "formats": ["pdf", "htmlzip"], "python": {"install": [{"requirements": "requirements.txt"}, {"requirements": "doc-source/requirements.txt"}, {"requirements": "chemistry_tools/formulae/requirements.txt"}, {"requirements": "chemistry_tools/pubchem/requirements.txt"}]}, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "jobs": {"post_create_environment": ["pip install .[all]"]}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "sphinx": {"configuration": "conf.py"}, "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "submodules": {"exclude": "all"}}
+{"version": 2, "sphinx": {"configuration": "source/conf.py"}, "formats": "all"}
+{"version": 2, "mkdocs": {"configuration": "mkdocs.yml"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.11"}}, "sphinx": {"fail_on_warning": true, "configuration": "docs/conf.py"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc", "leiden"]}]}}
+{"version": 2, "submodules": {"include": "all"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "requirements.txt"}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "pip", "path": "."}, {"requirements": "requirements.txt"}, {"method": "pip", "path": "./thermosteam"}]}, "submodules": {"include": ["thermosteam"]}, "sphinx": {"configuration": "docs/conf.py"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3"}}, "sphinx": {"configuration": "docs/conf.py", "builder": "dirhtml"}, "formats": "all", "python": {"install": [{"path": ".", "method": "pip"}, {"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": ["htmlzip", "pdf"], "conda": {"environment": "docs/environment_docs.yml"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all", "python": {"version": "3.7", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}, "apt_packages": ["graphviz"]}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["dev"]}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"sphinx": {"configuration": "docs/conf.py"}, "version": 2, "conda": {"environment": "environment.yaml"}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "formats": "all"}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "3", "nodejs": "16"}}, "formats": "all", "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "./python"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}, "jobs": {"post_install": ["curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -", "VIRTUAL_ENV=$(dirname $(dirname $(which python))) $HOME/.local/bin/pdm sync --no-isolation -G viz -dG docs"]}}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}, "sphinx": {"builder": "html", "configuration": "docs/conf.py", "fail_on_warning": false}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "conda": {"environment": "docs/rtd-env.yml"}, "python": {"install": [{"method": "setuptools", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": ["pdf"], "python": {"install": [{"requirements": "docs/source/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "sphinx/source/conf.py"}, "python": {"install": [{"requirements": "sphinx/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "mkdocs-env.yml"}, "mkdocs": {"configuration": "mkdocs.yml", "fail_on_warning": false}}
+{"version": 2, "formats": ["htmlzip"], "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"requirements": "requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "formats": [], "build": {"image": "latest"}, "sphinx": {"configuration": "docs/conf.py", "fail_on_warning": false, "builder": "html"}, "python": {"version": "3.8", "install": [{"method": "pip", "path": ".", "extra_requirements": ["docs", "sphinx_rtd_dark_mode"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}, "jobs": {"pre_build": ["docs/run_apidoc.sh"]}}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "formats": "all", "conda": {"environment": "environment.yml"}, "build": {"image": "stable"}}
+{"version": 2, "sphinx": {"configuration": "doc/conf.py"}, "formats": [], "python": {"install": [{"requirements": "doc/requirements.txt"}, {"method": "pip", "path": ".", "extra_requirements": ["dnssec", "idna", "doh"]}]}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "sphinx": {"configuration": "doc/conf.py"}, "python": {"install": [{"requirements": "doc/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py", "fail_on_warning": true}, "formats": "all", "build": {"os": "ubuntu-22.04", "tools": {"python": "mambaforge-4.10"}}, "conda": {"environment": "continuous_integration/environment.yaml"}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.9"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "submodules": {"include": "all", "recursive": true}, "sphinx": {"configuration": "docs/source/conf.py", "fail_on_warning": true}, "formats": ["htmlzip"], "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}, "apt_packages": ["texlive-latex-extra", "dvipng", "texlive-pictures"]}, "python": {"install": [{"requirements": "requirements/docs.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["doc"]}]}, "mkdocs": {"configuration": "mkdocs.yml", "fail_on_warning": false}}
+{"version": 2, "sphinx": {"configuration": "package/doc/sphinx/source/conf.py"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}, "python": {"install": [{"method": "pip", "path": "package"}]}, "conda": {"environment": "maintainer/conda/environment.yml"}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.8"}}, "sphinx": {"configuration": "docs/conf.py"}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "docs/conf.py"}}
+{"version": 2, "formats": "all", "build": {"os": "ubuntu-20.04", "tools": {"python": "3.9"}}, "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
+{"version": 2, "formats": "all", "sphinx": {"configuration": "docs/source/conf.py"}, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.10"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "build": {"os": "ubuntu-22.04", "tools": {"python": "3.11"}}, "python": {"install": [{"requirements": "docs/requirements.txt"}]}}
+{"version": 2, "sphinx": {"configuration": "docs/conf.py", "fail_on_warning": true}, "conda": {"environment": "environment-docs.yml"}}
+{"version": 2, "sphinx": {"configuration": "docs/source/conf.py"}, "python": {"version": "3.8", "install": [{"requirements": "docs/requirements.txt"}, {"requirements": "requirements.txt"}, {"method": "pip", "path": "."}]}}
+{"version": 2, "sphinx": {"builder": "html", "configuration": "docs/source/conf.py"}, "python": {"install": [{"path": ".", "method": "setuptools"}]}, "conda": {"environment": "conda/environment.yml"}, "build": {"os": "ubuntu-20.04", "tools": {"python": "mambaforge-4.10"}}}
+{"version": 2, "formats": ["pdf"], "python": {"install": [{"method": "pip", "path": ".", "extra_requirements": ["docs"]}]}}
