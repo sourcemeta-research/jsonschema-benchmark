@@ -1,5 +1,5 @@
 {
-  "$defs": {
+  "definitions": {
     "AIXPlatformModel": {
       "properties": {
         "name": {
@@ -292,7 +292,7 @@
           "type": "string"
         },
         "when": {
-          "$ref": "#/$defs/complex_conditional",
+          "$ref": "#/definitions/complex_conditional",
           "title": "When"
         }
       },
@@ -571,7 +571,7 @@
           "type": "string"
         },
         "platforms": {
-          "$ref": "#/$defs/platforms"
+          "$ref": "#/definitions/platforms"
         },
         "role_name": {
           "minLength": 2,
@@ -1395,139 +1395,139 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/$defs/AIXPlatformModel"
+            "$ref": "#/definitions/AIXPlatformModel"
           },
           {
-            "$ref": "#/$defs/AlpinePlatformModel"
+            "$ref": "#/definitions/AlpinePlatformModel"
           },
           {
-            "$ref": "#/$defs/AmazonPlatformModel"
+            "$ref": "#/definitions/AmazonPlatformModel"
           },
           {
-            "$ref": "#/$defs/AmazonLinuxPlatformModel"
+            "$ref": "#/definitions/AmazonLinuxPlatformModel"
           },
           {
-            "$ref": "#/$defs/aosPlatformModel"
+            "$ref": "#/definitions/aosPlatformModel"
           },
           {
-            "$ref": "#/$defs/ArchLinuxPlatformModel"
+            "$ref": "#/definitions/ArchLinuxPlatformModel"
           },
           {
-            "$ref": "#/$defs/ClearLinuxPlatformModel"
+            "$ref": "#/definitions/ClearLinuxPlatformModel"
           },
           {
-            "$ref": "#/$defs/CumulusPlatformModel"
+            "$ref": "#/definitions/CumulusPlatformModel"
           },
           {
-            "$ref": "#/$defs/NetBSDPlatformModel"
+            "$ref": "#/definitions/NetBSDPlatformModel"
           },
           {
-            "$ref": "#/$defs/DebianPlatformModel"
+            "$ref": "#/definitions/DebianPlatformModel"
           },
           {
-            "$ref": "#/$defs/DellOSPlatformModel"
+            "$ref": "#/definitions/DellOSPlatformModel"
           },
           {
-            "$ref": "#/$defs/DevuanPlatformModel"
+            "$ref": "#/definitions/DevuanPlatformModel"
           },
           {
-            "$ref": "#/$defs/DragonFlyBSDPlatformModel"
+            "$ref": "#/definitions/DragonFlyBSDPlatformModel"
           },
           {
-            "$ref": "#/$defs/ELPlatformModel"
+            "$ref": "#/definitions/ELPlatformModel"
           },
           {
-            "$ref": "#/$defs/eosPlatformModel"
+            "$ref": "#/definitions/eosPlatformModel"
           },
           {
-            "$ref": "#/$defs/FedoraPlatformModel"
+            "$ref": "#/definitions/FedoraPlatformModel"
           },
           {
-            "$ref": "#/$defs/FreeBSDPlatformModel"
+            "$ref": "#/definitions/FreeBSDPlatformModel"
           },
           {
-            "$ref": "#/$defs/GenericBSDPlatformModel"
+            "$ref": "#/definitions/GenericBSDPlatformModel"
           },
           {
-            "$ref": "#/$defs/GenericLinuxPlatformModel"
+            "$ref": "#/definitions/GenericLinuxPlatformModel"
           },
           {
-            "$ref": "#/$defs/GenericUNIXPlatformModel"
+            "$ref": "#/definitions/GenericUNIXPlatformModel"
           },
           {
-            "$ref": "#/$defs/GentooPlatformModel"
+            "$ref": "#/definitions/GentooPlatformModel"
           },
           {
-            "$ref": "#/$defs/HardenedBSDPlatformModel"
+            "$ref": "#/definitions/HardenedBSDPlatformModel"
           },
           {
-            "$ref": "#/$defs/IOSPlatformModel"
+            "$ref": "#/definitions/IOSPlatformModel"
           },
           {
-            "$ref": "#/$defs/JunosPlatformModel"
+            "$ref": "#/definitions/JunosPlatformModel"
           },
           {
-            "$ref": "#/$defs/KaliPlatformModel"
+            "$ref": "#/definitions/KaliPlatformModel"
           },
           {
-            "$ref": "#/$defs/macOSPlatformModel"
+            "$ref": "#/definitions/macOSPlatformModel"
           },
           {
-            "$ref": "#/$defs/MacOSXPlatformModel"
+            "$ref": "#/definitions/MacOSXPlatformModel"
           },
           {
-            "$ref": "#/$defs/MageiaPlatformModel"
+            "$ref": "#/definitions/MageiaPlatformModel"
           },
           {
-            "$ref": "#/$defs/NXOSPlatformModel"
+            "$ref": "#/definitions/NXOSPlatformModel"
           },
           {
-            "$ref": "#/$defs/OpenBSDPlatformModel"
+            "$ref": "#/definitions/OpenBSDPlatformModel"
           },
           {
-            "$ref": "#/$defs/opensusePlatformModel"
+            "$ref": "#/definitions/opensusePlatformModel"
           },
           {
-            "$ref": "#/$defs/OpenWrtPlatformModel"
+            "$ref": "#/definitions/OpenWrtPlatformModel"
           },
           {
-            "$ref": "#/$defs/OracleLinuxPlatformModel"
+            "$ref": "#/definitions/OracleLinuxPlatformModel"
           },
           {
-            "$ref": "#/$defs/os10PlatformModel"
+            "$ref": "#/definitions/os10PlatformModel"
           },
           {
-            "$ref": "#/$defs/PAN-OSPlatformModel"
+            "$ref": "#/definitions/PAN-OSPlatformModel"
           },
           {
-            "$ref": "#/$defs/SLESPlatformModel"
+            "$ref": "#/definitions/SLESPlatformModel"
           },
           {
-            "$ref": "#/$defs/SmartOSPlatformModel"
+            "$ref": "#/definitions/SmartOSPlatformModel"
           },
           {
-            "$ref": "#/$defs/SolarisPlatformModel"
+            "$ref": "#/definitions/SolarisPlatformModel"
           },
           {
-            "$ref": "#/$defs/SynologyPlatformModel"
+            "$ref": "#/definitions/SynologyPlatformModel"
           },
           {
-            "$ref": "#/$defs/TMOSPlatformModel"
+            "$ref": "#/definitions/TMOSPlatformModel"
           },
           {
-            "$ref": "#/$defs/UbuntuPlatformModel"
+            "$ref": "#/definitions/UbuntuPlatformModel"
           },
           {
-            "$ref": "#/$defs/vCenterPlatformModel"
+            "$ref": "#/definitions/vCenterPlatformModel"
           },
           {
-            "$ref": "#/$defs/Void_LinuxPlatformModel"
+            "$ref": "#/definitions/Void_LinuxPlatformModel"
           },
           {
-            "$ref": "#/$defs/vSpherePlatformModel"
+            "$ref": "#/definitions/vSpherePlatformModel"
           },
           {
-            "$ref": "#/$defs/WindowsPlatformModel"
+            "$ref": "#/definitions/WindowsPlatformModel"
           }
         ]
       },
@@ -1600,17 +1600,17 @@
       "type": "boolean"
     },
     "collections": {
-      "$ref": "#/$defs/collections"
+      "$ref": "#/definitions/collections"
     },
     "dependencies": {
       "items": {
-        "$ref": "#/$defs/DependencyModel"
+        "$ref": "#/definitions/DependencyModel"
       },
       "title": "Dependencies",
       "type": "array"
     },
     "galaxy_info": {
-      "$ref": "#/$defs/GalaxyInfoModel"
+      "$ref": "#/definitions/GalaxyInfoModel"
     }
   },
   "title": "Ansible Meta Schema v1/v2",
