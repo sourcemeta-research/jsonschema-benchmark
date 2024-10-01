@@ -169,3 +169,20 @@ dist/results/jsoncons/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/jsoncons
 	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
+
+# SCHEMASAFE
+
+implementations/schemasafe/.dockertimestamp: \
+	implementations/schemasafe/main.mjs \
+	implementations/schemasafe/package.json \
+	implementations/schemasafe/package-lock.json \
+	implementations/schemasafe/Dockerfile
+	docker build -t jsonschema-benchmark/schemasafe implementations/schemasafe
+	touch $@
+
+dist/results/schemasafe/%: \
+	implementations/schemasafe/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/schemasafe
+	@$(call docker_run,schemasafe,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
