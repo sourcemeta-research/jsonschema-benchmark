@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "title": "Product Catalog",
   "description": "A schema for a simplified e-commerce product catalog",
@@ -49,8 +49,7 @@
           },
           "price": {
             "type": "number",
-            "minimum": 0,
-            "exclusiveMinimum": true
+            "exclusiveMinimum": 0
           },
           "category": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
   "title": "JSON schema for the https://cypress.io Test Runner's configuration file. Details at https://on.cypress.io/configuration",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "definitions": {
     "cypressConfig": {

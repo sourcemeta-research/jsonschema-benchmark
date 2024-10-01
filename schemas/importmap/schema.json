@@ -1,7 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
-  "id": "https://json.schemastore.org/importmap.json",
   "properties": {
     "imports": {
       "description": "The Imports field",
@@ -22,5 +21,6 @@
     }
   },
   "title": "JSON schema for Import Maps files",
-  "type": "object"
+  "type": "object",
+  "$id": "https://json.schemastore.org/importmap.json"
 }

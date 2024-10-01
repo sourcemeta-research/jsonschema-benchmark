@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -260,9 +260,7 @@
                     "type": {
                       "description": "The type of request element to check",
                       "type": "string",
-                      "enum": [
-                        "host"
-                      ]
+                      "const": "host"
                     },
                     "value": {
                       "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -320,9 +318,7 @@
                     "type": {
                       "description": "The type of request element to check",
                       "type": "string",
-                      "enum": [
-                        "host"
-                      ]
+                      "const": "host"
                     },
                     "value": {
                       "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -518,9 +514,7 @@
                     "type": {
                       "description": "The type of request element to check",
                       "type": "string",
-                      "enum": [
-                        "host"
-                      ]
+                      "const": "host"
                     },
                     "value": {
                       "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -578,9 +572,7 @@
                     "type": {
                       "description": "The type of request element to check",
                       "type": "string",
-                      "enum": [
-                        "host"
-                      ]
+                      "const": "host"
                     },
                     "value": {
                       "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -677,9 +669,7 @@
                     "type": {
                       "description": "The type of request element to check",
                       "type": "string",
-                      "enum": [
-                        "host"
-                      ]
+                      "const": "host"
                     },
                     "value": {
                       "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -737,9 +727,7 @@
                     "type": {
                       "description": "The type of request element to check",
                       "type": "string",
-                      "enum": [
-                        "host"
-                      ]
+                      "const": "host"
                     },
                     "value": {
                       "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -921,9 +909,7 @@
                         "type": {
                           "description": "The type of request element to check",
                           "type": "string",
-                          "enum": [
-                            "host"
-                          ]
+                          "const": "host"
                         },
                         "value": {
                           "description": "A regular expression used to match the value. Named groups can be used in the destination",
@@ -981,9 +967,7 @@
                         "type": {
                           "description": "The type of request element to check",
                           "type": "string",
-                          "enum": [
-                            "host"
-                          ]
+                          "const": "host"
                         },
                         "value": {
                           "description": "A regular expression used to match the value. Named groups can be used in the destination",

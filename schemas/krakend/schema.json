@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Schema validation for KrakenD",
   "type": "object",
   "required": [
@@ -272,7 +272,7 @@
   "additionalProperties": false,
   "definitions": {
     "https://www.krakend.io/schema/v2.7/async/amqp.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Async AMQP Driver",
       "description": "The Async AMQP component enables the AMQP driver for the Async functionality.\n\nSee: https://www.krakend.io/docs/async/amqp/",
       "type": "object",
@@ -353,7 +353,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/async_agent.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Async Agents",
       "description": "Async agents are routines listening to queues or PubSub systems that react to new events and push data to your backends. Through async agents, you can start a lot of consumers to process your events autonomously.\n\nSee: https://www.krakend.io/docs/async/",
       "type": "array",
@@ -482,7 +482,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/api-keys.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "API-key Authentication",
       "description": "Enterprise only. Enables a Role-Based Access Control (RBAC) mechanism by reading the `Authorization` header of incoming requests.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/api-keys/",
       "type": "object",
@@ -572,7 +572,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/basic.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "description": "Enterprise only. The Basic Authentication component protects the access to selected endpoints using basic username and password credentials.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/basic-authentication/",
       "type": "object",
       "properties": {
@@ -608,7 +608,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/client-credentials.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "OAuth2 client-credentials",
       "description": "2-legged OAuth2 flow: Request to your authorization server an access token to reach protected resources.\n\nSee: https://www.krakend.io/docs/authorization/client-credentials/",
       "type": "object",
@@ -666,7 +666,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/gcp.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "GCP Authentication",
       "description": "Enterprise only. Enables GCP authentication between KrakenD and Google Cloud service account.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/gcp/",
       "type": "object",
@@ -737,7 +737,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/jose.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Shared JWK cache",
       "description": "Enables global configurations for the HTTP client responsible of downloading and caching the JWK URLs for token validation and signing.",
       "type": "object",
@@ -757,7 +757,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/ntlm.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "NTLM Authentication",
       "description": "Enterprise only. Enables NTLM authentication between KrakenD and a Microsoft server such as Dynamics.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/ntlm/",
       "type": "object",
@@ -789,7 +789,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/revoker.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Revoke Server",
       "description": "The API Gateway authorizes users that provide valid tokens according to your criteria, but at some point, you might want to change your mind and decide to revoke JWT tokens that are still valid.",
       "type": "object",
@@ -889,7 +889,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/signer.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "JWT signer",
       "description": "creates a wrapper for your login endpoint that signs with your secret key the selected fields of the backend payload right before returning the content to the end-user.\n\nSee: https://www.krakend.io/docs/authorization/jwt-signing/",
       "type": "object",
@@ -1065,7 +1065,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/auth/validator.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "JWT validator",
       "description": "Protect endpoints from public usage by validating JWT tokens generated by any industry-standard OpenID Connect (OIDC) integration.\n\nSee: https://www.krakend.io/docs/authorization/jwt-validation/",
       "type": "object",
@@ -1197,6 +1197,17 @@
           "description": "When true, disables security of the JWK client and allows insecure connections (plain HTTP) to download the keys. Useful for development environments.\n\nSee: https://www.krakend.io/docs/authorization/jwt-validation/",
           "default": false,
           "type": "boolean"
+        },
+        "failed_jwk_key_cooldown": {
+          "title": "Failed JWK Key cooldown",
+          "description": "When a request comes with a token declaring an unknown `kid` (or the key strategy you choose), and the JWK is in a remote destination, KrakenD downloads the JWK from the Identity Provider for its recognition. Suppose there is a network failure, or the key is not in the list (e.g., you rotated the keys without anticipation). In that case, you can tell the gateway not to contact the Identity Provider again during the time specified here. We recommend setting this value, even with a low time (e.g., `10s`), to prevent misconfigurations from hammering your Identity Providers. Any values under one second are ignored.\n\nSee: https://www.krakend.io/docs/authorization/jwt-validation/",
+          "examples": [
+            "1m",
+            "10s",
+            "1h"
+          ],
+          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1timeunits.json/$defs/timeunit",
+          "type": "string"
         },
         "issuer": {
           "title": "Issuer",
@@ -1339,7 +1350,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Backend Object",
       "description": "A backend object is an array of all the services that an endpoint connects to. It defines the list of hostnames that connects to and the URL to send or receive the data.",
       "type": "object",
@@ -1520,7 +1531,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/amqp/consumer.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "AMQP Consumer",
       "description": "The AMQP component allows to send and receive messages to and from a queue through the API Gateway.\n\nSee: https://www.krakend.io/docs/backends/amqp-consumer/",
       "type": "object",
@@ -1616,7 +1627,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/amqp/producer.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "AMQP Producer",
       "description": "Send messages to a queue through the API Gateway.\n\nSee: https://www.krakend.io/docs/backends/amqp-producer/",
       "type": "object",
@@ -1740,7 +1751,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/graphql.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "GraphQL",
       "description": "Convert REST endpoints to GraphQL calls (adapter/transformer)",
       "type": "object",
@@ -1803,7 +1814,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/grpc.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "gRPC backend connection",
       "description": "Enterprise only. Handles the communication with a backend using gRPC, after having defined the protocol buffer definitions.\n\nSee: https://www.krakend.io/docs/backends/grpc/",
       "type": "object",
@@ -1894,6 +1905,11 @@
             "snake_case"
           ]
         },
+        "use_alternate_host_on_error": {
+          "title": "Use alternate host on error",
+          "description": "When `true`, before sending a message to a host, it checks if the connection status is in a \"transient failure\" or \"failure\" state and tries to use a different host (from the service discovery or randomly from the list of hosts). If the connection is in a valid state, but an error happens when sending the gRPC message, it also tries to use a different host to retry sending the message. Depending on the host list, the retry attempts may go to the same host initially in a \"bad state\".\n\nSee: https://www.krakend.io/docs/backends/grpc/",
+          "type": "boolean"
+        },
         "use_request_body": {
           "title": "Use body",
           "description": "Enables the use of the sent body to fill the gRPC request. Take into account that when you set this flag to `true` a body is expected, and this body is **consumed** in the first backend. If the endpoint that uses this gRPC backend has additional backends (either gRPC or HTTP) that also expect to consume the payload, these requests might fail.\n\nSee: https://www.krakend.io/docs/backends/grpc/",
@@ -1907,7 +1923,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/http_client.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "HTTP Client options",
       "description": "Enterprise only. Allows you to set the different HTTP client options with the backend, like TLS, no redirect or connect via a proxy.\n\nSee: https://www.krakend.io/docs/enterprise/backends/http-client/",
       "type": "object",
@@ -1937,7 +1953,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/lambda.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "AWS Lambda functions",
       "description": "Invoke Amazon Lambda functions on a KrakenD endpoint call.\n\nSee: https://www.krakend.io/docs/backends/lambda/",
       "type": "object",
@@ -1979,7 +1995,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/pubsub/publisher.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Pubsub publisher",
       "description": "Publishes to a topic using the desired driver.\n\nSee: https://www.krakend.io/docs/backends/pubsub/",
       "type": "object",
@@ -1999,7 +2015,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/pubsub/subscriber.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Pubsub subscriber",
       "description": "Subscribes a backend using the desired driver.\n\nSee: https://www.krakend.io/docs/backends/pubsub/",
       "type": "object",
@@ -2019,7 +2035,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/soap.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "SOAP Template modifier",
       "description": "Enterprise only. Build and modify requests to communicate with SOAP services.\n\nSee: https://www.krakend.io/docs/backends/soap/",
       "type": "object",
@@ -2073,7 +2089,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend/static-filesystem.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Static Filesystem",
       "description": "Enterprise only. Allows you to fetch and serve static content from the disk instead of a remote server, and you can use it to mock data.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/serve-static-content/",
       "type": "object",
@@ -2101,7 +2117,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/backend_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Extra configuration for backends",
       "type": "object",
       "properties": {
@@ -2265,7 +2281,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/client_tls.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "TLS client settings",
       "description": "TLS options to connect to upstream services.\n\nSee: https://www.krakend.io/docs/service-settings/tls/",
       "properties": {
@@ -2380,7 +2396,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/documentation/openapi.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Generate documentation using OpenAPI",
       "description": "Enterprise only. Generates OpenAPI documentation automatically through `krakend openapi export` command.\n\nSee: https://www.krakend.io/docs/enterprise/developer/openapi/",
       "type": "object",
@@ -2811,7 +2827,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/endpoint.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Endpoint Object",
       "default": {
         "backend": [
@@ -2941,7 +2957,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/endpoint_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Schema definition for extra_config of endpoints",
       "type": "object",
       "properties": {
@@ -3081,6 +3097,9 @@
           "description": "The router rate limit feature allows you to set a number of maximum requests per second a KrakenD endpoint will accept.\n\nSee: https://www.krakend.io/docs/endpoints/rate-limit/",
           "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
         },
+        "qos/ratelimit/tiered": {
+          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1tiered.json"
+        },
         "security/bot-detector": {
           "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1security~1bot-detector.json"
         },
@@ -3114,7 +3133,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/grpc.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "gRPC server",
       "description": "Enterprise only. gRPC server integration",
       "type": "object",
@@ -3270,7 +3289,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/body-generator.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Template-based body generator",
       "description": "Enterprise only. Crafts the body/payload using a templating system.\n\nSee: https://www.krakend.io/backends/body-generator/",
       "type": "object",
@@ -3326,7 +3345,7 @@
       "@comment": "This schema is used by modifier/request-body-generator and modifier/body-generator simultaneously"
     },
     "https://www.krakend.io/schema/v2.7/modifier/jmespath.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": " JMESPath: Response manipulation with query language",
       "description": "The JMESPath query language allows you to select, slice, filter, map, project, flatten, sort, and all sorts of operations on data.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/jmespath/",
       "type": "object",
@@ -3346,7 +3365,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/lua.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Lua modifier",
       "description": "Scripting with Lua is an additional choice to extend your business logic, and is compatible with the rest of options such as CEL, Martian, or other Go plugins and middlewares.\n\nSee: https://www.krakend.io/docs/endpoints/lua/",
       "type": "object",
@@ -3408,7 +3427,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/martian.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Martian modifiers",
       "description": "The Martian component allows you to modify requests and responses with static data through a simple DSL definition in the configuration file.\n\nSee: https://www.krakend.io/docs/endpoints/martian/",
       "type": "object",
@@ -3427,6 +3446,15 @@
             "body": {
               "title": "Body in base64",
               "description": "The body you want to set, formatted in base64.",
+              "type": "string"
+            },
+            "contentType": {
+              "title": "Content Type",
+              "description": "The content-type representing the body you are setting",
+              "examples": [
+                "application/x-www-form-urlencoded",
+                "text/plain"
+              ],
               "type": "string"
             },
             "scope": {
@@ -4242,7 +4270,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/modifier/response-headers.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Response headers modifier",
       "description": "Enterprise only. Allows you to transform response headers declaratively.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/response-headers-modifier/",
       "type": "object",
@@ -4302,7 +4330,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/content-replacer.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Content Replacer",
       "description": "Enterprise only. The content replacer plugin allows you to modify the response of your services by doing literal replacements or more sophisticated replacements with regular expressions.\n\nSee: See: https://www.krakend.io/docs/enterprise/endpoints/content-replacer/",
       "type": "object",
@@ -4339,7 +4367,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/plugin/geoip.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "GeoIP",
       "description": "Enterprise only. The GeoIP integration allows you load Maxmind's GeoIP2 City database (payment and free versions) and enrich all KrakenD calls to your backends with geo data.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/geoip/",
       "type": "object",
@@ -4362,7 +4390,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/http-client.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "HTTP client plugins.\n\nSee: https://www.krakend.io/docs/extending/injecting-plugins/",
       "type": "object",
       "properties": {
@@ -4380,7 +4408,7 @@
       "additionalProperties": true
     },
     "https://www.krakend.io/schema/v2.7/plugin/http-server.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "HTTP Server plugins.\n\nSee: https://www.krakend.io/docs/extending/http-server-plugins/",
       "type": "object",
       "required": [
@@ -4424,7 +4452,7 @@
       "additionalProperties": true
     },
     "https://www.krakend.io/schema/v2.7/plugin/ip-filter.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "IP filter",
       "description": "Enterprise only. The IP filtering plugin allows you to restrict the traffic to your API gateway based on the IP address. It works in two different modes (allow or deny) where you define the list of IPs (CIDR blocks) that are authorized to use the API, or that are denied from using the API.\n\nSee: https://www.krakend.io/docs/enterprise/throttling/ipfilter/",
       "type": "object",
@@ -4479,7 +4507,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/jwk-aggregator.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "JWK aggregator",
       "description": "Enterprise only. The JWK aggregator plugin allows KrakenD to validate tokens issued by multiple Identity Providers.\n\nSee: https://www.krakend.io/docs/enterprise/authentication/multiple-identity-providers/",
       "type": "object",
@@ -4513,7 +4541,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/redis-ratelimit.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Redis ratelimit",
       "description": "Enterprise only. The global rate limit functionality enables a Redis database store to centralize all KrakenD node counters. Instead of having each KrakenD node count its hits, the counters are global and stored in the database.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/global-rate-limit/",
       "type": "object",
@@ -4575,7 +4603,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/req-resp-modifier.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Request-Response modifier plugins",
       "type": "object",
       "properties": {
@@ -4601,7 +4629,7 @@
       "additionalProperties": true
     },
     "https://www.krakend.io/schema/v2.7/plugin/response-schema-validator.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Response Schema Validator",
       "description": "Enterprise only. The response schema validator plugin adds a schema validation before the gateway returns the response to the end-user or before it’s merged in the endpoint with the rest of the backends.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/response-schema-validator/",
       "type": "object",
@@ -4650,7 +4678,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/static-filesystem.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Static Filesystem",
       "description": "Enterprise only. Allows you to fetch and serve static content in two different use cases. When the plugin is used as an http server handler, the static content is for your end-users, giving them CSS, JS, images, or JSON files, to name a few examples. On the other side, when the plugin is used as an http client executor, the KrakenD endpoints use static content as if it were a backend.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/serve-static-content/",
       "deprecated": true,
@@ -4694,7 +4722,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/url-rewrite.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "URL rewrite",
       "description": "Enterprise only. Allows you to declare additional URLs other than the ones defined under the endpoints configuration, used as aliases of existing endpoints.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/url-rewrite/",
       "type": "object",
@@ -4737,7 +4765,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/virtualhost.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "VirtualHost",
       "description": "Enterprise only. The Virtual Host plugin allows you to run different configurations of KrakenD endpoints based on the host accessing the server.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/virtual-hosts/",
       "deprecated": true,
@@ -4767,7 +4795,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/plugin/wildcard.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Wildcard",
       "description": "Enterprise only. Enables wildcard processing of requests without declaring all endpoint subresrouces.\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/wildcard/",
       "type": "object",
@@ -4795,7 +4823,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/proxy.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Proxy option",
       "type": "object",
       "properties": {
@@ -4830,7 +4858,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/proxy/flatmap.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Flatmap (Array manipulation)",
       "description": "The flatmap middleware allows you to manipulate collections (or arrays, or lists, you name it) from the backend response. While the basic manipulation operations allow you to work directly with objects, the collections require a different approach: the flatmap component.\n\nSee: https://www.krakend.io/docs/backend/flatmap/",
       "examples": [
@@ -4873,7 +4901,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/qos/circuit-breaker.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Circuit Breaker",
       "description": "The circuit breaker prevents sending more traffic to a failing backend.\n\nSee: https://www.krakend.io/docs/backends/circuit-breaker/",
       "type": "object",
@@ -4919,7 +4947,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/qos/ratelimit/proxy.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Backend Ratelimit",
       "description": "Restrict the rate of requests KrakenD makes to your backends.\n\nSee: https://www.krakend.io/docs/backends/rate-limit/",
       "type": "object",
@@ -4956,7 +4984,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/qos/ratelimit/router.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Endpoint ratelimit",
       "type": "object",
       "anyOf": [
@@ -5041,8 +5069,64 @@
         }
       }
     },
+    "https://www.krakend.io/schema/v2.7/qos/ratelimit/tiered.json": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Tiered Rate Limit",
+      "description": "Enterprise Only. Apply ratelimit based on tier match.",
+      "type": "object",
+      "required": [
+        "tier_key",
+        "tiers"
+      ],
+      "properties": {
+        "tier_key": {
+          "title": "Tier key",
+          "description": "The header name containing the tier name. The string you provide is case-insensitive. If you need to take the value from a place that is not a header (a token, an API key), you must use propagate functions in the components that convert values to internal headers.\n\nSee: /docs/enterprise/service-settings/tiered-rate-limit/",
+          "type": "string"
+        },
+        "tiers": {
+          "title": "Tiers",
+          "description": "The list of all tier definitions and limits for each. Each item in the list is a tier object.\n\nSee: /docs/enterprise/service-settings/tiered-rate-limit/",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ratelimit": {
+                "title": "Ratelimit",
+                "description": "The rate limit definition. This is an object with the same attributes the [service rate limit](https://www.krakend.io/docs/enterprise/service-settings/service-rate-limit/) has.\n\nSee: /docs/enterprise/service-settings/tiered-rate-limit/",
+                "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json",
+                "type": "object"
+              },
+              "tier_value": {
+                "title": "Tier value",
+                "description": "The tier value. When you use `literal`, it is the tier name. When you use `policy`, it is the expression you want to evaluate to determine if the user matches this tier or not (see security policies for syntax).\n\nSee: /docs/enterprise/service-settings/tiered-rate-limit/",
+                "examples": [
+                  "gold",
+                  "silver",
+                  "value.matches('User-[a-Z]+')"
+                ],
+                "default": "",
+                "type": [
+                  "string"
+                ]
+              },
+              "tier_value_as": {
+                "title": "Tier value as",
+                "description": "Determines how to parse the value found in the tier header. When `literal` is used, the exact value of the header is compared against the tier name. When `policy` is used, the value is used to evaluate a policy. When `*` is used, all values will match. Make sure to put the `*` as the last tier; otherwise the rest will be ignored.\n\nSee: /docs/enterprise/service-settings/tiered-rate-limit/",
+                "default": "literal",
+                "enum": [
+                  "literal",
+                  "policy",
+                  "*"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "https://www.krakend.io/schema/v2.7/router.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Router Options",
       "description": "The optional router configuration allows you to set global flags that change the way KrakenD processes the requests at the router layer.\n\nSee: https://www.krakend.io/docs/service-settings/router-options/",
       "type": "object",
@@ -5197,7 +5281,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/bot-detector.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Bot detector",
       "description": "The bot detector module checks incoming connections to the gateway to determine if a bot made them, helping you detect and reject bots carrying out scraping, content theft, and form spam.\n\nSee: https://www.krakend.io/docs/throttling/botdetector/",
       "type": "object",
@@ -5253,7 +5337,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/cors.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "HTTP Security",
       "description": "Security through HTTP headers, including HSTS, HPKP, MIME-Sniffing prevention, Clickjacking protection, and others.\n\nSee: https://www.krakend.io/docs/service-settings/security/",
       "type": "object",
@@ -5352,7 +5436,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/http.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "HTTP Security",
       "description": "Security through HTTP headers, including HSTS, HPKP, MIME-Sniffing prevention, Clickjacking protection, and others.\n\nSee: https://www.krakend.io/docs/service-settings/security/",
       "type": "object",
@@ -5485,7 +5569,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/security/policies.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Securiy Policies",
       "description": "The policies engine allows you to write custom sets of policies that are validated during requests, responses, or token validation.\n\nSee: https://www.krakend.io/docs/enterprise/security-policies/",
       "type": "object",
@@ -5647,7 +5731,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/server/static-filesystem.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Static Filesystem",
       "description": "Enterprise only. Allows you to fetch and serve static content by registering a static web server for a set of defined paths (the prefixes).\n\nSee: https://www.krakend.io/docs/enterprise/endpoints/serve-static-content/",
       "type": "object",
@@ -5695,7 +5779,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/server/virtualhost.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "VirtualHost",
       "description": "Enterprise only. The Virtual Host server allows you to run different configurations of KrakenD endpoints based on the host accessing the server.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/virtual-hosts/",
       "type": "object",
@@ -5750,7 +5834,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/service_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Schema definition for service extra_config",
       "type": "object",
       "properties": {
@@ -5790,6 +5874,9 @@
           "title": "Service Rate-limiting",
           "description": "Enterprise Only. The service rate limit feature allows you to set the maximum requests per second a user or group of users can do to KrakenD and works analogously to the endpoint rate limit.\n\nSee: https://www.krakend.io/docs/enterprise/service-settings/service-rate-limit/",
           "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1router.json"
+        },
+        "qos/ratelimit/tiered": {
+          "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1qos~1ratelimit~1tiered.json"
         },
         "router": {
           "$ref": "#/definitions/https%3A~1~1www.krakend.io~1schema~1v2.7~1router.json"
@@ -5927,7 +6014,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/gelf.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "GELF",
       "description": "Send structured events in GELF format to your Graylog Cluster.\n\nSee: https://www.krakend.io/docs/logging/graylog-gelf/",
       "type": "object",
@@ -5953,7 +6040,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/influx.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Telemetry via influx",
       "description": "Enables the extended logging capabilities.\n\nSee: https://www.krakend.io/docs/telemetry/influxdb-native/",
       "type": "object",
@@ -6001,7 +6088,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/logging.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Improved logging",
       "description": "Enables the extended logging capabilities.\n\nSee: https://www.krakend.io/docs/logging/",
       "type": "object",
@@ -6075,7 +6162,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/logstash.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Logstash",
       "description": "Enables logstash when the extra_config \"telemetry/logging\" is also present.\n\nSee: https://www.krakend.io/docs/logging/logstash/",
       "type": "object",
@@ -6095,7 +6182,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/metrics.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Extended metrics",
       "description": "Collects extended metrics to push to InfluxDB or expose them in the /__stats/ endpoint.\n\nSee: https://www.krakend.io/docs/telemetry/extended-metrics/",
       "type": "object",
@@ -6145,7 +6232,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/moesif.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Moesif integration",
       "description": "The Moesif integration helps you understand and monetize API usage with a robust analytics and billing platform.\n\nSee: https://www.krakend.io/docs/enterprise/governance/moesif/",
       "type": "object",
@@ -6316,7 +6403,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/newrelic.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "NewRelic exporter",
       "description": "The New Relic integration lets you push KrakenD metrics and distributed traces to your New Relic dashboard. It uses internally the official New Relic SDK and brings its features to your APM dashboard.\n\nSee: https://www.krakend.io/docs/enterprise/telemetry/newrelic/",
       "type": "object",
@@ -6352,7 +6439,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opencensus.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Telemetry via Opencensus",
       "description": "Enables the extended logging capabilities.\n\nSee: https://www.krakend.io/docs/telemetry/opencensus/",
       "type": "object",
@@ -6864,7 +6951,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry-backend.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "OpenTelemetry Backend Override",
       "description": "Enterprise only. Overrides metrics and traces declared by the OpenTelemetry service.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry-by-endpoint/",
       "type": "object",
@@ -6940,7 +7027,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry-endpoint.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "OpenTelemetry Endpoint Override",
       "description": "Enterprise only. Overrides metrics and traces declared by the OpenTelemetry service.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry-by-endpoint/",
       "type": "object",
@@ -7023,7 +7110,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry-security.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "OpenTelemetry Security",
       "description": "Enables the security layer needed to use OpenTelemetry through the Internet, like pushing data to a SaaS provider.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry-security/",
       "type": "object",
@@ -7077,7 +7164,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/telemetry/opentelemetry.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "OpenTelemetry",
       "description": "Enables metrics and traces using OpenTelemetry.\n\nSee: https://www.krakend.io/docs/telemetry/opentelemetry/",
       "type": "object",
@@ -7575,7 +7662,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/timeunits.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Time units / Duration patterns",
       "$defs": {
         "timeunit": {
@@ -7587,7 +7674,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/tls.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "TLS/SSL",
       "description": "Enabling TLS for HTTPS and HTTP/2.\n\nSee: https://www.krakend.io/docs/service-settings/tls/",
       "anyOf": [
@@ -7730,7 +7817,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/validation/cel.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Common Expression Language (CEL) validations",
       "description": "The Common Expression Language (CEL) middleware enables expression evaluation, when an expression returns false, KrakenD does not return the content as the condition has failed. Otherwise, if all expressions returned true, the content is served.\n\nSee: https://www.krakend.io/docs/endpoints/common-expression-language-cel/",
       "type": "array",
@@ -7758,7 +7845,7 @@
       }
     },
     "https://www.krakend.io/schema/v2.7/websocket.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Schema definition for Websockets",
       "description": "Enterprise only. Enables websocket communication.\n\nSee: https://www.krakend.io/docs/enterprise/websockets/",
       "type": "object",
@@ -7875,7 +7962,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/workflow.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Workflow Object",
       "type": "object",
       "required": [
@@ -7951,7 +8038,7 @@
       "additionalProperties": false
     },
     "https://www.krakend.io/schema/v2.7/workflow_extra_config.json": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "Schema definition for extra_config of workflows",
       "type": "object",
       "properties": {

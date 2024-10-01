@@ -1,6 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://json.schemastore.org/cdk.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "app": {
       "type": "string",
@@ -34,5 +33,6 @@
     }
   },
   "title": "Schema for AWS CDK context files (cdk.json)",
-  "type": "object"
+  "type": "object",
+  "$id": "https://json.schemastore.org/cdk.json"
 }
