@@ -1,5 +1,5 @@
 {
-  "$defs": {
+  "definitions": {
     "pluginOptions": {
       "title": "PluginOptions",
       "type": "object",
@@ -41,15 +41,15 @@
         "type": {
           "oneOf": [
             {
-              "$ref": "#/$defs/simpleConfigType"
+              "$ref": "#/definitions/simpleConfigType"
             },
             {
-              "$ref": "#/$defs/configItemsType"
+              "$ref": "#/definitions/configItemsType"
             }
           ]
         },
         "items": {
-          "$ref": "#/$defs/configItemsType"
+          "$ref": "#/definitions/configItemsType"
         }
       },
       "if": {
@@ -67,10 +67,10 @@
       "additionalProperties": false,
       "properties": {
         "type": {
-          "$ref": "#/$defs/simpleConfigType"
+          "$ref": "#/definitions/simpleConfigType"
         },
         "items": {
-          "$ref": "#/$defs/configItemsType"
+          "$ref": "#/definitions/configItemsType"
         },
         "description": {
           "type": "string"
@@ -182,7 +182,7 @@
             "type": "array"
           },
           {
-            "$ref": "#/$defs/configTypeDeclaration"
+            "$ref": "#/definitions/configTypeDeclaration"
           }
         ]
       }
@@ -292,21 +292,21 @@
           "description": "Plugins for resource providers.",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/pluginOptions"
+            "$ref": "#/definitions/pluginOptions"
           }
         },
         "analyzers": {
           "description": "Plugins for policy analyzers.",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/pluginOptions"
+            "$ref": "#/definitions/pluginOptions"
           }
         },
         "languages": {
           "description": "Plugins for languages.",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/pluginOptions"
+            "$ref": "#/definitions/pluginOptions"
           }
         }
       }
