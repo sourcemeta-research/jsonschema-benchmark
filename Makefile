@@ -134,3 +134,21 @@ dist/results/go-jsonschema/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/go-jsonschema
 	@$(call docker_run,go-jsonschema,/workspace/$(dir $(word 2,$^)))
+
+# HYPERJUMP
+
+implementations/hyperjump/.dockertimestamp: \
+	implementations/hyperjump/main.mjs \
+	implementations/hyperjump/package.json \
+	implementations/hyperjump/package-lock.json \
+	implementations/hyperjump/Dockerfile
+	docker build -t jsonschema-benchmark/hyperjump implementations/hyperjump
+	touch $@
+
+dist/results/hyperjump/%: \
+	implementations/hyperjump/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/hyperjump
+	@$(call docker_run,hyperjump,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
