@@ -1270,7 +1270,7 @@
           "description": "Represents configuration parameters of the FLP entry",
           "type": "object",
           "patternProperties": {
-            "^[a-zA-Z0-9\\_\\.\\-]*$": {
+            "^[a-zA-Z0-9_\\.\\-]*$": {
               "description": "Represents the configuration key and values",
               "type": "object"
             }
@@ -2696,7 +2696,7 @@
         "configId": {
           "description": "Represents ID of an application configuration",
           "type": "string",
-          "pattern": "^[a-zA-Z0-9\\/\\_]{1,32}$"
+          "pattern": "^[a-zA-Z0-9\\/_]{1,32}$"
         },
         "flavorId": {
           "description": "Represents SAP Screen Personas Flavor ID",
