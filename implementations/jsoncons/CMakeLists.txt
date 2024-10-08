@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(jsoncons_benchmark)
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -mtune=native")
+find_package(jsoncons CONFIG REQUIRED)
+add_executable(jsoncons_benchmark main.cc)
+target_link_libraries(jsoncons_benchmark PRIVATE jsoncons)
