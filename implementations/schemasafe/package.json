@@ -1,0 +1,8 @@
+{
+  "name": "jsonschema-benchmark",
+  "version": "1.0.0",
+  "author": "Juan Cruz Viotti <jv@jviotti.com>",
+  "dependencies": {
+    "@exodus/schemasafe": "^1.3.0"
+  }
+}
