@@ -152,3 +152,20 @@ dist/results/hyperjump/%: \
 	| dist/results/hyperjump
 	@$(call docker_run,hyperjump,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# JSONCONS
+
+implementations/jsoncons/.dockertimestamp: \
+	implementations/jsoncons/CMakeLists.txt \
+	implementations/jsoncons/vcpkg.json \
+	implementations/jsoncons/vcpkg-configuration.json \
+	implementations/jsoncons/main.cc \
+	implementations/jsoncons/Dockerfile
+	docker build -t jsonschema-benchmark/jsoncons implementations/jsoncons
+	touch $@
+
+dist/results/jsoncons/%: \
+	implementations/jsoncons/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsoncons
+	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
