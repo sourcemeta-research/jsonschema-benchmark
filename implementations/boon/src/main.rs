@@ -19,7 +19,10 @@ fn main() -> Result<(), Box<dyn Error>> {
   // Compile the schema
   let mut schemas = Schemas::new();
   let mut compiler = Compiler::new();
+
+  let compile_start = Instant::now();
   let sch_index = compiler.compile(schema_file.to_str().ok_or("NULL")?, &mut schemas)?;
+  let compile_duration = compile_start.elapsed().as_nanos();
 
   // Serialize instance lines
   let mut serde_lines = std::vec::Vec::new();
@@ -36,7 +39,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     assert!(result.is_ok(), "Validation failed for line: {}", line);
   }
   let duration = start.elapsed().as_nanos();
-  println!("{:?}", duration);
+  println!("{:?},{:?}", duration, compile_duration);
 
   Ok(())
 }

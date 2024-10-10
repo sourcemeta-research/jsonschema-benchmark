@@ -33,7 +33,11 @@ func main() {
 
 	// Compile the JSON schema
 	c := jsonschema.NewCompiler()
+
+	compile_start := time.Now()
 	sch, err := c.Compile(schemaFile)
+	compile_duration := time.Since(compile_start)
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -76,5 +80,5 @@ func main() {
 	duration := time.Since(start)
 
 	// Print timing
-	fmt.Printf("%d\n", duration.Nanoseconds())
+	fmt.Printf("%d,%d\n", duration.Nanoseconds(), compile_duration.Nanoseconds())
 }

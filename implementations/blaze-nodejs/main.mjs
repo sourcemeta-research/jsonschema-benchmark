@@ -24,7 +24,11 @@ async function* readJSONLines(filePath) {
 
 async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
+
+  const compileStart = performance.now();
   const schemaId = await compile(schema);
+  const compileEnd = performance.now();
+  const compileDurationNs = (compileEnd - compileStart) * 1e6;
 
   const instances = [];
   for await (const instance of readJSONLines(instancePath)) {
@@ -42,7 +46,7 @@ async function validateSchema(schemaPath, instancePath) {
   const endTime = performance.now();
 
   const durationNs = (endTime - startTime) * 1e6;
-  console.log(durationNs.toFixed(0));
+  console.log(durationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0));
 
   // Exit with non-zero status on validation failure
   if (failed) {

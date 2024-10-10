@@ -11,16 +11,20 @@ case "$dialect" in
     use_schema="Draft202012" ;;
 esac
 
+START_TIME=$(date +%s.%N | tr -d .)
 # Generate code for the schema validator
-~/.dotnet/tools/generatejsonschematypes --rootNamespace JSB --rootPath='#' --useSchema "$use_schema" --outputPath /app --outputRootTypeName Schema --assertFormat False "$1" > /dev/null
+~/.dotnet/tools/generatejsonschematypes --rootNamespace JSB --rootPath='#' --useSchema "$use_schema" --outputPath /app --outputRootTypeName Schema --assertFormat False "$SCHEMA" > /dev/null
 
 cd /app
 
 # Compile the generated validator
 dotnet build --configuration=Release > /dev/null || exit 1
+END_TIME=$(date +%s.%N | tr -d .)
+COMPILE_TIME=$(expr $END_TIME - $START_TIME)
 
 # Remove temporary generated files
 find . -type f -name '*.cs' -not -name 'Program.cs' -delete
 
-/app/bin/Release/net8.0/bench "$2"
+RUNTIME=$(/app/bin/Release/net8.0/bench "$INSTANCES" | tr -d '\n')
+echo $RUNTIME,$COMPILE_TIME
 exit $?
