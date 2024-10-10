@@ -5,7 +5,10 @@ path = ARGV[0]
 
 # Load the schema and build a validator
 schema = JSON.parse(File.read(File.join(path, "schema.json")))
+
+compile_start = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 schemer = JSONSchemer.schema(schema)
+compile_end = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 
 # Read all instances into an array
 instances = File.open(File.join(path, "instances.jsonl")).map do |line|
@@ -19,4 +22,4 @@ instances.each do |instance|
 end
 end_time = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 
-puts end_time - start_time
+print (end_time - start_time), ",", (compile_end - compile_start), "\n"
