@@ -11,11 +11,13 @@ if __name__ == "__main__":
     schema = json.load(open(example_dir / "schema.json"))
     instances = [json.loads(doc) for doc in open(example_dir / "instances.jsonl").readlines()]
 
+    compile_start = time.time_ns()
     validator = jsonschema.Draft4Validator(schema)
+    compile_end = time.time_ns()
 
     start = time.time_ns()
     for instance in instances:
         validator.is_valid(instance)
     end = time.time_ns()
 
-    print(end - start)
+    print((end - start), ",", (compile_end - compile_start), sep='')

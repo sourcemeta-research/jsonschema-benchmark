@@ -16,10 +16,15 @@ int validate(const std::filesystem::path &example) {
     instances.push_back(instance);
   }
 
+  const auto compile_start{std::chrono::high_resolution_clock::now()};
   const auto schema_template{sourcemeta::jsontoolkit::compile(
       schema, sourcemeta::jsontoolkit::default_schema_walker,
       sourcemeta::jsontoolkit::official_resolver,
       sourcemeta::jsontoolkit::default_schema_compiler)};
+  const auto compile_end{std::chrono::high_resolution_clock::now()};
+
+  const auto compile_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      compile_end - compile_start)};
 
   sourcemeta::jsontoolkit::EvaluationContext context;
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
@@ -40,7 +45,7 @@ int validate(const std::filesystem::path &example) {
 
   const auto duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       timestamp_end - timestamp_start)};
-  std::cout << duration.count() << "\n";
+  std::cout << duration.count() << "," << compile_duration.count() << "\n";
 
   return EXIT_SUCCESS;
 }

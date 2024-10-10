@@ -13,7 +13,12 @@ namespace jsonschema = jsoncons::jsonschema;
 int validate(const std::filesystem::path &example) {
   std::ifstream input_schema((example / "schema.json").string());
   const auto schema = json::parse(input_schema);
+
+  const auto compile_start{std::chrono::high_resolution_clock::now()};
   const auto compiled = jsonschema::make_json_schema(schema);
+  const auto compile_end{std::chrono::high_resolution_clock::now()};
+  const auto compile_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      compile_end - compile_start)};
 
   std::ifstream input_instances((example / "instances.jsonl").string());
   std::vector<json> instances;
@@ -32,7 +37,7 @@ int validate(const std::filesystem::path &example) {
   const auto timestamp_end{std::chrono::high_resolution_clock::now()};
   const auto duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       timestamp_end - timestamp_start)};
-  std::cout << duration.count() << "\n";
+  std::cout << duration.count() << "," << compile_duration.count() << "\n";
 
   return EXIT_SUCCESS;
 }
