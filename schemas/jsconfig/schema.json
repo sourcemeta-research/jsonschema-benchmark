@@ -1,42 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
-      "$ref": "#/definitions/compilerOptionsDefinition"
+      "$ref": "#/$defs/compilerOptionsDefinition"
     },
     {
-      "$ref": "#/definitions/compileOnSaveDefinition"
+      "$ref": "#/$defs/compileOnSaveDefinition"
     },
     {
-      "$ref": "#/definitions/typeAcquisitionDefinition"
+      "$ref": "#/$defs/typeAcquisitionDefinition"
     },
     {
-      "$ref": "#/definitions/extendsDefinition"
+      "$ref": "#/$defs/extendsDefinition"
     },
     {
-      "$ref": "#/definitions/watchOptionsDefinition"
+      "$ref": "#/$defs/watchOptionsDefinition"
     },
     {
-      "$ref": "#/definitions/buildOptionsDefinition"
+      "$ref": "#/$defs/buildOptionsDefinition"
     },
     {
       "anyOf": [
         {
-          "$ref": "#/definitions/filesDefinition"
+          "$ref": "#/$defs/filesDefinition"
         },
         {
-          "$ref": "#/definitions/excludeDefinition"
+          "$ref": "#/$defs/excludeDefinition"
         },
         {
-          "$ref": "#/definitions/includeDefinition"
+          "$ref": "#/$defs/includeDefinition"
         },
         {
-          "$ref": "#/definitions/referencesDefinition"
+          "$ref": "#/$defs/referencesDefinition"
         }
       ]
     }
   ],
-  "definitions": {
+  "title": "JSON schema for a JavaScript project using TypeScript tooling",
+  "type": "object",
+  "$id": "https://json.schemastore.org/jsconfig.json",
+  "$defs": {
     "//": {
       "explainer": "https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#overview",
       "reference": "https://www.typescriptlang.org/tsconfig",
@@ -1112,8 +1115,5 @@
         }
       }
     }
-  },
-  "title": "JSON schema for a JavaScript project using TypeScript tooling",
-  "type": "object",
-  "$id": "https://json.schemastore.org/jsconfig.json"
+  }
 }

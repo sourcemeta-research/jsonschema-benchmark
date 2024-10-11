@@ -1,8 +1,8 @@
 {
   "$defs": {},
   "$id": "https://json.schemastore.org/clang-format.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "additionalProperties": {},
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
   "description": "The .clang-format file is a YAML file defining formatting styles used by clang-format.\r\r see https://clang.llvm.org/docs/ClangFormatStyleOptions.html",
   "patternProperties": {
     "^x-": {
@@ -997,9 +997,7 @@
       "type": "array",
       "contains": {
         "type": "string",
-        "enum": [
-          "type"
-        ]
+        "const": "type"
       },
       "items": {
         "type": "string",

@@ -1,22 +1,24 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
-      "$ref": "#/definitions/root-items"
+      "$ref": "#/$defs/root-items"
     },
     {
       "type": "object",
       "properties": {
         "env": {
-          "$ref": "#/definitions/env-items"
+          "$ref": "#/$defs/env-items"
         }
       }
     },
     {
-      "$ref": "#/definitions/env-items"
+      "$ref": "#/$defs/env-items"
     }
   ],
-  "definitions": {
+  "title": "Schema for jasmine JSON config file",
+  "$id": "https://json.schemastore.org/jasmine.json",
+  "$defs": {
     "root-items": {
       "type": "object",
       "required": [
@@ -103,7 +105,5 @@
         }
       }
     }
-  },
-  "title": "Schema for jasmine JSON config file",
-  "$id": "https://json.schemastore.org/jasmine.json"
+  }
 }

@@ -1,8 +1,25 @@
 {
   "title": "JSON schema for the https://cypress.io Test Runner's configuration file. Details at https://on.cypress.io/configuration",
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "definitions": {
+  "allOf": [
+    {
+      "$ref": "#/$defs/cypressConfig"
+    },
+    {
+      "properties": {
+        "component": {
+          "description": "Any component runner specific overrides",
+          "$ref": "#/$defs/cypressConfig"
+        },
+        "e2e": {
+          "description": "Any e2e runner specific overrides",
+          "$ref": "#/$defs/cypressConfig"
+        }
+      }
+    }
+  ],
+  "$defs": {
     "cypressConfig": {
       "properties": {
         "baseUrl": {
@@ -362,22 +379,5 @@
         }
       }
     }
-  },
-  "allOf": [
-    {
-      "$ref": "#/definitions/cypressConfig"
-    },
-    {
-      "properties": {
-        "component": {
-          "description": "Any component runner specific overrides",
-          "$ref": "#/definitions/cypressConfig"
-        },
-        "e2e": {
-          "description": "Any e2e runner specific overrides",
-          "$ref": "#/definitions/cypressConfig"
-        }
-      }
-    }
-  ]
+  }
 }

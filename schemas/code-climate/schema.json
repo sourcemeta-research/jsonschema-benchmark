@@ -1,29 +1,6 @@
 {
   "$comment": "https://docs.codeclimate.com/docs/advanced-configuration",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "enabled": {
-      "type": "object",
-      "properties": {
-        "enabled": {
-          "title": "Enabled",
-          "type": "boolean",
-          "default": true
-        }
-      }
-    },
-    "config": {
-      "title": "Config",
-      "type": "object"
-    },
-    "threshold": {
-      "title": "Threshold",
-      "type": [
-        "integer",
-        "null"
-      ]
-    }
-  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Configuration file as an alternative for configuring your repository in the settings page.",
   "properties": {
     "version": {
@@ -56,151 +33,151 @@
       "properties": {
         "argument-count": {
           "title": "Argument Count",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 4
+                  "default": 4,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "complex-logic": {
           "title": "Complex Logic",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 4
+                  "default": 4,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "file-lines": {
           "title": "File Lines",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 250
+                  "default": 250,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "method-complexity": {
           "title": "Method Complexity",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 5
+                  "default": 5,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "method-count": {
           "title": "Method Count",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 20
+                  "default": 20,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "method-lines": {
           "title": "Method Lines",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 25
+                  "default": 25,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "nested-control-flow": {
           "title": "Nested Control Flow",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 4
+                  "default": 4,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "return-statements": {
           "title": "Return Statements",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold",
-                  "default": 4
+                  "default": 4,
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "similar-code": {
           "title": "Similar Code",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold"
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         },
         "identical-code": {
           "title": "Identical Code",
-          "$ref": "#/definitions/enabled",
           "properties": {
             "config": {
-              "$ref": "#/definitions/config",
               "properties": {
                 "threshold": {
-                  "$ref": "#/definitions/threshold"
+                  "$ref": "#/$defs/threshold"
                 }
-              }
+              },
+              "$ref": "#/$defs/config"
             }
-          }
+          },
+          "$ref": "#/$defs/enabled"
         }
       }
     },
@@ -209,7 +186,7 @@
       "description": "To add a plugin to your analysis. You can find the complete list of available plugins here: https://docs.codeclimate.com/docs/list-of-engines",
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/definitions/enabled"
+        "$ref": "#/$defs/enabled"
       }
     },
     "exclude_patterns": {
@@ -223,5 +200,28 @@
   },
   "title": "Code Climate Configuration",
   "type": "object",
-  "$id": "https://json.schemastore.org/codeclimate.json"
+  "$id": "https://json.schemastore.org/codeclimate.json",
+  "$defs": {
+    "enabled": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "title": "Enabled",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "config": {
+      "title": "Config",
+      "type": "object"
+    },
+    "threshold": {
+      "title": "Threshold",
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  }
 }

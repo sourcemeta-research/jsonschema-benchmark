@@ -122,7 +122,7 @@
           }
         }
       },
-      "then": {},
+      "then": true,
       "else": {
         "if": {
           "properties": {
@@ -164,24 +164,22 @@
                 ]
               },
               "type": {
-                "enum": [
-                  "application"
-                ]
+                "const": "application"
               },
               "metadata": {
-                "$ref": "#/then/then/definitions/metadata-3.0"
+                "$ref": "#/then/then/$defs/metadata-3.0"
               },
               "framework": {
-                "$ref": "#/then/then/definitions/framework"
+                "$ref": "#/then/then/$defs/framework"
               },
               "resources": {
-                "$ref": "#/then/then/else/then/definitions/resources"
+                "$ref": "#/then/then/else/then/$defs/resources"
               },
               "builder": {
-                "$ref": "#/then/then/else/then/definitions/builder-specVersion-3.0"
+                "$ref": "#/then/then/else/then/$defs/builder-specVersion-3.0"
               },
               "server": {
-                "$ref": "#/then/then/definitions/server"
+                "$ref": "#/then/then/$defs/server"
               },
               "customConfiguration": {
                 "type": "object",
@@ -193,9 +191,7 @@
             "if": {
               "properties": {
                 "specVersion": {
-                  "enum": [
-                    "2.6"
-                  ]
+                  "const": "2.6"
                 }
               }
             },
@@ -203,9 +199,7 @@
               "additionalProperties": false,
               "properties": {
                 "specVersion": {
-                  "enum": [
-                    "2.6"
-                  ]
+                  "const": "2.6"
                 },
                 "kind": {
                   "enum": [
@@ -214,24 +208,22 @@
                   ]
                 },
                 "type": {
-                  "enum": [
-                    "application"
-                  ]
+                  "const": "application"
                 },
                 "metadata": {
-                  "$ref": "#/then/then/definitions/metadata"
+                  "$ref": "#/then/then/$defs/metadata"
                 },
                 "framework": {
-                  "$ref": "#/then/then/definitions/framework"
+                  "$ref": "#/then/then/$defs/framework"
                 },
                 "resources": {
-                  "$ref": "#/then/then/else/then/definitions/resources"
+                  "$ref": "#/then/then/else/then/$defs/resources"
                 },
                 "builder": {
-                  "$ref": "#/then/then/else/then/definitions/builder-specVersion-2.6"
+                  "$ref": "#/then/then/else/then/$defs/builder-specVersion-2.6"
                 },
                 "server": {
-                  "$ref": "#/then/then/definitions/server"
+                  "$ref": "#/then/then/$defs/server"
                 },
                 "customConfiguration": {
                   "type": "object",
@@ -243,9 +235,7 @@
               "if": {
                 "properties": {
                   "specVersion": {
-                    "enum": [
-                      "2.5"
-                    ]
+                    "const": "2.5"
                   }
                 }
               },
@@ -253,9 +243,7 @@
                 "additionalProperties": false,
                 "properties": {
                   "specVersion": {
-                    "enum": [
-                      "2.5"
-                    ]
+                    "const": "2.5"
                   },
                   "kind": {
                     "enum": [
@@ -264,24 +252,22 @@
                     ]
                   },
                   "type": {
-                    "enum": [
-                      "application"
-                    ]
+                    "const": "application"
                   },
                   "metadata": {
-                    "$ref": "#/then/then/definitions/metadata"
+                    "$ref": "#/then/then/$defs/metadata"
                   },
                   "framework": {
-                    "$ref": "#/then/then/definitions/framework"
+                    "$ref": "#/then/then/$defs/framework"
                   },
                   "resources": {
-                    "$ref": "#/then/then/else/then/definitions/resources"
+                    "$ref": "#/then/then/else/then/$defs/resources"
                   },
                   "builder": {
-                    "$ref": "#/then/then/else/then/definitions/builder-specVersion-2.5"
+                    "$ref": "#/then/then/else/then/$defs/builder-specVersion-2.5"
                   },
                   "server": {
-                    "$ref": "#/then/then/definitions/server"
+                    "$ref": "#/then/then/$defs/server"
                   },
                   "customConfiguration": {
                     "type": "object",
@@ -293,9 +279,7 @@
                 "if": {
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "2.4"
-                      ]
+                      "const": "2.4"
                     }
                   }
                 },
@@ -303,9 +287,7 @@
                   "additionalProperties": false,
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "2.4"
-                      ]
+                      "const": "2.4"
                     },
                     "kind": {
                       "enum": [
@@ -314,24 +296,22 @@
                       ]
                     },
                     "type": {
-                      "enum": [
-                        "application"
-                      ]
+                      "const": "application"
                     },
                     "metadata": {
-                      "$ref": "#/then/then/definitions/metadata"
+                      "$ref": "#/then/then/$defs/metadata"
                     },
                     "framework": {
-                      "$ref": "#/then/then/definitions/framework"
+                      "$ref": "#/then/then/$defs/framework"
                     },
                     "resources": {
-                      "$ref": "#/then/then/else/then/definitions/resources"
+                      "$ref": "#/then/then/else/then/$defs/resources"
                     },
                     "builder": {
-                      "$ref": "#/then/then/else/then/definitions/builder-specVersion-2.4"
+                      "$ref": "#/then/then/else/then/$defs/builder-specVersion-2.4"
                     },
                     "server": {
-                      "$ref": "#/then/then/definitions/server"
+                      "$ref": "#/then/then/$defs/server"
                     },
                     "customConfiguration": {
                       "type": "object",
@@ -343,9 +323,7 @@
                   "if": {
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "2.3"
-                        ]
+                        "const": "2.3"
                       }
                     }
                   },
@@ -353,9 +331,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "2.3"
-                        ]
+                        "const": "2.3"
                       },
                       "kind": {
                         "enum": [
@@ -364,24 +340,22 @@
                         ]
                       },
                       "type": {
-                        "enum": [
-                          "application"
-                        ]
+                        "const": "application"
                       },
                       "metadata": {
-                        "$ref": "#/then/then/definitions/metadata"
+                        "$ref": "#/then/then/$defs/metadata"
                       },
                       "framework": {
-                        "$ref": "#/then/then/definitions/framework"
+                        "$ref": "#/then/then/$defs/framework"
                       },
                       "resources": {
-                        "$ref": "#/then/then/else/then/definitions/resources"
+                        "$ref": "#/then/then/else/then/$defs/resources"
                       },
                       "builder": {
-                        "$ref": "#/then/then/else/then/definitions/builder-specVersion-2.3"
+                        "$ref": "#/then/then/else/then/$defs/builder-specVersion-2.3"
                       },
                       "server": {
-                        "$ref": "#/then/then/definitions/server"
+                        "$ref": "#/then/then/$defs/server"
                       },
                       "customConfiguration": {
                         "type": "object",
@@ -416,24 +390,22 @@
                           ]
                         },
                         "type": {
-                          "enum": [
-                            "application"
-                          ]
+                          "const": "application"
                         },
                         "metadata": {
-                          "$ref": "#/then/then/definitions/metadata"
+                          "$ref": "#/then/then/$defs/metadata"
                         },
                         "framework": {
-                          "$ref": "#/then/then/definitions/framework"
+                          "$ref": "#/then/then/$defs/framework"
                         },
                         "resources": {
-                          "$ref": "#/then/then/else/then/definitions/resources"
+                          "$ref": "#/then/then/else/then/$defs/resources"
                         },
                         "builder": {
-                          "$ref": "#/then/then/else/then/definitions/builder"
+                          "$ref": "#/then/then/else/then/$defs/builder"
                         },
                         "server": {
-                          "$ref": "#/then/then/definitions/server"
+                          "$ref": "#/then/then/$defs/server"
                         },
                         "customConfiguration": {
                           "type": "object",
@@ -445,9 +417,7 @@
                       "additionalProperties": false,
                       "properties": {
                         "specVersion": {
-                          "enum": [
-                            "2.0"
-                          ]
+                          "const": "2.0"
                         },
                         "kind": {
                           "enum": [
@@ -456,24 +426,22 @@
                           ]
                         },
                         "type": {
-                          "enum": [
-                            "application"
-                          ]
+                          "const": "application"
                         },
                         "metadata": {
-                          "$ref": "#/then/then/definitions/metadata"
+                          "$ref": "#/then/then/$defs/metadata"
                         },
                         "framework": {
-                          "$ref": "#/then/then/definitions/framework"
+                          "$ref": "#/then/then/$defs/framework"
                         },
                         "resources": {
-                          "$ref": "#/then/then/else/then/definitions/resources"
+                          "$ref": "#/then/then/else/then/$defs/resources"
                         },
                         "builder": {
-                          "$ref": "#/then/then/else/then/definitions/builder"
+                          "$ref": "#/then/then/else/then/$defs/builder"
                         },
                         "server": {
-                          "$ref": "#/then/then/definitions/server"
+                          "$ref": "#/then/then/$defs/server"
                         }
                       }
                     }
@@ -482,7 +450,7 @@
               }
             }
           },
-          "definitions": {
+          "$defs": {
             "resources": {
               "type": "object",
               "additionalProperties": false,
@@ -492,7 +460,7 @@
                   "additionalProperties": false,
                   "properties": {
                     "propertiesFileSourceEncoding": {
-                      "$ref": "#/then/then/definitions/resources-configuration-propertiesFileSourceEncoding"
+                      "$ref": "#/then/then/$defs/resources-configuration-propertiesFileSourceEncoding"
                     },
                     "paths": {
                       "type": "object",
@@ -512,7 +480,7 @@
               "additionalProperties": false,
               "properties": {
                 "resources": {
-                  "$ref": "#/then/then/definitions/builder-resources"
+                  "$ref": "#/then/then/$defs/builder-resources"
                 },
                 "cachebuster": {
                   "type": "object",
@@ -527,13 +495,13 @@
                   }
                 },
                 "bundles": {
-                  "$ref": "#/then/then/definitions/builder-bundles"
+                  "$ref": "#/then/then/$defs/builder-bundles"
                 },
                 "componentPreload": {
-                  "$ref": "#/then/then/definitions/builder-componentPreload"
+                  "$ref": "#/then/then/$defs/builder-componentPreload"
                 },
                 "customTasks": {
-                  "$ref": "#/then/then/definitions/customTasks"
+                  "$ref": "#/then/then/$defs/customTasks"
                 }
               }
             },
@@ -542,7 +510,7 @@
               "additionalProperties": false,
               "properties": {
                 "resources": {
-                  "$ref": "#/then/then/definitions/builder-resources"
+                  "$ref": "#/then/then/$defs/builder-resources"
                 },
                 "cachebuster": {
                   "type": "object",
@@ -557,13 +525,13 @@
                   }
                 },
                 "bundles": {
-                  "$ref": "#/then/then/definitions/builder-bundles"
+                  "$ref": "#/then/then/$defs/builder-bundles"
                 },
                 "componentPreload": {
-                  "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                  "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                 },
                 "customTasks": {
-                  "$ref": "#/then/then/definitions/customTasks"
+                  "$ref": "#/then/then/$defs/customTasks"
                 }
               }
             },
@@ -572,7 +540,7 @@
               "additionalProperties": false,
               "properties": {
                 "resources": {
-                  "$ref": "#/then/then/definitions/builder-resources"
+                  "$ref": "#/then/then/$defs/builder-resources"
                 },
                 "cachebuster": {
                   "type": "object",
@@ -587,13 +555,13 @@
                   }
                 },
                 "bundles": {
-                  "$ref": "#/then/then/definitions/builder-bundles-2.4"
+                  "$ref": "#/then/then/$defs/builder-bundles-2.4"
                 },
                 "componentPreload": {
-                  "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                  "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                 },
                 "customTasks": {
-                  "$ref": "#/then/then/definitions/customTasks"
+                  "$ref": "#/then/then/$defs/customTasks"
                 }
               }
             },
@@ -602,7 +570,7 @@
               "additionalProperties": false,
               "properties": {
                 "resources": {
-                  "$ref": "#/then/then/definitions/builder-resources"
+                  "$ref": "#/then/then/$defs/builder-resources"
                 },
                 "cachebuster": {
                   "type": "object",
@@ -617,16 +585,16 @@
                   }
                 },
                 "bundles": {
-                  "$ref": "#/then/then/definitions/builder-bundles-2.4"
+                  "$ref": "#/then/then/$defs/builder-bundles-2.4"
                 },
                 "componentPreload": {
-                  "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                  "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                 },
                 "customTasks": {
-                  "$ref": "#/then/then/definitions/customTasks"
+                  "$ref": "#/then/then/$defs/customTasks"
                 },
                 "settings": {
-                  "$ref": "#/then/then/definitions/builder-settings"
+                  "$ref": "#/then/then/$defs/builder-settings"
                 }
               }
             },
@@ -635,7 +603,7 @@
               "additionalProperties": false,
               "properties": {
                 "resources": {
-                  "$ref": "#/then/then/definitions/builder-resources"
+                  "$ref": "#/then/then/$defs/builder-resources"
                 },
                 "cachebuster": {
                   "type": "object",
@@ -650,19 +618,19 @@
                   }
                 },
                 "bundles": {
-                  "$ref": "#/then/then/definitions/builder-bundles-2.4"
+                  "$ref": "#/then/then/$defs/builder-bundles-2.4"
                 },
                 "componentPreload": {
-                  "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                  "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                 },
                 "customTasks": {
-                  "$ref": "#/then/then/definitions/customTasks"
+                  "$ref": "#/then/then/$defs/customTasks"
                 },
                 "minification": {
-                  "$ref": "#/then/then/definitions/builder-minification"
+                  "$ref": "#/then/then/$defs/builder-minification"
                 },
                 "settings": {
-                  "$ref": "#/then/then/definitions/builder-settings"
+                  "$ref": "#/then/then/$defs/builder-settings"
                 }
               }
             },
@@ -671,7 +639,7 @@
               "additionalProperties": false,
               "properties": {
                 "resources": {
-                  "$ref": "#/then/then/definitions/builder-resources"
+                  "$ref": "#/then/then/$defs/builder-resources"
                 },
                 "cachebuster": {
                   "type": "object",
@@ -686,19 +654,19 @@
                   }
                 },
                 "bundles": {
-                  "$ref": "#/then/then/definitions/builder-bundles-3.0"
+                  "$ref": "#/then/then/$defs/builder-bundles-3.0"
                 },
                 "componentPreload": {
-                  "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                  "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                 },
                 "customTasks": {
-                  "$ref": "#/then/then/definitions/customTasks"
+                  "$ref": "#/then/then/$defs/customTasks"
                 },
                 "minification": {
-                  "$ref": "#/then/then/definitions/builder-minification"
+                  "$ref": "#/then/then/$defs/builder-minification"
                 },
                 "settings": {
-                  "$ref": "#/then/then/definitions/builder-settings"
+                  "$ref": "#/then/then/$defs/builder-settings"
                 }
               }
             }
@@ -745,24 +713,22 @@
                   ]
                 },
                 "type": {
-                  "enum": [
-                    "library"
-                  ]
+                  "const": "library"
                 },
                 "metadata": {
-                  "$ref": "#/then/then/definitions/metadata-3.0"
+                  "$ref": "#/then/then/$defs/metadata-3.0"
                 },
                 "framework": {
-                  "$ref": "#/then/then/definitions/framework"
+                  "$ref": "#/then/then/$defs/framework"
                 },
                 "resources": {
-                  "$ref": "#/then/then/else/else/then/definitions/resources"
+                  "$ref": "#/then/then/else/else/then/$defs/resources"
                 },
                 "builder": {
-                  "$ref": "#/then/then/else/else/then/definitions/builder-specVersion-3.0"
+                  "$ref": "#/then/then/else/else/then/$defs/builder-specVersion-3.0"
                 },
                 "server": {
-                  "$ref": "#/then/then/definitions/server"
+                  "$ref": "#/then/then/$defs/server"
                 },
                 "customConfiguration": {
                   "type": "object",
@@ -774,9 +740,7 @@
               "if": {
                 "properties": {
                   "specVersion": {
-                    "enum": [
-                      "2.6"
-                    ]
+                    "const": "2.6"
                   }
                 }
               },
@@ -784,9 +748,7 @@
                 "additionalProperties": false,
                 "properties": {
                   "specVersion": {
-                    "enum": [
-                      "2.6"
-                    ]
+                    "const": "2.6"
                   },
                   "kind": {
                     "enum": [
@@ -795,24 +757,22 @@
                     ]
                   },
                   "type": {
-                    "enum": [
-                      "library"
-                    ]
+                    "const": "library"
                   },
                   "metadata": {
-                    "$ref": "#/then/then/definitions/metadata"
+                    "$ref": "#/then/then/$defs/metadata"
                   },
                   "framework": {
-                    "$ref": "#/then/then/definitions/framework"
+                    "$ref": "#/then/then/$defs/framework"
                   },
                   "resources": {
-                    "$ref": "#/then/then/else/else/then/definitions/resources"
+                    "$ref": "#/then/then/else/else/then/$defs/resources"
                   },
                   "builder": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-specVersion-2.6"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-specVersion-2.6"
                   },
                   "server": {
-                    "$ref": "#/then/then/definitions/server"
+                    "$ref": "#/then/then/$defs/server"
                   },
                   "customConfiguration": {
                     "type": "object",
@@ -824,9 +784,7 @@
                 "if": {
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "2.5"
-                      ]
+                      "const": "2.5"
                     }
                   }
                 },
@@ -834,9 +792,7 @@
                   "additionalProperties": false,
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "2.5"
-                      ]
+                      "const": "2.5"
                     },
                     "kind": {
                       "enum": [
@@ -845,24 +801,22 @@
                       ]
                     },
                     "type": {
-                      "enum": [
-                        "library"
-                      ]
+                      "const": "library"
                     },
                     "metadata": {
-                      "$ref": "#/then/then/definitions/metadata"
+                      "$ref": "#/then/then/$defs/metadata"
                     },
                     "framework": {
-                      "$ref": "#/then/then/definitions/framework"
+                      "$ref": "#/then/then/$defs/framework"
                     },
                     "resources": {
-                      "$ref": "#/then/then/else/else/then/definitions/resources"
+                      "$ref": "#/then/then/else/else/then/$defs/resources"
                     },
                     "builder": {
-                      "$ref": "#/then/then/else/else/then/definitions/builder-specVersion-2.5"
+                      "$ref": "#/then/then/else/else/then/$defs/builder-specVersion-2.5"
                     },
                     "server": {
-                      "$ref": "#/then/then/definitions/server"
+                      "$ref": "#/then/then/$defs/server"
                     },
                     "customConfiguration": {
                       "type": "object",
@@ -874,9 +828,7 @@
                   "if": {
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "2.4"
-                        ]
+                        "const": "2.4"
                       }
                     }
                   },
@@ -884,9 +836,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "2.4"
-                        ]
+                        "const": "2.4"
                       },
                       "kind": {
                         "enum": [
@@ -895,24 +845,22 @@
                         ]
                       },
                       "type": {
-                        "enum": [
-                          "library"
-                        ]
+                        "const": "library"
                       },
                       "metadata": {
-                        "$ref": "#/then/then/definitions/metadata"
+                        "$ref": "#/then/then/$defs/metadata"
                       },
                       "framework": {
-                        "$ref": "#/then/then/definitions/framework"
+                        "$ref": "#/then/then/$defs/framework"
                       },
                       "resources": {
-                        "$ref": "#/then/then/else/else/then/definitions/resources"
+                        "$ref": "#/then/then/else/else/then/$defs/resources"
                       },
                       "builder": {
-                        "$ref": "#/then/then/else/else/then/definitions/builder-specVersion-2.4"
+                        "$ref": "#/then/then/else/else/then/$defs/builder-specVersion-2.4"
                       },
                       "server": {
-                        "$ref": "#/then/then/definitions/server"
+                        "$ref": "#/then/then/$defs/server"
                       },
                       "customConfiguration": {
                         "type": "object",
@@ -924,9 +872,7 @@
                     "if": {
                       "properties": {
                         "specVersion": {
-                          "enum": [
-                            "2.3"
-                          ]
+                          "const": "2.3"
                         }
                       }
                     },
@@ -934,9 +880,7 @@
                       "additionalProperties": false,
                       "properties": {
                         "specVersion": {
-                          "enum": [
-                            "2.3"
-                          ]
+                          "const": "2.3"
                         },
                         "kind": {
                           "enum": [
@@ -945,24 +889,22 @@
                           ]
                         },
                         "type": {
-                          "enum": [
-                            "library"
-                          ]
+                          "const": "library"
                         },
                         "metadata": {
-                          "$ref": "#/then/then/definitions/metadata"
+                          "$ref": "#/then/then/$defs/metadata"
                         },
                         "framework": {
-                          "$ref": "#/then/then/definitions/framework"
+                          "$ref": "#/then/then/$defs/framework"
                         },
                         "resources": {
-                          "$ref": "#/then/then/else/else/then/definitions/resources"
+                          "$ref": "#/then/then/else/else/then/$defs/resources"
                         },
                         "builder": {
-                          "$ref": "#/then/then/else/else/then/definitions/builder-specVersion-2.3"
+                          "$ref": "#/then/then/else/else/then/$defs/builder-specVersion-2.3"
                         },
                         "server": {
-                          "$ref": "#/then/then/definitions/server"
+                          "$ref": "#/then/then/$defs/server"
                         },
                         "customConfiguration": {
                           "type": "object",
@@ -997,24 +939,22 @@
                             ]
                           },
                           "type": {
-                            "enum": [
-                              "library"
-                            ]
+                            "const": "library"
                           },
                           "metadata": {
-                            "$ref": "#/then/then/definitions/metadata"
+                            "$ref": "#/then/then/$defs/metadata"
                           },
                           "framework": {
-                            "$ref": "#/then/then/definitions/framework"
+                            "$ref": "#/then/then/$defs/framework"
                           },
                           "resources": {
-                            "$ref": "#/then/then/else/else/then/definitions/resources"
+                            "$ref": "#/then/then/else/else/then/$defs/resources"
                           },
                           "builder": {
-                            "$ref": "#/then/then/else/else/then/definitions/builder"
+                            "$ref": "#/then/then/else/else/then/$defs/builder"
                           },
                           "server": {
-                            "$ref": "#/then/then/definitions/server"
+                            "$ref": "#/then/then/$defs/server"
                           },
                           "customConfiguration": {
                             "type": "object",
@@ -1026,9 +966,7 @@
                         "additionalProperties": false,
                         "properties": {
                           "specVersion": {
-                            "enum": [
-                              "2.0"
-                            ]
+                            "const": "2.0"
                           },
                           "kind": {
                             "enum": [
@@ -1037,24 +975,22 @@
                             ]
                           },
                           "type": {
-                            "enum": [
-                              "library"
-                            ]
+                            "const": "library"
                           },
                           "metadata": {
-                            "$ref": "#/then/then/definitions/metadata"
+                            "$ref": "#/then/then/$defs/metadata"
                           },
                           "framework": {
-                            "$ref": "#/then/then/definitions/framework"
+                            "$ref": "#/then/then/$defs/framework"
                           },
                           "resources": {
-                            "$ref": "#/then/then/else/else/then/definitions/resources"
+                            "$ref": "#/then/then/else/else/then/$defs/resources"
                           },
                           "builder": {
-                            "$ref": "#/then/then/else/else/then/definitions/builder"
+                            "$ref": "#/then/then/else/else/then/$defs/builder"
                           },
                           "server": {
-                            "$ref": "#/then/then/definitions/server"
+                            "$ref": "#/then/then/$defs/server"
                           }
                         }
                       }
@@ -1063,7 +999,7 @@
                 }
               }
             },
-            "definitions": {
+            "$defs": {
               "resources": {
                 "type": "object",
                 "additionalProperties": false,
@@ -1073,7 +1009,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "propertiesFileSourceEncoding": {
-                        "$ref": "#/then/then/definitions/resources-configuration-propertiesFileSourceEncoding"
+                        "$ref": "#/then/then/$defs/resources-configuration-propertiesFileSourceEncoding"
                       },
                       "paths": {
                         "type": "object",
@@ -1108,19 +1044,19 @@
                 "additionalProperties": false,
                 "properties": {
                   "resources": {
-                    "$ref": "#/then/then/definitions/builder-resources"
+                    "$ref": "#/then/then/$defs/builder-resources"
                   },
                   "jsdoc": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-jsdoc"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-jsdoc"
                   },
                   "bundles": {
-                    "$ref": "#/then/then/definitions/builder-bundles"
+                    "$ref": "#/then/then/$defs/builder-bundles"
                   },
                   "componentPreload": {
-                    "$ref": "#/then/then/definitions/builder-componentPreload"
+                    "$ref": "#/then/then/$defs/builder-componentPreload"
                   },
                   "customTasks": {
-                    "$ref": "#/then/then/definitions/customTasks"
+                    "$ref": "#/then/then/$defs/customTasks"
                   }
                 }
               },
@@ -1129,22 +1065,22 @@
                 "additionalProperties": false,
                 "properties": {
                   "resources": {
-                    "$ref": "#/then/then/definitions/builder-resources"
+                    "$ref": "#/then/then/$defs/builder-resources"
                   },
                   "jsdoc": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-jsdoc"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-jsdoc"
                   },
                   "bundles": {
-                    "$ref": "#/then/then/definitions/builder-bundles"
+                    "$ref": "#/then/then/$defs/builder-bundles"
                   },
                   "componentPreload": {
-                    "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                    "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                   },
                   "libraryPreload": {
-                    "$ref": "#/then/then/definitions/builder-libraryPreload"
+                    "$ref": "#/then/then/$defs/builder-libraryPreload"
                   },
                   "customTasks": {
-                    "$ref": "#/then/then/definitions/customTasks"
+                    "$ref": "#/then/then/$defs/customTasks"
                   }
                 }
               },
@@ -1153,22 +1089,22 @@
                 "additionalProperties": false,
                 "properties": {
                   "resources": {
-                    "$ref": "#/then/then/definitions/builder-resources"
+                    "$ref": "#/then/then/$defs/builder-resources"
                   },
                   "jsdoc": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-jsdoc"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-jsdoc"
                   },
                   "bundles": {
-                    "$ref": "#/then/then/definitions/builder-bundles-2.4"
+                    "$ref": "#/then/then/$defs/builder-bundles-2.4"
                   },
                   "componentPreload": {
-                    "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                    "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                   },
                   "libraryPreload": {
-                    "$ref": "#/then/then/definitions/builder-libraryPreload"
+                    "$ref": "#/then/then/$defs/builder-libraryPreload"
                   },
                   "customTasks": {
-                    "$ref": "#/then/then/definitions/customTasks"
+                    "$ref": "#/then/then/$defs/customTasks"
                   }
                 }
               },
@@ -1177,25 +1113,25 @@
                 "additionalProperties": false,
                 "properties": {
                   "resources": {
-                    "$ref": "#/then/then/definitions/builder-resources"
+                    "$ref": "#/then/then/$defs/builder-resources"
                   },
                   "jsdoc": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-jsdoc"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-jsdoc"
                   },
                   "bundles": {
-                    "$ref": "#/then/then/definitions/builder-bundles-2.4"
+                    "$ref": "#/then/then/$defs/builder-bundles-2.4"
                   },
                   "componentPreload": {
-                    "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                    "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                   },
                   "libraryPreload": {
-                    "$ref": "#/then/then/definitions/builder-libraryPreload"
+                    "$ref": "#/then/then/$defs/builder-libraryPreload"
                   },
                   "customTasks": {
-                    "$ref": "#/then/then/definitions/customTasks"
+                    "$ref": "#/then/then/$defs/customTasks"
                   },
                   "settings": {
-                    "$ref": "#/then/then/definitions/builder-settings"
+                    "$ref": "#/then/then/$defs/builder-settings"
                   }
                 }
               },
@@ -1204,28 +1140,28 @@
                 "additionalProperties": false,
                 "properties": {
                   "resources": {
-                    "$ref": "#/then/then/definitions/builder-resources"
+                    "$ref": "#/then/then/$defs/builder-resources"
                   },
                   "jsdoc": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-jsdoc"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-jsdoc"
                   },
                   "bundles": {
-                    "$ref": "#/then/then/definitions/builder-bundles-2.4"
+                    "$ref": "#/then/then/$defs/builder-bundles-2.4"
                   },
                   "componentPreload": {
-                    "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                    "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                   },
                   "libraryPreload": {
-                    "$ref": "#/then/then/definitions/builder-libraryPreload"
+                    "$ref": "#/then/then/$defs/builder-libraryPreload"
                   },
                   "customTasks": {
-                    "$ref": "#/then/then/definitions/customTasks"
+                    "$ref": "#/then/then/$defs/customTasks"
                   },
                   "minification": {
-                    "$ref": "#/then/then/definitions/builder-minification"
+                    "$ref": "#/then/then/$defs/builder-minification"
                   },
                   "settings": {
-                    "$ref": "#/then/then/definitions/builder-settings"
+                    "$ref": "#/then/then/$defs/builder-settings"
                   }
                 }
               },
@@ -1234,28 +1170,28 @@
                 "additionalProperties": false,
                 "properties": {
                   "resources": {
-                    "$ref": "#/then/then/definitions/builder-resources"
+                    "$ref": "#/then/then/$defs/builder-resources"
                   },
                   "jsdoc": {
-                    "$ref": "#/then/then/else/else/then/definitions/builder-jsdoc"
+                    "$ref": "#/then/then/else/else/then/$defs/builder-jsdoc"
                   },
                   "bundles": {
-                    "$ref": "#/then/then/definitions/builder-bundles-3.0"
+                    "$ref": "#/then/then/$defs/builder-bundles-3.0"
                   },
                   "componentPreload": {
-                    "$ref": "#/then/then/definitions/builder-componentPreload-specVersion-2.3"
+                    "$ref": "#/then/then/$defs/builder-componentPreload-specVersion-2.3"
                   },
                   "libraryPreload": {
-                    "$ref": "#/then/then/definitions/builder-libraryPreload"
+                    "$ref": "#/then/then/$defs/builder-libraryPreload"
                   },
                   "customTasks": {
-                    "$ref": "#/then/then/definitions/customTasks"
+                    "$ref": "#/then/then/$defs/customTasks"
                   },
                   "minification": {
-                    "$ref": "#/then/then/definitions/builder-minification"
+                    "$ref": "#/then/then/$defs/builder-minification"
                   },
                   "settings": {
-                    "$ref": "#/then/then/definitions/builder-settings"
+                    "$ref": "#/then/then/$defs/builder-settings"
                   }
                 }
               }
@@ -1302,24 +1238,22 @@
                     ]
                   },
                   "type": {
-                    "enum": [
-                      "theme-library"
-                    ]
+                    "const": "theme-library"
                   },
                   "metadata": {
-                    "$ref": "#/then/then/definitions/metadata-3.0"
+                    "$ref": "#/then/then/$defs/metadata-3.0"
                   },
                   "framework": {
-                    "$ref": "#/then/then/definitions/framework"
+                    "$ref": "#/then/then/$defs/framework"
                   },
                   "resources": {
-                    "$ref": "#/then/then/else/else/then/definitions/resources"
+                    "$ref": "#/then/then/else/else/then/$defs/resources"
                   },
                   "builder": {
-                    "$ref": "#/then/then/else/else/else/then/definitions/builder-specVersion-2.5"
+                    "$ref": "#/then/then/else/else/else/then/$defs/builder-specVersion-2.5"
                   },
                   "server": {
-                    "$ref": "#/then/then/definitions/server"
+                    "$ref": "#/then/then/$defs/server"
                   },
                   "customConfiguration": {
                     "type": "object",
@@ -1354,24 +1288,22 @@
                       ]
                     },
                     "type": {
-                      "enum": [
-                        "theme-library"
-                      ]
+                      "const": "theme-library"
                     },
                     "metadata": {
-                      "$ref": "#/then/then/definitions/metadata"
+                      "$ref": "#/then/then/$defs/metadata"
                     },
                     "framework": {
-                      "$ref": "#/then/then/definitions/framework"
+                      "$ref": "#/then/then/$defs/framework"
                     },
                     "resources": {
-                      "$ref": "#/then/then/else/else/then/definitions/resources"
+                      "$ref": "#/then/then/else/else/then/$defs/resources"
                     },
                     "builder": {
-                      "$ref": "#/then/then/else/else/else/then/definitions/builder-specVersion-2.5"
+                      "$ref": "#/then/then/else/else/else/then/$defs/builder-specVersion-2.5"
                     },
                     "server": {
-                      "$ref": "#/then/then/definitions/server"
+                      "$ref": "#/then/then/$defs/server"
                     },
                     "customConfiguration": {
                       "type": "object",
@@ -1410,24 +1342,22 @@
                         ]
                       },
                       "type": {
-                        "enum": [
-                          "theme-library"
-                        ]
+                        "const": "theme-library"
                       },
                       "metadata": {
-                        "$ref": "#/then/then/definitions/metadata"
+                        "$ref": "#/then/then/$defs/metadata"
                       },
                       "framework": {
-                        "$ref": "#/then/then/definitions/framework"
+                        "$ref": "#/then/then/$defs/framework"
                       },
                       "resources": {
-                        "$ref": "#/then/then/else/else/then/definitions/resources"
+                        "$ref": "#/then/then/else/else/then/$defs/resources"
                       },
                       "builder": {
-                        "$ref": "#/then/then/else/else/else/then/definitions/builder"
+                        "$ref": "#/then/then/else/else/else/then/$defs/builder"
                       },
                       "server": {
-                        "$ref": "#/then/then/definitions/server"
+                        "$ref": "#/then/then/$defs/server"
                       },
                       "customConfiguration": {
                         "type": "object",
@@ -1439,9 +1369,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "2.0"
-                        ]
+                        "const": "2.0"
                       },
                       "kind": {
                         "enum": [
@@ -1450,39 +1378,37 @@
                         ]
                       },
                       "type": {
-                        "enum": [
-                          "theme-library"
-                        ]
+                        "const": "theme-library"
                       },
                       "metadata": {
-                        "$ref": "#/then/then/definitions/metadata"
+                        "$ref": "#/then/then/$defs/metadata"
                       },
                       "framework": {
-                        "$ref": "#/then/then/definitions/framework"
+                        "$ref": "#/then/then/$defs/framework"
                       },
                       "resources": {
-                        "$ref": "#/then/then/else/else/then/definitions/resources"
+                        "$ref": "#/then/then/else/else/then/$defs/resources"
                       },
                       "builder": {
-                        "$ref": "#/then/then/else/else/else/then/definitions/builder"
+                        "$ref": "#/then/then/else/else/else/then/$defs/builder"
                       },
                       "server": {
-                        "$ref": "#/then/then/definitions/server"
+                        "$ref": "#/then/then/$defs/server"
                       }
                     }
                   }
                 }
               },
-              "definitions": {
+              "$defs": {
                 "builder": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
                     "resources": {
-                      "$ref": "#/then/then/definitions/builder-resources"
+                      "$ref": "#/then/then/$defs/builder-resources"
                     },
                     "customTasks": {
-                      "$ref": "#/then/then/definitions/customTasks"
+                      "$ref": "#/then/then/$defs/customTasks"
                     }
                   }
                 },
@@ -1491,13 +1417,13 @@
                   "additionalProperties": false,
                   "properties": {
                     "resources": {
-                      "$ref": "#/then/then/definitions/builder-resources"
+                      "$ref": "#/then/then/$defs/builder-resources"
                     },
                     "customTasks": {
-                      "$ref": "#/then/then/definitions/customTasks"
+                      "$ref": "#/then/then/$defs/customTasks"
                     },
                     "settings": {
-                      "$ref": "#/then/then/definitions/builder-settings"
+                      "$ref": "#/then/then/$defs/builder-settings"
                     }
                   }
                 }
@@ -1521,9 +1447,7 @@
                 "if": {
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "3.1"
-                      ]
+                      "const": "3.1"
                     }
                   }
                 },
@@ -1531,9 +1455,7 @@
                   "additionalProperties": false,
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "3.1"
-                      ]
+                      "const": "3.1"
                     },
                     "kind": {
                       "enum": [
@@ -1542,21 +1464,19 @@
                       ]
                     },
                     "type": {
-                      "enum": [
-                        "module"
-                      ]
+                      "const": "module"
                     },
                     "metadata": {
-                      "$ref": "#/then/then/definitions/metadata-3.0"
+                      "$ref": "#/then/then/$defs/metadata-3.0"
                     },
                     "resources": {
-                      "$ref": "#/then/then/else/else/else/else/then/definitions/resources"
+                      "$ref": "#/then/then/else/else/else/else/then/$defs/resources"
                     },
                     "builder": {
-                      "$ref": "#/then/then/else/else/else/else/then/definitions/builder-specVersion-3.1"
+                      "$ref": "#/then/then/else/else/else/else/then/$defs/builder-specVersion-3.1"
                     },
                     "server": {
-                      "$ref": "#/then/then/definitions/server"
+                      "$ref": "#/then/then/$defs/server"
                     },
                     "customConfiguration": {
                       "type": "object",
@@ -1568,9 +1488,7 @@
                   "if": {
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "3.0"
-                        ]
+                        "const": "3.0"
                       }
                     }
                   },
@@ -1578,9 +1496,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "3.0"
-                        ]
+                        "const": "3.0"
                       },
                       "kind": {
                         "enum": [
@@ -1589,21 +1505,19 @@
                         ]
                       },
                       "type": {
-                        "enum": [
-                          "module"
-                        ]
+                        "const": "module"
                       },
                       "metadata": {
-                        "$ref": "#/then/then/definitions/metadata-3.0"
+                        "$ref": "#/then/then/$defs/metadata-3.0"
                       },
                       "resources": {
-                        "$ref": "#/then/then/else/else/else/else/then/definitions/resources"
+                        "$ref": "#/then/then/else/else/else/else/then/$defs/resources"
                       },
                       "builder": {
-                        "$ref": "#/then/then/else/else/else/else/then/definitions/builder-specVersion-2.5"
+                        "$ref": "#/then/then/else/else/else/else/then/$defs/builder-specVersion-2.5"
                       },
                       "server": {
-                        "$ref": "#/then/then/definitions/server"
+                        "$ref": "#/then/then/$defs/server"
                       },
                       "customConfiguration": {
                         "type": "object",
@@ -1638,21 +1552,19 @@
                           ]
                         },
                         "type": {
-                          "enum": [
-                            "module"
-                          ]
+                          "const": "module"
                         },
                         "metadata": {
-                          "$ref": "#/then/then/definitions/metadata"
+                          "$ref": "#/then/then/$defs/metadata"
                         },
                         "resources": {
-                          "$ref": "#/then/then/else/else/else/else/then/definitions/resources"
+                          "$ref": "#/then/then/else/else/else/else/then/$defs/resources"
                         },
                         "builder": {
-                          "$ref": "#/then/then/else/else/else/else/then/definitions/builder-specVersion-2.5"
+                          "$ref": "#/then/then/else/else/else/else/then/$defs/builder-specVersion-2.5"
                         },
                         "server": {
-                          "$ref": "#/then/then/definitions/server"
+                          "$ref": "#/then/then/$defs/server"
                         },
                         "customConfiguration": {
                           "type": "object",
@@ -1691,15 +1603,13 @@
                             ]
                           },
                           "type": {
-                            "enum": [
-                              "module"
-                            ]
+                            "const": "module"
                           },
                           "metadata": {
-                            "$ref": "#/then/then/definitions/metadata"
+                            "$ref": "#/then/then/$defs/metadata"
                           },
                           "resources": {
-                            "$ref": "#/then/then/else/else/else/else/then/definitions/resources"
+                            "$ref": "#/then/then/else/else/else/else/then/$defs/resources"
                           },
                           "customConfiguration": {
                             "type": "object",
@@ -1711,9 +1621,7 @@
                         "additionalProperties": false,
                         "properties": {
                           "specVersion": {
-                            "enum": [
-                              "2.0"
-                            ]
+                            "const": "2.0"
                           },
                           "kind": {
                             "enum": [
@@ -1722,22 +1630,20 @@
                             ]
                           },
                           "type": {
-                            "enum": [
-                              "module"
-                            ]
+                            "const": "module"
                           },
                           "metadata": {
-                            "$ref": "#/then/then/definitions/metadata"
+                            "$ref": "#/then/then/$defs/metadata"
                           },
                           "resources": {
-                            "$ref": "#/then/then/else/else/else/else/then/definitions/resources"
+                            "$ref": "#/then/then/else/else/else/else/then/$defs/resources"
                           }
                         }
                       }
                     }
                   }
                 },
-                "definitions": {
+                "$defs": {
                   "resources": {
                     "type": "object",
                     "additionalProperties": false,
@@ -1764,7 +1670,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "settings": {
-                        "$ref": "#/then/then/definitions/builder-settings"
+                        "$ref": "#/then/then/$defs/builder-settings"
                       }
                     }
                   },
@@ -1773,10 +1679,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "resources": {
-                        "$ref": "#/then/then/definitions/builder-resources"
+                        "$ref": "#/then/then/$defs/builder-resources"
                       },
                       "settings": {
-                        "$ref": "#/then/then/definitions/builder-settings"
+                        "$ref": "#/then/then/$defs/builder-settings"
                       }
                     }
                   }
@@ -1786,7 +1692,7 @@
           }
         }
       },
-      "definitions": {
+      "$defs": {
         "metadata": {
           "type": "object",
           "required": [
@@ -1876,10 +1782,10 @@
             "additionalProperties": false,
             "properties": {
               "bundleDefinition": {
-                "$ref": "#/then/then/definitions/builder-bundles-bundleDefinition"
+                "$ref": "#/then/then/$defs/builder-bundles-bundleDefinition"
               },
               "bundleOptions": {
-                "$ref": "#/then/then/definitions/builder-bundles-bundleOptions"
+                "$ref": "#/then/then/$defs/builder-bundles-bundleOptions"
               }
             }
           }
@@ -1892,10 +1798,10 @@
             "additionalProperties": false,
             "properties": {
               "bundleDefinition": {
-                "$ref": "#/then/then/definitions/builder-bundles-bundleDefinition-2.4"
+                "$ref": "#/then/then/$defs/builder-bundles-bundleDefinition-2.4"
               },
               "bundleOptions": {
-                "$ref": "#/then/then/definitions/builder-bundles-bundleOptions"
+                "$ref": "#/then/then/$defs/builder-bundles-bundleOptions"
               }
             }
           }
@@ -1908,10 +1814,10 @@
             "additionalProperties": false,
             "properties": {
               "bundleDefinition": {
-                "$ref": "#/then/then/definitions/builder-bundles-bundleDefinition-2.4"
+                "$ref": "#/then/then/$defs/builder-bundles-bundleDefinition-2.4"
               },
               "bundleOptions": {
-                "$ref": "#/then/then/definitions/builder-bundles-bundleOptions-3.0"
+                "$ref": "#/then/then/$defs/builder-bundles-bundleOptions-3.0"
               }
             }
           }
@@ -2200,7 +2106,7 @@
                       "beforeMiddleware": {
                         "type": "string"
                       },
-                      "configuration": {}
+                      "configuration": true
                     }
                   },
                   {
@@ -2220,7 +2126,7 @@
                       "afterMiddleware": {
                         "type": "string"
                       },
-                      "configuration": {}
+                      "configuration": true
                     }
                   }
                 ]
@@ -2344,7 +2250,7 @@
                   "beforeTask": {
                     "type": "string"
                   },
-                  "configuration": {}
+                  "configuration": true
                 }
               },
               {
@@ -2361,7 +2267,7 @@
                   "afterTask": {
                     "type": "string"
                   },
-                  "configuration": {}
+                  "configuration": true
                 }
               }
             ]
@@ -2409,9 +2315,7 @@
       "if": {
         "properties": {
           "kind": {
-            "enum": [
-              "extension"
-            ]
+            "const": "extension"
           }
         }
       },
@@ -2438,9 +2342,7 @@
             ]
           },
           "kind": {
-            "enum": [
-              "extension"
-            ]
+            "const": "extension"
           },
           "type": {
             "enum": [
@@ -2450,7 +2352,7 @@
             ]
           },
           "metadata": {
-            "$ref": "#/then/else/then/definitions/metadata"
+            "$ref": "#/then/else/then/$defs/metadata"
           }
         },
         "if": {
@@ -2460,7 +2362,7 @@
             }
           }
         },
-        "then": {},
+        "then": true,
         "else": {
           "if": {
             "properties": {
@@ -2498,20 +2400,16 @@
                   ]
                 },
                 "kind": {
-                  "enum": [
-                    "extension"
-                  ]
+                  "const": "extension"
                 },
                 "type": {
-                  "enum": [
-                    "task"
-                  ]
+                  "const": "task"
                 },
                 "metadata": {
-                  "$ref": "#/then/else/then/definitions/metadata-3.0"
+                  "$ref": "#/then/else/then/$defs/metadata-3.0"
                 },
                 "task": {
-                  "$ref": "#/then/else/then/else/then/definitions/task"
+                  "$ref": "#/then/else/then/else/then/$defs/task"
                 },
                 "customConfiguration": {
                   "type": "object",
@@ -2548,20 +2446,16 @@
                     ]
                   },
                   "kind": {
-                    "enum": [
-                      "extension"
-                    ]
+                    "const": "extension"
                   },
                   "type": {
-                    "enum": [
-                      "task"
-                    ]
+                    "const": "task"
                   },
                   "metadata": {
-                    "$ref": "#/then/else/then/definitions/metadata"
+                    "$ref": "#/then/else/then/$defs/metadata"
                   },
                   "task": {
-                    "$ref": "#/then/else/then/else/then/definitions/task"
+                    "$ref": "#/then/else/then/else/then/$defs/task"
                   },
                   "customConfiguration": {
                     "type": "object",
@@ -2573,30 +2467,24 @@
                 "additionalProperties": false,
                 "properties": {
                   "specVersion": {
-                    "enum": [
-                      "2.0"
-                    ]
+                    "const": "2.0"
                   },
                   "kind": {
-                    "enum": [
-                      "extension"
-                    ]
+                    "const": "extension"
                   },
                   "type": {
-                    "enum": [
-                      "task"
-                    ]
+                    "const": "task"
                   },
                   "metadata": {
-                    "$ref": "#/then/else/then/definitions/metadata"
+                    "$ref": "#/then/else/then/$defs/metadata"
                   },
                   "task": {
-                    "$ref": "#/then/else/then/else/then/definitions/task"
+                    "$ref": "#/then/else/then/else/then/$defs/task"
                   }
                 }
               }
             },
-            "definitions": {
+            "$defs": {
               "task": {
                 "type": "object",
                 "additionalProperties": false,
@@ -2645,20 +2533,16 @@
                     ]
                   },
                   "kind": {
-                    "enum": [
-                      "extension"
-                    ]
+                    "const": "extension"
                   },
                   "type": {
-                    "enum": [
-                      "server-middleware"
-                    ]
+                    "const": "server-middleware"
                   },
                   "metadata": {
-                    "$ref": "#/then/else/then/definitions/metadata-3.0"
+                    "$ref": "#/then/else/then/$defs/metadata-3.0"
                   },
                   "middleware": {
-                    "$ref": "#/then/else/then/else/else/then/definitions/middleware"
+                    "$ref": "#/then/else/then/else/else/then/$defs/middleware"
                   },
                   "customConfiguration": {
                     "type": "object",
@@ -2695,20 +2579,16 @@
                       ]
                     },
                     "kind": {
-                      "enum": [
-                        "extension"
-                      ]
+                      "const": "extension"
                     },
                     "type": {
-                      "enum": [
-                        "server-middleware"
-                      ]
+                      "const": "server-middleware"
                     },
                     "metadata": {
-                      "$ref": "#/then/else/then/definitions/metadata"
+                      "$ref": "#/then/else/then/$defs/metadata"
                     },
                     "middleware": {
-                      "$ref": "#/then/else/then/else/else/then/definitions/middleware"
+                      "$ref": "#/then/else/then/else/else/then/$defs/middleware"
                     },
                     "customConfiguration": {
                       "type": "object",
@@ -2720,30 +2600,24 @@
                   "additionalProperties": false,
                   "properties": {
                     "specVersion": {
-                      "enum": [
-                        "2.0"
-                      ]
+                      "const": "2.0"
                     },
                     "kind": {
-                      "enum": [
-                        "extension"
-                      ]
+                      "const": "extension"
                     },
                     "type": {
-                      "enum": [
-                        "server-middleware"
-                      ]
+                      "const": "server-middleware"
                     },
                     "metadata": {
-                      "$ref": "#/then/else/then/definitions/metadata"
+                      "$ref": "#/then/else/then/$defs/metadata"
                     },
                     "middleware": {
-                      "$ref": "#/then/else/then/else/else/then/definitions/middleware"
+                      "$ref": "#/then/else/then/else/else/then/$defs/middleware"
                     }
                   }
                 }
               },
-              "definitions": {
+              "$defs": {
                 "middleware": {
                   "type": "object",
                   "additionalProperties": false,
@@ -2792,20 +2666,16 @@
                       ]
                     },
                     "kind": {
-                      "enum": [
-                        "extension"
-                      ]
+                      "const": "extension"
                     },
                     "type": {
-                      "enum": [
-                        "project-shim"
-                      ]
+                      "const": "project-shim"
                     },
                     "metadata": {
-                      "$ref": "#/then/else/then/definitions/metadata-3.0"
+                      "$ref": "#/then/else/then/$defs/metadata-3.0"
                     },
                     "shims": {
-                      "$ref": "#/then/else/then/else/else/else/then/definitions/shims"
+                      "$ref": "#/then/else/then/else/else/else/then/$defs/shims"
                     },
                     "customConfiguration": {
                       "type": "object",
@@ -2842,20 +2712,16 @@
                         ]
                       },
                       "kind": {
-                        "enum": [
-                          "extension"
-                        ]
+                        "const": "extension"
                       },
                       "type": {
-                        "enum": [
-                          "project-shim"
-                        ]
+                        "const": "project-shim"
                       },
                       "metadata": {
-                        "$ref": "#/then/else/then/definitions/metadata"
+                        "$ref": "#/then/else/then/$defs/metadata"
                       },
                       "shims": {
-                        "$ref": "#/then/else/then/else/else/else/then/definitions/shims"
+                        "$ref": "#/then/else/then/else/else/else/then/$defs/shims"
                       },
                       "customConfiguration": {
                         "type": "object",
@@ -2867,30 +2733,24 @@
                     "additionalProperties": false,
                     "properties": {
                       "specVersion": {
-                        "enum": [
-                          "2.0"
-                        ]
+                        "const": "2.0"
                       },
                       "kind": {
-                        "enum": [
-                          "extension"
-                        ]
+                        "const": "extension"
                       },
                       "type": {
-                        "enum": [
-                          "project-shim"
-                        ]
+                        "const": "project-shim"
                       },
                       "metadata": {
-                        "$ref": "#/then/else/then/definitions/metadata"
+                        "$ref": "#/then/else/then/$defs/metadata"
                       },
                       "shims": {
-                        "$ref": "#/then/else/then/else/else/else/then/definitions/shims"
+                        "$ref": "#/then/else/then/else/else/else/then/$defs/shims"
                       }
                     }
                   }
                 },
-                "definitions": {
+                "$defs": {
                   "shims": {
                     "type": "object",
                     "additionalProperties": false,
@@ -2944,7 +2804,7 @@
             }
           }
         },
-        "definitions": {
+        "$defs": {
           "metadata": {
             "type": "object",
             "required": [

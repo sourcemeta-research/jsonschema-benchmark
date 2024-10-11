@@ -1,7 +1,87 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "definitions": {
+  "description": "Descriptor for projects. Contains all the information contained within a .uproject file.",
+  "markdownDescription": "Descriptor for projects. Contains all the information contained within a `.uproject` file.",
+  "properties": {
+    "DisableEnginePluginsByDefault": {
+      "description": "Indicates that enabled by default engine plugins should not be enabled unless explicitly enabled by the project or target files.",
+      "type": "boolean",
+      "default": false
+    },
+    "IsEnterpriseProject": {
+      "description": "Indicates if this project is an Enterprise project.",
+      "type": "boolean",
+      "default": false
+    },
+    "Category": {
+      "description": "Category to show under the project browser.",
+      "type": "string"
+    },
+    "Description": {
+      "description": "Description to show in the project browser.",
+      "type": "string"
+    },
+    "EngineAssociation": {
+      "description": "The engine to open this project with. Denotes by <major>.<minor> convention e.g. 4.20, 5.0 or source engine hash.",
+      "markdownDescription": "The engine to open this project with. Denotes by `<major>.<minor>` convention e.g. `4.20`, `5.0` or source engine GUID.",
+      "type": "string",
+      "pattern": "(^([0-9]+)\\.([0-9]+)$)|(^\\{[A-F0-9]{8}(-[A-F0-9]{4}){3}-[A-F0-9]{12}\\}$)"
+    },
+    "EpicSampleNameHash": {
+      "description": "A hash that is used to determine if the project was forked from a sample.",
+      "type": "number"
+    },
+    "FileVersion": {
+      "description": "Descriptor version number.",
+      "markdownDescription": "Descriptor version number. More details can be found in the [EProjectDescriptorVersion](https://docs.unrealengine.com/4.26/en-US/API/Runtime/Projects/EProjectDescriptorVersion__Type/).",
+      "type": "number",
+      "default": 3,
+      "$comment": "More details can be found in https://docs.unrealengine.com/4.26/en-US/API/Runtime/Projects/EProjectDescriptorVersion__Type/"
+    },
+    "Modules": {
+      "description": "List of all modules associated with this project.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/ModuleDescriptor"
+      }
+    },
+    "Plugins": {
+      "description": "List of plugins for this project (may be enabled/disabled).",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/PluginReferenceDescriptor"
+      }
+    },
+    "PostBuildSteps": {
+      "description": "Custom steps to execute after building targets in this project.",
+      "type": "object",
+      "$comment": "Define platform as key, command as value."
+    },
+    "PreBuildSteps": {
+      "description": "Custom steps to execute before building targets in this project.",
+      "type": "object",
+      "$comment": "Define platform as key, command as value."
+    },
+    "TargetPlatforms": {
+      "description": "Array of platforms that this project is targeting.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "EngineAssociation",
+    "FileVersion"
+  ],
+  "title": "JSON schema for Unreal Engine uproject",
+  "type": "object",
+  "$id": "https://json.schemastore.org/uproject.json",
+  "$defs": {
     "BuildConfiguration": {
       "description": "Available build configurations. Mirorred from UnrealTargetConfiguration.",
       "markdownDescription": "Available build configurations. Mirorred from `UnrealTargetConfiguration`.",
@@ -102,7 +182,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildTargetType"
+            "$ref": "#/$defs/BuildTargetType"
           }
         },
         "TargetConfigurationAllowList": {
@@ -110,7 +190,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildConfiguration"
+            "$ref": "#/$defs/BuildConfiguration"
           }
         },
         "TargetConfigurationDenyList": {
@@ -118,7 +198,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildConfiguration"
+            "$ref": "#/$defs/BuildConfiguration"
           }
         },
         "TargetDenyList": {
@@ -126,7 +206,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildTargetType"
+            "$ref": "#/$defs/BuildTargetType"
           }
         },
         "Type": {
@@ -205,7 +285,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildTargetType"
+            "$ref": "#/$defs/BuildTargetType"
           }
         },
         "TargetConfigurationAllowList": {
@@ -213,7 +293,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildConfiguration"
+            "$ref": "#/$defs/BuildConfiguration"
           }
         },
         "TargetConfigurationDenyList": {
@@ -221,7 +301,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildConfiguration"
+            "$ref": "#/$defs/BuildConfiguration"
           }
         },
         "TargetDenyList": {
@@ -229,7 +309,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/BuildTargetType"
+            "$ref": "#/$defs/BuildTargetType"
           }
         }
       },
@@ -238,85 +318,5 @@
         "Name"
       ]
     }
-  },
-  "description": "Descriptor for projects. Contains all the information contained within a .uproject file.",
-  "markdownDescription": "Descriptor for projects. Contains all the information contained within a `.uproject` file.",
-  "properties": {
-    "DisableEnginePluginsByDefault": {
-      "description": "Indicates that enabled by default engine plugins should not be enabled unless explicitly enabled by the project or target files.",
-      "type": "boolean",
-      "default": false
-    },
-    "IsEnterpriseProject": {
-      "description": "Indicates if this project is an Enterprise project.",
-      "type": "boolean",
-      "default": false
-    },
-    "Category": {
-      "description": "Category to show under the project browser.",
-      "type": "string"
-    },
-    "Description": {
-      "description": "Description to show in the project browser.",
-      "type": "string"
-    },
-    "EngineAssociation": {
-      "description": "The engine to open this project with. Denotes by <major>.<minor> convention e.g. 4.20, 5.0 or source engine hash.",
-      "markdownDescription": "The engine to open this project with. Denotes by `<major>.<minor>` convention e.g. `4.20`, `5.0` or source engine GUID.",
-      "type": "string",
-      "pattern": "(^([0-9]+)\\.([0-9]+)$)|(^\\{[A-F0-9]{8}(-[A-F0-9]{4}){3}-[A-F0-9]{12}\\}$)"
-    },
-    "EpicSampleNameHash": {
-      "description": "A hash that is used to determine if the project was forked from a sample.",
-      "type": "number"
-    },
-    "FileVersion": {
-      "description": "Descriptor version number.",
-      "markdownDescription": "Descriptor version number. More details can be found in the [EProjectDescriptorVersion](https://docs.unrealengine.com/4.26/en-US/API/Runtime/Projects/EProjectDescriptorVersion__Type/).",
-      "type": "number",
-      "default": 3,
-      "$comment": "More details can be found in https://docs.unrealengine.com/4.26/en-US/API/Runtime/Projects/EProjectDescriptorVersion__Type/"
-    },
-    "Modules": {
-      "description": "List of all modules associated with this project.",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/ModuleDescriptor"
-      }
-    },
-    "Plugins": {
-      "description": "List of plugins for this project (may be enabled/disabled).",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "$ref": "#/definitions/PluginReferenceDescriptor"
-      }
-    },
-    "PostBuildSteps": {
-      "description": "Custom steps to execute after building targets in this project.",
-      "type": "object",
-      "$comment": "Define platform as key, command as value."
-    },
-    "PreBuildSteps": {
-      "description": "Custom steps to execute before building targets in this project.",
-      "type": "object",
-      "$comment": "Define platform as key, command as value."
-    },
-    "TargetPlatforms": {
-      "description": "Array of platforms that this project is targeting.",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string"
-      }
-    }
-  },
-  "required": [
-    "EngineAssociation",
-    "FileVersion"
-  ],
-  "title": "JSON schema for Unreal Engine uproject",
-  "type": "object",
-  "$id": "https://json.schemastore.org/uproject.json"
+  }
 }
