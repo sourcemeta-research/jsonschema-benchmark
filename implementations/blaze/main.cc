@@ -2,6 +2,9 @@
 #include <sourcemeta/jsontoolkit/jsonl.h>
 #include <sourcemeta/jsontoolkit/jsonschema.h>
 
+#include <sourcemeta/blaze/compiler.h>
+#include <sourcemeta/blaze/evaluator.h>
+
 #include <chrono>
 #include <filesystem>
 #include <iostream>
@@ -16,13 +19,13 @@ int validate(const std::filesystem::path &example) {
     instances.push_back(instance);
   }
 
-  const auto schema_template{sourcemeta::jsontoolkit::compile(
+  const auto schema_template{sourcemeta::blaze::compile(
       schema, sourcemeta::jsontoolkit::default_schema_walker,
       sourcemeta::jsontoolkit::official_resolver,
-      sourcemeta::jsontoolkit::default_schema_compiler,
-      sourcemeta::jsontoolkit::SchemaCompilerMode::FastValidation)};
+      sourcemeta::blaze::default_schema_compiler,
+      sourcemeta::blaze::Mode::FastValidation)};
 
-  sourcemeta::jsontoolkit::EvaluationContext context;
+  sourcemeta::blaze::EvaluationContext context;
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
   auto num = 0;
@@ -30,7 +33,7 @@ int validate(const std::filesystem::path &example) {
     context.prepare(instance);
     num += 1;
     const auto result{
-        sourcemeta::jsontoolkit::evaluate(schema_template, context)};
+        sourcemeta::blaze::evaluate(schema_template, context)};
     if (!result) {
       std::cerr << "Error validating instance " << num << "\n";
       return EXIT_FAILURE;
@@ -56,7 +59,7 @@ int main(int argc, char **argv) {
     const std::filesystem::path example{argv[1]};
     return validate(example);
   } catch (const std::exception &e) {
-    std::cerr << "Error during jsontoolkit benchmark: " << e.what() << "\n";
+    std::cerr << "Error during Blaze benchmark: " << e.what() << "\n";
     return EXIT_FAILURE;
   }
 }
