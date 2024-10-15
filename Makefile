@@ -35,34 +35,34 @@ define docker_run
 				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
 endef
 
-# JSON Toolkit
+# Blaze
 
-implementations/jsontoolkit/.dockertimestamp: \
-	implementations/jsontoolkit/CMakeLists.txt \
-	implementations/jsontoolkit/main.cc \
-	implementations/jsontoolkit/Dockerfile
-	docker build -t jsonschema-benchmark/jsontoolkit implementations/jsontoolkit
+implementations/blaze/.dockertimestamp: \
+	implementations/blaze/CMakeLists.txt \
+	implementations/blaze/main.cc \
+	implementations/blaze/Dockerfile
+	docker build -t jsonschema-benchmark/blaze implementations/blaze
 	touch $@
 
-dist/results/jsontoolkit/%: \
-	implementations/jsontoolkit/.dockertimestamp \
+dist/results/blaze/%: \
+	implementations/blaze/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
-	| dist/results/jsontoolkit
-	@$(call docker_run,jsontoolkit,/workspace/$(dir $(word 2,$^)))
+	| dist/results/blaze
+	@$(call docker_run,blaze,/workspace/$(dir $(word 2,$^)))
 
-implementations/jsontoolkit-nodejs/.dockertimestamp: \
-	implementations/jsontoolkit-nodejs/main.mjs \
-	implementations/jsontoolkit-nodejs/Dockerfile
-	docker build -t jsonschema-benchmark/jsontoolkit-nodejs implementations/jsontoolkit-nodejs
+implementations/blaze-nodejs/.dockertimestamp: \
+	implementations/blaze-nodejs/main.mjs \
+	implementations/blaze-nodejs/Dockerfile
+	docker build -t jsonschema-benchmark/blaze-nodejs implementations/blaze-nodejs
 	touch $@
 
-dist/results/jsontoolkit-nodejs/%: \
-	implementations/jsontoolkit-nodejs/.dockertimestamp \
+dist/results/blaze-nodejs/%: \
+	implementations/blaze-nodejs/.dockertimestamp \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
-	| dist/results/jsontoolkit-nodejs
-	@$(call docker_run,jsontoolkit-nodejs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	| dist/results/blaze-nodejs
+	@$(call docker_run,blaze-nodejs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
 # AJV
 

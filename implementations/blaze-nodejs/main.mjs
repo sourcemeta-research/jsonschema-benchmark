@@ -1,4 +1,4 @@
-import { compile, evaluate } from './repo/bindings/nodejs/jsontoolkit.js';
+import { compile, evaluate } from './repo/bindings/nodejs/blaze.js';
 
 import fs from 'fs';
 import readline from 'readline';
