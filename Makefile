@@ -51,6 +51,19 @@ dist/results/jsontoolkit/%: \
 	| dist/results/jsontoolkit
 	@$(call docker_run,jsontoolkit,/workspace/$(dir $(word 2,$^)))
 
+implementations/jsontoolkit-nodejs/.dockertimestamp: \
+	implementations/jsontoolkit-nodejs/main.mjs \
+	implementations/jsontoolkit-nodejs/Dockerfile
+	docker build -t jsonschema-benchmark/jsontoolkit-nodejs implementations/jsontoolkit-nodejs
+	touch $@
+
+dist/results/jsontoolkit-nodejs/%: \
+	implementations/jsontoolkit-nodejs/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsontoolkit-nodejs
+	@$(call docker_run,jsontoolkit-nodejs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # AJV
 
 implementations/ajv/.dockertimestamp: \
