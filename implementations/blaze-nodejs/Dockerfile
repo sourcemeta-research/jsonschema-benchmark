@@ -19,7 +19,7 @@ ENV EM_CONFIG="/emsdk/.emscripten"
 
 COPY . /app
 RUN git clone https://github.com/sourcemeta/blaze /app/repo
-RUN make NODE=/emsdk/node/18.20.3_64bit/bin/node -C /app/repo/bindings/nodejs
+RUN make -C /app/repo/bindings/nodejs compile
 
 ENTRYPOINT ["node", "--disable-warning=ExperimentalWarning", "/app/main.mjs"]
 CMD []
