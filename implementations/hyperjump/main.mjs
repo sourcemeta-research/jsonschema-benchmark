@@ -1,7 +1,12 @@
-import { registerSchema, validate } from "@hyperjump/json-schema/draft-07";
+import { registerSchema, validate } from "@hyperjump/json-schema/draft-2020-12";
 import fs from 'fs';
 import readline from 'readline';
 import { performance } from 'perf_hooks';
+
+await Promise.all([
+  import("@hyperjump/json-schema/draft-2019-09"),
+  import("@hyperjump/json-schema/draft-07"),
+]);
 
 function readJSONFile(filePath) {
   try {
