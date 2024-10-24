@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "author": "Juan Cruz Viotti <jv@jviotti.com>",
   "dependencies": {
-    "ajv": "^6.12.6"
+    "ajv": "^8.17.1"
   }
 }
