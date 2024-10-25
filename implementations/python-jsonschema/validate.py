@@ -11,7 +11,8 @@ if __name__ == "__main__":
     schema = json.load(open(example_dir / "schema.json"))
     instances = [json.loads(doc) for doc in open(example_dir / "instances.jsonl").readlines()]
 
-    validator = jsonschema.Draft4Validator(schema)
+    Validator = jsonschema.validators.validator_for(schema)
+    validator = Validator(schema)
 
     start = time.time_ns()
     for instance in instances:

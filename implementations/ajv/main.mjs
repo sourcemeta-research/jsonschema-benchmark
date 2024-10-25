@@ -1,8 +1,12 @@
-import Ajv from 'ajv';
-import draft7schema from 'ajv/lib/refs/json-schema-draft-07.json' with { type: 'json' };
 import fs from 'fs';
 import readline from 'readline';
 import { performance } from 'perf_hooks';
+
+const DRAFTS = {
+  "https://json-schema.org/draft/2020-12/schema": (await import("ajv/dist/2020.js")).Ajv2020,
+  "https://json-schema.org/draft/2019-09/schema": (await import("ajv/dist/2019.js")).Ajv2019,
+  "http://json-schema.org/draft-07/schema#": (await import("ajv")).Ajv,
+};
 
 function readJSONFile(filePath) {
   try {
@@ -25,13 +29,7 @@ async function* readJSONLines(filePath) {
 async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
 
-  const ajv = new Ajv({
-    schemaId: 'id',
-    meta: false,
-    validateSchema: false
-  });
-
-  ajv.addMetaSchema(draft7schema);
+  const ajv = new DRAFTS[schema['$schema']]({strict: false});
   const validate = ajv.compile(schema);
 
   const instances = [];
