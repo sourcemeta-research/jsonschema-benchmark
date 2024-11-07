@@ -31,6 +31,7 @@ async function validateSchema(schemaPath, instancePath) {
 
   const schemaId = schema["$id"] || "https://example.com" + schemaPath;
   registerSchema(schema, schemaId);
+  const compiled = await validate(schemaId);
 
   const instances = [];
   for await (const instance of readJSONLines(instancePath)) {
@@ -39,7 +40,7 @@ async function validateSchema(schemaPath, instancePath) {
   let failed = false;
   const startTime = performance.now();
   for (const instance of instances) {
-    const output = await validate(schemaId, instance);
+    const output = compiled(instance);
     if (!output.valid) {
       failed = true;
     }
