@@ -182,3 +182,20 @@ dist/results/jsoncons/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/jsoncons
 	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
+
+# DOTNET / CORVUS
+
+implementations/corvus/.dockertimestamp: \
+	implementations/corvus/bench.csproj \
+	implementations/corvus/Program.cs \
+	implementations/corvus/generate-and-run.sh \
+	implementations/corvus/Dockerfile
+	docker build -t jsonschema-benchmark/corvus implementations/corvus
+	touch $@
+
+dist/results/corvus/%: \
+	implementations/corvus/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus
+	@$(call docker_run,corvus,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
