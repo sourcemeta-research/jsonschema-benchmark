@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
-IMPLEMENTATIONS = $(notdir $(wildcard implementations/*))
+IMPLEMENTATIONS ?= $(notdir $(wildcard implementations/*))
 
 .PHONY: clean
 clean: ; rm -rf dist implementations/*/.dockertimestamp
