@@ -9,7 +9,7 @@ then
   exit 1
 fi
 
-echo "implementation,version,name,nanoseconds,exit_status"
+echo "implementation,version,name,nanoseconds,compile_nanoseconds,exit_status"
 
 for argument in "$@"
 do
