@@ -8,23 +8,69 @@ on:
   pull_request:
 
 jobs:
-  test:
+  set-implementations:
+    runs-on: ubuntu-latest
+    outputs:
+      implementations: ${{ steps.implementations.outputs.implementations }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set implementations
+        id: implementations
+        run: echo implementations=$(ls implementations | tr '\n' ' ' | sed 's/ $//;s/^/{"include":\[{"impl":"/;s/ /"}, {"impl":"/g;s/$/"}]}/') >> $GITHUB_OUTPUT
+
+  benchmark:
+    needs: set-implementations
     runs-on: ubuntu-latest
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
+    strategy:
+      matrix: ${{ fromJson(needs.set-implementations.outputs.implementations) }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12.5'
-
-      - name: Install uv
-        run: pipx install uv
 
       - name: Run benchmarks
         continue-on-error: true
-        run: make dist/report.csv
+        run: make IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
+
+      - name: Save output
+        id: save-output
+        run: |
+          {
+            echo 'report-${{ matrix.impl }}<<EOF'
+            cat dist/report.csv
+            echo EOF
+          } >> $GITHUB_OUTPUT
+    outputs:
+      # GitHub Actions does not easily support matrix outputs
+      # https://github.com/orgs/community/discussions/26639
+      report-ajv: ${{ steps.save-output.outputs.report-ajv }}
+      report-blaze-nodejs: ${{ steps.save-output.outputs.report-blaze-nodejs }}
+      report-blaze: ${{ steps.save-output.outputs.report-blaze }}
+      report-boon: ${{ steps.save-output.outputs.report-boon }}
+      report-corvus: ${{ steps.save-output.outputs.report-corvus }}
+      report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
+      report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
+      report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
+      report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
+      report-python-jsonschema: ${{ steps.save-output.outputs.report-python-jsonschema }}
+
+  aggregate:
+    needs: benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Concatenate output
+        run: |
+          mkdir dist
+          printf "${{ join(needs.benchmark.outputs.*, '\n') }}" | awk 'NR==1 || !/^implementation,/' > dist/report.csv
       - run: cat dist/report.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+      - name: Install uv
+        run: pipx install uv
+
       - name: Process CSV
         run: python .github/csv_min.py > dist/report-min.csv
       - name: Read CSV
@@ -42,7 +88,8 @@ jobs:
           MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
         run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
 
-      - run: make plots
+      - name: Generate plots
+        run: mkdir -p dist/results/plots && uv run python plot.py
       - name: Upload plots
         id: imgur
         uses: devicons/public-upload-to-imgur@v2.2.2
