@@ -10,8 +10,8 @@ for row in reader:
     if row['exit_status'] != '0':
         continue
 
-    if int(row['nanoseconds']) < min_val[row['name']]:
-        min_val[row['name']] = int(row['nanoseconds'])
+    if int(row['cold_ns']) < min_val[row['name']]:
+        min_val[row['name']] = int(row['cold_ns'])
         min_impl[row['name']] = row['implementation']
 
 reader = csv.DictReader(open('dist/report.csv'))
@@ -21,9 +21,9 @@ for row in reader:
     if row['exit_status'] != '0':
         continue
 
-    if int(row['nanoseconds']) > min_val[row['name']] \
-            and int(row['nanoseconds']) < next_min_val[row['name']]:
-        next_min_val[row['name']] = int(row['nanoseconds'])
+    if int(row['cold_ns']) > min_val[row['name']] \
+            and int(row['cold_ns']) < next_min_val[row['name']]:
+        next_min_val[row['name']] = int(row['cold_ns'])
 
 reader = csv.DictReader(open('dist/report.csv'))
 writer = csv.DictWriter(sys.stdout, fieldnames=row.keys())

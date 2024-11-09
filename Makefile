@@ -31,7 +31,7 @@ define docker_run
   $(eval $@_TOOL = $(1))
   $(eval $@_INPUT = $(2))
 				-$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@)
-				@if [ ! -s $@ ]; then echo "0,0" > $@ ; fi
+				@if [ ! -s $@ ]; then echo "0,0,0" > $@ ; fi
 				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
 endef
 

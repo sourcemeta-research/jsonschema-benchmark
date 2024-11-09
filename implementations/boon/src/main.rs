@@ -1,7 +1,17 @@
 use std::{error::Error, fs::File, io::{BufReader, BufRead}, time::Instant};
-use boon::{Compiler, Schemas};
+use boon::{Compiler, Schemas, SchemaIndex};
 use serde_json::Value;
 use std::env;
+
+const WARMUP_ITERATIONS: u128 = 100;
+const MAX_WARMUP_TIME: u128 = 10_000_000_000; // 10 seconds
+
+fn validate_all(schemas: &Schemas, sch_index: SchemaIndex, serde_lines: &std::vec::Vec<Value>) {
+  for line in &serde_lines {
+    let result = schemas.validate(&line, sch_index);
+    assert!(result.is_ok(), "Validation failed for line: {}", line);
+  }
+}
 
 fn main() -> Result<(), Box<dyn Error>> {
   // Get arguments
@@ -33,13 +43,22 @@ fn main() -> Result<(), Box<dyn Error>> {
   }
 
   // Validate the instances
-  let start = Instant::now();
-  for line in &serde_lines {
-    let result = schemas.validate(&line, sch_index);
-    assert!(result.is_ok(), "Validation failed for line: {}", line);
+  let cold_start = Instant::now();
+  validate_all(&schemas, sch_index, &serde_lines);
+  let cold_duration = cold_start.elapsed().as_nanos();
+
+  // Warmup
+  let iterations: u128 = MAX_WARMUP_TIME / cold_duration;
+  let warmup_start = Instant::now();
+  for _ in 0..std::cmp::min(iterations, WARMUP_ITERATIONS) {
+    validate_all(&schemas, sch_index, &serde_lines);
   }
-  let duration = start.elapsed().as_nanos();
-  println!("{:?},{:?}", duration, compile_duration);
+
+  let warm_start = Instant::now();
+  validate_all(&schemas, sch_index, &serde_lines);
+  let warm_duration = warm_start.elapsed().as_nanos();
+
+  println!("{:?},{:?},{:?}", cold_duration, warm_duration, compile_duration);
 
   Ok(())
 }

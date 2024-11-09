@@ -7,6 +7,8 @@ const DRAFTS = {
   "https://json-schema.org/draft/2019-09/schema": (await import("ajv/dist/2019.js")).Ajv2019,
   "http://json-schema.org/draft-07/schema": (await import("ajv")).Ajv,
 };
+const WARMUP_ITERATIONS = 100;
+const MAX_WARMUP_TIME = 1e9 * 10; // 10 seconds
 
 function readJSONFile(filePath) {
   try {
@@ -26,6 +28,17 @@ async function* readJSONLines(filePath) {
   }
 }
 
+function validateAll(instances, validator) {
+  let failed = false;
+  for (const instance of instances) {
+    if (!validator(instance)) {
+      failed = true;
+    }
+  }
+
+  return failed;
+}
+
 async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
 
@@ -40,18 +53,23 @@ async function validateSchema(schemaPath, instancePath) {
   for await (const instance of readJSONLines(instancePath)) {
     instances.push(instance);
   }
-  let failed = false;
-  const startTime = performance.now();
-  for (const instance of instances) {
-    if (!validate(instance)) {
-      failed = true;
-    }
+
+  const coldStartTime = performance.now();
+  const failed = validateAll(instances, validate);
+  const coldEndTime = performance.now();
+  const coldDurationNs = (coldEndTime - coldStartTime) * 1e6;
+
+  const iterations = Math.ceil(MAX_WARMUP_TIME / coldDurationNs);
+  for (let i = 0; i < Math.min(iterations, WARMUP_ITERATIONS); i++) {
+    validateAll(instances, validate);
   }
 
-  const endTime = performance.now();
+  const warmStartTime = performance.now();
+  validateAll(instances, validate);
+  const warmEndTime = performance.now();
+  const warmDurationNs = (warmEndTime - warmStartTime) * 1e6;
 
-  const durationNs = (endTime - startTime) * 1e6;
-  console.log(durationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0));
+  console.log(coldDurationNs.toFixed(0) + ',' + warmDurationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0));
 
   // Exit with non-zero status on validation failure
   if (failed) {

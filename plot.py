@@ -12,7 +12,7 @@ if __name__ == "__main__":
     with open("dist/report.csv") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            row['milliseconds'] = float(row['nanoseconds']) / 1e6
+            row['milliseconds'] = float(row['cold_ns']) / 1e6
             examples[row["name"]].append(row)
 
     for (name, data) in examples.items():

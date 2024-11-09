@@ -2,16 +2,29 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
+	"io"
 	"log"
+	"math"
 	"os"
 	"path/filepath"
 	"time"
-	"encoding/json"
-	"io"
 
 	"github.com/santhosh-tekuri/jsonschema/v6"
 )
+
+const WarmupIterations = 1000
+const MaxWarmupTime = 10_000_000_000
+
+func validateAll(instances []interface{}, sch *jsonschema.Schema) error {
+	for _, inst := range instances {
+		if err := sch.Validate(inst); err != nil {
+			return err
+		}
+	}
+	return nil
+}
 
 func main() {
 	if len(os.Args) < 2 {
@@ -49,8 +62,7 @@ func main() {
 	}
 	defer f.Close()
 
-
-	// Step 1: Decode and store JSON objects
+	// Decode and store JSON objects
 	var instances []interface{}
 	reader := bufio.NewReader(f)
 	decoder := json.NewDecoder(reader)
@@ -66,19 +78,24 @@ func main() {
 		instances = append(instances, inst)
 	}
 
-	start := time.Now()
+	// Cold start
+	coldStart := time.Now()
+	err = validateAll(instances, sch)
+	if err != nil {
+		log.Fatalf("Validation failed: %v", err)
+	}
+	coldDuration := time.Since(coldStart)
 
-	// Step 2: Validation loop
-	for _, inst := range instances {
-		err = sch.Validate(inst)
-		if err != nil {
-			log.Fatalf("Validation failed: %v", err)
-		}
+	// Warmup
+	iterations := math.Ceil(float64(MaxWarmupTime) / float64(coldDuration.Nanoseconds()))
+	for _ = range int64(min(iterations, WarmupIterations)) {
+		validateAll(instances, sch)
 	}
 
-	// Stop timer and calculate duration
-	duration := time.Since(start)
+	warmStart := time.Now()
+	validateAll(instances, sch)
+	warmDuration := time.Since(warmStart)
 
 	// Print timing
-	fmt.Printf("%d,%d\n", duration.Nanoseconds(), compile_duration.Nanoseconds())
+	fmt.Printf("%d,%d,%d\n", coldDuration.Nanoseconds(), warmDuration.Nanoseconds(), compile_duration.Nanoseconds())
 }
