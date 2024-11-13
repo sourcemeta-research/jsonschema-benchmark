@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
 IMPLEMENTATIONS ?= $(notdir $(wildcard implementations/*))
+RUNS := 3
 
 .PHONY: clean
 clean: ; rm -rf dist implementations/*/.dockertimestamp
@@ -30,9 +31,14 @@ all: dist/report.csv ; cat $<
 define docker_run
   $(eval $@_TOOL = $(1))
   $(eval $@_INPUT = $(2))
-				-$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@)
-				@if [ ! -s $@ ]; then echo "0,0,0" > $@ ; fi
-				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
+	rm -f $@
+	for i in $(shell seq 1 $(RUNS)) ; do \
+		docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
+		STATUS=$$? ; \
+		if [ ! -s $@.tmp ]; then echo "0,0,0" >> $@ ; else cat $@.tmp >> $@ ; fi ; \
+		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
+		rm -f $@.tmp ; \
+	done
 endef
 
 # Blaze

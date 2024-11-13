@@ -15,7 +15,8 @@ for argument in "$@"
 do
   IMPLEMENTATION="$(basename "$(dirname "$argument")")"
   EXAMPLE="$(basename "$argument")"
-  OUTPUT="$(tr -d '\n\r' < "$argument")"
   VERSION="$("./implementations/$IMPLEMENTATION/version.sh")"
-  echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$OUTPUT"
+  while read OUTPUT; do
+    echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$OUTPUT"
+  done < "$argument"
 done

@@ -7,7 +7,7 @@ const WARMUP_ITERATIONS: u128 = 100;
 const MAX_WARMUP_TIME: u128 = 10_000_000_000; // 10 seconds
 
 fn validate_all(schemas: &Schemas, sch_index: SchemaIndex, serde_lines: &std::vec::Vec<Value>) {
-  for line in &serde_lines {
+  for line in serde_lines {
     let result = schemas.validate(&line, sch_index);
     assert!(result.is_ok(), "Validation failed for line: {}", line);
   }
@@ -49,7 +49,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
   // Warmup
   let iterations: u128 = MAX_WARMUP_TIME / cold_duration;
-  let warmup_start = Instant::now();
   for _ in 0..std::cmp::min(iterations, WARMUP_ITERATIONS) {
     validate_all(&schemas, sch_index, &serde_lines);
   }
