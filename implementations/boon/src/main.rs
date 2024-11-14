@@ -34,7 +34,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
   // Validate the instances
   let start = Instant::now();
-  for line in serde_lines {
+  for line in &serde_lines {
     let result = schemas.validate(&line, sch_index);
     assert!(result.is_ok(), "Validation failed for line: {}", line);
   }
