@@ -1,5 +1,6 @@
 import { registerSchema, validate } from "@hyperjump/json-schema/draft-2020-12";
 import fs from 'fs';
+import path from 'path';
 import readline from 'readline';
 import { performance } from 'perf_hooks';
 
@@ -61,11 +62,11 @@ async function validateSchema(schemaPath, instancePath) {
   }
 }
 
-if (process.argv.length !== 4) {
+if (process.argv.length !== 3) {
   process.exit(1);
 }
 
-const schemaPath = process.argv[2];
-const instancePath = process.argv[3];
+const schemaPath = path.join(process.argv[2], "schema.json");
+const instancePath = path.join(process.argv[2], "/instances.jsonl");
 
 await validateSchema(schemaPath, instancePath);
