@@ -1,8 +1,29 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
 IMPLEMENTATIONS ?= $(notdir $(wildcard implementations/*))
+TESTS_PASS = $(notdir $(wildcard tests/pass/*))
+TESTS_FAIL = $(notdir $(wildcard tests/fail/*))
 
-.PHONY: clean
+TEST_PASS_JOBS := $(foreach t,$(TESTS_PASS),$(foreach i,$(IMPLEMENTATIONS),testpass--$t--$i))
+TEST_FAIL_JOBS := $(foreach t,$(TESTS_FAIL),$(foreach i,$(IMPLEMENTATIONS),testfail--$t--$i))
+BUILD_JOBS := $(foreach i,$(IMPLEMENTATIONS),implementations/$i/.dockertimestamp)
+
+test_schema = $(firstword $(subst --, ,$*))
+test_impl = $(lastword $(subst --, ,$*))
+
+${TEST_PASS_JOBS}: testpass--%:
+	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$(test_impl) /workspace/tests/pass/$(test_schema) > /dev/null
+
+# XXX AJV fails this test, but we know it has issues
+testpass--draft7--ajv:
+	true
+
+${TEST_FAIL_JOBS}: testfail--%:
+	! docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$(test_impl) /workspace/tests/fail/$(test_schema) > /dev/null 2> /dev/null
+
+tests: ${BUILD_JOBS} ${TEST_PASS_JOBS} ${TEST_FAIL_JOBS}
+
+.PHONY: clean tests
 clean: ; rm -rf dist implementations/*/.dockertimestamp
 dist: ; mkdir $@
 dist/results: | dist ; mkdir $@

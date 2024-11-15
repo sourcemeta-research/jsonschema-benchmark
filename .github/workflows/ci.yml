@@ -28,6 +28,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Run smoke tests
+        run: make IMPLEMENTATIONS=${{ matrix.impl }} tests
+
       - name: Run benchmarks
         continue-on-error: true
         run: make IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
