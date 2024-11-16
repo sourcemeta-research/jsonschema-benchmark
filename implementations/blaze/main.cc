@@ -33,10 +33,8 @@ int validate(const std::filesystem::path &example) {
   sourcemeta::blaze::EvaluationContext context;
   const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
-  auto num = 0;
-  for (const auto &instance : instances) {
-    context.prepare(instance);
-    num += 1;
+  for (std::size_t num = 0; num < instances.size(); num++) {
+    context.prepare(instances[num]);
     const auto result{
         sourcemeta::blaze::evaluate(schema_template, context)};
     if (!result) {
