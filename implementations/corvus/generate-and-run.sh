@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCHEMA=$1
-INSTANCES=$2
+SCHEMA=$1/schema.json
+INSTANCES=$1/instances.jsonl
 
 dialect=$(grep '$schema' $SCHEMA | head -1 | cut -d: -f2- | tr -d '", \n' | sed -nE 's_https?://json-schema.org/(.*)/schema#?_\1_p')
 case "$dialect" in

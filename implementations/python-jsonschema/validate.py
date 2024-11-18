@@ -17,8 +17,10 @@ if __name__ == "__main__":
     compile_end = time.time_ns()
 
     start = time.time_ns()
+    valid = True
     for instance in instances:
-        validator.is_valid(instance)
+        valid = valid and validator.is_valid(instance)
     end = time.time_ns()
 
     print((end - start), ",", (compile_end - compile_start), sep='')
+    sys.exit(0 if valid else 1)

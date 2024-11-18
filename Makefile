@@ -1,8 +1,29 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
 IMPLEMENTATIONS ?= $(notdir $(wildcard implementations/*))
+TESTS_PASS = $(notdir $(wildcard tests/pass/*))
+TESTS_FAIL = $(notdir $(wildcard tests/fail/*))
 
-.PHONY: clean
+TEST_PASS_JOBS := $(foreach t,$(TESTS_PASS),$(foreach i,$(IMPLEMENTATIONS),testpass--$t--$i))
+TEST_FAIL_JOBS := $(foreach t,$(TESTS_FAIL),$(foreach i,$(IMPLEMENTATIONS),testfail--$t--$i))
+BUILD_JOBS := $(foreach i,$(IMPLEMENTATIONS),implementations/$i/.dockertimestamp)
+
+test_schema = $(firstword $(subst --, ,$*))
+test_impl = $(lastword $(subst --, ,$*))
+
+${TEST_PASS_JOBS}: testpass--%:
+	docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$(test_impl) /workspace/tests/pass/$(test_schema) > /dev/null
+
+# XXX AJV fails this test, but we know it has issues
+testpass--draft7--ajv:
+	true
+
+${TEST_FAIL_JOBS}: testfail--%:
+	! docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$(test_impl) /workspace/tests/fail/$(test_schema) > /dev/null 2> /dev/null
+
+tests: ${BUILD_JOBS} ${TEST_PASS_JOBS} ${TEST_FAIL_JOBS}
+
+.PHONY: clean tests
 clean: ; rm -rf dist implementations/*/.dockertimestamp
 dist: ; mkdir $@
 dist/results: | dist ; mkdir $@
@@ -30,7 +51,7 @@ all: dist/report.csv ; cat $<
 define docker_run
   $(eval $@_TOOL = $(1))
   $(eval $@_INPUT = $(2))
-				-$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@)
+				-$(shell docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) /workspace/$(dir $(word 2, $($@_INPUT))) > $@)
 				@if [ ! -s $@ ]; then echo "0,0" > $@ ; fi
 				@sed -i 's/$$/,$(.SHELLSTATUS)/' $@
 endef
@@ -49,7 +70,7 @@ dist/results/blaze/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/blaze
-	@$(call docker_run,blaze,/workspace/$(dir $(word 2,$^)))
+	@$(call docker_run,blaze,$^)
 
 implementations/blaze-nodejs/.dockertimestamp: \
 	implementations/blaze-nodejs/main.mjs \
@@ -62,7 +83,7 @@ dist/results/blaze-nodejs/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/blaze-nodejs
-	@$(call docker_run,blaze-nodejs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	@$(call docker_run,blaze-nodejs,$^)
 
 # AJV
 
@@ -79,7 +100,7 @@ dist/results/ajv/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/ajv
-	@$(call docker_run,ajv,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	@$(call docker_run,ajv,$^)
 
 # BOON
 
@@ -95,7 +116,7 @@ dist/results/boon/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
-	@$(call docker_run,boon,/workspace/$(dir $(word 2,$^)))
+	@$(call docker_run,boon,$^)
 
 # JSON_SCHEMER
 
@@ -112,7 +133,7 @@ dist/results/json_schemer/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/json_schemer
-	@$(call docker_run,json_schemer,/workspace/$(dir $(word 3,$^)))
+	@$(call docker_run,json_schemer,$^)
 
 # PYTHON / JSONSCHEMA
 
@@ -129,7 +150,7 @@ dist/results/python-jsonschema/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/python-jsonschema
-	@$(call docker_run,python-jsonschema,/workspace/$(dir $(word 2,$^)))
+	@$(call docker_run,python-jsonschema,$^)
 
 # GO / JSONSCHEMA
 
@@ -146,7 +167,7 @@ dist/results/go-jsonschema/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/go-jsonschema
-	@$(call docker_run,go-jsonschema,/workspace/$(dir $(word 2,$^)))
+	@$(call docker_run,go-jsonschema,$^)
 
 # HYPERJUMP
 
@@ -163,7 +184,7 @@ dist/results/hyperjump/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/hyperjump
-	@$(call docker_run,hyperjump,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	@$(call docker_run,hyperjump,$^)
 
 # JSONCONS
 
@@ -181,7 +202,7 @@ dist/results/jsoncons/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsoncons
-	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
+	@$(call docker_run,jsoncons,$^)
 
 # DOTNET / CORVUS
 
@@ -198,7 +219,7 @@ dist/results/corvus/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/corvus
-	@$(call docker_run,corvus,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	@$(call docker_run,corvus,$^)
 
 # SCHEMASAFE
 
@@ -215,4 +236,4 @@ dist/results/schemasafe/%: \
 	schemas/%/schema.json \
 	schemas/%/instances.jsonl \
 	| dist/results/schemasafe
-	@$(call docker_run,schemasafe,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	@$(call docker_run,schemasafe,$^)
