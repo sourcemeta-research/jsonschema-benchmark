@@ -3,6 +3,9 @@ import fs from 'fs';
 import readline from 'readline';
 import { performance } from 'perf_hooks';
 
+const WARMUP_ITERATIONS = 100;
+const MAX_WARMUP_TIME = 1e9 * 10; // 10 seconds
+
 await Promise.all([
   import("@hyperjump/json-schema/draft-2019-09"),
   import("@hyperjump/json-schema/draft-07"),
@@ -26,6 +29,17 @@ async function* readJSONLines(filePath) {
   }
 }
 
+async function validateAll(instances, schemaId) {
+  let failed = false;
+  for (const instance of instances) {
+    const output = await validate(schemaId, instance);
+    if (!output.valid) {
+      failed = true;
+    }
+  }
+  return failed;
+}
+
 async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
 
@@ -41,19 +55,23 @@ async function validateSchema(schemaPath, instancePath) {
   for await (const instance of readJSONLines(instancePath)) {
     instances.push(instance);
   }
-  let failed = false;
-  const startTime = performance.now();
-  for (const instance of instances) {
-    const output = compiled(instance);
-    if (!output.valid) {
-      failed = true;
-    }
+
+  const coldStartTime = performance.now();
+  const failed = await validateAll(instances, schemaId);
+  const coldEndTime = performance.now();
+  const coldDurationNs = (coldEndTime - coldStartTime) * 1e6;
+
+  const iterations = Math.ceil(MAX_WARMUP_TIME / coldDurationNs);
+  for (let i = 0; i < Math.min(iterations, WARMUP_ITERATIONS); i++) {
+    await validateAll(instances, schemaId);
   }
 
-  const endTime = performance.now();
+  const warmStartTime = performance.now();
+  await validateAll(instances, schemaId);
+  const warmEndTime = performance.now();
+  const warmDurationNs = (warmEndTime - warmStartTime) * 1e6;
 
-  const durationNs = (endTime - startTime) * 1e6;
-  console.log(durationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0));
+  console.log(coldDurationNs.toFixed(0) + ',' + warmDurationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0));
 
   // Exit with non-zero status on validation failure
   if (failed) {

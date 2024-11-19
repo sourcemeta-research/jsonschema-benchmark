@@ -7,8 +7,18 @@
 #include <iostream>
 #include <vector>
 
+#define WARMUP_ITERATIONS 100L
+#define MAX_WARMUP_TIME 10000000000
+
 using jsoncons::json;
 namespace jsonschema = jsoncons::jsonschema;
+
+template <typename Json>
+void validate_all(const jsonschema::json_schema<Json> &compiled, const std::vector<json> &instances) {
+  for (const auto &instance : instances) {
+    compiled.validate(instance);
+  }
+}
 
 int validate(const std::filesystem::path &example) {
   std::ifstream input_schema((example / "schema.json").string());
@@ -28,16 +38,24 @@ int validate(const std::filesystem::path &example) {
     instances.push_back(instance);
   }
 
-  const auto timestamp_start{std::chrono::high_resolution_clock::now()};
+  const auto cold_start{std::chrono::high_resolution_clock::now()};
+  validate_all(compiled, instances);
+  const auto cold_end{std::chrono::high_resolution_clock::now()};
+  const auto cold_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      cold_end - cold_start)};
 
-  for (const auto &instance : instances) {
-    compiled.validate(instance);
+  const auto iterations = 1 + ((MAX_WARMUP_TIME - 1) / cold_duration.count());
+  for (int i = 0; i < std::min(iterations, WARMUP_ITERATIONS); i++) {
+    validate_all(compiled, instances);
   }
 
-  const auto timestamp_end{std::chrono::high_resolution_clock::now()};
-  const auto duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
-      timestamp_end - timestamp_start)};
-  std::cout << duration.count() << "," << compile_duration.count() << "\n";
+  const auto warm_start{std::chrono::high_resolution_clock::now()};
+  validate_all(compiled, instances);
+  const auto warm_end{std::chrono::high_resolution_clock::now()};
+  const auto warm_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      warm_end - warm_start)};
+
+  std::cout << cold_duration.count() << "," << warm_duration.count() << "," << compile_duration.count() << "\n";
 
   return EXIT_SUCCESS;
 }

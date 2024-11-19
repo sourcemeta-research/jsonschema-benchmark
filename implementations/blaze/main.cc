@@ -10,6 +10,23 @@
 #include <iostream>
 #include <vector>
 
+#define WARMUP_ITERATIONS 100L
+#define MAX_WARMUP_TIME 10000000000
+
+bool validate_all(auto &context, const auto &instances, const auto &schema_template) {
+  for (std::size_t num = 0; num < instances.size(); num++) {
+    context.prepare(instances[num]);
+    const auto result{
+        sourcemeta::blaze::evaluate(schema_template, context)};
+    if (!result) {
+      std::cerr << "Error validating instance " << num << "\n";
+      return false;
+    }
+  }
+
+  return true;
+}
+
 int validate(const std::filesystem::path &example) {
   const auto schema{
       sourcemeta::jsontoolkit::from_file(example / "schema.json")};
@@ -31,23 +48,27 @@ int validate(const std::filesystem::path &example) {
       compile_end - compile_start)};
 
   sourcemeta::blaze::EvaluationContext context;
-  const auto timestamp_start{std::chrono::high_resolution_clock::now()};
 
-  for (std::size_t num = 0; num < instances.size(); num++) {
-    context.prepare(instances[num]);
-    const auto result{
-        sourcemeta::blaze::evaluate(schema_template, context)};
-    if (!result) {
-      std::cerr << "Error validating instance " << num << "\n";
-      return EXIT_FAILURE;
-    }
+  const auto cold_start{std::chrono::high_resolution_clock::now()};
+  if (!validate_all(context, instances, schema_template)) {
+    return EXIT_FAILURE;
+  }
+  const auto cold_end{std::chrono::high_resolution_clock::now()};
+  const auto cold_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      cold_end - cold_start)};
+
+  const auto iterations = 1 + ((MAX_WARMUP_TIME - 1) / cold_duration.count());
+  for (int i = 0; i < std::min(iterations, WARMUP_ITERATIONS); i++) {
+    validate_all(context, instances, schema_template);
   }
 
-  const auto timestamp_end{std::chrono::high_resolution_clock::now()};
+  const auto warm_start{std::chrono::high_resolution_clock::now()};
+  validate_all(context, instances, schema_template);
+  const auto warm_end{std::chrono::high_resolution_clock::now()};
+  const auto warm_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      warm_end - warm_start)};
 
-  const auto duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
-      timestamp_end - timestamp_start)};
-  std::cout << duration.count() << "," << compile_duration.count() << "\n";
+  std::cout << cold_duration.count() << "," << warm_duration.count() << "," << compile_duration.count() << "\n";
 
   return EXIT_SUCCESS;
 }

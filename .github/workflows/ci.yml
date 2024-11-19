@@ -2,6 +2,12 @@ name: Benchmark
 
 on:
   workflow_dispatch:
+    inputs:
+      runs:
+        description: 'Number of experimental runs'
+        required: true
+        default: 3
+        type: number
   push:
     branches:
       - main
@@ -30,7 +36,7 @@ jobs:
 
       - name: Run benchmarks
         continue-on-error: true
-        run: make IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
+        run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
 
       - name: Save output
         id: save-output
@@ -73,7 +79,7 @@ jobs:
         run: pipx install uv
 
       - name: Process CSV
-        run: python .github/csv_min.py > dist/report-min.csv
+        run: uv run python .github/csv_min.py > dist/report-min.csv
       - name: Read CSV
         id: csv
         uses: juliangruber/read-file-action@v1
