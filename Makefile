@@ -222,3 +222,19 @@ dist/results/schemasafe/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/schemasafe
 	@$(call docker_run,schemasafe,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# JsonSchema.net
+
+implementations/jsonschemadotnet/.dockertimestamp: \
+	implementations/jsonschemadotnet/bench.csproj \
+	implementations/jsonschemadotnet/Program.cs \
+	implementations/jsonschemadotnet/Dockerfile
+	docker build -t jsonschema-benchmark/jsonschemadotnet implementations/jsonschemadotnet
+	touch $@
+
+dist/results/jsonschemadotnet/%: \
+	implementations/jsonschemadotnet/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsonschemadotnet
+	@$(call docker_run,jsonschemadotnet,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
