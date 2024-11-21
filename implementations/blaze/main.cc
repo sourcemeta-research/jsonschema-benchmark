@@ -15,9 +15,9 @@
 
 bool validate_all(auto &context, const auto &instances, const auto &schema_template) {
   for (std::size_t num = 0; num < instances.size(); num++) {
-    context.prepare(instances[num]);
+    context.reset();
     const auto result{
-        sourcemeta::blaze::evaluate(schema_template, context)};
+        sourcemeta::blaze::evaluate(schema_template, instances[num], context)};
     if (!result) {
       std::cerr << "Error validating instance " << num << "\n";
       return false;
