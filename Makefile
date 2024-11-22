@@ -404,3 +404,22 @@ dist/results/jsv/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/jsv
 	@$(call docker_run,jsv,/workspace/$(dir $(word 2,$^)))
+
+# harrel-json-schema
+
+implementations/harrel-json-schema/.dockertimestamp: \
+	implementations/harrel-json-schema/app/src/main/java/io/github/sourcemeta/App.java \
+	implementations/harrel-json-schema/app/build.gradle.kts \
+	implementations/harrel-json-schema/gradle/libs.versions.toml \
+	implementations/harrel-json-schema/gradle/wrapper/gradle-wrapper.properties \
+	implementations/harrel-json-schema/run.sh \
+	implementations/harrel-json-schema/Dockerfile
+	docker build -t jsonschema-benchmark/harrel-json-schema implementations/harrel-json-schema
+	touch $@
+
+dist/results/harrel-json-schema/%: \
+	implementations/harrel-json-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/harrel-json-schema
+	@$(call docker_run,harrel-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))

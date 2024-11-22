@@ -116,6 +116,7 @@ jobs:
       # XXX Disabled due to excessive runtime
       #report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
+      report-harrel-json-schema: ${{ steps.save-output.outputs.report-harrel-json-schema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
       report-jmc: ${{ steps.save-output.outputs.report-jmc }}
       report-jmc-js: ${{ steps.save-output.outputs.report-jmc-js }}
