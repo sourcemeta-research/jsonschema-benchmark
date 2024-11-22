@@ -238,3 +238,22 @@ dist/results/jsonschemadotnet/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/jsonschemadotnet
 	@$(call docker_run,jsonschemadotnet,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# kmp-json-schema-validator
+
+implementations/kmp-json-schema-validator/.dockertimestamp: \
+	implementations/kmp-json-schema-validator/app/src/main/kotlin/io/github/sourcemeta/App.kt \
+	implementations/kmp-json-schema-validator/app/build.gradle.kts \
+	implementations/kmp-json-schema-validator/gradle/libs.versions.toml \
+	implementations/kmp-json-schema-validator/gradle/wrapper/gradle-wrapper.properties \
+	implementations/kmp-json-schema-validator/run.sh \
+	implementations/kmp-json-schema-validator/Dockerfile
+	docker build -t jsonschema-benchmark/kmp-json-schema-validator implementations/kmp-json-schema-validator
+	touch $@
+
+dist/results/kmp-json-schema-validator/%: \
+	implementations/kmp-json-schema-validator/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/kmp-json-schema-validator
+	@$(call docker_run,kmp-json-schema-validator,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
