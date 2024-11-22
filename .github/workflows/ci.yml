@@ -59,6 +59,7 @@ jobs:
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
       report-jsonschemadotnet: ${{ steps.save-output.outputs.report-jsonschemadotnet }}
+      report-kmp-json-schema-validator: ${{ steps.save-output.outputs.report-kmp-json-schema-validator }}
       report-python-jsonschema: ${{ steps.save-output.outputs.report-python-jsonschema }}
       report-schemasafe: ${{ steps.save-output.outputs.report-schemasafe }}
 
