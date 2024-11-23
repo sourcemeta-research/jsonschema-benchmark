@@ -404,3 +404,22 @@ dist/results/jsv/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/jsv
 	@$(call docker_run,jsv,/workspace/$(dir $(word 2,$^)))
+
+# openapiprocessor
+
+implementations/openapiprocessor/.dockertimestamp: \
+	implementations/openapiprocessor/app/src/main/java/io/github/sourcemeta/App.java \
+	implementations/openapiprocessor/app/build.gradle.kts \
+	implementations/openapiprocessor/gradle/libs.versions.toml \
+	implementations/openapiprocessor/gradle/wrapper/gradle-wrapper.properties \
+	implementations/openapiprocessor/run.sh \
+	implementations/openapiprocessor/Dockerfile
+	docker build -t jsonschema-benchmark/openapiprocessor implementations/openapiprocessor
+	touch $@
+
+dist/results/openapiprocessor/%: \
+	implementations/openapiprocessor/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/openapiprocessor
+	@$(call docker_run,openapiprocessor,/workspace/$(word 2,$^) /workspace/$(word 3,$^))

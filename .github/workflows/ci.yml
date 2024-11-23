@@ -127,6 +127,7 @@ jobs:
       report-jsv: ${{ steps.save-output.outputs.report-jsv }}
       report-kmp: ${{ steps.save-output.outputs.report-kmp }}
       report-networknt: ${{ steps.save-output.outputs.report-networknt }}
+      report-openapiprocessor: ${{ steps.save-output.outputs.report-openapiprocessor }}
       report-opis: ${{ steps.save-output.outputs.report-opis }}
       report-py-jsonschema: ${{ steps.save-output.outputs.report-py-jsonschema }}
       report-schemasafe: ${{ steps.save-output.outputs.report-schemasafe }}
