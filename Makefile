@@ -33,7 +33,7 @@ define docker_run
   $(eval $@_INPUT = $(2))
 	rm -f $@
 	for i in $(shell seq 1 $(RUNS)) ; do \
-		docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
+		timeout -s KILL 5m docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
 		STATUS=$$? ; \
 		if [ ! -s $@.tmp ]; then echo "0,0,0" >> $@ ; else cat $@.tmp >> $@ ; fi ; \
 		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
