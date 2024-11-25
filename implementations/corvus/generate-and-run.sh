@@ -25,6 +25,6 @@ COMPILE_TIME=$(expr $END_TIME - $START_TIME)
 # Remove temporary generated files
 find . -type f -name '*.cs' -not -name 'Program.cs' -delete
 
-RUNTIME=$(/app/bin/Release/net8.0/bench "$INSTANCES" | tr -d '\n')
+RUNTIME=$(/app/bin/Release/net9.0/bench "$INSTANCES" | tr -d '\n')
 echo $RUNTIME,$COMPILE_TIME
 exit $?
