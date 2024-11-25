@@ -59,7 +59,7 @@ jobs:
 
       - name: Cache report
         uses: actions/cache/save@v4
-        if: ${{ !startsWith(matrix.impl, 'blaze') }}
+        if: ${{ !startsWith(matrix.impl, 'blaze') && steps.cache-report.outputs.cache-hit != 'true' }}
         with:
           path: dist/report.csv
           key: ${{ steps.cache-report.outputs.cache-primary-key }}
