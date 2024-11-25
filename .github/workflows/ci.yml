@@ -75,6 +75,7 @@ jobs:
       # GitHub Actions does not easily support matrix outputs
       # https://github.com/orgs/community/discussions/26639
       report-ajv: ${{ steps.save-output.outputs.report-ajv }}
+      report-ajv-bun: ${{ steps.save-output.outputs.report-ajv-bun }}
       report-blaze: ${{ steps.save-output.outputs.report-blaze }}
       report-boon: ${{ steps.save-output.outputs.report-boon }}
       report-corvus: ${{ steps.save-output.outputs.report-corvus }}
