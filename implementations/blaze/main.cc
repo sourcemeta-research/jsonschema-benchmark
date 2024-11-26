@@ -13,10 +13,9 @@
 #define WARMUP_ITERATIONS 100L
 #define MAX_WARMUP_TIME 10000000000
 
-bool validate_all(auto &context, const auto &instances, const auto &schema_template) {
+bool validate_all(auto &evaluator, const auto &instances, const auto &schema_template) {
   for (std::size_t num = 0; num < instances.size(); num++) {
-    const auto result{
-        sourcemeta::blaze::evaluate(schema_template, instances[num], context)};
+    const auto result{evaluator.validate(schema_template, instances[num])};
     if (!result) {
       std::cerr << "Error validating instance " << num << "\n";
       return false;
@@ -46,10 +45,10 @@ int validate(const std::filesystem::path &example) {
   const auto compile_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       compile_end - compile_start)};
 
-  sourcemeta::blaze::EvaluationContext context;
+  sourcemeta::blaze::Evaluator evaluator;
 
   const auto cold_start{std::chrono::high_resolution_clock::now()};
-  if (!validate_all(context, instances, schema_template)) {
+  if (!validate_all(evaluator, instances, schema_template)) {
     return EXIT_FAILURE;
   }
   const auto cold_end{std::chrono::high_resolution_clock::now()};
@@ -58,11 +57,11 @@ int validate(const std::filesystem::path &example) {
 
   const auto iterations = 1 + ((MAX_WARMUP_TIME - 1) / cold_duration.count());
   for (int i = 0; i < std::min(iterations, WARMUP_ITERATIONS); i++) {
-    validate_all(context, instances, schema_template);
+    validate_all(evaluator, instances, schema_template);
   }
 
   const auto warm_start{std::chrono::high_resolution_clock::now()};
-  validate_all(context, instances, schema_template);
+  validate_all(evaluator, instances, schema_template);
   const auto warm_end{std::chrono::high_resolution_clock::now()};
   const auto warm_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       warm_end - warm_start)};
