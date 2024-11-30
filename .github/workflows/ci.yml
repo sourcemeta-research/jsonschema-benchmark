@@ -72,6 +72,7 @@ jobs:
       report-boon: ${{ steps.save-output.outputs.report-boon }}
       report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
+      report-harrel-json-schema: ${{ steps.save-output.outputs.report-harrel-json-schema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
