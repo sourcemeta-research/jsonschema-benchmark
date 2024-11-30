@@ -48,6 +48,14 @@ jobs:
         continue-on-error: true
         run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.5'
+      - name: Install uv
+        run: pipx install uv
+      - name: Validate CSV
+        run: uv run python .github/csv_min.py > /dev/null
+
       - name: Save output
         id: save-output
         run: |
