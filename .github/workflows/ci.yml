@@ -73,6 +73,7 @@ jobs:
       report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
+      report-openapiprocessor: ${{ steps.save-output.outputs.report-openapiprocessor }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
       report-jsonschemadotnet: ${{ steps.save-output.outputs.report-jsonschemadotnet }}
