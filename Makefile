@@ -87,6 +87,23 @@ dist/results/ajv/%: \
 	| dist/results/ajv
 	@$(call docker_run,ajv,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# AJV with bun
+
+implementations/ajv-bun/.dockertimestamp: \
+	implementations/ajv-bun/main.mjs \
+	implementations/ajv-bun/package.json \
+	implementations/ajv-bun/bun.lockb \
+	implementations/ajv-bun/Dockerfile
+	docker build -t jsonschema-benchmark/ajv-bun implementations/ajv-bun
+	touch $@
+
+dist/results/ajv-bun/%: \
+	implementations/ajv-bun/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/ajv-bun
+	@$(call docker_run,ajv-bun,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # BOON
 
 implementations/boon/.dockertimestamp: \
