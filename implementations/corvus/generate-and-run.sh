@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 SCHEMA=$1
 INSTANCES=$2
 
