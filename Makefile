@@ -57,19 +57,6 @@ dist/results/blaze/%: \
 	| dist/results/blaze
 	@$(call docker_run,blaze,/workspace/$(dir $(word 2,$^)))
 
-implementations/blaze-nodejs/.dockertimestamp: \
-	implementations/blaze-nodejs/main.mjs \
-	implementations/blaze-nodejs/Dockerfile
-	docker build -t jsonschema-benchmark/blaze-nodejs implementations/blaze-nodejs
-	touch $@
-
-dist/results/blaze-nodejs/%: \
-	implementations/blaze-nodejs/.dockertimestamp \
-	schemas/%/schema.json \
-	schemas/%/instances.jsonl \
-	| dist/results/blaze-nodejs
-	@$(call docker_run,blaze-nodejs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
-
 # AJV
 
 implementations/ajv/.dockertimestamp: \
