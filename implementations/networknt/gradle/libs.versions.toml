@@ -1,0 +1,7 @@
+[versions]
+graalJs = "24.1.1"
+networknt = "1.5.3"
+
+[libraries]
+graalJs = { module = "org.graalvm.js:js", version.ref = "graalJs" }
+networknt = { module = "com.networknt:json-schema-validator", version.ref = "networknt" }
