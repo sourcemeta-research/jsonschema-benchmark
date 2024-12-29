@@ -1,6 +1,7 @@
 /dist
 /implementations/ajv/node_modules
 /implementations/boon/target/
+/schemas/*/schema-2020-12.json
 /.DS_Store
 /node_modules
 .dockertimestamp
