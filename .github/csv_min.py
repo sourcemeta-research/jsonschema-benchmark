@@ -49,6 +49,7 @@ next_fastest_compile = (
 )
 
 # Label each implementation which was the fastest
+data = data.astype({"cold_ns": "object", "warm_ns": "object", "compile_ns": "object"})
 new_index = data.index.to_list()
 for i, (impl, schema) in enumerate(new_index):
     if (impl, schema) in min_cold_impls:
