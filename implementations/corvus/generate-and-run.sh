@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 SCHEMA=$1
 INSTANCES=$2
 
@@ -17,6 +15,12 @@ START_TIME=$(date +%s.%N | tr -d .)
 # Generate code for the schema validator
 ~/.dotnet/tools/generatejsonschematypes --rootNamespace JSB --rootPath='#' --useSchema "$use_schema" --outputPath /app --outputRootTypeName Schema --assertFormat False "$SCHEMA" > /dev/null
 
+# Fail if we can't generate code
+EXIT_CODE=$?
+if [ $EXIT_CODE -ne 0 ]; then
+  exit $EXIT_CODE
+fi
+
 cd /app
 
 # Compile the generated validator
@@ -28,5 +32,6 @@ COMPILE_TIME=$(expr $END_TIME - $START_TIME)
 find . -type f -name '*.cs' -not -name 'Program.cs' -delete
 
 RUNTIME=$(/app/bin/Release/net9.0/bench "$INSTANCES" | tr -d '\n')
+EXIT_CODE=$?
 echo $RUNTIME,$COMPILE_TIME
-exit $?
+exit $EXIT_CODE
