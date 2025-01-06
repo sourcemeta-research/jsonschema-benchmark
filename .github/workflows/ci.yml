@@ -126,6 +126,7 @@ jobs:
           IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
         run: python .github/plot_markdown.py >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: report
           path: |
