@@ -18,9 +18,10 @@ bool ValidateAll(JSB.Schema[] docs) {
 
 // Read and parse all instances
 var lines = File.ReadLines(args[0]);
+JSB.Schema[] docs = Array.Empty<JSB.Schema>();
 try  {
-  var docs = lines.Select(l => JSB.Schema.Parse(l)).ToArray();
-} catch (System.Text.Json.JsonReaderException e) {
+  docs = lines.Select(l => JSB.Schema.Parse(l)).ToArray();
+} catch (System.Text.Json.JsonException e) {
   Environment.Exit(1);
 }
 
