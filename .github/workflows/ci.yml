@@ -38,10 +38,10 @@ jobs:
       - name: Restore cached run
         uses: actions/cache/restore@v4
         id: cache-report
-        if: ${{ !startsWith(matrix.impl, 'blaze') && github.event_name != 'schedule' }}
         with:
           path: dist/report.csv
           key: ${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
+          lookup-only: ${{ startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
 
       - name: Run benchmarks
         if: steps.cache-report.outputs.cache-hit != 'true'
@@ -62,10 +62,7 @@ jobs:
         if: ${{ !startsWith(matrix.impl, 'blaze') && steps.cache-report.outputs.cache-hit != 'true' }}
         with:
           path: dist/report.csv
-          # XXX For now, we have to duplicate this from the restore step since
-          #     we might skip restoring, which also skips the key calculation
-          # key: ${{ steps.cache-report.outputs.cache-primary-key }}
-          key: ${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
+          key: ${{ steps.cache-report.outputs.cache-primary-key }}
     outputs:
       # GitHub Actions does not easily support matrix outputs
       # https://github.com/orgs/community/discussions/26639
