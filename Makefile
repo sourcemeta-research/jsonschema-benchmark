@@ -46,6 +46,9 @@ define docker_run
 	done
 endef
 
+list:
+	@echo $(IMPLEMENTATIONS)
+
 # Blaze
 
 implementations/blaze/.dockertimestamp: \
