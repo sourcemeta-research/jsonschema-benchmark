@@ -48,7 +48,7 @@ jobs:
         with:
           path: dist/report.csv
           key: ${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
-          lookup-only: ${{ startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
+          lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
 
       - name: Run benchmarks
         if: steps.cache-report.outputs.cache-hit != 'true'
