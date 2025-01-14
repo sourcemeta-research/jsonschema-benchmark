@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
 ALL_IMPLEMENTATIONS = $(notdir $(wildcard implementations/*))
-ifdef NO_IGNORE
+ifeq ($(NO_IGNORE),yes)
 IMPLEMENTATIONS ?= $(ALL_IMPLEMENTATIONS)
 else
 IMPLEMENTATIONS ?= $(filter-out $(patsubst implementations/%/,%,$(dir $(wildcard implementations/*/.benchmark-ignore))), $(ALL_IMPLEMENTATIONS))
@@ -47,7 +47,7 @@ define docker_run
 endef
 
 list:
-	@echo $(IMPLEMENTATIONS)
+	@echo $(IMPLEMENTATIONS) | tr ' ' '\n'
 
 # Blaze
 

@@ -30,8 +30,8 @@ jobs:
       - name: Set implementations
         id: implementations
         env:
-          NO_IGNORE: ${{ (!inputs.ignore || github.event.name == 'schedule') && '1' || '0' }}
-        run: echo implementations=$(make NO_IGNORE=$NO_IGNORE list | tr '\n' ' ' | sed 's/ $//;s/^/{"include":\[{"impl":"/;s/ /"}, {"impl":"/g;s/$/"}]}/') >> $GITHUB_OUTPUT
+          NO_IGNORE: ${{ (!inputs.ignore || github.event.name == 'schedule') && 'yes' || 'no' }}
+        run: (echo -n "implementations="; ./.github/list-implementations.sh) >> $GITHUB_OUTPUT
 
   benchmark:
     needs: set-implementations
