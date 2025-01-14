@@ -8,6 +8,11 @@ on:
         required: true
         default: 3
         type: number
+      ignore:
+        description: 'Ignore implementations marked as excluded'
+        required: false
+        default: true
+        type: boolean
   push:
     branches:
       - main
@@ -24,7 +29,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set implementations
         id: implementations
-        run: echo implementations=$(ls implementations | tr '\n' ' ' | sed 's/ $//;s/^/{"include":\[{"impl":"/;s/ /"}, {"impl":"/g;s/$/"}]}/') >> $GITHUB_OUTPUT
+        env:
+          NO_IGNORE: ${{ (!inputs.ignore || github.event.name == 'schedule') && '1' || '0' }}
+        run: echo implementations=$(make NO_IGNORE=$NO_IGNORE list | tr '\n' ' ' | sed 's/ $//;s/^/{"include":\[{"impl":"/;s/ /"}, {"impl":"/g;s/$/"}]}/') >> $GITHUB_OUTPUT
 
   benchmark:
     needs: set-implementations
