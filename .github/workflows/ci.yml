@@ -8,10 +8,10 @@ on:
         required: true
         default: 3
         type: number
-      ignore:
-        description: 'Ignore implementations marked as excluded'
+      no_ignore:
+        description: "Don't ignore implementations marked as excluded"
         required: false
-        default: true
+        default: false
         type: boolean
   push:
     branches:
@@ -30,7 +30,7 @@ jobs:
       - name: Set implementations
         id: implementations
         env:
-          NO_IGNORE: ${{ (!inputs.ignore || github.event.name == 'schedule') && 'yes' || 'no' }}
+          NO_IGNORE: ${{ (inputs.no_ignore || github.event.name == 'schedule') && 'yes' || 'no' }}
         run: (echo -n "implementations="; ./.github/list-implementations.sh) >> $GITHUB_OUTPUT
 
   benchmark:
