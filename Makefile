@@ -270,3 +270,22 @@ dist/results/kmp-json-schema-validator/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/kmp-json-schema-validator
 	@$(call docker_run,kmp-json-schema-validator,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# networknt
+
+implementations/networknt/.dockertimestamp: \
+	implementations/networknt/app/src/main/java/io/github/sourcemeta/App.java \
+	implementations/networknt/app/build.gradle.kts \
+	implementations/networknt/gradle/libs.versions.toml \
+	implementations/networknt/gradle/wrapper/gradle-wrapper.properties \
+	implementations/networknt/run.sh \
+	implementations/networknt/Dockerfile
+	docker build -t jsonschema-benchmark/networknt implementations/networknt
+	touch $@
+
+dist/results/networknt/%: \
+	implementations/networknt/.dockertimestamp \
+	schemas/%/schema.json \
+	schemas/%/instances.jsonl \
+	| dist/results/networknt
+	@$(call docker_run,networknt,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
