@@ -8,10 +8,10 @@ on:
         required: true
         default: 3
         type: number
-      ignore:
-        description: 'Ignore implementations marked as excluded'
+      no_ignore:
+        description: "Don't ignore implementations marked as excluded"
         required: false
-        default: true
+        default: false
         type: boolean
   push:
     branches:
@@ -30,8 +30,8 @@ jobs:
       - name: Set implementations
         id: implementations
         env:
-          NO_IGNORE: ${{ (!inputs.ignore || github.event.name == 'schedule') && '1' || '0' }}
-        run: echo implementations=$(make NO_IGNORE=$NO_IGNORE list | tr '\n' ' ' | sed 's/ $//;s/^/{"include":\[{"impl":"/;s/ /"}, {"impl":"/g;s/$/"}]}/') >> $GITHUB_OUTPUT
+          NO_IGNORE: ${{ (inputs.no_ignore || github.event.name == 'schedule') && 'yes' || 'no' }}
+        run: (echo -n "implementations="; ./.github/list-implementations.sh) >> $GITHUB_OUTPUT
 
   benchmark:
     needs: set-implementations
@@ -48,7 +48,7 @@ jobs:
         with:
           path: dist/report.csv
           key: ${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
-          lookup-only: ${{ startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
+          lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
 
       - name: Run benchmarks
         if: steps.cache-report.outputs.cache-hit != 'true'

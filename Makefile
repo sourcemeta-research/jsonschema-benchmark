@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 SCHEMAS = $(notdir $(wildcard schemas/*))
 ALL_IMPLEMENTATIONS = $(notdir $(wildcard implementations/*))
-ifdef NO_IGNORE
+ifeq ($(NO_IGNORE),yes)
 IMPLEMENTATIONS ?= $(ALL_IMPLEMENTATIONS)
 else
 IMPLEMENTATIONS ?= $(filter-out $(patsubst implementations/%/,%,$(dir $(wildcard implementations/*/.benchmark-ignore))), $(ALL_IMPLEMENTATIONS))
@@ -38,7 +38,7 @@ define docker_run
   $(eval $@_INPUT = $(2))
 	rm -f $@
 	for i in $(shell seq 1 $(RUNS)) ; do \
-		timeout -s KILL 5m docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
+		timeout -s KILL $$(( $(RUNS) * 30 + 60 ))s docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
 		STATUS=$$? ; \
 		if [ ! -s $@.tmp ]; then echo "0,0,0" >> $@ ; else cat $@.tmp >> $@ ; fi ; \
 		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
@@ -47,7 +47,7 @@ define docker_run
 endef
 
 list:
-	@echo $(IMPLEMENTATIONS)
+	@echo $(IMPLEMENTATIONS) | tr ' ' '\n'
 
 # Blaze
 
