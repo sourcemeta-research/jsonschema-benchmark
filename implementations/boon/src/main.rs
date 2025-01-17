@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn Error>> {
   let example_folder = &args[1];
 
   // Get the schema and instance paths
-  let schema_file =   std::fs::canonicalize(example_folder.to_owned() + "/schema.json")?;
+  let schema_file =   std::fs::canonicalize(example_folder.to_owned() + "/schema-noformat.json")?;
   let instance_file = std::fs::canonicalize(example_folder.to_owned() + "/instances.jsonl")?;
 
   // Read the instance file

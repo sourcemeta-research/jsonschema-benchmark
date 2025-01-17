@@ -47,8 +47,12 @@ jobs:
         id: cache-report
         with:
           path: dist/report.csv
-          key: ${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
+          key: noformat-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
           lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
+
+      - uses: actions/setup-go@v5
+      - name: Install gron
+        run: go install github.com/tomnomnom/gron@latest
 
       - name: Run benchmarks
         if: ${{ steps.cache-report.outputs.cache-hit != 'true' && github.event_name != 'schedule' }}

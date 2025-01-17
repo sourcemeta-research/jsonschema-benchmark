@@ -34,7 +34,7 @@ func main() {
 	exampleFolder := os.Args[1]
 
 	// Construct and canonicalize file paths
-	schemaFile, err := filepath.Abs(filepath.Join(exampleFolder, "schema.json"))
+	schemaFile, err := filepath.Abs(filepath.Join(exampleFolder, "schema-noformat.json"))
 	if err != nil {
 		log.Fatalf("Error constructing schema file path: %v", err)
 	}

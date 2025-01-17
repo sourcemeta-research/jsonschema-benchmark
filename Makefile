@@ -26,7 +26,7 @@ dist/results/plots/%.png: \
 	dist/results/plots \
 	dist/report.csv \
 	plot.py \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl
 	uv run python plot.py
 plots: $(ALL_PLOTS)
@@ -49,6 +49,9 @@ endef
 list:
 	@echo $(IMPLEMENTATIONS) | tr ' ' '\n'
 
+schemas/%/schema-noformat.json: schemas/%/schema.json
+	gron $< | grep -v 'format = "' | gron -u > $@
+
 # Blaze
 
 implementations/blaze/.dockertimestamp: \
@@ -60,7 +63,7 @@ implementations/blaze/.dockertimestamp: \
 
 dist/results/blaze/%: \
 	implementations/blaze/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/blaze
 	@$(call docker_run,blaze,/workspace/$(dir $(word 2,$^)))
@@ -77,7 +80,7 @@ implementations/ajv/.dockertimestamp: \
 
 dist/results/ajv/%: \
 	implementations/ajv/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/ajv
 	@$(call docker_run,ajv,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -95,7 +98,7 @@ implementations/ajv-bun/.dockertimestamp: \
 
 dist/results/ajv-bun/%: \
 	implementations/ajv-bun/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/ajv-bun
 	@$(call docker_run,ajv-bun,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -111,7 +114,7 @@ implementations/boon/.dockertimestamp: \
 
 dist/results/boon/%: \
 	implementations/boon/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
 	@$(call docker_run,boon,/workspace/$(dir $(word 2,$^)))
@@ -128,7 +131,7 @@ implementations/json_schemer/.dockertimestamp: \
 
 dist/results/json_schemer/%: \
 	implementations/json_schemer/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/json_schemer
 	@$(call docker_run,json_schemer,/workspace/$(dir $(word 3,$^)))
@@ -145,7 +148,7 @@ implementations/python-jsonschema/.dockertimestamp: \
 
 dist/results/python-jsonschema/%: \
 	implementations/python-jsonschema/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/python-jsonschema
 	@$(call docker_run,python-jsonschema,/workspace/$(dir $(word 2,$^)))
@@ -162,7 +165,7 @@ implementations/go-jsonschema/.dockertimestamp: \
 
 dist/results/go-jsonschema/%: \
 	implementations/go-jsonschema/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/go-jsonschema
 	@$(call docker_run,go-jsonschema,/workspace/$(dir $(word 2,$^)))
@@ -179,7 +182,7 @@ implementations/hyperjump/.dockertimestamp: \
 
 dist/results/hyperjump/%: \
 	implementations/hyperjump/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/hyperjump
 	@$(call docker_run,hyperjump,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -197,7 +200,7 @@ implementations/jsoncons/.dockertimestamp: \
 
 dist/results/jsoncons/%: \
 	implementations/jsoncons/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsoncons
 	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
@@ -214,7 +217,7 @@ implementations/corvus/.dockertimestamp: \
 
 dist/results/corvus/%: \
 	implementations/corvus/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/corvus
 	@$(call docker_run,corvus,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -231,7 +234,7 @@ implementations/schemasafe/.dockertimestamp: \
 
 dist/results/schemasafe/%: \
 	implementations/schemasafe/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/schemasafe
 	@$(call docker_run,schemasafe,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -247,7 +250,7 @@ implementations/jsonschemadotnet/.dockertimestamp: \
 
 dist/results/jsonschemadotnet/%: \
 	implementations/jsonschemadotnet/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsonschemadotnet
 	@$(call docker_run,jsonschemadotnet,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -266,7 +269,7 @@ implementations/kmp-json-schema-validator/.dockertimestamp: \
 
 dist/results/kmp-json-schema-validator/%: \
 	implementations/kmp-json-schema-validator/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/kmp-json-schema-validator
 	@$(call docker_run,kmp-json-schema-validator,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
@@ -274,7 +277,7 @@ dist/results/kmp-json-schema-validator/%: \
 # networknt
 
 implementations/networknt/.dockertimestamp: \
-	implementations/networknt/app/src/main/java/io/github/sourcemeta/App.java \
+	implementations/networknt/app/src/main/java/io/github/sourcemeta/*.java \
 	implementations/networknt/app/build.gradle.kts \
 	implementations/networknt/gradle/libs.versions.toml \
 	implementations/networknt/gradle/wrapper/gradle-wrapper.properties \
@@ -285,7 +288,7 @@ implementations/networknt/.dockertimestamp: \
 
 dist/results/networknt/%: \
 	implementations/networknt/.dockertimestamp \
-	schemas/%/schema.json \
+	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/networknt
 	@$(call docker_run,networknt,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
