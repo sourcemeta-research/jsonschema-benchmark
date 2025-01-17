@@ -56,7 +56,7 @@ jobs:
 
       - name: Run benchmarks
         if: ${{ steps.cache-report.outputs.cache-hit != 'true' && github.event_name != 'schedule' }}
-        continue-on-error: true
+        continue-on-error: ${{ !startsWith(matrix.impl, 'blaze') }}
         run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
 
       - uses: actions/setup-python@v5
