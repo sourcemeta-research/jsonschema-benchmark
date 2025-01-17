@@ -51,7 +51,7 @@ jobs:
           lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
 
       - name: Run benchmarks
-        if: steps.cache-report.outputs.cache-hit != 'true'
+        if: ${{ steps.cache-report.outputs.cache-hit != 'true' && github.event_name != 'schedule' }}
         continue-on-error: true
         run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
 
