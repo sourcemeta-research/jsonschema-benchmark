@@ -21,7 +21,7 @@ void validate_all(const jsonschema::json_schema<Json> &compiled, const std::vect
 }
 
 int validate(const std::filesystem::path &example) {
-  std::ifstream input_schema((example / "schema.json").string());
+  std::ifstream input_schema((example / "schema-noformat.json").string());
   const auto schema = json::parse(input_schema);
 
   const auto compile_start{std::chrono::high_resolution_clock::now()};

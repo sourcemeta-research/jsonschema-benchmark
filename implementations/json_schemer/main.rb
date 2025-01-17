@@ -14,7 +14,7 @@ end
 path = ARGV[0]
 
 # Load the schema and build a validator
-schema = JSON.parse(File.read(File.join(path, "schema.json")))
+schema = JSON.parse(File.read(File.join(path, "schema-noformat.json")))
 
 compile_start = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 schemer = JSONSchemer.schema(schema)

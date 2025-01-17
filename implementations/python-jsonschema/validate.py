@@ -12,7 +12,7 @@ MAX_WARMUP_TIME = 1e9 * 10
 
 if __name__ == "__main__":
     example_dir = pathlib.Path(sys.argv[1])
-    schema = json.load(open(example_dir / "schema.json"))
+    schema = json.load(open(example_dir / "schema-noformat.json"))
     instances = [json.loads(doc) for doc in open(example_dir / "instances.jsonl").readlines()]
 
     Validator = jsonschema.validators.validator_for(schema)

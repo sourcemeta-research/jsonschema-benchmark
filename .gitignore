@@ -1,6 +1,7 @@
 /dist
 /implementations/ajv/node_modules
 /implementations/boon/target/
+/schemas/*/schema-noformat.json
 /.DS_Store
 /node_modules
 .dockertimestamp

@@ -27,7 +27,7 @@ bool validate_all(auto &evaluator, const auto &instances, const auto &schema_tem
 
 int validate(const std::filesystem::path &example) {
   const auto schema{
-      sourcemeta::jsontoolkit::from_file(example / "schema.json")};
+      sourcemeta::jsontoolkit::from_file(example / "schema-noformat.json")};
   auto stream{sourcemeta::jsontoolkit::read_file(example / "instances.jsonl")};
   std::vector<sourcemeta::jsontoolkit::JSON> instances;
   for (const auto &instance : sourcemeta::jsontoolkit::JSONL{stream}) {
