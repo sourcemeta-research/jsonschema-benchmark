@@ -13,6 +13,11 @@ on:
         required: false
         default: false
         type: boolean
+      skip_cache:
+        description: "Skip cache"
+        required: false
+        default: false
+        type: boolean
   push:
     branches:
       - main
@@ -48,14 +53,14 @@ jobs:
         with:
           path: dist/report.csv
           key: noformat-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
-          lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' }}
+          lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' || inputs.skip_cache }}
 
       - uses: actions/setup-go@v5
       - name: Install gron
         run: go install github.com/tomnomnom/gron@latest
 
       - name: Run benchmarks
-        if: ${{ steps.cache-report.outputs.cache-hit != 'true' || github.event_name == 'schedule' }}
+        if: ${{ steps.cache-report.outputs.cache-hit != 'true' || github.event_name == 'schedule' || inputs.skip_cache }}
         continue-on-error: ${{ !startsWith(matrix.impl, 'blaze') }}
         run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
 
