@@ -158,3 +158,24 @@ jobs:
           path: |
             dist/report.csv
             dist/results/plots
+
+  dataset-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get jsonschema-strip binary
+        run: |
+          git clone --depth 1 --branch main https://github.com/sourcemeta-research/jsonschema-strip
+          cmake -S jsonschema-strip -B ./jsonschema-strip/build -DCMAKE_BUILD_TYPE:STRING=Release
+          cmake --build ./jsonschema-strip/build --config Release --target strip
+          mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
+          echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
+      - name: Install moreutils
+        run: sudo apt-get install moreutils
+      - name: Strip schemas
+        run: |
+          for f in schemas/*/schema.json; do
+            ./jsonschema-strip/build/jsonschema-strip "$f" | sponge "$f"
+          done
+      - name: Create summary
+        run: ./.github/dataset_summary_table.sh >> $GITHUB_STEP_SUMMARY
