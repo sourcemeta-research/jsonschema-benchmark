@@ -7,6 +7,7 @@ else
 IMPLEMENTATIONS ?= $(filter-out $(patsubst implementations/%/,%,$(dir $(wildcard implementations/*/.benchmark-ignore))), $(ALL_IMPLEMENTATIONS))
 endif
 RUNS := 3
+BLAZE_BRANCH ?= main
 
 .PHONY: clean
 clean: ; rm -rf dist implementations/*/.dockertimestamp
@@ -58,7 +59,7 @@ implementations/blaze/.dockertimestamp: \
 	implementations/blaze/CMakeLists.txt \
 	implementations/blaze/main.cc \
 	implementations/blaze/Dockerfile
-	docker build -t jsonschema-benchmark/blaze implementations/blaze
+	docker build --build-arg BLAZE_BRANCH=$(BLAZE_BRANCH) -t jsonschema-benchmark/blaze implementations/blaze
 	touch $@
 
 dist/results/blaze/%: \

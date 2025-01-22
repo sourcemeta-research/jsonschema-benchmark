@@ -18,6 +18,11 @@ on:
         required: false
         default: false
         type: boolean
+      blaze_branch:
+        description: "Branch to use for Blaze"
+        required: false
+        default: main
+        type: string
   push:
     branches:
       - main
@@ -62,6 +67,8 @@ jobs:
       - name: Run benchmarks
         if: ${{ steps.cache-report.outputs.cache-hit != 'true' || github.event_name == 'schedule' || inputs.skip_cache }}
         continue-on-error: ${{ !startsWith(matrix.impl, 'blaze') }}
+        env:
+          BLAZE_BRANCH: ${{ inputs.blaze_branch || 'main' }}
         run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
 
       - uses: actions/setup-python@v5
