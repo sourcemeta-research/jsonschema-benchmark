@@ -128,6 +128,16 @@ jobs:
           python-version: '3.12.5'
       - name: Install uv
         run: pipx install uv
+      - name: Get jsonschema-strip binary
+        run: |
+          git clone --depth 1 --branch main https://github.com/sourcemeta-research/jsonschema-strip
+          cmake -S jsonschema-strip -B ./jsonschema-strip/build -DCMAKE_BUILD_TYPE:STRING=Release
+          cmake --build ./jsonschema-strip/build --config Release --target strip
+          mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
+          echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
+      - uses: actions/setup-go@v5
+      - name: Install gron
+        run: go install github.com/tomnomnom/gron@latest
 
       - name: Process CSV
         run: uv run python .github/csv_min.py > dist/report-min.csv
@@ -147,17 +157,29 @@ jobs:
         run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
 
       - name: Generate plots
-        run: mkdir -p dist/results/plots && uv run python plot.py
+        run: |
+          ./dataset_summary.sh csv >> dist/summary.csv
+          mkdir -p dist/results/plots && uv run python plot.py && uv run python plot_compile.py
       - name: Upload plots
         id: imgur
         uses: devicons/public-upload-to-imgur@v2.2.2
         with:
           path: dist/results/plots/*.png
           client_id: ${{secrets.IMGUR_CLIENT_ID}}
+      - name: Upload compile plot
+        id: imgur_compile
+        uses: devicons/public-upload-to-imgur@v2.2.2
+        with:
+          path: dist/results/compile.png
+          client_id: ${{secrets.IMGUR_CLIENT_ID}}
       - name: Add plots to summary
         env:
           IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
-        run: python .github/plot_markdown.py >> $GITHUB_STEP_SUMMARY
+        run: python .github/plot_markdown.py dist/results/plots >> $GITHUB_STEP_SUMMARY
+      - name: Add plots to summary
+        env:
+          IMG_URLS: ${{ steps.imgur_compile.outputs.imgur_urls }}
+        run: python .github/plot_markdown.py dist/results >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -177,12 +199,8 @@ jobs:
           cmake --build ./jsonschema-strip/build --config Release --target strip
           mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
           echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
-      - name: Install moreutils
-        run: sudo apt-get install moreutils
-      - name: Strip schemas
-        run: |
-          for f in schemas/*/schema.json; do
-            ./jsonschema-strip/build/jsonschema-strip "$f" | sponge "$f"
-          done
+      - uses: actions/setup-go@v5
+      - name: Install gron
+        run: go install github.com/tomnomnom/gron@latest
       - name: Create summary
-        run: ./.github/dataset_summary_table.sh >> $GITHUB_STEP_SUMMARY
+        run: ./dataset_summary.sh md >> $GITHUB_STEP_SUMMARY
