@@ -147,17 +147,30 @@ jobs:
         run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
 
       - name: Generate plots
-        run: mkdir -p dist/results/plots && uv run python plot.py
+        run: |
+          ./dataset_summary.sh csv >> dist/summary.csv
+          mkdir -p dist/results/plots && uv run python plot.py && uv run python plot_compile.py
       - name: Upload plots
         id: imgur
         uses: devicons/public-upload-to-imgur@v2.2.2
         with:
           path: dist/results/plots/*.png
           client_id: ${{secrets.IMGUR_CLIENT_ID}}
+      - name: Upload compile plot
+        id: imgur_compile
+        uses: devicons/public-upload-to-imgur@v2.2.2
+        with:
+          path: dist/results/compile.png
+          client_id: ${{secrets.IMGUR_CLIENT_ID}}
       - name: Add plots to summary
         env:
           IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
-        run: python .github/plot_markdown.py >> $GITHUB_STEP_SUMMARY
+          IMG_URLS: ${{ steps.imgur_compile.outputs.imgur_urls }}
+        run: python .github/plot_markdown.py dist/results/plots >> $GITHUB_STEP_SUMMARY
+      - name: Add plots to summary
+        env:
+          IMG_URLS: ${{ steps.imgur_compile.outputs.imgur_urls }}
+        run: python .github/plot_markdown.py dist/results >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -182,7 +195,7 @@ jobs:
       - name: Strip schemas
         run: |
           for f in schemas/*/schema.json; do
-            ./jsonschema-strip/build/jsonschema-strip "$f" | sponge "$f"
+            jsonschema-strip "$f" | sponge "$f"
           done
       - name: Create summary
-        run: ./.github/dataset_summary_table.sh >> $GITHUB_STEP_SUMMARY
+        run: ./dataset_summary.sh md >> $GITHUB_STEP_SUMMARY
