@@ -1,6 +1,6 @@
-#include <sourcemeta/jsontoolkit/json.h>
-#include <sourcemeta/jsontoolkit/jsonl.h>
-#include <sourcemeta/jsontoolkit/jsonschema.h>
+#include <sourcemeta/core/json.h>
+#include <sourcemeta/core/jsonl.h>
+#include <sourcemeta/core/jsonschema.h>
 
 #include <sourcemeta/blaze/compiler.h>
 #include <sourcemeta/blaze/evaluator.h>
@@ -27,17 +27,17 @@ bool validate_all(auto &evaluator, const auto &instances, const auto &schema_tem
 
 int validate(const std::filesystem::path &example) {
   const auto schema{
-      sourcemeta::jsontoolkit::from_file(example / "schema-noformat.json")};
-  auto stream{sourcemeta::jsontoolkit::read_file(example / "instances.jsonl")};
-  std::vector<sourcemeta::jsontoolkit::JSON> instances;
-  for (const auto &instance : sourcemeta::jsontoolkit::JSONL{stream}) {
+      sourcemeta::core::from_file(example / "schema-noformat.json")};
+  auto stream{sourcemeta::core::read_file(example / "instances.jsonl")};
+  std::vector<sourcemeta::core::JSON> instances;
+  for (const auto &instance : sourcemeta::core::JSONL{stream}) {
     instances.push_back(instance);
   }
 
   const auto compile_start{std::chrono::high_resolution_clock::now()};
   const auto schema_template{sourcemeta::blaze::compile(
-      schema, sourcemeta::jsontoolkit::default_schema_walker,
-      sourcemeta::jsontoolkit::official_resolver,
+      schema, sourcemeta::core::default_schema_walker,
+      sourcemeta::core::official_resolver,
       sourcemeta::blaze::default_schema_compiler,
       sourcemeta::blaze::Mode::FastValidation)};
 
