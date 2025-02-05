@@ -68,7 +68,7 @@ EOF
   cat << EOF
     \end{tabular}
     }
-    \caption{Dataset used for validator evaluation}\label{tab:datasets}
+    \caption{Datasets used for validator evaluation}\label{tab:datasets}
 \end{table}
 EOF
 
