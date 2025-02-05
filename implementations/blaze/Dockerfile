@@ -1,5 +1,5 @@
 # syntax=docker.io/docker/dockerfile:1.7-labs
-FROM alpine
+FROM alpine:3.21.2
 ARG BLAZE_BRANCH="main"
 
 RUN apk add --no-cache git build-base cmake

@@ -1,4 +1,4 @@
-FROM python:3.12.5-alpine
+FROM python:3.13.1-alpine3.21
 
 # Install uv
 ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh

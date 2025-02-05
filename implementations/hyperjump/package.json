@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "author": "Juan Cruz Viotti <jv@jviotti.com>",
   "dependencies": {
-    "@hyperjump/json-schema": "^1.9.8"
+    "@hyperjump/json-schema": "^1.10.1"
   }
 }

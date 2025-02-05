@@ -1,8 +1,8 @@
 [versions]
-validator = "0.3.0"
+validator = "0.3.1"
 
 [libraries]
 validator = { module = "io.github.optimumcode:json-schema-validator", version.ref = "validator" }
 
 [plugins]
-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.9.22" }
+jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.1.10" }
