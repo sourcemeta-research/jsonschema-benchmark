@@ -18,12 +18,13 @@ if __name__ == "__main__":
     data = pd.read_csv('dist/summary.csv')
     data.set_index(['name'], inplace=True)
     joined = runtime.join(data, on='name')
+    joined['compile_s'] = joined['compile_ns'] / 1e9
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(6,3))
     ax.set(xscale='log', yscale='log')
     ax.set_xlabel('Schema size (KB)')
-    ax.set_ylabel('Compile time (ns)')
-    plot = sns.scatterplot(data=joined, x='size_kb', y='compile_ns')
+    ax.set_ylabel('Compile time (s)')
+    plot = sns.scatterplot(data=joined, x='size_kb', y='compile_s')
     plot.get_figure().savefig(
         f"dist/results/compile.png", dpi=96, bbox_inches="tight"
     )
