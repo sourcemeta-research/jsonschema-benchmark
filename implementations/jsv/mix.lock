@@ -1,0 +1,5 @@
+%{
+  "jsv": {:hex, :jsv, "0.2.0", "79d93d93afd92ffccc3f4ac7ec96e4d7c52759d5e24fd45312dbc995b5b69f72", [:mix], [{:abnf_parsec, "~> 1.0", [hex: :abnf_parsec, repo: "hexpm", optional: true]}, {:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}, {:mail_address, "~> 1.0", [hex: :mail_address, repo: "hexpm", optional: true]}, {:nimble_options, "~> 1.0", [hex: :nimble_options, repo: "hexpm", optional: false]}, {:poison, "~> 5.0 or ~> 6.0", [hex: :poison, repo: "hexpm", optional: true]}], "hexpm", "2c14d849f4065bf53c76b34fde69dcd1b0788842d2cb6b51881c7c43a8269109"},
+  "nimble_options": {:hex, :nimble_options, "1.1.1", "e3a492d54d85fc3fd7c5baf411d9d2852922f66e69476317787a7b2bb000a61b", [:mix], [], "hexpm", "821b2470ca9442c4b6984882fe9bb0389371b8ddec4d45a9504f00a66f650b44"},
+  "poison": {:hex, :poison, "6.0.0", "9bbe86722355e36ffb62c51a552719534257ba53f3271dacd20fbbd6621a583a", [:mix], [{:decimal, "~> 2.1", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "bb9064632b94775a3964642d6a78281c07b7be1319e0016e1643790704e739a2"},
+}

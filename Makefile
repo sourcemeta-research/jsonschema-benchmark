@@ -322,3 +322,21 @@ dist/results/opis/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/opis
 	@$(call docker_run,opis,/workspace/$(dir $(word 2,$^)))
+
+# jsv
+
+implementations/jsv/.dockertimestamp: \
+	implementations/jsv/benchmark.exs \
+	implementations/jsv/config/config.exs \
+	implementations/jsv/mix.exs \
+	implementations/jsv/mix.lock \
+	implementations/jsv/Dockerfile
+	docker build -t jsonschema-benchmark/jsv implementations/jsv
+	touch $@
+
+dist/results/jsv/%: \
+	implementations/jsv/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsv
+	@$(call docker_run,jsv,/workspace/$(dir $(word 2,$^)))
