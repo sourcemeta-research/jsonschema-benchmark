@@ -151,20 +151,20 @@ dist/results/json_schemer/%: \
 
 # PYTHON / JSONSCHEMA
 
-implementations/python-jsonschema/.dockertimestamp: \
-	implementations/python-jsonschema/validate.py \
-	implementations/python-jsonschema/pyproject.toml \
-	implementations/python-jsonschema/uv.lock \
-	implementations/python-jsonschema/Dockerfile
-	docker build -t jsonschema-benchmark/python-jsonschema implementations/python-jsonschema
+implementations/py-jsonschema/.dockertimestamp: \
+	implementations/py-jsonschema/validate.py \
+	implementations/py-jsonschema/pyproject.toml \
+	implementations/py-jsonschema/uv.lock \
+	implementations/py-jsonschema/Dockerfile
+	docker build -t jsonschema-benchmark/py-jsonschema implementations/py-jsonschema
 	touch $@
 
-dist/results/python-jsonschema/%: \
-	implementations/python-jsonschema/.dockertimestamp \
+dist/results/py-jsonschema/%: \
+	implementations/py-jsonschema/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
-	| dist/results/python-jsonschema
-	@$(call docker_run,python-jsonschema,/workspace/$(dir $(word 2,$^)))
+	| dist/results/py-jsonschema
+	@$(call docker_run,py-jsonschema,/workspace/$(dir $(word 2,$^)))
 
 # GO / JSONSCHEMA
 
@@ -254,38 +254,38 @@ dist/results/schemasafe/%: \
 
 # JsonSchema.net
 
-implementations/jsonschemadotnet/.dockertimestamp: \
-	implementations/jsonschemadotnet/bench.csproj \
-	implementations/jsonschemadotnet/Program.cs \
-	implementations/jsonschemadotnet/Dockerfile
-	docker build -t jsonschema-benchmark/jsonschemadotnet implementations/jsonschemadotnet
+implementations/jsdotnet/.dockertimestamp: \
+	implementations/jsdotnet/bench.csproj \
+	implementations/jsdotnet/Program.cs \
+	implementations/jsdotnet/Dockerfile
+	docker build -t jsonschema-benchmark/jsdotnet implementations/jsdotnet
 	touch $@
 
-dist/results/jsonschemadotnet/%: \
-	implementations/jsonschemadotnet/.dockertimestamp \
+dist/results/jsdotnet/%: \
+	implementations/jsdotnet/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
-	| dist/results/jsonschemadotnet
-	@$(call docker_run,jsonschemadotnet,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	| dist/results/jsdotnet
+	@$(call docker_run,jsdotnet,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
-# kmp-json-schema-validator
+# kmp
 
-implementations/kmp-json-schema-validator/.dockertimestamp: \
-	implementations/kmp-json-schema-validator/app/src/main/kotlin/io/github/sourcemeta/App.kt \
-	implementations/kmp-json-schema-validator/app/build.gradle.kts \
-	implementations/kmp-json-schema-validator/gradle/libs.versions.toml \
-	implementations/kmp-json-schema-validator/gradle/wrapper/gradle-wrapper.properties \
-	implementations/kmp-json-schema-validator/run.sh \
-	implementations/kmp-json-schema-validator/Dockerfile
-	docker build -t jsonschema-benchmark/kmp-json-schema-validator implementations/kmp-json-schema-validator
+implementations/kmp/.dockertimestamp: \
+	implementations/kmp/app/src/main/kotlin/io/github/sourcemeta/App.kt \
+	implementations/kmp/app/build.gradle.kts \
+	implementations/kmp/gradle/libs.versions.toml \
+	implementations/kmp/gradle/wrapper/gradle-wrapper.properties \
+	implementations/kmp/run.sh \
+	implementations/kmp/Dockerfile
+	docker build -t jsonschema-benchmark/kmp implementations/kmp
 	touch $@
 
-dist/results/kmp-json-schema-validator/%: \
-	implementations/kmp-json-schema-validator/.dockertimestamp \
+dist/results/kmp/%: \
+	implementations/kmp/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
-	| dist/results/kmp-json-schema-validator
-	@$(call docker_run,kmp-json-schema-validator,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	| dist/results/kmp
+	@$(call docker_run,kmp,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
 # networknt
 

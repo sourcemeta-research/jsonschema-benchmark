@@ -26,15 +26,15 @@ IMPL_RENAMES = {
     'boon': 'Boon',
     'corvus': 'Corvus',
     'go-jsonschema': 'jsonschema (Go)',
-    'hyperjump': 'Hyperjump',
-    'jsonschemadotnet': 'JsonSchema.Net',
-    'kmp-json-schema-validator': 'KMP',
+    'jsdotnet': 'JsonSchema.Net',
+    'jsv': 'JSV',
+    'kmp': 'KMP',
     'networknt': 'NetworkNT',
     'opis': 'Opis',
-    'python-jsonschema': 'jsonschema (Py)',
+    'py-jsonschema': 'jsonschema (Py)',
 }
 
-impls = list(data.index.get_level_values(0).unique().drop('ajv').values)
+impls = list(data.index.get_level_values(0).unique().drop(['ajv', 'hyperjump']).values)
 impls.sort(key=lambda x: IMPL_RENAMES.get(x, x).lower())
 
 cols = "|".join("c" * (len(impls) + 1))
