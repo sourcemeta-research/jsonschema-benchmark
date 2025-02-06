@@ -1,5 +1,5 @@
 # syntax=docker.io/docker/dockerfile:1.7-labs
-FROM alpine
+FROM alpine:3.21.2
 ARG BLAZE_BRANCH="main"
 
 RUN apk add --no-cache git build-base cmake
@@ -14,6 +14,7 @@ RUN cmake --build /app/build --config Release --parallel 4
 
 # Rebuild with the real source
 COPY ./main.cc /app
+RUN touch /app/main.cc
 RUN cmake --build /app/build --config Release --parallel 4
 
 ENTRYPOINT ["/app/build/blaze_benchmark"]

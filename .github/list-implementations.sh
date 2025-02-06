@@ -14,7 +14,7 @@ base_impls=$(comm -23 <(echo "$all_impls") <(echo "$pr_impls"))
 
 # Format as JSON like {"include": [{"impl" "foo"}, ...]}
 echo -n '{"include":['
-(echo "$base_impls" | while read impl; do
+(echo "$base_impls" | grep -v '^$' | while read impl; do
   echo -n '{"impl": "'$impl'", "skip_cache": false},'
 done
 echo "$pr_impls" | while read impl; do

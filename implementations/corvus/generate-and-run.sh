@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 SCHEMA=$1
 INSTANCES=$2

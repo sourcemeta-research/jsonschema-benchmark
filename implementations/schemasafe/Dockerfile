@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:23.7.0-alpine3.21
 
 COPY . /app
 RUN npm ci --prefix /app

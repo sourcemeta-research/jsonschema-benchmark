@@ -1,5 +1,5 @@
 # Use the official Golang image as a parent image
-FROM golang:1.23-alpine
+FROM golang:1.23-alpine3.21
 
 # Set the working directory in the container
 WORKDIR /app

@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.21.2
 
 RUN apk add --update-cache git build-base cmake ninja ninja-build curl zip unzip pkgconf && rm -rf /var/cache/apk/*
 
