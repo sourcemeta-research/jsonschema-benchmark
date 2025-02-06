@@ -106,12 +106,12 @@ jobs:
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
-      report-jsonschemadotnet: ${{ steps.save-output.outputs.report-jsonschemadotnet }}
+      report-jsdotnet: ${{ steps.save-output.outputs.report-jsdotnet }}
       report-jsv: ${{ steps.save-output.outputs.report-jsv }}
-      report-kmp-json-schema-validator: ${{ steps.save-output.outputs.report-kmp-json-schema-validator }}
+      report-kmp: ${{ steps.save-output.outputs.report-kmp }}
       report-networknt: ${{ steps.save-output.outputs.report-networknt }}
       report-opis: ${{ steps.save-output.outputs.report-opis }}
-      report-python-jsonschema: ${{ steps.save-output.outputs.report-python-jsonschema }}
+      report-py-jsonschema: ${{ steps.save-output.outputs.report-py-jsonschema }}
       report-schemasafe: ${{ steps.save-output.outputs.report-schemasafe }}
 
   aggregate:
