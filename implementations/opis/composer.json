@@ -1,0 +1,15 @@
+{
+    "name": "jsonschema-benchmark/opis",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "JsonschemaBenchmark\\Opis\\": "src/"
+        }
+    },
+    "require": {
+        "opis/json-schema": "^2.4"
+    },
+    "scripts": {
+      "benchmark": "php main.php"
+    }
+}

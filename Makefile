@@ -305,3 +305,20 @@ dist/results/networknt/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/networknt
 	@$(call docker_run,networknt,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# opis
+
+implementations/opis/.dockertimestamp: \
+	implementations/opis/main.php \
+	implementations/opis/composer.json \
+	implementations/opis/composer.lock \
+	implementations/opis/Dockerfile
+	docker build -t jsonschema-benchmark/opis implementations/opis
+	touch $@
+
+dist/results/opis/%: \
+	implementations/opis/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/opis
+	@$(call docker_run,opis,/workspace/$(dir $(word 2,$^)))

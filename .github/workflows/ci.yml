@@ -109,6 +109,7 @@ jobs:
       report-jsonschemadotnet: ${{ steps.save-output.outputs.report-jsonschemadotnet }}
       report-kmp-json-schema-validator: ${{ steps.save-output.outputs.report-kmp-json-schema-validator }}
       report-networknt: ${{ steps.save-output.outputs.report-networknt }}
+      report-opis: ${{ steps.save-output.outputs.report-opis }}
       report-python-jsonschema: ${{ steps.save-output.outputs.report-python-jsonschema }}
       report-schemasafe: ${{ steps.save-output.outputs.report-schemasafe }}
 
