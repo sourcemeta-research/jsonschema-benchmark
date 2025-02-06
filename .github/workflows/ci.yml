@@ -65,7 +65,7 @@ jobs:
         run: go install github.com/tomnomnom/gron@latest
 
       - name: Run benchmarks
-        if: ${{ steps.cache-report.outputs.cache-hit != 'true' || github.event_name == 'schedule' || inputs.skip_cache }}
+        if: ${{ steps.cache-report.outputs.cache-hit != 'true' || github.event_name == 'schedule' || inputs.skip_cache || matrix.skip_cache }}
         continue-on-error: ${{ !startsWith(matrix.impl, 'blaze') }}
         env:
           BLAZE_BRANCH: ${{ inputs.blaze_branch || 'main' }}
