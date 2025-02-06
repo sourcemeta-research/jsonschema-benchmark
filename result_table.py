@@ -30,6 +30,7 @@ IMPL_RENAMES = {
     'jsonschemadotnet': 'JsonSchema.Net',
     'kmp-json-schema-validator': 'KMP',
     'networknt': 'NetworkNT',
+    'opis': 'Opis',
     'python-jsonschema': 'jsonschema (Py)',
 }
 
