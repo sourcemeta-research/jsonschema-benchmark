@@ -10,6 +10,8 @@ For correctness tests of validators, please see [Bowtie](https://bowtie.report/)
 The benchmark requires Python, make, and Docker.
 [uv](https://github.com/astral-sh/uv) is used for dependency management in the Python scripts.
 To run all the benchmarks, a report can be produced via `make dist/report.csv`.
+The `Makefile` accepts parameters `IMPLEMENTATIONS` to specify which implementations to run and `RUNS` for the number of runs per implementation.
+For example, `make IMPLEMENTATIONS='blaze jsoncons' RUNS=5` will run the Blaze and jsoncons implementations 5 times each.
 To plot the runtime for each implementation, run `make plots`.
 
 ## Implementations
@@ -17,16 +19,28 @@ To plot the runtime for each implementation, run `make plots`.
 Each implementation is run via Docker.
 First, a Docker container is built with all the necessary dependencies.
 Then, at runtime, a folder containing the schema and the necessary dependencies is mounted and the time to validate all documents is measured.
+All implementations can be found in the `implementations/` subdirectory.
+A summary of these implementations is given below.
 
-- [ajv](https://ajv.js.org/)
-- [@exodus/schemasafe](https://github.com/ExodusMovement/schemasafe)
-- [boon](https://github.com/santhosh-tekuri/boon)
-- [go-jsonschema](https://github.com/omissis/go-jsonschema)
-- [Corvus.JsonSchema](https://github.com/corvus-dotnet/Corvus.JsonSchema)
-- [hyperjump](https://github.com/hyperjump-io/json-schema)
-- [json_schemer](https://github.com/davishmcclurg/json_schemer)
-- [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/)
-- [jsontoolkit](https://github.com/sourcemeta/jsontoolkit)
+- [Ajv](https://ajv.js.org/) (JS)
+- [Blaze](https://github.com/sourcemeta/blaze) (C++)
+- [@exodus/schemasafe](https://github.com/ExodusMovement/schemasafe) (JS)
+- [boon](https://github.com/santhosh-tekuri/boon) (Rust)
+- [Corvus.JsonSchema](https://github.com/corvus-dotnet/Corvus.JsonSchema) (C#)
+- [Hyperjump](https://github.com/hyperjump-io/json-schema) (JS)
+- [Opis](https://opis.io/json-schema) (PHP)
+- [jsoncons](https://github.com/danielaparker/jsoncons) (C++)
+- [json_schemer](https://github.com/davishmcclurg/json_schemer) (Ruby)
+- [json-schema-validator](https://github.com/networknt/json-schema-validator) (Java)
+- [json-schema-validator](https://github.com/OptimumCode/json-schema-validator) (Kotlin)
+- [jsonschema](https://github.com/santhosh-tekuri/jsonschema/) (Go)
+- [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) (Python)
+- [JsonSchema.NET](https://github.com/json-everything/json-everything) (C#)
+- [JSV](https://github.com/lud/jsv) (Elixir)
+
+Note that some implementations are currently ignored by default to limit the runtime of the benchmark.
+These implementations are identified by a `.benchmark-ignore` file in the implementation subdirectory.
+To run one of these implementations, it must be explicitly specified as described above.
 
 ## Adding a new implementation
 
