@@ -25,8 +25,9 @@ fun main(args: Array<String>) {
     val json = Json { ignoreUnknownKeys = true }
 
     // Prepare the schema
+    val schemaDefinition = File(args[0]).readText()
     val compileStart = System.nanoTime()
-    val schema = JsonSchema.fromDefinition(File(args[0]).readText())
+    val schema = JsonSchema.fromDefinition(schemaDefinition)
     val compileEnd = System.nanoTime()
 
     // Load all documents
