@@ -67,6 +67,8 @@ schemas/%/schema-noformat.json: schemas/%/schema.json
 
 # Blaze
 
+# Always try to build the Blaze image, let Docker cache things
+.PHONY: implementations/blaze/.dockertimestamp
 implementations/blaze/.dockertimestamp: \
 	implementations/blaze/CMakeLists.txt \
 	implementations/blaze/main.cc \
