@@ -67,6 +67,7 @@ schemas/%/schema-noformat.json: schemas/%/schema.json
 
 # Blaze
 
+.PHONY: implementations/blaze/.dockertimestamp
 implementations/blaze/.dockertimestamp: \
 	implementations/blaze/CMakeLists.txt \
 	implementations/blaze/main.cc \
