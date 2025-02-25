@@ -25,9 +25,6 @@ if __name__ == "__main__":
 
     # Exclude implementations we are not comparing
     data = data[~data['implementation'].isin(['ajv-bun', 'hyperjump', 'opis'])]
-
-    # Exclude the example schema
-    data = data[data['name'] != 'example']
     data['implementation'] = data['implementation'].replace(IMPL_RENAMES)
 
     # Get schemas that fail on at least one implementation
