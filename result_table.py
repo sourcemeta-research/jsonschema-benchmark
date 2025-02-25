@@ -59,9 +59,6 @@ DATASET_RENAMES = {
 }
 
 for dataset in data.index.get_level_values(1).unique():
-    if dataset in {'example'}:
-        continue
-
     dataset_name = DATASET_RENAMES.get(dataset, dataset)
     print(f"        \\multirow{{2}}{{*}}{{{dataset_name}}}", end='')
 
