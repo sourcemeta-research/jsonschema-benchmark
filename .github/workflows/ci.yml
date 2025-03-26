@@ -30,6 +30,9 @@ on:
   schedule:
     - cron: '5 4 */2 * *'
 
+permissions:
+  contents: read
+
 jobs:
   set-implementations:
     runs-on: ubuntu-latest
@@ -37,6 +40,8 @@ jobs:
       implementations: ${{ steps.implementations.outputs.implementations }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Set implementations
         id: implementations
         env:
@@ -52,6 +57,8 @@ jobs:
       matrix: ${{ fromJson(needs.set-implementations.outputs.implementations) }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Restore cached run
         uses: actions/cache/restore@v4
         id: cache-report
@@ -69,7 +76,9 @@ jobs:
         continue-on-error: ${{ !startsWith(matrix.impl, 'blaze') }}
         env:
           BLAZE_BRANCH: ${{ inputs.blaze_branch || 'main' }}
-        run: make RUNS=${{ inputs.runs || 3 }} IMPLEMENTATIONS=${{ matrix.impl }} dist/report.csv
+          RUNS: ${{ inputs.runs || 3 }}
+          IMPL: ${{ matrix.impl }}
+        run: make RUNS=${RUNS} IMPLEMENTATIONS=${IMPL} dist/report.csv
 
       - uses: actions/setup-python@v5
         with:
@@ -81,9 +90,11 @@ jobs:
 
       - name: Save output
         id: save-output
+        env:
+          IMPL: ${{ matrix.impl }}
         run: |
           {
-            echo 'report-${{ matrix.impl }}<<EOF'
+            echo "report-${IMPL}<<EOF"
             cat dist/report.csv
             echo EOF
           } >> $GITHUB_OUTPUT
@@ -119,10 +130,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Concatenate output
+        env:
+          OUTPUTS: ${{ join(needs.benchmark.outputs.*, '\n') }}
         run: |
           mkdir dist
-          printf "${{ join(needs.benchmark.outputs.*, '\n') }}" | awk 'NR==1 || !/^implementation,/' > dist/report.csv
+          printf "${OUTPUTS}" | awk 'NR==1 || !/^implementation,/' > dist/report.csv
       - run: cat dist/report.csv
 
       - uses: actions/setup-python@v5
@@ -194,6 +209,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Get jsonschema-strip binary
         run: |
           git clone --depth 1 --branch main https://github.com/sourcemeta-research/jsonschema-strip
