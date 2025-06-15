@@ -9,7 +9,7 @@ then
   exit 1
 fi
 
-echo "implementation,version,name,cold_ns,warm_ns,compile_ns,exit_status"
+echo "implementation,version,name,cold_ns,warm_ns,compile_ns,memory,exit_status"
 
 for argument in "$@"
 do

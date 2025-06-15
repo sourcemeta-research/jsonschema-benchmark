@@ -2,6 +2,7 @@
 FROM alpine:3.21.2
 ARG BLAZE_BRANCH="main"
 
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community time
 RUN apk add --no-cache git build-base cmake
 
 # Add a placeholder for main so we can cache dependency builds
@@ -17,5 +18,5 @@ COPY ./main.cc /app
 RUN touch /app/main.cc
 RUN cmake --build /app/build --config Release --parallel 4
 
-ENTRYPOINT ["/app/build/blaze_benchmark"]
+ENTRYPOINT ["/app/memory-wrapper.sh", "/app/build/blaze_benchmark"]
 CMD []

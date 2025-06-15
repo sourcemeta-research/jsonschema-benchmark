@@ -1,4 +1,5 @@
 /dist
+/implementations/*/memory-wrapper.sh
 /implementations/ajv/node_modules
 /implementations/boon/target/
 /schemas/*/schema-noformat.json
