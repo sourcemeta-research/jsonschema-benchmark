@@ -53,7 +53,7 @@ define docker_run
 	for i in $(shell seq 1 $(RUNS)) ; do \
 		timeout -s KILL $$(( $(RUNS) * 180 + 60 ))s docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
 		STATUS=$$? ; \
-		if [ ! -s $@.tmp ]; then echo "0,0,0" >> $@ ; else cat $@.tmp >> $@ ; fi ; \
+		if ! grep '.*,.*,' $@.tmp > /dev/null; then echo -n "0,0,0," >> $@ ; cat $@.tmp  >> $@ ; else cat $@.tmp >> $@ ; fi ; \
 		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
 		rm -f $@.tmp ; \
 	done
@@ -65,9 +65,13 @@ list:
 schemas/%/schema-noformat.json: schemas/%/schema.json
 	gron $< | grep -v 'format = "' | gron -u > $@
 
+implementations/%/memory-wrapper.sh: memory-wrapper.sh
+	cp -p $< $@
+
 # Blaze
 
 implementations/blaze/.dockertimestamp: \
+	implementations/blaze/memory-wrapper.sh \
 	implementations/blaze/CMakeLists.txt \
 	implementations/blaze/main.cc \
 	implementations/blaze/Dockerfile
@@ -84,6 +88,7 @@ dist/results/blaze/%: \
 # AJV
 
 implementations/ajv/.dockertimestamp: \
+	implementations/ajv/memory-wrapper.sh \
 	implementations/ajv/main.mjs \
 	implementations/ajv/package.json \
 	implementations/ajv/package-lock.json \
@@ -101,6 +106,7 @@ dist/results/ajv/%: \
 # AJV with bun
 
 implementations/ajv-bun/.dockertimestamp: \
+	implementations/ajv-bun/memory-wrapper.sh \
 	implementations/ajv/main.mjs \
 	implementations/ajv-bun/package.json \
 	implementations/ajv-bun/bun.lockb \
@@ -119,6 +125,7 @@ dist/results/ajv-bun/%: \
 # BOON
 
 implementations/boon/.dockertimestamp: \
+	implementations/boon/memory-wrapper.sh \
 	implementations/boon/src/main.rs \
 	implementations/boon/Cargo.toml \
 	implementations/boon/Dockerfile
@@ -135,6 +142,7 @@ dist/results/boon/%: \
 # JSON_SCHEMER
 
 implementations/json_schemer/.dockertimestamp: \
+	implementations/json_schemer/memory-wrapper.sh \
 	implementations/json_schemer/main.rb \
 	implementations/json_schemer/Gemfile \
 	implementations/json_schemer/Gemfile.lock \
@@ -152,6 +160,7 @@ dist/results/json_schemer/%: \
 # PYTHON / JSONSCHEMA
 
 implementations/py-jsonschema/.dockertimestamp: \
+	implementations/py-jsonschema/memory-wrapper.sh \
 	implementations/py-jsonschema/validate.py \
 	implementations/py-jsonschema/pyproject.toml \
 	implementations/py-jsonschema/uv.lock \
@@ -169,6 +178,7 @@ dist/results/py-jsonschema/%: \
 # GO / JSONSCHEMA
 
 implementations/go-jsonschema/.dockertimestamp: \
+	implementations/go-jsonschema/memory-wrapper.sh \
 	implementations/go-jsonschema/go.mod \
 	implementations/go-jsonschema/go.sum \
 	implementations/go-jsonschema/main.go \
@@ -186,6 +196,7 @@ dist/results/go-jsonschema/%: \
 # HYPERJUMP
 
 implementations/hyperjump/.dockertimestamp: \
+	implementations/hyperjump/memory-wrapper.sh \
 	implementations/hyperjump/main.mjs \
 	implementations/hyperjump/package.json \
 	implementations/hyperjump/package-lock.json \
@@ -203,6 +214,7 @@ dist/results/hyperjump/%: \
 # JSONCONS
 
 implementations/jsoncons/.dockertimestamp: \
+	implementations/jsoncons/memory-wrapper.sh \
 	implementations/jsoncons/CMakeLists.txt \
 	implementations/jsoncons/vcpkg.json \
 	implementations/jsoncons/vcpkg-configuration.json \
@@ -221,6 +233,7 @@ dist/results/jsoncons/%: \
 # DOTNET / CORVUS
 
 implementations/corvus/.dockertimestamp: \
+	implementations/corvus/memory-wrapper.sh \
 	implementations/corvus/bench.csproj \
 	implementations/corvus/Program.cs \
 	implementations/corvus/generate-and-run.sh \
@@ -238,6 +251,7 @@ dist/results/corvus/%: \
 # SCHEMASAFE
 
 implementations/schemasafe/.dockertimestamp: \
+	implementations/schemasafe/memory-wrapper.sh \
 	implementations/schemasafe/main.mjs \
 	implementations/schemasafe/package.json \
 	implementations/schemasafe/package-lock.json \
@@ -255,6 +269,7 @@ dist/results/schemasafe/%: \
 # JsonSchema.net
 
 implementations/jsdotnet/.dockertimestamp: \
+	implementations/jsdotnet/memory-wrapper.sh \
 	implementations/jsdotnet/bench.csproj \
 	implementations/jsdotnet/Program.cs \
 	implementations/jsdotnet/Dockerfile
@@ -271,6 +286,7 @@ dist/results/jsdotnet/%: \
 # kmp
 
 implementations/kmp/.dockertimestamp: \
+	implementations/kmp/memory-wrapper.sh \
 	implementations/kmp/app/src/main/kotlin/io/github/sourcemeta/App.kt \
 	implementations/kmp/app/build.gradle.kts \
 	implementations/kmp/gradle/libs.versions.toml \
@@ -290,6 +306,7 @@ dist/results/kmp/%: \
 # networknt
 
 implementations/networknt/.dockertimestamp: \
+	implementations/networknt/memory-wrapper.sh \
 	implementations/networknt/app/src/main/java/io/github/sourcemeta/*.java \
 	implementations/networknt/app/build.gradle.kts \
 	implementations/networknt/gradle/libs.versions.toml \
@@ -309,6 +326,7 @@ dist/results/networknt/%: \
 # opis
 
 implementations/opis/.dockertimestamp: \
+	implementations/opis/memory-wrapper.sh \
 	implementations/opis/main.php \
 	implementations/opis/composer.json \
 	implementations/opis/composer.lock \
@@ -326,6 +344,7 @@ dist/results/opis/%: \
 # jsv
 
 implementations/jsv/.dockertimestamp: \
+	implementations/jsv/memory-wrapper.sh \
 	implementations/jsv/benchmark.exs \
 	implementations/jsv/config/config.exs \
 	implementations/jsv/mix.exs \

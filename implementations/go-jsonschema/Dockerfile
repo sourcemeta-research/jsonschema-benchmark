@@ -1,6 +1,8 @@
 # Use the official Golang image as a parent image
 FROM golang:1.23-alpine3.21
 
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community time
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -14,6 +16,6 @@ RUN go mod download
 RUN go build -o go_jsonschema_validator .
 
 # Run the binary
-ENTRYPOINT ["/app/go_jsonschema_validator"]
+ENTRYPOINT ["/app/memory-wrapper.sh", "/app/go_jsonschema_validator"]
 CMD []
 

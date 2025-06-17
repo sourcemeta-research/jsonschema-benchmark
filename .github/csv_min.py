@@ -36,6 +36,9 @@ for schema, impl in data[data["exit_status"] == 0].groupby("name")["warm_ns"].id
 min_compile_impls = set()
 for schema, impl in data[data["exit_status"] == 0].groupby("name")["compile_ns"].idxmin():
     min_compile_impls.add((schema, impl))
+min_memory_impls = set()
+for schema, impl in data[data["exit_status"] == 0].groupby("name")["memory"].idxmin():
+    min_memory_impls.add((schema, impl))
 
 # Get the next fastest implementation
 next_fastest_cold = (
@@ -47,9 +50,12 @@ next_fastest_warm = (
 next_fastest_compile = (
     data[data["exit_status"] == 0].groupby("name").agg({"compile_ns": get_second})
 )
+next_fastest_memory = (
+    data[data["exit_status"] == 0].groupby("name").agg({"memory": get_second})
+)
 
 # Label each implementation which was the fastest
-data = data.astype({"cold_ns": "object", "warm_ns": "object", "compile_ns": "object"})
+data = data.astype({"cold_ns": "object", "warm_ns": "object", "compile_ns": "object", "memory": "object"})
 new_index = data.index.to_list()
 for i, (impl, schema) in enumerate(new_index):
     if (impl, schema) in min_cold_impls:
@@ -84,5 +90,16 @@ for i, (impl, schema) in enumerate(new_index):
             suffix += " :trophy:"
 
         data.at[(impl, schema), "compile_ns"] = f"{fast_time} {suffix}"
+
+    if (impl, schema) in min_memory_impls:
+        suffix = ":white_check_mark:"
+        fast_mem = data.at[(impl, schema), "memory"]
+        next_mem = next_fastest_memory.loc[schema]["memory"]
+
+        # If this implementation uses 20% less memory than the next, add a trophy
+        if fast_mem < next_mem * 0.8:
+            suffix += " :trophy:"
+
+        data.at[(impl, schema), "memory"] = f"{fast_mem} {suffix}"
 
 data.to_csv(sys.stdout)

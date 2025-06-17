@@ -1,5 +1,6 @@
 FROM alpine:3.21.2
 
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community time
 RUN apk add --update-cache git build-base cmake ninja ninja-build curl zip unzip pkgconf && rm -rf /var/cache/apk/*
 
 RUN git clone --branch 2024.04.26 https://github.com/microsoft/vcpkg /app/vcpkg && /app/vcpkg/bootstrap-vcpkg.sh
@@ -11,5 +12,5 @@ COPY . /app
 
 RUN cmake -S /app -B /app/build -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=OFF
 RUN cmake --build /app/build --config Release --parallel 4
-ENTRYPOINT ["/app/build/jsoncons_benchmark"]
+ENTRYPOINT ["/app/memory-wrapper.sh", "/app/build/jsoncons_benchmark"]
 CMD []

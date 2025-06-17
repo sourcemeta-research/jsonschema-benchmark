@@ -39,10 +39,15 @@ async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
 
   const compileStart = performance.now();
-  const validate = validator(schema, {
-    mode: 'spec',
-    isJSON: true
-  });
+  let validate;
+  try {
+    validate = validator(schema, {
+      mode: 'spec',
+      isJSON: true
+    });
+  } catch (error) {
+    process.exit(1);
+  }
   const compileEnd = performance.now();
   const compileDurationNs = (compileEnd - compileStart) * 1e6;
 
