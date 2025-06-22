@@ -70,6 +70,8 @@ implementations/%/memory-wrapper.sh: memory-wrapper.sh
 
 # Blaze
 
+# Always try to build the Blaze image, let Docker cache things
+.PHONY: implementations/blaze/.dockertimestamp
 implementations/blaze/.dockertimestamp: \
 	implementations/blaze/memory-wrapper.sh \
 	implementations/blaze/CMakeLists.txt \
