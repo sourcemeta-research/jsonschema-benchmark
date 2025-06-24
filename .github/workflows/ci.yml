@@ -116,6 +116,10 @@ jobs:
       #report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
+      report-jmc: ${{ steps.save-output.outputs.report-jmc }}
+      report-jmc-js: ${{ steps.save-output.outputs.report-jmc-js }}
+      report-jmc-py: ${{ steps.save-output.outputs.report-jmc-py }}
+      report-jmc-pl: ${{ steps.save-output.outputs.report-jmc-pl }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
       report-jsdotnet: ${{ steps.save-output.outputs.report-jsdotnet }}
@@ -169,10 +173,13 @@ jobs:
         id: csv-table-output
         with:
           csvinput: ${{ steps.csv.outputs.content }}
-      - name: Output summary
-        env:
-          MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
-        run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
+
+      # FIXME CI fails with "Argument list too long" somewhere on this entry
+      #
+      # - name: Output summary
+      #   env:
+      #     MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
+      #   run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
 
       - name: Generate plots
         run: |
