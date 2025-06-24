@@ -50,9 +50,12 @@ all: dist/report.csv ; cat $<
 define docker_run
   $(eval $@_TOOL = $(1))
   $(eval $@_INPUT = $(2))
+  $(eval $@_MISC = $(3))
 	rm -f $@
 	for i in $(shell seq 1 $(RUNS)) ; do \
-		timeout -s KILL $$(( $(RUNS) * 180 + 60 ))s docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
+		timeout -s KILL $$(( $(RUNS) * 180 + 60 ))s \
+			docker run --rm -v $(CURDIR):/workspace \
+				jsonschema-benchmark/$($@_TOOL) $($@_INPUT) $($@_MISC) > $@.tmp ; \
 		STATUS=$$? ; \
 		if ! grep '.*,.*,' $@.tmp > /dev/null; then echo -n "0,0,0," >> $@ ; cat $@.tmp  >> $@ ; else cat $@.tmp >> $@ ; fi ; \
 		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
@@ -141,6 +144,45 @@ dist/results/boon/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
 	@$(call docker_run,boon,/workspace/$(dir $(word 2,$^)))
+
+# JMC
+
+implementations/jmc/.dockertimestamp: \
+	implementations/jmc/memory-wrapper.sh \
+	implementations/jmc/generate-and-run.sh \
+	implementations/jmc/jmc_version.sh \
+	implementations/jmc/version.sh \
+	implementations/jmc/Dockerfile
+	docker build -t jsonschema-benchmark/jmc implementations/jmc
+	touch $@
+
+dist/results/jmc/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) C)
+
+dist/results/jmc-js/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc-js
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) js)
+
+dist/results/jmc-py/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc-py
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) py)
+
+dist/results/jmc-pl/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc-pl
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) pl)
 
 # JSON_SCHEMER
 

@@ -28,6 +28,7 @@ A summary of these implementations is given below.
 - [boon](https://github.com/santhosh-tekuri/boon) (Rust)
 - [Corvus.JsonSchema](https://github.com/corvus-dotnet/Corvus.JsonSchema) (C#)
 - [Hyperjump](https://github.com/hyperjump-io/json-schema) (JS)
+- [JMC](https://github.com/clairey-zx81/json-model) (C, JS, Python, Perl)
 - [Opis](https://opis.io/json-schema) (PHP)
 - [jsoncons](https://github.com/danielaparker/jsoncons) (C++)
 - [json_schemer](https://github.com/davishmcclurg/json_schemer) (Ruby)
