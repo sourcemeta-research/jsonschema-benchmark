@@ -39,8 +39,7 @@ Exit status is 0 if all JSON values were validated, 1 otherwise.
 
 - [x] ansible-meta pass=330 fail=3 error=0
   - 105: `dependecies` prop typo because of fixed `additionalProperties`
-  - 201: `argument_specs` prop because of fixed `additionalProperties`
-  - 105: `argument_specs` prop because of fixed `additionalProperties`
+  - 201/312: `argument_specs` prop because of fixed `additionalProperties`
 - [x] aws-cdk pass=483 fail=0 error=0
 - [x] babelrc pass=794 fail=0 error=0
 - [x] clang-format pass=133 fail=0 error=0
