@@ -1,7 +1,12 @@
 #! /bin/bash
 
-SCHEMA=$1
-INSTANCES=$2
+SCHEMA=$1 INSTANCES=$2
+
+if [ "$SCHEMA" -a -d "$SCHEMA" ] ; then
+  dir=$SCHEMA
+  SCHEMA="$dir/schema.json"
+  [ "$INSTANCES" ] || INSTANCES="$dir/instances.jsonl"
+fi
 
 LOOP=100
 NAME=$(basename $(dirname $SCHEMA))
@@ -11,6 +16,8 @@ function H
     echo "# $NAME" "$@" >&2
 }
 
+H schema: $SCHEMA
+H instances: $INSTANCES
 
 #
 # SPECIAL CASE HANDLING
@@ -87,5 +94,5 @@ let validation_time=$(cat time.txt)
 H validation time: $(( $validation_time / 1000 )) µs
 
 # timing & exit
-echo $validation_time,$compile_time
+echo $validation_time,$validation_time,$compile_time
 exit $status

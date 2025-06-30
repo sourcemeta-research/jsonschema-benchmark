@@ -141,6 +141,23 @@ dist/results/boon/%: \
 	| dist/results/boon
 	@$(call docker_run,boon,/workspace/$(dir $(word 2,$^)))
 
+# JMC
+
+implementations/jmc/.dockertimestamp: \
+	implementations/jmc/memory-wrapper.sh \
+	implementations/jmc/generate-and-run.sh \
+	implementations/jmc/version.sh \
+	implementations/jmc/Dockerfile
+	docker build -t jsonschema-benchmark/jmc implementations/jmc
+	touch $@
+
+dist/results/jmc/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc
+	@$(call docker_run,jmc,/workspace/$(dir $(word 2,$^)))
+
 # JSON_SCHEMER
 
 implementations/json_schemer/.dockertimestamp: \
