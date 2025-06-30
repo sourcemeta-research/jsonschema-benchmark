@@ -37,11 +37,12 @@ rm -f model.json model.out
 #
 # COMPILE
 #
+H schema size: $(stat -c '%s' "$SCHEMA")
 
 let compile_start=$(date +%s.%N | tr -d .)
 
-H generating...
 # generate model from schema, by id or strict conversion
+H generating...
 jsu-simpler "$SCHEMA" | jsu-model --id --loose $jsu_model_opt > model.json
 status=$?
 
@@ -63,27 +64,28 @@ H compile time: $(( $compile_time / 1000 )) µs
 # BENCH
 #
 H benchmarking...
+H instances size: $(cat "$INSTANCES" | wc -lc)
 
+# one direct run to collect pass/fail
 let run_start=$(date +%s.%N | tr -d .)
 ./model.out --jsonl "$INSTANCES" > model.txt
 status=$?
 let run_end=$(date +%s.%N | tr -d .)
 let run_time=$(( $run_end - $run_start))
 
-H run time: $(( $run_time / 1000 )) µs
-
-# run again with internally measured time
-./model.out --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
-let valid_time=$(cat time.txt)
-
-H valid time: $valid_time µs
-
-# summary
 pass=$(grep PASS model.txt | wc -l)
 fail=$(grep FAIL model.txt | wc -l)
 err=$(grep ERROR model.txt | wc -l)
-H pass=$pass fail=$fail error=$err
+
+H results: pass=$pass fail=$fail error=$err
+H run time: $(( $run_time / 1000 )) µs
+
+# run again with internally measured validation time
+./model.out --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
+let validation_time=$(cat time.txt)
+
+H validation time: $(( $validation_time / 1000 )) µs
 
 # timing & exit
-echo $valid_time,$compile_time
+echo $validation_time,$compile_time
 exit $status

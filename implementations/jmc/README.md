@@ -87,10 +87,13 @@ Exit status is 0 if all JSON values were validated, 1 otherwise.
 ## Make Commands
 
 ```sh
-make BENCH=lerna run  # run for one benchmark directory
-make runs.txt         # run for all benchmark directories, with results in runs.txt
-make clean            # local and docker cleanup
-make version          # show jmc versions
+make BENCH=lerna bench  # run for one benchmark directory
+make benches            # run all benchmarks
+make benches.txt        # run for all benchmark directories, with results in this file
+make clean              # local cleanup
+make clean.docker       # more cleanup
+make version            # show jmc versions
+make start/stop         # docker container operations
 ```
 
 ## TODO
