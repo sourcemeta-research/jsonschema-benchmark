@@ -35,71 +35,29 @@ loading them into memory.
 
 Exit status is 0 if all JSON values were validated, 1 otherwise.
 
-## Status
+## Validation Status
 
-- [x] ansible-meta pass=330 fail=3 error=0
+- ansible-meta: 3 issues
   - 105: `dependecies` prop typo because of fixed `additionalProperties`
   - 201/312: `argument_specs` prop because of fixed `additionalProperties`
-- [x] aws-cdk pass=483 fail=0 error=0
-- [x] babelrc pass=794 fail=0 error=0
-- [x] clang-format pass=133 fail=0 error=0
-- [x] cmake-presets pass=967 fail=0 error=0
-- [x] code-climate pass=2484 fail=0 error=0
-- [x] cql2 pass=109 fail=0 error=0
-- [x] cspell **pcre2** pass=981 fail=0 error=0
+- cspell:
   - 2 regular expressions uselessly re extensions incompatible with re2
-- [x] cypress pass=981 fail=0 error=0
-- [x] deno pass=987 fail=0 error=0
-- [x] dependabot pass=967 fail=0 error=0
-- [x] draft-04 pass=563 fail=0 error=0
-- [x] fabric-mod pass=911 fail=0 error=0
-- [x] geojson pass=500 fail=0 error=0
-- [x] gitpod-configuration pass=986 fail=0 error=0
-- [x] helm-chart-lock pass=3888 fail=0 error=0
-- [x] importmap pass=964 fail=0 error=0
-- [x] jasmine pass=980 fail=0 error=0
-- [x] jsconfig pass=981 fail=0 error=0
-- [x] jshintrc pass=966 fail=0 error=0
-- [x] krakend pass=47 fail=0 error=0
-- [x] lazygit pass=279 fail=1 error=0
-  - 47-c: obscure issue with utf8 string length, `bmstowcs` returns _-1_
-- [x] lerna pass=985 fail=0 error=0
-- [x] nest-cli pass=1025 fail=0 error=0
-- [x] omnisharp pass=987 fail=0 error=0
-- [x] openapi pass=106 fail=1 error=0
+- lazygit: one issue
+  - 47: obscure issue with utf8 string length, `bmstowcs` returns _-1_
+- openapi: one issue
   - 26: `"<local-terminal-IP-address>"` is not really a valid URI reference
   - NOTE: beware that the provided schema does _not_ validate schemas…
-- [x] pre-commit-hooks pass=985 fail=0 error=0
-- [x] pulumi pass=3807 fail=0 error=0
-- [x] semantic-release pass=794 fail=0 error=0
-- [x] stale pass=961 fail=0 error=0
-- [x] stylecop pass=983 fail=0 error=0
-- [x] tmuxinator pass=382 fail=0 error=0
-- [x] ui5 pass=942 fail=0 error=0
-- [x] ui5-manifest **pcre2** pass=611 fail=0 error=0
+  - NOTE: it seems that formats are _not_ validated by any tools
+- ui5-manifest:
   - one regular expressions extension incompatible with re2
-- [x] unreal-engine-uproject pass=859 fail=0 error=0
-- [x] vercel pass=710 fail=0 error=0
-- [x] yamllint pass=966 fail=18 error=0
+- yamllint: 18 issues
   - the 18 differences are raw strings, model conversion rightfully infer object requirement
     thus reject strings like "hello world" as valid yamllint values
 
-## Make Commands
-
-```sh
-make BENCH=lerna bench  # run for one benchmark directory
-make benches            # run all benchmarks
-make benches.txt        # run for all benchmark directories, with results in this file
-make clean              # local cleanup
-make clean.docker       # more cleanup
-make version            # show jmc versions
-make start/stop         # docker container operations
-```
-
 ## TODO
 
-- add python benchmarking
-- add js benchmarking
+- add benchmarking with python backend
+- add benchmarking with js backend
 
 ## Docker Commands
 
