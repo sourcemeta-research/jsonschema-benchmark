@@ -1,3 +1,9 @@
+#
+# Convenient Makefile for local testing
+#
+# Please use the root Makefile for actual benchmarking.
+#
+
 SHELL   = /bin/bash
 .ONESHELL:
 
