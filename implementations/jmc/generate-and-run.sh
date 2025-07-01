@@ -1,11 +1,11 @@
 #! /bin/bash
 
-SCHEMA=$1 INSTANCES=$2
-
-if [ "$SCHEMA" -a -d "$SCHEMA" ] ; then
-  dir=$SCHEMA
-  SCHEMA="$dir/schema.json"
-  [ "$INSTANCES" ] || INSTANCES="$dir/instances.jsonl"
+if [ $# -eq 2 ] ; then
+    SCHEMA=$1 INSTANCES=$2
+else
+    dir=$1
+    SCHEMA="$dir/schema.json"
+    INSTANCES="$dir/instances.jsonl"
 fi
 
 LOOP=100
@@ -56,7 +56,8 @@ status=$?
 if [ $status -eq 0 ] ; then
     # generate exec from model
     H compiling...
-    jmc --loose-number --maps "https://json-model.org/models/ /json-model/models/" \
+    jmc --loose-number -D JSONSCHEMA_BENCHMARK \
+        --maps "https://json-model.org/models/ /json-model/models/" \
         $jmc_opt -o ./model.out model.json
     status=$?
 fi
@@ -89,10 +90,10 @@ H run time: $(( $run_time / 1000 )) µs
 
 # run again with internally measured validation time
 ./model.out --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
-let validation_time=$(cat time.txt)
 
+let validation_time=$(cat time.txt | cut -d, -f2)
 H validation time: $(( $validation_time / 1000 )) µs
 
 # timing & exit
-echo $validation_time,$validation_time,$compile_time
+echo $(cat time.txt| tr -d '\012'),$compile_time
 exit $status
