@@ -2,13 +2,14 @@ FROM ubuntu
 LABEL description="JSON Model Compiler Setup for Benchmarking"
 
 # system update and installs
-RUN echo system 0
+RUN echo system 3
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y --no-install-recommends --fix-missing \
         vim git ca-certificates libtool m4 time automake make pkgconf gcc g++ texinfo \
         libpcre2-dev libre2-dev libjansson-dev \
-        python3 python-is-python3 python3-venv python3-pip
+        python3 python-is-python3 python3-venv python3-pip \
+        npm nodejs
 RUN apt clean
 
 # compile cre2 into /usr/local
@@ -23,11 +24,18 @@ RUN cd cre2 ; \
 RUN python -m venv /venv
 RUN /venv/bin/pip install -U pip
 
-# direct install json-model and json-schema-utils from github
+# application
+RUN mkdir /app
+WORKDIR /app
+
 RUN echo jmc 0
+# direct install json-model and json-schema-utils from github
 RUN git clone https://github.com/clairey-zx81/json-model.git
 RUN git clone https://github.com/zx80/json-schema-utils.git
 RUN /venv/bin/pip install -e ./json-model ./json-schema-utils
+
+# add JS environment
+RUN npm install re2 file:./json-model/js_runtime
 
 # setup benchmarking scripts
 COPY . /app

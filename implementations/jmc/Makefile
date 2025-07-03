@@ -33,8 +33,7 @@ clean.docker: clean
 build: .build
 
 .build: Dockerfile $(MEM.sh) $(RUN.sh) $(VER.sh)
-	docker build -t jmc -f Dockerfile .
-	touch $@
+	docker build -t jmc -f Dockerfile . && touch $@
 
 $(MEM.sh): ../../memory-wrapper.sh
 	cp $< $@
