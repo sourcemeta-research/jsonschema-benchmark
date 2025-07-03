@@ -1,11 +1,15 @@
 #! /bin/bash
 
-if [ $# -eq 2 ] ; then
+# script parameters
+if [ $# -eq 1 ] ; then
+    dir=$1
+    SCHEMA="$dir/schema-noformat.json"
+    INSTANCES="$dir/instances.jsonl"
+elif [ $# -eq 2 ] ; then
     SCHEMA=$1 INSTANCES=$2
 else
-    dir=$1
-    SCHEMA="$dir/schema.json"
-    INSTANCES="$dir/instances.jsonl"
+    echo "unexpected parameters" >&2
+    exit 2
 fi
 
 LOOP=100
