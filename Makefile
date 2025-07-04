@@ -156,7 +156,21 @@ dist/results/jmc/%: \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jmc
-	@$(call docker_run,jmc,/workspace/$(dir $(word 2,$^)))
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) C)
+
+dist/results/jmc-js/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc-js
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) js)
+
+dist/results/jmc-py/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc-py
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) py)
 
 # JSON_SCHEMER
 
