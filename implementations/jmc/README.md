@@ -63,6 +63,7 @@ Exit status is 0 if all JSON values were validated, 1 otherwise.
 
 ```sh
 docker build -t jmc -f Dockerfile .
-docker run -it --entrypoint /bin/bash jmc
-docker run -v ../../schemas:/schemas jmc ...
+docker run --name awesome_jmc -dit --entrypoint /bin/bash jmc
+docker run --name awesome_jmc -v ../../schemas:/schemas jmc ...
+docker exec -it awesome_jmc /bin/bash
 ```

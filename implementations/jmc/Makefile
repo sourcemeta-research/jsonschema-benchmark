@@ -17,11 +17,14 @@ MEM.sh  = memory-wrapper.sh
 #
 .PHONY: clean
 clean: stop
-	docker rm $(NAME)
 	$(RM) memory-wrapper.sh benches.txt .build .run .start
 
 .PHONY: clean.docker
-clean.docker: clean
+clean.docker: stop
+	docker rm $(NAME)
+
+.PHONY: cleaner.docker
+cleaner.docker: clean
 	docker image prune -f
 	docker container prune -f
 	docker image rm -f $$(docker image ls | grep '^<none>' | tr -s " " " " | cut -d' ' -f 3) jmc
@@ -33,6 +36,7 @@ clean.docker: clean
 build: .build
 
 .build: Dockerfile $(MEM.sh) $(RUN.sh) $(VER.sh)
+	$(MAKE) clean.docker
 	docker build -t jmc -f Dockerfile . && touch $@
 
 $(MEM.sh): ../../memory-wrapper.sh

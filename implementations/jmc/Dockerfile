@@ -2,14 +2,13 @@ FROM ubuntu
 LABEL description="JSON Model Compiler Setup for Benchmarking"
 
 # system update and installs
-RUN echo system 3
+RUN echo system 20250704
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y --no-install-recommends --fix-missing \
-        vim git ca-certificates libtool m4 time automake make pkgconf gcc g++ texinfo jq \
+        vim git ca-certificates libtool m4 time automake make pkgconf gcc g++ texinfo jq curl \
         libpcre2-dev libre2-dev libjansson-dev \
-        python3 python-is-python3 python3-venv python3-pip \
-        npm nodejs
+        python3 python-is-python3 python3-venv python3-pip
 RUN apt clean
 
 # compile cre2 into /usr/local
@@ -24,14 +23,28 @@ RUN cd cre2 ; \
 RUN python -m venv /venv
 RUN /venv/bin/pip install -U pip
 
-# application dependencies
+# application
 RUN mkdir /app
 WORKDIR /app
+
+# nodejs >= 20.0.0
+ENV NVM_DIR=/usr/local/nvm
+RUN mkdir -p $NVM_DIR
+ENV NODE_VERSION=24.3.0
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+RUN . $NVM_DIR/nvm.sh && \
+	nvm install $NODE_VERSION && \
+    nvm alias default $NODE_VERSION && \
+    nvm use default
+ENV NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# js runtime
 RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
 RUN npm install re2
 
 # actual application stuff
-RUN echo jmc 7
+RUN echo jmc 20250704b
 # direct install json-model and json-schema-utils from github
 RUN git clone https://github.com/clairey-zx81/json-model.git
 RUN git clone https://github.com/zx80/json-schema-utils.git
