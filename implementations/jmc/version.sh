@@ -11,6 +11,5 @@ jmc_ver=$(/venv/bin/jmc --version)
 jmc_git=$(git_version /json-model)
 jsu_ver=$(/venv/bin/jsu-model --version)
 jsu_git=$(git_version /json-schema-utils)
-cc_ver=$(cc --version | head -1)
 
-echo "jmc=$jmc_ver-$jmc_git jsu=$jsu_ver-$jsu_git cc=$cc_ver"
+echo "jmc=$jmc_ver-$jmc_git jsu=$jsu_ver-$jsu_git"
