@@ -30,8 +30,8 @@ WORKDIR /app
 RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
 RUN npm install re2
 
-RUN pwd
-RUN echo jmc 5
+# actual application stuff
+RUN echo jmc 7
 # direct install json-model and json-schema-utils from github
 RUN git clone https://github.com/clairey-zx81/json-model.git
 RUN git clone https://github.com/zx80/json-schema-utils.git

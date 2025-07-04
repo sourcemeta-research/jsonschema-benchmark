@@ -6,10 +6,13 @@ if [ $# -eq 1 ] ; then
     SCHEMA="$dir/schema-noformat.json"
     INSTANCES="$dir/instances.jsonl"
     BACKEND=C
+    LOOP=100
 elif [ $# -eq 2 ] ; then
-    SCHEMA=$1 INSTANCES=$2 BACKEND=C
+    SCHEMA=$1 INSTANCES=$2 BACKEND=C LOOP=100
 elif [ $# -eq 3 ] ; then
-    SCHEMA=$1 INSTANCES=$2 BACKEND=$3
+    SCHEMA=$1 INSTANCES=$2 BACKEND=$3 LOOP=100
+elif [ $# -eq 4 ] ; then
+    SCHEMA=$1 INSTANCES=$2 BACKEND=$3 LOOP=$4
 else
     echo "unexpected parameters" >&2
     exit 2
@@ -32,7 +35,6 @@ case $BACKEND in
         ;;
 esac
 
-LOOP=100
 NAME=$(basename $(dirname $SCHEMA))
 
 function H
