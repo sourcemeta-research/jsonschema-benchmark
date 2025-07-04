@@ -72,11 +72,12 @@ status:
 # BENCH
 #
 BENCH   = babelrc
+BACKEND = C
 
 .PHONY: bench
 bench: .start
 	docker exec $(NAME) /app/$(MEM.sh) /app/$(RUN.sh) \
-	    /schemas/$(BENCH)/schema.json /schemas/$(BENCH)/instances.jsonl
+	    /schemas/$(BENCH)/schema.json /schemas/$(BENCH)/instances.jsonl $(BACKEND)
 
 
 BENCHES = $(sort $(basename $(dir $(wildcard ../../schemas/*/schema.json))))

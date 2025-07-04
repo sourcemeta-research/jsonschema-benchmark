@@ -5,12 +5,32 @@ if [ $# -eq 1 ] ; then
     dir=$1
     SCHEMA="$dir/schema-noformat.json"
     INSTANCES="$dir/instances.jsonl"
+    BACKEND=C
 elif [ $# -eq 2 ] ; then
-    SCHEMA=$1 INSTANCES=$2
+    SCHEMA=$1 INSTANCES=$2 BACKEND=C
+elif [ $# -eq 3 ] ; then
+    SCHEMA=$1 INSTANCES=$2 BACKEND=$3
 else
     echo "unexpected parameters" >&2
     exit 2
 fi
+
+# backend configuration
+case $BACKEND in
+    C|c)
+        bench=./model.out
+        ;;
+    PY|Py|Python|py|python)
+        bench=./model.py
+        ;;
+    JS|js|javascript|JavaScript)
+        bench=./model.js
+        ;;
+    *)
+        echo "unexpected backend: $BACKEND" >&2
+        exit 3
+        ;;
+esac
 
 LOOP=100
 NAME=$(basename $(dirname $SCHEMA))
@@ -43,7 +63,7 @@ case $NAME in
 esac
 
 source /venv/bin/activate
-rm -f model.json model.out
+rm -f model.json $bench
 
 #
 # COMPILE
@@ -62,7 +82,7 @@ if [ $status -eq 0 ] ; then
     H compiling...
     jmc --loose-number -D JSONSCHEMA_BENCHMARK \
         --maps "https://json-model.org/models/ /json-model/models/" \
-        $jmc_opt -o ./model.out model.json
+        $jmc_opt -o $bench model.json
     status=$?
 fi
 
@@ -80,7 +100,7 @@ H instances size: $(cat "$INSTANCES" | wc -lc)
 
 # one direct run to collect pass/fail
 let run_start=$(date +%s.%N | tr -d .)
-./model.out --jsonl "$INSTANCES" > model.txt
+$bench --jsonl "$INSTANCES" > model.txt
 status=$?
 let run_end=$(date +%s.%N | tr -d .)
 let run_time=$(( $run_end - $run_start))
@@ -93,7 +113,7 @@ H results: pass=$pass fail=$fail error=$err
 H run time: $(( $run_time / 1000 )) µs
 
 # run again with internally measured validation time
-./model.out --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
+$bench --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
 
 let validation_time=$(cat time.txt | cut -d, -f2)
 H validation time: $(( $validation_time / 1000 )) µs
