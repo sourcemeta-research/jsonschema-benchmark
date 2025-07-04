@@ -44,6 +44,8 @@ function H
 
 H schema: $SCHEMA
 H instances: $INSTANCES
+H backend: $BACKEND
+H loop: $LOOP
 
 #
 # SPECIAL CASE HANDLING
