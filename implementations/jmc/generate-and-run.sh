@@ -21,12 +21,15 @@ fi
 # backend configuration
 case $BACKEND in
     C|c)
+        backend=c
         bench=./model.out
         ;;
     PY|Py|Python|py|python)
+        backend=python
         bench=./model.py
         ;;
     JS|js|javascript|JavaScript)
+        backend=javascript
         bench=./model.js
         ;;
     *)
@@ -44,7 +47,7 @@ function H
 
 H schema: $SCHEMA
 H instances: $INSTANCES
-H backend: $BACKEND
+H backend: $backend
 H loop: $LOOP
 
 #
@@ -53,7 +56,11 @@ H loop: $LOOP
 case $NAME in
     cspell|ui5-manifest)
         H uselessly re2 incompatible regex
-        jmc_opt="-re pcre2"
+        if [ "$backend" = "c" ] ; then
+            jmc_opt="-re pcre2"
+        else
+            jmc_opt="-re re"
+        fi
         jsu_model_opt=
         ;;
     openapi)
