@@ -1,15 +1,14 @@
-FROM ubuntu
+FROM ubuntu:24.04
 LABEL description="JSON Model Compiler Setup for Benchmarking"
 
 # system update and installs
-RUN echo system 20250704
-RUN apt update
-RUN apt upgrade -y
-RUN apt install -y --no-install-recommends --fix-missing \
+RUN apt update ; \
+    apt upgrade -y ; \
+    apt install -y --no-install-recommends --fix-missing \
         vim git ca-certificates libtool m4 time automake make pkgconf gcc g++ texinfo jq curl \
         libpcre2-dev libre2-dev libjansson-dev \
-        python3 python-is-python3 python3-venv python3-pip
-RUN apt clean
+        python3 python-is-python3 python3-venv python3-pip ; \
+    apt clean
 
 # compile cre2 into /usr/local
 RUN git clone https://github.com/marcomaggi/cre2.git
@@ -44,7 +43,6 @@ RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
 RUN npm install re2
 
 # actual application stuff
-RUN echo jmc 20250704d
 # direct install json-model and json-schema-utils from github
 RUN git clone https://github.com/clairey-zx81/json-model.git
 RUN git clone https://github.com/zx80/json-schema-utils.git
