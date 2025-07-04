@@ -85,7 +85,7 @@ if [ $status -eq 0 ] ; then
     # generate exec from model
     H compiling...
     jmc --loose-number -D JSONSCHEMA_BENCHMARK \
-        --maps "https://json-model.org/models/ /json-model/models/" \
+        --maps "https://json-model.org/models/ /app/json-model/models/" \
         $jmc_opt -o $bench model.json
     status=$?
 fi

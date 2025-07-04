@@ -44,7 +44,7 @@ RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
 RUN npm install re2
 
 # actual application stuff
-RUN echo jmc 20250704b
+RUN echo jmc 20250704d
 # direct install json-model and json-schema-utils from github
 RUN git clone https://github.com/clairey-zx81/json-model.git
 RUN git clone https://github.com/zx80/json-schema-utils.git
