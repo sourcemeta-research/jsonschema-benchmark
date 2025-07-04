@@ -54,11 +54,6 @@ Exit status is 0 if all JSON values were validated, 1 otherwise.
   - the 18 differences are raw strings, model conversion rightfully infer object requirement
     thus reject strings like "hello world" as valid yamllint values
 
-## TODO
-
-- add benchmarking with python backend
-- add benchmarking with js backend
-
 ## Docker Commands
 
 ```sh
