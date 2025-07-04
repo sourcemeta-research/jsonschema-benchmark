@@ -8,8 +8,8 @@ function git_version()
 }
 
 jmc_ver=$(/venv/bin/jmc --version)
-jmc_git=$(git_version /json-model)
+jmc_git=$(git_version ./json-model)
 jsu_ver=$(/venv/bin/jsu-model --version)
-jsu_git=$(git_version /json-schema-utils)
+jsu_git=$(git_version ./json-schema-utils)
 
 echo "jmc=$jmc_ver-$jmc_git jsu=$jsu_ver-$jsu_git"
