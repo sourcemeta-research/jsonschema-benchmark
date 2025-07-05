@@ -49,9 +49,12 @@ all: dist/report.csv ; cat $<
 define docker_run
   $(eval $@_TOOL = $(1))
   $(eval $@_INPUT = $(2))
+  $(eval $@_MISC = $(3))
 	rm -f $@
 	for i in $(shell seq 1 $(RUNS)) ; do \
-		timeout -s KILL $$(( $(RUNS) * 180 + 60 ))s docker run --rm -v $(CURDIR):/workspace jsonschema-benchmark/$($@_TOOL) $($@_INPUT) > $@.tmp ; \
+		timeout -s KILL $$(( $(RUNS) * 180 + 60 ))s \
+			docker run --rm -v $(CURDIR):/workspace \
+				jsonschema-benchmark/$($@_TOOL) $($@_INPUT) $($@_MISC) > $@.tmp ; \
 		STATUS=$$? ; \
 		if ! grep '.*,.*,' $@.tmp > /dev/null; then echo -n "0,0,0," >> $@ ; cat $@.tmp  >> $@ ; else cat $@.tmp >> $@ ; fi ; \
 		sed -i "$$ s/$$/,$$STATUS/" $@ ; \
