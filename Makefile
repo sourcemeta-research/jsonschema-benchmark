@@ -149,6 +149,7 @@ dist/results/boon/%: \
 implementations/jmc/.dockertimestamp: \
 	implementations/jmc/memory-wrapper.sh \
 	implementations/jmc/generate-and-run.sh \
+	implementations/jmc/jmc_version.sh \
 	implementations/jmc/version.sh \
 	implementations/jmc/Dockerfile
 	docker build -t jsonschema-benchmark/jmc implementations/jmc
