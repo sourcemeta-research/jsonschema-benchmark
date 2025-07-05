@@ -112,7 +112,8 @@ jobs:
       report-ajv-bun: ${{ steps.save-output.outputs.report-ajv-bun }}
       report-blaze: ${{ steps.save-output.outputs.report-blaze }}
       report-boon: ${{ steps.save-output.outputs.report-boon }}
-      report-corvus: ${{ steps.save-output.outputs.report-corvus }}
+      # XXX Disabled due to excessive runtime
+      #report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
