@@ -53,12 +53,3 @@ Exit status is 0 if all JSON values were validated, 1 otherwise.
 - yamllint: 18 issues
   - the 18 differences are raw strings, model conversion rightfully infer object requirement
     thus reject strings like "hello world" as valid yamllint values
-
-## Docker Commands
-
-```sh
-docker build -t jmc -f Dockerfile .
-docker run --name awesome_jmc -dit --entrypoint /bin/bash jmc
-docker run --name awesome_jmc -v ../../schemas:/schemas jmc ...
-docker exec -it awesome_jmc /bin/bash
-```
