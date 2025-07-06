@@ -16,9 +16,7 @@ esac
 
 function git_version()
 {
-    local dir=$1
-    pushd $dir > /dev/null
-    git log -1 | head -1 | cut -d' ' -f2 | cut -c -8
+    git -C $1 rev-parse --short=8 HEAD
 }
 
 jmc_ver=$(/venv/bin/jmc --version)
