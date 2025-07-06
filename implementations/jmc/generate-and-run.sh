@@ -109,22 +109,38 @@ H compile time: $(( $compile_time / 1000 )) µs
 H benchmarking...
 H instances size: $(cat "$INSTANCES" | wc -lc)
 
-# one direct run to collect pass/fail
+# one direct preliminary run to collect pass/fail/errors and status
 let run_start=$(date +%s.%N | tr -d .)
 $bench --jsonl "$INSTANCES" > model.txt
 status=$?
 let run_end=$(date +%s.%N | tr -d .)
 let run_time=$(( $run_end - $run_start))
 
+# get counts
+njson=$(cat "$INSTANCES" | wc -l)
 pass=$(grep PASS model.txt | wc -l)
 fail=$(grep FAIL model.txt | wc -l)
 err=$(grep ERROR model.txt | wc -l)
+
+# recheck result consistency on apparent success
+if [ $status -eq 0 ] ; then
+    if [ $njson -ne $pass -o $fail -ne 0 -o $err -ne 0 ] ; then
+        H FIXME inconsistent status and results
+        status=1
+    fi
+fi
 
 H results: pass=$pass fail=$fail error=$err
 H run time: $(( $run_time / 1000 )) µs
 
 # run again with internally measured validation time
 $bench --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
+status2=$?
+
+if [ $status -eq 0 -a $status2 -ne 0 ] ; then
+    H FIXME inconsistent benchmarking run
+    status=$status2
+fi
 
 let validation_time=$(cat time.txt | cut -d, -f2)
 H validation time: $(( $validation_time / 1000 )) µs
