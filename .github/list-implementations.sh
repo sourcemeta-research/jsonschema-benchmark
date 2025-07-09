@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Get a list of all implementations (with some potentially ignored)
-all_impls=$(make NO_IGNORE=$NO_IGNORE list | sort)
+# XXX Temporarily exclude Corvus
+all_impls=$(make NO_IGNORE=$NO_IGNORE list | grep -v corvus |sort)
 
 # Add implementations changed in the PR
 if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then

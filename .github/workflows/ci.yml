@@ -112,7 +112,8 @@ jobs:
       report-ajv-bun: ${{ steps.save-output.outputs.report-ajv-bun }}
       report-blaze: ${{ steps.save-output.outputs.report-blaze }}
       report-boon: ${{ steps.save-output.outputs.report-boon }}
-      report-corvus: ${{ steps.save-output.outputs.report-corvus }}
+      # XXX Disabled due to excessive runtime
+      #report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
@@ -176,7 +177,10 @@ jobs:
       - name: Generate plots
         run: |
           ./dataset_summary.sh csv >> dist/summary.csv
-          mkdir -p dist/results/plots && uv run python plot.py && uv run python plot_compile.py
+          mkdir -p dist/results/plots
+          uv run python plot.py
+          uv run python plot_compile.py
+          uv run python plot_memory.py
       - name: Upload plots
         id: imgur
         uses: devicons/public-upload-to-imgur@v2.2.2
@@ -189,14 +193,24 @@ jobs:
         with:
           path: dist/results/compile.png
           client_id: ${{secrets.IMGUR_CLIENT_ID}}
+      - name: Upload memory plot
+        id: imgur_memory
+        uses: devicons/public-upload-to-imgur@v2.2.2
+        with:
+          path: dist/results/memory.png
+          client_id: ${{secrets.IMGUR_CLIENT_ID}}
       - name: Add plots to summary
         env:
           IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
         run: python .github/plot_markdown.py dist/results/plots >> $GITHUB_STEP_SUMMARY
-      - name: Add plots to summary
+      - name: Add compile plot to summary
         env:
           IMG_URLS: ${{ steps.imgur_compile.outputs.imgur_urls }}
-        run: python .github/plot_markdown.py dist/results >> $GITHUB_STEP_SUMMARY
+        run: python .github/plot_markdown.py dist/results/compile.png "Compile time" >> $GITHUB_STEP_SUMMARY
+      - name: Add memory plot to summary
+        env:
+          IMG_URLS: ${{ steps.imgur_memory.outputs.imgur_urls }}
+        run: python .github/plot_markdown.py dist/results/memory.png "Memory usage" >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
