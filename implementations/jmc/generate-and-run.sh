@@ -6,11 +6,11 @@ if [ $# -eq 1 ] ; then
     SCHEMA="$dir/schema-noformat.json"
     INSTANCES="$dir/instances.jsonl"
     BACKEND=C
-    LOOP=100
+    LOOP=
 elif [ $# -eq 2 ] ; then
-    SCHEMA=$1 INSTANCES=$2 BACKEND=C LOOP=100
+    SCHEMA=$1 INSTANCES=$2 BACKEND=C LOOP=
 elif [ $# -eq 3 ] ; then
-    SCHEMA=$1 INSTANCES=$2 BACKEND=$3 LOOP=100
+    SCHEMA=$1 INSTANCES=$2 BACKEND=$3 LOOP=
 elif [ $# -eq 4 ] ; then
     SCHEMA=$1 INSTANCES=$2 BACKEND=$3 LOOP=$4
 else
@@ -23,14 +23,17 @@ case $BACKEND in
     C|c)
         backend=c
         bench=./model.out
+        loop=1000
         ;;
     PY|Py|Python|py|python)
         backend=python
         bench=./model.py
+        loop=100
         ;;
     JS|js|javascript|JavaScript)
         backend=javascript
         bench=./model.js
+        loop=200
         ;;
     *)
         echo "unexpected backend: $BACKEND" >&2
@@ -39,6 +42,7 @@ case $BACKEND in
 esac
 
 NAME=$(basename $(dirname $SCHEMA))
+[ "$LOOP" ] || LOOP=$loop
 
 function H
 {
@@ -53,23 +57,23 @@ H loop: $LOOP
 #
 # SPECIAL CASE HANDLING
 #
+
+jmc_opt="--no-reporting" jsu_model_opt=
+
 case $NAME in
     cspell|ui5-manifest)
         H uselessly re2 incompatible regex
         if [ "$backend" = "c" ] ; then
-            jmc_opt="-re pcre2"
+            jmc_opt+=" -re pcre2"
         else
-            jmc_opt="-re re"
+            jmc_opt+=" -re re"
         fi
-        jsu_model_opt=
         ;;
     openapi)
-        jmc_opt=
-        jsu_model_opt="--no-id"
+        # the benchmark model is NOT the real one
+        jsu_model_opt+=" --no-id"
         ;;
     *)
-        jmc_opt=
-        jsu_model_opt=
         ;;
 esac
 
