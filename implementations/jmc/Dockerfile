@@ -29,7 +29,7 @@ WORKDIR /app
 # nodejs >= 20.0.0
 ENV NVM_DIR=/usr/local/nvm
 RUN mkdir -p $NVM_DIR
-ENV NODE_VERSION=24.3.0
+ENV NODE_VERSION=24.4.1
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 RUN . $NVM_DIR/nvm.sh && \
 	nvm install $NODE_VERSION && \
