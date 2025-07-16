@@ -29,14 +29,14 @@ WORKDIR /app
 # nodejs >= 20.0.0
 ENV NVM_DIR=/usr/local/nvm
 RUN mkdir -p $NVM_DIR
-ENV NODE_VERSION=24.4.1
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 RUN . $NVM_DIR/nvm.sh && \
-	nvm install $NODE_VERSION && \
-    nvm alias default $NODE_VERSION && \
+	nvm install stable && \
+    nvm alias default stable && \
     nvm use default
-ENV NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+RUN ln -s $NVM_DIR/versions/node/v* $NVM_DIR/versions/node/stable
+ENV NODE_PATH=/app/node_modules
+ENV PATH=$NVM_DIR/versions/node/stable/bin:$PATH
 
 # js runtime
 RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
