@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0.102-alpine3.21
 
-RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community time
+# Note: coreutils is necessary so /usr/bin/date can use nanoseconds
+RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community coreutils time
 
 COPY . /app
 RUN dotnet tool install --global Corvus.Json.JsonSchema.TypeGeneratorTool --version 4.2.3
