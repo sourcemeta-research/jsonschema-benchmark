@@ -1,6 +1,20 @@
 FROM ubuntu:24.04
 LABEL description="JSON Model Compiler Setup for Benchmarking"
 
+# versions:
+ARG nodejs=stable
+ARG cre2=master
+ARG nre2=
+ARG jmc=main
+ARG jsu=main
+
+# unversions - the version of these stem from ubuntu:
+# - gcc/g++
+# - python
+# - pcre2
+# - re2
+# - jansson
+
 # system update and installs
 RUN apt update ; \
     apt upgrade -y ; \
@@ -11,7 +25,7 @@ RUN apt update ; \
     apt clean
 
 # compile cre2 into /usr/local
-RUN git clone https://github.com/marcomaggi/cre2.git
+RUN git clone -b $cre2 https://github.com/marcomaggi/cre2.git
 RUN cd cre2 ; \
     sh autogen.sh ; \
     ./configure --enable-maintainer-mode ; \
@@ -31,21 +45,21 @@ ENV NVM_DIR=/usr/local/nvm
 RUN mkdir -p $NVM_DIR
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 RUN . $NVM_DIR/nvm.sh && \
-	nvm install stable && \
-    nvm alias default stable && \
+	nvm install $nodejs && \
+    nvm alias default $nodejs && \
     nvm use default
-RUN ln -s $NVM_DIR/versions/node/v* $NVM_DIR/versions/node/stable
+RUN ln -s $NVM_DIR/versions/node/v* $NVM_DIR/versions/node/default
 ENV NODE_PATH=/app/node_modules
-ENV PATH=$NVM_DIR/versions/node/stable/bin:$PATH
+ENV PATH=$NVM_DIR/versions/node/default/bin:$PATH
 
 # js runtime
 RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
-RUN npm install re2
+RUN npm install re2${nre2:+@$nre2}
 
 # actual application stuff
 # direct install json-model and json-schema-utils from github
-RUN git clone https://github.com/clairey-zx81/json-model.git
-RUN git clone https://github.com/zx80/json-schema-utils.git
+RUN git clone -b $jmc https://github.com/clairey-zx81/json-model.git
+RUN git clone -b $jsu https://github.com/zx80/json-schema-utils.git
 
 RUN /venv/bin/pip install -e ./json-model ./json-schema-utils
 RUN npm install file:./json-model/js_runtime
