@@ -62,7 +62,7 @@ RUN git clone -b $jmc https://github.com/clairey-zx81/json-model.git
 RUN git clone -b $jsu https://github.com/zx80/json-schema-utils.git
 
 RUN /venv/bin/pip install -e ./json-model ./json-schema-utils
-RUN npm install file:./json-model/js_runtime
+RUN npm install file:./json-model/json_model/runtime/js
 
 # setup benchmarking scripts
 COPY . /app
