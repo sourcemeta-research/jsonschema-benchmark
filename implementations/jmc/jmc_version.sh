@@ -10,6 +10,9 @@ case $1 in
     PY|py|Python|python)
         runtime=$(python --version | tr ' ' '=')
         ;;
+    PL|pl|Perl|perl)
+        runtime="perl=$(perl -e 'use English; print $PERL_VERSION';)"
+        ;;
     *)
         runtime="unknown"
 esac

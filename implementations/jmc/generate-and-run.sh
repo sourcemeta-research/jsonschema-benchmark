@@ -30,6 +30,11 @@ case $BACKEND in
         bench=./model.py
         loop=100
         ;;
+    PL|Perl|pl|perl)
+        backend=perl
+        bench=./model.pl
+        loop=50
+        ;;
     JS|js|javascript|JavaScript)
         backend=javascript
         bench=./model.js

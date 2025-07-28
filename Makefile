@@ -176,6 +176,13 @@ dist/results/jmc-py/%: \
 	| dist/results/jmc-py
 	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) py)
 
+dist/results/jmc-pl/%: \
+	implementations/jmc/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jmc-pl
+	@$(call docker_run,jmc,/workspace/$(word 2,$^) /workspace/$(word 3,$^) pl)
+
 # JSON_SCHEMER
 
 implementations/json_schemer/.dockertimestamp: \

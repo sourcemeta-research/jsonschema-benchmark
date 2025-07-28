@@ -21,7 +21,8 @@ RUN apt update ; \
     apt install -y --no-install-recommends --fix-missing \
         vim git ca-certificates libtool m4 time automake make pkgconf gcc g++ texinfo jq curl \
         libpcre2-dev libre2-dev libjansson-dev \
-        python3 python-is-python3 python3-venv python3-pip ; \
+        python3 python-is-python3 python3-venv python3-pip \
+        perl libre-engine-re2-perl libjson-maybexs-perl libcpanel-json-xs-perl libdatetime-hires-perl ; \
     apt clean
 
 # compile cre2 into /usr/local
@@ -31,6 +32,7 @@ RUN cd cre2 ; \
     ./configure --enable-maintainer-mode ; \
     make ; \
     make install
+ENV LD_LIBRARY_PATH=/usr/local/lib
 
 # setup python environment, native pip complains about direct installations otherwise
 RUN python -m venv /venv
@@ -49,22 +51,29 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm alias default $nodejs && \
     nvm use default
 RUN ln -s $NVM_DIR/versions/node/v* $NVM_DIR/versions/node/default
-ENV NODE_PATH=/app/node_modules
 ENV PATH=$NVM_DIR/versions/node/default/bin:$PATH
-
-# js runtime
+ENV NODE_PATH=/app/node_modules
 RUN echo '{"name":"jmc-benchmark","type":"module"}' | jq > package.json
 RUN npm install re2${nre2:+@$nre2}
+# nodejs import does not honor NODE_PATH: https://nodejs.org/api/esm.html#no-node_path
+RUN ln -s /app/node_modules /node_modules
 
 # actual application stuff
 # direct install json-model and json-schema-utils from github
 RUN git clone -b $jmc https://github.com/clairey-zx81/json-model.git
 RUN git clone -b $jsu https://github.com/zx80/json-schema-utils.git
 
+# python setup
 RUN /venv/bin/pip install -e ./json-model ./json-schema-utils
+ENV PATH=/venv/bin:$PATH
+
+# js runtime
 RUN npm install file:./json-model/json_model/runtime/js
+
+# perl runtime
+ENV PERLLIB=/app/json-model/json_model/runtime
 
 # setup benchmarking scripts
 COPY . /app
-ENV LD_LIBRARY_PATH=/usr/local/lib
+ENV PATH=$PATH:.
 ENTRYPOINT ["/app/memory-wrapper.sh", "/app/generate-and-run.sh"]
