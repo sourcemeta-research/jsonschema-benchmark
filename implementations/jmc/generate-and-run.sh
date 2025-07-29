@@ -63,7 +63,7 @@ H loop: $LOOP
 # SPECIAL CASE HANDLING
 #
 
-jmc_opt="--no-reporting" jsu_model_opt=
+jmc_opt="--no-reporting" jsu_model_opt="--id --loose --no-fix"
 
 case $NAME in
     cspell|ui5-manifest)
@@ -94,7 +94,7 @@ let compile_start=$(date +%s.%N | tr -d .)
 
 # generate model from schema, by id or strict conversion
 H generating...
-jsu-simpler "$SCHEMA" | jsu-model --id --loose $jsu_model_opt > model.json
+jsu-simpler "$SCHEMA" | jsu-model $jsu_model_opt > model.json
 status=$?
 
 if [ $status -eq 0 ] ; then
