@@ -119,6 +119,7 @@ jobs:
       report-jmc: ${{ steps.save-output.outputs.report-jmc }}
       report-jmc-js: ${{ steps.save-output.outputs.report-jmc-js }}
       report-jmc-py: ${{ steps.save-output.outputs.report-jmc-py }}
+      report-jmc-pl: ${{ steps.save-output.outputs.report-jmc-pl }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
       report-jsdotnet: ${{ steps.save-output.outputs.report-jsdotnet }}
