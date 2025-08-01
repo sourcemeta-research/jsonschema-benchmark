@@ -62,8 +62,7 @@ if __name__ == "__main__":
 
     data.rename(columns={"variable": "Run type"}, inplace=True)
     data = data.sort_values('implementation', key=lambda col: col.str.lower())
-    plt.figure(figsize=(6, 9), dpi=96)
-    fig, ax1 = plt.subplots()
+    fig, ax1 = plt.subplots(figsize=(6, 4), dpi=96)
 
     # Configure the y axis
     ax1.set(yscale='log')

@@ -38,8 +38,8 @@ if __name__ == "__main__":
     )
 
     # Draw the plot
-    plt.figure(figsize=(6, 8), dpi=96)
-    fig, ax1 = plt.subplots()
+    fig, ax1 = plt.subplots(figsize=(6, 3), dpi=96)
+    sns.set(font_scale=0.5)
     plot = sns.boxplot(data, x='implementation', y='memory')
 
     # Configure the x axis
@@ -53,4 +53,7 @@ if __name__ == "__main__":
 
     plot.get_figure().savefig(
         f"dist/results/memory.png", dpi=96, bbox_inches="tight"
+    )
+    plot.get_figure().savefig(
+        f"dist/results/memory.svg", dpi=96, bbox_inches="tight"
     )
