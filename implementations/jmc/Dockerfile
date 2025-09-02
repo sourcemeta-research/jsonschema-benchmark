@@ -71,7 +71,7 @@ ENV PATH=/venv/bin:$PATH
 RUN npm install file:./json-model/json_model/runtime/js
 
 # perl runtime
-ENV PERLLIB=/app/json-model/json_model/runtime/pl
+ENV PERLLIB=/app/json-model/json_model/runtime/pl/lib
 
 # setup benchmarking scripts
 COPY . /app
