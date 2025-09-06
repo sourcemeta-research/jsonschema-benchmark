@@ -33,7 +33,7 @@ case $BACKEND in
     PL|Perl|pl|perl)
         backend=perl
         bench=./model.pl
-        loop=50
+        loop=20
         ;;
     JS|js|javascript|JavaScript)
         backend=javascript
