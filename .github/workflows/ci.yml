@@ -86,7 +86,7 @@ jobs:
       - name: Install uv
         run: pipx install uv
       - name: Validate CSV
-        run: uv run python .github/csv_min.py > /dev/null
+        run: uv run python .github/csv_md.py > /dev/null
 
       - name: Save output
         id: save-output
@@ -162,24 +162,7 @@ jobs:
         run: go install github.com/tomnomnom/gron@latest
 
       - name: Process CSV
-        run: uv run python .github/csv_min.py > dist/report-min.csv
-      - name: Read CSV
-        id: csv
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: dist/report-min.csv
-      - name: Create MD
-        uses: petems/csv-to-md-table-action@master
-        id: csv-table-output
-        with:
-          csvinput: ${{ steps.csv.outputs.content }}
-
-      # FIXME CI fails with "Argument list too long" somewhere on this entry
-      #
-      # - name: Output summary
-      #   env:
-      #     MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
-      #   run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
+        run: uv run python .github/csv_md.py >> $GITHUB_STEP_SUMMARY
 
       - name: Generate plots
         run: |
