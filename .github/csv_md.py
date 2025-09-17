@@ -102,4 +102,4 @@ for i, (impl, schema) in enumerate(new_index):
 
         data.at[(impl, schema), "memory"] = f"{fast_mem} {suffix}"
 
-data.to_csv(sys.stdout)
+data.reset_index().to_markdown(sys.stdout, index=False)
