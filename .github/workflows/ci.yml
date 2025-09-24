@@ -181,35 +181,11 @@ jobs:
           uv run python plot.py
           uv run python plot_compile.py
           uv run python plot_memory.py
-      - name: Upload plots
-        id: imgur
-        uses: devicons/public-upload-to-imgur@v2.2.2
-        with:
-          path: dist/results/plots/*.png
-          client_id: ${{secrets.IMGUR_CLIENT_ID}}
-      - name: Upload compile plot
-        id: imgur_compile
-        uses: devicons/public-upload-to-imgur@v2.2.2
-        with:
-          path: dist/results/compile.png
-          client_id: ${{secrets.IMGUR_CLIENT_ID}}
-      - name: Upload memory plot
-        id: imgur_memory
-        uses: devicons/public-upload-to-imgur@v2.2.2
-        with:
-          path: dist/results/memory.png
-          client_id: ${{secrets.IMGUR_CLIENT_ID}}
       - name: Add plots to summary
-        env:
-          IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
         run: python .github/plot_markdown.py dist/results/plots >> $GITHUB_STEP_SUMMARY
       - name: Add compile plot to summary
-        env:
-          IMG_URLS: ${{ steps.imgur_compile.outputs.imgur_urls }}
         run: python .github/plot_markdown.py dist/results/compile.png "Compile time" >> $GITHUB_STEP_SUMMARY
       - name: Add memory plot to summary
-        env:
-          IMG_URLS: ${{ steps.imgur_memory.outputs.imgur_urls }}
         run: python .github/plot_markdown.py dist/results/memory.png "Memory usage" >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()
