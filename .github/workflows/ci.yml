@@ -177,40 +177,25 @@ jobs:
       - name: Generate plots
         run: |
           ./dataset_summary.sh csv >> dist/summary.csv
-          mkdir -p dist/results/plots
+          mkdir -p dist/results/plots/schemas
           uv run python plot.py
           uv run python plot_compile.py
           uv run python plot_memory.py
       - name: Upload plots
-        id: imgur
-        uses: devicons/public-upload-to-imgur@v2.2.2
-        with:
-          path: dist/results/plots/*.png
-          client_id: ${{secrets.IMGUR_CLIENT_ID}}
-      - name: Upload compile plot
-        id: imgur_compile
-        uses: devicons/public-upload-to-imgur@v2.2.2
-        with:
-          path: dist/results/compile.png
-          client_id: ${{secrets.IMGUR_CLIENT_ID}}
-      - name: Upload memory plot
-        id: imgur_memory
-        uses: devicons/public-upload-to-imgur@v2.2.2
-        with:
-          path: dist/results/memory.png
-          client_id: ${{secrets.IMGUR_CLIENT_ID}}
+        id: upload
+        env:
+          AWS_ENDPOINT_URL: https://${{ vars.S3_BASE_URL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_APPLICATION_KEY }}
+        run: |
+          aws s3 cp dist/results/plots s3://${{ vars.S3_BUCKET_NAME }}/${{ github.sha }}/dist/results/plots/ --recursive
+          echo b2_url_prefix="https://${{ vars.S3_BUCKET_NAME }}.${{ vars.S3_BASE_URL }}/${{ github.sha }}/" >> "$GITHUB_OUTPUT"
       - name: Add plots to summary
-        env:
-          IMG_URLS: ${{ steps.imgur.outputs.imgur_urls }}
-        run: python .github/plot_markdown.py dist/results/plots >> $GITHUB_STEP_SUMMARY
+        run: python .github/plot_markdown.py dist/results/plots/schemas ${{ steps.upload.outputs.b2_url_prefix }} >> $GITHUB_STEP_SUMMARY
       - name: Add compile plot to summary
-        env:
-          IMG_URLS: ${{ steps.imgur_compile.outputs.imgur_urls }}
-        run: python .github/plot_markdown.py dist/results/compile.png "Compile time" >> $GITHUB_STEP_SUMMARY
+        run: python .github/plot_markdown.py dist/results/plots/compile.png ${{ steps.upload.outputs.b2_url_prefix }} "Compile time" >> $GITHUB_STEP_SUMMARY
       - name: Add memory plot to summary
-        env:
-          IMG_URLS: ${{ steps.imgur_memory.outputs.imgur_urls }}
-        run: python .github/plot_markdown.py dist/results/memory.png "Memory usage" >> $GITHUB_STEP_SUMMARY
+        run: python .github/plot_markdown.py dist/results/plots/memory.png ${{ steps.upload.outputs.b2_url_prefix }} "Memory usage" >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

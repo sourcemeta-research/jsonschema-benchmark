@@ -26,8 +26,8 @@ if __name__ == "__main__":
     ax.set_ylabel('Compile time (s)')
     plot = sns.scatterplot(data=joined, x='size_kb', y='compile_s')
     plot.get_figure().savefig(
-        f"dist/results/compile.png", dpi=96, bbox_inches="tight"
+        f"dist/results/plots/compile.png", dpi=96, bbox_inches="tight"
     )
     plot.get_figure().savefig(
-        f"dist/results/compile.svg", dpi=96, bbox_inches="tight"
+        f"dist/results/plots/compile.svg", dpi=96, bbox_inches="tight"
     )

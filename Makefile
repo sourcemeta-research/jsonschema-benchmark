@@ -14,13 +14,14 @@ clean: ; rm -rf dist implementations/*/.dockertimestamp
 dist: ; mkdir $@
 dist/results: | dist ; mkdir $@
 dist/results/plots: | dist/results ; mkdir $@
+dist/results/plots/schemas: | dist/results/plots ; mkdir $@
 dist/temp: | dist ; mkdir $@
 define PREPARE_IMPLEMENTATION
 dist/results/$1: | dist/results ; mkdir $$@
 dist/temp/$1: | dist/temp ; mkdir $$@
 ALL_TARGETS += $$(addprefix dist/results/$1/,$(SCHEMAS))
 endef
-ALL_PLOTS := $(foreach schema,$(SCHEMAS),dist/results/plots/$(schema).png)
+ALL_PLOTS := $(foreach schema,$(SCHEMAS),dist/results/plots/schemas/$(schema).png)
 ALL_SCHEMAS := $(foreach schema,$(SCHEMAS),schemas/$(schema)/schema-noformat.json)
 ALL_INSTANCES := $(foreach schema,$(SCHEMAS),schemas/$(schema)/instances.jsonl)
 $(foreach implementation,$(IMPLEMENTATIONS),$(eval $(call PREPARE_IMPLEMENTATION,$(implementation))))
@@ -30,13 +31,13 @@ dist/summary.csv: \
 	$(ALL_INSTANCES) \
 	dataset_summary.sh
 	./dataset_summary.sh csv > $@
-dist/results/compile.svg dist/results/compile.png: \
+dist/results/plots/compile.svg dist/results/plots/compile.png: \
 	dist/report.csv \
 	dist/summary.csv \
 	plot_compile.py
 	uv run python plot_compile.py
-dist/results/plots/%.png: \
-	dist/results/plots \
+dist/results/plots/schemas/%.png: \
+	dist/results/plots/schemas \
 	dist/report.csv \
 	plot.py \
 	schemas/%/schema-noformat.json \
