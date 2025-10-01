@@ -52,8 +52,8 @@ if __name__ == "__main__":
     ax1.set_ylabel("Max memory usage (KB)")
 
     plot.get_figure().savefig(
-        f"dist/results/memory.png", dpi=96, bbox_inches="tight"
+        f"dist/results/plots/memory.png", dpi=96, bbox_inches="tight"
     )
     plot.get_figure().savefig(
-        f"dist/results/memory.svg", dpi=96, bbox_inches="tight"
+        f"dist/results/plots/memory.svg", dpi=96, bbox_inches="tight"
     )

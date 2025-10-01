@@ -51,6 +51,6 @@ if __name__ == "__main__":
         ax2.set_ylabel("Compile time (ms)")
 
         plot.get_figure().savefig(
-            f"dist/results/plots/{name}.png", dpi=96, bbox_inches="tight"
+            f"dist/results/plots/schemas/{name}.png", dpi=96, bbox_inches="tight"
         )
         plt.clf()
