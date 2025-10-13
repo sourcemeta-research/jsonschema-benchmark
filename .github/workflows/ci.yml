@@ -67,9 +67,10 @@ jobs:
           key: noformat-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
           lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' || inputs.skip_cache }}
 
-      - uses: actions/setup-go@v5
-      - name: Install gron
-        run: go install github.com/tomnomnom/gron@latest
+      - name: Install dts
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: martinohmann/dts
 
       - name: Run benchmarks
         if: ${{ steps.cache-report.outputs.cache-hit != 'true' || github.event_name == 'schedule' || inputs.skip_cache || matrix.skip_cache }}
@@ -153,9 +154,10 @@ jobs:
           cmake --build ./jsonschema-strip/build --config Release --target strip
           mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
           echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
-      - uses: actions/setup-go@v5
-      - name: Install gron
-        run: go install github.com/tomnomnom/gron@latest
+      - name: Install dts
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: martinohmann/dts
 
       - name: Process CSV
         run: uv run python .github/csv_min.py > dist/report-min.csv
@@ -217,8 +219,9 @@ jobs:
           cmake --build ./jsonschema-strip/build --config Release --target strip
           mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
           echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
-      - uses: actions/setup-go@v5
-      - name: Install gron
-        run: go install github.com/tomnomnom/gron@latest
+      - name: Install dts
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: martinohmann/dts
       - name: Create summary
         run: ./dataset_summary.sh md >> $GITHUB_STEP_SUMMARY

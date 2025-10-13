@@ -64,7 +64,7 @@ list:
 	@echo $(IMPLEMENTATIONS) | tr ' ' '\n'
 
 schemas/%/schema-noformat.json: schemas/%/schema.json
-	gron $< | grep -v 'format = "' | gron -u > $@
+	dts $< -o gron | grep -v '\.format =' | dts -i gron -o json > $@
 
 implementations/%/memory-wrapper.sh: memory-wrapper.sh
 	cp -p $< $@
