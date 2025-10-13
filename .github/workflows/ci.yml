@@ -86,7 +86,7 @@ jobs:
       - name: Install uv
         run: pipx install uv
       - name: Validate CSV
-        run: uv run python .github/csv_min.py > /dev/null
+        run: uv run python .github/csv_md.py > /dev/null
 
       - name: Save output
         id: save-output
@@ -116,6 +116,10 @@ jobs:
       #report-corvus: ${{ steps.save-output.outputs.report-corvus }}
       report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
       report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
+      report-jmc: ${{ steps.save-output.outputs.report-jmc }}
+      report-jmc-js: ${{ steps.save-output.outputs.report-jmc-js }}
+      report-jmc-py: ${{ steps.save-output.outputs.report-jmc-py }}
+      report-jmc-pl: ${{ steps.save-output.outputs.report-jmc-pl }}
       report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
       report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
       report-jsdotnet: ${{ steps.save-output.outputs.report-jsdotnet }}
@@ -158,21 +162,7 @@ jobs:
         run: go install github.com/tomnomnom/gron@latest
 
       - name: Process CSV
-        run: uv run python .github/csv_min.py > dist/report-min.csv
-      - name: Read CSV
-        id: csv
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: dist/report-min.csv
-      - name: Create MD
-        uses: petems/csv-to-md-table-action@master
-        id: csv-table-output
-        with:
-          csvinput: ${{ steps.csv.outputs.content }}
-      - name: Output summary
-        env:
-          MARKDOWN_TABLE: ${{ steps.csv-table-output.outputs.markdown-table }}
-        run: echo "$MARKDOWN_TABLE" >> $GITHUB_STEP_SUMMARY
+        run: uv run python .github/csv_md.py >> $GITHUB_STEP_SUMMARY
 
       - name: Generate plots
         run: |
