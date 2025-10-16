@@ -152,12 +152,11 @@ jobs:
       - name: Install uv
         run: pipx install uv
       - name: Get jsonschema-strip binary
-        run: |
-          git clone --depth 1 --branch main https://github.com/sourcemeta-research/jsonschema-strip
-          cmake -S jsonschema-strip -B ./jsonschema-strip/build -DCMAKE_BUILD_TYPE:STRING=Release
-          cmake --build ./jsonschema-strip/build --config Release --target strip
-          mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
-          echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: sourcemeta-research/jsonschema-strip
+          prerelease: true
+          extension-matching: disable
       - name: Install dts
         uses: jaxxstorm/action-install-gh-release@v2.1.0
         with:
@@ -203,12 +202,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Get jsonschema-strip binary
-        run: |
-          git clone --depth 1 --branch main https://github.com/sourcemeta-research/jsonschema-strip
-          cmake -S jsonschema-strip -B ./jsonschema-strip/build -DCMAKE_BUILD_TYPE:STRING=Release
-          cmake --build ./jsonschema-strip/build --config Release --target strip
-          mv ./jsonschema-strip/build/strip ./jsonschema-strip/build/jsonschema-strip
-          echo "$(pwd)/jsonschema-strip/build" >> $GITHUB_PATH
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: sourcemeta-research/jsonschema-strip
+          prerelease: true
+          extension-matching: disable
       - name: Install dts
         uses: jaxxstorm/action-install-gh-release@v2.1.0
         with:
