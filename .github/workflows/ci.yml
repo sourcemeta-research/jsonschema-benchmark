@@ -87,7 +87,7 @@ jobs:
       - name: Install uv
         run: pipx install uv
       - name: Validate CSV
-        run: uv run python .github/csv_md.py > /dev/null
+        run: (uv run python .github/csv_md.py > /dev/null || (echo "Invalid CSV" > /dev/stderr && cat dist/report.csv && exit 1))
 
       - name: Save output
         id: save-output
