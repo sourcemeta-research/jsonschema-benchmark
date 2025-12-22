@@ -37,8 +37,8 @@ int validate(const std::filesystem::path &example) {
 
   const auto compile_start{std::chrono::high_resolution_clock::now()};
   const auto schema_template{sourcemeta::blaze::compile(
-      schema, sourcemeta::core::schema_official_walker,
-      sourcemeta::core::schema_official_resolver,
+      schema, sourcemeta::core::schema_walker,
+      sourcemeta::core::schema_resolver,
       sourcemeta::blaze::default_schema_compiler,
       sourcemeta::blaze::Mode::FastValidation)};
 
