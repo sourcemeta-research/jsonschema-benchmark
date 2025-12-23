@@ -1,5 +1,7 @@
 #!/bin/bash
 
+unset LC_NUMERIC
+
 if [ $# -ne 1 ]; then
   echo "Usage: $0 csv|md"
   exit
@@ -12,9 +14,14 @@ LATEX_ROWS=""
 
 # Output each table row
 for schema in $SCHEMAS; do
-  make "schemas/$schema/schema-noformat.json" > /dev/null
+  make "schemas/$schema/schema-noformat.json" > /dev/null || echo "schemas/$schema/schema-noformat.json generation failed" >&2
   docs=$(wc -l < "schemas/$schema/instances.jsonl")
   size=$(jsonschema-strip "schemas/$schema/schema-noformat.json" 2> /dev/null | wc -c)
+  # use initial schema size instead, eg noformat is empty or jsonschema-strip is not found
+  if [ $size -eq 0 ] ; then
+    echo "working around 0 noformat size in $schema" >&2
+    size=$(cat "schemas/$schema/schema.json" | wc -c)
+  fi
   size_kb=$(bc <<<"scale=1; $size / 1024")
   avg_doc_size=$(cat "schemas/$schema/instances.jsonl" | while read l; do echo "$l" | wc -c; done | awk '{ sum += $1; n++ } END { if (n > 0) print sum / n; }')
 
