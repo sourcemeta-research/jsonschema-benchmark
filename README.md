@@ -42,6 +42,15 @@ Note that some implementations are currently ignored by default to limit the run
 These implementations are identified by a `.benchmark-ignore` file in the implementation subdirectory.
 To run one of these implementations, it must be explicitly specified as described above.
 
+## Acceptance criteria
+
+As the name implies, this benchmark is for JSON Schema implementations.
+Every implementation included in this benchmark must aim to be a fully compliant implementation of the [JSON Schema](https://json-schema.org/) standard, including all required features as defined by the specification.
+Bugs, spec misunderstandings, and incomplete support for optional features are perfectly acceptable.
+However, implementations that intentionally do not support required parts of the specification, or that only implement a subset of the language with no intention of reaching full compliance, do not qualify for inclusion.
+A strong signal of eligibility is being listed in [Bowtie](https://bowtie.report/) and in the [JSON Schema tooling page](https://json-schema.org/tools), which imply a recognized level of compliance.
+If you believe an included implementation does not meet these criteria, please [open an issue](https://github.com/sourcemeta-research/jsonschema-benchmark/issues).
+
 ## Adding a new implementation
 
 First, each implementation must have a `Dockerfile` that copies in any necessary scripts and installs dependencies.
