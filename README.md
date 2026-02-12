@@ -48,6 +48,13 @@ As the name implies, this benchmark is for JSON Schema implementations.
 Every implementation included in this benchmark must aim to be a fully compliant implementation of the [JSON Schema](https://json-schema.org/) standard, including all required features as defined by the specification.
 Bugs, spec misunderstandings, and incomplete support for optional features are perfectly acceptable.
 However, implementations that intentionally do not support required parts of the specification, or that only implement a subset of the language with no intention of reaching full compliance, do not qualify for inclusion.
+
+Additionally, implementations must offer a clear and direct interface for consuming JSON Schema.
+A user visiting the project should be able to readily understand that it accepts JSON Schema as input and how to use it for validation.
+
+Implementations must also demonstrate reasonable compliance scores (>90%) against the [official JSON Schema Test Suite](https://github.com/json-schema-org/JSON-Schema-Test-Suite) across all the dialects exercised by this benchmark: Draft 6, Draft 7, and 2020-12.
+Historically significant implementations with very widespread adoption may be included despite known compliance gaps (like AJV), evaluated on a case-by-case basis.
+
 A strong signal of eligibility is being listed in [Bowtie](https://bowtie.report/) and in the [JSON Schema tooling page](https://json-schema.org/tools), which imply a recognized level of compliance.
 If you believe an included implementation does not meet these criteria, please [open an issue](https://github.com/sourcemeta-research/jsonschema-benchmark/issues).
 
