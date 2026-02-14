@@ -1,0 +1,7 @@
+[versions]
+jackson = "2.18.1"
+jsonSchema = "1.7.1"
+
+[libraries]
+jacksonDatabind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+jsonSchema = { module = "dev.harrel:json-schema", version.ref = "jsonSchema" }
