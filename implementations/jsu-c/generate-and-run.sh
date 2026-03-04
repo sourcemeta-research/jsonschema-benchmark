@@ -64,8 +64,8 @@ H loop: $LOOP
 #
 
 # FIXME --fix vs --no-fix
-jsu_compile_opt="--id --no-strict --no-fix --loose --no-format --no-reporting"
-jmc_backend_opt=""
+jsu_compile_opt="--quiet --id --no-strict --no-fix --loose --no-format --no-reporting"
+jmc_backend_opt="--quiet"
 
 case $NAME in
     openapi)
