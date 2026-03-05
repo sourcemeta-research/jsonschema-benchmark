@@ -66,7 +66,9 @@ endef
 list:
 	@echo $(IMPLEMENTATIONS) | tr ' ' '\n'
 
+# FIXME how to install the "dts" command?
 schemas/%/schema-noformat.json: schemas/%/schema.json
+	# gron $< | grep -v '\.format =' | gron -u > $@
 	dts $< -o gron | grep -v '\.format =' | dts -i gron -o json -j .json > $@
 
 implementations/%/memory-wrapper.sh: memory-wrapper.sh
@@ -144,6 +146,46 @@ dist/results/boon/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/boon
 	@$(call docker_run,boon,/workspace/$(dir $(word 2,$^)))
+
+# JSU - JSON Schema Utils Compiler with JMC Backend
+# NOTE the "jsu-c" container image is shared between all implementations
+
+implementations/jsu-c/.dockertimestamp: \
+	implementations/jsu-c/memory-wrapper.sh \
+	implementations/jsu-c/generate-and-run.sh \
+	implementations/jsu-c/jsu_version.sh \
+	implementations/jsu-c/version.sh \
+	implementations/jsu-c/Dockerfile
+	docker build -t jsonschema-benchmark/jsu-c implementations/jsu-c
+	touch $@
+
+dist/results/jsu-c/%: \
+	implementations/jsu-c/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsu-c
+	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) C)
+
+dist/results/jsu-js/%: \
+	implementations/jsu-c/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsu-js
+	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) js)
+
+dist/results/jsu-py/%: \
+	implementations/jsu-c/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsu-py
+	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) py)
+
+dist/results/jsu-pl/%: \
+	implementations/jsu-c/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsu-pl
+	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) pl)
 
 # JSON_SCHEMER
 
