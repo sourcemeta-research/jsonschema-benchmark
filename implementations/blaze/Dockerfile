@@ -1,9 +1,8 @@
 # syntax=docker.io/docker/dockerfile:1.7-labs
-FROM alpine:3.21.2
+FROM gcc:latest
 ARG BLAZE_BRANCH="main"
 
-RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community time
-RUN apk add --no-cache git build-base cmake
+RUN apt-get update && apt-get install -y --no-install-recommends cmake time && rm -rf /var/lib/apt/lists/*
 
 # Add a placeholder for main so we can cache dependency builds
 COPY --exclude=./main.cc . /app
