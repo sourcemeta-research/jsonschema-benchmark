@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -o errexit -o nounset
+
 # script parameters
 if [ $# -eq 1 ] ; then
     dir=$1
@@ -23,22 +25,22 @@ case $BACKEND in
     C|c)
         backend=c
         bench=./schema.out
-        loop=1000
+        loop=1
         ;;
     PY|Py|Python|py|python)
         backend=python
         bench=./schema.py
-        loop=100
+        loop=1
         ;;
     PL|Perl|pl|perl)
         backend=perl
         bench=./schema.pl
-        loop=20
+        loop=1
         ;;
     JS|js|javascript|JavaScript)
         backend=javascript
         bench=./schema.js
-        loop=200
+        loop=1
         ;;
     *)
         echo "unexpected backend: $BACKEND" >&2
