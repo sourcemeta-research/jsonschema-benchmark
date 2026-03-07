@@ -24,5 +24,6 @@ function git_version()
 
 jsu_ver=$(/venv/bin/jsu-compile --version)
 jsu_git=$(git_version ./json-schema-utils)
+jmc_git=$(git_version ./json-model)
 
-echo "$runtime jsu=$jsu_ver-$jsu_git"
+echo "$runtime jsu=$jsu_ver [$jsu_git/$jmc_git]"
