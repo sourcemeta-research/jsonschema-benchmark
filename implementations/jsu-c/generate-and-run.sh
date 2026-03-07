@@ -1,4 +1,13 @@
 #! /bin/bash
+#
+# Run
+#
+# Usage:
+# - $0 directory
+# - $0 schema instances [ backend [ loop ] ]
+#
+# Default backend is C, default loop is 1.
+#
 
 set -o errexit -o nounset
 
@@ -62,21 +71,17 @@ H backend: $backend
 H loop: $LOOP
 
 #
-# SPECIAL CASE HANDLING
+# COMPILER BINARY OPTIONS: -[-no]-foo
 #
-
-# FIXME --fix vs --no-fix
-jsu_compile_opt="--quiet --id --no-strict --no-fix --loose --no-format --no-reporting"
+# --id: use native (if available) schema conversion
+# --strict: reject/accept any odd-looking schema
+# --fix: repair/keep common schema syntactic errors
+# --loose: loose/strict numbers, whether 1.0 is an int and 42 is a float, or not
+# --format: compile/ignore formats
+# --reporting: with/without reporting code
+#
+jsu_compile_opt="--quiet --no-id --no-strict --fix --loose --no-format --no-reporting"
 jmc_backend_opt="--quiet"
-
-case $NAME in
-    openapi)
-        # the official openapi model is stricter than the schema, do not use it!
-        jsu_compile_opt+=" --no-id"
-        ;;
-    *)
-        ;;
-esac
 
 source /venv/bin/activate
 rm -f $bench
@@ -90,7 +95,9 @@ let compile_start=$(date +%s.%N | tr -d .)
 
 H compiling...
 # NOTE JSONSCHEMA_BENCHMARK adds benchmarking option --jsonschema-benchmark
-jsu-compile $jsu_compile_opt -o $bench "$SCHEMA" -- \
+# NOTE --maps is needed only under --id
+# NOTE -D only affects the C backend, it adds the specific performance measure code
+jsu-compile $jsu_compile_opt -o "$bench" "$SCHEMA" -- \
     $jmc_backend_opt \
     -D JSONSCHEMA_BENCHMARK \
     --maps "https://json-model.org/models/ /app/json-model/models/"
@@ -133,9 +140,11 @@ H results: pass=$pass fail=$fail error=$err
 H run time: $(( $run_time / 1000 )) µs
 
 # run again with internally measured validation time
+# NOTE status is non-zero on any fail with --jsonschema-benchmark
 $bench --jsonschema-benchmark -T $LOOP "$INSTANCES" > time.txt
 status2=$?
 
+# set status to non-zero on any failure at any stage
 if [ $status -eq 0 -a $status2 -ne 0 ] ; then
     H FIXME inconsistent benchmarking run
     status=$status2
