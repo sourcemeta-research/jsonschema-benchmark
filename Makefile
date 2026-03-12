@@ -147,8 +147,7 @@ dist/results/boon/%: \
 	| dist/results/boon
 	@$(call docker_run,boon,/workspace/$(dir $(word 2,$^)))
 
-# JSU - JSON Schema Utils Compiler with JMC Backend
-# NOTE the "jsu-c" container image is shared between all implementations
+# JSU - JSON Schema Utils Compiler with JMC Backend for C, JS, Python, Perl, Java
 
 implementations/jsu-c/.dockertimestamp: \
 	implementations/jsu-c/memory-wrapper.sh \
@@ -164,28 +163,71 @@ dist/results/jsu-c/%: \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsu-c
-	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) C)
+	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+implementations/jsu-js/.dockertimestamp: \
+	implementations/jsu-js/memory-wrapper.sh \
+	implementations/jsu-js/generate-and-run.sh \
+	implementations/jsu-js/jsu_version.sh \
+	implementations/jsu-js/version.sh \
+	implementations/jsu-js/Dockerfile
+	docker build -t jsonschema-benchmark/jsu-js implementations/jsu-js
+	touch $@
 
 dist/results/jsu-js/%: \
-	implementations/jsu-c/.dockertimestamp \
+	implementations/jsu-js/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsu-js
-	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) js)
+	@$(call docker_run,jsu-js,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+implementations/jsu-py/.dockertimestamp: \
+	implementations/jsu-py/memory-wrapper.sh \
+	implementations/jsu-py/generate-and-run.sh \
+	implementations/jsu-py/jsu_version.sh \
+	implementations/jsu-py/version.sh \
+	implementations/jsu-py/Dockerfile
+	docker build -t jsonschema-benchmark/jsu-py implementations/jsu-py
+	touch $@
 
 dist/results/jsu-py/%: \
-	implementations/jsu-c/.dockertimestamp \
+	implementations/jsu-py/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsu-py
-	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) py)
+	@$(call docker_run,jsu-py,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+implementations/jsu-pl/.dockertimestamp: \
+	implementations/jsu-pl/memory-wrapper.sh \
+	implementations/jsu-pl/generate-and-run.sh \
+	implementations/jsu-pl/jsu_version.sh \
+	implementations/jsu-pl/version.sh \
+	implementations/jsu-pl/Dockerfile
+	docker build -t jsonschema-benchmark/jsu-pl implementations/jsu-pl
+	touch $@
 
 dist/results/jsu-pl/%: \
-	implementations/jsu-c/.dockertimestamp \
+	implementations/jsu-pl/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
 	| dist/results/jsu-pl
-	@$(call docker_run,jsu-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^) pl)
+	@$(call docker_run,jsu-pl,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+implementations/jsu-java/.dockertimestamp: \
+	implementations/jsu-java/memory-wrapper.sh \
+	implementations/jsu-java/generate-and-run.sh \
+	implementations/jsu-java/jsu_version.sh \
+	implementations/jsu-java/version.sh \
+	implementations/jsu-java/Dockerfile
+	docker build -t jsonschema-benchmark/jsu-java implementations/jsu-java
+	touch $@
+
+dist/results/jsu-java/%: \
+	implementations/jsu-java/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsu-java
+	@$(call docker_run,jsu-java,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
 # JSON_SCHEMER
 

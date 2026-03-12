@@ -1,5 +1,5 @@
 FROM ubuntu:24.04
-LABEL description="JSON Schema Utils Compiler Setup for Benchmarking with C"
+LABEL description="JSON Schema Utils Compiler Setup for Benchmarking with Perl"
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -14,8 +14,6 @@ RUN apt update ; \
         python3 python-is-python3 python3-venv python3-pip git \
         time jq curl vim ca-certificates
 
-# perl libre-engine-re2-perl libjson-maybexs-perl libcpanel-json-xs-perl libdatetime-hires-perl ; \
-
 # force install, otherwise it would require a virtual environment
 # RUN pip install --break-system-packages jsonschema-specifications
 RUN pip install --break-system-packages "git+https://github.com/clairey-zx81/json-model@$JMC"
@@ -24,23 +22,11 @@ RUN pip install --break-system-packages "git+https://github.com/zx80/json-schema
 # python-version agnostic runtime directory guess
 RUN echo "export JSU_RUNTIME=$(echo /usr/local/lib/python3.*/dist-packages/json_model/runtime)" > .env
 
-# c-specific setup
+# perl-specific setup
 RUN apt install -y --no-install-recommends --fix-missing \
-        libtool m4 automake make pkgconf gcc g++ texinfo \
-        libpcre2-dev libre2-dev libjansson-dev
-
-# compile cre2 (re2 wrapper for C) into /usr/local
-ARG cre2=master
-RUN git clone -b $cre2 https://github.com/marcomaggi/cre2.git ; \
-    cd cre2 ; \
-    sh autogen.sh ; \
-    ./configure --enable-maintainer-mode ; \
-    make ; \
-    make install ; \
-    cd .. ; \
-	rm -rf cre2
-ENV LD_LIBRARY_PATH=/usr/local/lib
-ENV PATH=$PATH:.
+        perl \
+        libre-engine-re2-perl libjson-maybexs-perl libcpanel-json-xs-perl libdatetime-hires-perl
+RUN echo 'export PERLLIB=$JSU_RUNTIME/pl/lib' >> .env
 
 COPY . .
-ENTRYPOINT ["/app/memory-wrapper.sh", "/app/generate-and-run.sh", "C"]
+ENTRYPOINT ["/app/memory-wrapper.sh", "/app/generate-and-run.sh", "Perl"]
