@@ -14,8 +14,6 @@ RUN apt update ; \
         python3 python-is-python3 python3-venv python3-pip git \
         time jq curl vim ca-certificates
 
-# perl libre-engine-re2-perl libjson-maybexs-perl libcpanel-json-xs-perl libdatetime-hires-perl ; \
-
 # force install, otherwise it would require a virtual environment
 # RUN pip install --break-system-packages jsonschema-specifications
 RUN pip install --break-system-packages "git+https://github.com/clairey-zx81/json-model@$JMC"
