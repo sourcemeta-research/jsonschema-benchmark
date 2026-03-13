@@ -25,7 +25,7 @@ RUN echo "export JSU_RUNTIME=$(echo /usr/local/lib/python3.*/dist-packages/json_
 # java-specific setup
 RUN apt install -y --no-install-recommends --fix-missing \
         openjdk-21-jdk maven
-RUN cd /usr/local/lib/python3.*/dist-packages/json_model/runtime/java && mvn install
+RUN . /app/.env && cd $JSU_RUNTIME/java && mvn install
 RUN echo -n "export CLASSPATH=/workspace:" >> .env
 RUN find / -type f -name '*.jar' -print | \
     egrep "json-model|getopt|gson|jakarta|johnzon|jackson" | \
