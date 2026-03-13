@@ -44,10 +44,10 @@ RUN echo '{"name":"jsu-benchmark","type":"module"}' | jq > package.json
 RUN ln -s /app/node_modules /node_modules
 
 # obscure issue with links…
-# RUN source .env && npm install $JSU_RUNTIME/js
+# RUN npm install /path/to/runtime/js
 # install manually instead
 RUN mkdir -p node_modules/json_model_runtime
-RUN source .env && cp $JSU_RUNTIME/js/*.js /app/node_modules/json_model_runtime/
+RUN cp /usr/local/lib/python3.*/dist-packages/json_model/runtime/js/*.js /app/node_modules/json_model_runtime/
 
 COPY . .
 ENTRYPOINT ["/app/memory-wrapper.sh", "/app/generate-and-run.sh", "JS"]
