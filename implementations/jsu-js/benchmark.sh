@@ -60,4 +60,4 @@ msg "$SCHEMA compile time is $(( $compile_time / 1000 )) µs"
 
 # node does not support a path any more…
 cp "$workdir/schema.mjs" "$appdir/schema.js"
-node "$appdir/jsonschema_benchmark.js" "$INSTANCES"
+node "$appdir/jsonschema_benchmark.js" "$INSTANCES" | sed -e "s/\$/,$compile_time/"

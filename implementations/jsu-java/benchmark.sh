@@ -61,4 +61,4 @@ compile_end=$(date +%s%N)
 compile_time=$(( $compile_end - $compile_start ))
 msg "$SCHEMA compile time is $(( $compile_time / 1000 )) µs"
 
-java JsonSchemaBenchmark "$INSTANCES"
+java JsonSchemaBenchmark "$INSTANCES" | sed -e "s/\$/,$compile_time/"

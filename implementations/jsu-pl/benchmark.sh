@@ -59,4 +59,4 @@ compile_end=$(date +%s%N)
 compile_time=$(( $compile_end - $compile_start ))
 msg "$SCHEMA compile time is $(( $compile_time / 1000 )) µs"
 
-perl "$appdir/jsonschema_benchmark.pl" "$INSTANCES"
+perl "$appdir/jsonschema_benchmark.pl" "$INSTANCES" | sed -e "s/\$/,$compile_time/"

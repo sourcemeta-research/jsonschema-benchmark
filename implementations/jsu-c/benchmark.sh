@@ -72,4 +72,4 @@ compile_end=$(date +%s%N)
 compile_time=$(( $compile_end - $compile_start ))
 msg "$SCHEMA compile time is $(( $compile_time / 1000 )) µs"
 
-"$workdir/schema.exe" "$INSTANCES"
+"$workdir/schema.exe" "$INSTANCES" | sed -e "s/\$/,$compile_time/"
