@@ -18,9 +18,7 @@ RUN apt update ; \
 # RUN pip install --break-system-packages jsonschema-specifications
 RUN pip install --break-system-packages "git+https://github.com/clairey-zx81/json-model@$JMC"
 RUN pip install --break-system-packages "git+https://github.com/zx80/json-schema-utils@$JSU"
-
-# python-version agnostic runtime directory guess
-RUN echo "export JSU_RUNTIME=$(echo /usr/local/lib/python3.*/dist-packages/json_model/runtime)" > .env
+RUN echo "export JSU_RUNTIME=$(jsu-compile --runtime)" > .env
 
 # java-specific setup
 RUN apt install -y --no-install-recommends --fix-missing \
@@ -34,4 +32,4 @@ RUN find / -type f -name '*.jar' -print | \
 RUN echo >> .env
 
 COPY . .
-ENTRYPOINT ["/app/memory-wrapper.sh", "/app/generate-and-run.sh", "Java"]
+ENTRYPOINT ["/app/memory-wrapper.sh", "/app/benchmark.sh"]

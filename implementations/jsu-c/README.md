@@ -1,4 +1,4 @@
-# JSON Schema Utils compiler with JMC C backend
+# JSON Schema Utils compiler with JMC C JMC Backend
 
 The JSU compiler uses JSON Model as an intermediate language to
 generate efficient validation code from a schema.
@@ -8,11 +8,12 @@ the current functionality coverage.
 
 ## Schema to Model Conversion
 
-Although the automatic translation is not perfect, it supports **most** of JSON Schema
-features, attempts to fix common schema issues (eg typical cases of misplaced keywords
-are fixed to reflect the designer intention, which may lead to invalid data reported
-from this benchmark point of view), and string formats can be actually checked in many
-cases (eg dates or URLs), although this is disabled with `--no-format`.
+The automatic conversion supports **all** of JSON Schema v3 to v7 features,
+and a significant and growing subset of JSON Schema 2019-09 and 2020-12.
+Distinctive features such as fixing common schema issues (eg typical cases of
+misplaced keywords) are _disactivated_.
+Also, although some schemas have _native_ models which are expected to be
+functionally equivalent or stricter, they _not_ used.
 
 ## Backend Model Compilation
 
@@ -23,27 +24,10 @@ It uses `re2` as its default regular expression engine, and _loose_ numbers
 
 ## Benchmarking Run
 
-Benchmarking time is an average over 20-1000 (repeat depends on the expected
-slowness of the runs) validations of all tests values after loading them into
-memory.
+Benchmarking measures are performed in 3 phases:
+
+- a cold run over all values
+- a warmup loop of up to 1000 iterations bounded at 10 seconds over all values
+- a hot run over all values
 
 Exit status is 0 if _all_ JSON values were validated, 1 otherwise.
-
-## Validation Status
-
-Although not all values are considered valid, from the implementer point of view
-the rejected values are rightfully rejected as they do not correspond to expected
-JSON values for the target application, even if they strictly conform to the schema.
-
-- ansible-meta: 3 issues
-  - 105: `dependecies` prop typo because of fixed `additionalProperties`
-  - 201/312: `argument_specs` prop because of fixed `additionalProperties`
-- cypress: 1 issue
-  - 8: the `reporter` string does not point to a js file.
-- yamllint: 18 issues, _but_ 98% of the schema is ignored…
-  - the 18 differences are raw random strings containing:
-    - 10 C# source code
-    - 6 files or directories path
-    - 2 XML data
-
-More cases would fail if formats are enabled.

@@ -1,2 +1,2 @@
 #! /bin/sh
-docker run --rm --entrypoint /app/jsu_version.sh jsonschema-benchmark/jsu-py:latest Python
+docker run --rm --entrypoint /app/benchmark.sh jsonschema-benchmark/jsu-py:latest --version

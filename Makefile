@@ -151,8 +151,8 @@ dist/results/boon/%: \
 
 implementations/jsu-c/.dockertimestamp: \
 	implementations/jsu-c/memory-wrapper.sh \
-	implementations/jsu-c/generate-and-run.sh \
-	implementations/jsu-c/jsu_version.sh \
+	implementations/jsu-c/benchmark.sh \
+	implementations/jsu-c/jsonschema_benchmark.c \
 	implementations/jsu-c/version.sh \
 	implementations/jsu-c/Dockerfile
 	docker build -t jsonschema-benchmark/jsu-c implementations/jsu-c
@@ -167,8 +167,8 @@ dist/results/jsu-c/%: \
 
 implementations/jsu-js/.dockertimestamp: \
 	implementations/jsu-js/memory-wrapper.sh \
-	implementations/jsu-js/generate-and-run.sh \
-	implementations/jsu-js/jsu_version.sh \
+	implementations/jsu-js/benchmark.sh \
+	implementations/jsu-js/jsonschema_benchmark.js \
 	implementations/jsu-js/version.sh \
 	implementations/jsu-js/Dockerfile
 	docker build -t jsonschema-benchmark/jsu-js implementations/jsu-js
@@ -183,8 +183,8 @@ dist/results/jsu-js/%: \
 
 implementations/jsu-py/.dockertimestamp: \
 	implementations/jsu-py/memory-wrapper.sh \
-	implementations/jsu-py/generate-and-run.sh \
-	implementations/jsu-py/jsu_version.sh \
+	implementations/jsu-py/benchmark.sh \
+	implementations/jsu-py/jsonschema_benchmark.py \
 	implementations/jsu-py/version.sh \
 	implementations/jsu-py/Dockerfile
 	docker build -t jsonschema-benchmark/jsu-py implementations/jsu-py
@@ -199,8 +199,8 @@ dist/results/jsu-py/%: \
 
 implementations/jsu-pl/.dockertimestamp: \
 	implementations/jsu-pl/memory-wrapper.sh \
-	implementations/jsu-pl/generate-and-run.sh \
-	implementations/jsu-pl/jsu_version.sh \
+	implementations/jsu-pl/benchmark.sh \
+	implementations/jsu-pl/jsonschema_benchmark.pl \
 	implementations/jsu-pl/version.sh \
 	implementations/jsu-pl/Dockerfile
 	docker build -t jsonschema-benchmark/jsu-pl implementations/jsu-pl
@@ -215,8 +215,8 @@ dist/results/jsu-pl/%: \
 
 implementations/jsu-java/.dockertimestamp: \
 	implementations/jsu-java/memory-wrapper.sh \
-	implementations/jsu-java/generate-and-run.sh \
-	implementations/jsu-java/jsu_version.sh \
+	implementations/jsu-java/benchmark.sh \
+	implementations/jsu-java/JsonSchemaBenchmark.java \
 	implementations/jsu-java/version.sh \
 	implementations/jsu-java/Dockerfile
 	docker build -t jsonschema-benchmark/jsu-java implementations/jsu-java

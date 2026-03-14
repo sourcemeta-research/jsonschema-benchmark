@@ -19,6 +19,6 @@ echo -n '{"include":['
   echo -n '{"impl": "'$impl'", "skip_cache": false},'
 done
 echo "$pr_impls" | while read impl; do
-  [ -z "$impl" ] || echo -n '{"impl": "'$impl'", "skip_cache": true},'
+  [ -z "$impl" -o ! -d "implementations/$impl" ] || echo -n '{"impl": "'$impl'", "skip_cache": true},'
 done) | sed 's/,$//' # Remove trailing comma
 echo "]}"

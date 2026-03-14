@@ -18,9 +18,7 @@ RUN apt update ; \
 # RUN pip install --break-system-packages jsonschema-specifications
 RUN pip install --break-system-packages "git+https://github.com/clairey-zx81/json-model@$JMC"
 RUN pip install --break-system-packages "git+https://github.com/zx80/json-schema-utils@$JSU"
-
-# python-version agnostic runtime directory guess
-RUN echo "export JSU_RUNTIME=$(echo /usr/local/lib/python3.*/dist-packages/json_model/runtime)" > .env
+RUN echo "export JSU_RUNTIME=$(jsu-compile --runtime)" > .env
 
 # javascript specifc setup, nodejs >= 20.0.0
 ARG nodejs=stable
@@ -41,11 +39,10 @@ RUN echo '{"name":"jsu-benchmark","type":"module"}' | jq > package.json
 # nodejs import does not honor NODE_PATH: https://nodejs.org/api/esm.html#no-node_path
 RUN ln -s /app/node_modules /node_modules
 
-# obscure issue with links…
-# RUN npm install /path/to/runtime/js
+# obscure issue with links on "RUN npm install /path/to/runtime/js"
 # install manually instead
 RUN mkdir -p node_modules/json_model_runtime
-RUN cp /usr/local/lib/python3.*/dist-packages/json_model/runtime/js/*.js /app/node_modules/json_model_runtime/
+RUN . /app/.env && cp $JSU_RUNTIME/js/*.js /app/node_modules/json_model_runtime/
 
 COPY . .
-ENTRYPOINT ["/app/memory-wrapper.sh", "/app/generate-and-run.sh", "JS"]
+ENTRYPOINT ["/app/memory-wrapper.sh", "/app/benchmark.sh"]
