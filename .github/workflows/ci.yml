@@ -89,16 +89,12 @@ jobs:
       - name: Validate CSV
         run: (uv run python .github/csv_md.py > /dev/null || (echo "Invalid CSV" > /dev/stderr && cat dist/report.csv && exit 1))
 
-      - name: Save output
-        id: save-output
-        env:
-          IMPL: ${{ matrix.impl }}
-        run: |
-          {
-            echo "report-${IMPL}<<EOF"
-            cat dist/report.csv
-            echo EOF
-          } >> $GITHUB_OUTPUT
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.impl }}
+          path: dist/report.csv
+          retention-days: 1
 
       - name: Cache report
         uses: actions/cache/save@v4
@@ -106,31 +102,6 @@ jobs:
         with:
           path: dist/report.csv
           key: ${{ steps.cache-report.outputs.cache-primary-key }}
-    outputs:
-      # GitHub Actions does not easily support matrix outputs
-      # https://github.com/orgs/community/discussions/26639
-      report-ajv: ${{ steps.save-output.outputs.report-ajv }}
-      report-ajv-bun: ${{ steps.save-output.outputs.report-ajv-bun }}
-      report-blaze: ${{ steps.save-output.outputs.report-blaze }}
-      report-boon: ${{ steps.save-output.outputs.report-boon }}
-      # XXX Disabled due to excessive runtime
-      #report-corvus: ${{ steps.save-output.outputs.report-corvus }}
-      report-go-jsonschema: ${{ steps.save-output.outputs.report-go-jsonschema }}
-      report-hyperjump: ${{ steps.save-output.outputs.report-hyperjump }}
-      report-jsu-c: ${{ steps.save-output.outputs.report-jsu-c }}
-      report-jsu-java: ${{ steps.save-output.outputs.report-jsu-java }}
-      report-jsu-js: ${{ steps.save-output.outputs.report-jsu-js }}
-      report-jsu-pl: ${{ steps.save-output.outputs.report-jsu-pl }}
-      report-jsu-py: ${{ steps.save-output.outputs.report-jsu-py }}
-      report-json_schemer: ${{ steps.save-output.outputs.report-json_schemer }}
-      report-jsoncons: ${{ steps.save-output.outputs.report-jsoncons }}
-      report-jsdotnet: ${{ steps.save-output.outputs.report-jsdotnet }}
-      report-jsv: ${{ steps.save-output.outputs.report-jsv }}
-      report-kmp: ${{ steps.save-output.outputs.report-kmp }}
-      report-networknt: ${{ steps.save-output.outputs.report-networknt }}
-      report-opis: ${{ steps.save-output.outputs.report-opis }}
-      report-py-jsonschema: ${{ steps.save-output.outputs.report-py-jsonschema }}
-      report-schemasafe: ${{ steps.save-output.outputs.report-schemasafe }}
 
   aggregate:
     needs: benchmark
@@ -139,14 +110,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+
+      # downloads all previously uploaded artifacts
+      - name: Download Reports
+        uses: actions/download-artifact@v4
+
       - name: Concatenate output
-        env:
-          OUTPUTS: ${{ join(needs.benchmark.outputs.*, '\n') }}
         run: |
           mkdir dist
-          printf "${OUTPUTS}" | awk 'NR==1 || !/^implementation,/' > dist/report.csv
+          echo "implementation,version,name,cold_ns,warm_ns,compile_ns,memory,exit_status" > dist/report.csv
+          grep -v "^implementation," ./report-*/dist/report.csv >> dist/report.csv
       - run: cat dist/report.csv
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12.5'
