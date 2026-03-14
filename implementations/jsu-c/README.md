@@ -15,6 +15,15 @@ misplaced keywords) are _disactivated_.
 Also, although some schemas have _native_ models which are expected to be
 functionally equivalent or stricter, they _not_ used.
 
+Some conversion options:
+
+- `-[-no]-format`: check/ignore `format`
+- `-[-no]-fix`: fix/ignore common schema issues
+- `-[-no]-id`: use/not _native_ models based on schema `$id`
+- `-[-no]-loose`: whether ints are floats and zero-decimal floats are ints
+- `-[-no]-reporting`: generate/not reporting code
+- `-[-no]-strict`: reject/accept odd-looking schemas
+
 ## Backend Model Compilation
 
 The backend compiler generates source code in the target language to validate
