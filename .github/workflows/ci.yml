@@ -119,7 +119,7 @@ jobs:
         run: |
           mkdir dist
           echo "implementation,version,name,cold_ns,warm_ns,compile_ns,memory,exit_status" > dist/report.csv
-          grep -v "^implementation," ./report-*/dist/report.csv >> dist/report.csv
+          grep -v "^implementation," ./report-*/report.csv >> dist/report.csv
       - run: cat dist/report.csv
       - uses: actions/setup-python@v5
         with:
