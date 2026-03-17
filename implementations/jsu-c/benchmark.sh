@@ -61,7 +61,7 @@ cc \
     -I /usr/local/include \
     -I /usr/include \
     -L /usr/local/lib \
-    -Ofast \
+    -Ofast -mtune=native \
     -o "$workdir/schema.exe" \
     "$appdir/jsonschema_benchmark.c" \
     "$workdir/schema.c" \
