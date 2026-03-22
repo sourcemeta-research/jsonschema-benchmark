@@ -103,6 +103,14 @@ public class JsonSchemaBenchmark
 
         Object[] values = jsons.toArray();
 
+        // overhead estimation
+        int count = 0;
+        long overhead_start = System.nanoTime();
+        for (Object value: values)
+            if (value != null)
+                count++;
+        double overhead_delay = 0.001 * (System.nanoTime() - overhead_start);
+
         // cold run
         if (debug)
             System.err.println("cold run");
@@ -131,8 +139,9 @@ public class JsonSchemaBenchmark
 
         // show result
         String sdelay = String.format("%.03f", hot_run);
+        String odelay = String.format("%.03f", overhead_delay);
         System.err.println("Java validation: pass=" + (values.length - errors) +
-                           " fail=" + errors + " " + sdelay + " µs");
+                           " fail=" + errors + " " + sdelay + " µs [" + odelay + " µs]");
         System.out.println((long) (1000 * cold_run + 0.5) + "," + (long) (1000 * hot_run + 0.5));
 
         // cleanup

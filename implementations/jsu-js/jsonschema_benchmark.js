@@ -37,6 +37,14 @@ export default async function main()
         values.push(...data.split("\n").slice(0, -1).map(s => JSON.parse(s)))
     }
 
+    // overhead estimation
+    let count = 0
+    const overhead_start = performance.now()
+    for (const v of values)
+        if (v !== null)
+            count++
+    const overhead_delay = performance.now() - overhead_start  // ms
+
     // cold run
     if (debug)
         console.error("cold run")
@@ -68,7 +76,7 @@ export default async function main()
     const delay = performance.now() - start  // ms
 
     console.error(`js validation: pass=${values.length - errors} fail=${errors}`,
-                  `${(1000.0 * delay).toFixed(3)} µs`)
+                  `${(1000.0 * delay).toFixed(3)} µs [${(1000.0 * overhead_delay).toFixed(3)} µs]`)
 
     console.log((1000000.0 * cold_delay).toFixed(0) + ',' + (1000000.0 * delay).toFixed(0))
 

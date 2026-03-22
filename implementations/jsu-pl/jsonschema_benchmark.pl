@@ -45,6 +45,14 @@ for my $file (@ARGV)
     push @$values, (map { decode_json_nonref $_ } split /\n/, $contents);
 }
 
+# overhead estimation
+my $count = 1;
+my $overhead_start = time;
+for my $j (@$values) {
+    $count++ if defined $j;
+}
+my $overhead_delay = 1_000_000 * (time - $overhead_start);  # µs
+
 # cold run, once, check results
 warn("cold run\n") if $debug;
 my $cold_start = time;
@@ -76,7 +84,8 @@ my $hot_delay = 1_000_000 * ($stop - $start);  # µs
 
 # show rounded results
 my $pass = @$values - $errors;
-printf STDERR "pl validation: pass=$pass fail=$errors %.03f µs\n", $hot_delay;
+printf STDERR
+    "pl validation: pass=$pass fail=$errors %.03f µs [%.03f µs]\n", $hot_delay, $overhead_delay;
 
 my ($ns_cold, $ns_warm) = (int($cold_delay * 1E3 + 0.5), int($hot_delay * 1E3 + 0.5));
 print "$ns_cold,$ns_warm\n";

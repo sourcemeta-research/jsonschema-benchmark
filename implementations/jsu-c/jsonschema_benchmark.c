@@ -103,6 +103,14 @@ int main(int argc, char* argv[])
         }
     }
 
+    // overhead estimation
+    int count = 0;
+    double overhead_start = now();
+    for (int i = 0; i < nvalues; i++)
+        if (likely(values[i] != NULL))
+            count++;
+    double overhead_delay = now() - overhead_start;
+
     // run once
     int nfail = 0;
     double cold_start = now();
@@ -119,14 +127,16 @@ int main(int argc, char* argv[])
         for (int i = 0; i < nvalues; i++)
             checker(values[i], NULL, NULL);
 
-    // collect performance data, possibly over a loop… of 1
+    // collect performance data
     double start = now();
     for (int i = 0; i < nvalues; i++)
         checker(values[i], NULL, NULL);
     double delay = now() - start;
 
     // report
-    fprintf(stderr, "C validation: pass=%d fail=%d %.03f µs\n", npass, nfail, delay);
+    fprintf(stderr,
+            "C validation: pass=%d fail=%d %.03f µs [%.03f µs]\n",
+            npass, nfail, delay, overhead_delay);
     fprintf(stdout, "%lld,%lld\n",
             (long long int) (1000 * cold_delay + 0.5), (long long int) (1000 * delay + 0.5));
 
