@@ -15,7 +15,6 @@ RUN apt update ; \
         time jq curl vim ca-certificates
 
 # force install, otherwise it would require a virtual environment
-# RUN pip install --break-system-packages jsonschema-specifications
 RUN pip install --break-system-packages "git+https://github.com/clairey-zx81/json-model@$JMC"
 RUN pip install --break-system-packages "git+https://github.com/zx80/json-schema-utils@$JSU"
 RUN echo "export JSU_RUNTIME=$(jsu-compile --runtime)" > .env
