@@ -66,9 +66,7 @@ endef
 list:
 	@echo $(IMPLEMENTATIONS) | tr ' ' '\n'
 
-# FIXME how to install the "dts" command?
 schemas/%/schema-noformat.json: schemas/%/schema.json
-	# gron $< | grep -v '\.format =' | gron -u > $@
 	dts $< -o gron | grep -v '\.format =' | dts -i gron -o json -j .json > $@
 
 implementations/%/memory-wrapper.sh: memory-wrapper.sh
