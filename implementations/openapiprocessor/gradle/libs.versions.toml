@@ -1,0 +1,7 @@
+[versions]
+openapiprocessor = "2024.5"
+
+[libraries]
+openapiprocessor = { module = "io.openapiprocessor:json-schema-validator", version.ref = "openapiprocessor" }
+interfaces = { module = "io.openapiprocessor:io-interfaces", version.ref = "openapiprocessor" }
+jackson = { module = "io.openapiprocessor:io-jackson", version.ref = "openapiprocessor" }
