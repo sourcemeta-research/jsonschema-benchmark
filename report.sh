@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -o errexit
 set -o nounset
@@ -17,6 +17,8 @@ do
   EXAMPLE="$(basename "$argument")"
   VERSION="$("./implementations/$IMPLEMENTATION/version.sh")"
   while read OUTPUT; do
+    # filter out 0 measures as errors
+    [[ $OUTPUT == 0,0,*,*,0 ]] && OUTPUT=${OUTPUT%,0},1
     echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$OUTPUT"
   done < "$argument"
 done
