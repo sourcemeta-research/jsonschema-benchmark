@@ -44,10 +44,8 @@ RUN echo '{"name":"jsu-benchmark","type":"module"}' | jq > package.json
 # nodejs import does not honor NODE_PATH: https://nodejs.org/api/esm.html#no-node_path
 RUN ln -s /app/node_modules /node_modules
 
-# obscure issue with links on "RUN npm install /path/to/runtime/js"
-# install manually instead
-RUN mkdir -p node_modules/json_model_runtime
-RUN . /app/.env && cp $JSU_RUNTIME/js/*.js /app/node_modules/json_model_runtime/
+# install from source directory, including dependencies
+RUN . /app/.env && npm install $JSU_RUNTIME/js --install-links
 
 COPY . .
 ENTRYPOINT ["/app/memory-wrapper.sh", "/app/benchmark.sh"]
