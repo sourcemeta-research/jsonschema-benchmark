@@ -91,6 +91,23 @@ dist/results/blaze/%: \
 	| dist/results/blaze
 	@$(call docker_run,blaze,/workspace/$(dir $(word 2,$^)))
 
+# Rapidjson
+
+implementations/rapidjson/.dockertimestamp: \
+	implementations/rapidjson/memory-wrapper.sh \
+	implementations/rapidjson/CMakeLists.txt \
+	implementations/rapidjson/main.cc \
+	implementations/rapidjson/Dockerfile
+	docker build -t jsonschema-benchmark/rapidjson implementations/rapidjson
+	touch $@
+
+dist/results/rapidjson/%: \
+	implementations/rapidjson/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/rapidjson
+	@$(call docker_run,rapidjson,/workspace/$(dir $(word 2,$^)))
+
 # AJV
 
 implementations/ajv/.dockertimestamp: \

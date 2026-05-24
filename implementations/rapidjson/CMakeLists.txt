@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(rapidjson_benchmark)
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -mtune=native")
+
+add_library(rapidjson INTERFACE)
+target_include_directories(rapidjson INTERFACE vendor/rapidjson/include)
+add_subdirectory(/app/repo rapidjson)
+add_executable(rapidjson_benchmark main.cc)
+target_link_libraries(rapidjson_benchmark PRIVATE rapidjson)
