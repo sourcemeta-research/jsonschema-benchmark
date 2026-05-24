@@ -1,14 +1,23 @@
 # syntax=docker.io/docker/dockerfile:1.7-labs
-FROM gcc:latest
+FROM ubuntu:24.04
 
-RUN apt-get update && apt-get install -y --no-install-recommends cmake time && rm -rf /var/lib/apt/lists/*
+RUN apt update ; \
+    apt upgrade -y ; \
+    apt install -y --no-install-recommends --fix-missing \
+        time jq curl vim ca-certificates
+
+RUN apt-get update && apt-get install -y --no-install-recommends git time
+
+RUN apt install -y --no-install-recommends --fix-missing \
+        make clang cmake
 
 # Add a placeholder for main so we can cache dependency builds
 COPY --exclude=./main.cc . /app
 RUN echo "int main(int argc, char**argv){}" > /app/main.cc
 
 RUN git clone -b v1.1.0 https://github.com/Tencent/rapidjson/ /app/repo
-RUN cmake -S /app -B /app/build -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=OFF
+
+RUN cmake -S /app -B /app/build -DCMAKE_BUILD_TYPE:STRING=Release
 RUN cmake --build /app/build --config Release --parallel 4
 
 # Rebuild with the real source

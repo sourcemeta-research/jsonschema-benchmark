@@ -5,9 +5,12 @@
 #include <filesystem>
 #include <fstream>
 #include <iterator>
-#include <print>
 #include <stdexcept>
 #include <vector>
+#include <chrono>
+#include <iostream>
+
+namespace fs = std::filesystem;
 
 #define WARMUP_ITERATIONS 100L
 #define MAX_WARMUP_TIME 10000000000
@@ -15,9 +18,9 @@
 bool validate_all(const auto &instances, const auto &schema_template) {
     for (std::size_t num = 0; num < instances.size(); num++) {
         const std::string json = instances[num];
-        SchemaValidator validator(schema_template);
-        GenericReader<UTF8<>, UTF8<>> reader;
-        StringStream is(json.c_str());
+        rapidjson::SchemaValidator validator(schema_template);
+        rapidjson::GenericReader<rapidjson::UTF8<>, rapidjson::UTF8<>> reader;
+        rapidjson::StringStream is(json.c_str());
         reader.Parse(is, validator);
         if (!validator.IsValid()) {
             std::cerr << "Error validating instance " << num << "\n";
@@ -37,7 +40,8 @@ std::string read_file(const fs::path &path) {
 }
 
 int validate(const std::filesystem::path &example) {
-    const std::string instances_text = read_file(example / "instances.jsonl");
+  std::cerr << std::format("benchmarking schema in folder: {}\n", example.string());
+  const std::string instances_text = read_file(example / "instances.jsonl");
 
   std::vector<std::string> instances;
    std::stringstream instances_stream(instances_text);
@@ -47,7 +51,7 @@ int validate(const std::filesystem::path &example) {
         instances.push_back(line);
     }
 
-  const std::string schema_text = read_file(schema_path);
+  const std::string schema_text = read_file(example / "schema.json");
 
   const auto compile_start{std::chrono::high_resolution_clock::now()};
   rapidjson::Document json_schema_source;
@@ -63,7 +67,7 @@ int validate(const std::filesystem::path &example) {
       compile_end - compile_start)};
 
   const auto cold_start{std::chrono::high_resolution_clock::now()};
-  if (!validate_all(instances, schema_template)) {
+  if (!validate_all(instances, rapidjson_schema)) {
     return EXIT_FAILURE;
   }
   const auto cold_end{std::chrono::high_resolution_clock::now()};
@@ -72,11 +76,11 @@ int validate(const std::filesystem::path &example) {
 
   const auto iterations = 1 + ((MAX_WARMUP_TIME - 1) / cold_duration.count());
   for (int i = 0; i < std::min(iterations, WARMUP_ITERATIONS); i++) {
-    validate_all(instances, schema_template);
+    validate_all(instances, rapidjson_schema);
   }
 
   const auto warm_start{std::chrono::high_resolution_clock::now()};
-  validate_all(evaluator, instances, schema_template);
+  validate_all(instances, rapidjson_schema);
   const auto warm_end{std::chrono::high_resolution_clock::now()};
   const auto warm_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       warm_end - warm_start)};
