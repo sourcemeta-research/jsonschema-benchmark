@@ -1,15 +1,17 @@
 # syntax=docker.io/docker/dockerfile:1.7-labs
 FROM ubuntu:24.04
 
-RUN apt update ; \
-    apt upgrade -y ; \
-    apt install -y --no-install-recommends --fix-missing \
-        time jq curl vim ca-certificates
-
-RUN apt-get update && apt-get install -y --no-install-recommends git time
-
-RUN apt install -y --no-install-recommends --fix-missing \
-        make clang cmake
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  git \
+  time \
+  make \
+  cmake \
+  jq \
+  curl \
+  vim \
+  g++ \
+  ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
 
 # Add a placeholder for main so we can cache dependency builds
 COPY --exclude=./main.cc . /app
