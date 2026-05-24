@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends cmake time && r
 COPY --exclude=./main.cc . /app
 RUN echo "int main(int argc, char**argv){}" > /app/main.cc
 
-# This serves to cache the following layers only if the commit has changed
-ADD "https://api.github.com/repos/sourcemeta/blaze/commits/main" /app/commit.json
 RUN git clone -b main https://github.com/sourcemeta/blaze /app/repo
+
+RUN git -C /app/repo checkout bf77f60
 RUN cmake -S /app -B /app/build -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=OFF
 RUN cmake --build /app/build --config Release --parallel 4
 
