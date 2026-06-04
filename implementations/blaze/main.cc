@@ -1,10 +1,10 @@
 #include <sourcemeta/core/io.h>
 #include <sourcemeta/core/json.h>
 #include <sourcemeta/core/jsonl.h>
-#include <sourcemeta/core/jsonschema.h>
 
 #include <sourcemeta/blaze/compiler.h>
 #include <sourcemeta/blaze/evaluator.h>
+#include <sourcemeta/blaze/foundation.h>
 
 #include <chrono>
 #include <filesystem>
@@ -37,8 +37,8 @@ int validate(const std::filesystem::path &example) {
 
   const auto compile_start{std::chrono::high_resolution_clock::now()};
   const auto schema_template{sourcemeta::blaze::compile(
-      schema, sourcemeta::core::schema_walker,
-      sourcemeta::core::schema_resolver,
+      schema, sourcemeta::blaze::schema_walker,
+      sourcemeta::blaze::schema_resolver,
       sourcemeta::blaze::default_schema_compiler,
       sourcemeta::blaze::Mode::FastValidation)};
 
