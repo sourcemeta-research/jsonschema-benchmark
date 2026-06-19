@@ -35,6 +35,7 @@ type config struct {
 
 	easyFloats  bool // only generate float64s
 	easyStrings bool // only generate ascii strings
+	onlyInts    bool // only generate ints, no floats
 }
 
 type Option func(*config)
@@ -52,6 +53,7 @@ func newConfig(opts ...Option) *config {
 		easyStrings:        true, // TODO make this false, but currently lots of engines struggle with unicode
 		noNewlines:         true, // This is to support jsonl format and implementations being able to naively split .jsonl files on newline.
 		easyFloats:         true, // TODO make these false by default. This is currently true since not all engines support large numbers. For example blaze struggles with `{"extendedAddress":"4Bj","region":"7qc0B1","postOfficeBox":"T1Q7C4","streetAddress":"6\udD74H38tHlS","countryName":"3","locality":"B"}`.
+		onlyInts:           false,
 	}
 	// apply options
 	for _, o := range opts {
@@ -143,6 +145,12 @@ func NotNumber() Option {
 func WithAscii() Option {
 	return func(c *config) {
 		c.easyStrings = true
+	}
+}
+
+func OnlyInts() Option {
+	return func(c *config) {
+		c.onlyInts = true
 	}
 }
 

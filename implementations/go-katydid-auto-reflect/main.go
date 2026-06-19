@@ -64,6 +64,9 @@ func main() {
 	matcher, err := jsonschema.Compile([]byte(schemaData))
 	compile_duration := time.Since(compile_start)
 	log.Printf("compile duration: %v", compile_duration)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// Open the JSONL file
 	data, err := os.ReadFile(instanceFile)

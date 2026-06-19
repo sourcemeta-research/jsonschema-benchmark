@@ -60,6 +60,9 @@ func main() {
 	matcher, err := jsonschema.Compile([]byte(schemaData))
 	compile_duration := time.Since(compile_start)
 	log.Printf("compile duration: %v", compile_duration)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// Read instances
 	data, err := os.ReadFile(instanceFile)

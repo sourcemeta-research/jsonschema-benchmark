@@ -26,7 +26,7 @@ func validateAll(instances []any, sch *jsonschema.Schema, want bool) error {
 		if want && !err.IsValid() {
 			result = err
 		} else if !want && err.IsValid() {
-			result = fmt.Errorf("expected invalid, but got valid at %d", i)
+			result = fmt.Errorf("expected invalid, but got valid at line %d", i+1)
 		}
 	}
 	return result

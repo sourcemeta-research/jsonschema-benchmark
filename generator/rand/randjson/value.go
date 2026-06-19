@@ -236,6 +236,9 @@ func randNumber(r rand.Rand, c *config) string {
 	if r.Intn(c.numberEdgeCaseOdds) == 0 && !c.easyFloats {
 		return c.numberEdgeCases[r.Intn(len(c.numberEdgeCases))]
 	}
+	if c.onlyInts {
+		return randInteger(r)
+	}
 	num := randInteger(r) + randFraction(r) + randExponent(r)
 	if !c.easyFloats {
 		return num

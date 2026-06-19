@@ -59,7 +59,6 @@ func main() {
 	compile_start := time.Now()
 	matcher, err := jsonschema.NewMemoizer([]byte(schemaData))
 	compile_duration := time.Since(compile_start)
-
 	if err != nil {
 		log.Fatal(err)
 	}
