@@ -1,0 +1,8 @@
+Docker build broken on a certifacate issue since June 11th, 2026.
+The Let's Encrypt certificate for `builds.hex.pm` was updated on this date.
+
+```
+#10 0.770 ** (Mix) httpc request failed with: {:failed_connect, [{:to_address, {~c"builds.hex.pm", 443}}, {:inet, [:inet], {:tls_alert, {:unsupported_certificate, ~c"TLS client: In state wait_cert_cr at ssl_handshake.erl:2199 generated CLIENT ALERT: Fatal - Unsupported Certificate\n {key_usage_mismatch,{{'Extension',{2,5,29,15},true,[keyCertSign,cRLSign]},\n                      {'Extension',{2,5,29,37},false,[{1,3,6,1,5,5,7,3,1}]}}}"}}}]}
+1
+#10 0.770 Could not install Hex because Mix could not download metadata at https://builds.hex.pm/installs/hex-1.x.csv.
+```
