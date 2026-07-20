@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Get a list of all implementations (with some potentially ignored)
-# XXX Temporarily exclude Corvus
-all_impls=$(make NO_IGNORE=$NO_IGNORE list | grep -v corvus |sort)
+# XXX Temporarily exclude Corvus and JSV
+all_impls=$(make NO_IGNORE=$NO_IGNORE list | grep -v corvus | grep -v "^jsv$" | sort)
 
-# Add implementations changed in the PR
+# Add implementations changed in the PR (but avoid .benchmark-ignore)
 if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
   git fetch origin $GITHUB_BASE_REF --depth 1
-  pr_impls=$(git diff --name-only FETCH_HEAD..HEAD | grep '^implementations/' | cut -d/ -f2 | sort -u)
+  pr_impls=$(git diff --name-only FETCH_HEAD..HEAD | grep '^implementations/' | grep -v '/.benchmark-ignore' | cut -d/ -f2 | sort -u)
 fi
 
 # Get all implementations that are modified by the PR
