@@ -53,7 +53,7 @@ define docker_run
   $(eval $@_MISC = $(3))
 	rm -f $@
 	for i in $(shell seq 1 $(RUNS)) ; do \
-		timeout -s KILL $$(( $(RUNS) * 180 + 60 ))s \
+		timeout -s KILL 180 \
 			docker run --rm -v $(CURDIR):/workspace \
 				jsonschema-benchmark/$($@_TOOL) $($@_INPUT) $($@_MISC) > $@.tmp ; \
 		STATUS=$$? ; \
