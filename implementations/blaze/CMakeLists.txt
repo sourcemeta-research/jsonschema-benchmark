@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(blaze_benchmark)
 include(/app/repo/vendor/core/cmake/Sourcemeta.cmake)
+sourcemeta_enable_simd()
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -mtune=native")
