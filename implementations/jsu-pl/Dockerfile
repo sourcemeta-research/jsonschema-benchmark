@@ -27,8 +27,10 @@ RUN echo "export JSU_RUNTIME=$(jsu-compile --runtime)" > .env
 
 # perl-specific setup
 RUN apt install -y --no-install-recommends --fix-missing \
-        perl \
-        libre-engine-re2-perl libjson-maybexs-perl libcpanel-json-xs-perl libdatetime-hires-perl
+        perl cpanminus build-essential \
+        libyaml-perl libre-engine-re2-perl libjson-maybexs-perl libcpanel-json-xs-perl \
+        libdatetime-hires-perl liburi-perl
+RUN DEBIAN_FRONTEND=noninteractive cpanm install --no-test Algorithm::LUHN
 RUN echo 'export PERLLIB=$JSU_RUNTIME/pl/lib' >> .env
 
 COPY . .
