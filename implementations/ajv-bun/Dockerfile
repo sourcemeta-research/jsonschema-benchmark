@@ -1,4 +1,4 @@
-FROM oven/bun:1.2.2
+FROM oven/bun:1.4-debian
 
 RUN apt-get update -qq \
     && apt-get install -qq --no-install-recommends \
