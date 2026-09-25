@@ -39,5 +39,5 @@ Benchmarking measures are performed in 3 phases:
 - a warmup loop of up to 1000 iterations bounded at 10 seconds over all values
 - a hot run over all values
 
-The time to load and parse all values is also reported.
+The time to parse all values, once read into memory, is also reported.
 Exit status is 0 if _all_ JSON values were validated, 1 otherwise.
