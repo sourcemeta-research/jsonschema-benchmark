@@ -54,6 +54,8 @@ jobs:
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
     strategy:
+      # One implementation failing must not cancel the others
+      fail-fast: false
       matrix: ${{ fromJson(needs.set-implementations.outputs.implementations) }}
     steps:
       - uses: actions/checkout@v4
