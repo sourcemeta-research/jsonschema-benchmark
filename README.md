@@ -56,6 +56,7 @@ If you believe an included implementation does not meet these criteria, please [
 
 First, each implementation must have a `Dockerfile` that copies in any necessary scripts and installs dependencies.
 There is also a `version.sh` script that must output the version of the implementation (often extracted from whatever dependency management tool is used).
+The container must print a single line of nanosecond measurements, `cold,warm,compile,parse` (the cold and warm validation runs, the schema compilation, and the parsing of all instances from memory, so that the parse figure excludes file I/O), to standard output and exit with a non-zero status if any instance fails to validate.
 Finally, appropriate targets must be added to the `Makefile` to build the Docker container and run the benchmark.
 We will gladly accept pull requests to add new implementations.
 
@@ -66,3 +67,6 @@ Note that while there is noise in the results across runs due to the use of shar
 It also worth noting that some implementations compile schemas ahead of time into a more efficient representation, while others interpret the entire schema at runtime.
 Currently we operate under the assumption that a schema changes infrequently enough that the compilation process is unlikely to be a performance bottleneck.
 As such, we currently only measure the time for validation and exclude any compilation time.
+The time to parse the instances is also excluded from the validation time and reported separately in the `parse_ns` column; every implementation reads the instance file into memory before the timed parse, so `parse_ns` excludes file I/O.
+Those four figures are all that an implementation reports and all that `report.csv` holds. The summary script (`.github/csv_md.py`) derives `cold_parse_ns` (`parse_ns` + `cold_ns`) and `warm_parse_ns` (`parse_ns` + `warm_ns`), the cost of parsing and validating every instance once from a cold start and at steady state, which is what a service validating each request pays, and `compile_cold_parse_ns` (`compile_ns` + `parse_ns` + `cold_ns`), the entire cold start path from an uncompiled schema to every instance validated once.
+All measurements are totals over every instance of a schema; "cold" is the first validation pass of the process after the schema is compiled, so it includes neither the compilation time nor process start-up.

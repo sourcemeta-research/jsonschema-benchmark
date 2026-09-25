@@ -81,6 +81,7 @@ public class JsonSchemaBenchmark
         Checker check = checker.get("");
 
         List<Object> jsons = new ArrayList();
+        double parse_delay = 0.0;
 
         // process file arguments as jsonl
         for (int idx = g.getOptind(); idx < args.length; idx++)
@@ -92,8 +93,11 @@ public class JsonSchemaBenchmark
                 Reader reader = fname.equals("-") ?
                     new InputStreamReader(System.in) : new FileReader(fname);
                 BufferedReader bf = new BufferedReader(reader);
-                for (String line: bf.lines().toList())
+                List<String> lines = bf.lines().toList();
+                long parse_start = System.nanoTime();
+                for (String line: lines)
                     jsons.add(json.fromJSON(line));
+                parse_delay += 0.001 * (System.nanoTime() - parse_start);
             }
             catch (Exception e) {
                 exit(4, "error on file " + fname + ": " + e);
@@ -142,7 +146,8 @@ public class JsonSchemaBenchmark
         String odelay = String.format("%.03f", overhead_delay);
         System.err.println("Java validation: pass=" + (values.length - errors) +
                            " fail=" + errors + " " + sdelay + " µs [" + odelay + " µs]");
-        System.out.println((long) (1000 * cold_run + 0.5) + "," + (long) (1000 * hot_run + 0.5));
+        System.out.println((long) (1000 * cold_run + 0.5) + "," + (long) (1000 * hot_run + 0.5) +
+                           "," + (long) (1000 * parse_delay + 0.5));
 
         // cleanup
         checker.free();

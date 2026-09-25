@@ -26,8 +26,11 @@ stopWatch.Stop();
 TimeSpan compileTs = stopWatch.Elapsed;
 
 // Read and parse all instances
-var lines = File.ReadLines(args[1]);
+var lines = File.ReadAllLines(args[1]);
+stopWatch.Restart();
 var docs = lines.Select(l => JsonNode.Parse(l)).ToArray();
+stopWatch.Stop();
+TimeSpan parseTs = stopWatch.Elapsed;
 
 // Loop and validate all instances
 stopWatch.Restart();
@@ -46,5 +49,5 @@ stopWatch.Stop();
 TimeSpan warmTs = stopWatch.Elapsed;
 
 // Output file time and exit
-Console.WriteLine(coldTs.TotalNanoseconds + "," + warmTs.TotalNanoseconds + "," + compileTs.TotalNanoseconds);
+Console.WriteLine(coldTs.TotalNanoseconds + "," + warmTs.TotalNanoseconds + "," + compileTs.TotalNanoseconds + "," + parseTs.TotalNanoseconds);
 Environment.Exit(valid ? 0 : 1);

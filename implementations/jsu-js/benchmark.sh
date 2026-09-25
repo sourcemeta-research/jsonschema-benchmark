@@ -60,5 +60,6 @@ msg "$SCHEMA compile time is $(( $compile_time / 1000 )) µs"
 
 # node does not support a path any more…
 cp "$workdir/schema.mjs" "$appdir/schema.js"
+# the benchmark prints cold,warm,parse and the report expects cold,warm,compile,parse
 times=$(node "$appdir/jsonschema_benchmark.js" "$INSTANCES")
-echo "$times,$compile_time"
+echo "${times%,*},$compile_time,${times##*,}"

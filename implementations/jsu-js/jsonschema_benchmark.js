@@ -31,10 +31,14 @@ export default async function main()
 
     // load files contents
     const values = []
+    let parse_delay = 0  // ms
     for (const fname of args.positionals)
     {
         const data = await fs.readFile(fname, {encoding: 'UTF-8'})
-        values.push(...data.split("\n").slice(0, -1).map(s => JSON.parse(s)))
+        const lines = data.split("\n").slice(0, -1)
+        const parse_start = performance.now()
+        values.push(...lines.map(s => JSON.parse(s)))
+        parse_delay += performance.now() - parse_start
     }
 
     // overhead estimation
@@ -78,7 +82,8 @@ export default async function main()
     console.error(`js validation: pass=${values.length - errors} fail=${errors}`,
                   `${(1000.0 * delay).toFixed(3)} µs [${(1000.0 * overhead_delay).toFixed(3)} µs]`)
 
-    console.log((1000000.0 * cold_delay).toFixed(0) + ',' + (1000000.0 * delay).toFixed(0))
+    console.log((1000000.0 * cold_delay).toFixed(0) + ',' + (1000000.0 * delay).toFixed(0) +
+                ',' + (1000000.0 * parse_delay).toFixed(0))
 
     check_model_free()
     process.exit(errors ? 1 : 0)

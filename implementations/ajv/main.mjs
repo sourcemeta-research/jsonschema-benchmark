@@ -1,5 +1,4 @@
 import fs from 'fs';
-import readline from 'readline';
 import { performance } from 'perf_hooks';
 
 const DRAFTS = {
@@ -19,13 +18,8 @@ function readJSONFile(filePath) {
   }
 }
 
-async function* readJSONLines(filePath) {
-  const rl = readline.createInterface({
-    input: fs.createReadStream(filePath),
-  });
-  for await (const line of rl) {
-    yield JSON.parse(line);
-  }
+function readLines(filePath) {
+  return fs.readFileSync(filePath, 'utf8').split('\n').filter((line) => line.length > 0);
 }
 
 function validateAll(instances, validator) {
@@ -49,10 +43,12 @@ async function validateSchema(schemaPath, instancePath) {
   const compileEnd = performance.now();
   const compileDurationNs = (compileEnd - compileStart) * 1e6;
 
-  const instances = [];
-  for await (const instance of readJSONLines(instancePath)) {
-    instances.push(instance);
-  }
+  const lines = readLines(instancePath);
+
+  const parseStart = performance.now();
+  const instances = lines.map((line) => JSON.parse(line));
+  const parseEnd = performance.now();
+  const parseDurationNs = (parseEnd - parseStart) * 1e6;
 
   const coldStartTime = performance.now();
   const failed = validateAll(instances, validate);
@@ -69,7 +65,7 @@ async function validateSchema(schemaPath, instancePath) {
   const warmEndTime = performance.now();
   const warmDurationNs = (warmEndTime - warmStartTime) * 1e6;
 
-  console.log(coldDurationNs.toFixed(0) + ',' + warmDurationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0));
+  console.log(coldDurationNs.toFixed(0) + ',' + warmDurationNs.toFixed(0) + ',' + compileDurationNs.toFixed(0) + ',' + parseDurationNs.toFixed(0));
 
   // Exit with non-zero status on validation failure
   if (failed) {

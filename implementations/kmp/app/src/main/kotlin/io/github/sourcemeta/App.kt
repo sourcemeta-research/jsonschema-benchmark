@@ -31,7 +31,10 @@ fun main(args: Array<String>) {
     val compileEnd = System.nanoTime()
 
     // Load all documents
-    val docs = File(args[1]).readLines().map { json.parseToJsonElement(it) }
+    val lines = File(args[1]).readLines()
+    val parseStart = System.nanoTime()
+    val docs = lines.map { json.parseToJsonElement(it) }
+    val parseEnd = System.nanoTime()
 
     val coldStart = System.nanoTime()
     val valid = validateAll(schema, docs)
@@ -51,5 +54,5 @@ fun main(args: Array<String>) {
     validateAll(schema, docs)
     val warmEnd = System.nanoTime()
 
-    println("${coldEnd - coldStart},${warmEnd - warmStart},${compileEnd - compileStart}")
+    println("${coldEnd - coldStart},${warmEnd - warmStart},${compileEnd - compileStart},${parseEnd - parseStart}")
 }

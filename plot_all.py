@@ -44,7 +44,7 @@ if __name__ == "__main__":
     data['compile_ms'] = data['compile_ns'] / 1e9
     data['cold_ms'] = data['cold_ns'] / 1e6
     data['warm_ms'] = data['warm_ns'] / 1e6
-    data.drop(['version', 'cold_ns', 'warm_ns', 'compile_ns', 'memory', 'exit_status'], axis=1, inplace=True)
+    data.drop(['version', 'cold_ns', 'warm_ns', 'compile_ns', 'parse_ns', 'memory', 'exit_status'], axis=1, inplace=True)
 
     # Keep only schemas that have not failed
     data = data[~data['name'].isin(exclude_schemas)]

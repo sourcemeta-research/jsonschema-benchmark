@@ -27,6 +27,7 @@ check_model_init();
 my $checker = check_model_mapper("");
 
 my $values = [];
+my $parse_delay = 0;  # µs
 
 for my $file (@ARGV)
 {
@@ -42,7 +43,10 @@ for my $file (@ARGV)
         $contents = do { local $/ = undef; <STDIN> };
     }
 
-    push @$values, (map { decode_json_nonref $_ } split /\n/, $contents);
+    my @lines = split /\n/, $contents;
+    my $parse_start = time;
+    push @$values, (map { decode_json_nonref $_ } @lines);
+    $parse_delay += 1_000_000 * (time - $parse_start);
 }
 
 # overhead estimation
@@ -87,8 +91,9 @@ my $pass = @$values - $errors;
 printf STDERR
     "pl validation: pass=$pass fail=$errors %.03f µs [%.03f µs]\n", $hot_delay, $overhead_delay;
 
-my ($ns_cold, $ns_warm) = (int($cold_delay * 1E3 + 0.5), int($hot_delay * 1E3 + 0.5));
-print "$ns_cold,$ns_warm\n";
+my ($ns_cold, $ns_warm, $ns_parse) =
+    (int($cold_delay * 1E3 + 0.5), int($hot_delay * 1E3 + 0.5), int($parse_delay * 1E3 + 0.5));
+print "$ns_cold,$ns_warm,$ns_parse\n";
 
 check_model_free();
 

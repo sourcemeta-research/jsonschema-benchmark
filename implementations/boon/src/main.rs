@@ -1,4 +1,4 @@
-use std::{error::Error, fs::File, io::{BufReader, BufRead}, time::Instant};
+use std::{error::Error, time::Instant};
 use boon::{Compiler, Schemas, SchemaIndex};
 use serde_json::Value;
 use std::env;
@@ -23,8 +23,7 @@ fn main() -> Result<(), Box<dyn Error>> {
   let instance_file = std::fs::canonicalize(example_folder.to_owned() + "/instances.jsonl")?;
 
   // Read the instance file
-  let file = File::open(&instance_file)?;
-  let reader = BufReader::new(file);
+  let contents = std::fs::read_to_string(&instance_file)?;
 
   // Compile the schema
   let mut schemas = Schemas::new();
@@ -34,13 +33,14 @@ fn main() -> Result<(), Box<dyn Error>> {
   let sch_index = compiler.compile(schema_file.to_str().ok_or("NULL")?, &mut schemas)?;
   let compile_duration = compile_start.elapsed().as_nanos();
 
-  // Serialize instance lines
+  // Parse instance lines
+  let parse_start = Instant::now();
   let mut serde_lines = std::vec::Vec::new();
-  for line in reader.lines() {
-      let line = line?;
-      let instance: Value = serde_json::from_str(&line)?;
+  for line in contents.lines() {
+      let instance: Value = serde_json::from_str(line)?;
       serde_lines.push(instance);
   }
+  let parse_duration = parse_start.elapsed().as_nanos();
 
   // Validate the instances
   let cold_start = Instant::now();
@@ -57,7 +57,7 @@ fn main() -> Result<(), Box<dyn Error>> {
   validate_all(&schemas, sch_index, &serde_lines);
   let warm_duration = warm_start.elapsed().as_nanos();
 
-  println!("{:?},{:?},{:?}", cold_duration, warm_duration, compile_duration);
+  println!("{:?},{:?},{:?},{:?}", cold_duration, warm_duration, compile_duration, parse_duration);
 
   Ok(())
 }

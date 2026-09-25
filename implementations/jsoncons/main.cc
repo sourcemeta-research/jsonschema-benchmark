@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <vector>
 
 #define WARMUP_ITERATIONS 100L
@@ -31,12 +32,20 @@ int validate(const std::filesystem::path &example) {
       compile_end - compile_start)};
 
   std::ifstream input_instances((example / "instances.jsonl").string());
-  std::vector<json> instances;
+  std::vector<std::string> lines;
   std::string line;
   while (std::getline(input_instances, line)) {
-    const auto instance = json::parse(line);
-    instances.push_back(instance);
+    lines.push_back(line);
   }
+
+  const auto parse_start{std::chrono::high_resolution_clock::now()};
+  std::vector<json> instances;
+  for (const auto &text : lines) {
+    instances.push_back(json::parse(text));
+  }
+  const auto parse_end{std::chrono::high_resolution_clock::now()};
+  const auto parse_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      parse_end - parse_start)};
 
   const auto cold_start{std::chrono::high_resolution_clock::now()};
   validate_all(compiled, instances);
@@ -55,7 +64,7 @@ int validate(const std::filesystem::path &example) {
   const auto warm_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       warm_end - warm_start)};
 
-  std::cout << cold_duration.count() << "," << warm_duration.count() << "," << compile_duration.count() << "\n";
+  std::cout << cold_duration.count() << "," << warm_duration.count() << "," << compile_duration.count() << "," << parse_duration.count() << "\n";
 
   return EXIT_SUCCESS;
 }

@@ -42,8 +42,10 @@ public class App {
 
     // Load all documents
     ObjectMapper mapper = new ObjectMapper();
+    List<String> lines = Files.readAllLines(Paths.get(args[1]));
+    Long parseStart = System.nanoTime();
     List<JsonNode> docs =
-        Files.readAllLines(Paths.get(args[1])).stream()
+        lines.stream()
             .map(
                 l -> {
                   try {
@@ -53,6 +55,7 @@ public class App {
                   }
                 })
             .collect(Collectors.toList());
+    Long parseEnd = System.nanoTime();
 
     Long coldStart = System.nanoTime();
     boolean valid = validateAll(schema, docs);
@@ -73,6 +76,12 @@ public class App {
     Long warmEnd = System.nanoTime();
 
     System.out.println(
-        (coldEnd - coldStart) + "," + (warmEnd - warmStart) + "," + (compileEnd - compileStart));
+        (coldEnd - coldStart)
+            + ","
+            + (warmEnd - warmStart)
+            + ","
+            + (compileEnd - compileStart)
+            + ","
+            + (parseEnd - parseStart));
   }
 }

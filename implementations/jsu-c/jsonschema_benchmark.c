@@ -78,7 +78,8 @@ int main(int argc, char* argv[])
     int nvalues = 0;
     json_t **values = (json_t **) malloc(sizeof(json_t *) * size);
 
-    // load all as jsonl
+    // load all as jsonl: read each file into memory first, then time the parsing alone
+    double parse_delay = 0.0;
     for (int i = optind; i < argc; i++)
     {
         FILE *input = fopen(argv[i], "r");
@@ -89,18 +90,44 @@ int main(int argc, char* argv[])
             exit(3);
         }
 
-        json_error_t error;
-        json_t *value;
-        while ((value = json_loadf(input,
-                                   JSON_DISABLE_EOF_CHECK|JSON_DECODE_ANY|JSON_ALLOW_NUL,
-                                   &error)))
+        size_t capacity = 1 << 20, length = 0, nread;
+        char *contents = (char *) malloc(capacity);
+        while ((nread = fread(contents + length, 1, capacity - length, input)) > 0)
         {
-            if (nvalues == size) {
-                size *= 2;
-                values = (json_t **) realloc(values, sizeof(json_t *) * size);
+            length += nread;
+            if (length == capacity)
+            {
+                capacity *= 2;
+                contents = (char *) realloc(contents, capacity);
             }
-            values[nvalues++] = value;
         }
+        fclose(input);
+
+        double parse_start = now();
+        for (size_t start = 0; start < length; )
+        {
+            const char *newline = memchr(contents + start, '\n', length - start);
+            size_t end = newline ? (size_t) (newline - contents) : length;
+            if (end > start)
+            {
+                json_error_t error;
+                json_t *value = json_loadb(contents + start, end - start,
+                                           JSON_DECODE_ANY|JSON_ALLOW_NUL, &error);
+                if (value == NULL)
+                {
+                    fprintf(stderr, "%s: ERROR while parsing: %s\n", argv[i], error.text);
+                    exit(3);
+                }
+                if (nvalues == size) {
+                    size *= 2;
+                    values = (json_t **) realloc(values, sizeof(json_t *) * size);
+                }
+                values[nvalues++] = value;
+            }
+            start = end + 1;
+        }
+        parse_delay += now() - parse_start;
+        free(contents);
     }
 
     // overhead estimation
@@ -137,8 +164,9 @@ int main(int argc, char* argv[])
     fprintf(stderr,
             "C validation: pass=%d fail=%d %.03f µs [%.03f µs]\n",
             npass, nfail, delay, overhead_delay);
-    fprintf(stdout, "%lld,%lld\n",
-            (long long int) (1000 * cold_delay + 0.5), (long long int) (1000 * delay + 0.5));
+    fprintf(stdout, "%lld,%lld,%lld\n",
+            (long long int) (1000 * cold_delay + 0.5), (long long int) (1000 * delay + 0.5),
+            (long long int) (1000 * parse_delay + 0.5));
 
     check_model_free();
 

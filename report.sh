@@ -9,7 +9,7 @@ then
   exit 1
 fi
 
-echo "implementation,version,name,cold_ns,warm_ns,compile_ns,memory,exit_status"
+echo "implementation,version,name,cold_ns,warm_ns,compile_ns,parse_ns,memory,exit_status"
 
 for argument in "$@"
 do
@@ -18,7 +18,7 @@ do
   VERSION="$("./implementations/$IMPLEMENTATION/version.sh")"
   while read OUTPUT; do
     # filter out 0 measures as errors
-    [[ $OUTPUT == 0,0,*,*,0 ]] && OUTPUT=${OUTPUT%,0},1
+    [[ $OUTPUT == 0,0,*,*,*,0 ]] && OUTPUT=${OUTPUT%,0},1
     echo "$IMPLEMENTATION,$VERSION,$EXAMPLE,$OUTPUT"
   done < "$argument"
 done
