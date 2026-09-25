@@ -324,7 +324,6 @@ implementations/corvus/.dockertimestamp: \
 	implementations/corvus/memory-wrapper.sh \
 	implementations/corvus/bench.csproj \
 	implementations/corvus/Program.cs \
-	implementations/corvus/generate-and-run.sh \
 	implementations/corvus/Dockerfile
 	docker build -t jsonschema-benchmark/corvus implementations/corvus
 	touch $@
