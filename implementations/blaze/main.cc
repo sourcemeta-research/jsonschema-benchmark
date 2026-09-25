@@ -9,6 +9,7 @@
 #include <chrono>
 #include <filesystem>
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 #define WARMUP_ITERATIONS 100L
@@ -29,11 +30,19 @@ bool validate_all(auto &evaluator, const auto &instances, const auto &schema_tem
 int validate(const std::filesystem::path &example) {
   const auto schema{
       sourcemeta::core::read_json(example / "schema-noformat.json")};
-  auto stream{sourcemeta::core::read_file(example / "instances.jsonl")};
+  // Read the instances into memory first so that parsing is timed without I/O
+  std::ostringstream contents;
+  contents << sourcemeta::core::read_file(example / "instances.jsonl").rdbuf();
+  std::istringstream stream{contents.str()};
+
+  const auto parse_start{std::chrono::high_resolution_clock::now()};
   std::vector<sourcemeta::core::JSON> instances;
   for (const auto &instance : sourcemeta::core::JSONL{stream}) {
     instances.push_back(instance);
   }
+  const auto parse_end{std::chrono::high_resolution_clock::now()};
+  const auto parse_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
+      parse_end - parse_start)};
 
   const auto compile_start{std::chrono::high_resolution_clock::now()};
   const auto schema_template{sourcemeta::blaze::compile(
@@ -67,7 +76,7 @@ int validate(const std::filesystem::path &example) {
   const auto warm_duration{std::chrono::duration_cast<std::chrono::nanoseconds>(
       warm_end - warm_start)};
 
-  std::cout << cold_duration.count() << "," << warm_duration.count() << "," << compile_duration.count() << "\n";
+  std::cout << cold_duration.count() << "," << warm_duration.count() << "," << compile_duration.count() << "," << parse_duration.count() << "\n";
 
   return EXIT_SUCCESS;
 }

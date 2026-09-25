@@ -1,14 +1,13 @@
 package main
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
-	"io"
 	"log"
 	"math"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/santhosh-tekuri/jsonschema/v6"
@@ -55,28 +54,27 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Open the JSONL file
-	f, err := os.Open(instanceFile)
+	// Read the JSONL file
+	data, err := os.ReadFile(instanceFile)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer f.Close()
+	lines := strings.Split(string(data), "\n")
 
 	// Decode and store JSON objects
+	parseStart := time.Now()
 	var instances []interface{}
-	reader := bufio.NewReader(f)
-	decoder := json.NewDecoder(reader)
-
-	for {
+	for _, line := range lines {
+		if strings.TrimSpace(line) == "" {
+			continue
+		}
 		var inst interface{}
-		if err := decoder.Decode(&inst); err != nil {
-			if err == io.EOF {
-				break
-			}
+		if err := json.Unmarshal([]byte(line), &inst); err != nil {
 			log.Fatalf("Error decoding JSON: %v", err)
 		}
 		instances = append(instances, inst)
 	}
+	parseDuration := time.Since(parseStart)
 
 	// Cold start
 	coldStart := time.Now()
@@ -97,5 +95,5 @@ func main() {
 	warmDuration := time.Since(warmStart)
 
 	// Print timing
-	fmt.Printf("%d,%d,%d\n", coldDuration.Nanoseconds(), warmDuration.Nanoseconds(), compile_duration.Nanoseconds())
+	fmt.Printf("%d,%d,%d,%d\n", coldDuration.Nanoseconds(), warmDuration.Nanoseconds(), compile_duration.Nanoseconds(), parseDuration.Nanoseconds())
 }

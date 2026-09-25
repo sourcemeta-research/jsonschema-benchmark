@@ -14,10 +14,12 @@ compile_end = System.monotonic_time(:nanosecond)
 compile_duration = compile_end - compile_start
 
 # Load instances
-stream = File.stream!(Path.join(schema_path, "instances.jsonl"), [:read, :utf8])
-instances = Enum.reduce stream, [], fn(line, listing) ->
-  [Poison.Parser.parse!(line, %{}) | listing]
-end
+lines = String.split(File.read!(Path.join(schema_path, "instances.jsonl")), "\n", trim: true)
+
+parse_start = System.monotonic_time(:nanosecond)
+instances = Enum.map(lines, fn(line) -> Poison.Parser.parse!(line, %{}) end)
+parse_end = System.monotonic_time(:nanosecond)
+parse_duration = parse_end - parse_start
 
 # Validate the data
 cold_start = System.monotonic_time(:nanosecond)
@@ -42,4 +44,4 @@ end)
 warm_end = System.monotonic_time(:nanosecond)
 warm_duration = warm_end - warm_start
 
-IO.puts(Integer.to_string(cold_duration) <> "," <> Integer.to_string(warm_duration) <> "," <> Integer.to_string(compile_duration))
+IO.puts(Integer.to_string(cold_duration) <> "," <> Integer.to_string(warm_duration) <> "," <> Integer.to_string(compile_duration) <> "," <> Integer.to_string(parse_duration))

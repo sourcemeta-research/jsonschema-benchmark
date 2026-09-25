@@ -56,6 +56,7 @@ If you believe an included implementation does not meet these criteria, please [
 
 First, each implementation must have a `Dockerfile` that copies in any necessary scripts and installs dependencies.
 There is also a `version.sh` script that must output the version of the implementation (often extracted from whatever dependency management tool is used).
+The container must print a single line of nanosecond measurements, `cold,warm,compile,parse` (the cold and warm validation runs, the schema compilation, and the parsing of all instances), to standard output and exit with a non-zero status if any instance fails to validate.
 Finally, appropriate targets must be added to the `Makefile` to build the Docker container and run the benchmark.
 We will gladly accept pull requests to add new implementations.
 
@@ -66,3 +67,4 @@ Note that while there is noise in the results across runs due to the use of shar
 It also worth noting that some implementations compile schemas ahead of time into a more efficient representation, while others interpret the entire schema at runtime.
 Currently we operate under the assumption that a schema changes infrequently enough that the compilation process is unlikely to be a performance bottleneck.
 As such, we currently only measure the time for validation and exclude any compilation time.
+The time to parse the instances is also excluded from the validation time and reported separately in the `parse_ns` column.

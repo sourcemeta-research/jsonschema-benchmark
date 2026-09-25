@@ -120,7 +120,7 @@ jobs:
       - name: Concatenate output
         run: |
           mkdir dist
-          echo "implementation,version,name,cold_ns,warm_ns,compile_ns,memory,exit_status" > dist/report.csv
+          echo "implementation,version,name,cold_ns,warm_ns,compile_ns,parse_ns,memory,exit_status" > dist/report.csv
           tail -q -n +2 ./report-*/report.csv >> dist/report.csv
       - run: cat dist/report.csv
       - uses: actions/setup-python@v5

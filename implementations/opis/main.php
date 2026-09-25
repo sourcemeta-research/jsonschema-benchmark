@@ -34,10 +34,15 @@ $compile_end = hrtime(true);
 $compile_duration = $compile_end - $compile_start;
 
 // Load data
+$lines = file($schema_path . DIRECTORY_SEPARATOR . 'instances.jsonl');
+
+$parse_start = hrtime(true);
 $instances = [];
-foreach (file($schema_path . DIRECTORY_SEPARATOR . 'instances.jsonl') as $line) {
+foreach ($lines as $line) {
     $instances[] = json_decode($line);
 }
+$parse_end = hrtime(true);
+$parse_duration = $parse_end - $parse_start;
 
 $cold_start = hrtime(true);
 $result = validate_all($validator, $schema_id, $instances);
@@ -57,4 +62,4 @@ validate_all($validator, $schema_id, $instances);
 $warm_end = hrtime(true);
 $warm_duration = $warm_end - $warm_start;
 
-echo $cold_duration . ',' . $warm_duration . ',' . $compile_duration . "\n";
+echo $cold_duration . ',' . $warm_duration . ',' . $compile_duration . ',' . $parse_duration . "\n";

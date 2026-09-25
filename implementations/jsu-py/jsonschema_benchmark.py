@@ -41,12 +41,16 @@ def jsonschema_benchmark():
 
     # load all files into values
     values = []
+    parse_delay = 0.0  # µs
     for fn in args.values:
         log.debug(f"considering file {fn}")
 
         # load jsonl data
         with open(fn) as f:
-            values += [json.loads(r) for r in f]
+            lines = f.readlines()
+        parse_start = time.clock_gettime(clock)
+        values += [json.loads(r) for r in lines]
+        parse_delay += 1_000_000.0 * (time.clock_gettime(clock) - parse_start)
 
     # overhead estimation in µs
     count = 0
@@ -81,8 +85,8 @@ def jsonschema_benchmark():
     print(f"py validation: pass={len(values) - errors} fail={errors} "
           f"{delay:.03f} µs [{overhead_delay:.03f} µs]", file=sys.stderr)
 
-    # cold-run-ns,warm-run-ns
-    print(f"{int(1000 * cold_delay + 0.5)},{int(1000 * delay + 0.5)}")
+    # cold-run-ns,warm-run-ns,parse-ns
+    print(f"{int(1000 * cold_delay + 0.5)},{int(1000 * delay + 0.5)},{int(1000 * parse_delay + 0.5)}")
 
     schema.check_model_free()
     sys.exit(1 if errors else 0)

@@ -20,13 +20,14 @@ if __name__ == "__main__":
             row["Compile"] = float(row["compile_ns"]) / 1e6 / 1000
             row["Cold"] = float(row["cold_ns"]) / 1e6
             row["Warm"] = float(row["warm_ns"]) / 1e6
+            row["Parse"] = float(row["parse_ns"]) / 1e6
             examples[row["name"]].append(row)
             status[(row["implementation"], row['name'])] += int(row["exit_status"])
 
     for name, data in examples.items():
         data = pd.DataFrame(data)
         data = data.melt(
-            id_vars=["implementation"], value_vars=("Compile", "Cold", "Warm")
+            id_vars=["implementation"], value_vars=("Compile", "Cold", "Warm", "Parse")
         )
 
         # Make rows with non-zero exit status invalid

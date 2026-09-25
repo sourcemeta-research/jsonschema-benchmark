@@ -21,9 +21,13 @@ schemer = JSONSchemer.schema(schema)
 compile_end = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 
 # Read all instances into an array
-instances = File.open(File.join(path, "instances.jsonl")).map do |line|
+lines = File.readlines(File.join(path, "instances.jsonl"))
+
+parse_start = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
+instances = lines.map do |line|
   JSON.parse(line)
 end
+parse_end = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 
 # Run the validation
 cold_start = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
@@ -40,4 +44,4 @@ warm_start = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 validate_all(instances, schemer)
 warm_end = Process.clock_gettime(Process::CLOCK_REALTIME, :nanosecond)
 
-print (cold_end - cold_start), ",", (warm_end - warm_start), ",", (compile_end - compile_start), "\n"
+print (cold_end - cold_start), ",", (warm_end - warm_start), ",", (compile_end - compile_start), ",", (parse_end - parse_start), "\n"

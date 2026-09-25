@@ -78,7 +78,8 @@ int main(int argc, char* argv[])
     int nvalues = 0;
     json_t **values = (json_t **) malloc(sizeof(json_t *) * size);
 
-    // load all as jsonl
+    // load all as jsonl (reading and parsing from a buffered file)
+    double parse_start = now();
     for (int i = optind; i < argc; i++)
     {
         FILE *input = fopen(argv[i], "r");
@@ -102,6 +103,7 @@ int main(int argc, char* argv[])
             values[nvalues++] = value;
         }
     }
+    double parse_delay = now() - parse_start;
 
     // overhead estimation
     int count = 0;
@@ -137,8 +139,9 @@ int main(int argc, char* argv[])
     fprintf(stderr,
             "C validation: pass=%d fail=%d %.03f µs [%.03f µs]\n",
             npass, nfail, delay, overhead_delay);
-    fprintf(stdout, "%lld,%lld\n",
-            (long long int) (1000 * cold_delay + 0.5), (long long int) (1000 * delay + 0.5));
+    fprintf(stdout, "%lld,%lld,%lld\n",
+            (long long int) (1000 * cold_delay + 0.5), (long long int) (1000 * delay + 0.5),
+            (long long int) (1000 * parse_delay + 0.5));
 
     check_model_free();
 

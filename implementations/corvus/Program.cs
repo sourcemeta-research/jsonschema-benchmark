@@ -4,7 +4,7 @@ using Corvus.Text.Json.RuntimeEvaluator;
 
 // Mirrors the Blaze benchmark (implementations/blaze/main.cc): parse every instance
 // up front, compile the schema once, validate all instances cold, warm up, then
-// validate all instances once more warm. Prints cold,warm,compile in nanoseconds.
+// validate all instances once more warm. Prints cold,warm,compile,parse in nanoseconds.
 const int WarmupIterations = 100;
 const long MaxWarmupTime = 10_000_000_000;
 
@@ -49,11 +49,14 @@ static int Validate(string schemaPath, string instancesPath)
     ReadOnlyMemory<byte>[] lines = ReadLines(File.ReadAllBytes(instancesPath));
 
     // Parse every instance (the instances are UTF-8 JSON, one per line)
+    long parseStart = Stopwatch.GetTimestamp();
     var instances = new ParsedJsonDocument<JsonElement>[lines.Length];
     for (int i = 0; i < lines.Length; i++)
     {
         instances[i] = ParsedJsonDocument<JsonElement>.Parse(lines[i]);
     }
+
+    long parseEnd = Stopwatch.GetTimestamp();
 
     // Compile the schema into the runtime evaluator's program
     var options = new JsonSchemaEvaluatorOptions
@@ -85,7 +88,7 @@ static int Validate(string schemaPath, string instancesPath)
     ValidateAll(evaluator, instances);
     long warmEnd = Stopwatch.GetTimestamp();
 
-    Console.WriteLine($"{cold},{Nanoseconds(warmStart, warmEnd)},{Nanoseconds(compileStart, compileEnd)}");
+    Console.WriteLine($"{cold},{Nanoseconds(warmStart, warmEnd)},{Nanoseconds(compileStart, compileEnd)},{Nanoseconds(parseStart, parseEnd)}");
 
     foreach (ParsedJsonDocument<JsonElement> instance in instances)
     {
