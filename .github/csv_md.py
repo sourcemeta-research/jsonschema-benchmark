@@ -1,5 +1,3 @@
-from collections import defaultdict
-import csv
 import sys
 
 import pandas as pd
@@ -26,97 +24,41 @@ data = (
 data.reset_index(inplace=True)
 data.set_index(["implementation", "name"], inplace=True)
 
-# Get the fastest implementations
-min_cold_impls = set()
-for schema, impl in data[data["exit_status"] == 0].groupby("name")["cold_ns"].idxmin():
-    min_cold_impls.add((schema, impl))
-min_warm_impls = set()
-for schema, impl in data[data["exit_status"] == 0].groupby("name")["warm_ns"].idxmin():
-    min_warm_impls.add((schema, impl))
-min_compile_impls = set()
-for schema, impl in data[data["exit_status"] == 0].groupby("name")["compile_ns"].idxmin():
-    min_compile_impls.add((schema, impl))
-min_memory_impls = set()
-for schema, impl in data[data["exit_status"] == 0].groupby("name")["memory"].idxmin():
-    min_memory_impls.add((schema, impl))
-min_parse_impls = set()
-for schema, impl in data[data["exit_status"] == 0].groupby("name")["parse_ns"].idxmin():
-    min_parse_impls.add((schema, impl))
+# The cost of parsing and validating each instance once, cold and warm,
+# and the entire cold start path: compile the schema, parse and validate
+data["cold_parse_ns"] = data["cold_ns"] + data["parse_ns"]
+data["warm_parse_ns"] = data["warm_ns"] + data["parse_ns"]
+data["compile_cold_parse_ns"] = data["compile_ns"] + data["cold_ns"] + data["parse_ns"]
 
-# Get the next fastest implementation
-next_fastest_cold = (
-    data[data["exit_status"] == 0].groupby("name").agg({"cold_ns": get_second})
-)
-next_fastest_warm = (
-    data[data["exit_status"] == 0].groupby("name").agg({"warm_ns": get_second})
-)
-next_fastest_compile = (
-    data[data["exit_status"] == 0].groupby("name").agg({"compile_ns": get_second})
-)
-next_fastest_memory = (
-    data[data["exit_status"] == 0].groupby("name").agg({"memory": get_second})
-)
-next_fastest_parse = (
-    data[data["exit_status"] == 0].groupby("name").agg({"parse_ns": get_second})
-)
+# The measures for which the fastest implementation is marked
+MEASURES = ["cold_ns", "warm_ns", "compile_ns", "parse_ns", "cold_parse_ns", "warm_parse_ns", "compile_cold_parse_ns", "memory"]
+
+succeeded = data[data["exit_status"] == 0]
+
+# Get the fastest implementation for each measure and schema,
+# along with the next fastest one
+fastest = {}
+next_fastest = {}
+for measure in MEASURES:
+    fastest[measure] = set(succeeded.groupby("name")[measure].idxmin())
+    next_fastest[measure] = succeeded.groupby("name").agg({measure: get_second})
 
 # Label each implementation which was the fastest
-data = data.astype({"cold_ns": "object", "warm_ns": "object", "compile_ns": "object", "parse_ns": "object", "memory": "object"})
-new_index = data.index.to_list()
-for i, (impl, schema) in enumerate(new_index):
-    if (impl, schema) in min_cold_impls:
+data = data.astype({measure: "object" for measure in MEASURES})
+for impl, schema in data.index.to_list():
+    for measure in MEASURES:
+        if (impl, schema) not in fastest[measure]:
+            continue
+
         suffix = ":white_check_mark:"
-        fast_time = data.at[(impl, schema), "cold_ns"]
-        next_time = next_fastest_cold.loc[schema]["cold_ns"]
+        fast_value = data.at[(impl, schema), measure]
+        next_value = next_fastest[measure].loc[schema][measure]
 
         # If this implementation is 20% faster than the next, add a trophy
-        if fast_time < next_time * 0.8:
+        if fast_value < next_value * 0.8:
             suffix += " :trophy:"
 
-        data.at[(impl, schema), "cold_ns"] = f"{fast_time} {suffix}"
+        data.at[(impl, schema), measure] = f"{fast_value} {suffix}"
 
-    if (impl, schema) in min_warm_impls:
-        suffix = ":white_check_mark:"
-        fast_time = data.at[(impl, schema), "warm_ns"]
-        next_time = next_fastest_warm.loc[schema]["warm_ns"]
-
-        # If this implementation is 20% faster than the next, add a trophy
-        if fast_time < next_time * 0.8:
-            suffix += " :trophy:"
-
-        data.at[(impl, schema), "warm_ns"] = f"{fast_time} {suffix}"
-
-    if (impl, schema) in min_compile_impls:
-        suffix = ":white_check_mark:"
-        fast_time = data.at[(impl, schema), "compile_ns"]
-        next_time = next_fastest_compile.loc[schema]["compile_ns"]
-
-        # If this implementation is 20% faster than the next, add a trophy
-        if fast_time < next_time * 0.8:
-            suffix += " :trophy:"
-
-        data.at[(impl, schema), "compile_ns"] = f"{fast_time} {suffix}"
-
-    if (impl, schema) in min_memory_impls:
-        suffix = ":white_check_mark:"
-        fast_mem = data.at[(impl, schema), "memory"]
-        next_mem = next_fastest_memory.loc[schema]["memory"]
-
-        # If this implementation uses 20% less memory than the next, add a trophy
-        if fast_mem < next_mem * 0.8:
-            suffix += " :trophy:"
-
-        data.at[(impl, schema), "memory"] = f"{fast_mem} {suffix}"
-
-    if (impl, schema) in min_parse_impls:
-        suffix = ":white_check_mark:"
-        fast_time = data.at[(impl, schema), "parse_ns"]
-        next_time = next_fastest_parse.loc[schema]["parse_ns"]
-
-        # If this implementation is 20% faster than the next, add a trophy
-        if fast_time < next_time * 0.8:
-            suffix += " :trophy:"
-
-        data.at[(impl, schema), "parse_ns"] = f"{fast_time} {suffix}"
-
-data.reset_index().to_markdown(sys.stdout, index=False)
+columns = ["version", "cold_ns", "warm_ns", "compile_ns", "parse_ns", "cold_parse_ns", "warm_parse_ns", "compile_cold_parse_ns", "memory", "exit_status"]
+data.reset_index()[["implementation", "name"] + columns].to_markdown(sys.stdout, index=False)

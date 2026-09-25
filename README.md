@@ -68,3 +68,5 @@ It also worth noting that some implementations compile schemas ahead of time int
 Currently we operate under the assumption that a schema changes infrequently enough that the compilation process is unlikely to be a performance bottleneck.
 As such, we currently only measure the time for validation and exclude any compilation time.
 The time to parse the instances is also excluded from the validation time and reported separately in the `parse_ns` column.
+The report summary also derives `cold_parse_ns` (`parse_ns` + `cold_ns`) and `warm_parse_ns` (`parse_ns` + `warm_ns`), the cost of parsing and validating every instance once from a cold start and at steady state, which is what a service validating each request pays, and `compile_cold_parse_ns` (`compile_ns` + `parse_ns` + `cold_ns`), the entire cold start path from an uncompiled schema to every instance validated once.
+All measurements are totals over every instance of a schema; "cold" is the first validation pass of the process after the schema is compiled, so it includes neither the compilation time nor process start-up.
