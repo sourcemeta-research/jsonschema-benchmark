@@ -54,6 +54,8 @@ jobs:
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
     strategy:
+      # One implementation failing must not cancel the others
+      fail-fast: false
       matrix: ${{ fromJson(needs.set-implementations.outputs.implementations) }}
     steps:
       - uses: actions/checkout@v4
@@ -147,8 +149,11 @@ jobs:
           uv run python plot.py
           uv run python plot_compile.py
           uv run python plot_memory.py
+      # Pull requests from forks get neither the S3 variables nor the secrets,
+      # so the plots are only uploaded and linked when the settings are present
       - name: Upload plots
         id: upload
+        if: ${{ vars.S3_BASE_URL != '' }}
         env:
           AWS_ENDPOINT_URL: https://${{ vars.S3_BASE_URL }}
           AWS_ACCESS_KEY_ID: ${{ secrets.S3_KEY_ID }}
@@ -157,10 +162,13 @@ jobs:
           aws s3 cp dist/results/plots s3://${{ vars.S3_BUCKET_NAME }}/${{ github.sha }}/dist/results/plots/ --recursive
           echo b2_url_prefix="https://${{ vars.S3_BUCKET_NAME }}.${{ vars.S3_BASE_URL }}/${{ github.sha }}/" >> "$GITHUB_OUTPUT"
       - name: Add plots to summary
+        if: ${{ steps.upload.outcome == 'success' }}
         run: python .github/plot_markdown.py dist/results/plots/schemas ${{ steps.upload.outputs.b2_url_prefix }} >> $GITHUB_STEP_SUMMARY
       - name: Add compile plot to summary
+        if: ${{ steps.upload.outcome == 'success' }}
         run: python .github/plot_markdown.py dist/results/plots/compile.png ${{ steps.upload.outputs.b2_url_prefix }} "Compile time" >> $GITHUB_STEP_SUMMARY
       - name: Add memory plot to summary
+        if: ${{ steps.upload.outcome == 'success' }}
         run: python .github/plot_markdown.py dist/results/plots/memory.png ${{ steps.upload.outputs.b2_url_prefix }} "Memory usage" >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()

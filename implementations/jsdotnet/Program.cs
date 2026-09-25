@@ -30,7 +30,7 @@ var lines = File.ReadLines(args[1]);
 var docs = lines.Select(l => JsonNode.Parse(l)).ToArray();
 
 // Loop and validate all instances
-stopWatch.Start();
+stopWatch.Restart();
 var valid = ValidateAll(schema, docs);
 stopWatch.Stop();
 TimeSpan coldTs = stopWatch.Elapsed;
