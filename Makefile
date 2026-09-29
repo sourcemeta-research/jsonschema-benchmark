@@ -335,6 +335,23 @@ dist/results/corvus/%: \
 	| dist/results/corvus
 	@$(call docker_run,corvus,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# CORVUS (TypeScript)
+
+implementations/corvus-ts/.dockertimestamp: \
+	implementations/corvus-ts/memory-wrapper.sh \
+	implementations/corvus-ts/main.mjs \
+	implementations/corvus-ts/package.json \
+	implementations/corvus-ts/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-ts implementations/corvus-ts
+	touch $@
+
+dist/results/corvus-ts/%: \
+	implementations/corvus-ts/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-ts
+	@$(call docker_run,corvus-ts,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # SCHEMASAFE
 
 implementations/schemasafe/.dockertimestamp: \
