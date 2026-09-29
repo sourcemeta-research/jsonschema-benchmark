@@ -1,0 +1,59 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"closeComment": null}
+{"daysUntilClose": null}
+{"daysUntilStale": null}
+{"exemptAssignees": null}
+{"exemptLabels": null}
+{"exemptLabels": [null]}
+{"exemptProjects": null}
+{"issues": null}
+{"issues": {"closeComment": null}}
+{"issues": {"daysUntilClose": null}}
+{"issues": {"daysUntilStale": null}}
+{"issues": {"exemptAssignees": null}}
+{"issues": {"exemptLabels": null}}
+{"issues": {"exemptLabels": [null]}}
+{"issues": {"exemptProjects": null}}
+{"issues": {"limitPerRun": 31.0}}
+{"issues": {"limitPerRun": 0.0}}
+{"issues": {"limitPerRun": null}}
+{"issues": {"markComment": null}}
+{"issues": {"only": null}}
+{"issues": {"onlyLabels": null}}
+{"issues": {"onlyLabels": [null]}}
+{"issues": {"staleLabel": null}}
+{"issues": {"unmarkComment": null}}
+{"limitPerRun": 31.0}
+{"limitPerRun": 0.0}
+{"limitPerRun": null}
+{"markComment": null}
+{"only": null}
+{"onlyLabels": null}
+{"onlyLabels": [null]}
+{"pulls": null}
+{"pulls": {"closeComment": null}}
+{"pulls": {"daysUntilClose": null}}
+{"pulls": {"daysUntilStale": null}}
+{"pulls": {"exemptAssignees": null}}
+{"pulls": {"exemptLabels": null}}
+{"pulls": {"exemptLabels": [null]}}
+{"pulls": {"exemptProjects": null}}
+{"pulls": {"limitPerRun": 31.0}}
+{"pulls": {"limitPerRun": 0.0}}
+{"pulls": {"limitPerRun": null}}
+{"pulls": {"markComment": null}}
+{"pulls": {"only": null}}
+{"pulls": {"onlyLabels": null}}
+{"pulls": {"onlyLabels": [null]}}
+{"pulls": {"staleLabel": null}}
+{"pulls": {"unmarkComment": null}}
+{"staleLabel": null}
+{"unmarkComment": null}

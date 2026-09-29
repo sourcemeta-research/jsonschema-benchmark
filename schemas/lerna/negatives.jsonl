@@ -1,0 +1,38 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"command": null}
+{"command": {"bootstrap": null}}
+{"command": {"bootstrap": {"ignore": null}}}
+{"command": {"bootstrap": {"ignore": [null]}}}
+{"command": {"bootstrap": {"npmClientArgs": null}}}
+{"command": {"bootstrap": {"npmClientArgs": [null]}}}
+{"command": {"init": null}}
+{"command": {"init": {"exact": null}}}
+{"command": {"publish": null}}
+{"command": {"publish": {"ignoreChanges": null}}}
+{"command": {"publish": {"ignoreChanges": [null]}}}
+{"command": {"publish": {"message": null}}}
+{"command": {"run": null}}
+{"command": {"run": {"npmClient": null}}}
+{"command": {"version": null}}
+{"command": {"version": {"allowBranch": null}}}
+{"command": {"version": {"allowBranch": [null]}}}
+{"command": {"version": {"message": null}}}
+{"ignoreChanges": null}
+{"ignoreChanges": [null]}
+{"npmClient": null}
+{"npmClientArgs": null}
+{"npmClientArgs": [null]}
+{"packages": null}
+{"packages": [null]}
+{"useWorkspaces": null}
+{"version": null}
+{"workspaces": null}
+{"workspaces": [null]}

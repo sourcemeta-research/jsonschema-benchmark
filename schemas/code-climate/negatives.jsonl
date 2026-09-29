@@ -1,0 +1,39 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"checks": null}
+{"checks": {"argument-count": null}}
+{"checks": {"argument-count": {"enabled": null}}}
+{"checks": {"complex-logic": null}}
+{"checks": {"complex-logic": {"enabled": null}}}
+{"checks": {"file-lines": null}}
+{"checks": {"file-lines": {"enabled": null}}}
+{"checks": {"identical-code": null}}
+{"checks": {"identical-code": {"enabled": null}}}
+{"checks": {"method-complexity": null}}
+{"checks": {"method-complexity": {"enabled": null}}}
+{"checks": {"method-count": null}}
+{"checks": {"method-count": {"enabled": null}}}
+{"checks": {"method-lines": null}}
+{"checks": {"method-lines": {"enabled": null}}}
+{"checks": {"nested-control-flow": null}}
+{"checks": {"nested-control-flow": {"enabled": null}}}
+{"checks": {"return-statements": null}}
+{"checks": {"return-statements": {"enabled": null}}}
+{"checks": {"similar-code": null}}
+{"checks": {"similar-code": {"enabled": null}}}
+{"exclude_patterns": null}
+{"exclude_patterns": [null]}
+{"plugins": null}
+{"prepare": null}
+{"prepare": [null]}
+{"prepare": [{"path": null}]}
+{"prepare": [{"url": null}]}
+{"prepare": [{"url": "not a uri"}]}
+{"version": null}

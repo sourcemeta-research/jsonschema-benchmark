@@ -1,0 +1,13 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"un": "expected"}
+{"imports": null}
+{"scopes": null}
+{"no-such-prop": null}

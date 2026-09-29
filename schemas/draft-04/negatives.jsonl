@@ -1,0 +1,53 @@
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+null
+{"$ref": null}
+{"$schema": null}
+{"additionalItems": null}
+{"additionalProperties": null}
+{"allOf": []}
+{"allOf": null}
+{"anyOf": []}
+{"anyOf": null}
+{"definitions": null}
+{"dependencies": null}
+{"description": null}
+{"enum": [{}, {}]}
+{"enum": []}
+{"enum": null}
+{"exclusiveMaximum": null}
+{"exclusiveMinimum": null}
+{"format": null}
+{"id": null}
+{"items": null}
+{"items": []}
+{"maxItems": null}
+{"maxLength": null}
+{"maxProperties": null}
+{"maximum": null}
+{"minItems": null}
+{"minLength": null}
+{"minProperties": null}
+{"minimum": null}
+{"multipleOf": null}
+{"oneOf": []}
+{"oneOf": null}
+{"pattern": null}
+{"patternProperties": null}
+{"properties": null}
+{"required": ["", ""]}
+{"required": []}
+{"required": null}
+{"required": [null]}
+{"title": null}
+{"type": null}
+{"type": ["null", "null"]}
+{"type": []}
+{"type": [null]}
+{"uniqueItems": null}
