@@ -1,0 +1,160 @@
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+null
+{"buildOptions": null}
+{"buildOptions": {"assumeChangesOnlyAffectDirectDependencies": null}}
+{"buildOptions": {"dry": null}}
+{"buildOptions": {"force": null}}
+{"buildOptions": {"incremental": null}}
+{"buildOptions": {"traceResolution": null}}
+{"buildOptions": {"verbose": null}}
+{"compileOnSave": null}
+{"compilerOptions": null}
+{"compilerOptions": {"allowArbitraryExtensions": null}}
+{"compilerOptions": {"allowImportingTsExtensions": null}}
+{"compilerOptions": {"allowJs": null}}
+{"compilerOptions": {"allowSyntheticDefaultImports": null}}
+{"compilerOptions": {"allowUmdGlobalAccess": null}}
+{"compilerOptions": {"allowUnreachableCode": null}}
+{"compilerOptions": {"allowUnusedLabels": null}}
+{"compilerOptions": {"alwaysStrict": null}}
+{"compilerOptions": {"assumeChangesOnlyAffectDirectDependencies": null}}
+{"compilerOptions": {"baseUrl": null}}
+{"compilerOptions": {"charset": null}}
+{"compilerOptions": {"checkJs": null}}
+{"compilerOptions": {"composite": null}}
+{"compilerOptions": {"customConditions": ["", ""]}}
+{"compilerOptions": {"customConditions": null}}
+{"compilerOptions": {"customConditions": [null]}}
+{"compilerOptions": {"declaration": null}}
+{"compilerOptions": {"declarationMap": null}}
+{"compilerOptions": {"diagnostics": null}}
+{"compilerOptions": {"disableReferencedProjectLoad": null}}
+{"compilerOptions": {"disableSizeLimit": null}}
+{"compilerOptions": {"disableSolutionSearching": null}}
+{"compilerOptions": {"disableSourceOfProjectReferenceRedirect": null}}
+{"compilerOptions": {"downlevelIteration": null}}
+{"compilerOptions": {"emitBOM": null}}
+{"compilerOptions": {"emitDeclarationOnly": null}}
+{"compilerOptions": {"emitDecoratorMetadata": null}}
+{"compilerOptions": {"esModuleInterop": null}}
+{"compilerOptions": {"exactOptionalPropertyTypes": null}}
+{"compilerOptions": {"experimentalDecorators": null}}
+{"compilerOptions": {"extendedDiagnostics": null}}
+{"compilerOptions": {"fallbackPolling": null}}
+{"compilerOptions": {"forceConsistentCasingInFileNames": null}}
+{"compilerOptions": {"generateCpuProfile": null}}
+{"compilerOptions": {"importHelpers": null}}
+{"compilerOptions": {"importsNotUsedAsValues": null}}
+{"compilerOptions": {"incremental": null}}
+{"compilerOptions": {"inlineSourceMap": null}}
+{"compilerOptions": {"inlineSources": null}}
+{"compilerOptions": {"isolatedModules": null}}
+{"compilerOptions": {"jsx": null}}
+{"compilerOptions": {"jsxFactory": null}}
+{"compilerOptions": {"jsxFragmentFactory": null}}
+{"compilerOptions": {"jsxImportSource": null}}
+{"compilerOptions": {"keyofStringsOnly": null}}
+{"compilerOptions": {"lib": ["ES5", "ES5"]}}
+{"compilerOptions": {"lib": null}}
+{"compilerOptions": {"lib": [null]}}
+{"compilerOptions": {"listEmittedFiles": null}}
+{"compilerOptions": {"listFiles": null}}
+{"compilerOptions": {"listFilesOnly": null}}
+{"compilerOptions": {"mapRoot": null}}
+{"compilerOptions": {"maxNodeModuleJsDepth": null}}
+{"compilerOptions": {"module": null}}
+{"compilerOptions": {"moduleResolution": null}}
+{"compilerOptions": {"newLine": null}}
+{"compilerOptions": {"noEmit": null}}
+{"compilerOptions": {"noEmitHelpers": null}}
+{"compilerOptions": {"noEmitOnError": null}}
+{"compilerOptions": {"noErrorTruncation": null}}
+{"compilerOptions": {"noFallthroughCasesInSwitch": null}}
+{"compilerOptions": {"noImplicitAny": null}}
+{"compilerOptions": {"noImplicitOverride": null}}
+{"compilerOptions": {"noImplicitReturns": null}}
+{"compilerOptions": {"noImplicitThis": null}}
+{"compilerOptions": {"noImplicitUseStrict": null}}
+{"compilerOptions": {"noLib": null}}
+{"compilerOptions": {"noPropertyAccessFromIndexSignature": null}}
+{"compilerOptions": {"noResolve": null}}
+{"compilerOptions": {"noStrictGenericChecks": null}}
+{"compilerOptions": {"noUncheckedIndexedAccess": null}}
+{"compilerOptions": {"noUnusedLocals": null}}
+{"compilerOptions": {"noUnusedParameters": null}}
+{"compilerOptions": {"outDir": null}}
+{"compilerOptions": {"outFile": null}}
+{"compilerOptions": {"paths": null}}
+{"compilerOptions": {"plugins": null}}
+{"compilerOptions": {"plugins": [null]}}
+{"compilerOptions": {"plugins": [{"name": null}]}}
+{"compilerOptions": {"preserveConstEnums": null}}
+{"compilerOptions": {"preserveSymlinks": null}}
+{"compilerOptions": {"preserveValueImports": null}}
+{"compilerOptions": {"preserveWatchOutput": null}}
+{"compilerOptions": {"pretty": null}}
+{"compilerOptions": {"reactNamespace": null}}
+{"compilerOptions": {"removeComments": null}}
+{"compilerOptions": {"resolveJsonModule": null}}
+{"compilerOptions": {"resolvePackageJsonExports": null}}
+{"compilerOptions": {"resolvePackageJsonImports": null}}
+{"compilerOptions": {"rootDir": null}}
+{"compilerOptions": {"rootDirs": ["", ""]}}
+{"compilerOptions": {"rootDirs": null}}
+{"compilerOptions": {"rootDirs": [null]}}
+{"compilerOptions": {"skipDefaultLibCheck": null}}
+{"compilerOptions": {"skipLibCheck": null}}
+{"compilerOptions": {"sourceMap": null}}
+{"compilerOptions": {"sourceRoot": null}}
+{"compilerOptions": {"strict": null}}
+{"compilerOptions": {"strictBindCallApply": null}}
+{"compilerOptions": {"strictFunctionTypes": null}}
+{"compilerOptions": {"strictNullChecks": null}}
+{"compilerOptions": {"strictPropertyInitialization": null}}
+{"compilerOptions": {"stripInternal": null}}
+{"compilerOptions": {"suppressExcessPropertyErrors": null}}
+{"compilerOptions": {"suppressImplicitAnyIndexErrors": null}}
+{"compilerOptions": {"target": null}}
+{"compilerOptions": {"traceResolution": null}}
+{"compilerOptions": {"tsBuildInfoFile": null}}
+{"compilerOptions": {"typeRoots": ["", ""]}}
+{"compilerOptions": {"typeRoots": null}}
+{"compilerOptions": {"typeRoots": [null]}}
+{"compilerOptions": {"types": ["", ""]}}
+{"compilerOptions": {"types": null}}
+{"compilerOptions": {"types": [null]}}
+{"compilerOptions": {"useDefineForClassFields": null}}
+{"compilerOptions": {"useUnknownInCatchVariables": null}}
+{"compilerOptions": {"verbatimModuleSyntax": null}}
+{"compilerOptions": {"watch": null}}
+{"compilerOptions": {"watchDirectory": null}}
+{"compilerOptions": {"watchFile": null}}
+{"extends": null}
+{"extends": [null]}
+{"typeAcquisition": null}
+{"typeAcquisition": {"enable": null}}
+{"typeAcquisition": {"exclude": ["", ""]}}
+{"typeAcquisition": {"exclude": null}}
+{"typeAcquisition": {"exclude": [null]}}
+{"typeAcquisition": {"include": ["", ""]}}
+{"typeAcquisition": {"include": null}}
+{"typeAcquisition": {"include": [null]}}
+{"watchOptions": null}
+{"watchOptions": {"excludeDirectories": ["", ""]}}
+{"watchOptions": {"excludeDirectories": null}}
+{"watchOptions": {"excludeDirectories": [null]}}
+{"watchOptions": {"excludeFiles": ["", ""]}}
+{"watchOptions": {"excludeFiles": null}}
+{"watchOptions": {"excludeFiles": [null]}}
+{"watchOptions": {"fallbackPolling": null}}
+{"watchOptions": {"force": null}}
+{"watchOptions": {"synchronousWatchDirectory": null}}
+{"watchOptions": {"watchDirectory": null}}
+{"watchOptions": {"watchFile": null}}

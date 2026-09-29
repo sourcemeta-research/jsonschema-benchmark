@@ -1,0 +1,234 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"AccessModifierOffset": null}
+{"AlignAfterOpenBracket": null}
+{"AlignArrayOfStructures": null}
+{"AlignConsecutiveAssignments": null}
+{"AlignConsecutiveAssignments": {"AcrossComments": null}}
+{"AlignConsecutiveAssignments": {"AcrossEmptyLines": null}}
+{"AlignConsecutiveAssignments": {"AlignCompound": null}}
+{"AlignConsecutiveAssignments": {"Enabled": null}}
+{"AlignConsecutiveAssignments": {"PadOperators": null}}
+{"AlignConsecutiveBitFields": null}
+{"AlignConsecutiveBitFields": {"AcrossComments": null}}
+{"AlignConsecutiveBitFields": {"AcrossEmptyLines": null}}
+{"AlignConsecutiveBitFields": {"Enabled": null}}
+{"AlignConsecutiveDeclarations": null}
+{"AlignConsecutiveDeclarations": {"AcrossComments": null}}
+{"AlignConsecutiveDeclarations": {"AcrossEmptyLines": null}}
+{"AlignConsecutiveDeclarations": {"Enabled": null}}
+{"AlignConsecutiveMacros": null}
+{"AlignConsecutiveMacros": {"AcrossComments": null}}
+{"AlignConsecutiveMacros": {"AcrossEmptyLines": null}}
+{"AlignConsecutiveMacros": {"Enabled": null}}
+{"AlignEscapedNewlines": null}
+{"AlignOperands": null}
+{"AlignTrailingComments": null}
+{"AlignTrailingComments": {"Kind": null}}
+{"AlignTrailingComments": {"OverEmptyLines": null}}
+{"AllowAllArgumentsOnNextLine": null}
+{"AllowAllConstructorInitializersOnNextLine": null}
+{"AllowAllParametersOfDeclarationOnNextLine": null}
+{"AllowShortBlocksOnASingleLine": null}
+{"AllowShortCaseLabelsOnASingleLine": null}
+{"AllowShortEnumsOnASingleLine": null}
+{"AllowShortFunctionsOnASingleLine": null}
+{"AllowShortIfStatementsOnASingleLine": null}
+{"AllowShortLambdasOnASingleLine": null}
+{"AllowShortLoopsOnASingleLine": null}
+{"AlwaysBreakAfterDefinitionReturnType": null}
+{"AlwaysBreakAfterReturnType": null}
+{"AlwaysBreakBeforeMultilineStrings": null}
+{"AlwaysBreakTemplateDeclarations": null}
+{"AttributeMacros": null}
+{"AttributeMacros": [null]}
+{"BasedOnStyle": null}
+{"BinPackArguments": null}
+{"BinPackParameters": null}
+{"BitFieldColonSpacing": null}
+{"BraceWrapping": null}
+{"BraceWrapping": {"AfterCaseLabel": null}}
+{"BraceWrapping": {"AfterClass": null}}
+{"BraceWrapping": {"AfterControlStatement": null}}
+{"BraceWrapping": {"AfterEnum": null}}
+{"BraceWrapping": {"AfterExternBlock": null}}
+{"BraceWrapping": {"AfterFunction": null}}
+{"BraceWrapping": {"AfterNamespace": null}}
+{"BraceWrapping": {"AfterObjCDeclaration": null}}
+{"BraceWrapping": {"AfterStruct": null}}
+{"BraceWrapping": {"AfterUnion": null}}
+{"BraceWrapping": {"BeforeCatch": null}}
+{"BraceWrapping": {"BeforeElse": null}}
+{"BraceWrapping": {"BeforeLambdaBody": null}}
+{"BraceWrapping": {"BeforeWhile": null}}
+{"BraceWrapping": {"IndentBraces": null}}
+{"BraceWrapping": {"SplitEmptyFunction": null}}
+{"BraceWrapping": {"SplitEmptyNamespace": null}}
+{"BraceWrapping": {"SplitEmptyRecord": null}}
+{"BreakAfterAttributes": null}
+{"BreakAfterJavaFieldAnnotations": null}
+{"BreakArrays": null}
+{"BreakBeforeBinaryOperators": null}
+{"BreakBeforeBraces": null}
+{"BreakBeforeConceptDeclarations": null}
+{"BreakBeforeInheritanceComma": null}
+{"BreakBeforeInlineASMColon": null}
+{"BreakBeforeTernaryOperators": null}
+{"BreakConstructorInitializers": null}
+{"BreakConstructorInitializersBeforeComma": null}
+{"BreakInheritanceList": null}
+{"BreakStringLiterals": null}
+{"ColumnLimit": null}
+{"CommentPragmas": null}
+{"CompactNamespaces": null}
+{"ConstructorInitializerAllOnOneLineOrOnePerLine": null}
+{"ConstructorInitializerIndentWidth": null}
+{"ContinuationIndentWidth": null}
+{"Cpp11BracedListStyle": null}
+{"DeriveLineEnding": null}
+{"DerivePointerAlignment": null}
+{"DisableFormat": null}
+{"EmptyLineAfterAccessModifier": null}
+{"EmptyLineBeforeAccessModifier": null}
+{"ExperimentalAutoDetectBinPacking": null}
+{"FixNamespaceComments": null}
+{"ForEachMacros": null}
+{"ForEachMacros": [null]}
+{"IfMacros": null}
+{"IfMacros": [null]}
+{"IncludeBlocks": null}
+{"IncludeCategories": null}
+{"IncludeCategories": [null]}
+{"IncludeCategories": [{"Priority": 0, "Regex": "", "CaseSensitive": null}]}
+{"IncludeCategories": [{"Priority": 0, "Regex": "", "SortPriority": null}]}
+{"IncludeCategories": [{"Priority": null, "Regex": ""}]}
+{"IncludeCategories": [{"Regex": ""}]}
+{"IncludeCategories": [{"Priority": 0, "Regex": null}]}
+{"IncludeCategories": [{"Priority": 0}]}
+{"IncludeIsMainRegex": null}
+{"IncludeIsMainSourceRegex": null}
+{"IndentAccessModifiers": null}
+{"IndentCaseBlocks": null}
+{"IndentCaseLabels": null}
+{"IndentExternBlock": null}
+{"IndentGotoLabels": null}
+{"IndentPPDirectives": null}
+{"IndentRequires": null}
+{"IndentRequiresClause": null}
+{"IndentWidth": null}
+{"IndentWrappedFunctionNames": null}
+{"InsertBraces": null}
+{"InsertNewlineAtEOF": null}
+{"InsertTrailingCommas": null}
+{"IntegerLiteralSeparator": null}
+{"IntegerLiteralSeparator": {"Binary": null}}
+{"IntegerLiteralSeparator": {"BinaryMinDigits": null}}
+{"IntegerLiteralSeparator": {"Decimal": null}}
+{"IntegerLiteralSeparator": {"DecimalMinDigits": null}}
+{"IntegerLiteralSeparator": {"Hex": null}}
+{"IntegerLiteralSeparator": {"HexMinDigits": null}}
+{"JavaImportGroup": null}
+{"JavaScriptQuotes": null}
+{"JavaScriptWrapImports": null}
+{"KeepEmptyLinesAtTheStartOfBlocks": null}
+{"LambdaBodyIndentation": null}
+{"Language": null}
+{"LineEnding": null}
+{"MacroBlockBegin": null}
+{"MacroBlockEnd": null}
+{"MaxEmptyLinesToKeep": null}
+{"NamespaceIndentation": null}
+{"NamespaceMacros": null}
+{"NamespaceMacros": [null]}
+{"ObjCBinPackProtocolList": null}
+{"ObjCBlockIndentWidth": null}
+{"ObjCBreakBeforeNestedBlockParam": null}
+{"ObjCSpaceAfterProperty": null}
+{"ObjCSpaceBeforeProtocolList": null}
+{"PPIndentWidth": null}
+{"PackConstructorInitializers": null}
+{"PenaltyBreakAssignment": null}
+{"PenaltyBreakBeforeFirstCallParameter": null}
+{"PenaltyBreakComment": null}
+{"PenaltyBreakFirstLessLess": null}
+{"PenaltyBreakOpenParenthesis": null}
+{"PenaltyBreakString": null}
+{"PenaltyBreakTemplateDeclaration": null}
+{"PenaltyExcessCharacter": null}
+{"PenaltyIndentedWhitespace": null}
+{"PenaltyReturnTypeOnItsOwnLine": null}
+{"PointerAlignment": null}
+{"QualifierAlignment": null}
+{"RawStringFormats": null}
+{"RawStringFormats": [null]}
+{"RawStringFormats": [{"BasedOnStyle": null}]}
+{"RawStringFormats": [{"CanonicalDelimiter": null}]}
+{"RawStringFormats": [{"Delimiters": null}]}
+{"RawStringFormats": [{"Delimiters": [null]}]}
+{"RawStringFormats": [{"EnclosingFunctions": null}]}
+{"RawStringFormats": [{"EnclosingFunctions": [null]}]}
+{"RawStringFormats": [{"Language": null}]}
+{"ReferenceAlignment": null}
+{"ReflowComments": null}
+{"RemoveBracesLLVM": null}
+{"RemoveSemicolon": null}
+{"RequiresClausePosition": null}
+{"RequiresExpressionIndentation": null}
+{"SeparateDefinitionBlocks": null}
+{"ShortNamespaceLines": null}
+{"SortIncludes": null}
+{"SortJavaStaticImport": null}
+{"SortUsingDeclarations": null}
+{"SpaceAfterCStyleCast": null}
+{"SpaceAfterLogicalNot": null}
+{"SpaceAfterTemplateKeyword": null}
+{"SpaceAroundPointerQualifiers": null}
+{"SpaceBeforeAssignmentOperators": null}
+{"SpaceBeforeCaseColon": null}
+{"SpaceBeforeCpp11BracedList": null}
+{"SpaceBeforeCtorInitializerColon": null}
+{"SpaceBeforeInheritanceColon": null}
+{"SpaceBeforeParens": null}
+{"SpaceBeforeParensOptions": null}
+{"SpaceBeforeParensOptions": {"AfterControlStatements": null}}
+{"SpaceBeforeParensOptions": {"AfterForeachMacros": null}}
+{"SpaceBeforeParensOptions": {"AfterFunctionDeclarationName": null}}
+{"SpaceBeforeParensOptions": {"AfterFunctionDefinitionName": null}}
+{"SpaceBeforeParensOptions": {"AfterIfMacros": null}}
+{"SpaceBeforeParensOptions": {"AfterOverloadedOperator": null}}
+{"SpaceBeforeParensOptions": {"AfterRequiresInClause": null}}
+{"SpaceBeforeParensOptions": {"AfterRequiresInExpression": null}}
+{"SpaceBeforeParensOptions": {"BeforeNonEmptyParentheses": null}}
+{"SpaceBeforeRangeBasedForLoopColon": null}
+{"SpaceBeforeSquareBrackets": null}
+{"SpaceInEmptyBlock": null}
+{"SpaceInEmptyParentheses": null}
+{"SpacesBeforeTrailingComments": null}
+{"SpacesInAngles": null}
+{"SpacesInCStyleCastParentheses": null}
+{"SpacesInConditionalStatement": null}
+{"SpacesInContainerLiterals": null}
+{"SpacesInLineCommentPrefix": null}
+{"SpacesInLineCommentPrefix": {"Maximum": null}}
+{"SpacesInLineCommentPrefix": {"Minimum": null}}
+{"SpacesInParentheses": null}
+{"SpacesInSquareBrackets": null}
+{"Standard": null}
+{"StatementAttributeLikeMacros": null}
+{"StatementAttributeLikeMacros": [null]}
+{"StatementMacros": null}
+{"StatementMacros": [null]}
+{"TabWidth": null}
+{"TypenameMacros": null}
+{"TypenameMacros": [null]}
+{"UseCRLF": null}
+{"UseTab": null}
+{"WhitespaceSensitiveMacros": null}
+{"WhitespaceSensitiveMacros": [null]}

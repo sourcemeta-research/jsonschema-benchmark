@@ -1,0 +1,135 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"un": "expected"}
+{"additionalRepositories": null}
+{"additionalRepositories": [null]}
+{"additionalRepositories": [{"url": "", "checkoutLocation": null}]}
+{"additionalRepositories": [{"url": null}]}
+{"additionalRepositories": [{}]}
+{"additionalRepositories": [{"url": "", "no-such-prop": null}]}
+{"checkoutLocation": null}
+{"coreDump": null}
+{"coreDump": {"enabled": null}}
+{"coreDump": {"hardLimit": null}}
+{"coreDump": {"softLimit": null}}
+{"coreDump": {"no-such-prop": null}}
+{"experimentalNetwork": null}
+{"gitConfig": null}
+{"github": null}
+{"github": {"prebuilds": null}}
+{"github": {"prebuilds": {"addBadge": null}}}
+{"github": {"prebuilds": {"addCheck": null}}}
+{"github": {"prebuilds": {"addLabel": null}}}
+{"github": {"prebuilds": {"branches": null}}}
+{"github": {"prebuilds": {"master": null}}}
+{"github": {"prebuilds": {"pullRequests": null}}}
+{"github": {"prebuilds": {"pullRequestsFromForks": null}}}
+{"github": {"no-such-prop": null}}
+{"image": null}
+{"image": {"file": "", "context": null}}
+{"image": {"file": null}}
+{"image": {}}
+{"image": {"file": "", "no-such-prop": null}}
+{"jetbrains": null}
+{"jetbrains": {"clion": null}}
+{"jetbrains": {"clion": {"plugins": null}}}
+{"jetbrains": {"clion": {"plugins": [null]}}}
+{"jetbrains": {"clion": {"prebuilds": null}}}
+{"jetbrains": {"clion": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"clion": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"clion": {"vmoptions": null}}}
+{"jetbrains": {"clion": {"no-such-prop": null}}}
+{"jetbrains": {"goland": null}}
+{"jetbrains": {"goland": {"plugins": null}}}
+{"jetbrains": {"goland": {"plugins": [null]}}}
+{"jetbrains": {"goland": {"prebuilds": null}}}
+{"jetbrains": {"goland": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"goland": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"goland": {"vmoptions": null}}}
+{"jetbrains": {"goland": {"no-such-prop": null}}}
+{"jetbrains": {"intellij": null}}
+{"jetbrains": {"intellij": {"plugins": null}}}
+{"jetbrains": {"intellij": {"plugins": [null]}}}
+{"jetbrains": {"intellij": {"prebuilds": null}}}
+{"jetbrains": {"intellij": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"intellij": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"intellij": {"vmoptions": null}}}
+{"jetbrains": {"intellij": {"no-such-prop": null}}}
+{"jetbrains": {"phpstorm": null}}
+{"jetbrains": {"phpstorm": {"plugins": null}}}
+{"jetbrains": {"phpstorm": {"plugins": [null]}}}
+{"jetbrains": {"phpstorm": {"prebuilds": null}}}
+{"jetbrains": {"phpstorm": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"phpstorm": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"phpstorm": {"vmoptions": null}}}
+{"jetbrains": {"phpstorm": {"no-such-prop": null}}}
+{"jetbrains": {"plugins": null}}
+{"jetbrains": {"plugins": [null]}}
+{"jetbrains": {"pycharm": null}}
+{"jetbrains": {"pycharm": {"plugins": null}}}
+{"jetbrains": {"pycharm": {"plugins": [null]}}}
+{"jetbrains": {"pycharm": {"prebuilds": null}}}
+{"jetbrains": {"pycharm": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"pycharm": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"pycharm": {"vmoptions": null}}}
+{"jetbrains": {"pycharm": {"no-such-prop": null}}}
+{"jetbrains": {"rider": null}}
+{"jetbrains": {"rider": {"plugins": null}}}
+{"jetbrains": {"rider": {"plugins": [null]}}}
+{"jetbrains": {"rider": {"prebuilds": null}}}
+{"jetbrains": {"rider": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"rider": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"rider": {"vmoptions": null}}}
+{"jetbrains": {"rider": {"no-such-prop": null}}}
+{"jetbrains": {"rubymine": null}}
+{"jetbrains": {"rubymine": {"plugins": null}}}
+{"jetbrains": {"rubymine": {"plugins": [null]}}}
+{"jetbrains": {"rubymine": {"prebuilds": null}}}
+{"jetbrains": {"rubymine": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"rubymine": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"rubymine": {"vmoptions": null}}}
+{"jetbrains": {"rubymine": {"no-such-prop": null}}}
+{"jetbrains": {"webstorm": null}}
+{"jetbrains": {"webstorm": {"plugins": null}}}
+{"jetbrains": {"webstorm": {"plugins": [null]}}}
+{"jetbrains": {"webstorm": {"prebuilds": null}}}
+{"jetbrains": {"webstorm": {"prebuilds": {"version": null}}}}
+{"jetbrains": {"webstorm": {"prebuilds": {"no-such-prop": null}}}}
+{"jetbrains": {"webstorm": {"vmoptions": null}}}
+{"jetbrains": {"webstorm": {"no-such-prop": null}}}
+{"jetbrains": {"no-such-prop": null}}
+{"mainConfiguration": null}
+{"ports": null}
+{"ports": [null]}
+{"ports": [{"port": -3.1415927, "description": null}]}
+{"ports": [{"port": -3.1415927, "name": null}]}
+{"ports": [{"port": -3.1415927, "onOpen": null}]}
+{"ports": [{"port": -3.1415927, "protocol": null}]}
+{"ports": [{"port": -3.1415927, "visibility": null}]}
+{"ports": [{"port": null}]}
+{"ports": [{}]}
+{"ports": [{"port": -3.1415927, "no-such-prop": null}]}
+{"tasks": null}
+{"tasks": [null]}
+{"tasks": [{"before": null}]}
+{"tasks": [{"command": null}]}
+{"tasks": [{"env": null}]}
+{"tasks": [{"init": null}]}
+{"tasks": [{"name": null}]}
+{"tasks": [{"openIn": null}]}
+{"tasks": [{"openMode": null}]}
+{"tasks": [{"prebuild": null}]}
+{"tasks": [{"no-such-prop": null}]}
+{"vscode": null}
+{"vscode": {"extensions": null}}
+{"vscode": {"extensions": [null]}}
+{"vscode": {"no-such-prop": null}}
+{"workspaceLocation": null}
+{"no-such-prop": null}

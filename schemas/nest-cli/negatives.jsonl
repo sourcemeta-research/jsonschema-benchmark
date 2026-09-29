@@ -1,0 +1,92 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"collection": null}
+{"compilerOptions": null}
+{"compilerOptions": {"assets": null}}
+{"compilerOptions": {"assets": [null]}}
+{"compilerOptions": {"assets": [{"exclude": null}]}}
+{"compilerOptions": {"assets": [{"include": null}]}}
+{"compilerOptions": {"assets": [{"outDir": null}]}}
+{"compilerOptions": {"assets": [{"watchAssets": null}]}}
+{"compilerOptions": {"assets": [{"no-such-prop": null}]}}
+{"compilerOptions": {"builder": null}}
+{"compilerOptions": {"builder": {"options": null}}}
+{"compilerOptions": {"builder": {"options": {"copyFiles": null}}}}
+{"compilerOptions": {"builder": {"options": {"extensions": null}}}}
+{"compilerOptions": {"builder": {"options": {"extensions": [null]}}}}
+{"compilerOptions": {"builder": {"options": {"filenames": null}}}}
+{"compilerOptions": {"builder": {"options": {"filenames": [null]}}}}
+{"compilerOptions": {"builder": {"options": {"includeDotfiles": null}}}}
+{"compilerOptions": {"builder": {"options": {"outDir": null}}}}
+{"compilerOptions": {"builder": {"options": {"quiet": null}}}}
+{"compilerOptions": {"builder": {"options": {"sync": null}}}}
+{"compilerOptions": {"builder": {"options": {"watch": null}}}}
+{"compilerOptions": {"builder": {"type": null}}}
+{"compilerOptions": {"deleteOutDir": null}}
+{"compilerOptions": {"manualRestart": null}}
+{"compilerOptions": {"plugins": null}}
+{"compilerOptions": {"plugins": [null]}}
+{"compilerOptions": {"plugins": [{"name": null}]}}
+{"compilerOptions": {"plugins": [{"options": null}]}}
+{"compilerOptions": {"tsConfigPath": null}}
+{"compilerOptions": {"typeCheck": null}}
+{"compilerOptions": {"watchAssets": null}}
+{"compilerOptions": {"webpack": null}}
+{"compilerOptions": {"webpackConfigPath": null}}
+{"compilerOptions": {"no-such-prop": null}}
+{"defaultLibraryPrefix": null}
+{"entryFile": null}
+{"generateOptions": null}
+{"generateOptions": {"baseDir": null}}
+{"generateOptions": {"flat": null}}
+{"generateOptions": {"spec": null}}
+{"generateOptions": {"spec": {"app": null}}}
+{"generateOptions": {"spec": {"application": null}}}
+{"generateOptions": {"spec": {"cl": null}}}
+{"generateOptions": {"spec": {"class": null}}}
+{"generateOptions": {"spec": {"co": null}}}
+{"generateOptions": {"spec": {"config": null}}}
+{"generateOptions": {"spec": {"configuration": null}}}
+{"generateOptions": {"spec": {"controller": null}}}
+{"generateOptions": {"spec": {"d": null}}}
+{"generateOptions": {"spec": {"decorator": null}}}
+{"generateOptions": {"spec": {"f": null}}}
+{"generateOptions": {"spec": {"filter": null}}}
+{"generateOptions": {"spec": {"ga": null}}}
+{"generateOptions": {"spec": {"gateway": null}}}
+{"generateOptions": {"spec": {"gu": null}}}
+{"generateOptions": {"spec": {"guard": null}}}
+{"generateOptions": {"spec": {"in": null}}}
+{"generateOptions": {"spec": {"interceptor": null}}}
+{"generateOptions": {"spec": {"interface": null}}}
+{"generateOptions": {"spec": {"lib": null}}}
+{"generateOptions": {"spec": {"library": null}}}
+{"generateOptions": {"spec": {"mi": null}}}
+{"generateOptions": {"spec": {"middleware": null}}}
+{"generateOptions": {"spec": {"mo": null}}}
+{"generateOptions": {"spec": {"module": null}}}
+{"generateOptions": {"spec": {"pi": null}}}
+{"generateOptions": {"spec": {"pipe": null}}}
+{"generateOptions": {"spec": {"pr": null}}}
+{"generateOptions": {"spec": {"provider": null}}}
+{"generateOptions": {"spec": {"r": null}}}
+{"generateOptions": {"spec": {"res": null}}}
+{"generateOptions": {"spec": {"resolver": null}}}
+{"generateOptions": {"spec": {"resource": null}}}
+{"generateOptions": {"spec": {"s": null}}}
+{"generateOptions": {"spec": {"service": null}}}
+{"generateOptions": {"spec": {"sub-app": null}}}
+{"generateOptions": {"spec": {"no-such-prop": null}}}
+{"generateOptions": {"no-such-prop": null}}
+{"language": null}
+{"monorepo": null}
+{"projects": null}
+{"root": null}
+{"sourceRoot": null}

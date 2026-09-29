@@ -1,0 +1,67 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"settings": null}
+{"settings": {"documentationRules": null}}
+{"settings": {"documentationRules": {"companyName": null}}}
+{"settings": {"documentationRules": {"copyrightText": null}}}
+{"settings": {"documentationRules": {"documentExposedElements": null}}}
+{"settings": {"documentationRules": {"documentInterfaces": null}}}
+{"settings": {"documentationRules": {"documentInternalElements": null}}}
+{"settings": {"documentationRules": {"documentPrivateElements": null}}}
+{"settings": {"documentationRules": {"documentPrivateFields": null}}}
+{"settings": {"documentationRules": {"documentationCulture": null}}}
+{"settings": {"documentationRules": {"excludeFromPunctuationCheck": null}}}
+{"settings": {"documentationRules": {"fileNamingConvention": null}}}
+{"settings": {"documentationRules": {"headerDecoration": null}}}
+{"settings": {"documentationRules": {"variables": null}}}
+{"settings": {"documentationRules": {"variables": {"a": null}}}}
+{"settings": {"documentationRules": {"variables": {"no-such-prop": null}}}}
+{"settings": {"documentationRules": {"xmlHeader": null}}}
+{"settings": {"documentationRules": {"no-such-prop": null}}}
+{"settings": {"indentation": null}}
+{"settings": {"indentation": {"indentationSize": null}}}
+{"settings": {"indentation": {"tabSize": null}}}
+{"settings": {"indentation": {"useTabs": null}}}
+{"settings": {"indentation": {"no-such-prop": null}}}
+{"settings": {"layoutRules": null}}
+{"settings": {"layoutRules": {"allowConsecutiveUsings": null}}}
+{"settings": {"layoutRules": {"allowDoWhileOnClosingBrace": null}}}
+{"settings": {"layoutRules": {"newlineAtEndOfFile": null}}}
+{"settings": {"layoutRules": {"no-such-prop": null}}}
+{"settings": {"maintainabilityRules": null}}
+{"settings": {"maintainabilityRules": {"topLevelTypes": ["class", "class"]}}}
+{"settings": {"maintainabilityRules": {"topLevelTypes": null}}}
+{"settings": {"maintainabilityRules": {"topLevelTypes": [null]}}}
+{"settings": {"maintainabilityRules": {"no-such-prop": null}}}
+{"settings": {"namingRules": null}}
+{"settings": {"namingRules": {"allowCommonHungarianPrefixes": null}}}
+{"settings": {"namingRules": {"allowedHungarianPrefixes": ["a", "a"]}}}
+{"settings": {"namingRules": {"allowedHungarianPrefixes": null}}}
+{"settings": {"namingRules": {"allowedHungarianPrefixes": [null]}}}
+{"settings": {"namingRules": {"allowedNamespaceComponents": ["", ""]}}}
+{"settings": {"namingRules": {"allowedNamespaceComponents": null}}}
+{"settings": {"namingRules": {"allowedNamespaceComponents": [null]}}}
+{"settings": {"namingRules": {"includeInferredTupleElementNames": null}}}
+{"settings": {"namingRules": {"tupleElementNameCasing": null}}}
+{"settings": {"namingRules": {"no-such-prop": null}}}
+{"settings": {"orderingRules": null}}
+{"settings": {"orderingRules": {"blankLinesBetweenUsingGroups": null}}}
+{"settings": {"orderingRules": {"elementOrder": ["accessibility", "accessibility"]}}}
+{"settings": {"orderingRules": {"elementOrder": null}}}
+{"settings": {"orderingRules": {"elementOrder": [null]}}}
+{"settings": {"orderingRules": {"systemUsingDirectivesFirst": null}}}
+{"settings": {"orderingRules": {"usingDirectivesPlacement": null}}}
+{"settings": {"orderingRules": {"no-such-prop": null}}}
+{"settings": {"readabilityRules": null}}
+{"settings": {"readabilityRules": {"allowBuiltInTypeAliases": null}}}
+{"settings": {"readabilityRules": {"no-such-prop": null}}}
+{"settings": {"spacingRules": null}}
+{"settings": {"spacingRules": {"no-such-prop": null}}}
+{"settings": {"no-such-prop": null}}
