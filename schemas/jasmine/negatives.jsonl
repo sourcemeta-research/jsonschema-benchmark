@@ -1,0 +1,33 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{}
+{"un": "expected"}
+{"spec_dir": "", "spec_files": [], "autoCleanClosure": null}
+{"spec_dir": "", "spec_files": [], "env": null}
+{"spec_dir": "", "spec_files": [], "env": {"autoCleanClosure": null}}
+{"spec_dir": "", "spec_files": [], "env": {"failSpecWithNoExpectations": null}}
+{"spec_dir": "", "spec_files": [], "env": {"hideDisbaled": null}}
+{"spec_dir": "", "spec_files": [], "env": {"random": null}}
+{"spec_dir": "", "spec_files": [], "env": {"stopOnSpecFailure": null}}
+{"spec_dir": "", "spec_files": [], "env": {"stopSpecOnExpectationFailure": null}}
+{"spec_dir": "", "spec_files": [], "env": {"verboseDeprication": null}}
+{"spec_dir": "", "spec_files": [], "failSpecWithNoExpectations": null}
+{"spec_dir": "", "spec_files": [], "helpers": null}
+{"spec_dir": "", "spec_files": [], "helpers": [null]}
+{"spec_dir": "", "spec_files": [], "hideDisbaled": null}
+{"spec_dir": "", "spec_files": [], "random": null}
+{"spec_dir": "", "spec_files": [], "stopOnSpecFailure": null}
+{"spec_dir": "", "spec_files": [], "stopSpecOnExpectationFailure": null}
+{"spec_dir": "", "spec_files": [], "verboseDeprication": null}
+{"spec_dir": null, "spec_files": []}
+{"spec_files": []}
+{"spec_dir": "", "spec_files": null}
+{"spec_dir": ""}
+{"spec_dir": "", "spec_files": [null]}
