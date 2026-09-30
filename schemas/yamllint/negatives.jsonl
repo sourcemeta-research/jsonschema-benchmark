@@ -1,1 +1,10 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1,"expected"]
 {"ignore": null}
