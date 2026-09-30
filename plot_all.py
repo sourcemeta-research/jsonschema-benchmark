@@ -12,6 +12,7 @@ IMPL_RENAMES = {
     'blaze': 'Blaze',
     'boon': 'Boon',
     'corvus': 'Corvus',
+    'corvus-ts': 'Corvus (TS)',
     'go-jsonschema': 'jsonschema (Go)',
     'jsu-c': 'JSU (C)',
     'jsu-java': 'JSU (Java)',
