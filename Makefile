@@ -341,6 +341,7 @@ implementations/corvus-ts/.dockertimestamp: \
 	implementations/corvus-ts/memory-wrapper.sh \
 	implementations/corvus-ts/main.mjs \
 	implementations/corvus-ts/package.json \
+	implementations/corvus-ts/package-lock.json \
 	implementations/corvus-ts/Dockerfile
 	docker build -t jsonschema-benchmark/corvus-ts implementations/corvus-ts
 	touch $@
