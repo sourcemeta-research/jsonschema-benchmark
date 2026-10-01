@@ -371,6 +371,42 @@ dist/results/corvus-rs/%: \
 	| dist/results/corvus-rs
 	@$(call docker_run,corvus-rs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# CORVUS (Python)
+
+implementations/corvus-py/.dockertimestamp: \
+	implementations/corvus-py/memory-wrapper.sh \
+	implementations/corvus-py/validate.py \
+	implementations/corvus-py/pyproject.toml \
+	implementations/corvus-py/uv.lock \
+	implementations/corvus-py/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-py implementations/corvus-py
+	touch $@
+
+dist/results/corvus-py/%: \
+	implementations/corvus-py/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-py
+	@$(call docker_run,corvus-py,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Python, Rust)
+
+implementations/corvus-py-rs/.dockertimestamp: \
+	implementations/corvus-py-rs/memory-wrapper.sh \
+	implementations/corvus-py-rs/validate.py \
+	implementations/corvus-py-rs/pyproject.toml \
+	implementations/corvus-py-rs/uv.lock \
+	implementations/corvus-py-rs/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-py-rs implementations/corvus-py-rs
+	touch $@
+
+dist/results/corvus-py-rs/%: \
+	implementations/corvus-py-rs/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-py-rs
+	@$(call docker_run,corvus-py-rs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # SCHEMASAFE
 
 implementations/schemasafe/.dockertimestamp: \

@@ -1,0 +1,11 @@
+[project]
+name = "corvus-py-rs-benchmark"
+version = "0.1.0"
+description = "Corvus.JsonSchema's Python evaluator (corvus-json-schema-rs) for jsonschema-benchmark"
+requires-python = ">=3.13"
+# The latest release: the Dockerfile upgrades it in uv.lock on every build (keeping the other dependencies locked)
+# and records it in /app/corvus-version for version.sh.
+dependencies = ["corvus-json-schema-rs>=0.1.0"]
+
+[tool.uv]
+package = false
