@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -o errexit
+set -o nounset
+
+# The corvus-json-schema-rs version the image built (pyproject.toml takes the latest release).
+docker run --rm --entrypoint cat jsonschema-benchmark/corvus-py-rs /app/corvus-version

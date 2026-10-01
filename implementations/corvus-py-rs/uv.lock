@@ -1,0 +1,29 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[[package]]
+name = "corvus-json-schema-rs"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5d/4b/b09a30cc28b02d6a79fbf33f793cbd75743f85dd40e6b202746943fb8925/corvus_json_schema_rs-0.1.0.tar.gz", hash = "sha256:ec376ed786692884826501e431c6402111132a32856c79cb05344ca8d1a278d8", size = 129250, upload-time = "2026-10-01T21:23:12.092Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/eb/81/f10cf3696e1f5176ddcd4322b428f91a30703736e4de8473cda5054c8d8a/corvus_json_schema_rs-0.1.0-cp310-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:58d10925692a45023d49c3771e3e8b882995a0d7258628b4e8fca79b3f7adb03", size = 2707597, upload-time = "2026-10-01T21:23:00.859Z" },
+    { url = "https://files.pythonhosted.org/packages/6b/2f/8de11d3bb041efb0f533447a04d382d643190f945721ced08abaea009b8e/corvus_json_schema_rs-0.1.0-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:938424570793eef53e8f72b55cdabc1e6ec73295e555ae4dd7367892c79822dd", size = 1443653, upload-time = "2026-10-01T21:23:02.911Z" },
+    { url = "https://files.pythonhosted.org/packages/1e/dd/7818cfade56871c2a3c42cd85eaf8226bf0cb118ce60aaf1511b70b2fb6b/corvus_json_schema_rs-0.1.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:35b8bae7246486cada5daff3c77e62888beb096fe5fe4d21d3f892d6d6b4271c", size = 1494498, upload-time = "2026-10-01T21:23:04.365Z" },
+    { url = "https://files.pythonhosted.org/packages/88/77/486a254f0af03042f56f3440a00739a3745360df80b1bbcfe808b3882cfe/corvus_json_schema_rs-0.1.0-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:0cf0f5f6df1eb2d2c2b4f7ff563afc1cc64dacd2cadce543d2c6390265f36477", size = 1623409, upload-time = "2026-10-01T21:23:05.955Z" },
+    { url = "https://files.pythonhosted.org/packages/1b/a3/d782230da357c0bd1b55b66ff4670d272103d79cc2556f54019879eddb40/corvus_json_schema_rs-0.1.0-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:0e98a4119b7418ac0d683a491d9de665951442035d390646111dde699909b42b", size = 1723686, upload-time = "2026-10-01T21:23:07.334Z" },
+    { url = "https://files.pythonhosted.org/packages/80/a6/a3e94e1f39a5f60ec5602aa06f0cc886932b66c2f0b7498e1d7fa752c95a/corvus_json_schema_rs-0.1.0-cp310-abi3-win_amd64.whl", hash = "sha256:fd330301be39d4741ba244b13f0829cf372c14672ff22d98422d13bc94ef83d0", size = 1332405, upload-time = "2026-10-01T21:23:08.618Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/55/0beae49031d3b53d9c16ed6732217dfa1d8e02bd75d00c32de8f2aa70c0a/corvus_json_schema_rs-0.1.0-cp310-abi3-win_arm64.whl", hash = "sha256:9202d95caed4c7bc69b889c76c504ee8c365c87b15807eddbfc8e97abf7133d3", size = 1238870, upload-time = "2026-10-01T21:23:10.206Z" },
+]
+
+[[package]]
+name = "corvus-py-rs-benchmark"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "corvus-json-schema-rs" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "corvus-json-schema-rs", specifier = ">=0.1.0" }]
