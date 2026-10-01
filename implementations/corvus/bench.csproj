@@ -15,7 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Corvus.Text.Json" Version="5.7.3" />
+    <!-- The latest stable release: the Dockerfile rebuilds whenever NuGet publishes a new version, and records the one
+         restored in /app/corvus-version for version.sh. -->
+    <PackageReference Include="Corvus.Text.Json" Version="*" />
   </ItemGroup>
 
 </Project>
