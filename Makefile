@@ -353,6 +353,24 @@ dist/results/corvus-ts/%: \
 	| dist/results/corvus-ts
 	@$(call docker_run,corvus-ts,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# CORVUS (Rust)
+
+implementations/corvus-rs/.dockertimestamp: \
+	implementations/corvus-rs/memory-wrapper.sh \
+	implementations/corvus-rs/src/main.rs \
+	implementations/corvus-rs/Cargo.toml \
+	implementations/corvus-rs/Cargo.lock \
+	implementations/corvus-rs/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-rs implementations/corvus-rs
+	touch $@
+
+dist/results/corvus-rs/%: \
+	implementations/corvus-rs/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-rs
+	@$(call docker_run,corvus-rs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # SCHEMASAFE
 
 implementations/schemasafe/.dockertimestamp: \
