@@ -4,17 +4,17 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "corvus-json-schema-rs"
-version = "0.1.0"
+version = "0.1.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/5d/4b/b09a30cc28b02d6a79fbf33f793cbd75743f85dd40e6b202746943fb8925/corvus_json_schema_rs-0.1.0.tar.gz", hash = "sha256:ec376ed786692884826501e431c6402111132a32856c79cb05344ca8d1a278d8", size = 129250, upload-time = "2026-10-01T21:23:12.092Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7a/e0/44c5eaeca342167ae63a1905dbe34ba2a0bde32eb6e3113d5b1e72dd4404/corvus_json_schema_rs-0.1.1.tar.gz", hash = "sha256:77560bc0d28036de30b8288542fe4ede2809e0e3cee74ee0ca60190799a3551c", size = 140391, upload-time = "2026-10-02T09:50:54.515Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/eb/81/f10cf3696e1f5176ddcd4322b428f91a30703736e4de8473cda5054c8d8a/corvus_json_schema_rs-0.1.0-cp310-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:58d10925692a45023d49c3771e3e8b882995a0d7258628b4e8fca79b3f7adb03", size = 2707597, upload-time = "2026-10-01T21:23:00.859Z" },
-    { url = "https://files.pythonhosted.org/packages/6b/2f/8de11d3bb041efb0f533447a04d382d643190f945721ced08abaea009b8e/corvus_json_schema_rs-0.1.0-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:938424570793eef53e8f72b55cdabc1e6ec73295e555ae4dd7367892c79822dd", size = 1443653, upload-time = "2026-10-01T21:23:02.911Z" },
-    { url = "https://files.pythonhosted.org/packages/1e/dd/7818cfade56871c2a3c42cd85eaf8226bf0cb118ce60aaf1511b70b2fb6b/corvus_json_schema_rs-0.1.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:35b8bae7246486cada5daff3c77e62888beb096fe5fe4d21d3f892d6d6b4271c", size = 1494498, upload-time = "2026-10-01T21:23:04.365Z" },
-    { url = "https://files.pythonhosted.org/packages/88/77/486a254f0af03042f56f3440a00739a3745360df80b1bbcfe808b3882cfe/corvus_json_schema_rs-0.1.0-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:0cf0f5f6df1eb2d2c2b4f7ff563afc1cc64dacd2cadce543d2c6390265f36477", size = 1623409, upload-time = "2026-10-01T21:23:05.955Z" },
-    { url = "https://files.pythonhosted.org/packages/1b/a3/d782230da357c0bd1b55b66ff4670d272103d79cc2556f54019879eddb40/corvus_json_schema_rs-0.1.0-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:0e98a4119b7418ac0d683a491d9de665951442035d390646111dde699909b42b", size = 1723686, upload-time = "2026-10-01T21:23:07.334Z" },
-    { url = "https://files.pythonhosted.org/packages/80/a6/a3e94e1f39a5f60ec5602aa06f0cc886932b66c2f0b7498e1d7fa752c95a/corvus_json_schema_rs-0.1.0-cp310-abi3-win_amd64.whl", hash = "sha256:fd330301be39d4741ba244b13f0829cf372c14672ff22d98422d13bc94ef83d0", size = 1332405, upload-time = "2026-10-01T21:23:08.618Z" },
-    { url = "https://files.pythonhosted.org/packages/b1/55/0beae49031d3b53d9c16ed6732217dfa1d8e02bd75d00c32de8f2aa70c0a/corvus_json_schema_rs-0.1.0-cp310-abi3-win_arm64.whl", hash = "sha256:9202d95caed4c7bc69b889c76c504ee8c365c87b15807eddbfc8e97abf7133d3", size = 1238870, upload-time = "2026-10-01T21:23:10.206Z" },
+    { url = "https://files.pythonhosted.org/packages/11/ac/f2a27d2d4a098e48e002a2ab35dae54b9ebae2dcb6a3e3411f68001c930a/corvus_json_schema_rs-0.1.1-cp310-abi3-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:bc8d83a6758280dd768ddae4bba17a219503365b127ff2dd97f4fe68d3729582", size = 2843742, upload-time = "2026-10-02T09:50:44.097Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/c6/bd83c1a8a1f99244736d2caf8f3840804277c86a66c3f5ceb96873afe5ba/corvus_json_schema_rs-0.1.1-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e8a1bea175135567833c5558f47dde9675567fc6effa7ed692dd1d19c829ad3e", size = 1512941, upload-time = "2026-10-02T09:50:45.713Z" },
+    { url = "https://files.pythonhosted.org/packages/73/9d/ccd9c3c5caffa33fc44cd8cf1fc2d5206e18001b6daf40aab02af8f789c8/corvus_json_schema_rs-0.1.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:163c1792c418b1d18f900df2b25a77a5f1b4a9731c7bdf61755132ea0b554dda", size = 1566581, upload-time = "2026-10-02T09:50:47.382Z" },
+    { url = "https://files.pythonhosted.org/packages/0c/09/b607d3d0d34fc8e44b06f5797556078f159b07ae2d81d7708b33ce00de85/corvus_json_schema_rs-0.1.1-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:2d96345f6cd3e96cca21d3fc145a63702d62fa24a32c685d04be26e7e2511e90", size = 1691100, upload-time = "2026-10-02T09:50:48.661Z" },
+    { url = "https://files.pythonhosted.org/packages/10/fa/6ddee94d2de8a89ae904c564dbef0676982b5f6cf04e1b57933d9d61bdc4/corvus_json_schema_rs-0.1.1-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:55bf056a226a514a33a1c74a611762de378ddbdd031f329978668beb18f8f8af", size = 1796346, upload-time = "2026-10-02T09:50:50.034Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/d3/0b330f097a43d19d000df061d82ee8a09d7f6f38beca16177311674fb6d4/corvus_json_schema_rs-0.1.1-cp310-abi3-win_amd64.whl", hash = "sha256:0d497b310795b57f6952b1169f56887f0d1e6920c910f378d27ce938c6c0d9de", size = 1402929, upload-time = "2026-10-02T09:50:51.422Z" },
+    { url = "https://files.pythonhosted.org/packages/1a/4a/37835bd6d12e89154d1e7b59325dd26af0a03a4ce385837d2a0ca02c7034/corvus_json_schema_rs-0.1.1-cp310-abi3-win_arm64.whl", hash = "sha256:da7c23ae98b73a34082537c84969b9f51c5cfe4891c9a5012b96041522267a35", size = 1305594, upload-time = "2026-10-02T09:50:52.667Z" },
 ]
 
 [[package]]
@@ -26,4 +26,4 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "corvus-json-schema-rs", specifier = ">=0.1.0" }]
+requires-dist = [{ name = "corvus-json-schema-rs", specifier = ">=0.1.1" }]
