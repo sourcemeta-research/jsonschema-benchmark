@@ -5,9 +5,9 @@ edition = "2024"
 publish = false
 
 [dependencies]
-# The latest release: the Dockerfile updates it in Cargo.lock on every build (keeping the other dependencies locked)
-# and records it in /app/corvus-version for version.sh.
-corvus-json-schema = ">=0.1.0"
+# The latest release (0.1.2 at least, for JsonDocument): the Dockerfile updates it in Cargo.lock on every build
+# (keeping the other dependencies locked) and records it in /app/corvus-version for version.sh.
+corvus-json-schema = ">=0.1.2"
 serde_json = { version = "1", features = ["preserve_order"] }
 
 [profile.release]
