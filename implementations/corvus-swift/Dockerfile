@@ -1,6 +1,6 @@
 FROM swift:6.4
 
-RUN apt-get update && apt-get install -y --no-install-recommends time jq pkg-config && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends time jq pkg-config curl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # The C library, which the Swift package uses on Linux through its pkg-config file. The repository's releases: Docker
 # downloads the list on every build and reuses the layers below only while it is unchanged, so a new release of the
