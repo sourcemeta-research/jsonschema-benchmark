@@ -407,6 +407,72 @@ dist/results/corvus-py-rs/%: \
 	| dist/results/corvus-py-rs
 	@$(call docker_run,corvus-py-rs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# CORVUS (C++)
+
+implementations/corvus-cpp/.dockertimestamp: \
+	implementations/corvus-cpp/memory-wrapper.sh \
+	implementations/corvus-cpp/main.cpp \
+	implementations/corvus-cpp/CMakeLists.txt \
+	implementations/corvus-cpp/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-cpp implementations/corvus-cpp
+	touch $@
+
+dist/results/corvus-cpp/%: \
+	implementations/corvus-cpp/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-cpp
+	@$(call docker_run,corvus-cpp,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Ruby)
+
+implementations/corvus-rb/.dockertimestamp: \
+	implementations/corvus-rb/memory-wrapper.sh \
+	implementations/corvus-rb/main.rb \
+	implementations/corvus-rb/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-rb implementations/corvus-rb
+	touch $@
+
+dist/results/corvus-rb/%: \
+	implementations/corvus-rb/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-rb
+	@$(call docker_run,corvus-rb,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (PHP)
+
+implementations/corvus-php/.dockertimestamp: \
+	implementations/corvus-php/memory-wrapper.sh \
+	implementations/corvus-php/main.php \
+	implementations/corvus-php/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-php implementations/corvus-php
+	touch $@
+
+dist/results/corvus-php/%: \
+	implementations/corvus-php/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-php
+	@$(call docker_run,corvus-php,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Swift)
+
+implementations/corvus-swift/.dockertimestamp: \
+	implementations/corvus-swift/memory-wrapper.sh \
+	implementations/corvus-swift/Package.swift \
+	implementations/corvus-swift/Sources/corvus_swift_benchmark/main.swift \
+	implementations/corvus-swift/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-swift implementations/corvus-swift
+	touch $@
+
+dist/results/corvus-swift/%: \
+	implementations/corvus-swift/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-swift
+	@$(call docker_run,corvus-swift,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # SCHEMASAFE
 
 implementations/schemasafe/.dockertimestamp: \

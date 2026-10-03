@@ -26,7 +26,7 @@ A summary of these implementations is given below.
 - [Blaze](https://github.com/sourcemeta/blaze) (C++)
 - [@exodus/schemasafe](https://github.com/ExodusMovement/schemasafe) (JS)
 - [boon](https://github.com/santhosh-tekuri/boon) (Rust)
-- [Corvus.JsonSchema](https://github.com/corvus-dotnet/Corvus.JsonSchema) (C#, TypeScript, Rust, Python)
+- [Corvus.JsonSchema](https://github.com/corvus-dotnet/Corvus.JsonSchema) (C#, TypeScript, Rust, Python, C++, Ruby, PHP, Swift)
 - [Hyperjump](https://github.com/hyperjump-io/json-schema) (JS)
 - [JSU](https://github.com/zx80/json-schema-utils) (C, Java, JS, Python, Perl)
 - [Opis](https://opis.io/json-schema) (PHP)
