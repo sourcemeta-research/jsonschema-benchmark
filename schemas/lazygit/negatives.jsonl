@@ -1,0 +1,247 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"un": "expected"}
+{"confirmOnQuit": null}
+{"customCommands": [{"key": null, "command": "", "context": "status"}, {"key": null, "command": "", "context": "status"}]}
+{"customCommands": null}
+{"customCommands": [null]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "after": null}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "after": {"checkForConflicts": null}}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "after": {"no-such-prop": null}}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "description": null}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "loadingText": null}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": null}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [null]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "initialValue": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "suggestions": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "suggestions": {"preset": "authors", "no-such-prop": null}}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "suggestions": {"preset": null}}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "suggestions": {}}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "suggestions": {"command": null}}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "suggestions": {"command": "", "no-such-prop": null}}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": "", "key": "", "no-such-prop": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "input", "title": null, "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": null, "title": "", "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"title": "", "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "confirm", "title": "", "key": "", "body": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "confirm", "title": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "confirm", "title": "", "key": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "confirm", "title": "", "key": "", "no-such-prop": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "confirm", "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "confirm", "title": null, "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "options": []}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": null, "options": []}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [], "no-such-prop": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{"value": "a"}, {"value": "a"}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [null]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{"value": "a", "description": null}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{"value": "a", "name": null}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{"value": "a", "no-such-prop": null}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{"value": ""}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": "", "key": "", "options": [{"value": null}]}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "key": "", "options": []}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menu", "title": null, "key": "", "options": []}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": null, "title": "", "key": "", "options": []}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"title": "", "key": "", "options": []}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": "", "command": "", "filter": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": "", "command": "", "labelFormat": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": "", "command": "", "valueFormat": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": "", "command": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "command": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": null, "command": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": "", "key": "", "command": "", "no-such-prop": null}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "key": "", "command": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": "menuFromCommand", "title": null, "key": "", "command": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"type": null, "title": "", "key": "", "command": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "prompts": [{"title": "", "key": "", "command": ""}]}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "showOutput": null}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "stream": null}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "subprocess": null}]}
+{"customCommands": [{"key": null, "command": null, "context": "status"}]}
+{"customCommands": [{"key": null, "context": "status"}]}
+{"customCommands": [{"key": null, "command": "", "context": null}]}
+{"customCommands": [{"key": null, "command": ""}]}
+{"customCommands": [{"command": "", "context": "status"}]}
+{"customCommands": [{"key": null, "command": "", "context": "status", "no-such-prop": null}]}
+{"disableStartupPopups": null}
+{"git": null}
+{"git": {"allBranchesLogCmd": null}}
+{"git": {"autoFetch": null}}
+{"git": {"autoRefresh": null}}
+{"git": {"branchLogCmd": null}}
+{"git": {"commit": null}}
+{"git": {"commit": {"signOff": null}}}
+{"git": {"commit": {"no-such-prop": null}}}
+{"git": {"commitPrefixes": null}}
+{"git": {"commitPrefixes": {"a": null}}}
+{"git": {"commitPrefixes": {"a": {"pattern": "a", "replace": "a", "no-such-prop": null}}}}
+{"git": {"commitPrefixes": {"a": {"replace": "a"}}}}
+{"git": {"commitPrefixes": {"a": {"pattern": "", "replace": "a"}}}}
+{"git": {"commitPrefixes": {"a": {"pattern": null, "replace": "a"}}}}
+{"git": {"commitPrefixes": {"a": {"pattern": "a"}}}}
+{"git": {"commitPrefixes": {"a": {"pattern": "a", "replace": ""}}}}
+{"git": {"commitPrefixes": {"a": {"pattern": "a", "replace": null}}}}
+{"git": {"commitPrefixes": {"no-such-prop": null}}}
+{"git": {"diffContextSize": null}}
+{"git": {"disableForcePushing": null}}
+{"git": {"fetchAll": null}}
+{"git": {"log": null}}
+{"git": {"log": {"order": null}}}
+{"git": {"log": {"showGraph": null}}}
+{"git": {"log": {"showWholeGraph": null}}}
+{"git": {"log": {"no-such-prop": null}}}
+{"git": {"mainBranches": ["a", "a"]}}
+{"git": {"mainBranches": null}}
+{"git": {"mainBranches": [""]}}
+{"git": {"mainBranches": [null]}}
+{"git": {"merging": null}}
+{"git": {"merging": {"args": null}}}
+{"git": {"merging": {"manualCommit": null}}}
+{"git": {"merging": {"no-such-prop": null}}}
+{"git": {"overrideGpg": null}}
+{"git": {"paging": null}}
+{"git": {"paging": {"colorArg": null}}}
+{"git": {"paging": {"pager": ""}}}
+{"git": {"paging": {"pager": null}}}
+{"git": {"paging": {"useConfig": null}}}
+{"git": {"paging": {"no-such-prop": null}}}
+{"git": {"parseEmoji": null}}
+{"git": {"skipHookPrefix": null}}
+{"git": {"no-such-prop": null}}
+{"gui": null}
+{"gui": {"animateExplosion": null}}
+{"gui": {"authorColors": null}}
+{"gui": {"authorColors": {"a": null}}}
+{"gui": {"authorColors": {"no-such-prop": null}}}
+{"gui": {"border": null}}
+{"gui": {"branchColors": null}}
+{"gui": {"branchColors": {"a": null}}}
+{"gui": {"branchColors": {"no-such-prop": null}}}
+{"gui": {"commandLogSize": null}}
+{"gui": {"commitLength": null}}
+{"gui": {"commitLength": {"show": null}}}
+{"gui": {"commitLength": {"no-such-prop": null}}}
+{"gui": {"expandFocusedSidePanel": null}}
+{"gui": {"language": null}}
+{"gui": {"mainPanelSplitMode": null}}
+{"gui": {"mouseEvents": null}}
+{"gui": {"nerdFontsVersion": null}}
+{"gui": {"scrollHeight": null}}
+{"gui": {"scrollPastBottom": null}}
+{"gui": {"shortTimeFormat": null}}
+{"gui": {"showBottomLine": null}}
+{"gui": {"showBranchCommitHash": null}}
+{"gui": {"showCommandLog": null}}
+{"gui": {"showFileTree": null}}
+{"gui": {"showListFooter": null}}
+{"gui": {"showRandomTip": null}}
+{"gui": {"sidePanelWidth": 2.0}}
+{"gui": {"sidePanelWidth": null}}
+{"gui": {"skipDiscardChangeWarning": null}}
+{"gui": {"skipRewordInEditorWarning": null}}
+{"gui": {"skipStashWarning": null}}
+{"gui": {"splitDiff": null}}
+{"gui": {"theme": null}}
+{"gui": {"theme": {"activeBorderColor": ["black", "black"]}}}
+{"gui": {"theme": {"activeBorderColor": []}}}
+{"gui": {"theme": {"activeBorderColor": null}}}
+{"gui": {"theme": {"activeBorderColor": [null]}}}
+{"gui": {"theme": {"cherryPickedCommitBgColor": ["black", "black"]}}}
+{"gui": {"theme": {"cherryPickedCommitBgColor": []}}}
+{"gui": {"theme": {"cherryPickedCommitBgColor": null}}}
+{"gui": {"theme": {"cherryPickedCommitBgColor": [null]}}}
+{"gui": {"theme": {"cherryPickedCommitFgColor": ["black", "black"]}}}
+{"gui": {"theme": {"cherryPickedCommitFgColor": []}}}
+{"gui": {"theme": {"cherryPickedCommitFgColor": null}}}
+{"gui": {"theme": {"cherryPickedCommitFgColor": [null]}}}
+{"gui": {"theme": {"defaultFgColor": ["black", "black"]}}}
+{"gui": {"theme": {"defaultFgColor": []}}}
+{"gui": {"theme": {"defaultFgColor": null}}}
+{"gui": {"theme": {"defaultFgColor": [null]}}}
+{"gui": {"theme": {"inactiveBorderColor": ["black", "black"]}}}
+{"gui": {"theme": {"inactiveBorderColor": []}}}
+{"gui": {"theme": {"inactiveBorderColor": null}}}
+{"gui": {"theme": {"inactiveBorderColor": [null]}}}
+{"gui": {"theme": {"optionsTextColor": ["black", "black"]}}}
+{"gui": {"theme": {"optionsTextColor": []}}}
+{"gui": {"theme": {"optionsTextColor": null}}}
+{"gui": {"theme": {"optionsTextColor": [null]}}}
+{"gui": {"theme": {"searchingActiveBorderColor": ["black", "black"]}}}
+{"gui": {"theme": {"searchingActiveBorderColor": []}}}
+{"gui": {"theme": {"searchingActiveBorderColor": null}}}
+{"gui": {"theme": {"searchingActiveBorderColor": [null]}}}
+{"gui": {"theme": {"selectedLineBgColor": ["black", "black"]}}}
+{"gui": {"theme": {"selectedLineBgColor": []}}}
+{"gui": {"theme": {"selectedLineBgColor": null}}}
+{"gui": {"theme": {"selectedLineBgColor": [null]}}}
+{"gui": {"theme": {"selectedRangeBgColor": ["black", "black"]}}}
+{"gui": {"theme": {"selectedRangeBgColor": []}}}
+{"gui": {"theme": {"selectedRangeBgColor": null}}}
+{"gui": {"theme": {"selectedRangeBgColor": [null]}}}
+{"gui": {"theme": {"unstagedChangesColor": ["black", "black"]}}}
+{"gui": {"theme": {"unstagedChangesColor": []}}}
+{"gui": {"theme": {"unstagedChangesColor": null}}}
+{"gui": {"theme": {"unstagedChangesColor": [null]}}}
+{"gui": {"theme": {"no-such-prop": null}}}
+{"gui": {"timeFormat": null}}
+{"gui": {"windowSize": null}}
+{"gui": {"no-such-prop": null}}
+{"keybinding": null}
+{"keybinding": {"branches": null}}
+{"keybinding": {"branches": {"no-such-prop": null}}}
+{"keybinding": {"commitFiles": null}}
+{"keybinding": {"commitFiles": {"no-such-prop": null}}}
+{"keybinding": {"commits": null}}
+{"keybinding": {"commits": {"no-such-prop": null}}}
+{"keybinding": {"files": null}}
+{"keybinding": {"files": {"no-such-prop": null}}}
+{"keybinding": {"main": null}}
+{"keybinding": {"main": {"no-such-prop": null}}}
+{"keybinding": {"stash": null}}
+{"keybinding": {"stash": {"no-such-prop": null}}}
+{"keybinding": {"status": null}}
+{"keybinding": {"status": {"no-such-prop": null}}}
+{"keybinding": {"submodules": null}}
+{"keybinding": {"submodules": {"no-such-prop": null}}}
+{"keybinding": {"universal": null}}
+{"keybinding": {"universal": {"jumpToBlock": null}}}
+{"keybinding": {"universal": {"no-such-prop": null}}}
+{"keybinding": {"no-such-prop": null}}
+{"notARepository": null}
+{"os": null}
+{"os": {"copyToClipboardCmd": null}}
+{"os": {"edit": null}}
+{"os": {"editAtLine": null}}
+{"os": {"editAtLineAndWait": null}}
+{"os": {"editPreset": null}}
+{"os": {"open": null}}
+{"os": {"openLink": null}}
+{"os": {"no-such-prop": null}}
+{"promptToReturnFromSubprocess": null}
+{"quitOnTopLevelReturn": null}
+{"refresher": null}
+{"refresher": {"fetchInterval": null}}
+{"refresher": {"refreshInterval": null}}
+{"refresher": {"no-such-prop": null}}
+{"services": null}
+{"services": {"a": null}}
+{"services": {"no-such-prop": null}}
+{"update": null}
+{"update": {"days": null}}
+{"update": {"method": null}}
+{"update": {"no-such-prop": null}}
+{"no-such-prop": null}

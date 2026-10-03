@@ -1,0 +1,19 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"app": ""}
+{"app": null}
+{"build": null}
+{"context": null}
+{"versionReporting": null}
+{"watch": null}
+{"watch": {"exclude": null}}
+{"watch": {"exclude": [null]}}
+{"watch": {"include": null}}
+{"watch": {"include": [null]}}

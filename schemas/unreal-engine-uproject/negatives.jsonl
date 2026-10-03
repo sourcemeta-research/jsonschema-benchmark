@@ -1,0 +1,88 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{}
+{"un": "expected"}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Category": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Description": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "DisableEnginePluginsByDefault": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "EpicSampleNameHash": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "IsEnterpriseProject": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{}, {}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [null]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"AdditionalDependencies": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"AdditionalDependencies": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"HasExplicitPlatforms": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"LoadingPhase": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"Name": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"PlatformAllowList": ["", ""]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"PlatformAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"PlatformAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"PlatformDenyList": ["", ""]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"PlatformDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"PlatformDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"ProgramAllowList": ["", ""]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"ProgramAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"ProgramAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"ProgramDenyList": ["", ""]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"ProgramDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"ProgramDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetAllowList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetConfigurationAllowList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetConfigurationAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetConfigurationAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetConfigurationDenyList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetConfigurationDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetConfigurationDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetDenyList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"TargetDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Modules": [{"Type": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": ""}, {"Enabled": false, "Name": ""}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [null]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "Description": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "HasExplicitPlatforms": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "MarketplaceURL": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "Optional": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "PlatformAllowList": ["", ""]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "PlatformAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "PlatformAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "PlatformDenyList": ["", ""]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "PlatformDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "PlatformDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetAllowList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetConfigurationAllowList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetConfigurationAllowList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetConfigurationAllowList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetConfigurationDenyList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetConfigurationDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetConfigurationDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetDenyList": ["Unknown", "Unknown"]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetDenyList": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": "", "TargetDenyList": [null]}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": null, "Name": ""}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Name": ""}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false, "Name": null}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "Plugins": [{"Enabled": false}]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "PostBuildSteps": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "PreBuildSteps": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "TargetPlatforms": ["", ""]}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "TargetPlatforms": null}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "TargetPlatforms": [null]}
+{"EngineAssociation": null, "FileVersion": -3.1415927}
+{"FileVersion": -3.1415927}
+{"EngineAssociation": "0.0", "FileVersion": null}
+{"EngineAssociation": "0.0"}
+{"EngineAssociation": "0.0", "FileVersion": -3.1415927, "no-such-prop": null}

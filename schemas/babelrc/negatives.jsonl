@@ -1,0 +1,42 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"ast": null}
+{"auxiliaryCommentAfter": null}
+{"auxiliaryCommentBefore": null}
+{"code": null}
+{"comments": null}
+{"compact": null}
+{"env": null}
+{"extends": null}
+{"filename": null}
+{"filenameRelative": null}
+{"highlightCode": null}
+{"ignore": null}
+{"ignore": [null]}
+{"inputSourceMap": null}
+{"keepModuleIdExtensions": null}
+{"moduleId": null}
+{"moduleIds": null}
+{"moduleRoot": null}
+{"only": null}
+{"only": [null]}
+{"plugins": null}
+{"plugins": [null]}
+{"plugins": [[null, {}, {}]]}
+{"plugins": [["", null, {}]]}
+{"presets": null}
+{"presets": [null]}
+{"presets": [[null, {}, {}]]}
+{"presets": [["", null, {}]]}
+{"retainLines": null}
+{"sourceFileName": null}
+{"sourceMapTarget": null}
+{"sourceMaps": null}
+{"sourceRoot": null}

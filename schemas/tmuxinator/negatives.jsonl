@@ -1,0 +1,45 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"un": "expected"}
+{"attach": null}
+{"cli_args": null}
+{"defaults": null}
+{"name": null}
+{"name": ""}
+{"on_project_exit": null}
+{"on_project_first_start": null}
+{"on_project_restart": null}
+{"on_project_start": null}
+{"on_project_stop": null}
+{"post": null}
+{"pre": null}
+{"pre_window": null}
+{"project_name": null}
+{"project_root": null}
+{"rbenv": null}
+{"root": null}
+{"socket_name": null}
+{"startup_pane": null}
+{"startup_window": null}
+{"tabs": null}
+{"tabs": [null]}
+{"tmux_command": null}
+{"tmux_detached": null}
+{"tmux_options": null}
+{"windows": null}
+{"windows": [null]}
+{"windows": [{"layout": null}]}
+{"windows": [{"panes": null}]}
+{"windows": [{"panes": [null]}]}
+{"windows": [{"panes": [""]}]}
+{"windows": [{"panes": [[null]]}]}
+{"windows": [{"pre": null}]}
+{"windows": [{"pre": [null]}]}
+{"no-such-prop": null}
