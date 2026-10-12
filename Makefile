@@ -318,22 +318,107 @@ dist/results/jsoncons/%: \
 	| dist/results/jsoncons
 	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
 
-# DOTNET / CORVUS
+# DOTNET / CORVUS (native AOT, interpreting the schema: the fastest start)
 
-implementations/corvus/.dockertimestamp: \
-	implementations/corvus/memory-wrapper.sh \
-	implementations/corvus/bench.csproj \
-	implementations/corvus/Program.cs \
-	implementations/corvus/Dockerfile
-	docker build -t jsonschema-benchmark/corvus implementations/corvus
+implementations/corvus-net-optcold/.dockertimestamp: \
+	implementations/corvus-net-optcold/memory-wrapper.sh \
+	implementations/corvus-net-optcold/bench.csproj \
+	implementations/corvus-net-optcold/Program.cs \
+	implementations/corvus-net-optcold/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-net-optcold implementations/corvus-net-optcold
 	touch $@
 
-dist/results/corvus/%: \
-	implementations/corvus/.dockertimestamp \
+dist/results/corvus-net-optcold/%: \
+	implementations/corvus-net-optcold/.dockertimestamp \
 	schemas/%/schema-noformat.json \
 	schemas/%/instances.jsonl \
-	| dist/results/corvus
-	@$(call docker_run,corvus,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+	| dist/results/corvus-net-optcold
+	@$(call docker_run,corvus-net-optcold,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# DOTNET / CORVUS (the JIT, with the schema compiled to IL: the fastest warm validation)
+
+implementations/corvus-net-optwarm/.dockertimestamp: \
+	implementations/corvus-net-optwarm/memory-wrapper.sh \
+	implementations/corvus-net-optwarm/bench.csproj \
+	implementations/corvus-net-optwarm/Program.cs \
+	implementations/corvus-net-optwarm/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-net-optwarm implementations/corvus-net-optwarm
+	touch $@
+
+dist/results/corvus-net-optwarm/%: \
+	implementations/corvus-net-optwarm/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-net-optwarm
+	@$(call docker_run,corvus-net-optwarm,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Java)
+
+implementations/corvus-java/.dockertimestamp: \
+	implementations/corvus-java/memory-wrapper.sh \
+	implementations/corvus-java/src/main/java/Main.java \
+	implementations/corvus-java/src/main/java/Train.java \
+	implementations/corvus-java/pom.xml \
+	implementations/corvus-java/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-java implementations/corvus-java
+	touch $@
+
+dist/results/corvus-java/%: \
+	implementations/corvus-java/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-java
+	@$(call docker_run,corvus-java,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Go)
+
+implementations/corvus-go/.dockertimestamp: \
+	implementations/corvus-go/memory-wrapper.sh \
+	implementations/corvus-go/go.mod \
+	implementations/corvus-go/go.sum \
+	implementations/corvus-go/main.go \
+	implementations/corvus-go/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-go implementations/corvus-go
+	touch $@
+
+dist/results/corvus-go/%: \
+	implementations/corvus-go/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-go
+	@$(call docker_run,corvus-go,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Object Pascal)
+
+implementations/corvus-pas/.dockertimestamp: \
+	implementations/corvus-pas/memory-wrapper.sh \
+	implementations/corvus-pas/main.pas \
+	implementations/corvus-pas/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-pas implementations/corvus-pas
+	touch $@
+
+dist/results/corvus-pas/%: \
+	implementations/corvus-pas/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-pas
+	@$(call docker_run,corvus-pas,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (R)
+
+implementations/corvus-r/.dockertimestamp: \
+	implementations/corvus-r/memory-wrapper.sh \
+	implementations/corvus-r/main.R \
+	implementations/corvus-r/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-r implementations/corvus-r
+	touch $@
+
+dist/results/corvus-r/%: \
+	implementations/corvus-r/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-r
+	@$(call docker_run,corvus-r,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
 # CORVUS (TypeScript)
 
@@ -429,6 +514,7 @@ dist/results/corvus-cpp/%: \
 implementations/corvus-rb/.dockertimestamp: \
 	implementations/corvus-rb/memory-wrapper.sh \
 	implementations/corvus-rb/main.rb \
+	implementations/corvus-rb/Gemfile \
 	implementations/corvus-rb/Dockerfile
 	docker build -t jsonschema-benchmark/corvus-rb implementations/corvus-rb
 	touch $@
