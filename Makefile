@@ -514,6 +514,7 @@ dist/results/corvus-cpp/%: \
 implementations/corvus-rb/.dockertimestamp: \
 	implementations/corvus-rb/memory-wrapper.sh \
 	implementations/corvus-rb/main.rb \
+	implementations/corvus-rb/Gemfile \
 	implementations/corvus-rb/Dockerfile
 	docker build -t jsonschema-benchmark/corvus-rb implementations/corvus-rb
 	touch $@
