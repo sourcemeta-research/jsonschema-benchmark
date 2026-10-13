@@ -64,6 +64,7 @@ We will gladly accept pull requests to add new implementations.
 
 The most recent results can be seen (via GitHub Actions)[https://github.com/sourcemeta-research/jsonschema-benchmark/actions/workflows/ci.yml].
 Note that while there is noise in the results across runs due to the use of shared infrastructure, the relative ranking of different implementations is generally consistent.
+The scheduled runs (and manual runs) execute on a pool of identical Azure VMs, so every implementation is measured on the same CPU model and results compare across runs; pull requests and pushes run on GitHub's hosted runners, whose CPU models vary from job to job. See [infra/runner-pool](infra/runner-pool/README.md).
 It also worth noting that some implementations compile schemas ahead of time into a more efficient representation, while others interpret the entire schema at runtime.
 Currently we operate under the assumption that a schema changes infrequently enough that the compilation process is unlikely to be a performance bottleneck.
 As such, we currently only measure the time for validation and exclude any compilation time.

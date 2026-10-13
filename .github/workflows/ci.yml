@@ -33,7 +33,87 @@ on:
 permissions:
   contents: read
 
+# Runs on the runner pool (see plan) take the pool one at a time; other runs are independent.
+concurrency:
+  group: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && vars.BENCHMARK_POOL != '' && 'benchmark-pool' || format('benchmark-{0}', github.run_id) }}
+  cancel-in-progress: false
+
 jobs:
+  # Where this run's benchmarks run. Scheduled and manual runs use the runner pool in Azure (infra/runner-pool), when
+  # its variables are set, so every result comes from one VM size, so one CPU model, and results compare across runs.
+  # Pull requests and pushes run on GitHub's hosted runners, whose CPU models vary from job to job.
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      pooled: ${{ steps.plan.outputs.pooled }}
+      runs-on: ${{ steps.plan.outputs.runs-on }}
+      max-parallel: ${{ steps.plan.outputs.max-parallel }}
+      label: ${{ steps.plan.outputs.label }}
+    steps:
+      - name: Plan
+        id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          POOL: ${{ vars.BENCHMARK_POOL }}
+          LABEL: jsonschema-benchmark-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          if { [ "$EVENT" = schedule ] || [ "$EVENT" = workflow_dispatch ]; } && [ -n "$POOL" ]; then
+            count=$(echo "$POOL" | tr ',' '\n' | grep -c .)
+            echo "pooled=true" >> "$GITHUB_OUTPUT"
+            echo "runs-on=[\"self-hosted\",\"$LABEL\"]" >> "$GITHUB_OUTPUT"
+            echo "max-parallel=$count" >> "$GITHUB_OUTPUT"
+            echo "label=$LABEL" >> "$GITHUB_OUTPUT"
+            echo "Benchmarks run on the pool: $POOL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "pooled=false" >> "$GITHUB_OUTPUT"
+            echo "runs-on=\"ubuntu-latest\"" >> "$GITHUB_OUTPUT"
+            echo "max-parallel=256" >> "$GITHUB_OUTPUT"
+          fi
+
+  # Starts the pool's VMs and registers a runner on each with a label unique to this run attempt.
+  pool-start:
+    needs: plan
+    if: needs.plan.outputs.pooled == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Azure login (OpenID Connect)
+    steps:
+      - name: Token for registering runners
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.RUNNER_APP_ID }}
+          private-key: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Start the VMs and register their runners
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          GROUP: ${{ vars.BENCHMARK_RESOURCE_GROUP }}
+          POOL: ${{ vars.BENCHMARK_POOL }}
+          LABEL: ${{ needs.plan.outputs.label }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          IFS=, read -ra vms <<< "$POOL"
+          for vm in "${vms[@]}"; do az vm start --resource-group "$GROUP" --name "$vm" --no-wait; done
+          for vm in "${vms[@]}"; do az vm wait --resource-group "$GROUP" --name "$vm" --custom "instanceView.statuses[?code=='PowerState/running']"; done
+          for vm in "${vms[@]}"; do
+            token=$(gh api -X POST "repos/$REPOSITORY/actions/runners/registration-token" --jq .token)
+            echo "::add-mask::$token"
+            az vm run-command invoke --resource-group "$GROUP" --name "$vm" --command-id RunShellScript \
+              --query "value[0].message" --output tsv --scripts "
+                set -e
+                cd /opt/actions-runner
+                sudo -u runner ./config.sh --unattended --replace --url https://github.com/$REPOSITORY --token $token \
+                  --name $vm --labels $LABEL --no-default-labels --work _work
+                ./svc.sh install runner
+                ./svc.sh start"
+          done
+
   set-implementations:
     runs-on: ubuntu-latest
     outputs:
@@ -49,24 +129,39 @@ jobs:
         run: (echo -n "implementations="; ./.github/list-implementations.sh) >> $GITHUB_OUTPUT
 
   benchmark:
-    needs: set-implementations
-    runs-on: ubuntu-latest
+    needs: [set-implementations, plan, pool-start]
+    if: ${{ !cancelled() && needs.set-implementations.result == 'success' && needs.plan.result == 'success' && (needs.pool-start.result == 'success' || needs.pool-start.result == 'skipped') }}
+    runs-on: ${{ fromJSON(needs.plan.outputs.runs-on) }}
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/implementations/json_schemer/Gemfile
     strategy:
       # One implementation failing must not cancel the others
       fail-fast: false
+      # On the pool, one job per VM at a time.
+      max-parallel: ${{ fromJSON(needs.plan.outputs.max-parallel) }}
       matrix: ${{ fromJson(needs.set-implementations.outputs.implementations) }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      # The CPU of every job is recorded. On the pool it must be the pool's model: a VM size can change hardware.
+      - name: Machine
+        env:
+          EXPECTED: ${{ needs.plan.outputs.pooled == 'true' && vars.BENCHMARK_CPU_MODEL || '' }}
+        run: |
+          model=$(lscpu | sed -n 's/^Model name:[[:space:]]*//p' | head -n 1)
+          echo "${{ matrix.impl }}: $model, $(nproc) CPUs, on $RUNNER_NAME" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ -n "$EXPECTED" ] && [ "$model" != "$EXPECTED" ]; then
+            echo "::error::The CPU is $model, not the pool's $EXPECTED"
+            exit 1
+          fi
       - name: Restore cached run
         uses: actions/cache/restore@v4
         id: cache-report
         with:
           path: dist/report.csv
-          key: noformat-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
+          # Results from the pool and from hosted runners are cached apart: they come from different hardware.
+          key: noformat-${{ needs.plan.outputs.pooled == 'true' && 'pool' || 'hosted' }}-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
           lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' || inputs.skip_cache }}
 
       - name: Install dts
@@ -105,8 +200,57 @@ jobs:
           path: dist/report.csv
           key: ${{ steps.cache-report.outputs.cache-primary-key }}
 
+  # Removes this run's runners and deallocates the pool's VMs, whatever happened to the benchmarks.
+  pool-stop:
+    needs: [plan, pool-start, benchmark]
+    if: ${{ always() && needs.plan.outputs.pooled == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Azure login (OpenID Connect)
+    steps:
+      - name: Token for removing runners
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.RUNNER_APP_ID }}
+          private-key: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Remove the runners and deallocate the VMs
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          GROUP: ${{ vars.BENCHMARK_RESOURCE_GROUP }}
+          POOL: ${{ vars.BENCHMARK_POOL }}
+          LABEL: ${{ needs.plan.outputs.label }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          IFS=, read -ra vms <<< "$POOL"
+          for vm in "${vms[@]}"; do
+            token=$(gh api -X POST "repos/$REPOSITORY/actions/runners/remove-token" --jq .token)
+            echo "::add-mask::$token"
+            # Best effort: a VM that never started has nothing to remove.
+            az vm run-command invoke --resource-group "$GROUP" --name "$vm" --command-id RunShellScript \
+              --query "value[0].message" --output tsv --scripts "
+                cd /opt/actions-runner
+                ./svc.sh stop; ./svc.sh uninstall
+                sudo -u runner ./config.sh remove --token $token
+                docker system prune --all --force" || true
+          done
+          # Any runner of this run that is still registered (for example, on a VM that could not be reached).
+          for id in $(gh api "repos/$REPOSITORY/actions/runners" --paginate \
+              --jq ".runners[] | select(any(.labels[]; .name == \"$LABEL\")) | .id"); do
+            gh api -X DELETE "repos/$REPOSITORY/actions/runners/$id" || true
+          done
+          for vm in "${vms[@]}"; do az vm deallocate --resource-group "$GROUP" --name "$vm" --no-wait; done
+
   aggregate:
     needs: benchmark
+    # Not the default condition: it skips a job when a job before it was skipped, and pool-start is, off the pool.
+    if: ${{ !cancelled() && needs.benchmark.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
