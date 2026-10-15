@@ -150,7 +150,8 @@ jobs:
           EXPECTED: ${{ needs.plan.outputs.pooled == 'true' && vars.BENCHMARK_CPU_MODEL || '' }}
         run: |
           model=$(lscpu | sed -n 's/^Model name:[[:space:]]*//p' | head -n 1)
-          echo "${{ matrix.impl }}: $model, $(nproc) CPUs, on $RUNNER_NAME" | tee -a "$GITHUB_STEP_SUMMARY"
+          free=$(df -h --output=avail / | tail -n 1 | tr -d ' ')
+          echo "${{ matrix.impl }}: $model, $(nproc) CPUs, $free free on /, on $RUNNER_NAME" | tee -a "$GITHUB_STEP_SUMMARY"
           if [ -n "$EXPECTED" ] && [ "$model" != "$EXPECTED" ]; then
             echo "::error::The CPU is $model, not the pool's $EXPECTED"
             exit 1
@@ -202,6 +203,12 @@ jobs:
         with:
           path: dist/report.csv
           key: ${{ steps.cache-report.outputs.cache-primary-key }}
+
+      # A pool VM keeps its Docker images between jobs, where a hosted runner starts clean. Each job builds the image it
+      # measures, so removing them all after it changes no result, and the VM's disk does not fill up during the run.
+      - name: Remove Docker images
+        if: ${{ always() && needs.plan.outputs.pooled == 'true' }}
+        run: docker system prune --all --force
 
   # Removes this run's runners and deallocates the pool's VMs, whatever happened to the benchmarks.
   pool-stop:
