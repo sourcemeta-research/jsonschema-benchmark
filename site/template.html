@@ -530,9 +530,17 @@ function renderBoard() {
   host.replaceChildren(svg);
 
   const m = METRICS[state.metric].long;
+  // Implementations fastest on every schema they complete sit at 1×; say so, or say why even the leader is above it.
+  const sweep = rows.filter(r => r.n > 0 && r.best === r.n);
+  let lead;
+  if (state.selected.size === 1) lead = "Only one implementation is selected, so it sits at 1×.";
+  else if (!sweep.length) lead = "No selected implementation is fastest on every schema, so even the leader sits above 1×; the bar label says how many schemas each one is fastest on.";
+  else lead = sweep.map(r => r.n === NS
+    ? `${esc(implLabel(r.impl))} is fastest on every schema, so it sits at 1×.`
+    : `${esc(implLabel(r.impl))} is fastest on every schema it completes (${r.n} of ${NS}), so it sits at 1×; check its failures before reading it as the leader.`).join(" ");
   document.getElementById("board-note").innerHTML = versus
     ? `Geometric mean of each implementation's <b>${esc(m)}</b> relative to <b>${esc(baseLabel())}</b>, over the schemas both complete. Bars to the left are ${better()}, to the right ${worse()}.`
-    : `Each implementation's <b>${esc(m)}</b> as a multiple of the fastest selected implementation <b>on each schema</b>, averaged over the schemas it completes (geometric mean). 1× would mean fastest on every schema. No implementation is, so even the leader sits above 1×; the bar label says how many schemas each one is fastest on.`;
+    : `Each implementation's <b>${esc(m)}</b> as a multiple of the fastest selected implementation <b>on each schema</b>, averaged over the schemas it completes (geometric mean). 1× would mean fastest on every schema. ${lead}`;
   document.getElementById("board-legend").innerHTML = versus
     ? `<span><i class="sw" style="background:var(--faster)"></i>${better()} than ${esc(baseLabel())}</span><span><i class="sw" style="background:var(--slower)"></i>${worse()}</span>`
     : `<span><i class="sw" style="background:var(--slower)"></i>multiple of the fastest on each schema</span>`;
