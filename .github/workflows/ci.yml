@@ -109,7 +109,7 @@ jobs:
                 set -e
                 cd /opt/actions-runner
                 sudo -u runner ./config.sh --unattended --replace --url https://github.com/$REPOSITORY --token $token \
-                  --name $vm --labels $LABEL --no-default-labels --work _work
+                  --name $vm --labels $LABEL --work _work
                 ./svc.sh install runner
                 ./svc.sh start"
           done
