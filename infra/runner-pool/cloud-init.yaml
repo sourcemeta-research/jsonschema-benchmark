@@ -6,6 +6,8 @@ package_update: true
 package_upgrade: true
 packages:
   - docker.io
+  # BuildKit, which some of the Dockerfiles need: without buildx, docker build falls back to the legacy builder
+  - docker-buildx
   - make
   - jq
   - git

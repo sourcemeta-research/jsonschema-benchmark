@@ -156,6 +156,12 @@ jobs:
             echo "::error::The CPU is $model, not the pool's $EXPECTED"
             exit 1
           fi
+          # Without buildx, docker build falls back to the legacy builder, which fails on some Dockerfiles and
+          # silently ignores options such as COPY --exclude in others.
+          if ! docker buildx version; then
+            echo "::error::Docker has no buildx, so it cannot build with BuildKit"
+            exit 1
+          fi
       - name: Restore cached run
         uses: actions/cache/restore@v4
         id: cache-report
