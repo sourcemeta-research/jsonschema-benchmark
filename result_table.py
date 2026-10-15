@@ -49,6 +49,7 @@ IMPL_RENAMES = {
     'kmp': 'KMP',
     'networknt': 'NetworkNT',
     'opis': 'Opis',
+    'jsonschema-rs': 'jsonschema-rs (Py)',
     'py-jsonschema': 'jsonschema (Py)',
 }
 

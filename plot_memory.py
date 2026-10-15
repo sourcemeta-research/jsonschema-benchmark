@@ -31,6 +31,7 @@ IMPL_RENAMES = {
     'jsv': 'JSV',
     'kmp': 'KMP',
     'networknt': 'NetworkNT',
+    'jsonschema-rs': 'jsonschema-rs (Py)',
     'py-jsonschema': 'jsonschema (Py)',
 }
 
