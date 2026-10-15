@@ -263,6 +263,24 @@ dist/results/py-jsonschema/%: \
 	| dist/results/py-jsonschema
 	@$(call docker_run,py-jsonschema,/workspace/$(dir $(word 2,$^)))
 
+# PYTHON / JSONSCHEMA-RS (the Python bindings of the jsonschema Rust crate)
+
+implementations/jsonschema-rs/.dockertimestamp: \
+	implementations/jsonschema-rs/memory-wrapper.sh \
+	implementations/jsonschema-rs/validate.py \
+	implementations/jsonschema-rs/pyproject.toml \
+	implementations/jsonschema-rs/uv.lock \
+	implementations/jsonschema-rs/Dockerfile
+	docker build -t jsonschema-benchmark/jsonschema-rs implementations/jsonschema-rs
+	touch $@
+
+dist/results/jsonschema-rs/%: \
+	implementations/jsonschema-rs/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsonschema-rs
+	@$(call docker_run,jsonschema-rs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # GO / JSONSCHEMA
 
 implementations/go-jsonschema/.dockertimestamp: \

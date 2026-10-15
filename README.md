@@ -36,6 +36,7 @@ A summary of these implementations is given below.
 - [json-schema-validator](https://github.com/OptimumCode/json-schema-validator) (Kotlin)
 - [jsonschema](https://github.com/santhosh-tekuri/jsonschema/) (Go)
 - [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) (Python)
+- [jsonschema-rs](https://github.com/Stranger6667/jsonschema/tree/master/crates/jsonschema-py) (Python, backed by the jsonschema Rust crate)
 - [JsonSchema.NET](https://github.com/json-everything/json-everything) (C#)
 - [JSV](https://github.com/lud/jsv) (Elixir)
 
