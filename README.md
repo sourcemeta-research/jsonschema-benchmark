@@ -64,6 +64,12 @@ We will gladly accept pull requests to add new implementations.
 ## Results
 
 The most recent results can be seen (via GitHub Actions)[https://github.com/sourcemeta-research/jsonschema-benchmark/actions/workflows/ci.yml].
+Each run also builds an interactive results site from `report.csv`: an overall ranking, a schema-by-implementation matrix, per-schema detail and a head-to-head comparison of any two implementations, for any of the figures below.
+It is a single HTML file in the run's `report` artifact (`site/index.html`), and is linked from the run's summary when the plots are uploaded.
+When the `RESULTS_PAGES` variable is `true` and Pages deploys from GitHub Actions, the latest run on the runner pool is also published as the repository's GitHub Pages site.
+The site needs no change when an implementation or a schema is added: implementations are named by their directory and grouped by the language of their source files.
+To build it locally from a report, run `uv run python site/generate_site.py` after the report is in `dist/report.csv` (and, optionally, `./dataset_summary.sh csv > dist/summary.csv`).
+
 Note that while there is noise in the results across runs due to the use of shared infrastructure, the relative ranking of different implementations is generally consistent.
 The scheduled runs (and manual runs) execute on a pool of identical Azure VMs, so every implementation is measured on the same CPU model and results compare across runs; pull requests and pushes run on GitHub's hosted runners, whose CPU models vary from job to job. See [infra/runner-pool](infra/runner-pool/README.md).
 It also worth noting that some implementations compile schemas ahead of time into a more efficient representation, while others interpret the entire schema at runtime.
