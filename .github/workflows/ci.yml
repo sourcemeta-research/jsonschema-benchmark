@@ -141,6 +141,12 @@ jobs:
       max-parallel: ${{ fromJSON(needs.plan.outputs.max-parallel) }}
       matrix: ${{ fromJson(needs.set-implementations.outputs.implementations) }}
     steps:
+      # The benchmarks' containers run as root, and some write into the workspace: jsu-py leaves root-owned __pycache__
+      # folders in schemas/. A hosted runner starts each job with a new workspace, but a pool VM reuses it, and the
+      # runner user cannot delete those folders, so the next job's checkout fails. Docker can give them back.
+      - name: Reclaim the workspace
+        if: ${{ needs.plan.outputs.pooled == 'true' }}
+        run: docker run --rm -v "$GITHUB_WORKSPACE:/workspace" busybox:1.37.0 chown -R "$(id -u):$(id -g)" /workspace
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
