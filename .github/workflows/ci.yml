@@ -181,8 +181,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12.5'
+      # A pool VM's runner does not have pipx's directory for binaries on its PATH, as a hosted runner does.
       - name: Install uv
-        run: pipx install uv
+        run: |
+          pipx install uv
+          pipx environment --value PIPX_BIN_DIR >> "$GITHUB_PATH"
       - name: Validate CSV
         run: (uv run python .github/csv_md.py > /dev/null || (echo "Invalid CSV" > /dev/stderr && cat dist/report.csv && exit 1))
 
