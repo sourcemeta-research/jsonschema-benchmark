@@ -438,6 +438,24 @@ dist/results/corvus-r/%: \
 	| dist/results/corvus-r
 	@$(call docker_run,corvus-r,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# CORVUS (Julia)
+
+implementations/corvus-jl/.dockertimestamp: \
+	implementations/corvus-jl/memory-wrapper.sh \
+	implementations/corvus-jl/Project.toml \
+	implementations/corvus-jl/main.jl \
+	implementations/corvus-jl/src/CorvusJsonSchemaBenchmark.jl \
+	implementations/corvus-jl/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-jl implementations/corvus-jl
+	touch $@
+
+dist/results/corvus-jl/%: \
+	implementations/corvus-jl/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-jl
+	@$(call docker_run,corvus-jl,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # CORVUS (TypeScript)
 
 implementations/corvus-ts/.dockertimestamp: \

@@ -21,6 +21,7 @@ IMPL_RENAMES = {
     'corvus-go': 'Corvus (Go)',
     'corvus-pas': 'Corvus (Object Pascal)',
     'corvus-r': 'Corvus (R)',
+    'corvus-jl': 'Corvus (Julia)',
     'go-jsonschema': 'jsonschema (Go)',
     'jsu-c': 'JSU (C)',
     'jsu-java': 'JSU (Java)',
