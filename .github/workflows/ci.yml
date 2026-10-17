@@ -174,7 +174,7 @@ jobs:
         with:
           path: dist/report.csv
           # Results from the pool and from hosted runners are cached apart: they come from different hardware.
-          key: noformat-${{ needs.plan.outputs.pooled == 'true' && 'pool' || 'hosted' }}-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
+          key: noformat-${{ needs.plan.outputs.pooled == 'true' && 'pool' || 'hosted' }}-${{ matrix.impl }}-${{ hashFiles(format('implementations/{0}/**/*', matrix.impl), '!implementations/*/bowtie', 'schemas/**/*', 'report.sh') }}-${{ inputs.runs || 3 }}
           lookup-only: ${{ matrix.skip_cache || startsWith(matrix.impl, 'blaze') || github.event_name == 'schedule' || inputs.skip_cache }}
 
       - name: Install dts
@@ -339,8 +339,9 @@ jobs:
           aws s3 cp dist/results/plots s3://${{ vars.S3_BUCKET_NAME }}/${{ github.sha }}/dist/results/plots/ --recursive
           aws s3 cp dist/site s3://${{ vars.S3_BUCKET_NAME }}/${{ github.sha }}/dist/site/ --recursive
           echo b2_url_prefix="https://${{ vars.S3_BUCKET_NAME }}.${{ vars.S3_BASE_URL }}/${{ github.sha }}/" >> "$GITHUB_OUTPUT"
-      # A fixed address for the latest results. Only runs on the pool on main replace it, as their results compare
-      # across runs; it is short-lived in caches so that a new run shows promptly.
+      # A fixed address for the latest results, and for the data behind them (site/data.schema.json). Only runs on the
+      # pool on main replace them, as their results compare across runs; they are short-lived in caches so that a new
+      # run shows promptly.
       - name: Upload the site as the latest results
         if: ${{ steps.upload.outcome == 'success' && needs.plan.outputs.pooled == 'true' && github.ref == 'refs/heads/main' }}
         env:
@@ -349,7 +350,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_APPLICATION_KEY }}
         run: >-
           aws s3 cp dist/site/index.html s3://${{ vars.S3_BUCKET_NAME }}/latest/index.html
-          --content-type "text/html; charset=utf-8" --cache-control "max-age=300"
+          --content-type "text/html; charset=utf-8" --cache-control "max-age=300" &&
+          aws s3 cp dist/site/data.json s3://${{ vars.S3_BUCKET_NAME }}/latest/data.json
+          --content-type "application/json" --cache-control "max-age=300"
       - name: Link the site from the summary
         if: ${{ steps.upload.outcome == 'success' }}
         run: echo "## [Interactive results](${{ steps.upload.outputs.b2_url_prefix }}dist/site/index.html)" >> "$GITHUB_STEP_SUMMARY"

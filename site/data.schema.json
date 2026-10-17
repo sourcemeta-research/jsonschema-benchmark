@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/sourcemeta-research/jsonschema-benchmark/blob/main/site/data.schema.json",
+  "title": "jsonschema-benchmark results",
+  "description": "The data behind the results site, published as data.json beside it. Every figure is a total over all the instances of a schema: cold is the first validation pass after compilation, warm a later one, compile the preparation of the schema and parse the parsing of every instance from memory, all in nanoseconds; memory is the peak resident set size in KB.",
+  "type": "object",
+  "required": ["version", "meta", "impls", "schemas", "results"],
+  "properties": {
+    "version": {
+      "description": "Raised when the format changes in a way readers must handle.",
+      "const": 1
+    },
+    "meta": {
+      "type": "object",
+      "required": ["repo", "runs"],
+      "properties": {
+        "repo": { "description": "The GitHub repository the results came from, as owner/name.", "type": "string" },
+        "runUrl": { "description": "The workflow run that produced the results.", "type": "string" },
+        "commit": { "description": "The commit the run benchmarked.", "type": "string" },
+        "date": { "description": "When the site was generated, in ISO 8601.", "type": "string" },
+        "runner": { "description": "The machines the benchmarks ran on.", "type": "string" },
+        "runs": { "description": "How many times each implementation ran each schema.", "type": "integer", "minimum": 0 }
+      }
+    },
+    "impls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "lang", "version", "bowtie"],
+        "properties": {
+          "id": { "description": "The implementation's directory under implementations/.", "type": "string" },
+          "name": { "type": "string" },
+          "lang": { "description": "The language of its source files; empty when unknown.", "type": "string" },
+          "version": { "description": "What its version.sh printed.", "type": "string" },
+          "bowtie": {
+            "description": "Its Bowtie implementation ID, from implementations/<id>/bowtie, or null when Bowtie does not test it.",
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "dialect"],
+        "properties": {
+          "name": { "description": "The schema's directory under schemas/.", "type": "string" },
+          "dialect": { "description": "The schema's $schema, or null when it declares none.", "type": ["string", "null"] },
+          "docs": { "description": "How many instances it has.", "type": "integer" },
+          "sizeKb": { "description": "The size of the schema in KB.", "type": "number" },
+          "avgDoc": { "description": "The average size of an instance in bytes.", "type": "number" }
+        }
+      }
+    },
+    "results": {
+      "description": "For each implementation ID, the result on each schema it ran: null when any run failed to validate, otherwise one figure per run for each measure.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["cold", "warm", "compile", "parse", "memory"],
+              "additionalProperties": { "type": "array", "items": { "type": "integer", "minimum": 0 } }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
