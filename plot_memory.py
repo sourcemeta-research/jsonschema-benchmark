@@ -30,6 +30,7 @@ IMPL_RENAMES = {
     'jsu-py': 'JSU (Python)',
     'jsdotnet': 'JsonSchema.Net',
     'jsv': 'JSV',
+    'justinrainbow': 'justinrainbow',
     'kmp': 'KMP',
     'networknt': 'NetworkNT',
     'jsonschema-rs': 'jsonschema-rs (Py)',
@@ -40,7 +41,7 @@ if __name__ == "__main__":
     data = pd.read_csv('dist/report.csv')
 
     # Exclude implementations we are not comparing
-    data = data[~data['implementation'].isin(['ajv-bun', 'hyperjump', 'opis'])]
+    data = data[~data['implementation'].isin(['ajv-bun', 'hyperjump', 'justinrainbow', 'opis'])]
     data['implementation'] = data['implementation'].replace(IMPL_RENAMES)
 
     # Exclujde any failed implementations
