@@ -1,7 +1,8 @@
 """Builds the interactive results site from report.csv (and, when present, the dataset summary).
 
 The site is one self-contained HTML file: the measurements are embedded as JSON and the charts are drawn in the
-browser, so it can be uploaded as an artifact, copied to a bucket or served from GitHub Pages as it is.
+browser, so it can be uploaded as an artifact, copied to a bucket or served from GitHub Pages as it is. The same data
+is written beside it as data.json, described by site/data.schema.json, for other sites to build on.
 
 Usage (after report.csv and summary.csv are in dist/, as the aggregate job leaves them):
     uv run python site/generate_site.py --repo "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA" --run-url "$RUN_URL" \
@@ -46,6 +47,9 @@ def language_of(folder):
     return manifest
 
 
+# Raised when data.json changes in a way its readers must handle.
+DATA_VERSION = 1
+
 TEMPLATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "template.html")
 
 
@@ -74,6 +78,25 @@ def read_report(path):
     return results, versions
 
 
+def bowtie_id_of(folder):
+    """The implementation's Bowtie ID, from the optional one-line `bowtie` file in its directory."""
+    path = os.path.join(folder, "bowtie")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return f.read().strip() or None
+
+
+def dialect_of(folder):
+    """The dialect a schema declares through its `$schema`, if any."""
+    try:
+        with open(os.path.join(folder, "schema.json"), encoding="utf-8") as f:
+            schema = json.load(f)
+    except (OSError, ValueError):
+        return None
+    return schema.get("$schema") if isinstance(schema, dict) else None
+
+
 def read_summary(path):
     if not path or not os.path.exists(path):
         return {}
@@ -95,6 +118,7 @@ def main():
     parser.add_argument("--out", default="dist/site/index.html")
     parser.add_argument("--repo", default="sourcemeta-research/jsonschema-benchmark")
     parser.add_argument("--implementations", default="implementations")
+    parser.add_argument("--schemas", default="schemas")
     parser.add_argument("--run-url", default="")
     parser.add_argument("--commit", default="")
     parser.add_argument("--date", default="")
@@ -108,11 +132,19 @@ def main():
     schemas = sorted({s for per_impl in results.values() for s in per_impl})
 
     impls = [
-        {"id": impl, "name": impl, "lang": language_of(os.path.join(args.implementations, impl)), "version": versions[impl]}
+        {
+            "id": impl,
+            "name": impl,
+            "lang": language_of(os.path.join(args.implementations, impl)),
+            "version": versions[impl],
+            "bowtie": bowtie_id_of(os.path.join(args.implementations, impl)),
+        }
         for impl in sorted(results)
     ]
 
+    # The page's data, also written as data.json beside it for other sites to use (see site/data.schema.json).
     data = {
+        "version": DATA_VERSION,
         "meta": {
             "repo": args.repo,
             "runUrl": args.run_url,
@@ -122,7 +154,9 @@ def main():
             "runs": max((len(v["warm"]) for r in results.values() for v in r.values() if v), default=0),
         },
         "impls": impls,
-        "schemas": [{"name": s, **summary.get(s, {})} for s in schemas],
+        "schemas": [
+            {"name": s, "dialect": dialect_of(os.path.join(args.schemas, s)), **summary.get(s, {})} for s in schemas
+        ],
         "results": results,
     }
 
@@ -140,6 +174,8 @@ def main():
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
         f.write(page)
+    with open(os.path.join(os.path.dirname(os.path.abspath(args.out)), "data.json"), "w", encoding="utf-8") as f:
+        json.dump(data, f, separators=(",", ":"))
 
 
 if __name__ == "__main__":
