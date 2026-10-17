@@ -22,11 +22,13 @@ SOURCE_LANGUAGES = {
     ".c": "C", ".cc": "C++", ".cpp": "C++", ".cxx": "C++", ".cs": "C#", ".ex": "Elixir", ".exs": "Elixir",
     ".go": "Go", ".java": "Java", ".js": "JavaScript", ".mjs": "JavaScript", ".cjs": "JavaScript",
     ".ts": "JavaScript", ".kt": "Kotlin", ".pas": "Object Pascal", ".pl": "Perl", ".php": "PHP", ".py": "Python",
-    ".r": "R", ".rb": "Ruby", ".rs": "Rust", ".swift": "Swift",
+    ".r": "R", ".rb": "Ruby", ".rs": "Rust", ".swift": "Swift", ".jl": "Julia", ".ml": "OCaml", ".hs": "Haskell",
+    ".f90": "Fortran", ".lua": "Lua", ".scala": "Scala", ".dart": "Dart", ".zig": "Zig", ".erl": "Erlang",
 }
 MANIFEST_LANGUAGES = {
     "package.json": "JavaScript", "Cargo.toml": "Rust", "go.mod": "Go", "pom.xml": "Java", "Gemfile": "Ruby",
     "composer.json": "PHP", "pyproject.toml": "Python", "Package.swift": "Swift", "mix.exs": "Elixir",
+    "Project.toml": "Julia", "dune-project": "OCaml", "fpm.toml": "Fortran", "stack.yaml": "Haskell",
 }
 # Dependency and build output folders, whose files are not the implementation's own.
 SKIP_FOLDERS = {"node_modules", "target", "build", "gradle", ".gradle", "vendor", "deps", "_build"}
