@@ -66,6 +66,7 @@ We will gladly accept pull requests to add new implementations.
 The most recent results can be seen (via GitHub Actions)[https://github.com/sourcemeta-research/jsonschema-benchmark/actions/workflows/ci.yml].
 Each run also builds an interactive results site from `report.csv`: an overall ranking, a schema-by-implementation matrix, per-schema detail and a head-to-head comparison of any two implementations, for any of the figures below.
 It is a single HTML file in the run's `report` artifact (`site/index.html`), and is linked from the run's summary when the plots are uploaded.
+The latest run on the runner pool is always at <https://sourcemeta-research-jsonschema-benchmark.s3.eu-central-003.backblazeb2.com/latest/index.html>.
 When the `RESULTS_PAGES` variable is `true` and Pages deploys from GitHub Actions, the latest run on the runner pool is also published as the repository's GitHub Pages site.
 The site needs no change when an implementation or a schema is added: implementations are named by their directory and grouped by the language of their source files.
 To build it locally from a report, run `uv run python site/generate_site.py` after the report is in `dist/report.csv` (and, optionally, `./dataset_summary.sh csv > dist/summary.csv`).
