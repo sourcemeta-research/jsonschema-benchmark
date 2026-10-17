@@ -230,7 +230,7 @@ table.matrix { border-collapse: separate; border-spacing: 2px; font-family: var(
       <div class="method">
         <p><b>Every figure is a total</b> over all the instances of a schema. <b>Cold</b> is the first validation pass after the schema is compiled; it includes neither compilation nor process start-up. <b>Warm</b> is a later pass, at steady state. <b>Parse</b> is the time to parse every instance from memory, so it excludes file I/O. <b>Compile</b> is the time to prepare the schema.</p>
         <p><b>Parse + warm</b> is what a service that validates each request pays at steady state. <b>Compile + parse + cold</b> is the whole path from an uncompiled schema to every instance validated once. <b>Peak memory</b> is the container's maximum resident set size.</p>
-        <p>Each implementation runs each schema <span id="runs-n">several</span> times in a fresh container; the page shows the <b>median</b> run, with the fastest and slowest as whiskers. If any run fails to validate an instance, the schema counts as <b>failed</b> for that implementation and is left out of its comparisons.</p>
+        <p>Each implementation runs each schema <span id="runs-n">several</span> times in a fresh container; the page shows the <b>median</b> run, with the lowest and highest as whiskers. If any run fails to validate an instance, the schema counts as <b>failed</b> for that implementation and is left out of its comparisons.</p>
         <p>The <b>overall</b> figure is the geometric mean of the per-schema ratios over the schemas both sides complete, so one large schema cannot dominate it. An implementation that fails a schema is not penalised in the mean; check its coverage before reading its rank.</p>
       </div>
     </section>
@@ -372,15 +372,18 @@ function fmtValue(v, kb = isKb()) {
 }
 function fmtRatioShort(r) { return Number.isFinite(r) ? sig(r) : "–"; }
 const better = () => (isKb() ? "smaller" : "faster");
+// What the best implementation on a schema is: memory is compared by how little it uses.
+const best = () => (isKb() ? "lowest memory" : "fastest");
+const Best = () => best()[0].toUpperCase() + best().slice(1);
 const worse = () => (isKb() ? "larger" : "slower");
 function fmtRatio(r, versus = state.baseline !== "best") {
   if (!Number.isFinite(r)) return "–";
-  if (!versus) return Math.abs(r - 1) < 0.005 ? "fastest" : sig(r) + "× the fastest";
+  if (!versus) return Math.abs(r - 1) < 0.005 ? best() : sig(r) + "× the " + best();
   if (Math.abs(r - 1) < 0.005) return "level";
   return r < 1 ? sig(1 / r) + "× " + better() : sig(r) + "× " + worse();
 }
 function implLabel(id) { const i = IMPL.get(id); return i ? i.name : id; }
-function baseLabel() { return state.baseline === "best" ? "the fastest selected implementation on each schema" : implLabel(state.baseline); }
+function baseLabel() { return state.baseline === "best" ? `the ${best()} of the selection on each schema` : implLabel(state.baseline); }
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 /* ---------- colour ---------- */
@@ -517,7 +520,7 @@ function renderBoard() {
       svg.append(svgEl("rect", { x: Math.abs(r.g - 1) < 1e-9 ? x(1) - 1 : xa, y: cy - 8, width: Math.abs(r.g - 1) < 1e-9 ? 2 : wbar, height: 16, rx: 3, fill, "pointer-events": "none" }));
       const left = r.g < 1;
       svg.append(svgEl("text", { x: left ? xa - 6 : xb + 6, y: cy + 4, "text-anchor": left ? "end" : "start", class: "val", "pointer-events": "none" },
-        r.impl === state.baseline ? "baseline" : narrow ? sig(r.g < 1 ? 1 / r.g : r.g) + "×" : versus ? fmtRatio(r.g) : sig(r.g) + "×" + (r.best ? `, fastest on ${r.best}` : "")));
+        r.impl === state.baseline ? "baseline" : narrow ? sig(r.g < 1 ? 1 / r.g : r.g) + "×" : versus ? fmtRatio(r.g) : sig(r.g) + "×" + (r.best ? `, ${best()} on ${r.best}` : "")));
     } else {
       svg.append(svgEl("text", { x: x0, y: cy + 4, class: "val", "pointer-events": "none" }, "no schema completed"));
     }
@@ -534,16 +537,16 @@ function renderBoard() {
   const sweep = rows.filter(r => r.n > 0 && r.best === r.n);
   let lead;
   if (state.selected.size === 1) lead = "Only one implementation is selected, so it sits at 1×.";
-  else if (!sweep.length) lead = "No selected implementation is fastest on every schema, so even the leader sits above 1×; the bar label says how many schemas each one is fastest on.";
+  else if (!sweep.length) lead = `No selected implementation is the ${best()} on every schema, so even the leader sits above 1×; the bar label says how many schemas each one is the ${best()} on.`;
   else lead = sweep.map(r => r.n === NS
-    ? `${esc(implLabel(r.impl))} is fastest on every schema, so it sits at 1×.`
-    : `${esc(implLabel(r.impl))} is fastest on every schema it completes (${r.n} of ${NS}), so it sits at 1×; check its failures before reading it as the leader.`).join(" ");
+    ? `${esc(implLabel(r.impl))} is the ${best()} on every schema, so it sits at 1×.`
+    : `${esc(implLabel(r.impl))} is the ${best()} on every schema it completes (${r.n} of ${NS}), so it sits at 1×; check its failures before reading it as the leader.`).join(" ");
   document.getElementById("board-note").innerHTML = versus
     ? `Geometric mean of each implementation's <b>${esc(m)}</b> relative to <b>${esc(baseLabel())}</b>, over the schemas both complete. Bars to the left are ${better()}, to the right ${worse()}.`
-    : `Each implementation's <b>${esc(m)}</b> as a multiple of the fastest selected implementation <b>on each schema</b>, averaged over the schemas it completes (geometric mean). 1× would mean fastest on every schema. ${lead}`;
+    : `Each implementation's <b>${esc(m)}</b> as a multiple of the ${best()} of the selection <b>on each schema</b>, averaged over the schemas it completes (geometric mean). 1× would mean the ${best()} on every schema. ${lead}`;
   document.getElementById("board-legend").innerHTML = versus
     ? `<span><i class="sw" style="background:var(--faster)"></i>${better()} than ${esc(baseLabel())}</span><span><i class="sw" style="background:var(--slower)"></i>${worse()}</span>`
-    : `<span><i class="sw" style="background:var(--slower)"></i>multiple of the fastest on each schema</span>`;
+    : `<span><i class="sw" style="background:var(--slower)"></i>multiple of the ${best()} on each schema</span>`;
 }
 
 function boardTip(id) {
@@ -552,7 +555,7 @@ function boardTip(id) {
     tipRows([
       ["Geometric mean", fmtRatio(s.g)],
       ["Schemas compared", `${s.n} of ${NS}`],
-      ["Fastest on", `${s.best} schema${s.best === 1 ? "" : "s"}`],
+      [`${Best()} on`, `${s.best} schema${s.best === 1 ? "" : "s"}`],
       ["Failed", String(s.failed)],
     ].concat(s.missing ? [["Not run", String(s.missing)]] : []));
 }
@@ -598,8 +601,8 @@ function renderMatrix() {
   const g = state.baseline === "best"
     ? [ratioColour(1), ratioColour(8), ratioColour(64)]
     : [ratioColour(1 / 16), ratioColour(1), ratioColour(16)];
-  const leftLab = state.baseline === "best" ? "fastest" : `${span}× ${better()}`;
-  const midLab = state.baseline === "best" ? "8× the fastest" : `level with ${esc(implLabel(state.baseline))}`;
+  const leftLab = state.baseline === "best" ? best() : `${span}× ${better()}`;
+  const midLab = state.baseline === "best" ? `8× the ${best()}` : `level with ${esc(implLabel(state.baseline))}`;
   document.getElementById("matrix-legend").innerHTML =
     `<span class="ramp"><span>${leftLab}</span><i style="background:linear-gradient(90deg,${g.map(c => c.css).join(",")})"></i><span>${state.baseline === "best" ? "64×+" : span + "× " + worse()}</span></span>` +
     `<span>middle: ${midLab}</span>` +
@@ -615,7 +618,7 @@ function matrixTip(key) {
   else rows = [
     ["Median", fmtValue(m.median)],
     ["Range", `${fmtValue(m.min)} – ${fmtValue(m.max)}`],
-    [state.baseline === "best" ? "Against the fastest" : "Against " + implLabel(state.baseline), fmtRatio(ratio(id, schema))],
+    [state.baseline === "best" ? "Against the " + best() : "Against " + implLabel(state.baseline), fmtRatio(ratio(id, schema))],
   ];
   return `<div class="t-h">${esc(info.name)}</div><div class="t-s">${esc(schema)} · ${esc(METRICS[state.metric].long)}</div>` + tipRows(rows);
 }
@@ -687,13 +690,13 @@ function renderSchema() {
   }
   host.replaceChildren(svg);
   document.getElementById("schema-legend").innerHTML =
-    `<span><i class="sw" style="background:var(--accent)"></i>${state.baseline === "best" ? "fastest selected" : esc(implLabel(state.baseline))}</span>` +
-    `<span><i class="sw" style="background:var(--bar)"></i>median of ${DATA.meta.runs} runs</span><span>whisker: fastest to slowest run · ×: multiple of the highlighted bar</span>`;
+    `<span><i class="sw" style="background:var(--accent)"></i>${state.baseline === "best" ? `${best()} of the selection` : esc(implLabel(state.baseline))}</span>` +
+    `<span><i class="sw" style="background:var(--bar)"></i>median of ${DATA.meta.runs} runs</span><span>whisker: lowest to highest run · ×: multiple of the highlighted bar</span>`;
 }
 function schemaTip(id) {
   const m = measure(id, state.schema);
   const rows = m.state === "ok"
-    ? [["Median", fmtValue(m.median)], ["Runs", m.runs.map(v => fmtValue(v)).join(", ")], [state.baseline === "best" ? "Against the fastest" : "Against " + implLabel(state.baseline), fmtRatio(ratio(id, state.schema))]]
+    ? [["Median", fmtValue(m.median)], ["Runs", m.runs.map(v => fmtValue(v)).join(", ")], [state.baseline === "best" ? "Against the " + best() : "Against " + implLabel(state.baseline), fmtRatio(ratio(id, state.schema))]]
     : [["Result", m.state === "failed" ? "failed to validate" : "not run"]];
   return `<div class="t-h">${esc(implLabel(id))}</div><div class="t-s">${esc(state.schema)} · ${esc(METRICS[state.metric].long)}</div>` + tipRows(rows);
 }
@@ -752,7 +755,7 @@ function h2hTip(schema) {
 
 /* ---------- controls ---------- */
 function implOptions(sel, includeBest) {
-  const opts = (includeBest ? [`<option value="best">Fastest on each schema</option>`] : [])
+  const opts = (includeBest ? [`<option value="best">${Best()} on each schema</option>`] : [])
     .concat(DATA.impls.map(i => `<option value="${esc(i.id)}">${esc(i.name)}</option>`));
   sel.innerHTML = opts.join("");
 }
@@ -761,6 +764,7 @@ function renderControls() {
   document.querySelectorAll("#cells button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.cell === state.cells)));
   document.querySelectorAll("#scale button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.scale === state.scale)));
   document.getElementById("baseline").value = state.baseline;
+  document.querySelector('#baseline option[value="best"]').textContent = `${Best()} on each schema`;
   document.getElementById("sort").value = state.sort;
   document.getElementById("schema-pick").value = state.schema;
   document.getElementById("h2h-a").value = state.a;
