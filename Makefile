@@ -578,6 +578,38 @@ dist/results/corvus-php/%: \
 	| dist/results/corvus-php
 	@$(call docker_run,corvus-php,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# CORVUS (Perl)
+
+implementations/corvus-pl/.dockertimestamp: \
+	implementations/corvus-pl/memory-wrapper.sh \
+	implementations/corvus-pl/main.pl \
+	implementations/corvus-pl/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-pl implementations/corvus-pl
+	touch $@
+
+dist/results/corvus-pl/%: \
+	implementations/corvus-pl/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-pl
+	@$(call docker_run,corvus-pl,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Perl, XS)
+
+implementations/corvus-pl-xs/.dockertimestamp: \
+	implementations/corvus-pl-xs/memory-wrapper.sh \
+	implementations/corvus-pl-xs/main.pl \
+	implementations/corvus-pl-xs/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-pl-xs implementations/corvus-pl-xs
+	touch $@
+
+dist/results/corvus-pl-xs/%: \
+	implementations/corvus-pl-xs/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-pl-xs
+	@$(call docker_run,corvus-pl-xs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # CORVUS (Swift)
 
 implementations/corvus-swift/.dockertimestamp: \
