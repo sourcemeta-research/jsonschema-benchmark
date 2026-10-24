@@ -22,6 +22,7 @@ for impl, schema in data[data["exit_status"] == 0].groupby("name")["warm_ms"].id
 
 IMPL_RENAMES = {
     'ajv-bun': 'ajv',
+    'ata-validator': 'ata',
     'blaze': 'Blaze',
     'boon': 'Boon',
     'corvus-net-optcold': 'Corvus (.NET, AOT)',

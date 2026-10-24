@@ -128,6 +128,24 @@ dist/results/ajv-bun/%: \
 	| dist/results/ajv-bun
 	@$(call docker_run,ajv-bun,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
+# ATA-VALIDATOR
+
+implementations/ata-validator/.dockertimestamp: \
+	implementations/ata-validator/memory-wrapper.sh \
+	implementations/ata-validator/main.mjs \
+	implementations/ata-validator/package.json \
+	implementations/ata-validator/package-lock.json \
+	implementations/ata-validator/Dockerfile
+	docker build -t jsonschema-benchmark/ata-validator implementations/ata-validator
+	touch $@
+
+dist/results/ata-validator/%: \
+	implementations/ata-validator/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/ata-validator
+	@$(call docker_run,ata-validator,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
 # BOON
 
 implementations/boon/.dockertimestamp: \
