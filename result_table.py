@@ -52,6 +52,7 @@ IMPL_RENAMES = {
     'opis': 'Opis',
     'jsonschema-rs': 'jsonschema-rs (Py)',
     'py-jsonschema': 'jsonschema (Py)',
+    'valijson': 'Valijson',
 }
 
 impls = list(data.index.get_level_values(0).unique().drop(['ajv', 'hyperjump']).values)

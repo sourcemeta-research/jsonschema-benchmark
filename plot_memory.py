@@ -34,6 +34,7 @@ IMPL_RENAMES = {
     'networknt': 'NetworkNT',
     'jsonschema-rs': 'jsonschema-rs (Py)',
     'py-jsonschema': 'jsonschema (Py)',
+    'valijson': 'Valijson',
 }
 
 if __name__ == "__main__":

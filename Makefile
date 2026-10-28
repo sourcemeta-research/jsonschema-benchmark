@@ -336,6 +336,23 @@ dist/results/jsoncons/%: \
 	| dist/results/jsoncons
 	@$(call docker_run,jsoncons,/workspace/$(dir $(word 2,$^)))
 
+# valijson
+
+implementations/valijson/.dockertimestamp: \
+	implementations/valijson/memory-wrapper.sh \
+	implementations/valijson/CMakeLists.txt \
+	implementations/valijson/main.cc \
+	implementations/valijson/Dockerfile
+	docker build -t jsonschema-benchmark/valijson implementations/valijson
+	touch $@
+
+dist/results/valijson/%: \
+	implementations/valijson/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/valijson
+	@$(call docker_run,valijson,/workspace/$(dir $(word 2,$^)))
+
 # DOTNET / CORVUS (native AOT, interpreting the schema: the fastest start)
 
 implementations/corvus-net-optcold/.dockertimestamp: \
