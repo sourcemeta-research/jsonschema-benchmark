@@ -47,6 +47,7 @@ IMPL_RENAMES = {
     'jsu-py': 'JSU (Python)',
     'jsdotnet': 'JsonSchema.Net',
     'jsv': 'JSV',
+    'justinrainbow': 'justinrainbow',
     'kmp': 'KMP',
     'networknt': 'NetworkNT',
     'opis': 'Opis',

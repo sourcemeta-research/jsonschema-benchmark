@@ -39,6 +39,7 @@ A summary of these implementations is given below.
 - [jsonschema-rs](https://github.com/Stranger6667/jsonschema/tree/master/crates/jsonschema-py) (Python, backed by the jsonschema Rust crate)
 - [JsonSchema.NET](https://github.com/json-everything/json-everything) (C#)
 - [JSV](https://github.com/lud/jsv) (Elixir)
+- [justinrainbow/json-schema](https://github.com/jsonrainbow/json-schema) (PHP)
 
 Note that some implementations are currently ignored by default to limit the runtime of the benchmark.
 These implementations are identified by a `.benchmark-ignore` file in the implementation subdirectory.

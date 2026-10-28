@@ -720,6 +720,24 @@ dist/results/opis/%: \
 	| dist/results/opis
 	@$(call docker_run,opis,/workspace/$(dir $(word 2,$^)))
 
+# justinrainbow
+
+implementations/justinrainbow/.dockertimestamp: \
+	implementations/justinrainbow/memory-wrapper.sh \
+	implementations/justinrainbow/main.php \
+	implementations/justinrainbow/composer.json \
+	implementations/justinrainbow/composer.lock \
+	implementations/justinrainbow/Dockerfile
+	docker build -t jsonschema-benchmark/justinrainbow implementations/justinrainbow
+	touch $@
+
+dist/results/justinrainbow/%: \
+	implementations/justinrainbow/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/justinrainbow
+	@$(call docker_run,justinrainbow,/workspace/$(dir $(word 2,$^)))
+
 # jsv
 
 implementations/jsv/.dockertimestamp: \
