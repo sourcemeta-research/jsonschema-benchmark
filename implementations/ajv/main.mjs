@@ -33,10 +33,27 @@ function validateAll(instances, validator) {
   return failed;
 }
 
+function embeddedIds(schema, ids = []) {
+  if (Array.isArray(schema)) {
+    schema.forEach((item) => embeddedIds(item, ids));
+  } else if (typeof schema === 'object' && schema !== null) {
+    if (typeof schema['$id'] === 'string') {
+      ids.push(schema['$id']);
+    }
+    Object.values(schema).forEach((value) => embeddedIds(value, ids));
+  }
+  return ids;
+}
+
 async function validateSchema(schemaPath, instancePath) {
   const schema = readJSONFile(schemaPath);
 
   const ajv = new DRAFTS[schema['$schema'].replace(/#$/, '')]({strict: false});
+
+  // A schema that embeds its own copy of a meta-schema conflicts with ajv's built-in copy
+  for (const id of embeddedIds(schema)) {
+    ajv.removeSchema(id);
+  }
 
   const compileStart = performance.now();
   const validate = ajv.compile(schema);
