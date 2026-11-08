@@ -136,7 +136,6 @@
 {"presets": [["@babel/preset-env", {"useBuiltIns": "entry"}], "@babel/preset-typescript", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-runtime"]}
 {"presets": ["react-server"]}
 {"presets": [["env", {"targets": {"node": "6"}}]], "plugins": ["transform-object-rest-spread"]}
-{"SPDX-FileCopyrightText": "2023 Friedrich-Alexander-Universitat Erlangen-Nurnberg", "SPDX-License-Identifier": "AGPL-3.0-only"}
 {"sourceType": "unambiguous", "presets": [["@babel/preset-env", {"targets": {"chrome": 102, "safari": "16.1", "edge": 102, "firefox": 91, "samsung": 16, "ios": "15.6", "android": "4.4.3-4.4.4", "opera": 99}}]], "plugins": [["@babel/plugin-transform-runtime", {"absoluteRuntime": false, "corejs": false, "helpers": true, "regenerator": true, "useESModules": false, "version": "7.0.0-beta.0"}]], "ignore": ["src/template-pages"]}
 {"presets": ["module:metro-react-native-babel-preset"], "plugins": [["module-resolver", {"alias": {"react-native-location": "./dist"}, "cwd": "babelrc"}]]}
 {"plugins": ["transform-object-rest-spread", "transform-export-extensions"], "presets": ["es2015", "react"]}
@@ -329,10 +328,6 @@
 {"presets": ["react-server"]}
 {"presets": ["react-server"]}
 {"presets": [["env", {"targets": {"node": "6"}}]], "plugins": ["transform-object-rest-spread"]}
-{"SPDX-FileCopyrightText": "2023 Friedrich-Alexander-Universitat Erlangen-Nurnberg", "SPDX-License-Identifier": "AGPL-3.0-only"}
-{"SPDX-FileCopyrightText": "2023 Friedrich-Alexander-Universitat Erlangen-Nurnberg", "SPDX-License-Identifier": "AGPL-3.0-only"}
-{"SPDX-FileCopyrightText": "2023 Friedrich-Alexander-Universitat Erlangen-Nurnberg", "SPDX-License-Identifier": "AGPL-3.0-only"}
-{"SPDX-FileCopyrightText": "2023 Friedrich-Alexander-Universitat Erlangen-Nurnberg", "SPDX-License-Identifier": "AGPL-3.0-only"}
 {"presets": ["module:metro-react-native-babel-preset"], "plugins": [["module-resolver", {"alias": {"react-native-location": "./dist"}, "cwd": "babelrc"}]]}
 {"presets": ["./.babelrc.js"]}
 {"presets": ["./.babelrc.js"]}
@@ -425,7 +420,6 @@
 {"presets": [["@babel/preset-env", {"modules": false}]], "plugins": ["@babel/plugin-proposal-object-rest-spread"]}
 {"presets": ["stage-3", "es2015"], "plugins": ["dynamic-import-node"]}
 {"presets": ["stage-3", "es2015"], "plugins": ["dynamic-import-node"]}
-{"404": "Not Found"}
 {"presets": ["next/babel"]}
 {"presets": ["next/babel"]}
 {"presets": ["next/babel"]}

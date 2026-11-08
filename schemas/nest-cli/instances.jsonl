@@ -92,7 +92,6 @@
 {"language": "ts", "collection": "@nestjs/schematics"}
 {"language": "ts", "collection": "@nestjs/schematics"}
 {"language": "ts", "collection": "@nestjs/schematics"}
-{"404": "Not Found"}
 {"language": "ts", "collection": "@nestjs/schematics"}
 {"language": "ts", "collection": "@nestjs/schematics"}
 {"language": "ts", "collection": "@nestjs/schematics"}
@@ -130,9 +129,7 @@
 {"collection": "@nestjs/schematics", "sourceRoot": "src"}
 {"language": "ts", "collection": "@nestjs/schematics"}
 {"compilerOptions": {"assets": ["**/*.html"]}}
-{"SPDX-FileCopyrightText": "2021 The HedgeDoc developers (see AUTHORS file)", "SPDX-License-Identifier": "CC0-1.0"}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "entryFile": "app"}
-{"1.0.10": {"info": {"author": "Chuan Lin", "author_email": "zhaoshuaibo.zsb@alibaba-inc.com", "bugtrack_url": null, "classifiers": [], "description_content_type": "", "docs_url": null, "download_url": "", "downloads": {"last_day": -1, "last_month": -1, "last_week": -1}, "home_page": "", "keywords": "", "license": "", "maintainer": "", "maintainer_email": "", "name": "computenest-cli", "package_url": "https://pypi.org/project/computenest-cli/", "platform": null, "project_url": "https://pypi.org/project/computenest-cli/", "project_urls": null, "release_url": "https://pypi.org/project/computenest-cli/1.0.10/", "requires_dist": ["alibabacloud-computenestsupplier20210521 (==1.2.3)", "pyyaml (>=1.0.0)", "oss2 (>=1.0.0)", "oos (>=0.0.1)", "alibabacloud-oos20190601 (==1.0.5)", "argparse (>=1.0.0)", "urllib3 (==1.26.15)"], "requires_python": "", "summary": "A command line interface for running the compute nest project", "version": "1.0.10", "yanked": false, "yanked_reason": null}, "last_serial": 19534465, "urls": [{"comment_text": "", "digests": {"blake2b_256": "db4f1eab611f32646fcbfe01329e200d213e902691172de4453147645da837b2", "md5": "8273ec87d8fd6201f79c8d6b67d87ecc", "sha256": "c3dc096b60772bbcc7ef5e7225d775813bb3bfb0e9085eac77605ad56ef56f57"}, "downloads": -1, "filename": "computenest_cli-1.0.10-py3-none-any.whl", "has_sig": false, "md5_digest": "8273ec87d8fd6201f79c8d6b67d87ecc", "packagetype": "bdist_wheel", "python_version": "py3", "requires_python": null, "size": 16132, "upload_time": "2023-08-31T11:32:40", "upload_time_iso_8601": "2023-08-31T11:32:40.229264Z", "url": "https://files.pythonhosted.org/packages/db/4f/1eab611f32646fcbfe01329e200d213e902691172de4453147645da837b2/computenest_cli-1.0.10-py3-none-any.whl", "yanked": false, "yanked_reason": null}, {"comment_text": "", "digests": {"blake2b_256": "819aab9be3f929164ffb1d45804960effdae9d27a9e78ac3b7838c5de42b3b70", "md5": "e72655c87ad28515ef0a6596a4977b8d", "sha256": "e44641679e1e2e5f5a109dadfa1459a945265d26f2f7578f7718db0ee9270e5e"}, "downloads": -1, "filename": "computenest-cli-1.0.10.tar.gz", "has_sig": false, "md5_digest": "e72655c87ad28515ef0a6596a4977b8d", "packagetype": "sdist", "python_version": "source", "requires_python": null, "size": 8739, "upload_time": "2023-08-31T11:32:41", "upload_time_iso_8601": "2023-08-31T11:32:41.763467Z", "url": "https://files.pythonhosted.org/packages/81/9a/ab9be3f929164ffb1d45804960effdae9d27a9e78ac3b7838c5de42b3b70/computenest-cli-1.0.10.tar.gz", "yanked": false, "yanked_reason": null}], "vulnerabilities": []}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": [".env.test", ".env.development"]}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "entryFile": "scripts/schedule-emitter", "compilerOptions": {"assets": ["**/*.proto"], "watchAssets": true}}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true, "plugins": ["@nestjs/swagger"]}}
@@ -174,7 +171,6 @@
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": []}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true}}
 {"compilerOptions": {"assets": ["**/*.pug"], "watchAssets": true}, "$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src"}
-{"404": "Not Found"}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics"}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": [{"include": "../public", "outDir": "dist/public", "watchAssets": true}], "watchAssets": true}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": [{"name": "@nestjs/graphql", "options": {"typeFileNameSuffix": [".model.ts", ".input.ts"]}}]}}
@@ -339,7 +335,6 @@
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true}}
 {"language": "ts", "collection": "@nestjs/schematics", "sourceRoot": "src"}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true, "plugins": ["@nestjs/swagger"]}}
-{"404": "Not Found"}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true, "plugins": ["@nestjs/swagger"]}}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true, "plugins": ["@nestjs/swagger"]}}
 {"compilerOptions": {"assets": ["**/*.proto"]}}
@@ -810,7 +805,6 @@
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": ["shared/mail/templates/**/*", "**/*.json"], "watchAssets": true}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": ["@nestjs/graphql"]}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": ["**/*.yml"], "watchAssets": true}}
-{"name": "curb-services", "version": "0.0.1", "description": "", "author": "", "private": true, "license": "UNLICENSED", "scripts": {"prebuild": "rimraf dist", "build": "nest build", "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"", "start": "nest start", "start:dev": "nest start --watch", "start:debug": "nest start --debug --watch", "start:prod": "node dist/main", "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix", "test": "jest", "test:watch": "jest --watch", "test:cov": "jest --coverage", "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand", "test:e2e": "jest --config ./test/jest-e2e.json"}, "dependencies": {"@nestjs/common": "^9.0.0", "@nestjs/core": "^9.0.0", "@nestjs/platform-express": "^9.0.0", "objectified-data": "*", "reflect-metadata": "^0.1.13", "rimraf": "^3.0.2", "rxjs": "^7.2.0"}, "devDependencies": {"@nestjs/cli": "^9.0.0", "@nestjs/schematics": "^9.0.0", "@nestjs/testing": "^9.0.0", "@types/express": "^4.17.13", "@types/jest": "28.1.8", "@types/node": "^16.0.0", "@types/supertest": "^2.0.11", "@typescript-eslint/eslint-plugin": "^5.0.0", "@typescript-eslint/parser": "^5.0.0", "eslint": "^8.0.1", "eslint-config-prettier": "^8.3.0", "eslint-plugin-prettier": "^4.0.0", "jest": "28.1.3", "prettier": "^2.3.2", "source-map-support": "^0.5.20", "supertest": "^6.1.3", "ts-jest": "28.0.8", "ts-loader": "^9.2.3", "ts-node": "^10.0.0", "tsconfig-paths": "4.1.0", "typescript": "^4.7.4"}, "jest": {"moduleFileExtensions": ["js", "json", "ts"], "rootDir": "src", "testRegex": ".*\\.spec\\.ts$", "transform": {"^.+\\.(t|j)s$": "ts-jest"}, "collectCoverageFrom": ["**/*.(t|j)s"], "coverageDirectory": "../coverage", "testEnvironment": "node"}}
 {"collection": "@nestjs/schematics", "monorepo": true, "root": "src/app_web", "sourceRoot": "src/app_web", "compilerOptions": {"webpack": true, "tsConfigPath": "src/app_web/tsconfig.app.json"}, "projects": {"cli": {"type": "application", "root": "src/app_cli", "entryFile": "cli", "sourceRoot": "src/app_cli", "compilerOptions": {"tsConfigPath": "src/app_cli/tsconfig.app.json"}}, "web": {"type": "application", "root": "src/app_web", "entryFile": "main", "sourceRoot": "src/app_web", "compilerOptions": {"tsConfigPath": "src/app_web/tsconfig.app.json"}}}}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"deleteOutDir": true, "plugins": [{"name": "@nestjs/swagger", "options": {"classValidatorShim": false, "introspectComments": false}}]}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": [{"name": "@nestjs/swagger", "options": {"classValidatorShim": true, "introspectComments": true}}]}}
@@ -929,7 +923,6 @@
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": ["common/envs/*"]}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": ["modules/mail/templates/**/*"], "watchAssets": true}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"assets": ["modules/mail/templates/**/*"], "watchAssets": true}}
-{"404": "Not Found"}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": ["@nestjs/graphql"]}}
 {"collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": ["@nestjs/graphql"]}}
 {"$schema": "https://json.schemastore.org/nest-cli", "collection": "@nestjs/schematics", "sourceRoot": "src", "compilerOptions": {"plugins": [{"name": "@nestjs/swagger", "options": {"introspectComments": true}}], "webpack": false}, "generateOptions": {"spec": false}}
