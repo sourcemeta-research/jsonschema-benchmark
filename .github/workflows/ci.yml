@@ -193,7 +193,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.5'
+          python-version: '3.12'
       # A pool VM's runner does not have pipx's directory for binaries on its PATH, as a hosted runner does.
       - name: Install uv
         run: |
@@ -291,7 +291,7 @@ jobs:
       - run: cat dist/report.csv
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.5'
+          python-version: '3.12'
       - name: Install uv
         run: pipx install uv
       - name: Get jsonschema-strip binary
