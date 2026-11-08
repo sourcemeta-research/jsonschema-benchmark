@@ -23,6 +23,7 @@ All implementations can be found in the `implementations/` subdirectory.
 A summary of these implementations is given below.
 
 - [Ajv](https://ajv.js.org/) (JS)
+- [ata-validator](https://github.com/ata-core/ata-validator) (JS)
 - [Blaze](https://github.com/sourcemeta/blaze) (C++)
 - [@exodus/schemasafe](https://github.com/ExodusMovement/schemasafe) (JS)
 - [boon](https://github.com/santhosh-tekuri/boon) (Rust)

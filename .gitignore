@@ -1,6 +1,7 @@
 /dist
 /implementations/*/memory-wrapper.sh
 /implementations/ajv/node_modules
+/implementations/ata-validator/node_modules
 /implementations/boon/target/
 /implementations/corvus-rs/target/
 /schemas/*/schema-noformat.json

@@ -1,0 +1,7 @@
+{
+  "name": "jsonschema-benchmark",
+  "version": "1.0.0",
+  "dependencies": {
+    "ata-validator": "^1.60.0"
+  }
+}

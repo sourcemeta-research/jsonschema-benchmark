@@ -5,6 +5,7 @@ import seaborn as sns
 
 IMPL_RENAMES = {
     'ajv-bun': 'ajv',
+    'ata-validator': 'ata',
     'blaze': 'Blaze',
     'boon': 'Boon',
     'corvus-net-optcold': 'Corvus (.NET, AOT)',
