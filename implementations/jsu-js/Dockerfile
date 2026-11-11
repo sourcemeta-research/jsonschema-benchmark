@@ -26,7 +26,7 @@ RUN pip install --break-system-packages "git+https://github.com/zx80/json-schema
 RUN echo "export JSU_RUNTIME=$(jsu-compile --runtime)" > .env
 
 # javascript specifc setup, nodejs >= 20.0.0
-ARG nodejs=stable
+ARG nodejs=23.7.0
 ARG nre2=
 RUN apt install libatomic1
 ENV NVM_DIR=/usr/local/nvm
