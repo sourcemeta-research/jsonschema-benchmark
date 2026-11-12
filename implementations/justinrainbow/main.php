@@ -2,6 +2,9 @@
 // The jsonschema-benchmark entry point for justinrainbow/json-schema: read the instances into memory, parse each
 // (timed), prepare the schema (timed), validate every instance once cold, warm up, validate once more warm. Prints
 // "cold,warm,compile,parse" in nanoseconds and exits non-zero if any instance is invalid.
+// A crash must not print to standard output, where the benchmark reads the timing line.
+ini_set('display_errors', 'stderr');
+
 require __DIR__ . "/vendor/autoload.php";
 
 use JsonSchema\Constraints\Constraint;
