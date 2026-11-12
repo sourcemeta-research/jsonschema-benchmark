@@ -58,7 +58,6 @@ A summary of these implementations is given below.
 - [JSONSchex](https://github.com/xinz/jsonschex) (Elixir)
 - [justinrainbow/json-schema](https://github.com/jsonrainbow/json-schema) (PHP)
 - [lua-schema](https://framagit.org/fperrad/lua-schema) (Lua)
-- [mjs, Modern JSON Schema Validator](https://gitlab.lip6.fr/jsonschema/modernjsonschemavalidator) (Scala)
 - [openapi-processor json-schema-validator](https://github.com/openapi-processor/openapi-parser) (Java)
 - [rc-circe-json-schema](https://github.com/reactivecore/rc-circe-json-schema) (Scala)
 - [sjf4j](https://github.com/sjf4j-projects/sjf4j) (Java)

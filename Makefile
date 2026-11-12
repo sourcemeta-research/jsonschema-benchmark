@@ -1226,25 +1226,6 @@ dist/results/rc-circe-json-schema/%: \
 	| dist/results/rc-circe-json-schema
 	@$(call docker_run,rc-circe-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
 
-# mjs
-
-implementations/mjs/.dockertimestamp: \
-	implementations/mjs/memory-wrapper.sh \
-	implementations/mjs/build.sbt \
-	implementations/mjs/project/build.properties \
-	implementations/mjs/project/plugins.sbt \
-	implementations/mjs/src/main/scala/Main.scala \
-	implementations/mjs/Dockerfile
-	docker build -t jsonschema-benchmark/mjs implementations/mjs
-	touch $@
-
-dist/results/mjs/%: \
-	implementations/mjs/.dockertimestamp \
-	schemas/%/schema-noformat.json \
-	schemas/%/instances.jsonl \
-	| dist/results/mjs
-	@$(call docker_run,mjs,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
-
 # typed-json
 
 implementations/typed-json/.dockertimestamp: \

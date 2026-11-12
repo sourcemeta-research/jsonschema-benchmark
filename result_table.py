@@ -80,7 +80,6 @@ IMPL_RENAMES = {
     'clojure-json-schema': 'json-schema (Clojure)',
     'scala-json-schema': 'json-schema (Scala)',
     'rc-circe-json-schema': 'rc-circe-json-schema',
-    'mjs': 'mjs',
     'typed-json': 'typed-json',
 }
 
