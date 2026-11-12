@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- The V4 engine generates C# for the schema and compiles it with Roslyn at run time, so it needs the JIT.
+         ReadyToRun precompiles the library, Roslyn and the code generator, so the process starts on compiled code. -->
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <SelfContained>true</SelfContained>
+    <ServerGarbageCollector>false</ServerGarbageCollector>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Corvus.Json.Validator" Version="*" />
+  </ItemGroup>
+
+</Project>

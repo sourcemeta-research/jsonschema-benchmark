@@ -1,0 +1,59 @@
+-- The jsonschema-benchmark entry point for typed-json (2020-12): read the instances into memory, parse each (timed),
+-- compile the schema (timed), validate every instance once cold, warm up, validate once more warm. Prints
+-- "cold,warm,compile,parse" in nanoseconds and fails (a non-zero exit) if any instance is invalid.
+
+benchmark.warmupIterations : Nat
+benchmark.warmupIterations = 100
+
+benchmark.maxWarmupTime : Int
+benchmark.maxWarmupTime = +10000000000
+
+benchmark.now : '{IO, Exception} Int
+benchmark.now = do Duration.asNanoseconds (Clock.monotonic())
+
+benchmark.validateAll : RootSchema -> [Json] ->{Exception} Boolean
+benchmark.validateAll schema instances =
+  List.foldLeft (valid instance -> validateFlag schema instance && valid) true instances
+
+benchmark.repeat : Nat -> '{e} a ->{e} ()
+benchmark.repeat n action =
+  if n == 0 then ()
+  else
+    _ = action()
+    benchmark.repeat (Nat.diff n 1) action
+
+benchmark.nanos : Int -> Text
+benchmark.nanos n = Nat.toText (Int.truncate0 n)
+
+benchmark.main : '{IO, Exception} ()
+benchmark.main = do
+  match getArgs() with
+    [schemaPath, instancesPath] ->
+      schemaText = readFileUtf8 (FilePath schemaPath)
+      lines =
+        readFileUtf8 (FilePath instancesPath)
+          |> Text.lines
+          |> List.filter (line -> not (Text.isEmpty line))
+
+      parseStart = benchmark.now()
+      instances = List.map textToInstance lines
+      parse = benchmark.now() - parseStart
+
+      compileStart = benchmark.now()
+      schema = textToSchema schemaText
+      compile = benchmark.now() - compileStart
+
+      coldStart = benchmark.now()
+      valid = validateAll schema instances
+      cold = benchmark.now() - coldStart
+
+      iterations = Int.truncate0 ((maxWarmupTime + Int.max cold +1 - +1) / Int.max cold +1)
+      benchmark.repeat (Nat.min iterations warmupIterations) do validateAll schema instances
+
+      warmStart = benchmark.now()
+      _ = validateAll schema instances
+      warm = benchmark.now() - warmStart
+
+      printLine (nanos cold ++ "," ++ nanos warm ++ "," ++ nanos compile ++ "," ++ nanos parse)
+      if valid then () else bug "an instance is invalid"
+    _ -> bug "Usage: benchmark <schema.json> <instances.jsonl>"

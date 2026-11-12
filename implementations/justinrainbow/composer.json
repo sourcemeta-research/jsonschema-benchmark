@@ -1,0 +1,7 @@
+{
+    "name": "jsonschema-benchmark/justinrainbow",
+    "type": "project",
+    "require": {
+        "justinrainbow/json-schema": "^6.13"
+    }
+}
