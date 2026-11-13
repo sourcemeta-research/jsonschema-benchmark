@@ -1,0 +1,53 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{}
+{"un": "expected"}
+{"id": "aa", "schemaVersion": 1, "version": "", "accessWidener": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "authors": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "authors": [null]}
+{"id": "aa", "schemaVersion": 1, "version": "", "authors": [{"name": "", "contact": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "authors": [{"name": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "authors": [{}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "breaks": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "conflicts": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "contact": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "contributors": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "contributors": [null]}
+{"id": "aa", "schemaVersion": 1, "version": "", "contributors": [{"name": "", "contact": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "contributors": [{"name": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "contributors": [{}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "custom": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "depends": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "description": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "entrypoints": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "environment": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "icon": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "icon": {"1": null}}
+{"id": "aa", "schemaVersion": 1, "version": "", "icon": {"no-such-prop": null}}
+{"id": "aa", "schemaVersion": 1, "version": "", "jars": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "jars": [null]}
+{"id": "aa", "schemaVersion": 1, "version": "", "jars": [{"file": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "jars": [{}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "languageAdapters": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "license": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "license": [null]}
+{"id": "aa", "schemaVersion": 1, "version": "", "mixins": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "mixins": [null]}
+{"id": "aa", "schemaVersion": 1, "version": "", "mixins": [{"config": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "mixins": [{"environment": null}]}
+{"id": "aa", "schemaVersion": 1, "version": "", "name": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "recommends": null}
+{"id": "aa", "schemaVersion": 1, "version": "", "suggests": null}
+{"id": null, "schemaVersion": 1, "version": ""}
+{"schemaVersion": 1, "version": ""}
+{"id": "aa", "schemaVersion": null, "version": ""}
+{"id": "aa", "version": ""}
+{"id": "aa", "schemaVersion": 1, "version": null}
+{"id": "aa", "schemaVersion": 1}

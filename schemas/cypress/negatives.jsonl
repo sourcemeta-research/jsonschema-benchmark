@@ -1,0 +1,218 @@
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+null
+{"animationDistanceThreshold": null}
+{"baseUrl": null}
+{"baseUrl": "not a url"}
+{"blockHosts": null}
+{"blockHosts": [null]}
+{"chromeWebSecurity": null}
+{"clientCertificates": null}
+{"clientCertificates": [null]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "ca": null}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "ca": [null]}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": null}]}
+{"clientCertificates": [{"url": "https://json.org/"}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": "", "passphrase": null}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": null, "key": ""}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"key": ""}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": null}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": ""}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"pfx": "", "passphrase": null}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"pfx": null}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {}}]}
+{"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "no-such-prop": null}]}
+{"clientCertificates": [{"url": null, "certs": {"cert": "", "key": ""}}]}
+{"clientCertificates": [{"url": "not a url", "certs": {"cert": "", "key": ""}}]}
+{"clientCertificates": [{"certs": {"cert": "", "key": ""}}]}
+{"component": null}
+{"component": {"animationDistanceThreshold": null}}
+{"component": {"baseUrl": null}}
+{"component": {"baseUrl": "not a url"}}
+{"component": {"blockHosts": null}}
+{"component": {"blockHosts": [null]}}
+{"component": {"chromeWebSecurity": null}}
+{"component": {"clientCertificates": null}}
+{"component": {"clientCertificates": [null]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "ca": null}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "ca": [null]}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": null}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/"}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": "", "passphrase": null}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": null, "key": ""}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"key": ""}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": null}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": ""}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"pfx": "", "passphrase": null}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"pfx": null}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {}}]}}
+{"component": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "no-such-prop": null}]}}
+{"component": {"clientCertificates": [{"url": null, "certs": {"cert": "", "key": ""}}]}}
+{"component": {"clientCertificates": [{"url": "not a url", "certs": {"cert": "", "key": ""}}]}}
+{"component": {"clientCertificates": [{"certs": {"cert": "", "key": ""}}]}}
+{"component": {"componentFolder": null}}
+{"component": {"defaultCommandTimeout": null}}
+{"component": {"downloadsFolder": null}}
+{"component": {"env": null}}
+{"component": {"execTimeout": null}}
+{"component": {"experimentalFetchPolyfill": null}}
+{"component": {"experimentalInteractiveRunEvents": null}}
+{"component": {"experimentalSessionRewriting": null}}
+{"component": {"experimentalSourceRewriting": null}}
+{"component": {"experimentalStudio": null}}
+{"component": {"fileServerFolder": null}}
+{"component": {"fixtureFolder": null}}
+{"component": {"ignoreTestFiles": null}}
+{"component": {"ignoreTestFiles": [null]}}
+{"component": {"includeShadowDom": null}}
+{"component": {"integrationFolder": null}}
+{"component": {"modifyObstructiveCode": null}}
+{"component": {"nodeVersion": null}}
+{"component": {"numTestsKeptInMemory": null}}
+{"component": {"pageLoadTimeout": null}}
+{"component": {"pluginsFile": null}}
+{"component": {"port": null}}
+{"component": {"projectId": null}}
+{"component": {"reporter": null}}
+{"component": {"reporterOptions": null}}
+{"component": {"requestTimeout": null}}
+{"component": {"responseTimeout": null}}
+{"component": {"screenshotOnRunFailure": null}}
+{"component": {"screenshotsFolder": null}}
+{"component": {"scrollBehavior": null}}
+{"component": {"slowTestThreshold": null}}
+{"component": {"supportFile": null}}
+{"component": {"taskTimeout": null}}
+{"component": {"testFiles": null}}
+{"component": {"testFiles": [null]}}
+{"component": {"trashAssetsBeforeRuns": null}}
+{"component": {"userAgent": null}}
+{"component": {"video": null}}
+{"component": {"videoCompression": null}}
+{"component": {"videoFolder": null}}
+{"component": {"videoUploadOnPasses": null}}
+{"component": {"viewportHeight": null}}
+{"component": {"viewportWidth": null}}
+{"component": {"waitForAnimations": null}}
+{"component": {"watchForFileChanges": null}}
+{"componentFolder": null}
+{"defaultCommandTimeout": null}
+{"downloadsFolder": null}
+{"e2e": null}
+{"e2e": {"animationDistanceThreshold": null}}
+{"e2e": {"baseUrl": null}}
+{"e2e": {"baseUrl": "not a url"}}
+{"e2e": {"blockHosts": null}}
+{"e2e": {"blockHosts": [null]}}
+{"e2e": {"chromeWebSecurity": null}}
+{"e2e": {"clientCertificates": null}}
+{"e2e": {"clientCertificates": [null]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "ca": null}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "ca": [null]}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": null}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/"}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": "", "passphrase": null}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": null, "key": ""}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"key": ""}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": null}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": ""}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"pfx": "", "passphrase": null}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"pfx": null}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {}}]}}
+{"e2e": {"clientCertificates": [{"url": "https://json.org/", "certs": {"cert": "", "key": ""}, "no-such-prop": null}]}}
+{"e2e": {"clientCertificates": [{"url": null, "certs": {"cert": "", "key": ""}}]}}
+{"e2e": {"clientCertificates": [{"url": "not a url", "certs": {"cert": "", "key": ""}}]}}
+{"e2e": {"clientCertificates": [{"certs": {"cert": "", "key": ""}}]}}
+{"e2e": {"componentFolder": null}}
+{"e2e": {"defaultCommandTimeout": null}}
+{"e2e": {"downloadsFolder": null}}
+{"e2e": {"env": null}}
+{"e2e": {"execTimeout": null}}
+{"e2e": {"experimentalFetchPolyfill": null}}
+{"e2e": {"experimentalInteractiveRunEvents": null}}
+{"e2e": {"experimentalSessionRewriting": null}}
+{"e2e": {"experimentalSourceRewriting": null}}
+{"e2e": {"experimentalStudio": null}}
+{"e2e": {"fileServerFolder": null}}
+{"e2e": {"fixtureFolder": null}}
+{"e2e": {"ignoreTestFiles": null}}
+{"e2e": {"ignoreTestFiles": [null]}}
+{"e2e": {"includeShadowDom": null}}
+{"e2e": {"integrationFolder": null}}
+{"e2e": {"modifyObstructiveCode": null}}
+{"e2e": {"nodeVersion": null}}
+{"e2e": {"numTestsKeptInMemory": null}}
+{"e2e": {"pageLoadTimeout": null}}
+{"e2e": {"pluginsFile": null}}
+{"e2e": {"port": null}}
+{"e2e": {"projectId": null}}
+{"e2e": {"reporter": null}}
+{"e2e": {"reporterOptions": null}}
+{"e2e": {"requestTimeout": null}}
+{"e2e": {"responseTimeout": null}}
+{"e2e": {"screenshotOnRunFailure": null}}
+{"e2e": {"screenshotsFolder": null}}
+{"e2e": {"scrollBehavior": null}}
+{"e2e": {"slowTestThreshold": null}}
+{"e2e": {"supportFile": null}}
+{"e2e": {"taskTimeout": null}}
+{"e2e": {"testFiles": null}}
+{"e2e": {"testFiles": [null]}}
+{"e2e": {"trashAssetsBeforeRuns": null}}
+{"e2e": {"userAgent": null}}
+{"e2e": {"video": null}}
+{"e2e": {"videoCompression": null}}
+{"e2e": {"videoFolder": null}}
+{"e2e": {"videoUploadOnPasses": null}}
+{"e2e": {"viewportHeight": null}}
+{"e2e": {"viewportWidth": null}}
+{"e2e": {"waitForAnimations": null}}
+{"e2e": {"watchForFileChanges": null}}
+{"env": null}
+{"execTimeout": null}
+{"experimentalFetchPolyfill": null}
+{"experimentalInteractiveRunEvents": null}
+{"experimentalSessionRewriting": null}
+{"experimentalSourceRewriting": null}
+{"experimentalStudio": null}
+{"fileServerFolder": null}
+{"fixtureFolder": null}
+{"ignoreTestFiles": null}
+{"ignoreTestFiles": [null]}
+{"includeShadowDom": null}
+{"integrationFolder": null}
+{"modifyObstructiveCode": null}
+{"nodeVersion": null}
+{"numTestsKeptInMemory": null}
+{"pageLoadTimeout": null}
+{"pluginsFile": null}
+{"port": null}
+{"projectId": null}
+{"reporter": null}
+{"reporterOptions": null}
+{"requestTimeout": null}
+{"responseTimeout": null}
+{"screenshotOnRunFailure": null}
+{"screenshotsFolder": null}
+{"scrollBehavior": null}
+{"slowTestThreshold": null}
+{"supportFile": null}
+{"taskTimeout": null}
+{"testFiles": null}
+{"testFiles": [null]}
+{"trashAssetsBeforeRuns": null}
+{"userAgent": null}
+{"video": null}
+{"videoCompression": null}
+{"videoFolder": null}
+{"videoUploadOnPasses": null}
+{"viewportHeight": null}
+{"viewportWidth": null}
+{"waitForAnimations": null}
+{"watchForFileChanges": null}

@@ -1,0 +1,52 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{}
+{"un": "expected"}
+{"name": "a", "runtime": "a", "backend": {"url": null}}
+{"name": "a", "runtime": "a", "backend": {"no-such-prop": null}}
+{"name": "a", "runtime": "a", "config": {"secret": null}}
+{"name": "a", "runtime": "a", "options": {"refresh": null}}
+{"name": "a", "runtime": "a", "options": {"no-such-prop": null}}
+{"name": "a", "runtime": "a", "plugins": null}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": null}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [null]}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [{"name": "", "path": "", "version": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [{"name": null, "path": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [{"path": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [{"name": "", "path": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [{"name": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"analyzers": [{"name": "", "path": "", "no-such-prop": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": null}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [null]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [{"name": "", "path": "", "version": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [{"name": null, "path": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [{"path": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [{"name": "", "path": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [{"name": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"languages": [{"name": "", "path": "", "no-such-prop": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": null}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [null]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [{"name": "", "path": "", "version": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [{"name": null, "path": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [{"path": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [{"name": "", "path": null}]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [{"name": ""}]}}
+{"name": "a", "runtime": "a", "plugins": {"providers": [{"name": "", "path": "", "no-such-prop": null}]}}
+{"name": "a", "runtime": "a", "template": {"no-such-prop": null}}
+{"runtime": "a"}
+{"name": "", "runtime": "a"}
+{"name": null, "runtime": "a"}
+{"name": "a", "runtime": null}
+{"name": "a"}
+{"name": "a", "runtime": ""}
+{"name": "a", "runtime": {"name": ""}}
+{"name": "a", "runtime": {"name": null}}
+{"name": "a", "runtime": {"options": null}}
+{"name": "a", "runtime": {"no-such-prop": null}}

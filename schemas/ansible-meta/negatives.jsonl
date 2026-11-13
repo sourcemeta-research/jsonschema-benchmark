@@ -1,0 +1,92 @@
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"un": "expected"}
+{"allow_duplicates": null}
+{"collections": null}
+{"collections": [null]}
+{"dependencies": null}
+{"dependencies": [null]}
+{"dependencies": [{"become": null}]}
+{"dependencies": [{"name": null}]}
+{"dependencies": [{"role": null}]}
+{"dependencies": [{"scm": null}]}
+{"dependencies": [{"src": null}]}
+{"dependencies": [{"tags": null}]}
+{"dependencies": [{"tags": [null]}]}
+{"dependencies": [{"vars": null}]}
+{"dependencies": [{"version": null}]}
+{"dependencies": [{"when": null}]}
+{"dependencies": [{"when": [null]}]}
+{"galaxy_info": null}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "company": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "galaxy_tags": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "galaxy_tags": [null]}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "github_branch": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "issue_tracker_url": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "min_ansible_container_version": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "namespace": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "platforms": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "platforms": [null]}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "platforms": [{"name": null}]}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "platforms": [{"versions": null}]}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "platforms": [{"versions": [null]}]}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "role_name": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "video_links": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": null, "license": "", "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": true, "description": "", "license": "", "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": true, "description": null, "author": "", "license": "", "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": true, "author": "", "license": "", "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": null, "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": null}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": ""}}
+{"galaxy_info": {"standalone": true, "description": "", "author": "", "license": "", "min_ansible_version": "", "no-such-prop": null}}
+{"galaxy_info": {"standalone": null, "description": "", "author": "", "license": "", "min_ansible_version": ""}}
+{"galaxy_info": {"standalone": false, "description": "", "author": null}}
+{"galaxy_info": {"standalone": false, "description": "", "company": null}}
+{"galaxy_info": {"standalone": false, "description": "", "galaxy_tags": null}}
+{"galaxy_info": {"standalone": false, "description": "", "galaxy_tags": [null]}}
+{"galaxy_info": {"standalone": false, "description": "", "github_branch": null}}
+{"galaxy_info": {"standalone": false, "description": "", "issue_tracker_url": null}}
+{"galaxy_info": {"standalone": false, "description": "", "license": null}}
+{"galaxy_info": {"standalone": false, "description": "", "min_ansible_container_version": null}}
+{"galaxy_info": {"standalone": false, "description": "", "min_ansible_version": null}}
+{"galaxy_info": {"standalone": false, "description": "", "namespace": null}}
+{"galaxy_info": {"standalone": false, "description": "", "platforms": null}}
+{"galaxy_info": {"standalone": false, "description": "", "platforms": [null]}}
+{"galaxy_info": {"standalone": false, "description": "", "platforms": [{"name": null}]}}
+{"galaxy_info": {"standalone": false, "description": "", "platforms": [{"versions": null}]}}
+{"galaxy_info": {"standalone": false, "description": "", "platforms": [{"versions": [null]}]}}
+{"galaxy_info": {"standalone": false, "description": "", "role_name": null}}
+{"galaxy_info": {"standalone": false, "description": "", "video_links": null}}
+{"galaxy_info": {"standalone": false, "description": null}}
+{"galaxy_info": {"standalone": false}}
+{"galaxy_info": {"standalone": false, "description": "", "no-such-prop": null}}
+{"galaxy_info": {"standalone": null, "description": ""}}
+{"galaxy_info": {"description": "", "author": null}}
+{"galaxy_info": {"description": "", "company": null}}
+{"galaxy_info": {"description": "", "galaxy_tags": null}}
+{"galaxy_info": {"description": "", "galaxy_tags": [null]}}
+{"galaxy_info": {"description": "", "github_branch": null}}
+{"galaxy_info": {"description": "", "issue_tracker_url": null}}
+{"galaxy_info": {"description": "", "license": null}}
+{"galaxy_info": {"description": "", "min_ansible_container_version": null}}
+{"galaxy_info": {"description": "", "min_ansible_version": null}}
+{"galaxy_info": {"description": "", "namespace": null}}
+{"galaxy_info": {"description": "", "platforms": null}}
+{"galaxy_info": {"description": "", "platforms": [null]}}
+{"galaxy_info": {"description": "", "platforms": [{"name": null}]}}
+{"galaxy_info": {"description": "", "platforms": [{"versions": null}]}}
+{"galaxy_info": {"description": "", "platforms": [{"versions": [null]}]}}
+{"galaxy_info": {"description": "", "role_name": null}}
+{"galaxy_info": {"description": "", "video_links": null}}
+{"galaxy_info": {"description": null}}
+{"galaxy_info": {}}
+{"galaxy_info": {"description": "", "no-such-prop": null}}
+{"no-such-prop": null}

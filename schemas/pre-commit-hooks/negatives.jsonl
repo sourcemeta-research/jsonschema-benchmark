@@ -1,0 +1,45 @@
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[1, "expected"]
+{}
+{"un": "expected"}
+[]
+null
+[null]
+[{"entry": "", "id": "", "language": "conda", "name": "", "additional_dependencies": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "additional_dependencies": [null]}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "alias": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "always_run": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "args": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "args": [null]}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "description": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "exclude": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "exclude_types": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "exclude_types": [null]}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "fail_fast": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "files": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "language_version": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "log_file": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "minimum_pre_commit_version": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "pass_filenames": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "require_serial": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "stages": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "stages": [null]}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "types": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "types": [null]}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "types_or": null}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "types_or": [null]}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "verbose": null}]
+[{"entry": null, "id": "", "language": "conda", "name": ""}]
+[{"id": "", "language": "conda", "name": ""}]
+[{"entry": "", "id": null, "language": "conda", "name": ""}]
+[{"entry": "", "language": "conda", "name": ""}]
+[{"entry": "", "id": "", "name": ""}]
+[{"entry": "", "id": "", "language": null, "name": ""}]
+[{"entry": "", "id": "", "language": "conda", "name": null}]
+[{"entry": "", "id": "", "language": "conda"}]
+[{"entry": "", "id": "", "language": "conda", "name": "", "no-such-prop": null}]
