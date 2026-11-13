@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # Get a list of all implementations (with some potentially ignored)
-# XXX Temporarily exclude JSV
-all_impls=$(make NO_IGNORE=$NO_IGNORE list | grep -v "^jsv$" | sort)
+all_impls=$(make NO_IGNORE=$NO_IGNORE list | sort)
 
 # Add implementations changed in the PR (but avoid .benchmark-ignore, and the bowtie file, which only links to Bowtie)
 if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
   git fetch origin $GITHUB_BASE_REF --depth 1
-  pr_impls=$(git diff --name-only FETCH_HEAD..HEAD | grep '^implementations/' | grep -v -e '/.benchmark-ignore' -e '/bowtie$' | cut -d/ -f2 | grep -v "^jsv$" | sort -u)
+  pr_impls=$(git diff --name-only FETCH_HEAD..HEAD | grep '^implementations/' | grep -v -e '/.benchmark-ignore' -e '/bowtie$' | cut -d/ -f2 | sort -u)
 fi
 
 # Get all implementations that are modified by the PR

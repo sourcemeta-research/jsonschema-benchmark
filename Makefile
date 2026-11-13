@@ -756,3 +756,490 @@ dist/results/jsv/%: \
 	schemas/%/instances.jsonl \
 	| dist/results/jsv
 	@$(call docker_run,jsv,/workspace/$(dir $(word 2,$^)))
+
+# CORVUS (C)
+
+implementations/corvus-c/.dockertimestamp: \
+	implementations/corvus-c/memory-wrapper.sh \
+	implementations/corvus-c/CMakeLists.txt \
+	implementations/corvus-c/main.c \
+	implementations/corvus-c/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-c implementations/corvus-c
+	touch $@
+
+dist/results/corvus-c/%: \
+	implementations/corvus-c/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-c
+	@$(call docker_run,corvus-c,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (Fortran)
+
+implementations/corvus-fortran/.dockertimestamp: \
+	implementations/corvus-fortran/memory-wrapper.sh \
+	implementations/corvus-fortran/main.f90 \
+	implementations/corvus-fortran/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-fortran implementations/corvus-fortran
+	touch $@
+
+dist/results/corvus-fortran/%: \
+	implementations/corvus-fortran/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-fortran
+	@$(call docker_run,corvus-fortran,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# CORVUS (.NET, V4)
+
+implementations/corvus-net-v4/.dockertimestamp: \
+	implementations/corvus-net-v4/memory-wrapper.sh \
+	implementations/corvus-net-v4/Program.cs \
+	implementations/corvus-net-v4/bench.csproj \
+	implementations/corvus-net-v4/Dockerfile
+	docker build -t jsonschema-benchmark/corvus-net-v4 implementations/corvus-net-v4
+	touch $@
+
+dist/results/corvus-net-v4/%: \
+	implementations/corvus-net-v4/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/corvus-net-v4
+	@$(call docker_run,corvus-net-v4,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# ajv-plus
+
+implementations/ajv-plus/.dockertimestamp: \
+	implementations/ajv-plus/memory-wrapper.sh \
+	implementations/ajv-plus/main.mjs \
+	implementations/ajv-plus/package-lock.json \
+	implementations/ajv-plus/package.json \
+	implementations/ajv-plus/Dockerfile
+	docker build -t jsonschema-benchmark/ajv-plus implementations/ajv-plus
+	touch $@
+
+dist/results/ajv-plus/%: \
+	implementations/ajv-plus/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/ajv-plus
+	@$(call docker_run,ajv-plus,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# cfworker
+
+implementations/cfworker/.dockertimestamp: \
+	implementations/cfworker/memory-wrapper.sh \
+	implementations/cfworker/main.mjs \
+	implementations/cfworker/package-lock.json \
+	implementations/cfworker/package.json \
+	implementations/cfworker/Dockerfile
+	docker build -t jsonschema-benchmark/cfworker implementations/cfworker
+	touch $@
+
+dist/results/cfworker/%: \
+	implementations/cfworker/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/cfworker
+	@$(call docker_run,cfworker,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# jsonschema (JS)
+
+implementations/jsonschema-js/.dockertimestamp: \
+	implementations/jsonschema-js/memory-wrapper.sh \
+	implementations/jsonschema-js/main.mjs \
+	implementations/jsonschema-js/package-lock.json \
+	implementations/jsonschema-js/package.json \
+	implementations/jsonschema-js/Dockerfile
+	docker build -t jsonschema-benchmark/jsonschema-js implementations/jsonschema-js
+	touch $@
+
+dist/results/jsonschema-js/%: \
+	implementations/jsonschema-js/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsonschema-js
+	@$(call docker_run,jsonschema-js,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# json-schema-library
+
+implementations/json-schema-library/.dockertimestamp: \
+	implementations/json-schema-library/memory-wrapper.sh \
+	implementations/json-schema-library/main.mjs \
+	implementations/json-schema-library/package-lock.json \
+	implementations/json-schema-library/package.json \
+	implementations/json-schema-library/Dockerfile
+	docker build -t jsonschema-benchmark/json-schema-library implementations/json-schema-library
+	touch $@
+
+dist/results/json-schema-library/%: \
+	implementations/json-schema-library/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/json-schema-library
+	@$(call docker_run,json-schema-library,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# vscode-json-languageservice
+
+implementations/vscode-json-languageservice/.dockertimestamp: \
+	implementations/vscode-json-languageservice/memory-wrapper.sh \
+	implementations/vscode-json-languageservice/main.mjs \
+	implementations/vscode-json-languageservice/package-lock.json \
+	implementations/vscode-json-languageservice/package.json \
+	implementations/vscode-json-languageservice/Dockerfile
+	docker build -t jsonschema-benchmark/vscode-json-languageservice implementations/vscode-json-languageservice
+	touch $@
+
+dist/results/vscode-json-languageservice/%: \
+	implementations/vscode-json-languageservice/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/vscode-json-languageservice
+	@$(call docker_run,vscode-json-languageservice,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# fastjsonschema
+
+implementations/fastjsonschema/.dockertimestamp: \
+	implementations/fastjsonschema/memory-wrapper.sh \
+	implementations/fastjsonschema/pyproject.toml \
+	implementations/fastjsonschema/uv.lock \
+	implementations/fastjsonschema/validate.py \
+	implementations/fastjsonschema/Dockerfile
+	docker build -t jsonschema-benchmark/fastjsonschema implementations/fastjsonschema
+	touch $@
+
+dist/results/fastjsonschema/%: \
+	implementations/fastjsonschema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/fastjsonschema
+	@$(call docker_run,fastjsonschema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# jschon
+
+implementations/jschon/.dockertimestamp: \
+	implementations/jschon/memory-wrapper.sh \
+	implementations/jschon/pyproject.toml \
+	implementations/jschon/uv.lock \
+	implementations/jschon/validate.py \
+	implementations/jschon/Dockerfile
+	docker build -t jsonschema-benchmark/jschon implementations/jschon
+	touch $@
+
+dist/results/jschon/%: \
+	implementations/jschon/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jschon
+	@$(call docker_run,jschon,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# gojsonschema
+
+implementations/gojsonschema/.dockertimestamp: \
+	implementations/gojsonschema/memory-wrapper.sh \
+	implementations/gojsonschema/go.mod \
+	implementations/gojsonschema/go.sum \
+	implementations/gojsonschema/main.go \
+	implementations/gojsonschema/Dockerfile
+	docker build -t jsonschema-benchmark/gojsonschema implementations/gojsonschema
+	touch $@
+
+dist/results/gojsonschema/%: \
+	implementations/gojsonschema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/gojsonschema
+	@$(call docker_run,gojsonschema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# justinrainbow
+
+implementations/justinrainbow/.dockertimestamp: \
+	implementations/justinrainbow/memory-wrapper.sh \
+	implementations/justinrainbow/composer.json \
+	implementations/justinrainbow/composer.lock \
+	implementations/justinrainbow/main.php \
+	implementations/justinrainbow/Dockerfile
+	docker build -t jsonschema-benchmark/justinrainbow implementations/justinrainbow
+	touch $@
+
+dist/results/justinrainbow/%: \
+	implementations/justinrainbow/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/justinrainbow
+	@$(call docker_run,justinrainbow,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# JSON::Schema::Modern
+
+implementations/json-schema-modern/.dockertimestamp: \
+	implementations/json-schema-modern/memory-wrapper.sh \
+	implementations/json-schema-modern/main.pl \
+	implementations/json-schema-modern/Dockerfile
+	docker build -t jsonschema-benchmark/json-schema-modern implementations/json-schema-modern
+	touch $@
+
+dist/results/json-schema-modern/%: \
+	implementations/json-schema-modern/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/json-schema-modern
+	@$(call docker_run,json-schema-modern,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# harrel json-schema
+
+implementations/harrel-json-schema/.dockertimestamp: \
+	implementations/harrel-json-schema/memory-wrapper.sh \
+	implementations/harrel-json-schema/pom.xml \
+	implementations/harrel-json-schema/src/main/java/Main.java \
+	implementations/harrel-json-schema/Dockerfile
+	docker build -t jsonschema-benchmark/harrel-json-schema implementations/harrel-json-schema
+	touch $@
+
+dist/results/harrel-json-schema/%: \
+	implementations/harrel-json-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/harrel-json-schema
+	@$(call docker_run,harrel-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# json-schema-react
+
+implementations/json-schema-react/.dockertimestamp: \
+	implementations/json-schema-react/memory-wrapper.sh \
+	implementations/json-schema-react/pom.xml \
+	implementations/json-schema-react/src/main/java/Main.java \
+	implementations/json-schema-react/Dockerfile
+	docker build -t jsonschema-benchmark/json-schema-react implementations/json-schema-react
+	touch $@
+
+dist/results/json-schema-react/%: \
+	implementations/json-schema-react/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/json-schema-react
+	@$(call docker_run,json-schema-react,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# jsonschemafriend
+
+implementations/jsonschemafriend/.dockertimestamp: \
+	implementations/jsonschemafriend/memory-wrapper.sh \
+	implementations/jsonschemafriend/pom.xml \
+	implementations/jsonschemafriend/src/main/java/Main.java \
+	implementations/jsonschemafriend/Dockerfile
+	docker build -t jsonschema-benchmark/jsonschemafriend implementations/jsonschemafriend
+	touch $@
+
+dist/results/jsonschemafriend/%: \
+	implementations/jsonschemafriend/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsonschemafriend
+	@$(call docker_run,jsonschemafriend,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# openapiprocessor
+
+implementations/openapiprocessor/.dockertimestamp: \
+	implementations/openapiprocessor/memory-wrapper.sh \
+	implementations/openapiprocessor/pom.xml \
+	implementations/openapiprocessor/src/main/java/Main.java \
+	implementations/openapiprocessor/Dockerfile
+	docker build -t jsonschema-benchmark/openapiprocessor implementations/openapiprocessor
+	touch $@
+
+dist/results/openapiprocessor/%: \
+	implementations/openapiprocessor/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/openapiprocessor
+	@$(call docker_run,openapiprocessor,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# sjf4j
+
+implementations/sjf4j/.dockertimestamp: \
+	implementations/sjf4j/memory-wrapper.sh \
+	implementations/sjf4j/pom.xml \
+	implementations/sjf4j/src/main/java/Main.java \
+	implementations/sjf4j/Dockerfile
+	docker build -t jsonschema-benchmark/sjf4j implementations/sjf4j
+	touch $@
+
+dist/results/sjf4j/%: \
+	implementations/sjf4j/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/sjf4j
+	@$(call docker_run,sjf4j,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# valijson
+
+implementations/valijson/.dockertimestamp: \
+	implementations/valijson/memory-wrapper.sh \
+	implementations/valijson/main.cpp \
+	implementations/valijson/Dockerfile
+	docker build -t jsonschema-benchmark/valijson implementations/valijson
+	touch $@
+
+dist/results/valijson/%: \
+	implementations/valijson/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/valijson
+	@$(call docker_run,valijson,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# IRIS
+
+implementations/iris/.dockertimestamp: \
+	implementations/iris/memory-wrapper.sh \
+	implementations/iris/CMakeLists.txt \
+	implementations/iris/main.cpp \
+	implementations/iris/Dockerfile
+	docker build -t jsonschema-benchmark/iris implementations/iris
+	touch $@
+
+dist/results/iris/%: \
+	implementations/iris/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/iris
+	@$(call docker_run,iris,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# JSONSchex
+
+implementations/jsonschex/.dockertimestamp: \
+	implementations/jsonschex/memory-wrapper.sh \
+	implementations/jsonschex/benchmark.exs \
+	implementations/jsonschex/config/config.exs \
+	implementations/jsonschex/mix.exs \
+	implementations/jsonschex/mix.lock \
+	implementations/jsonschex/Dockerfile
+	docker build -t jsonschema-benchmark/jsonschex implementations/jsonschex
+	touch $@
+
+dist/results/jsonschex/%: \
+	implementations/jsonschex/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/jsonschex
+	@$(call docker_run,jsonschex,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# swift-json-schema
+
+implementations/swift-json-schema/.dockertimestamp: \
+	implementations/swift-json-schema/memory-wrapper.sh \
+	implementations/swift-json-schema/Package.swift \
+	implementations/swift-json-schema/Sources/swift_json_schema_benchmark/main.swift \
+	implementations/swift-json-schema/Dockerfile
+	docker build -t jsonschema-benchmark/swift-json-schema implementations/swift-json-schema
+	touch $@
+
+dist/results/swift-json-schema/%: \
+	implementations/swift-json-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/swift-json-schema
+	@$(call docker_run,swift-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# lua-jsonschema
+
+implementations/lua-jsonschema/.dockertimestamp: \
+	implementations/lua-jsonschema/memory-wrapper.sh \
+	implementations/lua-jsonschema/main.lua \
+	implementations/lua-jsonschema/Dockerfile
+	docker build -t jsonschema-benchmark/lua-jsonschema implementations/lua-jsonschema
+	touch $@
+
+dist/results/lua-jsonschema/%: \
+	implementations/lua-jsonschema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/lua-jsonschema
+	@$(call docker_run,lua-jsonschema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# lua-schema
+
+implementations/lua-schema/.dockertimestamp: \
+	implementations/lua-schema/memory-wrapper.sh \
+	implementations/lua-schema/main.lua \
+	implementations/lua-schema/Dockerfile
+	docker build -t jsonschema-benchmark/lua-schema implementations/lua-schema
+	touch $@
+
+dist/results/lua-schema/%: \
+	implementations/lua-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/lua-schema
+	@$(call docker_run,lua-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# clojure-json-schema
+
+implementations/clojure-json-schema/.dockertimestamp: \
+	implementations/clojure-json-schema/memory-wrapper.sh \
+	implementations/clojure-json-schema/project.clj \
+	implementations/clojure-json-schema/src/benchmark/core.clj \
+	implementations/clojure-json-schema/Dockerfile
+	docker build -t jsonschema-benchmark/clojure-json-schema implementations/clojure-json-schema
+	touch $@
+
+dist/results/clojure-json-schema/%: \
+	implementations/clojure-json-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/clojure-json-schema
+	@$(call docker_run,clojure-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# scala-json-schema
+
+implementations/scala-json-schema/.dockertimestamp: \
+	implementations/scala-json-schema/memory-wrapper.sh \
+	implementations/scala-json-schema/build.sbt \
+	implementations/scala-json-schema/project/build.properties \
+	implementations/scala-json-schema/project/plugins.sbt \
+	implementations/scala-json-schema/src/main/scala/Main.scala \
+	implementations/scala-json-schema/Dockerfile
+	docker build -t jsonschema-benchmark/scala-json-schema implementations/scala-json-schema
+	touch $@
+
+dist/results/scala-json-schema/%: \
+	implementations/scala-json-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/scala-json-schema
+	@$(call docker_run,scala-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# rc-circe-json-schema
+
+implementations/rc-circe-json-schema/.dockertimestamp: \
+	implementations/rc-circe-json-schema/memory-wrapper.sh \
+	implementations/rc-circe-json-schema/build.sbt \
+	implementations/rc-circe-json-schema/project/build.properties \
+	implementations/rc-circe-json-schema/project/plugins.sbt \
+	implementations/rc-circe-json-schema/src/main/scala/Main.scala \
+	implementations/rc-circe-json-schema/Dockerfile
+	docker build -t jsonschema-benchmark/rc-circe-json-schema implementations/rc-circe-json-schema
+	touch $@
+
+dist/results/rc-circe-json-schema/%: \
+	implementations/rc-circe-json-schema/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/rc-circe-json-schema
+	@$(call docker_run,rc-circe-json-schema,/workspace/$(word 2,$^) /workspace/$(word 3,$^))
+
+# typed-json
+
+implementations/typed-json/.dockertimestamp: \
+	implementations/typed-json/memory-wrapper.sh \
+	implementations/typed-json/benchmark.u \
+	implementations/typed-json/build.md \
+	implementations/typed-json/run.sh \
+	implementations/typed-json/Dockerfile
+	docker build -t jsonschema-benchmark/typed-json implementations/typed-json
+	touch $@
+
+dist/results/typed-json/%: \
+	implementations/typed-json/.dockertimestamp \
+	schemas/%/schema-noformat.json \
+	schemas/%/instances.jsonl \
+	| dist/results/typed-json
+	@$(call docker_run,typed-json,/workspace/$(word 2,$^) /workspace/$(word 3,$^))

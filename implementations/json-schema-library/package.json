@@ -1,0 +1,7 @@
+{
+  "name": "jsonschema-benchmark",
+  "version": "1.0.0",
+  "dependencies": {
+    "json-schema-library": "^11.6.16"
+  }
+}

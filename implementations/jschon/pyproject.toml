@@ -1,0 +1,9 @@
+[project]
+name = "jschon-benchmark"
+version = "0.1.0"
+description = "jschon for jsonschema-benchmark"
+requires-python = ">=3.13"
+dependencies = ["jschon>=0.11.1"]
+
+[tool.uv]
+package = false

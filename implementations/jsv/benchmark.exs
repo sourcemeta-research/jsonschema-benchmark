@@ -5,11 +5,9 @@ schema_path = Enum.at(System.argv(), 0)
 {:ok, schema_string} = File.read(Path.join(schema_path, "schema-noformat.json"))
 schema = Poison.Parser.parse!(schema_string, %{})
 
-resolver = {JSV.Resolver.BuiltIn, allowed_prefixes: ["https://json-schema.org/", "http://json-schema.org/"]}
-
-# Compile the schema
+# Compile the schema (jsv embeds the standard meta-schemas, so nothing is fetched)
 compile_start = System.monotonic_time(:nanosecond)
-schema = JSV.build!(schema, resolver: resolver)
+schema = JSV.build!(schema)
 compile_end = System.monotonic_time(:nanosecond)
 compile_duration = compile_end - compile_start
 
