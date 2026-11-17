@@ -397,6 +397,7 @@
 {"vscode": {"extensions": ["buianhthang.gitflow", "vivaxy.vscode-conventional-commits"]}}
 {"image": {"file": ".gitpod.Dockerfile"}, "tasks": [{"before": "export GRADLE_USER_HOME=\"/workspace/.gradle\"; export M2_HOME=\"/workspace/.m2\"; export KONAN_DATA_DIR=\"/workspace/.konan\""}, {"init": "git fetch --tags && ./gradlew runUnitTests :lce:assemble :welcome:assemble"}], "jetbrains": {"intellij": {"prebuilds": {"version": "stable"}}}}
 {"tasks": [{"init": "npm install", "command": "npm run watch"}]}
+{"tasks": [{"init": "npm install"}], "github": {"prebuilds": {"addBadge": true, "addComment": false, "addCheck": false, "master": true, "branches": true, "pullRequestsFromForks": true}}}
 {"tasks": [{"init": "npm install -g expo-cli && npm ci", "command": "expo web"}]}
 {"image": "dduportal/cicd-gitpod", "workspaceLocation": "."}
 {"image": {"file": ".gitpod.Dockerfile"}, "tasks": [{"before": "echo \"export PUPPETEER_CACHE_DIR=/workspace/nuxt-content-body-html/node_modules/.cache/puppeteer\" >> /home/gitpod/.bashrc\ngitpod-env-per-project >> /home/gitpod/.bashrc && source /home/gitpod/.bashrc", "init": "git config --global user.name \"Sebastian Landwehr\"\ngit config diff.lfs.textconv cat\ngit lfs pull\nyarn --frozen-lockfile"}], "vscode": {"extensions": ["https://sebastianlandwehr.com/vscode-extensions/karlito40.fix-irregular-whitespace-0.1.1.vsix", "https://sebastianlandwehr.com/vscode-extensions/adrianwilczynski.toggle-hidden-1.0.2.vsix", "octref.vetur@0.33.1", "Tobermory.es6-string-html", "zjcompt.es6-string-javascript"]}}

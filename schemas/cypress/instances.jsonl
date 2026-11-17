@@ -480,6 +480,7 @@
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/crane-web-client-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/crane-web-client-e2e/screenshots", "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:3000", "chromeWebSecurity": false, "waitForAnimations": true, "defaultCommandTimeout": 10000, "requestTimeout": 10000, "responseTimeout": 10000, "projectId": "4oe38f", "video": false}
 {"baseUrl": "http://localhost:3001", "fixturesFolder": false, "video": false, "pluginsFile": "cypress/plugins/index.ts", "supportFile": "cypress/support/index.ts"}
+{"video": false, "baseUrl": "http://localhost:3000"}
 {"baseUrl": "https://lovecrafts-demo.storefrontcloud.io/", "viewportWidth": 1280, "viewportHeight": 1024}
 {"baseUrl": "http://local.my.oregonstate.edu:3000", "integrationFolder": "cypress/e2e", "viewportWidth": 375, "viewportHeight": 667}
 {"baseUrl": "http://localhost:8100", "video": false}

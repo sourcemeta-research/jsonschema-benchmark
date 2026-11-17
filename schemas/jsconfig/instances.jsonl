@@ -161,6 +161,7 @@
 {"compilerOptions": {"target": "ES6", "module": "commonjs", "allowSyntheticDefaultImports": true, "baseUrl": "./", "paths": {"@ymc/*": ["./packages/*"], "@provate-pkgs/*": ["./private-pkgs/*"], "@script-pkgs/*": ["./scr/lib/*"]}}, "exclude": ["node_modules", "dist"]}
 {"exclude": ["node_modules", ".git", "bundle", "**/dist", "**/node_modules"]}
 {"compilerOptions": {"baseUrl": "./src"}, "include": ["./src"], "exclude": ["/node_modules"]}
+{"include": ["src"], "compilerOptions": {"baseUrl": "src"}}
 {"compilerOptions": {"baseUrl": "src", "module": "commonjs", "target": "es6"}, "include": ["src"], "exclude": ["node_modules"]}
 {"compilerOptions": {"baseUrl": ".", "paths": {"@components": ["src/components"], "@hooks": ["src/hooks"], "@pages": ["src/pages"], "@sections": ["src/sections"], "@utils": ["src/utils"]}}}
 {"compilerOptions": {"jsx": "react", "baseUrl": "./src", "paths": {"States/*": ["states/*"], "Utilities/*": ["utilities/*"], "Components/*": ["components/*"], "Api/*": ["api/*"]}}, "exclude": ["node_modules", "dist"]}
@@ -179,6 +180,7 @@
 {"compilerOptions": {"target": "es5", "module": "esnext", "allowJs": true, "baseUrl": "./", "moduleResolution": "node", "paths": {"@/*": ["src/*"]}, "lib": ["esnext", "dom", "dom.iterable", "scripthost"]}}
 {"compilerOptions": {"experimentalDecorators": true, "target": "es2017"}, "exclude": ["node_modules", "www", "scripts"], "include": ["src"]}
 {"compilerOptions": {"module": "es6", "target": "es2020", "strict": false, "allowJs": true, "checkJs": false, "skipLibCheck": true, "isolatedModules": true, "esModuleInterop": true}, "exclude": ["node_modules"]}
+{"compilerOptions": {"target": "es5", "module": "esnext", "baseUrl": "./", "moduleResolution": "node", "paths": {"@/*": ["src/*"]}, "jsx": "preserve", "lib": ["esnext", "dom", "dom.iterable", "scripthost"]}}
 {"compilerOptions": {"target": "ES6", "module": "commonjs", "moduleResolution": "node", "jsx": "react", "baseUrl": "src/", "paths": {"components/*": ["src/components/*"], "dialogs/*": ["src/dialogs/*"], "actions/*": ["src/actions/*"], "reducers/*": ["src/reducers/*"], "router": ["src/router.jsx"], "store/*": ["src/store/*"], "types/*": ["src/types/*"], "pages/*": ["src/pages/*"]}}, "exclude": ["node_modules"]}
 {"compilerOptions": {"baseUrl": ".", "paths": {"@/*": ["./*"]}}, "exclude": ["node_modules"]}
 {"compilerOptions": {"target": "es5", "module": "esnext", "baseUrl": "./", "moduleResolution": "node", "paths": {"@/*": ["UI/*"], "@UI/*": ["UI/packages/*"]}, "lib": ["esnext", "dom", "dom.iterable", "scripthost"]}}
@@ -193,6 +195,7 @@
 {"compilerOptions": {"baseUrl": "src", "paths": {"@components/": ["./src/ui/components/"]}}, "include": ["src"]}
 {"compilerOptions": {"checkJs": true, "strict": true, "target": "esnext", "module": "commonjs", "strictNullChecks": false, "lib": ["esnext", "scripthost"]}}
 {"compilerOptions": {"baseUrl": "src", "paths": {"redux": ["./src/redux"], "utils": ["./src/utils"], "assets": ["./src/assets"]}}, "include": ["src"]}
+{"compilerOptions": {"module": "commonjs", "target": "es6", "baseUrl": "src"}, "exclude": ["node_modules"], "include": ["src"]}
 {"compilerOptions": {"baseUrl": ".", "paths": {"~/*": ["./*"], "@/*": ["./*"], "~~/*": ["./*"], "@@/*": ["./*"]}}, "exclude": ["node_modules", ".nuxt", "dist", "src/static/sw.js", "__mocks__"]}
 {"compilerOptions": {"target": "es2015", "expermentalDecorators": true}, "exclude": ["node_modules", "dist"]}
 {"compilerOptions": {"experimentalDecorators": true}}
@@ -417,6 +420,7 @@
 {"files": ["index.js"], "exclude": ["node_modules"], "typeAcquisition": {"enable": true}, "compilerOptions": {"module": "Node16", "checkJs": true, "resolveJsonModule": true, "types": ["jsonresume", "htmls"], "typeRoots": ["node_modules/@types", "types"]}}
 {"compilerOptions": {"baseUrl": ".", "paths": {"@/*": ["src/resources/js/*"]}}, "exclude": ["node_modules", "public"]}
 {"include": ["*.js", "libraries/*.js", "c:\\Users\\lucas\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.11\\p5types\\global.d.ts"]}
+{"compilerOptions": {"jsx": "preserve", "target": "es5", "module": "esnext", "baseUrl": "./", "moduleResolution": "node", "paths": {"@/*": ["src/*"]}, "lib": ["esnext", "dom", "dom.iterable", "scripthost"]}}
 {"compilerOptions": {"baseUrl": "./", "jsx": "preserve", "paths": {"@/*": ["src/*"]}}, "exclude": ["node_modules", "dist"]}
 {"compilerOptions": {"target": "es6", "module": "commonjs", "allowSyntheticDefaultImports": true}, "exclude": ["node_modules", "bower_components", "jspm_packages", "tmp", "temp", "*.min.*", "dist"]}
 {"include": ["*.js", "libraries/*.js", "c:\\Users\\harry\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.11\\p5types\\global.d.ts"]}
@@ -465,6 +469,7 @@
 {"include": ["./src/**/*"], "compilerOptions": {"module": "es2015", "moduleResolution": "node", "target": "es5", "sourceMap": true, "allowJs": true}}
 {"compilerOptions": {"baseUrl": ".", "paths": {"/*": ["./*"]}}}
 {"compilerOptions": {"target": "es2017"}, "include": ["src/module/**/*", "src/module-vendor/**/*", "src/suite/**/*", "src/suite-vendor/**/*", "node_modules/egg-born-*/**/*"], "exclude": ["node_modules", "**/dist/**", "**/*.min.js", "backend/cli/templates"]}
+{"compilerOptions": {"module": "commonjs", "target": "es6"}}
 {"compilerOptions": {"target": "es2017", "checkJs": true, "moduleResolution": "node", "esModuleInterop": true, "lib": ["es6"], "baseUrl": "./"}, "exclude": ["node_modules", "dist"], "include": ["./src/**/*", "tests/**/*", "./typings"]}
 {"compilerOptions": {"target": "es2017", "baseUrl": ".", "module": "es6", "paths": {"Components/*": ["src/components/*"], "Styles/*": ["src/styles/*"], "Store/*": ["src/store/*"], "Containers/*": ["src/containers/*"], "Pages/*": ["src/pages/*"], "Utils/*": ["src/utils/*"]}}, "exclude": ["node_modules", "dist"]}
 {"compilerOptions": {"baseUrl": ".", "paths": {"@/*": ["src/*"], "@": ["src/"]}}}
@@ -488,6 +493,7 @@
 {"include": ["*.js", "libraries/*.js", "c:\\Users\\Raul Zaldana\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.8\\p5types\\global.d.ts"]}
 {"compilerOptions": {"target": "ES5", "module": "commonjs"}, "exclude": ["node_modules"]}
 {"compilerOptions": {"baseUrl": ".", "target": "es2019", "paths": {"src/*": ["src/*"], "app/*": ["*"], "components/*": ["src/components/*"], "layouts/*": ["src/layouts/*"], "pages/*": ["src/pages/*"], "boot/*": ["src/boot/*"], "vue$": ["node_modules/vue/dist/vue.esm.js"]}}, "exclude": ["dist", ".quasar", "node_modules"]}
+{"compilerOptions": {"target": "es5", "module": "esnext", "baseUrl": "./", "moduleResolution": "node", "paths": {"@/*": ["src/*"]}, "lib": ["esnext", "dom", "dom.iterable", "scripthost"], "jsx": "preserve"}}
 {"compilerOptions": {"module": "commonjs", "target": "es6", "checkJs": true, "lib": ["es6"]}, "exclude": ["node_modules"]}
 {"compilerOptions": {"experimentalDecorators": true, "baseUrl": ".", "paths": {}}, "include": ["**/*", "../../../../.sfdx/typings/lwc/**/*.d.ts"], "paths": {"c/*": ["*"]}, "typeAcquisition": {"include": ["jest"]}}
 {"compilerOptions": {"checkJs": true, "module": "commonJS", "target": "es6", "lib": ["es2019"], "moduleResolution": "node", "sourceMap": true, "alwaysStrict": true, "resolveJsonModule": true}, "exclude": ["node_modules"]}
