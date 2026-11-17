@@ -18,10 +18,6 @@
 {"gui": {"language": "en"}}
 {"gui": {"language": "en", "showCommandLog": false, "showRandomTip": false, "showListFooter": false, "showBottomLine": false}}
 {"gui": {"showRandomTip": false}}
-{"gui": {"border": "rounded", "theme": {"activeBorderColor": ["#8FBCBB", "bold"], "inactiveBorderColor": ["#4C566A"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["#181C24"], "selectedRangeBgColor": ["blue"], "cherryPickedCommitBgColor": ["cyan"], "cherryPickedCommitFgColor": ["blue"], "unstagedChangesColor": ["red"], "defaultFgColor": ["default"]}}}
-{"gui": {"language": "en"}}
-{"gui": {"language": "en"}}
-{"gui": {"language": "en"}}
 {"gui": {"windowSize": "normal", "sidePanelWidth": 0.25, "language": "en", "showRandomTip": false, "showBottomLine": false}, "os": {"editPreset": "nvim"}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --diff-so-fancy --paging=never"}}}
 {"gui": {"showFileTree": false}}
@@ -32,7 +28,6 @@
 {"gui": {"theme": {"selectedLineBgColor": ["default"], "selectedRangeBgColor": ["default"], "cherryPickedCommitBgColor": ["yellow"], "cherryPickedCommitFgColor": ["black"]}}, "keybinding": {"universal": {"quit": "<c-q>", "return": "q"}}}
 {"git": {"disableForcePushing": true}, "gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
 {"quitOnTopLevelReturn": false}
-{"git": {"paging": {"colorArg": "always", "useConfig": true}}}
 {"git": {"branchLogCmd": "git log {{branchName}} --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'", "allBranchesLogCmd": "git log --all --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"}}
 {"git": {"autoFetch": false, "commit": {"signOff": true}}, "notARepository": "quit"}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --paging=never"}}}
@@ -56,29 +51,12 @@
 {"gui": {"mainPanelSplitMode": "vertical", "authorColors": {}, "branchColors": {}, "scrollHeight": 2, "scrollPastBottom": true, "mouseEvents": true, "skipStashWarning": false, "sidePanelWidth": 0.25, "expandFocusedSidePanel": false, "language": "auto", "timeFormat": "02 Jan 06 15:04 MST", "theme": {"activeBorderColor": ["green", "bold"], "inactiveBorderColor": ["white"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["blue"], "cherryPickedCommitBgColor": ["cyan"], "cherryPickedCommitFgColor": ["blue"], "unstagedChangesColor": ["red"]}, "commitLength": {"show": true}, "showListFooter": true, "showFileTree": true, "showRandomTip": true, "showCommandLog": true, "showBottomLine": false, "commandLogSize": 8, "splitDiff": "always", "nerdFontsVersion": "3", "border": "single"}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never", "useConfig": false}, "commit": {"signOff": false}, "merging": {"manualCommit": false, "args": "-no-ff"}, "skipHookPrefix": "WIP", "autoFetch": true, "autoRefresh": true, "branchLogCmd": "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --", "allBranchesLogCmd": "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium", "overrideGpg": false, "disableForcePushing": false, "commitPrefixes": {}, "parseEmoji": true, "log": {"order": "topo-order", "showGraph": "when-maximised", "showWholeGraph": false}, "diffContextSize": 3}, "update": {"method": "prompt", "days": 14}, "refresher": {"refreshInterval": 10, "fetchInterval": 60}, "confirmOnQuit": false, "quitOnTopLevelReturn": false, "keybinding": {"universal": {"quit": "q", "quit-alt1": "<c-c>", "return": "<esc>", "quitWithoutChangingDirectory": "Q", "togglePanel": "<tab>", "prevItem": "<up>", "nextItem": "<down>", "prevItem-alt": "k", "nextItem-alt": "j", "prevPage": ",", "nextPage": ".", "scrollLeft": "H", "scrollRight": "L", "gotoTop": "<", "gotoBottom": ">", "prevBlock": "<left>", "nextBlock": "<right>", "prevBlock-alt": "h", "nextBlock-alt": "l", "jumpToBlock": ["1", "2", "3", "4", "5"], "nextMatch": "n", "prevMatch": "N", "optionMenu-alt1": "?", "select": "<space>", "goInto": "<enter>", "confirm": "<enter>", "remove": "d", "new": "n", "edit": "e", "openFile": "o", "scrollUpMain": "<pgup>", "scrollDownMain": "<pgdown>", "scrollUpMain-alt1": "K", "scrollDownMain-alt1": "J", "scrollUpMain-alt2": "<c-u>", "scrollDownMain-alt2": "<c-d>", "executeCustomCommand": ":", "createRebaseOptionsMenu": "m", "pushFiles": "P", "pullFiles": "p", "refresh": "R", "createPatchOptionsMenu": "<c-p>", "nextTab": "]", "prevTab": "[", "nextScreenMode": "+", "prevScreenMode": "_", "undo": "z", "redo": "<c-z>", "filteringMenu": "<c-s>", "diffingMenu": "W", "diffingMenu-alt": "<c-e>", "copyToClipboard": "<c-o>", "openRecentRepos": "<c-r>", "submitEditorText": "<enter>", "extrasMenu": "@", "toggleWhitespaceInDiffView": "<c-w>", "increaseContextInDiffView": "}", "decreaseContextInDiffView": "{"}, "status": {"checkForUpdate": "u", "recentRepos": "<enter>"}, "files": {"commitChanges": "c", "commitChangesWithoutHook": "w", "amendLastCommit": "A", "commitChangesWithEditor": "C", "refreshFiles": "r", "stashAllChanges": "s", "viewStashOptions": "S", "toggleStagedAll": "a", "viewResetOptions": "D", "fetch": "f", "toggleTreeView": "`", "openMergeTool": "M", "openStatusFilter": "<c-b>"}, "branches": {"createPullRequest": "o", "viewPullRequestOptions": "O", "forceCheckoutBranch": "F", "rebaseBranch": "r", "renameBranch": "R", "mergeIntoCurrentBranch": "M", "viewGitFlowOptions": "i", "fastForward": "f", "pushTag": "P", "setUpstream": "u", "fetchRemote": "f"}, "commits": {"squashDown": "s", "renameCommit": "r", "renameCommitWithEditor": "R", "viewResetOptions": "g", "markCommitAsFixup": "f", "createFixupCommit": "F", "squashAboveCommits": "S", "moveDownCommit": "<c-j>", "moveUpCommit": "<c-k>", "amendToCommit": "A", "pickCommit": "p", "revertCommit": "t", "cherryPickCopy": "c", "cherryPickCopyRange": "C", "pasteCommits": "v", "tagCommit": "T", "checkoutCommit": "<space>", "resetCherryPick": "<c-R>", "viewBisectOptions": "b"}, "stash": {"popStash": "g"}, "commitFiles": {"checkoutCommitFile": "c"}, "main": {"toggleDragSelect": "v", "toggleDragSelect-alt": "V", "toggleSelectHunk": "a", "pickBothHunks": "b"}, "submodules": {"init": "i", "update": "u", "bulkMenu": "b"}}, "os": {"editPreset": "nvim", "copyToClipboardCmd": "printf \"$(printf {{text}} | yanker)\\a\" > /dev/tty"}, "disableStartupPopups": false, "customCommands": [{"key": "b", "command": "gh browse", "context": "files"}, {"key": "b", "command": "gh browse \"{{.SelectedLocalCommit.Sha}}\"", "context": "commits"}], "services": {}, "notARepository": "skip", "promptToReturnFromSubprocess": true}
 {"promptToReturnFromSubprocess": false, "customCommands": [{"key": "p", "command": "git pull --rebase --autostash", "context": "global"}]}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "customCommands": [{"key": "Z", "command": "git cz", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"gui": {"windowSize": "normal", "scrollHeight": 2, "scrollPastBottom": true, "sidePanelWidth": 0.3333, "expandFocusedSidePanel": false, "mainPanelSplitMode": "flexible", "language": "auto", "timeFormat": "02 Jan 06", "shortTimeFormat": "3:04PM", "theme": {"activeBorderColor": ["green", "bold"], "inactiveBorderColor": ["white"], "searchingActiveBorderColor": ["cyan", "bold"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["bold"], "selectedRangeBgColor": ["blue"], "cherryPickedCommitBgColor": ["cyan"], "cherryPickedCommitFgColor": ["blue"], "unstagedChangesColor": ["red"], "defaultFgColor": ["default"]}}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --line-numbers"}}}
 {"gui": {"authorColors": {"*": "magenta"}, "showBottomLine": false, "showCommandLog": false, "showListFooter": false}}
 {"git": {"paging": {"pager": "delta --dark --paging=never"}}, "gui": {"theme": {"selectedLineBgColor": ["black", "bold"]}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"gui": {"sidePanelWidth": 0.3, "theme": {"activeBorderColor": ["white", "bold"], "inactiveBorderColor": ["green"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["default"], "selectedRangeBgColor": ["blue"], "cherryPickedCommitBgColor": ["blue"], "cherryPickedCommitFgColor": ["cyan"]}}, "quitOnTopLevelReturn": false, "keybinding": {"universal": {"quit": "q", "return": "h", "goInto": "l", "select": "<space>", "nextTab": "<c-h>", "prevTab": "<c-l>", "prevItem": "<up>", "nextItem": "<down>", "prevItem-alt": "k", "nextItem-alt": "j", "prevBlock": "<left>", "nextBlock": "<right>", "prevBlock-alt": "K", "nextBlock-alt": "J", "togglePanel": "<c-j>"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}, "parseEmoji": true}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --true-color=always --dark --paging=never"}}}
-{"gui": {"language": "en"}}
-{"gui": {"showFileTree": false}}
-{"customCommands": [{"key": "C", "command": "git cz", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
-{"customCommands": [{"key": "C", "command": "git cz", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
-{"customCommands": [{"key": "C", "command": "git cz", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
-{"customCommands": [{"key": "C", "command": "git cz", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --paging=never"}}}
-{"gui": {"showFileTree": true}}
-{"os": {"editPreset": "nvim"}}
-{"os": {"editPreset": "nvim"}}
-{"os": {"editPreset": "nvim"}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"customCommands": [{"key": "C", "command": "git cz --name cz_commitizen_emoji c -s", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
 {"gui": {"expandFocusedSidePanel": true}, "git": {"paging": {"colorArg": "never", "pager": "delta --dark --paging=never"}, "log": {"showWholeGraph": true}}, "os": {"edit": "nvim", "editAtLine": "{{editor}} +{{line}} -- {{filename}}"}}
 {"git": {"paging": {"colorArg": "always", "pager": "git delta --paging=never"}}}
@@ -87,7 +65,6 @@
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "notARepository": "quit"}
 {"keybinding": {"universal": {"prevItem-alt": "e", "nextItem-alt": "n", "prevBlock-alt": "h", "nextBlock-alt": "i", "nextMatch": "=", "prevMatch": "-", "new": "k", "edit": "o", "openFile": "O", "scrollUpMain-alt1": "U", "scrollDownMain-alt1": "E", "scrollUpMain-alt2": "<c-u>", "scrollDownMain-alt2": "<c-e>", "undo": "l", "redo": "<c-r>", "diffingMenu": "M", "filteringMenu": "<c-f>"}, "files": {"ignoreFile": "I"}, "commits": {"moveDownCommit": "<c-e>", "moveUpCommit": "<c-u>"}, "branches": {"viewGitFlowOptions": "I", "setUpstream": "U"}}}
 {"customCommands": [{"key": "C", "command": "git cz c", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}], "git": {"commit": {"signOff": true}}, "gui": {"nerdFontsVersion": "3"}}
-{"gui": {"nerdFontsVersion": "3"}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"git": {"paging": {"useConfig": true}}}
 {"keybinding": {"universal": {"quit": "<esc>", "return": "q"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"mouseEvents": false, "nerdFontsVersion": "3", "theme": {"selectedLineBgColor": ["#272727"], "activeBorderColor": ["green", "bold"]}}, "keybinding": {"universal": {"scrollUpMain": "<c-k>", "scrollDownMain": "<c-j>"}}, "notARepository": "skip"}
@@ -97,26 +74,20 @@
 {"gui": {"sidePanelWidth": 0.2}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never -s --syntax-theme Dracula"}}}
 {"confirmOnQuit": true}
 {"gui": {"showRandomTip": false, "showCommandLog": false, "showFileTree": false, "theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}, "disableStartupPopups": true, "notARepository": "skip", "git": {"branchLogCmd": "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit", "paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "os": {"editPreset": "nvim"}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"notARepository": "skip", "gui": {"timeFormat": "2006-01-02 / 15h04m"}}
 {"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"gui": {"theme": {"activeBorderColor": ["#00ff00", "bold"], "selectedLineBgColor": ["reverse"]}}, "git": {"parseEmoji": true}}
 {"gui": {"theme": {"selectedLineBgColor": ["#0499ff"], "selectedRangeBgColor": ["reverse"]}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "os": {"editPreset": "nvim"}, "keybinding": {"commits": {"moveDownCommit": "<c-n>", "moveUpCommit": "<c-p>"}}, "confirmOnQuit": false, "quitOnTopLevelReturn": false}
 {"disableStartupPopups": true, "gui": {"scrollHeight": 15, "scrollPastBottom": false, "language": "en", "showFileTree": false, "showRandomTip": false, "nerdFontsVersion": "3", "showCommandLog": false}, "git": {"merging": {"args": "--no-ff"}, "paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "os": {"editPreset": "nvim"}, "keybinding": {"commits": {"moveDownCommit": "<c-d>", "moveUpCommit": "<c-u>"}}, "customCommands": [{"key": "<c-d>", "command": "git remote prune {{.SelectedRemote.Name}}", "context": "remotes", "loadingText": "Pruning...", "description": "prune deleted remote branches"}, {"key": "b", "command": "tig blame -- {{.SelectedFile.Name}}", "context": "files", "description": "blame file at tree", "subprocess": true}, {"key": "b", "command": "tig blame {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}", "context": "commitFiles", "description": "blame file at revision", "subprocess": true}, {"key": "B", "command": "tig blame -- {{.SelectedCommitFile.Name}}", "context": "commitFiles", "description": "blame file at tree", "subprocess": true}]}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"nerdFontsVersion": "3"}}
 {"gui": {"scrollHeight": 1, "showCommandLog": false, "showRandomTip": false, "mouseEvents": false, "showFileTree": false}, "keybinding": {"universal": {"quit": "<c-c>", "scrollUpMain-alt1": "<up>", "scrollDownMain-alt1": "<down>", "prevItem": "<c-k>", "nextItem": "<c-j>"}}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "services": {"git.fpdev.tech": "gitlab:git.fpdev.tech"}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --24-bit-color=never"}}}
 {"gui": {"theme": {"selectedLineBgColor": ["underline"], "selectedRangeBgColor": ["underline"]}}, "git": {"paging": {"colorArg": "never", "pager": "delta --dark --paging=never"}}}
 {"os": {"editPreset": "vim"}}
 {"gui": {"theme": {"selectedLineBgColor": ["underline"], "selectedRangeBgColor": ["underline"]}, "commitLength": {"show": true}}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "customCommands": [{"key": "C", "command": "git cz c", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}, {"key": "B", "command": "better-commits", "description": "commit with better-commits", "context": "files", "loadingText": "running better-commits", "subprocess": true}]}
-{"notARepository": "skip", "gui": {"timeFormat": "2006-01-02 / 15h04m"}}
 {"keybinding": {"universal": {"scrollUpMain": "<C-t>", "scrollDownMain": "<C-h>"}, "commits": {"moveUpCommit": "<pgup>", "moveDownCommit": "<pgdown>"}}}
 {"gui": {"theme": {"selectedRangeBgColor": ["reverse"]}}, "keybinding": {"universal": {"quit": "q", "return": "q"}}}
-{"git": {"paging": {"colorArg": "never", "pager": "delta --dark --paging=never"}}}
 {"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}, "keybinding": {"universal": {"quit": "<c-q>", "return": "q"}}}
-{"git": {"paging": {"pager": "delta --dark --paging=never", "colorArg": "always"}}}
 {"gui": {"nerdFontsVersion": "3"}, "os": {"open": "open {{filename}}"}, "keybinding": {"universal": {"quit": "Q"}}, "git": {"mainBranches": ["master", "main", "live"]}}
 {"gui": {"nerdFontsVersion": "3"}, "customCommands": [{"key": "C", "command": "git cz", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}, {"key": "0", "command": "generate_commit_msg", "context": "files", "loadingText": "Generate commit messages", "subprocess": true}]}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --syntax-theme base16-256 --diff-so-fancy"}}}
@@ -148,7 +119,6 @@
 {"git": {"paging": {"colorArg": "always", "pager": "delta --diff-so-fancy --paging=never"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --no-gitconfig -n --side-by-side"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --line-numbers"}, "autoFetch": false}}
-{"git": {"autoFetch": false}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta"}}}
 {"gui": {"expandFocusedSidePanel": true, "showBottomLine": false, "showCommandLog": false, "showRandomTip": false}, "git": {"paging": {"colorArg": "always", "pager": "delta --hunk-header-style=omit --light --paging=never"}}}
 {"gui": {"border": "rounded", "showBottomLine": false, "showRandomTip": false, "nerdFontsVersion": "3"}, "git": {"mainBranches": ["master", "main", "develop"], "paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "keybinding": {"universal": {"prevPage": "<c-u>", "nextPage": "<c-d>", "gotoTop": "g", "gotoBottom": "G"}}}
@@ -161,7 +131,6 @@
 {"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
 {"gui": {"scrollHeight": 4, "sidePanelWidth": 0.39}, "git": {"paging": {"colorArg": "always", "useConfig": false}, "commit": {"signOff": false}, "merging": {"manualCommit": false, "args": ""}, "log": {"order": "topo-order", "showGraph": "always"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --24-bit-color=never -n"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --paging=never --24-bit-color=never"}}}
 {"gui": {"border": "rounded"}}
 {"quitOnTopLevelReturn": true, "keybinding": {"universal": {"quit": "q", "return": "<esc>", "quitWithoutChangingDirectory": "Q"}}}
 {"notARepository": "quit", "os": {"editPreset": "nvim"}, "gui": {"theme": {"activeBorderColor": ["magenta", "bold"], "inactiveBorderColor": ["white"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"], "unstagedChangesColor": ["yellow"]}, "border": "rounded", "nerdFontsVersion": "3"}}
@@ -174,12 +143,10 @@
 {"keybinding": {"universal": {"scrollLeft": "", "scrollRight": "", "scrollUpMain-alt1": "", "scrollDownMain-alt1": "", "nextBlock-alt": "", "prevBlock-alt": "", "nextBlock": "J", "prevBlock": "K", "nextTab": "L", "prevTab": "H"}}}
 {"gui": {"theme": {"selectedLineBgColor": ["reverse"]}}}
 {"gui": {"showRandomTip": false, "showCommandLog": false, "showFileTree": false, "theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}, "disableStartupPopups": true, "notARepository": "skip", "git": {"branchLogCmd": "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit", "paging": {"colorArg": "always", "pager": "diff-so-fancy"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"keybinding": {"universal": {"prevItem-alt": "l", "nextItem-alt": "k"}}}
 {"gui": {"expandFocusedSidePanel": true, "theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}, "git": {"branchLogCmd": "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --", "allBranchesLogCmd": "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline"}, "notARepository": "quit"}
 {"customCommands": [{"key": "C", "command": "git cz", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}], "gui": {"nerdFontsVersion": "3", "theme": {"selectedLineBgColor": ["#E5E5E5"], "selectedRangeBgColor": ["#E5E5E5"]}, "border": "rounded"}}
 {"gui": {"theme": {"activeBorderColor": ["green", "bold"], "inactiveBorderColor": ["white"], "searchingActiveBorderColor": ["cyan", "bold"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["black"], "selectedRangeBgColor": ["black"], "cherryPickedCommitBgColor": ["black"], "cherryPickedCommitFgColor": ["blue"], "unstagedChangesColor": ["red"], "defaultFgColor": ["default"]}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --paging=never --24-bit-color=never"}}, "gui": {"showFileTree": true, "showRandomTip": false, "showCommandLog": false}}
 {"git": {"commit": {"signOff": true}}}
 {"gui": {"showFileTree": false, "showRandomTip": false}, "update": {"method": "never"}, "quitOnTopLevelReturn": true, "disableStartupPopups": true, "keybinding": {"files": {"commitChanges": ""}}}
 {"promptToReturnFromSubprocess": false, "os": {"editPreset": "nvim"}, "git": {"paging": {"pager": "delta --paging=never"}, "autoFetch": false}, "gui": {"commandLogSize": 2, "expandFocusedSidePanel": true, "scrollHeight": 20, "showBottomLine": false, "skipRewordInEditorWarning": false, "theme": {"activeBorderColor": ["#40a02b", "bold"], "inactiveBorderColor": ["#4c4f69"], "optionsTextColor": ["#1e66f5"], "selectedLineBgColor": ["#ccd0da"], "selectedRangeBgColor": ["#ccd0da"], "cherryPickedCommitBgColor": ["#179299"], "cherryPickedCommitFgColor": ["#1e66f5"], "unstagedChangesColor": ["red"]}}, "customCommands": [{"key": "I", "command": "git-ai-commit", "context": "status", "subprocess": true, "description": "Git with message generated by AI"}, {"key": "I", "command": "git-ai-commit", "context": "files", "subprocess": true, "description": "Git with message generated by AI"}, {"key": "G", "command": "gh repo view --web", "context": "files", "description": "Open repo in GitHub"}, {"key": "G", "command": "gh pr view --web", "context": "localBranches", "description": "Open pull request in GitHub"}, {"key": "E", "context": "commitFiles", "subprocess": true, "command": "{{if .SelectedCommitFile}}\ngit show '{{.SelectedLocalCommit.Sha}}^:{{.SelectedCommitFile.Name}}' |\\\nnvim -Rm - +\"let b:fname = 'file git://{{.SelectedLocalCommit.Sha}}^/{{.SelectedCommitFile.Name}}'\" \\\n{{else}}\ngit show '{{.SelectedLocalCommit.Sha}}' -- git show {{.SelectedCommitFilePath}} |\\\nnvim -Rm - +\"let b:fname = 'file git://{{.SelectedLocalCommit.Sha}}/{{.SelectedCommitFilePath}}.patch'\" \\\n{{end}}--cmd 'set mls=0' \\\n       +'nnoremap <buffer> q <Cmd>quit<CR>' \\\n       +\"exec 'file '.fnameescape(b:fname) | unlet b:fname | set mls=5 | silent! filetype detect\"\n"}]}
@@ -201,7 +168,6 @@
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --tabs=2 -s"}}}
 {"gui": {"nerdFontsVersion": "3", "theme": {"selectedLineBgColor": ["default"], "selectedRangeBgColor": ["reverse"], "cherryPickedCommitBgColor": ["default", "underline"], "cherryPickedCommitFgColor": ["yellow"]}}, "git": {"branchLogCmd": "git log --graph --format='%C(auto)%h%d %s %C(dim)<%an> %C(green)%cr' {{branchName}}", "allBranchesLogCmd": "git log --all --graph --format='%C(auto)%h%d %s %C(dim)<%an> %C(green)%cr'", "overrideGpg": true, "paging": {"colorArg": "always", "pager": "DELTA_FEATURES=+lazygit delta --dark --paging=never"}}, "notARepository": "quit", "promptToReturnFromSubprocess": false, "keybinding": {"commits": {"moveDownCommit": "<c-d>", "moveUpCommit": "<c-u>"}}}
 {"confirmOnQuit": true, "keybinding": {"universal": {"quit": "q", "quit-alt1": "<c-c>", "return": "<esc>"}}, "os": {"editPreset": "nvim"}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"os": {"editPreset": "nvim"}, "gui": {"nerdFontsVersion": "3"}, "keybinding": {"commits": {"moveDownCommit": "<c-n>", "moveUpCommit": "<c-p>"}}, "services": {"gitlab.inverselink.com": "gitlab:gitlab.inverselink.com"}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --light --paging=never --line-numbers"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --light --paging=never"}}}
@@ -212,21 +178,11 @@
 {"notARepository": "skip"}
 {"gui": {"showFileTree": true, "showRandomTip": false, "theme": {"selectedLineBgColor": ["default"], "selectedRangeBgColor": ["default"]}}, "git": {"skipHookPrefix": "WIP: "}}
 {"os": {"edit": "nvim"}, "gui": {"nerdFontsVersion": "3", "authorColors": {"captainko": "yellow"}}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --syntax-theme=gruvbox-dark"}}, "refresher": {"refreshInterval": 10, "fetchInterval": 45}}
-{"gui": {"language": "en"}}
 {"disableStartupPopups": true, "gui": {"showCommandLog": false, "theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}, "quitOnTopLevelReturn": true}
 {"gui": {"nerdFontsVersion": "3"}, "git": {"commit": {"signOff": true}, "paging": {"colorArg": "always", "pager": "delta --dark --paging=never --true-color=always", "useConfig": true}}}
 {"gui": {"scrollHeight": 10, "theme": {"activeBorderColor": ["green"], "inactiveBorderColor": ["#6272a4"]}}, "git": {"paging": {"colorArg": "never", "pager": "delta --paging=never"}}}
-{"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
-{"git": {"commit": {"signOff": true}}}
-{"git": {"commit": {"signOff": true}}}
-{"git": {"commit": {"signOff": true}}}
-{"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
-{"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
-{"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
-{"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}}}
 {"os": {"edit": "floaterm"}, "git": {"paging": {"useConfig": true}}, "gui": {"theme": {"activeBorderColor": ["blue", "bold"], "selectedLineBgColor": ["black"], "selectedRangeBgColor": ["black"]}}}
 {"git": {"paging": {"colorArg": "always", "pager": "diff-so-fancy"}}}
-{"disableStartupPopups": true}
 {"gui": {"windowSize": "half", "showFileTree": false, "showRandomTip": false, "mainPanelSplitMode": "horizontal"}, "os": {"editPreset": "nvim"}, "notARepository": "quit"}
 {"quitOnTopLevelReturn": true}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"theme": {"selectedLineBgColor": ["reverse"]}}}
@@ -234,9 +190,7 @@
 {"disableStartupPopups": true, "notARepository": "quit", "gui": {"showBottomLine": false, "theme": {"activeBorderColor": ["magenta", "bold"], "inactiveBorderColor": ["white"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["black"], "selectedRangeBgColor": ["black"], "cherryPickedCommitBgColor": ["cyan"], "cherryPickedCommitFgColor": ["blue"], "unstagedChangesColor": ["red"]}}}
 {"gui": {"theme": {"activeBorderColor": ["green", "bold"], "inactiveBorderColor": ["white"], "optionsTextColor": ["blue"], "selectedLineBgColor": ["default"], "selectedRangeBgColor": ["default"], "cherryPickedCommitBgColor": ["cyan"], "cherryPickedCommitFgColor": ["blue"], "unstagedChangesColor": ["red"]}}}
 {"gui": {"theme": {"activeBorderColor": ["green", "bold"], "inactiveBorderColor": ["black"]}}}
-{"gui": {"border": "rounded"}}
 {"gui": {"showBottomLine": false, "showCommandLog": false, "showFileTree": false, "showRandomTip": false, "theme": {"selectedLineBgColor": ["default"]}}, "git": {"paging": {"colorArg": "always", "pager": "delta --paging=never"}}}
-{"quitOnTopLevelReturn": true}
 {"git": {"autoFetch": false, "autoRefresh": false, "paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"nerdFontsVersion": "3"}, "notARepository": "skip", "os": {"editPreset": "nvim"}}
 {"gui": {"mainPanelSplitMode": "vertical", "expandFocusedSidePanel": true, "sidePanelWidth": 0.27, "mouseEvents": false}, "git": {"diffContextSize": 4, "paging": {"colorArg": "always", "useConfig": false}}, "keybinding": {"universal": {"prevBlock": "p", "nextBlock": "n", "prevPage": "<c-u>", "nextPage": "<c-d>"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"authorColors": {"Jonah Snider": "#ffbbcc"}}}
@@ -245,18 +199,10 @@
 {"disableStartupPopups": true, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"showBottomLine": false, "showRandomTip": false}, "quitOnTopLevelReturn": true}
 {"gui": {"language": "en", "nerdFontsVersion": "3"}}
 {"gui": {"mainPanelSplitMode": "vertical", "showCommandLog": false, "theme": {"selectedLineBgColor": ["black"], "selectedRangeBgColor": ["reverse"]}, "authorColors": {"fvrests": "cyan", "leaf": "cyan", "*": "magenta"}, "showFileTree": false}, "git": {"paging": {"pager": "delta --diff-highlight --minus-emph-style=\"reverse red\" --minus-empty-line-marker-style=\"reverse red\" --plus-emph-style=\"reverse green\" --plus-empty-line-marker-style=\"reverse green\" --hunk-header-style=\"line-number\" --hunk-header-line-number-style=\"magenta\" --file-style=\"yellow\" --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --24-bit-color=never"}}}
 {"customCommands": [{"key": "C", "command": "git cz c", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "gui": {"border": "rounded"}}
 {"services": {"github-vgw": "github:github.com"}, "os": {"edit": "nvim"}, "gui": {"theme": {"selectedLineBgColor": ["reverse"]}}, "customCommands": [{"key": "R", "command": "git fetch upstream main && git rebase upstream/main && git push --force-with-lease", "context": "localBranches"}, {"key": "<C-p>", "command": "git add -A && git commit --allow-empty-message -m '' && git push", "context": "global"}]}
 {"gui": {"language": "ja", "nerdFontsVersion": "3", "commandLogSize": 18}, "os": {"editPreset": "vscode"}, "promptToReturnFromSubprocess": false, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "customCommands": [{"key": "~", "context": "global", "command": "gh run list --limit 5", "description": "GithubActions\u306e\u5c65\u6b74\u3092\u8868\u793a", "stream": true}, {"key": "<c-l>", "context": "localBranches", "command": "gh pr merge {{index .PromptResponses 0}} -d{{index .PromptResponses 1}}", "description": "\u30d7\u30eb\u30ea\u30af\u30a8\u30b9\u30c8\u3092\u30de\u30fc\u30b8", "prompts": [{"type": "menuFromCommand", "title": "\u30d7\u30eb\u30ea\u30af\u30a8\u30b9\u30c8\u4e00\u89a7:", "key": "PullRequest", "command": "gh pr list --json number,title,headRefName,updatedAt --jq '.[] | .result = (.number|tostring)+\",\"+.title+\",\"+.headRefName+\",\"+.updatedAt | .result'", "filter": "^(?P<number>\\d+),(?P<title>[^,]+),(?P<branch>[^,]+),(?P<update>.+)$", "valueFormat": "{{ .number }}", "labelFormat": "#{{ .number | green | bold }} {{ .title }} {{ .branch | yellow }}"}, {"type": "menu", "title": "\u30de\u30fc\u30b8\u65b9\u6cd5\u3092\u9078\u629e", "key": "MergeType", "options": [{"value": "s", "name": "Squash merge"}, {"value": "r", "name": "Rebase merge"}, {"value": "m", "name": "Normal merge"}]}, {"type": "confirm", "key": "Confirm", "title": "Merge a pull request", "body": "\u672c\u5f53\u306b #{{index .PromptResponses 0 }} \u306e\u30d7\u30eb\u30ea\u30af\u30a8\u30b9\u30c8\u3092\u30de\u30fc\u30b8\u3057\u307e\u3059\u304b\uff1f"}]}]}
 {"git": {"branchLogCmd": "git l --color=always --decorate", "allBranchesLogCmd": "git l --all --color=always --decorate"}}
-{"git": {"paging": {"colorArg": "always", "pager": "diff-so-fancy"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "diff-so-fancy"}}}
-{"disableStartupPopups": true}
-{"quitOnTopLevelReturn": true}
-{"quitOnTopLevelReturn": true}
-{"customCommands": [{"key": "C", "command": "git cz c", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
 {"notARepository": "quit", "gui": {"theme": {"unstagedChangesColor": ["red", "bold"], "selectedLineBgColor": ["#263c42"], "selectedRangeBgColor": ["#263c42"]}}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "keybinding": {"universal": {"gotoTop": "g", "gotoBottom": "G"}, "commits": {"viewResetOptions": "m"}, "stash": {"popStash": "o"}}}
 {"gui": {"theme": {"selectedLineBgColor": ["reverse"]}}, "os": {"editPreset": "nvim"}}
 {"gui": {"border": "rounded"}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "quitOnTopLevelReturn": true, "keybinding": {"universal": {"quit": "<esc>", "return": "q"}}}
@@ -264,17 +210,12 @@
 {"gui": {"nerdFontsVersion": "3"}, "os": {"editPreset": "nvim"}, "update": {"method": "background", "days": 7}}
 {"gui": {"sidePanelWidth": 0.33, "expandFocusedSidePanel": false}}
 {"gui": {"theme": {"selectedLineBgColor": ["black", "bold"], "selectedRangeBgColor": ["black", "bold"]}}, "os": {"editPreset": "nvim"}, "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}, "autoFetch": false}, "promptToReturnFromSubprocess": false, "quitOnTopLevelReturn": true, "keybinding": {"universal": {"quit-alt1": null, "return": "<c-c>", "nextBlock-alt": "<c-j>", "prevBlock-alt": "<c-k>", "scrollDownMain-alt1": null, "scrollUpMain-alt1": null}, "commits": {"moveDownCommit": "J", "moveUpCommit": "K"}, "main": {"toggleSelectHunk": "V", "toggleDragSelect-alt": null}}}
-{"gui": {"theme": {"selectedLineBgColor": ["default"], "selectedRangeBgColor": ["default"], "cherryPickedCommitBgColor": ["yellow"], "cherryPickedCommitFgColor": ["black"]}}, "keybinding": {"universal": {"quit": "<c-q>", "return": "q"}}}
 {"gui": {"theme": {"selectedLineBgColor": ["reverse"], "selectedRangeBgColor": ["reverse"]}, "authorColors": {"Kalvin Pearce": "#0000FF"}}, "git": {"log": {"order": "date-order"}, "allBranchesLogCmd": "git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline", "branchLogCmd": "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --", "paging": {"colorArg": "never", "pager": "delta --dark --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "useConfig": true}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}, "customCommands": [{"key": "Z", "command": "git cz c", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen commit tool", "subprocess": true}]}
 {"gui": {"theme": {"selectedRangeBgColor": ["reverse"], "activeBorderColor": ["white", "bold"], "inactiveBorderColor": ["#606975"]}, "authorColors": {"*": "#606975"}, "showBottomLine": false, "showListFooter": false}}
 {"customCommands": [{"key": "C", "command": "git cz", "description": "commit with commitizen", "context": "files", "loadingText": "opening commitizen - commit tool", "subprocess": true}], "git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
-{"git": {"paging": {"colorArg": "never", "pager": "delta --dark --paging=never"}}}
 {"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never --diff-so-fancy"}}, "customCommands": [{"key": "<c-space>", "command": "git diff --color-words {{.SelectedFile.Name}}", "context": "global", "subprocess": true}]}
 {"gui": {"scrollHeight": 10}}
-{"git": {"paging": {"colorArg": "always", "pager": "delta --dark --paging=never"}}}
 {"customCommands": [{"key": "p", "command": "git remote prune {{.SelectedRemote.Name}}", "context": "remotes", "description": "prune remote", "loadingText": "pruning remote"}], "gui": {"theme": {"activeBorderColor": ["#a6e3a1", "bold"], "inactiveBorderColor": ["#cdd6f4"], "optionsTextColor": ["#89b4fa"], "selectedLineBgColor": ["#313260", "bold"], "selectedRangeBgColor": ["#313260", "bold"], "cherryPickedCommitBgColor": ["#94e2d5"], "cherryPickedCommitFgColor": ["#89b4fa"], "unstagedChangesColor": ["red"], "defaultFgColor": ["default"]}}}
 {"git": {"commit": {"signOff": false}}}
 {"keybinding": {"universal": {"pushFiles": "p", "pullFiles": "P"}}}

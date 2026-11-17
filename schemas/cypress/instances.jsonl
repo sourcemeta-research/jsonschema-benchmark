@@ -61,7 +61,6 @@
 {"baseUrl": "http://localhost", "responseTimeout": 30000}
 {"env": {"username": "opencartUser", "password": "Password123!4"}, "hosts": {"vmware-opencart.my": "{{ TARGET_IP }}"}, "defaultCommandTimeout": 30000}
 {"baseUrl": "http://localhost/", "env": {"repoName": "bitnami", "repoURL": "oci://registry-1.docker.io/bitnamicharts"}, "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "pageLoadTimeout": 240000, "defaultCommandTimeout": 80000, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
 {"baseUrl": "http://localhost", "env": {"username": "influxAdmin", "password": "RootP4ssw0rd", "bucket": "primary", "org": "primary"}, "defaultCommandTimeout": 30000}
 {"video": false, "baseUrl": "http://localhost:8080/pyroscope/", "env": {"basePath": "/pyroscope"}, "integrationFolder": "cypress/integration/webapp", "retries": {"runMode": 5}}
 {"defaultCommandTimeout": 8000, "execTimeout": 120000, "taskTimeout": 120000, "pageLoadTimeout": 180000, "requestTimeout": 10000, "responseTimeout": 60000}
@@ -89,104 +88,6 @@
 {"watchForFileChanges": false, "fixturesFolder": "test/cypress/fixtures", "integrationFolder": "test/cypress/integration", "pluginsFile": "test/cypress/plugins/index.js", "screenshotsFolder": "test/cypress/screenshots", "videosFolder": "test/cypress/videos", "supportFile": "test/cypress/support/index.js", "viewportWidth": 1600, "viewportHeight": 1000}
 {"video": false, "baseUrl": "http://localhost:4040", "integrationFolder": "cypress/integration/auth", "testFiles": "*.ts", "retries": {"runMode": 1}}
 {"baseUrl": "http://localhost:8000", "ignoreTestFiles": "**/examples/*", "testFiles": "**/*.spec.{ts,tsx}", "chromeWebSecurity": false, "video": true, "viewportWidth": 1920, "viewportHeight": 1080, "videoCompression": false, "videoUploadOnPasses": false, "defaultCommandTimeout": 15000, "numTestsKeptInMemory": 1}
-{"baseUrl": "http://localhost:8000/examples/", "viewportWidth": 890, "numTestsKeptInMemory": 1, "projectId": "n4ynap"}
-{"baseUrl": "http://localhost:8000/examples/", "viewportWidth": 890, "numTestsKeptInMemory": 1, "projectId": "n4ynap"}
-{"baseUrl": "http://localhost:8000/examples/", "viewportWidth": 890, "numTestsKeptInMemory": 1, "projectId": "n4ynap"}
-{"baseUrl": "http://localhost:8000/examples/", "viewportWidth": 890, "numTestsKeptInMemory": 1, "projectId": "n4ynap"}
-{"baseUrl": "https://churchcrm:8890", "pageLoadTimeout": 100000, "viewportHeight": 1080, "viewportWidth": 1920, "video": false, "env": {"admin.api.key": "ajGwpy8Pdai22XDUpqjC5Ob04v0eG7EGgb4vz2bD2juT8YDmfM", "user.api.key": "cjcPihn8wDwVeRIiNnKfpj0HGgCYbcxaD9SaF6BNJKLtVrnGFr"}}
-{"viewportWidth": 1280, "viewportHeight": 800, "chromeWebSecurity": false}
-{"viewportWidth": 1280, "viewportHeight": 800, "chromeWebSecurity": false}
-{"viewportWidth": 1280, "viewportHeight": 800, "chromeWebSecurity": false}
-{"viewportWidth": 1280, "viewportHeight": 800, "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8000", "fixturesFolder": "data", "projectId": "c9d3r3"}
-{"baseUrl": "http://localhost:8000", "fixturesFolder": "data", "projectId": "c9d3r3"}
-{"baseUrl": "http://localhost:8000", "fixturesFolder": "data", "projectId": "c9d3r3"}
-{"baseUrl": "http://localhost:8000", "fixturesFolder": "data", "projectId": "c9d3r3"}
-{"baseUrl": "http://localhost:5050"}
-{"baseUrl": "http://localhost:5050"}
-{"baseUrl": "http://localhost:5050"}
-{"baseUrl": "http://localhost:5050"}
-{"baseUrl": "http://localhost:8000/cypress-tests", "video": false}
-{"baseUrl": "http://localhost:8000/cypress-tests", "video": false}
-{"baseUrl": "http://localhost:8000/cypress-tests", "video": false}
-{"baseUrl": "http://localhost:8000/cypress-tests", "video": false}
-{"ignoreTestFiles": "*.html", "screenshotOnRunFailure": false, "video": false, "fixturesFolder": "tests/cypress/fixtures", "integrationFolder": "tests/cypress/integration", "pluginsFile": "tests/cypress/plugins/index.js", "screenshotsFolder": "tests/cypress/screenshots", "videosFolder": "tests/cypress/videos", "supportFile": "tests/cypress/support/index.js"}
-{"integrationFolder": "../e2e/specs", "trashAssetsBeforeRuns": false, "viewportWidth": 1366, "viewportHeight": 768, "chromeWebSecurity": false}
-{"integrationFolder": "../e2e/specs", "trashAssetsBeforeRuns": false, "viewportWidth": 1366, "viewportHeight": 768, "chromeWebSecurity": false}
-{"integrationFolder": "../e2e/specs", "trashAssetsBeforeRuns": false, "viewportWidth": 1366, "viewportHeight": 768, "chromeWebSecurity": false}
-{"integrationFolder": "../e2e/specs", "trashAssetsBeforeRuns": false, "viewportWidth": 1366, "viewportHeight": 768, "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000", "testFiles": "**/*.{spec,visual}.js", "video": false}
-{"baseUrl": "http://localhost:3000", "testFiles": "**/*.{spec,visual}.js", "video": false}
-{"baseUrl": "http://localhost:8000/"}
-{"baseUrl": "http://localhost:8000/"}
-{"baseUrl": "http://localhost:8000/"}
-{"baseUrl": "http://localhost:8000/"}
-{"baseUrl": "http://localhost:3000", "video": false}
-{"baseUrl": "http://localhost:3000", "video": false}
-{"baseUrl": "http://localhost:3000", "video": false}
-{"baseUrl": "http://localhost:3000", "video": false}
-{"baseUrl": "http://localhost:3002"}
-{"baseUrl": "http://localhost:3002"}
-{"baseUrl": "http://localhost:3002"}
-{"baseUrl": "http://localhost:3002"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/dev-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/dev-app-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/dev-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/dev-app-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/dev-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/dev-app-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/dev-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/dev-app-e2e/screenshots", "chromeWebSecurity": false}
-{"$schema": "https://on.cypress.io/cypress.schema.json", "supportFile": "cypress/support/index.ts", "projectId": "zkn9qu", "baseUrl": "http://localhost:6006/", "viewportHeight": 1000, "scrollBehavior": false}
-{"$schema": "https://on.cypress.io/cypress.schema.json", "supportFile": "cypress/support/index.ts", "projectId": "zkn9qu", "baseUrl": "http://localhost:6006/", "viewportHeight": 1000, "scrollBehavior": false}
-{"baseUrl": "http://localhost"}
-{"baseUrl": "http://localhost"}
-{"baseUrl": "http://localhost"}
-{"baseUrl": "http://localhost"}
-{"baseUrl": "http://localhost/", "env": {"email": "user@example.com", "password": "ComplicatedPassword123!4"}, "defaultCommandTimeout": 70000, "pageLoadTimeout": 150000}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "env": {"username": "test_user", "password": "ComplicatedPassword123!4"}, "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000, "env": {"username": "tomcatUser", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost/", "env": {"username": "user", "password": "ComplicatedPassword123!4"}, "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "chromeWebSecurity": false, "env": {"username": "test_user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "https://localhost/", "env": {"username": "admin", "password": "ComplicatedPassword123!4"}, "defaultCommandTimeout": 30000}
-{"env": {"username": "user", "password": "ComplicatedPassword123!4", "email": "user@example.com"}, "hosts": {"bitnami-matomo.my": "{{ TARGET_IP }}"}, "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost/", "pageLoadTimeout": 150000, "defaultCommandTimeout": 50000, "chromeWebSecurity": false}
-{"env": {"public_url": "http://127.0.0.1:5004", "admin_url": "http://127.0.0.1:5001", "consent_url": "http://127.0.0.1:5002", "client_url": "http://127.0.0.1:5003", "public_port": "5004", "client_port": "5003", "jwt_enabled": false}, "chromeWebSecurity": false, "retries": {"runMode": 3, "openMode": 1}, "timeouts": {"defaultCommandTimeout": 10000, "requestTimeout": 10000}, "projectId": "jrwjzp"}
-{"env": {"public_url": "http://127.0.0.1:5004", "admin_url": "http://127.0.0.1:5001", "consent_url": "http://127.0.0.1:5002", "client_url": "http://127.0.0.1:5003", "public_port": "5004", "client_port": "5003", "jwt_enabled": false}, "chromeWebSecurity": false, "retries": {"runMode": 3, "openMode": 1}, "timeouts": {"defaultCommandTimeout": 10000, "requestTimeout": 10000}, "projectId": "jrwjzp"}
-{"baseUrl": "http://localhost", "env": {"username": "test_user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "env": {"username": "test_user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost/", "pageLoadTimeout": 120000, "defaultCommandTimeout": 30000, "env": {"username": "test_admin", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "pageLoadTimeout": 240000, "defaultCommandTimeout": 80000, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
-{"env": {"username": "test_user", "password": "ComplicatedPassword123!4"}, "hosts": {"vmware-suitecrm.my": "{{ TARGET_IP }}"}, "defaultCommandTimeout": 40000, "viewportWidth": 1800, "viewportHeight": 800}
-{"baseUrl": "http://localhost", "pageLoadTimeout": 240000, "defaultCommandTimeout": 40000, "viewportWidth": 1920, "viewportHeight": 1080, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "responseTimeout": 30000}
-{"baseUrl": "http://localhost", "responseTimeout": 30000}
-{"baseUrl": "http://localhost", "responseTimeout": 30000}
-{"baseUrl": "http://localhost", "responseTimeout": 30000}
-{"env": {"username": "opencartUser", "password": "Password123!4"}, "hosts": {"vmware-opencart.my": "{{ TARGET_IP }}"}, "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost", "pageLoadTimeout": 240000, "defaultCommandTimeout": 80000, "env": {"username": "user", "password": "ComplicatedPassword123!4"}}
-{"baseUrl": "http://localhost", "env": {"username": "influxAdmin", "password": "RootP4ssw0rd", "bucket": "primary", "org": "primary"}, "defaultCommandTimeout": 30000}
-{"env": {"username": "user", "password": "ComplicatedPassword123!4"}, "hosts": {"bitnami-discourse.my": "{{ TARGET_IP }}"}, "defaultCommandTimeout": 30000}
-{"baseUrl": "http://localhost:8080", "baseExampleUrl": "http://localhost:8080/examples", "video": false, "viewportWidth": 1200, "viewportHeight": 800}
-{"baseUrl": "http://localhost:8080", "baseExampleUrl": "http://localhost:8080/examples", "video": false, "viewportWidth": 1200, "viewportHeight": 800}
-{"baseUrl": "http://localhost:8080", "baseExampleUrl": "http://localhost:8080/examples", "video": false, "viewportWidth": 1200, "viewportHeight": 800}
-{"baseUrl": "http://localhost:8080", "baseExampleUrl": "http://localhost:8080/examples", "video": false, "viewportWidth": 1200, "viewportHeight": 800}
-{"baseUrl": "http://localhost/", "env": {"username": "root", "password": "rootPassword"}, "defaultCommandTimeout": 30000, "pageLoadTimeout": 240000}
-{"blacklistHosts": "*:35729", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "videosFolder": "test/e2e/videos", "supportFile": "test/e2e/support/index.js", "video": false}
-{"blacklistHosts": "*:35729", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "videosFolder": "test/e2e/videos", "supportFile": "test/e2e/support/index.js", "video": false}
-{"blacklistHosts": "*:35729", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "videosFolder": "test/e2e/videos", "supportFile": "test/e2e/support/index.js", "video": false}
-{"blacklistHosts": "*:35729", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "videosFolder": "test/e2e/videos", "supportFile": "test/e2e/support/index.js", "video": false}
-{"chromeWebSecurity": false}
-{"chromeWebSecurity": false}
-{"baseUrl": "http://localhost/"}
-{"baseUrl": "http://localhost", "responseTimeout": 30000, "env": {"nodeNumber": 4}}
-{"baseUrl": "http://localhost", "responseTimeout": 30000, "env": {"compatibilityLevel": "BACKWARD"}}
-{"watchForFileChanges": false, "fixturesFolder": "test/cypress/fixtures", "integrationFolder": "test/cypress/integration", "pluginsFile": "test/cypress/plugins/index.js", "screenshotsFolder": "test/cypress/screenshots", "videosFolder": "test/cypress/videos", "supportFile": "test/cypress/support/index.js", "viewportWidth": 1600, "viewportHeight": 1000}
-{"baseUrl": "http://localhost:8000", "ignoreTestFiles": "**/examples/*", "testFiles": "**/*.spec.{ts,tsx}", "chromeWebSecurity": false, "video": true, "viewportWidth": 1920, "viewportHeight": 1080, "videoCompression": false, "videoUploadOnPasses": false, "defaultCommandTimeout": 15000, "numTestsKeptInMemory": 1}
-{"baseUrl": "http://localhost:8000", "ignoreTestFiles": "**/examples/*", "testFiles": "**/*.spec.{ts,tsx}", "chromeWebSecurity": false, "video": true, "viewportWidth": 1920, "viewportHeight": 1080, "videoCompression": false, "videoUploadOnPasses": false, "defaultCommandTimeout": 15000, "numTestsKeptInMemory": 1}
 {"baseUrl": "http://localhost:3000", "defaultCommandTimeout": 20000, "env": {"apiBaseUrl": "http://localhost:4001"}, "video": false, "screenshotOnRunFailure": false}
 {"baseUrl": "http://localhost:3003", "projectId": "k4cvdh"}
 {"baseUrl": "http://localhost:3000/"}
@@ -199,7 +100,6 @@
 {"projectId": "7p5681", "reporter": "mochawesome"}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/macro-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/macro-e2e/screenshots", "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:8080", "env": {"NODE_ENV": "test", "VUE_APP_API_BASE_URL": "http://localhost:5000", "VUE_APP_BASE_URL": "http://localhost:8080", "VUE_APP_AWS_CCP_REGION": "us-east-1", "VUE_APP_CCP_PRINCIPAL": "arn:aws:iam::240937704012:saml-provider/ccudev", "VUE_APP_CCP_ROLE": "arn:aws:iam::240937704012:role/CCUDevConnectRole", "VUE_APP_CCP_INSTANCE": "89c1729b-4547-4548-9508-9365b71e586b", "VUE_APP_AWS_CCP_URL": "https://ccuhotlinedev.awsapps.com/connect/ccp#", "API_URL": "http://localhost:5000", "RETRIES": 3}, "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"], "projectId": "xyprfc", "viewportHeight": 900, "viewportWidth": 1400, "pluginsFile": "tests/plugins/index.js", "supportFile": "tests/support/index.js", "integrationFolder": "tests/e2e", "testFiles": "**/*.spec.js*", "experimentalComponentTesting": true, "componentFolder": "tests/components"}
-{"baseUrl": "http://localhost:3000/"}
 {"fixturesFolder": "tests/e2e/fixtures", "integrationFolder": "tests/e2e/specs", "screenshotsFolder": "tests/e2e/screenshots", "videosFolder": "tests/e2e/videos", "supportFile": "tests/e2e/support/index.js", "viewportWidth": 768, "viewportHeight": 1024}
 {"baseUrl": "http://localhost:3000", "experimentalSessionAndOrigin": true}
 {"env": {"baseUrl": "http://localhost:3000", "REACT_APP_ERROR_WORKER": "maciej"}, "viewportWidth": 1920, "viewportHeight": 1080, "projectId": "p2u9dy", "trashAssetsBeforeRuns": true, "retries": 1, "baseUrl": "http://localhost:3000"}
@@ -218,7 +118,6 @@
 {"baseUrl": "http://localhost:4200", "supportFile": "cypress/support/index.ts", "requestTimeout": 120000, "responseTimeout": 120000, "pageLoadTimeout": 120000, "defaultCommandTimeout": 10000, "chromeWebSecurity": false, "ignoreTestFiles": "**/*.po.ts", "env": {"RETRIES": 2}}
 {"video": false, "retries": {"runMode": 2, "openMode": 0}}
 {"$schema": "https://on.cypress.io/cypress.schema.json", "baseUrl": "http://localhost:8888", "video": false, "env": {"ALLOW_SCREENSHOT": true, "influxDBURL": "https://localhost:8086", "username": "admin", "password": "admin", "connectionName": "E1M1", "insecureSkipVerify": true, "metaUrl": "https://localhost:8091"}}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/about-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/about-e2e/screenshots", "chromeWebSecurity": false, "retries": 3}
 {"baseUrl": "http://localhost:8000", "integrationFolder": "cypress/e2e"}
 {"baseUrl": "http://localhost:3000/", "userAgent": "synpress", "retries": {"runMode": 0, "openMode": 0}, "integrationFolder": "cypress/specs", "screenshotsFolder": "cypress/screenshots", "videosFolder": "cypress/videos", "chromeWebSecurity": true, "viewportWidth": 1366, "viewportHeight": 768, "component": {"componentFolder": ".", "testFiles": "**/*spec.{js,jsx,ts,tsx}"}, "env": {"coverage": false}, "defaultCommandTimeout": 30000, "pageLoadTimeout": 30000, "requestTimeout": 30000}
@@ -284,13 +183,11 @@
 {"defaultCommandTimeout": 25000, "requestTimeout": 120000, "responseTimeout": 120000, "chromeWebSecurity": false, "reporter": "mochawesome", "reporterOptions": {"reportDir": "mochawesome-report", "charts": true, "overwrite": false, "html": false, "json": true, "timestamp": "mmddyyyy_HHMMss"}}
 {"baseUrl": "http://localhost:3000", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "supportFile": "test/e2e/support/index.js", "videosFolder": "test/e2e/videos"}
 {"env": {"baseUrl": "https://agencia-compromisso-stg.herokuapp.com"}}
-{"chromeWebSecurity": false}
 {"fileServerFolder": "./", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "pluginsFile": "./src/plugins/index.js", "supportFile": false, "video": true, "videosFolder": "../../dist/out-tsc/apps/webpage-e2e/videos", "screenshotsFolder": "../../dist/out-tsc/apps/webpage-e2e/screenshots", "chromeWebSecurity": false, "viewportWidth": 450, "viewportHeight": 660}
 {"baseUrl": "http://localhost:8080", "chromeWebSecurity": false, "numTestsKeptInMemory": 0, "pageLoadTimeout": 100000, "requestTimeout": 60000, "responseTimeout": 50000, "video": false}
 {"reporter": "mochawesome", "reporterOptions": {"reportDir": "cypress/reports/", "overwrite": false, "toConsole": true}, "requestTimeout": 30000, "defaultCommandTimeout": 30000, "pageLoadTimeout": 30000}
 {"integrationFolder": "."}
 {"baseUrl": "http://localhost:3000", "env": {"API_ENDPOINT": "http://localhost:8000/api", "TOKEN_KEY": "blogful-client-auth-token"}, "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000", "video": false}
 {"baseUrl": "http://localhost:3001", "video": false, "chromeWebSecurity": false}
 {"baseUrl": "https://trinnylondon.com", "pageLoadTimeout": 30000, "video": true, "videoUploadOnPasses": false, "screenshotOnRunFailure": true, "retries": 1, "reporter": "mocha-multi-reporters", "reporterOptions": {"charts": true, "html": true, "json": false, "reportDir": "reports", "reportFilename": "report", "reportTitle": "Report", "overwrite": true}, "env": {"allure": true}}
 {"baseUrl": "http://0.0.0.0:3000/", "integrationFolder": "cypress/tests", "viewportWidth": 1000, "viewportHeight": 720}
@@ -327,9 +224,7 @@
 {"projectId": "seb1id", "defaultCommandTimeout": 2000, "baseUrl": "http://localhost:8080"}
 {"baseUrl": "https://www.cypress.io", "responseTimeout": 30000}
 {"baseUrl": "http://localhost:3050", "ignoreTestFiles": "**/examples/*", "projectId": "ri6wbq"}
-{"baseUrl": "http://localhost:8000", "viewportWidth": 1280, "viewportHeight": 720}
 {"ignoreTestFiles": "*.js"}
-{"baseUrl": "http://localhost:3000", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "supportFile": "test/e2e/support/index.js", "videosFolder": "test/e2e/videos"}
 {"video": false, "integrationFolder": "cypress/e2e", "baseUrl": "http://localhost:3000", "chromeWebSecurity": false, "defaultCommandTimeout": 15000}
 {"baseUrl": "http://localhost:3000", "viewportWidth": 1300, "defaultCommandTimeout": 20000, "video": false, "blockHosts": ["*.usefathom.com"]}
 {"watchForFileChanges": false, "reporter": "./node_modules/mochawesome/src/mochawesome.js", "reporterOptions": {"reportDir": "cypress/reports", "overwrite": false, "html": false, "json": true}, "video": false}
@@ -338,7 +233,6 @@
 {"baseUrl": "http://127.0.0.1:8000/", "chromeWebSecurity": false, "viewportWidth": 1280, "viewportHeight": 800, "reporter": "cypress-multi-reporters", "reporterOptions": {"reporterEnabled": "mochawesome", "mochawesomeReporterOptions": {"reportDir": "cypress/reports/mocha", "quite": true, "overwrite": false, "html": false, "json": true}}}
 {"baseUrl": "https://notes-serverless-app.com", "experimentalSessionSupport": true, "chromeWebSecurity": false, "experimentalStudio": true, "requestTimeout": 10000, "env": {"viewportWidthBreakpoint": 768}, "projectId": "oh8te4"}
 {"component": {"testFiles": "**/*.spec.*", "componentFolder": "src"}}
-{"baseUrl": "http://localhost:8000", "viewportWidth": 1280, "viewportHeight": 720}
 {"baseUrl": "http://localhost:5050", "projectId": "yzi4fs"}
 {"baseUrl": "http://todomvc.com/examples/react/"}
 {"testFiles": "**/*.spec.js", "componentFolder": "src/main"}
@@ -347,7 +241,6 @@
 {"baseUrl": "http://localhost:3000/", "viewportWidth": 800}
 {"baseUrl": "http://13.126.38.12:9000/", "env": {"codeCoverage": {"url": "/api/__coverage__"}}}
 {"env": {"apiUrl": "https://ophanim2-api-qa.timbergrove.com", "url": "http://localhost:4200", "username": "test", "password": "test1234;"}, "projectId": "yn2gu8"}
-{"chromeWebSecurity": false}
 {"baseUrl": "http://FIXME", "env": {"cypress-email": "", "cypress-password": "", "cypress-user-first-name": "", "cypress-user-last-name": "", "activity-description": "", "activity-link": ""}}
 {"video": false}
 {"baseUrl": "http://localhost:3000", "screenshots": false, "video": false}
@@ -366,104 +259,7 @@
 {"fixturesFolder": "tests/e2e/fixtures", "integrationFolder": "tests/e2e/integration", "pluginsFile": "tests/e2e/plugins/index.js", "screenshotsFolder": "tests/e2e/screenshots", "videosFolder": "tests/e2e/videos", "supportFile": "tests/e2e/support/index.js", "baseUrl": "http://localhost:3000", "component": {"testFiles": "tests/e2e/**/*.test.{js,ts,jsx,tsx}", "componentFolder": "src"}}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/feed-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/feed-e2e/screenshots", "chromeWebSecurity": false}
 {"viewportHeight": 970, "viewportWidth": 1920, "env": {"baseurl": "http://localhost:3000", "baseapi": "https://okologiskegrunnkartapi.test.artsdatabanken.no"}, "requestTimeout": 10000}
-{"baseUrl": "http://localhost:3000", "defaultCommandTimeout": 20000, "env": {"apiBaseUrl": "http://localhost:4001"}, "video": false, "screenshotOnRunFailure": false}
-{"baseUrl": "http://localhost:3000/"}
-{"baseUrl": "http://localhost:3000/"}
-{"baseUrl": "http://localhost:3000/"}
-{"baseUrl": "http://localhost:3000/"}
-{"chromeWebSecurity": false, "viewportWidth": 1000, "viewportHeight": 1000, "ignoreTestFiles": "migration.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"projectId": "7p5681", "reporter": "mochawesome"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/macro-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/macro-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/macro-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/macro-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/macro-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/macro-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/macro-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/macro-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000/"}
-{"baseUrl": "http://localhost:3000/"}
-{"baseUrl": "http://localhost:3000/"}
-{"baseUrl": "http://localhost:3000/"}
-{"fixturesFolder": "tests/e2e/fixtures", "integrationFolder": "tests/e2e/specs", "screenshotsFolder": "tests/e2e/screenshots", "videosFolder": "tests/e2e/videos", "supportFile": "tests/e2e/support/index.js", "viewportWidth": 768, "viewportHeight": 1024}
-{"screenshotsFolder": "cypress/screenshots", "videosFolder": "cypress/videos", "fixturesFolder": false, "supportFile": false, "video": false}
-{"baseUrl": "http://localhost:4200"}
-{"baseUrl": "http://localhost:4200"}
-{"baseUrl": "http://localhost:4200"}
-{"baseUrl": "http://localhost:4200"}
-{"viewportWidth": 1920, "viewportHeight": 1080, "experimentalStudio": true}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/doc-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/doc-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8080/", "fixturesFolder": "test/cypress/fixtures", "integrationFolder": "test/cypress/integration", "pluginsFile": "test/cypress/plugins/index.ts", "screenshotsFolder": "test/cypress/screenshots", "supportFile": "test/cypress/support/index.ts", "videosFolder": "test/cypress/videos", "video": true}
-{"baseUrl": "http://localhost:8080/", "fixturesFolder": "test/cypress/fixtures", "integrationFolder": "test/cypress/integration", "pluginsFile": "test/cypress/plugins/index.ts", "screenshotsFolder": "test/cypress/screenshots", "supportFile": "test/cypress/support/index.ts", "videosFolder": "test/cypress/videos", "video": true}
-{"baseUrl": "http://localhost:8080/", "fixturesFolder": "test/cypress/fixtures", "integrationFolder": "test/cypress/integration", "pluginsFile": "test/cypress/plugins/index.ts", "screenshotsFolder": "test/cypress/screenshots", "supportFile": "test/cypress/support/index.ts", "videosFolder": "test/cypress/videos", "video": true}
-{"baseUrl": "http://localhost:8080/", "fixturesFolder": "test/cypress/fixtures", "integrationFolder": "test/cypress/integration", "pluginsFile": "test/cypress/plugins/index.ts", "screenshotsFolder": "test/cypress/screenshots", "supportFile": "test/cypress/support/index.ts", "videosFolder": "test/cypress/videos", "video": true}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/about-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/about-e2e/screenshots", "chromeWebSecurity": false, "retries": 3}
-{"baseUrl": "http://localhost:8000", "integrationFolder": "cypress/e2e"}
-{"baseUrl": "http://localhost:8000", "integrationFolder": "cypress/e2e"}
-{"baseUrl": "http://localhost:8000", "integrationFolder": "cypress/e2e"}
-{"baseUrl": "http://localhost:8000", "integrationFolder": "cypress/e2e"}
-{"ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"], "video": false, "specPattern": "cypress/integration/*"}
-{"ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"], "video": false, "specPattern": "cypress/integration/*"}
-{"ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"], "video": false, "specPattern": "cypress/integration/*"}
-{"ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"], "video": false, "specPattern": "cypress/integration/*"}
-{"projectId": "z5ax7f", "baseUrl": "http://localhost:3000", "testFiles": "**/*.feature", "video": false, "env": {"dhis2_datatest_prefix": "dhis2-smsconfiguration"}}
-{"viewportWidth": 1200, "viewportHeight": 660}
-{"pluginsFile": "tests/e2e/plugins/index.js", "baseUrl": "http://localhost:8100"}
-{"pluginsFile": "tests/e2e/plugins/index.js", "baseUrl": "http://localhost:8100"}
-{"pluginsFile": "tests/e2e/plugins/index.js", "baseUrl": "http://localhost:8100"}
-{"pluginsFile": "tests/e2e/plugins/index.js", "baseUrl": "http://localhost:8100"}
-{"baseUrl": "http://localhost:8080", "projectId": "dzqjxb"}
-{"baseUrl": "http://localhost:8080", "projectId": "dzqjxb"}
-{"fileServerFolder": "../../dist/out-tsc/apps/frontend-e2e", "fixturesFolder": "../../dist/out-tsc/apps/frontend-e2e/src/fixtures", "integrationFolder": "../../dist/out-tsc/apps/frontend-e2e/src/integration", "pluginsFile": "../../dist/out-tsc/apps/frontend-e2e/src/plugins/index.js", "supportFile": false, "video": true, "videosFolder": "../../dist/out-tsc/apps/frontend-e2e/videos", "screenshotsFolder": "../../dist/out-tsc/apps/frontend-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": "../../dist/out-tsc/apps/frontend-e2e", "fixturesFolder": "../../dist/out-tsc/apps/frontend-e2e/src/fixtures", "integrationFolder": "../../dist/out-tsc/apps/frontend-e2e/src/integration", "pluginsFile": "../../dist/out-tsc/apps/frontend-e2e/src/plugins/index.js", "supportFile": false, "video": true, "videosFolder": "../../dist/out-tsc/apps/frontend-e2e/videos", "screenshotsFolder": "../../dist/out-tsc/apps/frontend-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": "../../dist/out-tsc/apps/frontend-e2e", "fixturesFolder": "../../dist/out-tsc/apps/frontend-e2e/src/fixtures", "integrationFolder": "../../dist/out-tsc/apps/frontend-e2e/src/integration", "pluginsFile": "../../dist/out-tsc/apps/frontend-e2e/src/plugins/index.js", "supportFile": false, "video": true, "videosFolder": "../../dist/out-tsc/apps/frontend-e2e/videos", "screenshotsFolder": "../../dist/out-tsc/apps/frontend-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": "../../dist/out-tsc/apps/frontend-e2e", "fixturesFolder": "../../dist/out-tsc/apps/frontend-e2e/src/fixtures", "integrationFolder": "../../dist/out-tsc/apps/frontend-e2e/src/integration", "pluginsFile": "../../dist/out-tsc/apps/frontend-e2e/src/plugins/index.js", "supportFile": false, "video": true, "videosFolder": "../../dist/out-tsc/apps/frontend-e2e/videos", "screenshotsFolder": "../../dist/out-tsc/apps/frontend-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8000/", "integrationFolder": "cypress/integration", "defaultCommandTimeout": 20000, "video": true, "retries": 2, "chromeWebSecurity": false, "viewportWidth": 1000, "viewportHeight": 600}
-{"baseUrl": "http://localhost:8000/", "integrationFolder": "cypress/integration", "defaultCommandTimeout": 20000, "video": true, "retries": 2, "chromeWebSecurity": false, "viewportWidth": 1000, "viewportHeight": 600}
-{"baseUrl": "http://localhost:8000/", "integrationFolder": "cypress/integration", "defaultCommandTimeout": 20000, "video": true, "retries": 2, "chromeWebSecurity": false, "viewportWidth": 1000, "viewportHeight": 600}
-{"baseUrl": "http://localhost:8000/", "integrationFolder": "cypress/integration", "defaultCommandTimeout": 20000, "video": true, "retries": 2, "chromeWebSecurity": false, "viewportWidth": 1000, "viewportHeight": 600}
-{"baseUrl": "http://localhost:9000"}
-{"baseUrl": "http://localhost:9000"}
-{"baseUrl": "http://localhost:9000"}
-{"baseUrl": "http://localhost:9000"}
-{"baseUrl": "http://localhost:8080", "projectId": "dzqjxb", "testFiles": "*spec*.js", "retries": {"runMode": 2, "openMode": 0}}
-{"baseUrl": "http://localhost:8080", "projectId": "dzqjxb", "testFiles": "*spec*.js", "retries": {"runMode": 2, "openMode": 0}}
-{"baseUrl": "http://localhost:8080", "projectId": "dzqjxb", "testFiles": "*spec*.js", "retries": {"runMode": 2, "openMode": 0}}
-{"baseUrl": "http://localhost:8080", "projectId": "dzqjxb", "testFiles": "*spec*.js", "retries": {"runMode": 2, "openMode": 0}}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/app11-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/app11-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/app20-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/app20-e2e/screenshots", "chromeWebSecurity": false}
-{"defaultCommandTimeout": 60000, "fixturesFolder": false, "integrationFolder": "test/cypress/integration", "supportFile": "test/cypress/support/index.js", "pluginsFile": "test/cypress/plugins/index.js", "videosFolder": "test/cypress/videos", "video": false}
-{"supportFile": "cypress/support/index.ts", "baseUrl": "https://the-internet.herokuapp.com", "reporter": "cypress-multi-reporters", "reporterOptions": {"configFile": "reporterOpts.json"}}
-{"supportFile": "cypress/support/index.ts", "baseUrl": "https://the-internet.herokuapp.com", "reporter": "cypress-multi-reporters", "reporterOptions": {"configFile": "reporterOpts.json"}}
-{"pluginsFile": "tests/e2e/plugins/index.js", "env": {"API_URL": "http://localhost:3000"}, "numTestsKeptInMemory": 10}
-{"pluginsFile": "tests/e2e/plugins/index.js", "env": {"API_URL": "http://localhost:3000"}, "numTestsKeptInMemory": 10}
-{"pluginsFile": "tests/e2e/plugins/index.js", "env": {"API_URL": "http://localhost:3000"}, "numTestsKeptInMemory": 10}
-{"pluginsFile": "tests/e2e/plugins/index.js", "env": {"API_URL": "http://localhost:3000"}, "numTestsKeptInMemory": 10}
-{"viewportWidth": 1920, "viewportHeight": 1000}
-{"fileServerFolder": "../../dist/out-tsc/apps/todo-app-e2e", "fixturesFolder": "../../dist/out-tsc/apps/todo-app-e2e/src/fixtures", "integrationFolder": "../../dist/out-tsc/apps/todo-app-e2e/src/integration", "pluginsFile": "../../dist/out-tsc/apps/todo-app-e2e/src/plugins/index.js", "supportFile": false, "video": true, "videosFolder": "../../dist/out-tsc/apps/todo-app-e2e/videos", "screenshotsFolder": "../../dist/out-tsc/apps/todo-app-e2e/screenshots", "chromeWebSecurity": false}
-{"defaultCommandTimeout": 25000, "requestTimeout": 120000, "responseTimeout": 120000, "chromeWebSecurity": false, "reporter": "mochawesome", "reporterOptions": {"reportDir": "mochawesome-report", "charts": true, "overwrite": false, "html": false, "json": true, "timestamp": "mmddyyyy_HHMMss"}}
-{"baseUrl": "http://localhost:3000", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "supportFile": "test/e2e/support/index.js", "videosFolder": "test/e2e/videos"}
-{"baseUrl": "http://localhost:3000", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "supportFile": "test/e2e/support/index.js", "videosFolder": "test/e2e/videos"}
-{"baseUrl": "http://localhost:3000", "fixturesFolder": "test/e2e/fixtures", "integrationFolder": "test/e2e/integration", "pluginsFile": "test/e2e/plugins/index.js", "screenshotsFolder": "test/e2e/screenshots", "supportFile": "test/e2e/support/index.js", "videosFolder": "test/e2e/videos"}
-{"chromeWebSecurity": false}
-{"chromeWebSecurity": false}
-{"chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8080", "chromeWebSecurity": false, "numTestsKeptInMemory": 0, "pageLoadTimeout": 100000, "requestTimeout": 60000, "responseTimeout": 50000, "video": false}
-{"baseUrl": "http://localhost:3000", "env": {"API_ENDPOINT": "http://localhost:8000/api", "TOKEN_KEY": "blogful-client-auth-token"}, "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3001", "video": false, "chromeWebSecurity": false}
-{"env": {"apiUrl": "http://host.docker.internal:8080"}}
-{"env": {"apiUrl": "http://host.docker.internal:8080"}}
-{"baseUrl": "http://localhost:3000", "integrationFolder": "src/cypress/integration", "fixturesFolder": "src/cypress/fixtures", "supportFile": "src/cypress/support/index.js", "pluginsFile": "src/cypress/plugins/index.js"}
-{"baseUrl": "http://localhost:8000", "viewportWidth": 1280, "viewportHeight": 720}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/internal-ng-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/internal-ng-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/hero-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/hero-app-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/hero-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/hero-app-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/hero-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/hero-app-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/one-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/one-e2e/screenshots", "chromeWebSecurity": false, "baseUrl": "http://localhost:4400"}
 {"projectId": "nf9rdc", "baseUrl": "http://localhost:3000"}
-{"chromeWebSecurity": false}
 {"$schema": "https://on.cypress.io/cypress.schema.json", "pluginsFile": false}
 {"projectId": "design-patterns-javascript"}
 {"pluginsFile": false, "supportFile": false, "fixturesFolder": false}
@@ -603,7 +399,6 @@
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/recorder-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/recorder-e2e/screenshots", "chromeWebSecurity": false}
 {"projectId": "taco-chat", "baseUrl": "http://localhost:3000", "fixturesFolder": false, "video": false, "viewportWidth": 1400, "viewportHeight": 1400}
 {"integrationFolder": "src/integration", "fixturesFolder": "src/fixtures", "pluginsFile": "src/plugins/index.js", "supportFile": "src/support/index.js", "screenshotsFolder": "src/screenshots", "videosFolder": "src/videos", "video": false, "baseUrl": "http://localhost:3000", "watchForFileChanges": false}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
 {"projectId": "7yw8f3"}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/mialbum-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/mialbum-e2e/screenshots", "chromeWebSecurity": false}
 {"integrationFolder": "src/integration", "fixturesFolder": false, "pluginsFile": false, "supportFile": false, "video": false}
@@ -611,19 +406,16 @@
 {"projectId": "uvjd3i", "baseUrl": "https://www.atticodellino.com", "defaultCommandTimeout": 20000, "fixturesFolder": "./fixtures", "integrationFolder": "./e2e", "pluginsFile": "./plugins", "screenshotsFolder": "./screenshots", "supportFile": "./support", "videosFolder": "./videos", "videoUploadOnPasses": false, "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:3000", "env": {"BASE_URL": "http://localhost:3000", "TEST_MODE": "parallel", "MIGRATE_URL": "http://localhost:9693/apis/migrate"}, "ignoreTestFiles": ["*spec.js", "validators.js", "utils.js"], "viewportWidth": 1280, "viewportHeight": 720, "chromeWebSecurity": false, "video": false, "projectId": "5yiuic"}
 {"integrationFolder": "projects/explorer/cypress/integration", "supportFile": "projects/explorer/cypress/support/index.ts", "videosFolder": "projects/explorer/cypress/videos", "screenshotsFolder": "projects/explorer/cypress/screenshots", "pluginsFile": "projects/explorer/cypress/plugins/index.ts", "fixturesFolder": "projects/explorer/cypress/fixtures", "baseUrl": "http://localhost:4200"}
-{"baseUrl": "http://localhost:3000"}
 {"baseUrl": "http://localhost:3000", "fixturesFolder": ".cypress/fixtures", "integrationFolder": ".cypress/e2e", "pluginsFile": ".cypress/plugins/index.js", "screenshotsFolder": ".cypress/screenshots", "supportFile": ".cypress/support/index.js", "videosFolder": ".cypress/videos"}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/front-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/front-e2e/screenshots", "chromeWebSecurity": false}
 {"projectId": "clarity-cypress-tests", "viewportWidth": 1000, "viewportHeight": 1000}
 {"baseUrl": "http://localhost:8000/", "projectId": "q78cu3", "viewportWidth": 1280, "viewportHeight": 900}
 {"baseUrl": "http://localhost:3000", "port": 3001, "pluginsFile": false, "fixturesFolder": false, "video": false}
 {"baseUrl": "http://localhost:4001"}
-{"baseUrl": "http://localhost:3000", "integrationFolder": "cypress/e2e"}
 {"baseUrl": "http://localhost:8080", "testFiles": "**/*.e2e.spec.{js,ts}", "viewportWidth": 1440, "viewportHeight": 1000, "component": {"testFiles": "**/*.ct.spec.{js,ts,jsx,tsx}", "componentFolder": "src", "viewportHeight": 800, "viewportWidth": 900}}
 {"baseUrl": "http://localhost:3000", "chromeWebSecurity": false}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/react-chat-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/react-chat-e2e/screenshots", "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:3000", "integrationFolder": "cypress/e2e", "chromeWebSecurity": false, "viewportWidth": 1500}
-{"baseUrl": "http://localhost:3000", "defaultCommandTimeout": 20000, "env": {"apiBaseUrl": "http://localhost:4001"}, "video": false, "screenshotOnRunFailure": false}
 {"baseUrl": "http://localhost:3000", "viewportWidth": 1920, "viewportHeight": 1080, "integrationFolder": "./src/", "testFiles": "**/*.cy.spec.ts", "modifyObstructiveCode": false, "chromeWebSecurity": false, "env": {"REACT_APP_API_URL": "https://localhost:4200"}, "video": false}
 {"baseUrl": "http://localhost:3000/", "viewportWidth": 700, "viewportHeight": 1000}
 {"baseUrl": "http://localhost:3000", "fixturesFolder": "tests/fixtures", "integrationFolder": "tests/integration", "pluginsFile": false, "screenshotsFolder": "tests/screenshots", "supportFile": false, "videosFolder": "tests/videos", "video": false, "trashAssetsBeforeRuns": true, "viewportWidth": 375, "viewportHeight": 667, "pageLoadTimeout": 120000, "defaultCommandTimeout": 8000}
@@ -645,114 +437,12 @@
 {"baseUrl": "https://demo.saas-3.veriff.me", "experimentalSourceRewriting": true, "chromeWebSecurity": false, "testFiles": "**/*.feature", "reporter": "cypress-mochawesome-reporter", "reporterOptions": {"reportDir": "cypress/reports", "charts": true, "reportPageTitle": "My Test Suite", "embeddedScreenshots": false, "inlineAssets": true}, "video": false}
 {"baseUrl": "http://localhost:8000", "viewportWidth": 1536, "viewportHeight": 722}
 {"pluginsFile": "tests/e2e/plugins/index.js", "viewportWidth": 1200, "viewportHeight": 660}
-{"projectId": "nf9rdc", "baseUrl": "http://localhost:3000"}
-{"projectId": "nf9rdc", "baseUrl": "http://localhost:3000"}
-{"chromeWebSecurity": false}
-{"chromeWebSecurity": false}
-{"chromeWebSecurity": false}
-{"chromeWebSecurity": false}
-{"$schema": "https://on.cypress.io/cypress.schema.json", "pluginsFile": false}
-{"baseUrl": "http://localhost:3434"}
-{"projectId": "i6oq5i", "baseUrl": "http://localhost:3000", "pluginsFile": "cypress/plugins/index.ts", "supportFile": "cypress/support/index.ts", "integrationFolder": "cypress/tests", "retries": {"runMode": 2}, "env": {"codeCoverage": {"url": "/api/coverage"}}}
-{"baseUrl": "http://localhost:3000"}
-{"baseUrl": "http://localhost:3000"}
-{"baseUrl": "http://localhost:3000"}
-{"baseUrl": "http://localhost:3000"}
-{"testFiles": "**/*.spec.{js,jsx,tsx,ts}", "componentFolder": "cypress/pages"}
-{"fixturesFolder": "cypress/fixtures", "supportFile": false, "pluginsFile": false}
-{"fixturesFolder": "cypress/fixtures", "supportFile": false, "pluginsFile": false}
-{"fixturesFolder": "cypress/fixtures", "supportFile": false, "pluginsFile": false}
-{"fixturesFolder": "cypress/fixtures", "supportFile": false, "pluginsFile": false}
-{"baseUrl": "http://localhost/", "projectId": "", "integrationFolder": "cypress/tests", "viewportHeight": 1000, "viewportWidth": 1280, "firefoxGcInterval": null, "retries": {"runMode": 2, "openMode": 1}, "env": {"loginSuffix": "/en/-/login/", "testUser": "", "testPw": "", "username": "", "coverage": false, "codeCoverage": {"url": "http://localhost:3001/__coverage__"}}, "experimentalStudio": true}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/secondary-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/secondary-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8501", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8501", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8501", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8501", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000", "port": 5051}
-{"baseUrl": "http://localhost:3000", "port": 5051}
-{"baseUrl": "http://localhost:3000", "port": 5051}
-{"baseUrl": "http://localhost:3000", "port": 5051}
-{"env": {"ROOT": "http://localhost:3000", "TEST": "http://localhost:3000/Test", "NAME_ROOT": "http://localhost:3000/name", "GRAPH_ROOT": "http://localhost:8000/subgraphs/name/graphprotocol/ens/graphql"}, "projectId": "rzedru", "defaultCommandTimeout": 15000, "viewportWidth": 1440, "viewportHeight": 1600, "retries": {"runMode": 2, "openMode": 0}}
-{"env": {"ROOT": "http://localhost:3000", "TEST": "http://localhost:3000/Test", "NAME_ROOT": "http://localhost:3000/name", "GRAPH_ROOT": "http://localhost:8000/subgraphs/name/graphprotocol/ens/graphql"}, "projectId": "rzedru", "defaultCommandTimeout": 15000, "viewportWidth": 1440, "viewportHeight": 1600, "retries": {"runMode": 2, "openMode": 0}}
-{"env": {"ROOT": "http://localhost:3000", "TEST": "http://localhost:3000/Test", "NAME_ROOT": "http://localhost:3000/name", "GRAPH_ROOT": "http://localhost:8000/subgraphs/name/graphprotocol/ens/graphql"}, "projectId": "rzedru", "defaultCommandTimeout": 15000, "viewportWidth": 1440, "viewportHeight": 1600, "retries": {"runMode": 2, "openMode": 0}}
-{"env": {"ROOT": "http://localhost:3000", "TEST": "http://localhost:3000/Test", "NAME_ROOT": "http://localhost:3000/name", "GRAPH_ROOT": "http://localhost:8000/subgraphs/name/graphprotocol/ens/graphql"}, "projectId": "rzedru", "defaultCommandTimeout": 15000, "viewportWidth": 1440, "viewportHeight": 1600, "retries": {"runMode": 2, "openMode": 0}}
-{"component": {"testFiles": "**/*.test.{js,ts,jsx,tsx}", "componentFolder": "src"}}
-{"component": {"testFiles": "**/*.test.{js,ts,jsx,tsx}", "componentFolder": "src"}}
-{"component": {"testFiles": "**/*.test.{js,ts,jsx,tsx}", "componentFolder": "src"}}
-{"component": {"testFiles": "**/*.test.{js,ts,jsx,tsx}", "componentFolder": "src"}}
-{"reporter": "mochawesome", "reporterOptions": {"overwrite": false, "html": false, "json": true}}
-{"baseUrl": "http://localhost:3000", "pluginsFile": false, "fixturesFolder": false, "supportFile": "cypress/support/index.js", "video": false, "defaultCommandTimeout": 10000}
-{"baseUrl": "http://localhost:3000", "pluginsFile": false, "fixturesFolder": false, "supportFile": "cypress/support/index.js", "video": false, "defaultCommandTimeout": 10000}
-{"baseUrl": "http://localhost:3000", "pluginsFile": false, "fixturesFolder": false, "supportFile": "cypress/support/index.js", "video": false, "defaultCommandTimeout": 10000}
-{"baseUrl": "http://localhost:3000", "pluginsFile": false, "fixturesFolder": false, "supportFile": "cypress/support/index.js", "video": false, "defaultCommandTimeout": 10000}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/ui-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/ui-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/ui-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/ui-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/ui-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/ui-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/ui-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/ui-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000", "integrationFolder": "cypress/e2e", "projectId": "s8v41s"}
-{"baseUrl": "http://localhost:3000", "integrationFolder": "cypress/e2e", "projectId": "s8v41s"}
-{"viewportWidth": 400, "viewportHeight": 400, "baseUrl": "http://localhost:3000", "ignoreTestFiles": "utils.js"}
-{"viewportWidth": 400, "viewportHeight": 400, "baseUrl": "http://localhost:3000", "ignoreTestFiles": "utils.js"}
-{"integrationFolder": "spec", "fixturesFolder": "src/fixtures", "pluginsFile": false, "screenshotsFolder": "tmp/screenshots", "supportFile": "src/support/index.js", "videosFolder": "tmp/videos", "projectId": "i1xxek"}
-{"projectId": "4jfqfq", "component": {"componentFolder": "src", "testFiles": "**/*spec.{js,jsx,ts,tsx}", "viewportWidth": 1200, "viewportHeight": 800}}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/app0-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/app0-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8080/", "testFiles": "**/*.spec.ts", "supportFile": "src/test/javascript/cypress/support/index.ts", "video": false, "integrationFolder": "src/test/javascript/cypress/integration", "fixturesFolder": "src/test/javascript/cypress/fixtures", "pluginsFile": "src/test/javascript/cypress/plugins/index.ts", "screenshotsFolder": "build/cypress/screenshots", "chromeWebSecurity": false, "viewportWidth": 1200, "viewportHeight": 720, "retries": 2}
-{"baseUrl": "http://localhost:8080/", "testFiles": "**/*.spec.ts", "supportFile": "src/test/javascript/cypress/support/index.ts", "video": false, "integrationFolder": "src/test/javascript/cypress/integration", "fixturesFolder": "src/test/javascript/cypress/fixtures", "pluginsFile": "src/test/javascript/cypress/plugins/index.ts", "screenshotsFolder": "build/cypress/screenshots", "chromeWebSecurity": false, "viewportWidth": 1200, "viewportHeight": 720, "retries": 2}
-{"baseUrl": "http://localhost:8080/", "testFiles": "**/*.spec.ts", "supportFile": "src/test/javascript/cypress/support/index.ts", "video": false, "integrationFolder": "src/test/javascript/cypress/integration", "fixturesFolder": "src/test/javascript/cypress/fixtures", "pluginsFile": "src/test/javascript/cypress/plugins/index.ts", "screenshotsFolder": "build/cypress/screenshots", "chromeWebSecurity": false, "viewportWidth": 1200, "viewportHeight": 720, "retries": 2}
-{"baseUrl": "http://localhost:8080/", "testFiles": "**/*.spec.ts", "supportFile": "src/test/javascript/cypress/support/index.ts", "video": false, "integrationFolder": "src/test/javascript/cypress/integration", "fixturesFolder": "src/test/javascript/cypress/fixtures", "pluginsFile": "src/test/javascript/cypress/plugins/index.ts", "screenshotsFolder": "build/cypress/screenshots", "chromeWebSecurity": false, "viewportWidth": 1200, "viewportHeight": 720, "retries": 2}
-{"component": {"componentFolder": "src", "testFiles": "**/*spec.{js,jsx,ts,tsx}"}}
-{"component": {"componentFolder": "src", "testFiles": "**/*spec.{js,jsx,ts,tsx}"}}
-{"component": {"componentFolder": "src", "testFiles": "**/*spec.{js,jsx,ts,tsx}"}}
-{"component": {"componentFolder": "src", "testFiles": "**/*spec.{js,jsx,ts,tsx}"}}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/nft-portal-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/nft-portal-e2e/screenshots", "chromeWebSecurity": false}
-{"ignoreTestFiles": ["*.routines.js"]}
-{"viewportWidth": 1000, "viewportHeight": 660}
-{"viewportWidth": 1920, "viewportHeight": 1080}
-{"viewportWidth": 1920, "viewportHeight": 1080}
-{"viewportWidth": 1920, "viewportHeight": 1080}
-{"viewportWidth": 1920, "viewportHeight": 1080}
-{"pluginsFile": "tests/e2e/plugins/index.js", "baseUrl": "http://localhost:3000", "chromeWebSecurity": false, "defaultCommandTimeout": 8000}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/components-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/components-e2e/screenshots", "chromeWebSecurity": false, "baseUrl": "http://localhost:4400"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/components-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/components-e2e/screenshots", "chromeWebSecurity": false, "baseUrl": "http://localhost:4400"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/components-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/components-e2e/screenshots", "chromeWebSecurity": false, "baseUrl": "http://localhost:4400"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/components-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/components-e2e/screenshots", "chromeWebSecurity": false, "baseUrl": "http://localhost:4400"}
-{"defaultCommandTimeout": 20000, "baseUrl": "http://localhost:4200/", "requestTimeout": 10000, "modifyObstructiveCode": false, "env": {"CLIENT_ID": "financial_trusted", "CLIENT_SECRET": "secret", "API_URL": "https://localhost:9002", "API_URL_INT": "https://localhost:9002"}, "video": false, "reporter": "mochawesome", "reporterOptions": {"reportDir": "cypress/report/mochawesome-report", "overwrite": false, "html": false, "json": true, "timestamp": "dd-mm-yyyy"}}
-{"baseUrl": "http://localhost:8000/", "integrationFolder": "cypress/integration", "chromeWebSecurity": false, "trashAssetsBeforeRuns": true}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "pluginsFile": "./src/plugins/index", "supportFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/webapp-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/webapp-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "pluginsFile": "./src/plugins/index", "supportFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/webapp-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/webapp-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:8881", "defaultCommandTimeout": 8000, "video": false}
-{"baseUrl": "http://localhost:3000", "integrationFolder": "cypress/tests", "viewportHeight": 1000, "viewportWidth": 1280, "retries": {"runMode": 2, "openMode": 1}, "env": {"apiUrl": "http://localhost:3001", "mobileViewportWidthBreakpoint": 414, "coverage": false, "codeCoverage": {"url": "http://localhost:3001/__coverage__"}}, "experimentalStudio": true}
-{"integrationFolder": "./integration", "fixturesFolder": "./cypress/fixtures", "pluginsFile": "./cypress/plugins", "supportFile": "./cypress/support", "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36", "video": false, "chromeWebSecurity": false}
-{"baseUrl": "http://127.0.0.1:3030", "chromeWebSecurity": false, "video": false}
-{"projectId": "h1okgx", "experimentalStudio": true, "video": false, "env": {"REACT_APP_MOVIE_API": "fake"}}
-{"projectId": "h1okgx", "experimentalStudio": true, "video": false, "env": {"REACT_APP_MOVIE_API": "fake"}}
-{"projectId": "h1okgx", "experimentalStudio": true, "video": false, "env": {"REACT_APP_MOVIE_API": "fake"}}
-{"projectId": "h1okgx", "experimentalStudio": true, "video": false, "env": {"REACT_APP_MOVIE_API": "fake"}}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"pluginsFile": "tests/e2e/plugins/index.js"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/luggage-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/luggage-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/luggage-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/luggage-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/luggage-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/luggage-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/luggage-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/luggage-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000", "env": {"BASE_URL": "http://localhost:3000", "TEST_MODE": "parallel", "MIGRATE_URL": "http://localhost:9693/apis/migrate"}, "ignoreTestFiles": ["*spec.js", "validators.js", "utils.js"], "viewportWidth": 1280, "viewportHeight": 720, "chromeWebSecurity": false, "video": false, "projectId": "5yiuic"}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/front-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/front-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/front-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/front-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/front-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/front-e2e/screenshots", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/front-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/front-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:4001"}
-{"baseUrl": "http://localhost:4001"}
-{"fixturesFolder": "__tests__/e2e/fixtures", "integrationFolder": "__tests__/e2e/integration", "pluginsFile": "__tests__/e2e/plugins/index.js", "screenshotsFolder": "__tests__/e2e/screenshots", "videosFolder": "__tests__/e2e/videos", "downloadsFolder": "__tests__/e2e/downloads", "supportFile": "__tests__/e2e/support/index.js", "baseUrl": "http://localhost:3000"}
-{"fixturesFolder": "__tests__/e2e/fixtures", "integrationFolder": "__tests__/e2e/integration", "pluginsFile": "__tests__/e2e/plugins/index.js", "screenshotsFolder": "__tests__/e2e/screenshots", "videosFolder": "__tests__/e2e/videos", "downloadsFolder": "__tests__/e2e/downloads", "supportFile": "__tests__/e2e/support/index.js", "baseUrl": "http://localhost:3000"}
 {"fileServerFolder": "./website", "chromeWebSecurity": false}
 {"chromeWebSecurity": false, "hosts": {"vmware-oauth2-proxy.my": "{{TARGET_IP}}"}, "env": {"upstreamURL": "/bitnami/oauth2-proxy/conf/", "upstreamContent": "oauth2_proxy.cfg", "dexPort": "5556"}}
 {"projectId": "w2qxb8", "baseUrl": "http://localhost:9001", "viewportWidth": 720, "viewportHeight": 480, "fixturesFolder": false}
 {"testFiles": "**/*cy.*", "componentFolder": "src"}
 {"baseUrl": "http://laravel-bjyblog.test", "nodeVersion": "bundled", "viewportWidth": 1200, "viewportHeight": 800}
 {"baseUrl": "http://localhost:5000/", "viewportWidth": 500, "viewportHeight": 300}
-{"video": false}
 {"baseUrl": "http://localhost:3000", "defaultCommandTimeout": 100000, "responseTimeout": 100000, "env": {"codeCoverage": {"url": "/api/__coverage__"}}, "retries": {"runMode": 2, "openMode": 0}, "video": false, "lighthouse": {"performance": 0, "accessibility": 50, "best-practices": 85, "seo": 85, "pwa": 0}}
 {"projectId": "qrjqcv", "requestTimeout": 120000, "responseTimeout": 120000, "pageLoadTimeout": 120000, "defaultCommandTimeout": 120000, "integrationFolder": "./cypress-tests/integration", "fixturesFolder": "./cypress-tests/fixtures", "pluginsFile": "cypress-tests/plugins/index.js", "supportFile": "cypress-tests/support/index.js", "retries": {"runMode": 2, "openMode": 0}}
 {"baseUrl": "http://localhost:8888", "projectId": "pm6grv"}
@@ -790,12 +480,10 @@
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/crane-web-client-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/crane-web-client-e2e/screenshots", "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:3000", "chromeWebSecurity": false, "waitForAnimations": true, "defaultCommandTimeout": 10000, "requestTimeout": 10000, "responseTimeout": 10000, "projectId": "4oe38f", "video": false}
 {"baseUrl": "http://localhost:3001", "fixturesFolder": false, "video": false, "pluginsFile": "cypress/plugins/index.ts", "supportFile": "cypress/support/index.ts"}
-{"video": false, "baseUrl": "http://localhost:3000"}
 {"baseUrl": "https://lovecrafts-demo.storefrontcloud.io/", "viewportWidth": 1280, "viewportHeight": 1024}
 {"baseUrl": "http://local.my.oregonstate.edu:3000", "integrationFolder": "cypress/e2e", "viewportWidth": 375, "viewportHeight": 667}
 {"baseUrl": "http://localhost:8100", "video": false}
 {"baseUrl": "http://localhost:9000/", "chromeWebSecurity": false}
-{"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/angular-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/angular-e2e/screenshots", "chromeWebSecurity": false, "baseUrl": "http://localhost:4400"}
 {"baseUrl": "https://localhost:5001", "env": {"apiBaseUrl": "/en-us/api/v1/"}, "video": false}
 {"projectId": "msg-audit-tool", "video": false, "baseUrl": "http://localhost:4200"}
 {"baseUrl": "http://localhost:4200", "chromeWebSecurity": false}
@@ -812,7 +500,6 @@
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "pluginsFile": "./src/plugins/index", "supportFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/ngx-md-demo-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/ngx-md-demo-e2e/screenshots", "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:9000/", "fixturesFolder": false, "pluginsFile": false, "supportFile": false}
 {"fixturesFolder": false, "baseUrl": "http://localhost:19006", "viewportWidth": 400, "viewportHeight": 660, "projectId": "hyr4ik", "retries": {"runMode": 2, "openMode": 0}}
-{"baseUrl": "http://localhost:3000/"}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/warp-drive-manager-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/warp-drive-manager-e2e/screenshots", "chromeWebSecurity": false}
 {"baseUrl": "http://localhost:8080", "fixturesFolder": "fixtures", "integrationFolder": "integration", "pluginsFile": "plugins/index.js", "screenshotsFolder": "screenshots", "supportFile": "support/index.js", "videosFolder": "videos", "viewportWidth": 1280, "viewportHeight": 720, "blockHosts": ["source.unsplash.com"]}
 {"baseUrl": "http://FIXME", "numTestsKeptInMemory": 1, "reporter": "mochawesome", "reporterOptions": {"overwrite": false, "html": false, "json": true}, "env": {"TEST_USER": "@@TEST_USER@@", "TEST_PASSWORD": "@@TEST_PASSWORD@@"}, "chromeWebSecurity": false, "viewportHeight": 800, "viewportWidth": 1280}
@@ -821,7 +508,6 @@
 {"fixturesFolder": false, "supportFile": false, "pluginsFile": false, "baseUrl": "http://localhost:3001", "chromeWebSecurity": false, "video": false, "screenshotOnRunFailure": false, "videoUploadOnPasses": false}
 {"env": {"REST_BOOKER_PLATFORM": "https://automationintesting.online", "THE_INTERNET_APP": "https://the-internet.herokuapp.com"}}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/happynrwl-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/happynrwl-e2e/screenshots", "chromeWebSecurity": false}
-{"baseUrl": "http://localhost:3000"}
 {"video": false, "baseUrl": "http://localhost:9009", "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.2 Mobile/15E148 Safari/604.1", "viewportWidth": 375, "viewportHeight": 812, "projectId": "Make.org", "testFiles": "**/*.feature"}
 {"baseUrl": "http://localhost:1234", "projectId": "czuyp4"}
 {"env": {"cypress-react-unit-test": {"react": "node_modules/react/umd/react.development.js", "react-dom": "node_modules/react-dom/umd/react-dom.development.js"}}}
@@ -832,7 +518,6 @@
 {"projectId": "p7dy7b"}
 {"baseUrl": "http://localhost:3000", "video": false, "viewportWidth": 1440, "viewportHeight": 764, "defaultCommandTimeout": 3000, "responseTimeout": 4000, "retries": {"runMode": 3}, "screenshotOnRunFailure": false, "chromeWebSecurity": false, "projectId": "hcrbev"}
 {"failOnStatusCode": false, "experimentalNetworkStubbing": false, "chromeWebSecurity": false, "experimentalSessionSupport": true, "testFiles": "**/*.feature", "defaultCommandTimeout": 10000, "includeShadowDom": true, "responseTimeout": 40000, "redirectionLimit": 100, "env": {"BaseUrl": "https://bcgov.github.io/sso-requests-dev"}}
-{"video": false}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "supportFile": "./src/support/index.ts", "pluginsFile": false, "video": true, "videosFolder": "../../dist/cypress/apps/sneat-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/sneat-app-e2e/screenshots", "chromeWebSecurity": false}
 {"experimentalRunEvents": true, "baseUrl": "http://localhost:3000"}
 {"viewportWidth": 600, "viewportHeight": 400}
@@ -855,7 +540,6 @@
 {"port": 4000, "baseUrl": "http://localhost:3000", "testFiles": "**/*.spec.js"}
 {"baseUrl": "http://localhost:4200/", "ignoreTestFiles": "**/examples/*", "viewportHeight": 1080, "viewportWidth": 1920}
 {"$schema": "https://on.cypress.io/cypress.schema.json", "baseUrl": "http://localhost:3000", "video": false}
-{"baseUrl": "http://localhost:19006"}
 {"baseUrl": "http://localhost:8080/", "pluginsFile": "tests/e2e/plugins/index.js"}
 {"baseUrl": "http://localhost:1234", "fixturesFolder": false, "supportFile": false}
 {"fileServerFolder": ".", "fixturesFolder": "./src/fixtures", "integrationFolder": "./src/integration", "modifyObstructiveCode": false, "pluginsFile": "./src/plugins/index", "supportFile": "./src/support/index.ts", "video": true, "videosFolder": "../../dist/cypress/apps/speedtest-app-e2e/videos", "screenshotsFolder": "../../dist/cypress/apps/speedtest-app-e2e/screenshots", "chromeWebSecurity": false}
@@ -896,13 +580,11 @@
 {"env": {"apiUrl": "http://host.docker.internal:8000"}}
 {"testFiles": "**/*.feature", "chromeWebSecurity": false, "defaultCommandTimeout": 40000}
 {"baseUrl": "http://localhost:3000", "integrationFolder": "cypress/e2e", "viewportWidth": 1280, "viewportHeight": 1024}
-{"baseUrl": "http://localhost:3000/"}
 {"testFiles": "**/*.{feature,features,spec.js}", "ignoreTestFiles": ["**/1-getting-started/*.js", "**/2-advanced-examples/*.js"], "projectId": "s8op3q"}
 {"baseUrl": "https://barrigarest.wcaquino.me", "viewportWidth": 1200, "viewportHeight": 1060}
 {"projectId": "k4cyzj"}
 {"projectId": "qs4zgm", "viewportWidth": 1920, "viewportHeight": 1080, "defaultCommandTimeout": 10000, "reporter": "cypress-mochawesome-reporter", "reporterOptions": {"reportDir": "cypress/reports", "charts": true, "reportPageTitle": "My Test Suite", "embeddedScreenshots": true, "inlineAssets": true, "screenshotsFolder": "./cypress/snapshots/actual", "trashAssetsBeforeRuns": true}, "video": false}
 {"pageLoadTimeout": 50000, "experimentalStudio": true}
-{"chromeWebSecurity": false}
 {"projectId": "q4hhvh", "chromeWebSecurity": false}
 {"baseUrl": "https://api.kraken.com/0/public", "screenshotsFolder": "./screenshots", "reporter": "spec", "video": false}
 {"fixturesFolder": false, "supportFile": false, "pluginsFile": false, "viewportWidth": 1800, "viewportHeight": 1260, "chromeWebSecurity": false, "env": {"domain": "https://www.mercadolibre.com.pe/", "email": "freedemou@gmail.com", "password": "123456789", "waitTime": 3000}}
