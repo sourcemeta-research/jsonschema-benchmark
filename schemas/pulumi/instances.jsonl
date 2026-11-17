@@ -1451,7 +1451,6 @@
 {"name": "${PROJECT}", "description": "${DESCRIPTION}", "runtime": "java", "template": {"description": "A minimal Java Pulumi program with Gradle builds"}}
 {"name":"aws-eks-cluster-java","description":"An example that deploys a Kubernetes cluster on AWS.","runtime":"java"}
 {"name":"bucket-py","description":"Basic example of a GCP Storage Bucket (in Python!)","runtime":"python"}
-{"name": "webserver-linode", "runtime": "nodejs", "description": "Basic example of an Linode web server accessible over HTTP"}
 {"name":"azure-ts-oidc-provider-pulumi","runtime":"nodejs","description":"An Azure Native TypeScript Pulumi program to setup OIDC"}
 {"runtime":"nodejs","name":"construct_component_methods_errors_nodejs","description":"A program that constructs remote component resources with a method that returns an error."}
 {"description":"An example of using Jest with Pulumi to write test-driven code that mocks AWS infrastructure.","template":{"config":{"aws:region":{"description":"The AWS region to deploy into","default":"us-east-2"}}},"name":"testing-unit-ts-mocks-jest","runtime":"nodejs"}
@@ -1607,7 +1606,6 @@
 {"description":"An example that deploys an IAM policy document, role, and instance profile on AWS.","runtime":"nodejs","name":"aws-iam-strongly-typed-typescript"}
 {"name":"ol-infrastructure-data_warehouse","backend":{"url":"s3://mitol-pulumi-state/"},"runtime":"python","description":"Manage the storage and query engine for an Open Learning data warehouse using AWS Athena"}
 {"name":"azure-py-synapse","runtime":{"options":{"virtualenv":"venv"},"name":"python"},"description":"Creates Azure Synapse workspace with SQL and Spark pools"}
-{"name": "ok-api", "runtime": "nodejs", "description": "API for the OK? programming language"}
 {"name": "serverless-topic", "runtime": "nodejs", "description": "Simple topic examples"}
 {"description":"A minimal Google Cloud Python Pulumi program","runtime":{"name":"python","options":{"toolchain":"poetry"}},"config":{"pulumi:tags":{"value":{"pulumi:template":"gcp-python"}}},"name":"packageadd_poetry"}
 {"runtime":"nodejs","description":"Kubernetes Guestbook example based on https://kubernetes.io/docs/tutorials/stateless-application/guestbook/","name":"guestbook"}
@@ -1816,7 +1814,6 @@
 {"name":"video-thumbnailer","runtime":"nodejs","template":{"config":{"aws:region":{"default":"us-west-2","description":"The AWS region to deploy into"}}},"description":"A video thumbnail extractor using serverless functions and containers"}
 {"description":"A TypeScript Pulumi program with AWS Cloud Control provider testing an update","name":"aws-update","runtime":"nodejs"}
 {"name":"compilation_error","runtime":"go","description":"A minimal Go Pulumi program"}
-{"name":"serverless-topic","runtime":"nodejs","description":"Simple topic examples"}
 {"name": "${PROJECT}", "runtime": "nodejs", "description": "${DESCRIPTION}", "template": {"description": "An AWS IdentityPolicy TypeScript Pulumi program", "config": {"aws:region": {"description": "The AWS region to deploy into", "default": "us-east-1"}}}}
 {"description":"An example that deploys an IAM user and user policy on AWS.","name":"aws-iam-user-userpolicy-javascript","runtime":{"options":{"typescript":""},"name":"nodejs"}}
 {"description":"An empty Python Pulumi program.","runtime":"python","name":"emptypy"}
@@ -1895,13 +1892,10 @@
 {"name":"l2-parameterized-resource","runtime":{"options":{"virtualenv":"venv","typechecker":"pyright"},"name":"python"}}
 {"name":"awsx-apigateway-lambda-java","description":"An example that deploys an API Gateway REST API with a single endpoint backed by AWS Lambda.","runtime":"java"}
 {"runtime":{"options":{"typechecker":"pyright","virtualenv":"venv"},"name":"python"},"name":"l1-builtin-info"}
-{"name": "vpc_eks_go", "runtime": "go", "description": "A minimal AWS Go Pulumi program"}
 {"name":"smac-program","outputs":{"test_true_smac__actual":{"fn::invoke":{"options":{"provider":"${provider1}"},"return":"skipMetadataApiCheck","function":"testbridge:index/smac:SMAC"}},"test_def_smac__actual":{"fn::invoke":{"options":{"provider":"${provider3}"},"return":"skipMetadataApiCheck","function":"testbridge:index/smac:SMAC"}},"test_def_smac__expect":"true","test_true_smac__expect":"true","test_false_smac__actual":{"fn::invoke":{"options":{"provider":"${provider2}"},"return":"skipMetadataApiCheck","function":"testbridge:index/smac:SMAC"}},"test_false_smac__expect":"false"},"resources":{"provider3":{"type":"pulumi:providers:testbridge"},"provider2":{"type":"pulumi:providers:testbridge","properties":{"skipMetadataApiCheck":""}},"provider1":{"type":"pulumi:providers:testbridge","properties":{"skipMetadataApiCheck":"1"}}},"runtime":"yaml"}
 {"name": "aws-native-ts-s3-folder", "runtime": "nodejs", "description": "A static website hosted on AWS S3"}
 {"runtime":"dotnet","description":"Example python app using multiple docker containers","name":"docker-cs-multi-container-app","main":"Infra"}
-{"name":"regression","description":"Regression tests","runtime":"nodejs"}
 {"config":{"sqlAdmin":{"type":"string","default":"pulumi"}},"outputs":{"endpoint":"https://${containerapp.configuration.ingress.fqdn}"},"resources":{"kubeEnv":{"type":"azure-native:web:KubeEnvironment","properties":{"appLogsConfiguration":{"destination":"log-analytics","logAnalyticsConfiguration":{"sharedKey":"${sharedKey}","customerId":"${workspace.customerId}"}},"environmentType":"Managed","resourceGroupName":"${resourceGroup.name}"}},"registry":{"properties":{"adminUserEnabled":"1","sku":{"name":"Basic"},"resourceGroupName":"${resourceGroup.name}"},"type":"azure-native:containerregistry:Registry"},"myImage":{"options":{"provider":"${provider}"},"properties":{"name":"${registry.loginServer}/node-app:v1.0.0","build":{"context":"${pulumi.cwd}/node-app"}},"type":"docker:RegistryImage"},"provider":{"type":"pulumi:providers:docker","properties":{"registryAuth":[{"password":"${adminPasswords[0].value}","address":"${registry.loginServer}","username":"${adminUsername}"}]}},"workspace":{"type":"azure-native:operationalinsights:Workspace","properties":{"sku":{"name":"PerGB2018"},"resourceGroupName":"${resourceGroup.name}","retentionInDays":"30"}},"resourceGroup":{"type":"azure-native:resources:ResourceGroup"},"containerapp":{"properties":{"configuration":{"ingress":{"external":"1","targetPort":"80"},"secrets":[{"name":"pwd","value":"${adminPasswords[0].value}"}],"registries":[{"passwordSecretRef":"pwd","server":"${registry.loginServer}","username":"${adminUsername}"}]},"template":{"containers":[{"name":"myapp","image":"${myImage.name}"}]},"kubeEnvironmentId":"${kubeEnv}","resourceGroupName":"${resourceGroup.name}"},"type":"azure-native:web:ContainerApp"}},"variables":{"adminPasswords":{"fn::invoke":{"Return":"passwords","function":"azure-native:containerregistry:listRegistryCredentials","arguments":{"resourceGroupName":"${resourceGroup.name}","registryName":"${registry.name}"}}},"adminUsername":{"fn::invoke":{"Return":"username","function":"azure-native:containerregistry:listRegistryCredentials","arguments":{"registryName":"${registry.name}","resourceGroupName":"${resourceGroup.name}"}}},"sharedKey":{"fn::invoke":{"Return":"primarySharedKey","function":"azure-native:operationalinsights:getSharedKeys","arguments":{"resourceGroupName":"${resourceGroup.name}","workspaceName":"${workspace.name}"}}}},"name":"azure-container-apps","description":"Azure Container Apps example","runtime":"yaml"}
-{"name": "ec2-asg-lb", "runtime": "nodejs", "description": "A minimal AWS TypeScript Pulumi program"}
 {"name": "${PROJECT}", "description": "${DESCRIPTION}", "runtime": "yaml", "template": {"description": "A minimal Scaleway Pulumi YAML program", "config": {"scaleway:project_id": {"description": "The Scaleway project ID"}, "scaleway:region": {"description": "The Scaleway region to deploy into", "default": "fr-par"}}}, "resources": {"my-bucket": {"type": "scaleway:ObjectBucket"}}, "outputs": {"bucketName": "${my-bucket.id}"}}
 {"name": "tokens", "runtime": "nodejs", "description": "A minimal AWS TypeScript Pulumi program"}
 {"runtime":"nodejs","name":"generic-await-logic","description":"Tests that we await custom and generic ready conditions."}
@@ -2461,7 +2455,6 @@
 {"name":"l2-resource-parent-inheritance","runtime":"nodejs"}
 {"runtime":"go","description":"Generate testdata from the random provider","name":"genradom"}
 {"name": "s3", "runtime": "nodejs", "description": "A minimal AWS TypeScript Pulumi program"}
-{"name": "azure-linux-virtual-machine", "runtime": "nodejs", "description": "Create a linux virtual machine resource"}
 {"description":"A minimal TypeScript Pulumi program","runtime":"nodejs","name":"pulumi-aws-cdk-ec2-instance"}
 {"name":"printfgo","runtime":"go","description":"A Pulumi program that printfs some stuff."}
 {"runtime":"python","name":"construct_component_provider_propagation_py","description":"A program that constructs remote component resources with first class provider.","plugins":{"providers":[{"path":"../../../testprovider","name":"testprovider"}]}}
@@ -2541,7 +2534,6 @@
 {"runtime":{"name":"python","options":{"virtualenv":"venv"}},"name":"aws-iampolicy-jsonparse-python","config":{"pulumi:tags":{"value":{"pulumi:template":"aws-python"}}},"description":"An example that deploys an IAM policy and manipulates it using JSON parsing."}
 {"runtime":{"name":"nodejs"},"name":"sourcemap"}
 {"name": "stack-advanced-topics", "runtime": {"name": "python", "options": {"virtualenv": "venv"}}, "description": "Pulumi Workshop - AWS Python stack advanced topics"}
-{"name":"pulumi-azure-logic-apps","runtime":"go","description":"A minimal Azure Native Go Pulumi program"}
 {"runtime":"nodejs","description":"ec2 integration test","name":"pulumi-aws-ec2"}
 {"name":"ec2instance","template":{"config":{"aws:region":{"description":"The AWS region to deploy into","default":"us-west-2"}}},"runtime":"nodejs","description":"Basic example of an AWS EC2 instance"}
 {"runtime":"go","name":"patch-resources"}
@@ -3002,7 +2994,6 @@
 {"runtime":"go","description":"A minimal Stack Readme Go Example program","name":"stack-readme-go"}
 {"runtime":{"options":{"typescript":""},"name":"nodejs"},"description":"An example that deploys an S3 bucket and bucket policy on AWS.","config":{"pulumi:tags":{"value":{"pulumi:template":"aws-javascript"}}},"name":"aws-s3bucket-bucketpolicy-javascript"}
 {"name":"l2-invoke-variants","runtime":"go"}
-{"name": "gcp-typescript-cloudrun", "runtime": "nodejs", "description": "A minimal Google Cloud TypeScript Pulumi program"}
 {"name":"pulumi-ansible-wordpress-java","runtime":"java","description":"Deploy an EC2 Wordpress server using Pulumi and Ansible."}
 {"name":"l2-invoke-variants","runtime":"yaml"}
 {"organization":{"pulumi:tags":{"company":"eomii"}},"name":"nativelink","runtime":"go","org":"eomii","backend":{"url":"file://~"},"description":"NativeLink development cluster for rules_ll."}
@@ -3086,7 +3077,6 @@
 {"name":"awsx-vpc-fargate-service-go","runtime":"go"}
 {"name":"l2-invoke-simple","runtime":{"options":{"typechecker":"mypy","virtualenv":"venv"},"name":"python"}}
 {"name":"l2-resource-simple","runtime":{"name":"python","options":{"virtualenv":"venv","typechecker":"mypy"}}}
-{"name": "sourcegraph-deploy-kubernetes-helper", "runtime": "nodejs", "description": "A small helper program to aid in creating a test cluster for https://github.com/sourcegraph/deploy-sourcegraph."}
 {"config":{"pulumi:tags":{"value":{"pulumi:template":"aws-python"}}},"description":"An example that retrieves and exports a Pulumi config value","runtime":{"name":"python","options":{"virtualenv":"venv"}},"name":"aws-import-export-pulumi-config-python"}
 {"name": "kubernetes-go-crontabs", "runtime": "go", "description": "A minimal Kubernetes Go Pulumi program"}
 {"name":"eks-from-scratch","runtime":"go","description":"A Pulumi Go program to stand up an EKS cluster"}
@@ -3253,7 +3243,6 @@
 {"name": "heroku", "runtime": {"name": "python", "options": {"virtualenv": "venv"}}, "description": "A minimal AWS Python Pulumi program. Used to create a heroku clone to provision new VMs with flexibility and deploy static websites."}
 {"runtime":"java","description":"An example that deploys an API Gateway REST API with a custom domain from Route53.","name":"awsx-apigateway-custom-domain-java"}
 {"name": "${PROJECT}", "description": "${DESCRIPTION}", "runtime": "yaml", "template": {"description": "A minimal Pulumi YAML program with the classic Azure provider", "config": {"azure:location": {"description": "The Azure location to use", "default": "WestUS2"}}}, "resources": {"resourceGroup": {"type": "azure:core:ResourceGroup"}, "account": {"type": "azure:storage:Account", "properties": {"resourceGroupName": "${resourceGroup.name}", "accountTier": "Standard", "accountReplicationType": "LRS"}}}, "outputs": {"connectionString": "${account.primaryConnectionString}"}}
-{"name":"kubernetes-go-helm-release-wordpress","runtime":"go","description":"A minimal Go Pulumi program"}
 {"name":"gcp-simple-webserver-typescript","config":{"pulumi:tags":{"value":{"pulumi:template":"gcp-typescript"}}},"description":"A example that deploys the resources for a simple web server on Google Cloud.","runtime":{"options":{"packagemanager":"npm"},"name":"nodejs"}}
 {"description":"A simple Node.js program that uses environments.","name":"environments_basic","runtime":"nodejs"}
 {"template":{"config":{"aws:region":{"default":"us-east-1","description":"The AWS region to deploy into"}}},"name":"webserver","description":"Basic example of an AWS web server accessible over HTTP","runtime":"nodejs"}
@@ -3348,7 +3337,6 @@
 {"name": "${PROJECT}", "runtime": "dotnet", "description": "${DESCRIPTION}", "template": {"description": "An AWS getLocalDisk C# Pulumi program", "config": {"aws:region": {"description": "The AWS region to deploy into", "default": "us-east-1"}}}}
 {"name":"basic_go_kubernetes","description":"A simple Go Kubernetes program.","runtime":"go"}
 {"name":"pulumi-automationapi-workshop-infra","runtime":{"name":"python","options":{"virtualenv":"venv"}},"description":"A minimal Python Pulumi program"}
-{"name": "pulumi-scaleway-examples-go-server", "runtime": "go", "description": "A minimal Go Pulumi program"}
 {"runtime":"dotnet","template":{"config":{"isMinikube":{"description":"Whether you are deploying to minikube","default":"1"}}},"name":"guestbook-csharp-components","description":"Kubernetes Guestbook example based on https://kubernetes.io/docs/tutorials/stateless-application/guestbook/"}
 {"name":"cm_from_file","description":"A minimal Kubernetes Go Pulumi program","runtime":"go"}
 {"name":"ol-infrastructure-substructure-vault-auth","runtime":"python","description":"Mount and configure authentication backends to use for connecting to Vault","backend":{"url":"s3://mitol-pulumi-state/"}}
@@ -3430,7 +3418,6 @@
 {"name":"index_randomidLiYNTxNn2mMD","resources":{"randomId":{"properties":{"byteLength":"8"},"type":"random:RandomId"}},"config":{"pulumi:tags":{"value":{"pulumi:template":"https://www.pulumi.com/ai/api/project/6c6dc4bc-ab09-4f96-9cca-e8725fab2622.zip"}}},"description":"","runtime":"yaml"}
 {"runtime":"scala","description":"Experimental playground for Besom","name":"besom"}
 {"name":"patch-resources","resources":{"patch-rsc-namespace-patching":{"properties":{"metadata":{"name":"${patch-rsc-namespace.metadata.name}","annotations":{"pulumi.com/testPatchAnnotation":"patched"}}},"type":"kubernetes:core/v1:NamespacePatch"},"deployment":{"properties":{"metadata":{"namespace":"${patch-rsc-namespace.metadata.name}","labels":{"app":"nginx"}},"spec":{"template":{"metadata":{"labels":{"app":"nginx"}},"spec":{"containers":[{"ports":[{"containerPort":"80"}],"name":"nginx","image":"nginx:1.14.2"}]}},"replicas":"1","selector":{"matchLabels":{"app":"nginx"}}}},"options":{"provider":"${provider}"},"type":"kubernetes:apps/v1:Deployment"},"patch-rsc-namespace":{"type":"kubernetes:core/v1:Namespace","options":{"provider":"${provider}"}},"provider":{"type":"pulumi:providers:kubernetes"},"deployment-patching":{"properties":{"metadata":{"name":"${deployment.metadata.name}","namespace":"${patch-rsc-namespace.metadata.name}","annotations":{"pulumi.com/testPatchAnnotation":"patched"}}},"type":"kubernetes:apps/v1:DeploymentPatch"}},"runtime":"yaml"}
-{"name": "aws-go-fargate", "runtime": "go", "description": "An end-to-end AWS ECS Fargate infrastructure as code project."}
 {"resources":{"webmasterUser":{"properties":{"path":"/system/","name":"webmaster"},"type":"aws:iam/user:User"},"webmasterAccessKey":{"type":"aws:iam/accessKey:AccessKey","name":"webmaster","properties":{"user":"${webmasterUser.name}"}},"webmasterPolicy":{"properties":{"user":"${webmasterUser.name}","policy":{"fn::toJSON":{"Statement":[{"Action":["ec2:Describe*"],"Resource":"*","Effect":"Allow"}],"Version":"2012-10-17"}}},"type":"aws:iam/userPolicy:UserPolicy"}},"runtime":"yaml","name":"aws-iam-user-userpolicy-yaml","description":"An example that deploys an IAM user and user policy on AWS."}
 {"name":"l2-failed-create-continue-on-error","runtime":"nodejs"}
 {"description":"A minimal TypeScript Pulumi program","name":"cdk-cron-lambda","runtime":"nodejs"}
@@ -3460,7 +3447,6 @@
 {"name":"awsx-ecr-image-java","runtime":"java"}
 {"runtime":"yaml","resources":{"exampleProfile":{"properties":{"resourceGroupName":"${resourceGroup.name}","tags":{"cost_center":"MSFT","environment":"Production"},"location":"${resourceGroup.location}","sku":"Standard_Verizon"},"type":"azure:cdn:Profile"},"resourceGroup":{"type":"azure:core:ResourceGroup","properties":{"location":"West Europe"}}},"name":"cdn_profile"}
 {"description":"An example that deploys an API Gateway REST API with a single endpoint backed by AWS Lambda.","runtime":{"name":"python","options":{"virtualenv":"venv"}},"name":"awsx-apigateway-lambda-python"}
-{"name":"aws-py-s3-folder","runtime":{"name":"python","options":{"virtualenv":"venv"}},"description":"A minimal AWS Python Pulumi program"}
 {"description":"Changing a provider's kubeconfig with a fixed `clusterIdentifier` should\ntrigger an update and not a replacement.\n","resources":{"provider":{"type":"pulumi:providers:kubernetes","properties":{"clusterIdentifier":"unchanged","kubeconfig":"apiVersion: v1\nclusters:\n  - cluster:\n      certificate-authority-data: Zm9vYmFyCg==\n      server: https://127.0.0.1:1\n    name: fake-cluster\ncontexts:\n  - context:\n      cluster: fake-cluster\n      user: fake-user\n    name: fake\ncurrent-context: fake\nkind: Config\npreferences: {}\nusers:\n  - name: fake-user\n    user:\n      client-certificate-data: Zm9vYmFyCg==\n      client-key-data: Zm9vYmFyCg==\n"}}},"name":"cluster-identifier","runtime":"yaml"}
 {"runtime":{"options":{"virtualenv":"venv"},"name":"python"},"description":"A minimal AWS Python Pulumi program","name":"macos_quickstart"}
 {"runtime":{"options":{"typescript":""},"name":"nodejs"},"name":"l2-provider-grpc-config-schema-secret"}
@@ -3561,7 +3547,6 @@
 {"description":"An example that deploys an API Gateway REST API with a custom domain from Route53.","name":"awsx-apigateway-custom-domain-go","runtime":"go"}
 {"name": "homelab-apps-kurtflix", "runtime": "go"}
 {"name":"pulumi-python-uv-no-venv-option","runtime":{"options":{"toolchain":"uv"},"name":"python"},"description":"A Python project that uses the uv toolchain, without specifing the location for the virtualenv."}
-{"name": "eks_cluster_python", "runtime": "python", "description": "An EKS cluster"}
 {"runtime":"nodejs","name":"ecs-parallel","description":"An ECS cluster with a Fargate service"}
 {"name":"selfhosted-20-database","runtime":"nodejs","description":"Used to create database resources for the eks selfhosted installer."}
 {"name":"vpc-csharp","description":"A minimal AliCloud CSharp project for a VPC","runtime":"dotnet"}

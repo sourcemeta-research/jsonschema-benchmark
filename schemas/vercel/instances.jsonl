@@ -10,12 +10,10 @@
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains;"}, {"key": "Content-Security-Policy", "value": "connect-src https://identity.cube.dev track.cube.dev graphql.contentful.com https://amber-chameleon.gcp-us-central1.cubecloudapp.dev; font-src 'self' fonts.gstatic.com cdn.jsdelivr.net static.cube.dev data:; style-src 'self' fonts.googleapis.com cdn.jsdelivr.net 'unsafe-inline'; script-src 'self' https://www.datadoghq-browser-agent.com/datadog-logs-v4.js 'sha256-ewaaYbRj0txAYUQlEgkpq5btZDl2R7GUJeRustypP9M=' 'sha256-NNRNlUvekpg7yDPcWeHFgr2SbeZBup4y3/n9L6w472A='; img-src 'self' static.cube.dev data:; object-src 'none'"}]}]}
 {"routes": [{"src": "/static/(.*)", "dest": "/images/$1"}, {"src": "/favicon.png", "dest": "/favicon.png"}, {"src": "/manifest.json", "dest": "/manifest.json"}, {"src": ".*", "dest": "/index.html"}]}
 {"github": {"silent": true}}
-{"github": {"silent": true}}
 {"buildCommand": "prisma generate && prisma db push && yarn build", "cleanUrls": true, "crons": [{"schedule": "0 0,12 * * *", "path": "/api/cron/calculate-stats"}], "$schema": "https://openapi.vercel.sh/vercel.json"}
 {"git": {"deploymentEnabled": {"main": false}}, "redirects": [{"source": "/guidebook/sign-in-with-email-and-password/:path*", "destination": "/guidebook/email-verification-links/:path*"}, {"source": "/start-here/getting-started/:path*", "destination": "/getting-started/:path*"}, {"source": "/start-here/migrate-v2/:path*", "destination": "/migrate/v2/:path*"}, {"source": "/start-here/starter-guides/:path*", "destination": "/starter-guides/:path*"}, {"source": "/start-here/contributing", "destination": "/contributing"}, {"source": "/extending-lucia/database-adapters-api", "destination": "/reference/database-adapter"}, {"source": "/extending-lucia/middleware-api", "destination": "/reference/middleware"}, {"source": "/reference/lucia/main", "destination": "/reference/lucia/modules/main"}, {"source": "/reference/lucia/polyfill/node", "destination": "/reference/lucia/modules/polyfill/node"}, {"source": "/reference/lucia/middleware", "destination": "/reference/lucia/modules/middleware"}, {"source": "/reference/lucia/utils", "destination": "/reference/lucia/modules/utils"}, {"source": "/reference/oauth/main", "destination": "/reference/oauth/modules/main"}, {"source": "/reference/oauth/providers", "destination": "/reference/oauth/modules/providers"}, {"source": "/oauth/basics/using-supported-providers", "destination": "/oauth/basics/built-in-providers"}, {"source": "/discord", "destination": "https://discord.gg/PwrK3kpVR3"}, {"source": "/github", "destination": "https://github.com/pilcrowOnPaper/lucia"}]}
 {"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
 {"headers": [{"source": "/api(.*)", "headers": [{"key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate"}]}]}
-{"github": {"silent": true}}
 {"github": {"silent": true, "autoJobCancelation": true}, "installCommand": "cd ../.. && yarn install", "buildCommand": "turbo --filter '@apps/hashdotdesign' build", "outputDirectory": "storybook-static"}
 {"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}], "redirects": [{"source": "/puzzle/:id", "destination": "https://sinerider-api.hackclub.com/puzzle/:id", "permanent": false}, {"source": "/reddit/:id", "destination": "https://sinerider-api.hackclub.com/reddit/:id", "permanent": false}]}
 {"installCommand": "npm install", "buildCommand": "npm run build", "routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
@@ -61,7 +59,6 @@
 {"rewrites": [{"source": "/api/(.*)", "destination": "/api"}, {"source": "/(.*)", "destination": "/index.html"}]}
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Permissions-Policy", "value": "interest-cohort=()"}]}]}
 {"cleanUrls": true, "trailingSlash": false, "headers": [{"source": "/fonts/inter-var-latin.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "redirects": [{"source": "/youtube", "destination": "https://www.youtube.com/c/LauraBeatris"}, {"source": "/github", "destination": "https://github.com/LauraBeatris"}, {"source": "/linkedin", "destination": "https://www.linkedin.com/in/laurabeatris/"}, {"source": "/twitter", "destination": "https://twitter.com/lauradotjs"}, {"source": "/blog", "destination": "https://dev.to/laurabeatris"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
 {"installCommand": "yarn", "buildCommand": "yarn node scripts/build.js && mkdir -p public && touch public/index.html", "outputDirectory": "public", "rewrites": [{"source": "/(host|booking|shopping|dashboard)", "destination": "api/index.js"}], "github": {"enabled": false}}
 {"rewrites": [{"source": "/(.*)", "destination": "/"}]}
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
@@ -79,119 +76,6 @@
 {"routes": [{"handle": "filesystem"}, {"src": "/(.*)", "dest": "/index.html"}]}
 {"github": {"silent": true}, "redirects": [{"source": "/docs/getting-started", "destination": "/docs/start-here", "permanent": true}]}
 {"redirects": [{"source": "/", "destination": "https://github.com/akellbl4/spotify-badge"}], "rewrites": [{"source": "/api/now-playing", "destination": "/now-playing"}]}
-{"github": {"autoJobCancelation": false, "silent": true}, "public": true, "trailingSlash": true}
-{"github": {"autoJobCancelation": false, "silent": true}, "public": true, "trailingSlash": true}
-{"github": {"autoJobCancelation": false, "silent": true}, "public": true, "trailingSlash": true}
-{"github": {"autoJobCancelation": false, "silent": true}, "public": true, "trailingSlash": true}
-{"framework": "storybook", "buildCommand": "storybook build"}
-{"framework": "storybook", "buildCommand": "storybook build"}
-{"framework": "storybook", "buildCommand": "storybook build"}
-{"framework": "storybook", "buildCommand": "storybook build"}
-{"$schema": "http://openapi.vercel.sh/vercel.json", "github": {"silent": true}, "buildCommand": "cd ../../packages/svelte && pnpm prepublishOnly && cd ../../sites/svelte.dev && pnpm rebuild sharp && pnpm build"}
-{"$schema": "http://openapi.vercel.sh/vercel.json", "github": {"silent": true}, "buildCommand": "cd ../../packages/svelte && pnpm prepublishOnly && cd ../../sites/svelte.dev && pnpm rebuild sharp && pnpm build"}
-{"rewrites": [{"source": "/api/:slug*", "destination": "https://release.app.appsmith.com/api/:slug*"}, {"source": "/oauth2/:slug*", "destination": "https://release.app.appsmith.com/oauth2/:slug*"}, {"source": "/login/:slug*", "destination": "https://release.app.appsmith.com/login/:slug*"}]}
-{"rewrites": [{"source": "/api/:slug*", "destination": "https://release.app.appsmith.com/api/:slug*"}, {"source": "/oauth2/:slug*", "destination": "https://release.app.appsmith.com/oauth2/:slug*"}, {"source": "/login/:slug*", "destination": "https://release.app.appsmith.com/login/:slug*"}]}
-{"rewrites": [{"source": "/api/:slug*", "destination": "https://release.app.appsmith.com/api/:slug*"}, {"source": "/oauth2/:slug*", "destination": "https://release.app.appsmith.com/oauth2/:slug*"}, {"source": "/login/:slug*", "destination": "https://release.app.appsmith.com/login/:slug*"}]}
-{"rewrites": [{"source": "/api/:slug*", "destination": "https://release.app.appsmith.com/api/:slug*"}, {"source": "/oauth2/:slug*", "destination": "https://release.app.appsmith.com/oauth2/:slug*"}, {"source": "/login/:slug*", "destination": "https://release.app.appsmith.com/login/:slug*"}]}
-{"trailingSlash": false}
-{"trailingSlash": false}
-{"trailingSlash": false}
-{"trailingSlash": false}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "rewrites": [{"source": "/(.*)", "destination": "/"}], "git": {"deploymentEnabled": {"gh-pages": false}}, "headers": [{"source": "/assets/(.*)", "headers": [{"key": "cache-control", "value": "public,max-age=31536000,immutable"}]}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "rewrites": [{"source": "/(.*)", "destination": "/"}], "git": {"deploymentEnabled": {"gh-pages": false}}, "headers": [{"source": "/assets/(.*)", "headers": [{"key": "cache-control", "value": "public,max-age=31536000,immutable"}]}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "rewrites": [{"source": "/(.*)", "destination": "/"}], "git": {"deploymentEnabled": {"gh-pages": false}}, "headers": [{"source": "/assets/(.*)", "headers": [{"key": "cache-control", "value": "public,max-age=31536000,immutable"}]}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "rewrites": [{"source": "/(.*)", "destination": "/"}], "git": {"deploymentEnabled": {"gh-pages": false}}, "headers": [{"source": "/assets/(.*)", "headers": [{"key": "cache-control", "value": "public,max-age=31536000,immutable"}]}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
-{"routes": [{"src": "/static/(.*)", "dest": "/images/$1"}, {"src": "/favicon.png", "dest": "/favicon.png"}, {"src": "/manifest.json", "dest": "/manifest.json"}, {"src": ".*", "dest": "/index.html"}]}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"headers": [{"source": "/api(.*)", "headers": [{"key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate"}]}]}
-{"headers": [{"source": "/api(.*)", "headers": [{"key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate"}]}]}
-{"headers": [{"source": "/api(.*)", "headers": [{"key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate"}]}]}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"installCommand": "npm install", "buildCommand": "npm run build", "routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"installCommand": "npm install", "buildCommand": "npm run build", "routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"installCommand": "npm install", "buildCommand": "npm run build", "routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"installCommand": "npm install", "buildCommand": "npm run build", "routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"rewrites": [{"source": "/:path*", "destination": "/"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/"}]}
-{"version": 2, "cleanUrls": true}
-{"version": 2, "cleanUrls": true}
-{"version": 2, "cleanUrls": true}
-{"version": 2, "cleanUrls": true}
-{"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"git": {"deploymentEnabled": {"gh-pages": false}}}
-{"git": {"deploymentEnabled": {"gh-pages": false}}}
-{"git": {"deploymentEnabled": {"gh-pages": false}}}
-{"git": {"deploymentEnabled": {"gh-pages": false}}}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "cleanUrls": true, "redirects": [{"source": "/live", "destination": "https://www.youtube.com/channel/UC1Z-a8i2Ce4oIEMV-S3iFrg/live"}]}
-{"buildCommand": "pnpm turbo build", "ignoreCommand": "pnpm dlx turbo-ignore"}
-{"buildCommand": "pnpm turbo build", "ignoreCommand": "pnpm dlx turbo-ignore"}
-{"buildCommand": "pnpm turbo build", "ignoreCommand": "pnpm dlx turbo-ignore"}
-{"buildCommand": "pnpm turbo build", "ignoreCommand": "pnpm dlx turbo-ignore"}
-{"cleanUrls": true, "redirects": [{"source": "/en/latest", "destination": "/development", "permanent": true}, {"source": "/en/latest/", "destination": "/development", "permanent": true}, {"source": "/en/latest/:match(.*)", "destination": "/development/:match(.*)", "permanent": true}, {"source": "/en/stable", "destination": "/", "permanent": true}, {"source": "/en/stable/", "destination": "/", "permanent": true}, {"source": "/en/stable/:match(.*)", "destination": "/:match(.*)", "permanent": true}]}
-{"version": 2, "public": true, "rewrites": [{"source": "/(.*)", "destination": "/api/main.py"}], "headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "*"}, {"key": "Access-Control-Allow-Headers", "value": "*"}]}]}
-{"version": 2, "public": true, "rewrites": [{"source": "/(.*)", "destination": "/api/main.py"}], "headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "*"}, {"key": "Access-Control-Allow-Headers", "value": "*"}]}]}
-{"functions": {"api/index.php": {"runtime": "vercel-php@0.3.1"}}, "rewrites": [{"source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico"}, {"source": "/(.*)", "destination": "/api/index.php"}]}
-{"functions": {"api/index.php": {"runtime": "vercel-php@0.3.1"}}, "rewrites": [{"source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico"}, {"source": "/(.*)", "destination": "/api/index.php"}]}
-{"functions": {"api/index.php": {"runtime": "vercel-php@0.3.1"}}, "rewrites": [{"source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico"}, {"source": "/(.*)", "destination": "/api/index.php"}]}
-{"functions": {"api/index.php": {"runtime": "vercel-php@0.3.1"}}, "rewrites": [{"source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico"}, {"source": "/(.*)", "destination": "/api/index.php"}]}
-{"cleanUrls": true, "redirects": [{"source": "/get-started/quick-start", "destination": "https://nhost.io/blog/nhost-understanding-the-basics", "permanent": true}, {"source": "/get-started/quick-start/:path*", "destination": "https://nhost.io/blog/nhost-understanding-the-basics", "permanent": true}, {"source": "/get-started/cli-workflow", "destination": "/platform/overview/get-started-with-nhost-cli", "permanent": true}, {"source": "/get-started/cli-workflow/:path*", "destination": "/platform/overview/get-started-with-nhost-cli", "permanent": true}, {"source": "/get-started/upgrade", "destination": "https://nhost.io/blog/migrate-from-nhost-v1-to-v2", "permanent": true}, {"source": "/reference/sdk/:path*", "destination": "/reference/javascript/:path*", "permanent": true}, {"source": "/reference/sdk/authentication", "destination": "/reference/javascript/auth", "permanent": true}, {"source": "/reference/react/hooks", "destination": "/reference/react", "permanent": true}, {"source": "/reference/hasura-auth", "destination": "https://github.com/nhost/hasura-auth", "permanent": true}, {"source": "/reference/hasura-auth/:path*", "destination": "https://github.com/nhost/hasura-auth", "permanent": true}, {"source": "/platform/overview/architecture", "destination": "/", "permanent": true}, {"source": "/platform/overview/get-started-with-nhost-cli", "destination": "/cli/local-development", "permanent": true}, {"source": "/platform/quickstarts/:framework", "destination": "/quickstarts/:framework", "permanent": true}, {"source": "/platform/database", "destination": "/database", "permanent": true}, {"source": "/platform/database/:path", "destination": "/database/:path", "permanent": true}, {"source": "/platform/graphql", "destination": "/graphql", "permanent": true}, {"source": "/platform/graphql/:path", "destination": "/graphql/:path", "permanent": true}, {"source": "/platform/authentication", "destination": "/authentication", "permanent": true}, {"source": "/platform/authentication/:path", "destination": "/authentication/:path", "permanent": true}, {"source": "/platform/storage", "destination": "/storage", "permanent": true}, {"source": "/platform/serverless-functions", "destination": "/serverless-functions", "permanent": true}, {"source": "/platform/github-integration", "destination": "/platform/git", "permanent": true}, {"source": "/platform/cli", "destination": "/cli", "permanent": true}]}
-{"rewrites": [{"source": "/api/cron", "destination": "/api/cron"}, {"source": "/:path((?!api).*)", "destination": "/"}], "crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}, {"path": "/api/cron", "schedule": "0 12 * * *"}], "github": {"silent": true}}
-{"rewrites": [{"source": "/api/cron", "destination": "/api/cron"}, {"source": "/:path((?!api).*)", "destination": "/"}], "crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}, {"path": "/api/cron", "schedule": "0 12 * * *"}], "github": {"silent": true}}
-{"rewrites": [{"source": "/api/cron", "destination": "/api/cron"}, {"source": "/:path((?!api).*)", "destination": "/"}], "crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}, {"path": "/api/cron", "schedule": "0 12 * * *"}], "github": {"silent": true}}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-XSS-Protection", "value": "1; mode=block"}, {"key": "Access-Control-Allow-Credentials", "value": "false"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS"}, {"key": "Access-Control-Allow-Headers", "value": "*"}, {"key": "Vary", "value": "Accept-Encoding"}]}, {"source": "/_next/static/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).ico", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).(png|jpg|webp|svg)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).(eot|otf|ttf|ttc|woff|woff2|font|css)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
-{"rewrites": [{"source": "(.*)", "destination": "api/index.go"}]}
-{"buildCommand": "NEXT_PUBLIC_BASE_URL=\"${NEXT_PUBLIC_BASE_URL:-https://$NEXT_PUBLIC_VERCEL_URL}\" yarn build"}
-{"buildCommand": "NEXT_PUBLIC_BASE_URL=\"${NEXT_PUBLIC_BASE_URL:-https://$NEXT_PUBLIC_VERCEL_URL}\" yarn build"}
-{"buildCommand": "NEXT_PUBLIC_BASE_URL=\"${NEXT_PUBLIC_BASE_URL:-https://$NEXT_PUBLIC_VERCEL_URL}\" yarn build"}
-{"buildCommand": "NEXT_PUBLIC_BASE_URL=\"${NEXT_PUBLIC_BASE_URL:-https://$NEXT_PUBLIC_VERCEL_URL}\" yarn build"}
-{"buildCommand": "cd example && ../flutter/bin/flutter build web", "outputDirectory": "example/build/web", "installCommand": "git clone https://github.com/flutter/flutter.git --branch stable && flutter/bin/flutter pub get"}
-{"headers": [{"source": "/fonts/AvertaStd/AvertaStd-Regular.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-RegularItalic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-Semibold.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-SemiboldItalic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-Bold.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-BoldItalic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
-{"headers": [{"source": "/fonts/AvertaStd/AvertaStd-Regular.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-RegularItalic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-Semibold.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-SemiboldItalic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-Bold.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/AvertaStd/AvertaStd-BoldItalic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api"}, {"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api"}, {"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api"}, {"source": "/(.*)", "destination": "/index.html"}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Permissions-Policy", "value": "interest-cohort=()"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Permissions-Policy", "value": "interest-cohort=()"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Permissions-Policy", "value": "interest-cohort=()"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Permissions-Policy", "value": "interest-cohort=()"}]}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"installCommand": "yarn", "buildCommand": "yarn node scripts/build.js && mkdir -p public && touch public/index.html", "outputDirectory": "public", "rewrites": [{"source": "/(host|booking|shopping|dashboard)", "destination": "api/index.js"}], "github": {"enabled": false}}
-{"installCommand": "yarn", "buildCommand": "yarn node scripts/build.js && mkdir -p public && touch public/index.html", "outputDirectory": "public", "rewrites": [{"source": "/(host|booking|shopping|dashboard)", "destination": "api/index.js"}], "github": {"enabled": false}}
-{"installCommand": "yarn", "buildCommand": "yarn node scripts/build.js && mkdir -p public && touch public/index.html", "outputDirectory": "public", "rewrites": [{"source": "/(host|booking|shopping|dashboard)", "destination": "api/index.js"}], "github": {"enabled": false}}
-{"installCommand": "yarn", "buildCommand": "yarn node scripts/build.js && mkdir -p public && touch public/index.html", "outputDirectory": "public", "rewrites": [{"source": "/(host|booking|shopping|dashboard)", "destination": "api/index.js"}], "github": {"enabled": false}}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"rewrites": [{"source": "(.*)", "destination": "/api"}], "headers": [{"source": "(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authorization, Accept"}, {"key": "Access-Control-Allow-Credentials", "value": "true"}]}]}
-{"rewrites": [{"source": "(.*)", "destination": "/api"}], "headers": [{"source": "(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authorization, Accept"}, {"key": "Access-Control-Allow-Credentials", "value": "true"}]}]}
-{"routes": [{"handle": "filesystem"}, {"src": "/(.*)", "dest": "/index.html"}]}
 {"github": {"silent": true}, "rewrites": [{"source": "/grind75", "destination": "https://grind75.vercel.app/grind75"}, {"source": "/grind75/", "destination": "https://grind75.vercel.app/grind75/"}, {"source": "/grind75/:asset*", "destination": "https://grind75.vercel.app/grind75/:asset*"}], "redirects": [{"source": "/behavioral-questions", "destination": "/behavioral-interview-questions/"}, {"source": "/behavioral-questions/", "destination": "/behavioral-interview-questions/"}, {"source": "/cheatsheet", "destination": "/coding-interview-cheatsheet/"}, {"source": "/cheatsheet/", "destination": "/coding-interview-cheatsheet/"}, {"source": "/coding-interview-best-practices", "destination": "/coding-interview-cheatsheet/"}, {"source": "/coding-interview-best-practices/", "destination": "/coding-interview-cheatsheet/"}, {"source": "/study-and-practice", "destination": "/coding-interview-study-plan/"}, {"source": "/study-and-practice/", "destination": "/coding-interview-study-plan/"}, {"source": "/coding-signals", "destination": "/coding-interview-rubrics/"}, {"source": "/coding-signals/", "destination": "/coding-interview-rubrics/"}, {"source": "/coding-interview", "destination": "/coding-interview-prep/"}, {"source": "/coding-interview/", "destination": "/coding-interview-prep/"}, {"source": "/introduction", "destination": "/software-engineering-interview-guide/"}, {"source": "/introduction/", "destination": "/software-engineering-interview-guide/"}, {"source": "/psychological-tricks", "destination": "/software-engineering-interview-guide/"}, {"source": "/psychological-tricks/", "destination": "/software-engineering-interview-guide/"}, {"source": "/picking-a-language", "destination": "/programming-languages-for-coding-interviews/"}, {"source": "/picking-a-language/", "destination": "/programming-languages-for-coding-interviews/"}, {"source": "/questions-to-ask", "destination": "/final-questions/"}, {"source": "/questions-to-ask/", "destination": "/final-questions/"}, {"source": "/resume/:blah*", "destination": "/resume/"}, {"source": "/resume-checklist", "destination": "/resume/"}, {"source": "/resume-checklist/", "destination": "/resume/"}, {"source": "/star-format", "destination": "/behavioral-interview/"}, {"source": "/star-format/", "destination": "/behavioral-interview/"}, {"source": "/interview-formats", "destination": "/software-engineering-interview-guide/"}, {"source": "/interview-formats/", "destination": "/software-engineering-interview-guide/"}, {"source": "/coding-round-overview", "destination": "/coding-interview-prep/"}, {"source": "/coding-round-overview/", "destination": "/coding-interview-prep/"}, {"source": "/behavioral-round-overview", "destination": "/behavioral-interview/"}, {"source": "/behavioral-round-overview/", "destination": "/behavioral-interview/"}, {"source": "/during-coding-interview", "destination": "/coding-interview-cheatsheet/"}, {"source": "/during-coding-interview/", "destination": "/coding-interview-cheatsheet/"}, {"source": "/algorithms/introduction", "destination": "/algorithms/study-cheatsheet/"}, {"source": "/algorithms/introduction/", "destination": "/algorithms/study-cheatsheet/"}, {"source": "/algorithms/algorithms-introduction", "destination": "/algorithms/study-cheatsheet/"}, {"source": "/algorithms/algorithms-introduction/", "destination": "/algorithms/study-cheatsheet/"}]}
 {"redirects": [{"source": "/docs", "destination": "https://supabase.com/docs"}]}
 {"headers": [{"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "max-age=31536000"}]}]}
@@ -200,7 +84,6 @@
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains;"}, {"key": "Content-Security-Policy", "value": "connect-src track.cube.dev graphql.contentful.com awesome-ecom.gcp-us-central1.cubecloudapp.dev;font-src fonts.gstatic.com cdn.jsdelivr.net static.cube.dev;style-src 'self' fonts.googleapis.com cdn.jsdelivr.net 'sha256-84yvr39V6dqZFT0jHeda4bZwsGV2Xk6Jhtttnjc7r28=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-23p75Y680r6TJEGMUgVHIKSxIn/0CSdrBSOYLpPytds=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-tks9R2cPDpDdr8YwCNmq7iEDxFZowom48cMF809PlCM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-kz2KpMhpthO59dMYTYMN+C81hnnmA2g1o/gsbtuioNE=' 'sha256-kwpt3lQZ21rs4cld7/uEm9qI5yAbjYzx+9FGm/XmwNU=';script-src 'self';img-src 'self' static.cube.dev data:;object-src 'none'"}]}]}
 {"functions": {"pages/**/*.ts": {"memory": 192}}}
 {"cleanUrls": true, "trailingSlash": false}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
 {"cleanUrls": true, "trailingSlash": false, "redirects": [{"source": "/backends", "destination": "/"}, {"source": "/memory", "destination": "backends/memory"}, {"source": "/sqlalchemy", "destination": "backends/sqlalchemy"}, {"source": "/async", "destination": "backends/async"}, {"source": "/gino", "destination": "backends/gino"}, {"source": "/ormar", "destination": "backends/ormar"}, {"source": "/tortoise", "destination": "backends/tortoise"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "cd ../.. && npx turbo run build --filter=docs...", "github": {"enabled": false}, "installCommand": "npm install --prefix=../.."}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "github": {"silent": true}}
@@ -233,19 +116,16 @@
 {"headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}, {"key": "Permissions-Policy", "value": "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), gamepad=(), speaker-selection=(), conversion-measurement=(), focus-without-user-activation=(), hid=(), idle-detection=(), interest-cohort=(), serial=(), sync-script=(self), trust-token-redemption=(), window-placement=(), vertical-scroll=()"}]}]}
 {"public": true, "routes": [{"src": "/robots.txt", "status": 204}, {"src": "/favicon.ico", "dest": "https://cdn.microlink.io/logo/trim.png"}, {"src": "/(.*)", "dest": "/api/index.js"}]}
 {"ignoreCommand": "npx turbo-ignore", "framework": "nextjs", "buildCommand": "turbo build"}
-{"version": 2, "github": {"silent": true}}
 {"name": "url-shortner-api", "version": 2, "routes": [{"src": "/", "headers": {"cache-control": "no-cache, no-store, must-revalidate", "Access-Control-Allow-Origin": "*"}, "dest": "/api"}, {"src": "/create", "headers": {"cache-control": "no-cache, no-store, must-revalidate", "Access-Control-Allow-Origin": "*"}, "dest": "/api/create"}]}
 {"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
 {"cleanUrls": true}
 {"headers": [{"source": "/:all*(ttf|otf|woff|woff2)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "redirects": [{"source": "/github", "destination": "https://github.com/iDarkLightning"}, {"source": "/repo", "destination": "https://github.com/iDarkLightning/portfolio-astro"}, {"source": "/gh", "destination": "https://github.com/iDarkLightning"}, {"source": "/github/:slug*", "destination": "https://github.com/iDarkLightning/:slug*"}, {"source": "/gh/:slug*", "destination": "https://github.com/iDarkLightning/:slug*"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
 {"headers": [{"source": "/(.*)", "headers": [{"key": "access-control-allow-origin", "value": "*"}]}]}
 {"redirects": [{"source": "/((?!api/donna).*)", "destination": "/api/donna?path=/$1"}]}
 {"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}]}]}
 {"crons": [{"path": "/api/close-grants", "schedule": "0 0 * * *"}]}
 {"rewrites": [{"source": "/:path*", "destination": "/index.html"}], "headers": [{"source": "/favicon.ico", "headers": [{"key": "Cache-Control", "value": "public, max-age=31556952, immutable"}]}, {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31556952, immutable"}, {"key": "Accept-Encoding", "value": "gzip"}]}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
 {"functions": {"api/index.ts": {"includeFiles": "{brokers,builders,collection,core,discord.js,formatters,legacy,next,proxy,rest,util,voice,ws}/**"}, "api/info.ts": {"includeFiles": "{brokers,builders,collection,core,discord.js,formatters,legacy,next,proxy,rest,util,voice,ws}/**"}}, "trailingSlash": false, "headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}], "rewrites": [{"source": "/docs/:url(.*)", "destination": "/api"}]}
 {"github": {"silent": true}, "redirects": [{"source": "/index.html", "destination": "/"}], "headers": [{"source": "/(.*)\\.(js|css|map|png|jpe?g|ico|gif)", "headers": [{"key": "cache-control", "value": "public,max-age=31536000,immutable"}]}, {"source": "/", "headers": [{"key": "cache-control", "value": "public,max-age=14400"}, {"key": "content-security-policy", "value": "default-src 'self';script-src 'self';worker-src 'self';style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;img-src 'self' data: https://fathom.nolanlawson.com;media-src 'self';connect-src 'self' https://jnameconverterapi.nolanlawson.com;frame-src 'none';frame-ancestors 'none';object-src 'none';manifest-src 'self';form-action 'self';base-uri 'self';font-src 'self' https://fonts.gstatic.com;"}, {"key": "referrer-policy", "value": "strict-origin-when-cross-origin"}, {"key": "strict-transport-security", "value": "max-age=15552000; includeSubDomains"}, {"key": "permissions-policy", "value": "sync-xhr=(),document-domain=()"}, {"key": "x-content-type-options", "value": "nosniff"}, {"key": "x-download-options", "value": "noopen"}, {"key": "x-frame-options", "value": "DENY"}, {"key": "x-xss-protection", "value": "1; mode=block"}, {"key": "cross-origin-opener-policy", "value": "same-origin"}]}]}
 {"cleanUrls": true, "redirects": [{"source": "/(.*)", "destination": "https://rnd195.github.io/marp-community-themes/$1", "statusCode": 301}]}
@@ -257,7 +137,6 @@
 {"cleanUrls": true, "trailingSlash": false, "outputDirectory": "dist/"}
 {"cleanUrls": true, "trailingSlash": false, "redirects": [{"source": "/webdev", "destination": "https://learn.microsoft.com/es-es/training/paths/web-development-101/"}, {"source": "/js", "destination": "https://www.youtube.com/watch?v=S9ojNaeC1RI"}]}
 {"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/(.*)", "status": 404, "dest": "/404.html"}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
 {"routes": [{"src": "/use", "methods": ["GET"], "dest": "/api/use/index.js"}, {"src": "/api[^?].*", "dest": "/404.html"}, {"src": "/", "dest": "/gui/index.html"}, {"src": "/api", "methods": ["GET"], "dest": "/api/github-tags.js"}]}
 {"redirects": [{"source": "/", "destination": "api/index.js"}]}
 {"redirects": [{"source": "/", "destination": "https://www.learnpack.co"}]}
@@ -268,7 +147,6 @@
 {"cleanUrls": true, "trailingSlash": false, "headers": [{"source": "/fonts/inter-var-latin.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "redirects": []}
 {"rewrites": [{"source": "(.*)", "destination": "/index.html"}]}
 {"redirects": [{"source": "/", "destination": "https://github.com/anuraghazra/github-readme-stats"}]}
-{"version": 2, "github": {"silent": true}}
 {"headers": [{"source": "/fonts/Inter-latin.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
 {"github": {"silent": true}, "routes": [{"handle": "filesystem"}, {"src": "/(.*)", "status": 404, "dest": "/404.html"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "github": {"silent": true}, "redirects": [{"source": "/lyrics/:path(.*)", "destination": "/:path*"}], "rewrites": [{"source": "/(.*)\\.lrc", "destination": "/api/lrc.go"}], "headers": [{"source": "/(.*)\\.lrc", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS"}, {"key": "Access-Control-Allow-Headers", "value": "Content-Length, Content-Type, Date"}]}], "regions": ["hnd1"]}
@@ -276,7 +154,6 @@
 {"crons": [{"path": "/api/view/sync", "schedule": "*/5 * * * *"}]}
 {"version": 2, "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
 {"routes": [{"src": "/vercel.svg", "dest": "/public/vercel.svg"}, {"src": "/favicon.ico", "dest": "/public/favicon.ico"}, {"src": "/_next/.*", "dest": "/_next/"}, {"src": "/.+", "dest": "/api/index.ts"}], "functions": {"api/index.ts": {"includeFiles": "node_modules/@swc/**"}}}
-{"github": {"silent": true}}
 {"version": 2, "public": false, "github": {"enabled": false}, "routes": [{"src": "/(.*)", "dest": "public/$1"}]}
 {"redirects": [{"source": "/", "destination": "https://github.com/asnunes/notion-page-to-html-api"}], "rewrites": [{"source": "/(.*)", "destination": "/api/$1"}], "headers": [{"source": "/(.*)", "headers": [{"key": "access-control-allow-origin", "value": "*"}, {"key": "Cache-Control", "value": "s-maxage=10"}]}]}
 {"rewrites": [{"source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico"}, {"source": "/", "destination": "/public/index.html"}, {"source": "/url/(.*)", "destination": "/api/url.ts"}, {"source": "/raw/(.*)", "destination": "/api/raw.ts"}, {"source": "/post/(.*)", "destination": "/api/post.ts"}, {"source": "/(.*)", "destination": "/public/$1"}]}
@@ -291,7 +168,6 @@
 {"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook"}
 {"framework": "astro", "trailingSlash": false, "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}]}], "rewrites": [{"source": "/_pl/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/_pl/event", "destination": "https://plausible.io/api/event"}]}
 {"functions": {"api/**/*.rs": {"runtime": "now-rust@2.0.0", "includeFiles": "data/**"}}}
-{"github": {"silent": true}}
 {"rewrites": [{"source": "/address/:address", "destination": "/"}, {"source": "/tx/:tx", "destination": "/"}], "headers": [{"source": "/assets/vm-exec.(.*).wasm", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000"}]}]}
 {"rewrites": [{"source": "/(.*)", "destination": "/"}], "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
 {"buildCommand": "cd ../.. && npx turbo run build --filter=crypto-lottery", "installCommand": "yarn install", "headers": [{"source": "/", "headers": [{"key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate=59"}]}]}
@@ -323,88 +199,6 @@
 {"redirects": [{"source": "/", "destination": "https://cesko.digital/join", "statusCode": 301}], "github": {"silent": true}}
 {"rewrites": [{"source": "/favicon.ico", "destination": "https://juicy.vercel.app/favicon.ico"}, {"source": "/g/(.+@.+\\..+)", "destination": "/api/gravatar.ts?_email=$1"}, {"source": "/i/(.+)", "destination": "/api/initials.ts?_initials=$1"}, {"source": "/gi/(.+@.+\\..+)", "destination": "/api/gravatar+initials.ts?_email=$1"}, {"source": "/(.*)", "destination": "https://juicy.vercel.app/readme/avatarless"}]}
 {"buildCommand": "npm run build", "devCommand": "npm run dev", "installCommand": "npm install", "outputDirectory": "dist", "functions": {"api/photo/*.js": {"includeFiles": "/photo/**/*.html"}}, "rewrites": [{"source": "/photo/map/:path", "destination": "/api/photo/:path?map=true"}, {"source": "/photo/:path", "destination": "/api/photo/:path"}], "redirects": [{"source": "/linkedin", "destination": "https://www.linkedin.com/in/blakesanie/"}, {"source": "/blog", "destination": "https://blakesanie.medium.com/"}, {"source": "/instagram", "destination": "https://www.instagram.com/blake_sanie/"}, {"source": "/github", "destination": "https://github.com/blakesanie"}, {"source": "/balance", "destination": "https://music.apple.com/us/album/balance/1478925861"}, {"source": "/twitter", "destination": "https://twitter.com/blakesanie"}, {"source": "/paypal", "destination": "https://www.paypal.com/paypalme/blakesanie"}, {"source": "/venmo", "destination": "https://account.venmo.com/u/Blake-Sanie"}, {"source": "/youtube", "destination": "https://www.youtube.com/channel/UC5DbrnJtkkXNw-txM7NVWfw"}, {"source": "/spotify", "destination": "https://open.spotify.com/user/blake_sanie?si=uvhN4kfdTQWy4jnrlhKTVg"}, {"source": "/source", "destination": "https://github.com/blakesanie/blakesanie.com"}, {"source": "/blakeOS", "destination": "https://www.notion.so/blakesanie/blakeOS-5ddea8783f0f40088effd7720bf059f5"}, {"source": "/strava", "destination": "https://www.strava.com/athletes/44274878"}]}
-{"headers": [{"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "max-age=31536000"}]}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "cd ../.. && npx turbo run build --filter=web...", "github": {"enabled": false}, "installCommand": "npm install --prefix=../.."}
-{"functions": {"pages/**/*.ts": {"memory": 192}}}
-{"functions": {"pages/**/*.ts": {"memory": 192}}}
-{"cleanUrls": true, "trailingSlash": false}
-{"cleanUrls": true, "trailingSlash": false}
-{"cleanUrls": true, "trailingSlash": false}
-{"cleanUrls": true, "trailingSlash": false}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/index.html"}]}
-{"cleanUrls": true, "trailingSlash": false, "redirects": [{"source": "/backends", "destination": "/"}, {"source": "/memory", "destination": "backends/memory"}, {"source": "/sqlalchemy", "destination": "backends/sqlalchemy"}, {"source": "/async", "destination": "backends/async"}, {"source": "/gino", "destination": "backends/gino"}, {"source": "/ormar", "destination": "backends/ormar"}, {"source": "/tortoise", "destination": "backends/tortoise"}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "cd ../.. && npx turbo run build --filter=docs...", "github": {"enabled": false}, "installCommand": "npm install --prefix=../.."}
-{"github": {"silent": true}, "redirects": [{"source": "/", "destination": "/ui/"}], "rewrites": [{"source": "/ui/(.*)", "destination": "/ui/index.html"}], "trailingSlash": true}
-{"github": {"silent": true}, "redirects": [{"source": "/", "destination": "/ui/"}], "rewrites": [{"source": "/ui/(.*)", "destination": "/ui/index.html"}], "trailingSlash": true}
-{"github": {"silent": true}, "redirects": [{"source": "/", "destination": "/ui/"}], "rewrites": [{"source": "/ui/(.*)", "destination": "/ui/index.html"}], "trailingSlash": true}
-{"version": 2, "redirects": [{"source": "/monterey", "destination": "https://gumroad.com/l/dvctd", "permanent": true}], "rewrites": [{"source": "/notes", "destination": "https://publish.obsidian.md/serve?url=nelson.co/notes"}, {"source": "/notes/:path*", "destination": "https://publish.obsidian.md/serve?url=nelson.co/notes/:path*"}]}
-{"version": 2}
-{"version": 2}
-{"trailingSlash": false, "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "X-XSS-Protection", "value": "1; mode=block"}]}]}
-{"trailingSlash": false, "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "X-XSS-Protection", "value": "1; mode=block"}]}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "ignoreCommand": "git diff HEAD^ HEAD --quiet ../shared ../surveyform/", "functions": {"src/pages/api/**/*": {"memory": 768}}, "github": {"silent": true}}
-{"routes": [{"src": "/static/images/(.*)", "headers": {"cache-control": "s-maxage=604800"}, "dest": "/images/$1"}]}
-{"version": 2, "routes": [{"src": "/api/download", "dest": "api/download.js"}, {"src": "/api/info", "dest": "api/ytdl.py"}, {"src": "/api/version", "dest": "api/ytdl.py"}]}
-{"version": 2, "public": false, "github": {"enabled": false}, "rewrites": [{"source": "/(.*)", "destination": "/index.html"}], "headers": [{"source": "/manifest.webmanifest", "headers": [{"key": "content-type", "value": "application/manifest+json"}]}]}
-{"version": 2, "public": false, "github": {"enabled": false}, "rewrites": [{"source": "/(.*)", "destination": "/index.html"}], "headers": [{"source": "/manifest.webmanifest", "headers": [{"key": "content-type", "value": "application/manifest+json"}]}]}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/workshop/frame/(.*)", "dest": "/workshop/frame/index.html"}, {"src": "/(.*)", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/workshop/frame/(.*)", "dest": "/workshop/frame/index.html"}, {"src": "/(.*)", "dest": "/index.html"}]}
-{"github": {"silent": true}, "rewrites": [{"source": "/(.*)", "destination": "/api/vercel.go"}]}
-{"buildCommand": "npm run build", "devCommand": "npm run build && serve -p $PORT build", "outputDirectory": "build", "installCommand": "npm install"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "cd .. && npx turbo run build --filter=example", "ignoreCommand": "npx turbo-ignore"}
-{"ignoreCommand": "npx turbo-ignore", "framework": "nextjs", "buildCommand": "turbo build"}
-{"ignoreCommand": "npx turbo-ignore", "framework": "nextjs", "buildCommand": "turbo build"}
-{"ignoreCommand": "npx turbo-ignore", "framework": "nextjs", "buildCommand": "turbo build"}
-{"version": 2, "github": {"silent": true}}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"cleanUrls": true}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "access-control-allow-origin", "value": "*"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "access-control-allow-origin", "value": "*"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "access-control-allow-origin", "value": "*"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "access-control-allow-origin", "value": "*"}]}]}
-{"headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}]}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"version": 2, "public": false, "github": {"enabled": false}}
-{"version": 2, "public": false, "github": {"enabled": false}}
-{"version": 2, "public": false, "github": {"enabled": false}}
-{"version": 2, "public": false, "github": {"enabled": false}}
-{"version": 2, "github": {"silent": true}}
-{"version": 2, "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"github": {"silent": true}}
-{"version": 2, "public": false, "github": {"enabled": false}, "routes": [{"src": "/(.*)", "dest": "public/$1"}]}
-{"version": 2, "public": false, "github": {"enabled": false}, "routes": [{"src": "/(.*)", "dest": "public/$1"}]}
-{"github": {"silent": true}}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}], "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"build": {}, "github": {"silent": true}}
-{"build": {}, "github": {"silent": true}}
-{"build": {}, "github": {"silent": true}}
-{"build": {}, "github": {"silent": true}}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "redirects": []}
-{"git": {"deploymentEnabled": false}}
-{"routes": [{"src": "/.*", "headers": {"X-Content-Type-Options": "nosniff", "X-Frame-Options": "SAMEORIGIN", "X-XSS-Protection": "1"}, "continue": true}]}
-{"version": 2, "routes": [{"src": "^/static/(.*)", "dest": "/static/$1"}, {"src": ".*", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"src": "^/static/(.*)", "dest": "/static/$1"}, {"src": ".*", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"src": "^/static/(.*)", "dest": "/static/$1"}, {"src": ".*", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"src": "^/static/(.*)", "dest": "/static/$1"}, {"src": ".*", "dest": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api/index"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api/index"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api/index"}]}
-{"routes": [{"src": "/api/message", "methods": ["GET"], "dest": "/api/message/list"}, {"src": "/api/message/(?<id>[^/]+)", "methods": ["GET"], "dest": "/api/message/get?pathIds.id=$id"}, {"src": "/.*", "dest": "/api/not-found/message"}]}
-{"regions": ["all"], "functions": {"api/**": {"memory": 3008}}, "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
-{"regions": ["all"], "functions": {"api/**": {"memory": 3008}}, "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
-{"regions": ["all"], "functions": {"api/**": {"memory": 3008}}, "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
-{"regions": ["all"], "functions": {"api/**": {"memory": 3008}}, "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
 {"github": {"silent": true, "autoJobCancelation": true}}
 {"rewrites": [{"source": "/stats/js/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/stats/api/event", "destination": "https://plausible.io/api/event"}, {"source": "/(.*)", "destination": "/error-404.html"}], "redirects": [{"source": "/docs", "destination": "https://tabler.io/docs", "permanent": true}, {"source": "/docs/:name(colors|typography?).html", "destination": "https://tabler.io/docs/base/:name", "permanent": true}, {"source": "/docs/:name(alerts|autosize|avatars|badges|breadcrumb|buttons|cards|carousel|charts|countup|datagrid|divider|dropdowns|dropzone|empty|icons|inline-player|modals|placeholder|popover|progress|progressbg|range-slider|ribbons|spinners|statuses|steps|switch-icon|tables|tabs|timelines|tinymce|toasts|tooltips|tracking?).html", "destination": "https://tabler.io/docs/components/:name", "permanent": true}, {"source": "/docs/:name(form-color-check|form-elements|form-fieldset|form-helpers|form-image-check|form-input-mask|form-selectboxes|form-validation?).html", "destination": "https://tabler.io/docs/forms/:name", "permanent": true}, {"source": "/docs/:name(browser-support|customize|download|faq?).html", "destination": "https://tabler.io/docs/getting-started/:name", "permanent": true}, {"source": "/docs/:name(page-headers?).html", "destination": "https://tabler.io/docs/layout/:name", "permanent": true}, {"source": "/docs/:name(flags|payments?).html", "destination": "https://tabler.io/docs/plugins/:name", "permanent": true}, {"source": "/docs/:name(borders|cursors|interactions?).html", "destination": "https://tabler.io/docs/plugins/:name", "permanent": true}]}
 {"outputDirectory": ".deploy"}
@@ -417,20 +211,16 @@
 {"rewrites": [{"source": "/vue-camp/(.*)", "destination": "/$1"}]}
 {"redirects": [{"source": "/", "destination": "/api"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "public": true, "cleanUrls": true, "trailingSlash": false, "redirects": [{"source": "/intro", "destination": "/"}, {"source": "/java-install-update", "destination": "/misc/java-install"}, {"source": "/papermc/:path*", "destination": "/misc/:path*"}, {"source": "/velocity/developers/:path*", "destination": "/velocity/dev/:path*"}, {"source": "/paper/reference/paper-per-world-configuration", "destination": "/paper/reference/world-configuration"}, {"source": "/paper/reference/paper-global-configuration", "destination": "/paper/reference/global-configuration"}, {"source": "/paper/per-world-configuration", "destination": "/paper/configuration"}, {"source": "/paper/configuration", "destination": "/paper/reference/configuration"}], "headers": [{"source": "/assets/(.*)", "headers": [{"key": "cache-control", "value": "public, immutable, max-age=31536000"}]}], "github": {"silent": true, "autoJobCancelation": true}}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "github": {"silent": true}}
 {"buildCommand": "yarn run now-build", "outputDirectory": "storybook-static"}
 {"rewrites": [{"source": "/stats/js/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/stats/api/event", "destination": "https://plausible.io/api/event"}]}
 {"rewrites": [{"source": "/api/:path", "destination": "/api"}, {"source": "/(.*)", "destination": "/index.html"}]}
 {"redirects": [{"source": "/product(.*)", "destination": "/solutions$1"}]}
 {"github": {"silent": true}, "cleanUrls": true, "trailingSlash": false}
 {"version": 2, "routes": [{"src": "/", "dest": "/api/index.js?username=wangningkai"}, {"src": "/user/(?<username>[^/]*)", "dest": "/api/index.js?username=$username"}, {"src": "/u/(?<username>[^/]*)", "dest": "/api/index.js?username=$username"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
 {"redirects": [{"source": "/:path*", "destination": "https://www.tigrisdata.com/docs/:path*", "permanent": true}, {"source": "/:path*/", "destination": "https://www.tigrisdata.com/docs/:path*", "permanent": true}, {"source": "/", "destination": "https://www.tigrisdata.com/docs/", "permanent": true}]}
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' data: 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; img-src 'self' i.scdn.co; connect-src 'self' https://cloudflareinsights.com"}, {"key": "Referrer-Policy", "value": "origin-when-cross-origin"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-DNS-Prefetch-Control", "value": "on"}, {"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload"}, {"key": "Permissions-Policy", "value": "geolocation=()"}]}, {"source": "/(.*).(js|css|webp)", "headers": [{"key": "Cache-Control", "value": "public, s-max-age=31536000"}, {"key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' data: 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; img-src 'self' i.scdn.co; connect-src 'self' https://cloudflareinsights.com"}, {"key": "Referrer-Policy", "value": "origin-when-cross-origin"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-DNS-Prefetch-Control", "value": "on"}, {"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload"}, {"key": "Permissions-Policy", "value": "geolocation=()"}]}], "redirects": [{"source": "/calendar", "destination": "https://calendly.com/akellbl4/chat-with-paul", "permanent": false}, {"source": "/resume", "destination": "/resume-2022.pdf", "permanent": false}]}
 {"headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "DENY"}, {"key": "X-XSS-Protection", "value": "1; mode=block"}, {"key": "Cache-Control", "value": "s-maxage=120, stale-while-revalidate"}, {"key": "Referrer-Policy", "value": "no-referrer-when-downgrade"}, {"key": "Permissions-Policy", "value": "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"}]}]}
 {"buildCommand": "yarn build", "devCommand": "react-app-rewired start", "installCommand": "yarn install", "outputDirectory": "build"}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
 {"public": true, "functions": {"api/**/*.[jt]s": {"runtime": "vercel-dev-builder@0.0.5"}}}
 {"cleanUrls": true, "rewrites": [{"source": "/plausible/js/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/plausible/api/event", "destination": "https://plausible.io/api/event"}]}
 {"redirects": [{"source": "/discord", "destination": "https://discord.com/invite/x3ybcKbQC9", "permanent": false}, {"source": "/wiki/general-resources", "destination": "/wiki/blockchain-learning-resources", "permanent": true}, {"source": "/wiki/communities", "destination": "/wiki/blockchain-developer-communities", "permanent": true}, {"source": "/wiki/jobs", "destination": "/blockchain-developer-jobs", "permanent": true}, {"source": "/wiki/ethereum-evm/getting-started", "destination": "/wiki/blockchain-development-tutorial", "permanent": true}, {"source": "/wiki/ethereum-evm/general", "destination": "/wiki/ethereum-virtual-machine-development-resources", "permanent": true}, {"source": "/wiki/ethereum-evm/tutorials", "destination": "/wiki/ethereum-virtual-machine-tutorials", "permanent": true}, {"source": "/wiki/ethereum-evm/tools", "destination": "/wiki/ethereum-virtual-machine-tools", "permanent": true}, {"source": "/wiki/ethereum-evm/security", "destination": "/wiki/ethereum-virtual-machine-security", "permanent": true}, {"source": "/wiki/ethereum-evm/communities", "destination": "/wiki/ethereum-virtual-machine-developer-communities", "permanent": true}, {"source": "/wiki/ethereum-evm/media", "destination": "/wiki/ethereum-virtual-machine-media", "permanent": true}, {"source": "/wiki/ethereum-evm/faq", "destination": "/wiki/ethereum-virtual-machine-faq", "permanent": true}, {"source": "/wiki/ethereum-evm/testnet-faucets", "destination": "/wiki/ethereum-virtual-machine-testnet-faucets", "permanent": true}, {"source": "/wiki/cosmos/general", "destination": "/wiki/cosmos-development-resources", "permanent": true}, {"source": "/wiki/cosmos/tutorials", "destination": "/wiki/cosmos-tutorials", "permanent": true}, {"source": "/wiki/substrate/general", "destination": "/wiki/substrate-development-resources", "permanent": true}, {"source": "/wiki/substrate/tutorials", "destination": "/wiki/substrate-tutorials", "permanent": true}]}
@@ -441,8 +231,6 @@
 {"rewrites": [{"source": "/@api/(.*)", "destination": "/api/proxy"}, {"source": "/((?!@api).*)", "destination": "/index.html"}]}
 {"redirects": [{"source": "/", "destination": "https://github.com/hackclub/airtable-forms-proxy", "permanent": true}], "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
 {"buildCommand": "astro build", "framework": "astro", "installCommand": "pnpm install"}
-{"cleanUrls": true}
-{"github": {"silent": true}}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "outputDirectory": "dist/badman/browser", "buildCommand": "sh vercel.sh", "rewrites": [{"source": "/api/:path*", "destination": "https://api-8azq.onrender.com/:path*", "has": [{"type": "host", "value": ".*(dev|beta|next).*"}]}, {"source": "/graphql", "destination": "https://api-8azq.onrender.com/graphql", "has": [{"type": "host", "value": ".*(dev|beta|next).*"}]}, {"source": "/api/:path*", "destination": "https://server-2msl.onrender.com/:path*"}, {"source": "/graphql", "destination": "https://server-2msl.onrender.com/graphql"}]}
 {"rewrites": [{"source": "/api/(.*)", "destination": "/api/index.ts"}]}
 {"headers": [{"source": "/:all*(ttf|otf|woff|woff2)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "redirects": [{"source": "/tw", "destination": "https://twitter.com/pheralb_"}, {"source": "/tv", "destination": "https://www.twitch.tv/pheralb"}, {"source": "/ln", "destination": "https://www.linkedin.com/in/pheralb/"}, {"source": "/gh", "destination": "https://github.com/pheralb"}, {"source": "/git", "destination": "https://github.com/pheralb/website"}]}
@@ -481,7 +269,6 @@
 {"routes": [{"src": "/api/.*", "status": 404}, {"src": "^/image/(?<username>[^/]*)", "dest": "/api/image?username=$username"}]}
 {"buildCommand": "./vercel-lib.sh && npm run build", "routes": [{"src": "/api/(.*)", "dest": "api/index.py"}], "functions": {"api/index.py": {"memory": 512, "maxDuration": 10, "excludeFiles": "{@(.next|node_modules|public|tests)/**,src/{*,!(api)/**},*.json}"}}}
 {"rewrites": [{"source": "/:path((?!api/).*)", "destination": "/api/:path*"}], "functions": {"api/**/*.ts": {"memory": 3008}}}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
 {"functions": {"api/**": {"excludeFiles": "{README.md}"}}, "rewrites": [{"source": "/(.+)", "destination": "/api"}]}
 {"redirects": [{"source": "/", "destination": "https://www.delbaoliveira.com/blog/challenge-00", "permanent": true}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook-static"}
@@ -491,18 +278,14 @@
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload"}, {"key": "Content-Security-Policy", "value": "frame-ancestors https://gnosis-safe.io https://app.safe.global 'self'"}, {"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "SAMEORIGIN"}, {"key": "X-XSS-Protection", "value": "1; mode=block"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS"}, {"key": "Access-Control-Allow-Headers", "value": "*"}, {"key": "Vary", "value": "Accept-Encoding"}]}, {"source": "/_next/static/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).ico", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).(png|jpg|webp|svg|gif)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).(eot|otf|ttf|ttc|woff|woff2|font|css)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
 {"headers": [{"source": "/:path*", "headers": [{"key": "X-Frame-Options", "value": "SAMEORIGIN"}]}]}
 {"redirects": [{"source": "/", "destination": "https://github.com/Cobertos/fitbit-sleebies"}], "functions": {"api/[userid].js": {"includeFiles": "assets/**"}}}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
 {"trailingSlash": false, "rewrites": [{"source": "/(.*)", "destination": "/api/index.go"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
 {"crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/"}]}
 {"routes": [{"src": "/api/token(.*)", "dest": "/api/proxy.js", "continue": true}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "pnpm build", "outputDirectory": "docs/.vitepress/dist"}
 {"functions": {"pages/api/chat.js": {"includeFiles": "data/**"}}}
 {"github": {"enabled": false, "silent": true}}
 {"rewrites": [{"source": "/(.*)", "destination": "/"}], "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "X-Frame-Options", "value": "SAMEORIGIN"}, {"key": "X-XSS-Protection", "value": "1; mode=block"}, {"key": "Access-Control-Allow-Credentials", "value": "false"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS"}, {"key": "Access-Control-Allow-Headers", "value": "*"}, {"key": "Vary", "value": "Accept-Encoding"}]}, {"source": "/(.*).ico", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).(png|jpg|webp|svg)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/(.*).(eot|otf|ttf|ttc|woff|woff2|font|css)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
 {"headers": [{"source": "/(.*)", "headers": [{"key": "Cache-Control", "value": "public, s-maxage=1, stale-while-revalidate=2592000"}]}]}
-{"headers": [{"source": "/(.*)", "headers": [{"key": "Permissions-Policy", "value": "interest-cohort=()"}]}]}
 {"cleanUrls": true, "trailingSlash": false, "headers": [{"source": "/fonts/karla.ttf", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
 {"headers": [{"source": "/fonts/ibm-plex-sans-var.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "rewrites": [{"source": "/bee.js", "destination": "https://cdn.splitbee.io/sb.js"}, {"source": "/_hive/:slug", "destination": "https://hive.splitbee.io/:slug"}]}
 {"cleanUrls": true, "trailingSlash": false, "redirects": [{"source": "/index", "destination": "/"}]}
@@ -513,7 +296,6 @@
 {"redirects": [{"source": "/", "destination": "https://github.com/andatoshiki/toshiki-readme-stats"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "redirects": [{"source": "/(.*)", "destination": "/index.html", "statusCode": 200}]}
 {"github": {"silent": true}, "redirects": [{"source": "/", "destination": "/en/introduction/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
 {"headers": [{"source": "/(.*).(jpe?g|png|ico|webp|svg|mp4|gif|xml|ttf|woff2?)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
 {"redirects": [{"source": "/", "destination": "https://github.com/SrGobi/github-readme-stats"}]}
 {"rewrites": [{"source": "/(.*)", "destination": "/api/index.js"}]}
@@ -535,7 +317,6 @@
 {"$schema": "https://openapi.vercel.sh/vercel.json", "version": 2, "alias": "meric.vercel.app", "cleanUrls": true, "public": true, "regions": ["lhr1"], "redirects": [{"source": "/github", "destination": "https://github.com/jiprettycool"}, {"source": "/portfolio", "destination": "/projects"}, {"source": "/twitter", "destination": "https://twitter.com/iamrealji"}, {"source": "/contact", "destination": "https://twitter.com/direct_messages/create/iamrealji"}]}
 {"functions": {"api/index.js": {"memory": 1024}}, "rewrites": [{"source": "/", "destination": "/api"}], "public": false, "github": {"enabled": true, "silent": true}}
 {"crons": [{"path": "/api/job/sms/process", "schedule": "0 9 * * *"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}], "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
 {"outputDirectory": "web/.next"}
 {"crons": [{"path": "/generateRecentUpdates.js", "schedule": "0 21 * * *"}]}
 {"installCommand": "npm install hathora -g", "buildCommand": "hathora build --only client", "outputDirectory": "client/web/dist", "rewrites": [{"source": "/game/:id", "destination": "/index.html"}]}
@@ -545,83 +326,6 @@
 {"$schema": "https://vcs.vercel.app/", "functions": {"api/*.ts": {"memory": 128, "maxDuration": 10}}, "devCommand": "react-scripts start"}
 {"rewrites": [{"source": "/spotify-tokens/", "destination": "/"}]}
 {"rewrites": [{"source": "/plausible/js/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/plausible/api/event", "destination": "https://plausible.io/api/event"}]}
-{"github": {"silent": true, "autoJobCancelation": true}}
-{"github": {"silent": true, "autoJobCancelation": true}}
-{"github": {"silent": true, "autoJobCancelation": true}}
-{"github": {"silent": true, "autoJobCancelation": true}}
-{"rewrites": [{"source": "/stats/js/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/stats/api/event", "destination": "https://plausible.io/api/event"}, {"source": "/(.*)", "destination": "/error-404.html"}], "redirects": [{"source": "/docs", "destination": "https://tabler.io/docs", "permanent": true}, {"source": "/docs/:name(colors|typography?).html", "destination": "https://tabler.io/docs/base/:name", "permanent": true}, {"source": "/docs/:name(alerts|autosize|avatars|badges|breadcrumb|buttons|cards|carousel|charts|countup|datagrid|divider|dropdowns|dropzone|empty|icons|inline-player|modals|placeholder|popover|progress|progressbg|range-slider|ribbons|spinners|statuses|steps|switch-icon|tables|tabs|timelines|tinymce|toasts|tooltips|tracking?).html", "destination": "https://tabler.io/docs/components/:name", "permanent": true}, {"source": "/docs/:name(form-color-check|form-elements|form-fieldset|form-helpers|form-image-check|form-input-mask|form-selectboxes|form-validation?).html", "destination": "https://tabler.io/docs/forms/:name", "permanent": true}, {"source": "/docs/:name(browser-support|customize|download|faq?).html", "destination": "https://tabler.io/docs/getting-started/:name", "permanent": true}, {"source": "/docs/:name(page-headers?).html", "destination": "https://tabler.io/docs/layout/:name", "permanent": true}, {"source": "/docs/:name(flags|payments?).html", "destination": "https://tabler.io/docs/plugins/:name", "permanent": true}, {"source": "/docs/:name(borders|cursors|interactions?).html", "destination": "https://tabler.io/docs/plugins/:name", "permanent": true}]}
-{"headers": [{"source": "/:all*(ttf|otf|woff|woff2)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "cleanUrls": true, "redirects": [{"source": "/en", "destination": "/"}, {"source": "/docs", "destination": "/en/introduction"}, {"source": "/discord", "destination": "https://discord.gg/xHdCpcPHRE"}, {"source": "/github", "destination": "https://github.com/t3-oss/create-t3-app"}, {"source": "/showcase", "destination": "/en/t3-collection"}, {"source": "/collection", "destination": "/en/t3-collection"}, {"source": "/awesome", "destination": "/en/t3-collection"}]}
-{"headers": [{"source": "/:all*(ttf|otf|woff|woff2)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}], "cleanUrls": true, "redirects": [{"source": "/en", "destination": "/"}, {"source": "/docs", "destination": "/en/introduction"}, {"source": "/discord", "destination": "https://discord.gg/xHdCpcPHRE"}, {"source": "/github", "destination": "https://github.com/t3-oss/create-t3-app"}, {"source": "/showcase", "destination": "/en/t3-collection"}, {"source": "/collection", "destination": "/en/t3-collection"}, {"source": "/awesome", "destination": "/en/t3-collection"}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "framework": "nextjs", "installCommand": "pnpm --version && pnpm install --frozen-lockfile", "buildCommand": "cd ../.. && pnpm run build:storefront"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "framework": "nextjs", "installCommand": "pnpm --version && pnpm install --frozen-lockfile", "buildCommand": "cd ../.. && pnpm run build:storefront"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "framework": "nextjs", "installCommand": "pnpm --version && pnpm install --frozen-lockfile", "buildCommand": "cd ../.. && pnpm run build:storefront"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "framework": "nextjs", "installCommand": "pnpm --version && pnpm install --frozen-lockfile", "buildCommand": "cd ../.. && pnpm run build:storefront"}
-{"redirects": [{"source": "/", "destination": "/api"}]}
-{"redirects": [{"source": "/", "destination": "/api"}]}
-{"redirects": [{"source": "/", "destination": "/api"}]}
-{"redirects": [{"source": "/", "destination": "/api"}]}
-{"rewrites": [{"source": "/stats/js/script.js", "destination": "https://plausible.io/js/script.js"}, {"source": "/stats/api/event", "destination": "https://plausible.io/api/event"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/api"}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"framework": "astro", "devCommand": "cd ../.. && yarn dev", "buildCommand": "cd ../.. && yarn build", "installCommand": "yarn --cwd=../.. install", "ignoreCommand": "exit 1", "cleanUrls": true, "regions": ["fra1"], "trailingSlash": false, "rewrites": [{"source": "/api/(.*)", "destination": "/api/fastify"}]}
-{"buildCommand": "bin/vercel-git", "outputDirectory": "dist", "installCommand": "yum install -y gcc openssl-devel readline-devel zlib-devel make tar libyaml-devel xz curl", "rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"buildCommand": "bin/vercel-git", "outputDirectory": "dist", "installCommand": "yum install -y gcc openssl-devel readline-devel zlib-devel make tar libyaml-devel xz curl", "rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"buildCommand": "bin/vercel-git", "outputDirectory": "dist", "installCommand": "yum install -y gcc openssl-devel readline-devel zlib-devel make tar libyaml-devel xz curl", "rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"redirects": [{"source": "/*", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api/proxy"}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api/proxy"}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api/proxy"}]}
-{"rewrites": [{"source": "/api/(.*)", "destination": "/api/proxy"}]}
-{"crons": [{"path": "/api/cron", "schedule": "* * * * *"}]}
-{"outputDirectory": "dist"}
-{"outputDirectory": "dist"}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"routes": [{"src": "/[^.]+", "dest": "/", "status": 200}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook-static"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook-static"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook-static"}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook-static"}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
-{"crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}]}
-{"crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}]}
-{"crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}]}
-{"crons": [{"path": "/api/cron", "schedule": "0 0 * * *"}]}
-{"rewrites": [{"source": "/:path*", "destination": "/"}]}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "pnpm build", "outputDirectory": "docs/.vitepress/dist"}
-{"functions": {"pages/api/chat.js": {"includeFiles": "data/**"}}}
-{"functions": {"pages/api/chat.js": {"includeFiles": "data/**"}}}
-{"functions": {"pages/api/chat.js": {"includeFiles": "data/**"}}}
-{"functions": {"pages/api/chat.js": {"includeFiles": "data/**"}}}
-{"github": {"enabled": false, "silent": true}}
-{"github": {"enabled": false, "silent": true}}
-{"github": {"enabled": false, "silent": true}}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/.*", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/.*", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/.*", "dest": "/index.html"}]}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/.*", "dest": "/index.html"}]}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"buildCommand": "npm run build", "outputDirectory": "dist/standalone"}
-{"buildCommand": "npm run build", "outputDirectory": "dist/standalone"}
-{"buildCommand": "npm run build", "outputDirectory": "dist/standalone"}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}], "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
-{"installCommand": "npm install hathora -g", "buildCommand": "hathora build --only client", "outputDirectory": "client/web/dist", "rewrites": [{"source": "/game/:id", "destination": "/index.html"}]}
 {"outputDirectory": "dist", "rewrites": [{"source": "/api/github-auth-callback", "destination": "/api/github-auth-callback"}, {"source": "/api/vscode-unpkg/(.*)", "destination": "/api/vscode-unpkg"}, {"source": "/static/(.*)", "destination": "/api/static-fallback"}, {"source": "/(.*)", "destination": "/index.html"}], "headers": [{"source": "/static/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=2592000, immutable"}]}, {"source": "/favicon(-dark|-light)?\\.(ico|svg)", "headers": [{"key": "Cache-Control", "value": "public, max-age=3600"}]}, {"source": "/manifest.json", "headers": [{"key": "Cache-Control", "value": "public, max-age=3600"}]}]}
 {"crons": [{"path": "/api/algolia", "schedule": "0 0 * * 4"}]}
 {"public": true, "redirects": [{"source": "/", "destination": "https://react-svgr.com/playground"}], "headers": [{"source": "/api/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
@@ -645,14 +349,11 @@
 {"headers": [{"source": "/", "headers": [{"key": "Cache-Control", "value": "no-cache, no-store, must-revalidate, max-age=0"}, {"key": "Pragma", "value": "no-cache"}]}]}
 {"routes": [{"src": "/(.*)", "dest": "/api"}]}
 {"functions": {"api/results.php": {"runtime": "vercel-php@0.5.2"}}}
-{"trailingSlash": false}
 {"headers": [{"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}]}, {"source": "/(.*)", "headers": [{"key": "X-XSS-Protection", "value": "1; mode=block"}, {"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "Content-Security-Policy", "value": "frame-ancestors https://gnosis-safe.io/*"}]}], "redirects": [{"source": "/migrate/v2", "destination": "/migrate", "permanent": true}]}
 {"installCommand": "npm install --omit=dev", "buildCommand": "next build", "headers": [{"source": "/(.*)", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "*"}, {"key": "Access-Control-Allow-Headers", "value": "*"}, {"key": "Cross-Origin-Opener-Policy", "value": "same-origin"}, {"key": "Cross-Origin-Embedder-Policy", "value": "require-corp"}, {"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"}]}]}
 {"name": "react-listbox", "regions": ["syd1"]}
 {"routes": [{"dest": "/", "src": "/[^.]+", "status": 200}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "crons": [{"path": "/api/channels/update", "schedule": "21 1/3 * * *"}, {"path": "/api/videos/check", "schedule": "27/30 * * * *"}, {"path": "/api/videos/check?all=1", "schedule": "4 23 * * 2"}, {"path": "/api/videos/update", "schedule": "1/2 * * * *"}], "ignoreCommand": "pnpm dlx turbo-ignore"}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
-{"github": {"silent": true}}
 {"headers": [{"source": "/.well-known/(.*)", "headers": [{"key": "Access-Control-Allow-Credentials", "value": "true"}, {"key": "Access-Control-Allow-Origin", "value": "*"}, {"key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"}, {"key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"}]}]}
 {"rewrites": [{"source": "/", "destination": "/api/redirect"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "version": 2, "regions": ["iad"], "public": false, "cleanUrls": true, "github": {"autoJobCancelation": true, "enabled": false, "silent": false}, "trailingSlash": false, "headers": [{"source": "/fonts/inter/inter-var.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/inter/inter-var-italic.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}, {"source": "/fonts/inter/inter-4.0.0-beta9g-var.woff2", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
@@ -661,7 +362,6 @@
 {"headers": [{"source": "/_next/image(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400, immutable"}]}]}
 {"redirects": [{"source": "/", "destination": "/docs/learn/overview", "permanent": true}, {"source": "/docs", "destination": "/", "permanent": true}, {"source": "/docs/", "destination": "/", "permanent": true}]}
 {"github": {"autoAlias": false, "silent": true}}
-{"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "npm run build-storybook", "devCommand": "npm run storybook", "installCommand": "npm install", "framework": null, "outputDirectory": "./storybook-static"}
 {"crons": [{"path": "/api/job/fetch-prices-cron", "schedule": "0 23 * * *"}]}
 {"redirects": [{"source": "/docs", "destination": "https://docs.blink.sh"}, {"source": "/docs/basics/hosts", "destination": "https://docs.blink.sh/basics/hosts"}, {"source": "/docs/basics/tips-and-tricks", "destination": "https://docs.blink.sh/basics/tips-and-tricks"}, {"source": "/docs/basics/navigation", "destination": "https://docs.blink.sh/basics/navigation"}, {"source": "/docs/basics/ssh-keys", "destination": "https://docs.blink.sh/basics/ssh-keys"}, {"source": "/docs/basics/known-issues", "destination": "https://docs.blink.sh/faq"}, {"source": "/docs/basics/notifications", "destination": "https://docs.blink.sh/basics/notifications"}, {"source": "/docs/basics/known-issues", "destination": "https://docs.blink.sh/basics/known-issues"}, {"source": "/docs/commands/overview", "destination": "https://docs.blink.sh/basics/commands"}, {"source": "/docs/advanced/unix-roundup", "destination": "https://docs.blink.sh/advanced/unix-roundup"}, {"source": "/docs/advanced/advanced-mosh", "destination": "https://docs.blink.sh/advanced/advanced-mosh"}, {"source": "/docs/advanced/advanced-ssh", "destination": "https://docs.blink.sh/advanced/advanced-ssh"}, {"source": "/docs/cloud-providers/aws", "destination": "https://docs.blink.sh/cloud-providers/aws"}, {"source": "/docs/cloud-providers/do", "destination": "https://docs.blink.sh/cloud-providers/do"}, {"source": "/docs/cloud-providers/hetzner", "destination": "https://docs.blink.sh/cloud-providers/hetzner"}, {"source": "/docs/code/getting-started", "destination": "https://docs.blink.sh/advanced/code"}], "trailingSlash": false}
 {"rewrites": [{"source": "/service-worker.js", "destination": "/_next/static/service-worker.js"}], "headers": [{"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "public, max-age=43200, immutable"}, {"key": "Service-Worker-Allowed", "value": "/"}]}]}
@@ -675,7 +375,6 @@
 {"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "pnpm run -w build:storybook", "ignoreCommand": "git log -1 --pretty=oneline --abbrev-commit | grep -w \"\\[skip ci\\]\" && exit 0 || exit 1", "devCommand": "pnpm run dev:storybook", "installCommand": "pnpm install", "framework": null, "outputDirectory": "./"}
 {"redirects": [{"source": "/waste", "destination": "https://\u0435\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433.\u0440\u0444/\u0436\u0438\u0442\u0435\u043b\u044f\u043c/\u044d\u043a\u043e\u043b\u043e\u0433\u0438\u044f/\u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u044b/\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430"}]}
 {"functions": {"api/*.py": {"runtime": "@vercel/python@1.2.3"}}, "rewrites": [{"source": "/", "destination": "api/main.py"}]}
-{"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/.*", "dest": "/index.html"}]}
 {"routes": [{"src": "/nexus/api(.*)", "dest": "/api/$1"}]}
 {"rewrites": [{"source": "/api/stats/(.*)", "destination": "/api/stats"}]}
 {"version": 2, "routes": [{"handle": "filesystem"}, {"src": "/.*", "dest": "index.html"}]}
@@ -691,19 +390,16 @@
 {"redirects": [{"source": "/get", "destination": "https://github.com/flightpkg/flight/releases/download/v0.0.5/install.sh"}]}
 {"crons": [{"path": "/api/newcron", "schedule": "0 7 * * *"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "cleanUrls": true, "redirects": [{"source": "/LeeRobinson.pdf", "destination": "/robinson-resume-2019.pdf"}, {"source": "/robinson-resume-2019.pdf", "destination": "https://read.cv/leerob"}, {"source": "/resume", "destination": "https://read.cv/leerob"}, {"source": "/projects", "destination": "/about"}, {"source": "/blog/now-env-variables-size-limit", "destination": "/blog/vercel-env-variables-size-limit"}, {"source": "/blog/going-serverless-next-firebase-now", "destination": "/blog/nextjs-firebase-serverless"}, {"source": "/blog/my-essential-software-hardware-list", "destination": "/uses"}, {"source": "/blog/vercel-env-variables-size-limit", "destination": "https://vercel.com/support/articles/how-do-i-workaround-vercel-s-4-kb-environment-variables-limit"}, {"source": "/30", "destination": "https://calendly.com/lee-vercel/30min"}, {"source": "/15", "destination": "https://calendly.com/lee-vercel/15min"}, {"source": "/youtube", "destination": "https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw"}, {"source": "/live", "destination": "https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw/live"}, {"source": "/newsletter/(.*)", "destination": "/newsletter"}, {"source": "/blog/monorepo-lerna-yarn-workspaces", "destination": "/blog/turborepo-design-system-monorepo"}, {"source": "/blog/optimizing-my-digital-content-consumption", "destination": "/blog"}, {"source": "/blog/migrating-to-hugo", "destination": "/blog"}, {"source": "/blog/joining-hy-vee", "destination": "/blog"}, {"source": "/blog/what-ive-learned-from-4-or-5-years-of-college", "destination": "/blog"}, {"source": "/blog/calibrate-san-francisco", "destination": "/blog"}, {"source": "/blog/best-bars-in-des-moines", "destination": "/blog"}, {"source": "/blog/zero-programming-experience-to-three-internships", "destination": "/blog"}, {"source": "/blog/how-to-fix-technical-recruiting", "destination": "/blog"}, {"source": "/blog/building-my-first-electron-app", "destination": "/blog"}, {"source": "/blog/2019", "destination": "/blog"}, {"source": "/blog/life-at-workiva", "destination": "/blog"}, {"source": "/blog/italy", "destination": "/blog"}, {"source": "/blog/how-to-be-the-best-developer", "destination": "/blog"}, {"source": "/blog/10-days-in-norway", "destination": "/blog"}, {"source": "/blog/analyzing-10-years-of-facebook-data", "destination": "/blog"}, {"source": "/blog/stop-wasting-your-time", "destination": "/blog"}, {"source": "/blog/benefits-i-care-about-in-2019", "destination": "/blog"}, {"source": "/blog/resume", "destination": "/blog"}, {"source": "/blog/ui-component-library-with-styled-components", "destination": "/blog/turborepo-design-system-monorepo"}, {"source": "/blog/nextjs-authentication", "destination": "https://nextjs.org/docs/authentication"}, {"source": "/blog/configuring-sentry-for-nextjs-apps", "destination": "https://github.com/vercel/next.js/tree/canary/examples/with-sentry"}]}
-{"redirects": [{"source": "/", "destination": "/api"}]}
 {"rewrites": [{"source": "/:match*", "destination": "/api/:match*"}]}
 {"rewrites": [{"source": "/proxy/:match/:url*", "destination": "https://:match/:url*"}, {"source": "/proxy/:match/:url*/", "destination": "https://:match/:url*/"}, {"source": "/httpproxy/:match/:url*", "destination": "http://:match/:url*"}, {"source": "/httpproxy/:match/:url*/", "destination": "http://:match/:url*/"}, {"source": "/api/:match/:url*", "destination": "https://nestjs.h7ml.cn/api/:match/:url*"}], "headers": [{"source": "/(.*).(ttf|otf|woff2|woff|eot|json)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}
 {"rewrites": [{"source": "/:match*", "destination": "https://toofake.up.railway.app/:match*"}, {"source": "/:match*/", "destination": "https://toofake.up.railway.app/:match*/"}, {"source": "./:match*", "destination": "https://toofake.up.railway.app/:match*"}, {"source": "./:match*/", "destination": "https://toofake.up.railway.app/:match*/"}, {"source": ":match*", "destination": "https://toofake.up.railway.app/:match*"}, {"source": ":match*/", "destination": "https://toofake.up.railway.app/:match*/"}, {"source": "/sendotp/:match*", "destination": "https://toofake.up.railway.app/sendotp/:match*/"}]}
 {"routes": [{"src": "/(?<id>([A-Za-z0-9]){4})", "dest": "/api/redirect?id=$id"}]}
 {"github": {"silent": true}, "crons": [{"path": "/api/revalidate?ping=1", "schedule": "* * * * *"}]}
 {"public": true, "routes": [{"src": "/(?<filepath>.+)\\.(?<ext>jpg)", "dest": "https://media.githubusercontent.com/media/unitof/vercel-git-lfs-test/main/$filepath.$ext", "headers": {"Cache-Control": "s-maxage=3600", "X-JacobFord-Test": "hello-world"}}], "github": {"silent": true}}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
 {"rewrites": [{"source": "/", "destination": "/analysis.html"}, {"source": "/locations", "destination": "/all_locations.html"}]}
 {"rewrites": [{"source": "/(.*)", "destination": "api/index.js"}]}
 {"$schema": "https://openapi.vercel.sh/vercel.json", "redirects": [{"source": "/api/workspace/upload", "destination": "https://kcpxeoxkmblpivpgwdsm.supabase.co/functions/v1/upload-file", "permanent": true}]}
 {"functions": {"api/index.ts": {"memory": 3008, "maxDuration": 60}}, "github": {"silent": true}}
-{"rewrites": [{"source": "/(.*)", "destination": "/"}]}
 {"redirects": [{"source": "/private/:path*", "destination": "/anon/:path*"}]}
 {"rewrites": [{"source": "/(.*)", "destination": "/api/grant"}]}
 {"buildCommand": "cd client && yarn install && ./node_modules/vite/bin/vite.js build", "outputDirectory": "client/dist", "framework": "vite", "rewrites": [{"source": "/api/(.*)", "destination": "/api/index.js"}, {"source": "/(.*)", "destination": "/"}]}
