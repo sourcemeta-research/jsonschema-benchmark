@@ -38,76 +38,6 @@
 {"presets": [["@babel/preset-env", {"targets": {"node": 8}, "loose": true}]]}
 {"comments": true, "plugins": ["lodash", "graphql-tag", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-syntax-import-meta", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-json-strings", ["@babel/plugin-proposal-decorators", {"legacy": true}], "@babel/plugin-proposal-function-sent", "@babel/plugin-proposal-export-namespace-from", "@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-throw-expressions", ["prismjs", {"languages": ["clike", "markup"], "plugins": ["line-numbers", "autoloader", "normalize-whitespace", "copy-to-clipboard", "toolbar"], "theme": "twilight", "css": true}]], "presets": [["@babel/preset-env", {"useBuiltIns": "entry", "corejs": 3, "debug": false}]]}
 {"presets": [["babel-preset-gatsby-package", {"browser": true}]]}
-{"presets": [["@babel/env", {"modules": false, "useBuiltIns": false, "loose": true, "targets": "chrome > 100"}], ["@babel/typescript", {"allowDeclareFields": true}]]}
-{"presets": ["@babel/preset-flow", ["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": ["@babel/preset-flow", ["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": ["@babel/preset-flow", ["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": ["@babel/preset-flow", ["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": ["@docusaurus/core/lib/babel/preset"], "browserslist": {"production": ["last 2 versions"], "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]}}
-{"presets": ["@docusaurus/core/lib/babel/preset"], "browserslist": {"production": ["last 2 versions"], "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]}}
-{"presets": [["@babel/env", {"targets": {"browsers": ["defaults, not ie 11"]}}]], "sourceType": "script", "sourceMaps": "inline", "comments": false}
-{"presets": [["@babel/env", {"targets": {"browsers": ["defaults, not ie 11"]}}]], "sourceType": "script", "sourceMaps": "inline", "comments": false}
-{"presets": ["razzle/babel"], "plugins": ["@babel/plugin-proposal-do-expressions"]}
-{"presets": ["razzle/babel"], "plugins": ["@babel/plugin-proposal-do-expressions"]}
-{"presets": ["razzle/babel"], "plugins": ["@babel/plugin-proposal-do-expressions"]}
-{"presets": ["razzle/babel"], "plugins": ["@babel/plugin-proposal-do-expressions"]}
-{"presets": [["@babel/preset-env", {"targets": "last 2 Chrome versions, last 2 Safari versions, last 2 ChromeAndroid versions, last 2 iOS versions, last 2 Firefox versions, last 2 Edge versions", "corejs": 3, "useBuiltIns": "usage", "bugfixes": true, "modules": "auto"}]]}
-{"presets": [["@babel/preset-env", {"targets": "last 2 Chrome versions, last 2 Safari versions, last 2 ChromeAndroid versions, last 2 iOS versions, last 2 Firefox versions, last 2 Edge versions", "corejs": 3, "useBuiltIns": "usage", "bugfixes": true, "modules": "auto"}]]}
-{"presets": [["@babel/preset-env", {"targets": "last 2 Chrome versions, last 2 Safari versions, last 2 ChromeAndroid versions, last 2 iOS versions, last 2 Firefox versions, last 2 Edge versions", "corejs": 3, "useBuiltIns": "usage", "bugfixes": true, "modules": "auto"}]]}
-{"presets": [["@babel/preset-env", {"targets": "last 2 Chrome versions, last 2 Safari versions, last 2 ChromeAndroid versions, last 2 iOS versions, last 2 Firefox versions, last 2 Edge versions", "corejs": 3, "useBuiltIns": "usage", "bugfixes": true, "modules": "auto"}]]}
-{"plugins": [["@babel/plugin-proposal-decorators", {"decoratorsBeforeExport": true}], "@babel/plugin-proposal-class-properties", "@babel/plugin-transform-typescript"]}
-{"plugins": [["@babel/plugin-proposal-decorators", {"decoratorsBeforeExport": true}], "@babel/plugin-proposal-class-properties", "@babel/plugin-transform-typescript"]}
-{"plugins": [["@babel/plugin-proposal-decorators", {"decoratorsBeforeExport": true}], "@babel/plugin-proposal-class-properties", "@babel/plugin-transform-typescript"]}
-{"presets": ["es2015-loose"], "plugins": ["add-module-exports", "transform-es2015-modules-umd"]}
-{"presets": ["es2015-loose"], "plugins": ["add-module-exports", "transform-es2015-modules-umd"]}
-{"presets": ["es2015-loose"], "plugins": ["add-module-exports", "transform-es2015-modules-umd"]}
-{"presets": ["es2015-loose"], "plugins": ["add-module-exports", "transform-es2015-modules-umd"]}
-{"presets": ["es2015"], "plugins": ["add-module-exports"]}
-{"presets": ["es2015"], "plugins": ["add-module-exports"]}
-{"presets": ["es2015"], "plugins": ["add-module-exports"]}
-{"presets": ["es2015"], "plugins": ["add-module-exports"]}
-{"presets": ["@babel/preset-env", "@babel/preset-typescript", "@babel/preset-react"]}
-{"plugins": [["module-resolver", {"root": ["src"]}]]}
-{"presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"]}
-{"presets": ["env"], "plugins": [["transform-runtime", {"polyfill": false, "regenerator": true}]]}
-{"presets": ["env"], "plugins": [["transform-runtime", {"polyfill": false, "regenerator": true}]]}
-{"presets": ["env"], "plugins": [["transform-runtime", {"polyfill": false, "regenerator": true}]]}
-{"presets": ["env"], "plugins": [["transform-runtime", {"polyfill": false, "regenerator": true}]]}
-{"presets": [["@babel/preset-env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "ie >= 10"]}}]], "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]}
-{"presets": [["@babel/preset-env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "ie >= 10"]}}]], "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]}
-{"presets": [["@babel/preset-env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "ie >= 10"]}}]], "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]}
-{"presets": [["@babel/preset-env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "ie >= 10"]}}]], "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]}
-{"plugins": ["@babel/plugin-transform-react-jsx", ["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"plugins": ["@babel/plugin-transform-react-jsx", ["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"plugins": ["@babel/plugin-transform-react-jsx", ["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"plugins": ["@babel/plugin-transform-react-jsx", ["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"presets": ["cf"], "plugins": []}
-{"presets": ["cf"], "plugins": []}
-{"presets": ["cf"], "plugins": []}
-{"presets": [["@babel/preset-env", {"targets": {"ie": "9"}}], "@babel/preset-flow"], "plugins": ["add-module-exports"]}
-{"presets": [["@babel/preset-env", {"targets": {"ie": "9"}}], "@babel/preset-flow"], "plugins": ["add-module-exports"]}
-{"presets": [["@babel/preset-env", {"targets": {"ie": "9"}}], "@babel/preset-flow"], "plugins": ["add-module-exports"]}
-{"plugins": [["module-resolver", {"root": ["."], "alias": {"react-vis/*": "../react-vis/src/*", "react-vis": "../react-vis/src"}}]]}
-{"extends": "./.babelrc.json", "plugins": ["@babel/plugin-transform-runtime"]}
-{"extends": "./.babelrc.json", "plugins": ["@babel/plugin-transform-runtime"]}
-{"extends": "./.babelrc.json", "plugins": ["@babel/plugin-transform-runtime"]}
-{"extends": "./.babelrc.json", "plugins": ["@babel/plugin-transform-runtime"]}
-{"presets": [["@babel/preset-env", {"modules": false, "targets": {"chrome": "59"}}]], "plugins": ["@babel/plugin-proposal-class-properties", ["transform-gl-matrix", {"glMatrixArray": false}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 8}, "loose": true}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 8}, "loose": true}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 8}, "loose": true}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 8}, "loose": true}]]}
-{"comments": true, "plugins": ["lodash", "graphql-tag", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-syntax-import-meta", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-json-strings", ["@babel/plugin-proposal-decorators", {"legacy": true}], "@babel/plugin-proposal-function-sent", "@babel/plugin-proposal-export-namespace-from", "@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-throw-expressions", ["prismjs", {"languages": ["clike", "markup"], "plugins": ["line-numbers", "autoloader", "normalize-whitespace", "copy-to-clipboard", "toolbar"], "theme": "twilight", "css": true}]], "presets": [["@babel/preset-env", {"useBuiltIns": "entry", "corejs": 3, "debug": false}]]}
-{"comments": true, "plugins": ["lodash", "graphql-tag", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-syntax-import-meta", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-json-strings", ["@babel/plugin-proposal-decorators", {"legacy": true}], "@babel/plugin-proposal-function-sent", "@babel/plugin-proposal-export-namespace-from", "@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-throw-expressions", ["prismjs", {"languages": ["clike", "markup"], "plugins": ["line-numbers", "autoloader", "normalize-whitespace", "copy-to-clipboard", "toolbar"], "theme": "twilight", "css": true}]], "presets": [["@babel/preset-env", {"useBuiltIns": "entry", "corejs": 3, "debug": false}]]}
-{"comments": true, "plugins": ["lodash", "graphql-tag", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-syntax-import-meta", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-json-strings", ["@babel/plugin-proposal-decorators", {"legacy": true}], "@babel/plugin-proposal-function-sent", "@babel/plugin-proposal-export-namespace-from", "@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-throw-expressions", ["prismjs", {"languages": ["clike", "markup"], "plugins": ["line-numbers", "autoloader", "normalize-whitespace", "copy-to-clipboard", "toolbar"], "theme": "twilight", "css": true}]], "presets": [["@babel/preset-env", {"useBuiltIns": "entry", "corejs": 3, "debug": false}]]}
-{"comments": true, "plugins": ["lodash", "graphql-tag", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-syntax-import-meta", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-json-strings", ["@babel/plugin-proposal-decorators", {"legacy": true}], "@babel/plugin-proposal-function-sent", "@babel/plugin-proposal-export-namespace-from", "@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-throw-expressions", ["prismjs", {"languages": ["clike", "markup"], "plugins": ["line-numbers", "autoloader", "normalize-whitespace", "copy-to-clipboard", "toolbar"], "theme": "twilight", "css": true}]], "presets": [["@babel/preset-env", {"useBuiltIns": "entry", "corejs": 3, "debug": false}]]}
-{"presets": [["babel-preset-gatsby-package", {"browser": true}]]}
-{"presets": [["babel-preset-gatsby-package", {"browser": true}]]}
-{"presets": [["babel-preset-gatsby-package", {"browser": true}]]}
-{"presets": [["babel-preset-gatsby-package", {"browser": true}]]}
 {"presets": [["@babel/preset-env", {"targets": {"node": 10}}]]}
 {"presets": [["@babel/preset-env", {"targets": {"chrome": "58"}}], "@babel/preset-typescript", "@babel/preset-react"], "plugins": []}
 {"plugins": ["@babel/plugin-transform-optional-chaining"]}
@@ -163,7 +93,6 @@
 {"presets": ["@babel/preset-env", "@babel/preset-typescript", "@babel/preset-react"], "plugins": [["i18next-extract", {"contextSeparator": "__", "defaultContexts": [""], "defaultNS": "en", "locales": ["nl", "en", "it", "tr", "fr", "hi", "ru", "es"], "jsonSpace": 2, "keySeparator": null, "nsSeparator": null, "keyAsDefaultValue": ["en"], "keyAsDefaultValueForDerivedKeys": false, "outputPath": "src/i18n/{{locale}}.json", "discardOldKeys": false}], "@babel/plugin-proposal-class-properties", "@babel/plugin-transform-runtime"]}
 {"plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-classes", "@babel/plugin-transform-instanceof"], "presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
 {"plugins": ["transform-class-properties", "syntax-trailing-function-commas", "transform-object-rest-spread", "syntax-async-functions", ["transform-async-to-module-method", {"module": "bluebird", "method": "coroutine"}], "transform-exponentiation-operator", "transform-runtime"], "presets": ["es2015-node5"]}
-{"presets": ["es2015", "react", "stage-0"]}
 {"presets": ["@babel/env", "@babel/react"], "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-object-rest-spread"]}
 {"presets": [["@babel/env", {"targets": {"browsers": ["last 2 versions", "safari >= 7"]}, "modules": false}]]}
 {"ignore": [], "env": {"test": {"presets": [["@babel/preset-env", {"modules": false, "targets": {"browsers": ["last 2 versions", "not ie <= 8"]}}]], "plugins": ["@babel/plugin-transform-modules-commonjs", "transform-decorators-legacy", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-syntax-import-meta", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-json-strings", ["@babel/plugin-proposal-decorators", {"legacy": true}], "@babel/plugin-proposal-function-sent", "@babel/plugin-proposal-export-namespace-from", "@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-throw-expressions", "@babel/plugin-proposal-export-default-from", "@babel/plugin-proposal-logical-assignment-operators", "@babel/plugin-proposal-optional-chaining", ["@babel/plugin-proposal-pipeline-operator", {"proposal": "minimal"}], "@babel/plugin-proposal-nullish-coalescing-operator", "@babel/plugin-proposal-do-expressions", "@babel/plugin-proposal-function-bind"]}}}
@@ -214,7 +143,6 @@
 {"presets": [["@babel/preset-env", {"targets": {"browsers": ["last 2 versions", "ie >= 9"]}}], "@babel/preset-react"]}
 {"presets": ["es2015", "react", "react-native"], "plugins": ["transform-object-rest-spread"]}
 {"presets": ["@babel/preset-env", ["@babel/preset-stage-0", {"decoratorsLegacy": true}]], "plugins": ["@babel/plugin-transform-runtime"]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
 {"presets": [["@babel/preset-react", {"pragma": "wp.element.createElement"}]], "plugins": ["@babel/plugin-transform-react-jsx", ["transform-react-jsx", {"pragma": "wp.element.createElement"}], "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-object-rest-spread", "@babel/plugin-transform-spread", ["@babel/plugin-transform-runtime", {"regenerator": true}]], "sourceMaps": true}
 {"presets": ["@babel/env"], "plugins": ["@babel/plugin-transform-object-assign"]}
 {"presets": [["@babel/preset-env", {"modules": false}]], "plugins": ["@babel/plugin-proposal-object-rest-spread"]}
@@ -275,7 +203,6 @@
 {"env": {"commonjs": {"presets": [["@babel/preset-env", {"modules": "commonjs"}], "@babel/preset-react"], "plugins": ["@babel/transform-runtime", "@babel/plugin-proposal-class-properties"]}, "es": {"presets": [["@babel/preset-env", {"loose": false, "modules": false}], "@babel/preset-react"], "plugins": ["@babel/transform-runtime", "@babel/plugin-proposal-class-properties"]}, "test": {"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-proposal-class-properties", ["istanbul", {"exclude": ["**/test/*.js"]}]]}}}
 {"plugins": ["@babel/plugin-syntax-import-meta"], "presets": ["@babel/preset-typescript"]}
 {"presets": ["es2015", "react", "react-hmre"]}
-{"presets": [["env", {"targets": {"node": "current"}}]]}
 {"presets": ["@babel/preset-react", "@babel/preset-env"], "env": {"development": {"plugins": [["react-transform", {"transforms": [{"transform": "livereactload/babel-transform", "imports": ["react"]}]}]]}}}
 {"env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
 {"plugins": [["@babel/plugin-transform-typescript", {"isTSX": true}]]}
@@ -288,204 +215,6 @@
 {"presets": ["@babel/env"], "plugins": ["@babel/plugin-syntax-class-properties"]}
 {"presets": ["es2015", "stage-2"], "plugins": ["transform-runtime"], "comments": false}
 {"env": {"development": {"presets": ["es2015", "react", "stage-0"]}, "commonjs": {"presets": ["es2015", "react", "stage-0"]}, "es": {"presets": [["es2015", {"modules": false}], "react", "stage-0"]}}}
-{"presets": [["@babel/preset-env", {"targets": {"node": 10}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 10}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 10}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 10}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"chrome": "58"}}], "@babel/preset-typescript", "@babel/preset-react"], "plugins": []}
-{"presets": [["@babel/preset-env", {"targets": {"chrome": "58"}}], "@babel/preset-typescript", "@babel/preset-react"], "plugins": []}
-{"presets": [["@babel/env", {"targets": {"node": "14", "browsers": ["defaults, not ie 11"]}}]], "sourceMaps": "both"}
-{"presets": [["@babel/env", {"targets": {"node": "14", "browsers": ["defaults, not ie 11"]}}]], "sourceMaps": "both"}
-{"presets": [["babel-preset-gatsby-package", {"browser": true, "esm": true}]]}
-{"presets": [["babel-preset-gatsby-package", {"browser": true, "esm": true}]]}
-{"comments": false, "presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"comments": false, "presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"comments": false, "presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"comments": false, "presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"plugins": ["@babel/plugin-transform-object-assign"], "presets": ["@babel/preset-env"]}
-{"plugins": ["@babel/plugin-transform-object-assign"], "presets": ["@babel/preset-env"]}
-{"plugins": ["@babel/plugin-transform-object-assign"], "presets": ["@babel/preset-env"]}
-{"plugins": ["@babel/plugin-transform-object-assign"], "presets": ["@babel/preset-env"]}
-{"presets": ["react", "es2015", "stage-2"], "plugins": ["transform-decorators-legacy", "syntax-dynamic-import"]}
-{"presets": ["react"]}
-{"presets": ["react"]}
-{"presets": ["react"]}
-{"presets": ["react"]}
-{"presets": ["babel-preset-gatsby"], "plugins": [["prismjs", {"languages": ["javascript", "css", "markup", "yaml", "json"], "plugins": ["line-numbers"], "theme": "tomorrow", "css": true}]]}
-{"presets": ["babel-preset-gatsby"], "plugins": [["prismjs", {"languages": ["javascript", "css", "markup", "yaml", "json"], "plugins": ["line-numbers"], "theme": "tomorrow", "css": true}]]}
-{"presets": ["babel-preset-gatsby"], "plugins": [["prismjs", {"languages": ["javascript", "css", "markup", "yaml", "json"], "plugins": ["line-numbers"], "theme": "tomorrow", "css": true}]]}
-{"presets": ["babel-preset-gatsby"], "plugins": [["prismjs", {"languages": ["javascript", "css", "markup", "yaml", "json"], "plugins": ["line-numbers"], "theme": "tomorrow", "css": true}]]}
-{"presets": [["@babel/preset-env", {"corejs": 3, "useBuiltIns": "entry"}]]}
-{"presets": [["@babel/preset-env", {"corejs": 3, "useBuiltIns": "entry"}]]}
-{"presets": [["@babel/preset-env", {"corejs": 3, "useBuiltIns": "entry"}]]}
-{"presets": [["@babel/preset-env", {"corejs": 3, "useBuiltIns": "entry"}]]}
-{"plugins": ["@babel/plugin-syntax-top-level-await"]}
-{"plugins": ["@babel/plugin-syntax-top-level-await"]}
-{"presets": ["@babel/preset-react", "@babel/preset-typescript"], "plugins": [["@wordpress/babel-plugin-makepot", {"output": "src/lang/lang.pot"}]]}
-{"presets": [["@babel/preset-env", {"useBuiltIns": "entry"}], "@babel/preset-typescript", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-runtime"]}
-{"presets": ["react-server"]}
-{"presets": ["react-server"]}
-{"presets": ["react-server"]}
-{"presets": ["react-server"]}
-{"presets": [["env", {"targets": {"node": "6"}}]], "plugins": ["transform-object-rest-spread"]}
-{"presets": ["module:metro-react-native-babel-preset"], "plugins": [["module-resolver", {"alias": {"react-native-location": "./dist"}, "cwd": "babelrc"}]]}
-{"presets": ["./.babelrc.js"]}
-{"presets": ["./.babelrc.js"]}
-{"presets": ["./.babelrc.js"]}
-{"presets": ["./.babelrc.js"]}
-{"env": {"test": {"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["rewire", "@babel/plugin-syntax-dynamic-import"]}}, "plugins": ["@babel/plugin-syntax-dynamic-import"], "presets": [["@babel/preset-env", {"modules": false, "targets": {"browsers": ["last 2 versions"]}}], "@babel/preset-react"]}
-{"presets": ["@babel/env", "@babel/react", "@babel/preset-typescript"]}
-{"presets": ["@babel/env", "@babel/react", "@babel/preset-typescript"]}
-{"presets": ["@babel/env", "@babel/react", "@babel/preset-typescript"]}
-{"presets": ["@babel/env", "@babel/react", "@babel/preset-typescript"]}
-{"compact": false, "presets": [["@babel/preset-env", {"targets": {"node": "8.16.1"}, "modules": "umd", "useBuiltIns": "entry", "corejs": 3, "debug": false}]], "plugins": ["@babel/plugin-proposal-object-rest-spread"]}
-{"plugins": ["istanbul"], "presets": [["babel-preset-gatsby", {"targets": {"browsers": [">0.25%", "not dead"]}}]]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}}], "stage-0"]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}}], "stage-0"]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}}], "stage-0"]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}}], "stage-0"]}
-{"presets": [["@babel/preset-env", {"targets": {"edge": "17", "firefox": "60", "chrome": "67", "safari": "11.1"}, "useBuiltIns": "usage", "corejs": 3}]], "sourceType": "unambiguous"}
-{"plugins": ["@babel/plugin-transform-async-to-generator"]}
-{"plugins": ["@babel/plugin-transform-async-to-generator"]}
-{"env": {"test": {"presets": [["@babel/preset-env", {"targets": {"node": "6"}}]]}}}
-{"plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-classes", "@babel/plugin-transform-instanceof"], "presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-classes", "@babel/plugin-transform-instanceof"], "presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-classes", "@babel/plugin-transform-instanceof"], "presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-classes", "@babel/plugin-transform-instanceof"], "presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"plugins": ["transform-class-properties", "syntax-trailing-function-commas", "transform-object-rest-spread", "syntax-async-functions", ["transform-async-to-module-method", {"module": "bluebird", "method": "coroutine"}], "transform-exponentiation-operator", "transform-runtime"], "presets": ["es2015-node5"]}
-{"presets": ["es2015", "react", "stage-0"]}
-{"presets": ["es2015", "stage-0", "react"], "env": {"development": {"plugins": ["transform-runtime", ["react-transform", {"transforms": [{"transform": "react-transform-hmr", "imports": ["react"], "locals": ["module"]}, {"transform": "react-transform-catch-errors", "imports": ["react", "redbox-react"]}]}]]}}}
-{"presets": ["react", ["es2015", {"modules": false}]]}
-{"presets": ["react", ["es2015", {"modules": false}]]}
-{"presets": ["react", ["es2015", {"modules": false}]]}
-{"presets": ["react", ["es2015", {"modules": false}]]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["es2015"], "plugins": ["babel-plugin-syntax-object-rest-spread", "babel-plugin-transform-object-rest-spread"]}
-{"presets": [["next/babel", {"preset-env": {}, "transform-runtime": {}, "styled-jsx": {}, "class-properties": {}}]]}
-{"presets": [["next/babel", {"preset-env": {}, "transform-runtime": {}, "styled-jsx": {}, "class-properties": {}}]]}
-{"env": {"esm": {"presets": [["@babel/preset-env", {"modules": false, "targets": {"esmodules": true, "ie": 11}}]]}, "cjs": {"plugins": ["add-module-exports"], "presets": [["@babel/preset-env", {"targets": {"ie": 11}}]]}}, "comments": false}
-{"env": {"esm": {"presets": [["@babel/preset-env", {"modules": false, "targets": {"esmodules": true, "ie": 11}}]]}, "cjs": {"plugins": ["add-module-exports"], "presets": [["@babel/preset-env", {"targets": {"ie": 11}}]]}}, "comments": false}
-{"env": {"esm": {"presets": [["@babel/preset-env", {"modules": false, "targets": {"esmodules": true, "ie": 11}}]]}, "cjs": {"plugins": ["add-module-exports"], "presets": [["@babel/preset-env", {"targets": {"ie": 11}}]]}}, "comments": false}
-{"env": {"esm": {"presets": [["@babel/preset-env", {"modules": false, "targets": {"esmodules": true, "ie": 11}}]]}, "cjs": {"plugins": ["add-module-exports"], "presets": [["@babel/preset-env", {"targets": {"ie": 11}}]]}}, "comments": false}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": [["@babel/preset-env", {"modules": false, "useBuiltIns": "usage", "corejs": {"version": 3, "proposals": true}}], "@babel/preset-react", "@babel/preset-typescript"], "comments": false}
-{"presets": [["@babel/preset-env"]], "plugins": ["transform-vue-jsx", "@babel/transform-runtime", ["component", {"libraryName": "element-ui", "styleLibraryName": "theme-chalk"}]]}
-{"env": {"production": {"presets": [["env", {"targets": {"browsers": ["last 2 version", "ie 10"]}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-runtime", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import", "transform-es2015-modules-commonjs"]}, "development": {"presets": [["env", {"targets": {"chrome": 52}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import"]}}}
-{"env": {"production": {"presets": [["env", {"targets": {"browsers": ["last 2 version", "ie 10"]}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-runtime", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import", "transform-es2015-modules-commonjs"]}, "development": {"presets": [["env", {"targets": {"chrome": 52}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import"]}}}
-{"env": {"production": {"presets": [["env", {"targets": {"browsers": ["last 2 version", "ie 10"]}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-runtime", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import", "transform-es2015-modules-commonjs"]}, "development": {"presets": [["env", {"targets": {"chrome": 52}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import"]}}}
-{"env": {"production": {"presets": [["env", {"targets": {"browsers": ["last 2 version", "ie 10"]}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-runtime", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import", "transform-es2015-modules-commonjs"]}, "development": {"presets": [["env", {"targets": {"chrome": 52}, "modules": false, "debug": true}]], "plugins": ["lodash", "transform-object-rest-spread", "transform-vue-jsx", "transform-remove-strict-mode", "syntax-dynamic-import"]}}}
-{"plugins": ["emotion"]}
-{"plugins": ["emotion"]}
-{"plugins": ["emotion"]}
-{"plugins": ["emotion"]}
-{"presets": ["next/babel"], "plugins": ["inline-dotenv", ["styled-components", {"ssr": true}], ["module-resolver", {"root": ["./src"]}]], "env": {"test": {"presets": [["next/babel", {"preset-env": {"modules": "commonjs"}}]]}}}
-{"presets": ["next/babel"], "plugins": ["inline-dotenv", ["styled-components", {"ssr": true}], ["module-resolver", {"root": ["./src"]}]], "env": {"test": {"presets": [["next/babel", {"preset-env": {"modules": "commonjs"}}]]}}}
-{"stage": 1}
-{"extends": "../../.babelrc.js"}
-{"extends": "../../.babelrc.js"}
-{"extends": "../../.babelrc.js"}
-{"extends": "../../.babelrc.js"}
-{"env": {"test": {"presets": ["es2015"]}}}
-{"presets": ["es2015", "react", "stage-0"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["es2015", "react", "stage-0"], "plugins": ["transform-decorators-legacy"]}
-{"presets": [["env", {"modules": false}], ["stage-2"]]}
-{"presets": [["env", {"modules": false}], ["stage-2"]]}
-{"presets": [["env", {"modules": false}], ["stage-2"]]}
-{"presets": [["env", {"modules": false}], ["stage-2"]]}
-{"presets": ["@babel/preset-typescript", ["@babel/preset-env", {"corejs": "3", "useBuiltIns": "usage"}]], "plugins": ["@babel/plugin-syntax-dynamic-import", "@babel/plugin-transform-modules-umd", "@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]}
-{"presets": ["@babel/preset-typescript", ["@babel/preset-env", {"corejs": "3", "useBuiltIns": "usage"}]], "plugins": ["@babel/plugin-syntax-dynamic-import", "@babel/plugin-transform-modules-umd", "@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]}
-{"presets": ["next/babel"], "plugins": ["lodash", ["inline-import", {"extensions": [".css"]}]]}
-{"presets": ["next/babel"], "plugins": [["styled-components", {"ssr": true, "displayName": true, "preprocess": false}]]}
-{"presets": ["next/babel"], "plugins": [["styled-components", {"ssr": true, "displayName": true, "preprocess": false}]]}
-{"presets": ["next/babel"], "plugins": [["styled-components", {"ssr": true, "displayName": true, "preprocess": false}]]}
-{"presets": ["next/babel"], "plugins": [["styled-components", {"ssr": true, "displayName": true, "preprocess": false}]]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}, "useBuiltins": "usage", "loose": true}]]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}, "useBuiltins": "usage", "loose": true}]]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}, "useBuiltins": "usage", "loose": true}]]}
-{"presets": [["env", {"targets": {"browsers": ["last 2 versions"]}, "useBuiltins": "usage", "loose": true}]]}
-{"presets": ["es2015"], "plugins": [["transform-react-jsx", {"pragma": "createVDOM"}]]}
-{"presets": [["@babel/preset-env", {"targets": {"browsers": ["last 2 versions", "ie >= 9"]}}], "@babel/preset-react"]}
-{"presets": [["@babel/preset-env", {"targets": {"browsers": ["last 2 versions", "ie >= 9"]}}], "@babel/preset-react"]}
-{"presets": [["@babel/preset-env", {"targets": {"browsers": ["last 2 versions", "ie >= 9"]}}], "@babel/preset-react"]}
-{"presets": ["es2015", "react", "react-native"], "plugins": ["transform-object-rest-spread"]}
-{"presets": ["es2015", "react", "react-native"], "plugins": ["transform-object-rest-spread"]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
-{"presets": [["@babel/preset-env", {"modules": false}]], "plugins": ["@babel/plugin-proposal-object-rest-spread"]}
-{"presets": [["@babel/preset-env", {"modules": false}]], "plugins": ["@babel/plugin-proposal-object-rest-spread"]}
-{"presets": [["@babel/preset-env", {"modules": false}]], "plugins": ["@babel/plugin-proposal-object-rest-spread"]}
-{"presets": ["stage-3", "es2015"], "plugins": ["dynamic-import-node"]}
-{"presets": ["stage-3", "es2015"], "plugins": ["dynamic-import-node"]}
-{"presets": ["next/babel"]}
-{"presets": ["next/babel"]}
-{"presets": ["next/babel"]}
-{"presets": ["next/babel"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-proposal-class-properties"]}
-{"presets": ["@babel/preset-env", "babel-preset-solid", "@babel/preset-typescript"]}
-{"presets": ["@babel/preset-env", "babel-preset-solid", "@babel/preset-typescript"]}
-{"presets": ["react", "es2015", "stage-0"]}
-{"presets": ["react", "es2015", "stage-0"]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "6.10"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "6.10"}}]]}
-{"presets": ["react", "es2015", "stage-0"], "plugins": ["transform-runtime", "transform-decorators-legacy"]}
-{"presets": ["react", "es2015", "stage-0"], "plugins": ["transform-runtime", "transform-decorators-legacy"]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "10"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "10"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "10"}}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "10"}}]]}
-{"presets": ["@babel/preset-env"], "plugins": [["@babel/transform-react-jsx", {"pragma": "wp.element.createElement"}]]}
-{"presets": ["@babel/preset-env"], "plugins": [["@babel/transform-react-jsx", {"pragma": "wp.element.createElement"}]]}
-{"presets": ["env", "react", "stage-0"], "plugins": [["transform-react-jsx", {"pragma": "wp.element.createElement"}], "transform-object-rest-spread", "transform-class-properties", ["@wordpress/babel-plugin-makepot", {"output": "block-languages/benenson-blocks.pot"}]]}
-{"presets": [["@babel/preset-env", {"modules": false}], "@babel/react"]}
-{"presets": ["@babel/preset-typescript"], "plugins": ["@babel/plugin-proposal-nullish-coalescing-operator", "@babel/plugin-proposal-optional-chaining", "@babel/plugin-syntax-bigint"], "env": {"cjs": {"presets": ["babel-preset-minify"], "plugins": ["@babel/plugin-transform-modules-commonjs"]}, "es": {"presets": ["babel-preset-minify"]}, "test": {"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}}, "ignore": ["./src/contracts/**/*"]}
-{"plugins": ["syntax-jsx"]}
-{"plugins": ["syntax-jsx"]}
-{"presets": ["react", "es2015", "stage-0"], "only": ["*.js", "*.jsx"]}
-{"presets": ["react", "es2015", "stage-0"], "only": ["*.js", "*.jsx"]}
-{"presets": ["react", "es2015", "stage-0"], "only": ["*.js", "*.jsx"]}
-{"presets": ["es2015", "stage-0", "react"], "plugins": ["add-module-exports"]}
-{"presets": ["es2015", "stage-0", "react"], "plugins": ["add-module-exports"]}
-{"presets": ["es2015", "stage-0", "react"], "plugins": ["add-module-exports"]}
-{"presets": ["es2015", "stage-0", "react"], "plugins": ["add-module-exports"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-react", "@babel/preset-env"], "plugins": ["@babel/plugin-transform-runtime"]}
-{"presets": ["es2015", "stage-0"], "plugins": [["transform-runtime", {"helpers": false, "polyfill": false, "regenerator": true, "moduleName": "babel-runtime"}], "add-module-exports"]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "8.9"}}]]}
-{"presets": [["@babel/env", {"targets": {"node": 6}}]]}
-{"presets": [["es2016"], "react"], "plugins": ["babel-plugin-transform-class-properties"]}
-{"presets": [["es2016"], "react"], "plugins": ["babel-plugin-transform-class-properties"]}
-{"plugins": ["@babel/plugin-syntax-import-meta"], "presets": ["@babel/preset-typescript"]}
-{"plugins": ["@babel/plugin-syntax-import-meta"], "presets": ["@babel/preset-typescript"]}
-{"plugins": ["@babel/plugin-syntax-import-meta"], "presets": ["@babel/preset-typescript"]}
-{"plugins": ["@babel/plugin-syntax-import-meta"], "presets": ["@babel/preset-typescript"]}
-{"presets": ["es2015", "react", "react-hmre"]}
-{"presets": [["env", {"targets": {"node": "current"}}]]}
-{"presets": [["env", {"targets": {"node": "current"}}]]}
-{"presets": [["env", {"targets": {"node": "current"}}]]}
-{"presets": [["env", {"targets": {"node": "current"}}]]}
-{"env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
-{"plugins": [["@babel/plugin-transform-typescript", {"isTSX": true}]]}
-{"plugins": [["@babel/plugin-transform-typescript", {"isTSX": true}]]}
-{"presets": ["es2015", "stage-2", "react"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["es2015", "stage-2", "react"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["es2015", "stage-2", "react"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["es2015", "stage-2", "react"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["react-app"], "plugins": ["transform-es2015-modules-commonjs"]}
-{"presets": ["react-app"], "plugins": ["transform-es2015-modules-commonjs"]}
-{"presets": ["react-app"], "plugins": ["transform-es2015-modules-commonjs"]}
-{"presets": ["react-app"], "plugins": ["transform-es2015-modules-commonjs"]}
-{"presets": ["stage-0"], "plugins": ["transform-es2015-modules-umd", "add-module-exports"]}
-{"presets": ["@babel/env"], "plugins": ["@babel/plugin-syntax-class-properties"]}
 {"presets": [["@babel/preset-env", {"targets": {"node": 10}}]], "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-optional-chaining"]}
 {"plugins": ["babel-plugin-dynamic-import-node"]}
 {"plugins": ["annotate-pure-calls", "@babel/transform-react-pure-annotations"]}
@@ -494,7 +223,6 @@
 {"ignore": ["sw-lite.js", "sw-simple.js", "tests/**", "**/node_modules/**", "watch/**", "rollup.config.js", "Gulpfile.js"], "plugins": ["@babel/plugin-transform-instanceof", "@babel/plugin-transform-modules-systemjs"], "presets": [["@babel/preset-env", {"useBuiltIns": "entry", "corejs": 3, "targets": "> 0.25%, not dead"}], ["minify", {"booleans": true, "builtIns": false, "consecutiveAdds": true, "deadcode": true, "evaluate": false, "flipComparisons": true, "guards": true, "infinity": true, "mangle": true, "memberExpressions": true, "mergeVars": true, "numericLiterals": true, "propertyLiterals": true, "regexpConstructors": true, "removeConsole": false, "removeDebugger": true, "removeUndefined": true, "replace": true, "simplify": true, "simplifyComparisons": true, "typeConstructors": true, "undefinedToVoid": true}]], "comments": false}
 {"env": {"production": {"plugins": []}}, "presets": [["env", {"targets": {"browsers": ["last 2 versions", "safari >= 7"]}, "modules": false}], "stage-2", "react"], "plugins": ["react-hot-loader/babel", "babel-root-import"]}
 {"presets": ["@babel/preset-env"], "plugins": ["module:babel-plugin-macros", "@babel/plugin-proposal-optional-chaining"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
 {"presets": [["@babel/preset-env", {"modules": false, "useBuiltIns": "usage", "corejs": 3}]]}
 {"plugins": [["@babel/plugin-proposal-decorators", {"legacy": false, "decoratorsBeforeExport": true}], ["@babel/plugin-proposal-class-properties", {"loose": true}]]}
 {"presets": [["@babel/preset-react", {}]], "comments": false}
@@ -561,7 +289,6 @@
 {"presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["istanbul"]}}}
 {"presets": ["es2015", "stage-2", "flow", "react"]}
 {"presets": [["env", {"modules": false}], "stage-0"]}
-{"presets": [["@babel/preset-react", {"runtime": "automatic"}]]}
 {"presets": ["next/babel"], "plugins": ["relay", "@emotion"]}
 {"presets": ["es2015", "stage-0"], "plugins": ["transform-decorators-legacy", "transform-class-properties", ["transform-runtime", {"polyfill": false, "regenerator": true}]]}
 {"presets": [["env", {"targets": {"browsers": ["Chrome >= 65"]}, "debug": false, "modules": false, "useBuiltIns": "usage"}]]}
@@ -573,7 +300,6 @@
 {"presets": [["env", {"modules": false, "useBuiltIns": "entry"}], "stage-2"], "plugins": ["transform-runtime", "lodash"], "env": {"test": {"plugins": ["istanbul"]}}}
 {"presets": ["es2015", "stage-0", "react"], "plugins": [["transform-decorators-legacy"]]}
 {"presets": [["es2015", {"modules": false}]], "plugins": ["transform-runtime"]}
-{"presets": ["es2015", "stage-2"], "plugins": ["transform-runtime"], "comments": false}
 {"plugins": ["@babel/plugin-syntax-class-properties"], "presets": [["@babel/preset-env", {"targets": {"node": 10}}]], "env": {"test": {"plugins": ["istanbul"]}}}
 {"babel": {"presets": ["es2015"], "env": {"test": {"plugins": ["istanbul"]}}}}
 {"presets": ["react", "es2015", "stage-1"], "minified": true, "comments": false}
@@ -586,7 +312,6 @@
 {"presets": ["@babel/preset-react", ["@babel/env", {"targets": {"node": 6}}]], "plugins": ["lodash"]}
 {"plugins": ["transform-react-jsx", "@babel/plugin-proposal-class-properties"], "presets": ["@babel/flow", "@babel/preset-env", "@babel/preset-react"]}
 {"presets": ["es2015", "stage-0", "react"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
 {"plugins": ["transform-async-to-generator", "transform-object-rest-spread", "transform-require-context", "syntax-dynamic-import"], "presets": ["es2015", "react"]}
 {"presets": [["@babel/preset-env", {"useBuiltIns": "usage", "corejs": "3.6.5", "targets": {"chrome": "91"}}], ["@babel/preset-react", {"runtime": "automatic"}]]}
 {"presets": ["react", ["env", {"targets": {"browsers": ["ie >= 11"]}, "exclude": ["transform-async-to-generator", "transform-regenerator"], "modules": false, "loose": true}]], "plugins": ["transform-class-properties", "transform-object-rest-spread"], "env": {"commonjs": {"plugins": ["transform-class-properties", ["transform-es2015-modules-commonjs", {"loose": true}]], "presets": [["env", {"loose": true}]]}, "test": {"plugins": [["transform-es2015-modules-commonjs", {"loose": true}]]}}}
@@ -609,13 +334,11 @@
 {"env": {"test": {"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}}}
 {"presets": ["@babel/preset-env"], "plugins": ["@babel/plugin-proposal-class-properties"], "env": {"test": {"plugins": ["@babel/plugin-transform-runtime"]}}}
 {"presets": [["@babel/preset-env", {"modules": false, "loose": true}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "10"}}]]}
 {"presets": [["@babel/preset-env", {"targets": {"ie": "8"}}]]}
 {"presets": ["@babel/preset-env"], "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-runtime", ["module-resolver", {"root": ["."], "alias": {"@support": "./e2e/support"}}]]}
 {"plugins": ["@babel/plugin-proposal-nullish-coalescing-operator", "@babel/plugin-proposal-optional-chaining"], "env": {"production": {"plugins": ["transform-node-env-inline"]}}}
 {"presets": [["latest", {"modules": false}]]}
 {"presets": ["airbnb"], "plugins": ["add-module-exports", ["transform-replace-object-assign", {"moduleSpecifier": "object.assign"}]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}
 {"env": {"test": {"plugins": ["istanbul"]}}, "presets": ["es2015"], "plugins": [["transform-runtime", {"polyfill": true, "regenerator": true}]]}
 {"presets": ["@babel/preset-typescript"], "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-object-assign", "@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-optional-chaining"], "ignore": ["node_modules"]}
 {"env": {"test": {"presets": ["es2015", "stage-0", ["@babel/preset-env", {"targets": {"node": "current"}}]], "plugins": ["@babel/plugin-proposal-optional-chaining", "transform-runtime"]}}}
@@ -633,7 +356,6 @@
 {"presets": ["@babel/preset-env"], "plugins": ["@babel/plugin-syntax-dynamic-import", "@babel/plugin-transform-runtime"]}
 {"presets": ["@babel/preset-react", "@babel/preset-env"], "plugins": ["@babel/plugin-proposal-class-properties", "add-module-exports", ["transform-es2015-modules-umd", {"globals": {"react": "React"}}]]}
 {"presets": [["@babel/env", {"loose": true}]], "plugins": ["html-tag"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
 {"presets": ["@babel/react", "@babel/flow"], "plugins": [["module-resolver", {"root": ["./src"], "alias": {"React": "react", "ReactDOMLegacy_DEPRECATED": "react-dom", "ReactTestUtils": "react-dom/test-utils"}}], "babel-preset-fbjs/plugins/dev-expression", "@babel/plugin-proposal-class-properties", "@babel/proposal-nullish-coalescing-operator", "@babel/proposal-optional-chaining", "@babel/transform-flow-strip-types"]}
 {"presets": [["@babel/preset-env", {"modules": false}], "@babel/preset-react"], "env": {"production": {"only": ["app"], "plugins": [["emotion", {"hoist": true}], "transform-react-remove-prop-types", "@babel/plugin-transform-react-constant-elements", "@babel/plugin-transform-react-inline-elements"]}, "development": {"plugins": [["emotion", {"sourceMap": true, "autoLabel": true}]]}, "test": {"plugins": ["emotion", "@babel/plugin-transform-modules-commonjs", "dynamic-import-node"]}}, "plugins": ["react-hot-loader/babel", "emotion", ["@babel/plugin-proposal-decorators", {"legacy": true}], ["@babel/plugin-proposal-class-properties", {"loose": true}], ["@babel/plugin-proposal-private-methods", {"loose": true}], ["@babel/plugin-proposal-private-property-in-object", {"loose": true}], "@babel/plugin-syntax-dynamic-import", ["@babel/plugin-proposal-optional-chaining", {"loose": false}]]}
 {"presets": [["@babel/preset-env", {"targets": {"node": 4}}]]}
@@ -656,133 +378,3 @@
 {"presets": [["@babel/preset-env", {"targets": {"browsers": "last 2 version, > 0.05%, ie >= 10"}}]], "plugins": ["@wordpress/babel-plugin-import-jsx-pragma", "@babel/plugin-transform-react-jsx"]}
 {"presets": [["env", {"targets": {"node": "current"}}]], "sourceMap": "inline", "plugins": ["transform-class-properties", "transform-object-rest-spread", "transform-flow-strip-types"]}
 {"presets": ["@babel/preset-env"], "plugins": ["@babel/plugin-proposal-class-properties", ["@babel/transform-runtime"]]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 10}}]], "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-optional-chaining"]}
-{"presets": [["@babel/preset-env", {"targets": {"node": 10}}]], "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-proposal-optional-chaining"]}
-{"plugins": ["annotate-pure-calls", "@babel/transform-react-pure-annotations"]}
-{"plugins": ["annotate-pure-calls", "@babel/transform-react-pure-annotations"]}
-{"plugins": ["annotate-pure-calls", "@babel/transform-react-pure-annotations"]}
-{"plugins": ["annotate-pure-calls", "@babel/transform-react-pure-annotations"]}
-{"presets": ["es2015", "react", "stage-0"], "plugins": ["babel-plugin-add-module-exports"]}
-{"presets": ["es2015", "react", "stage-0"], "plugins": ["babel-plugin-add-module-exports"]}
-{"presets": ["es2015", "react", "stage-0"], "plugins": ["babel-plugin-add-module-exports"]}
-{"presets": ["es2015", "react", "stage-0"], "plugins": ["babel-plugin-add-module-exports"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"]}
-{"plugins": [["@babel/plugin-proposal-decorators", {"legacy": false, "decoratorsBeforeExport": true}], ["@babel/plugin-proposal-class-properties", {"loose": true}]]}
-{"plugins": [["@babel/plugin-proposal-decorators", {"legacy": false, "decoratorsBeforeExport": true}], ["@babel/plugin-proposal-class-properties", {"loose": true}]]}
-{"presets": [["@babel/preset-env", {"useBuiltIns": "usage", "targets": {"node": "8.11"}}], "@babel/typescript"], "plugins": [["@babel/plugin-proposal-decorators", {"legacy": true}], ["@babel/plugin-proposal-class-properties", {"loose": true}], ["module-resolver", {"root": ["./.next/production-server"], "alias": {"@server": "./.next/production-server"}}]]}
-{"presets": ["@babel/preset-stage-3"], "env": {"COVERAGE": {"plugins": ["istanbul"]}}}
-{"presets": ["@babel/preset-stage-3"], "env": {"COVERAGE": {"plugins": ["istanbul"]}}}
-{"presets": ["@babel/preset-stage-3"], "env": {"COVERAGE": {"plugins": ["istanbul"]}}}
-{"presets": ["@babel/preset-stage-3"], "env": {"COVERAGE": {"plugins": ["istanbul"]}}}
-{"presets": ["env", "react"], "plugins": ["transform-object-rest-spread"]}
-{"presets": ["env", "react"], "plugins": ["transform-object-rest-spread"]}
-{"presets": ["env", "react"], "plugins": ["transform-object-rest-spread"]}
-{"presets": ["env", "react"], "plugins": ["transform-object-rest-spread"]}
-{"env": {"development": {"presets": ["env", "stage-1", "react"], "plugins": ["react-hot-loader/babel", ["transform-runtime", {"polyfill": false}]]}, "test": {"presets": ["env", "stage-1", "react"]}, "production": {"presets": [["env", {"modules": false, "loose": true}], "stage-1", "react"], "plugins": [["transform-runtime", {"polyfill": false}]]}}}
-{"env": {"development": {"presets": ["env", "stage-1", "react"], "plugins": ["react-hot-loader/babel", ["transform-runtime", {"polyfill": false}]]}, "test": {"presets": ["env", "stage-1", "react"]}, "production": {"presets": [["env", {"modules": false, "loose": true}], "stage-1", "react"], "plugins": [["transform-runtime", {"polyfill": false}]]}}}
-{"env": {"development": {"presets": ["env", "stage-1", "react"], "plugins": ["react-hot-loader/babel", ["transform-runtime", {"polyfill": false}]]}, "test": {"presets": ["env", "stage-1", "react"]}, "production": {"presets": [["env", {"modules": false, "loose": true}], "stage-1", "react"], "plugins": [["transform-runtime", {"polyfill": false}]]}}}
-{"presets": ["@babel/preset-env"], "plugins": [["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"presets": ["@babel/preset-env"], "plugins": [["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"presets": ["@babel/preset-env"], "plugins": [["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"presets": ["@babel/preset-env"], "plugins": [["@babel/plugin-transform-runtime", {"regenerator": true}]]}
-{"sourceType": "unambiguous", "presets": [["@babel/preset-env", {"targets": {"chrome": 100}}]], "plugins": []}
-{"sourceType": "unambiguous", "presets": [["@babel/preset-env", {"targets": {"chrome": 100}}]], "plugins": []}
-{"sourceType": "unambiguous", "presets": [["@babel/preset-env", {"targets": {"chrome": 100}}]], "plugins": []}
-{"sourceType": "unambiguous", "presets": [["@babel/preset-env", {"targets": {"chrome": 100}}]], "plugins": []}
-{"presets": ["react", "es2015"], "env": {"development": {"presets": ["react-hmre"]}, "test": {"presets": ["env", "react", "es2015"], "plugins": [["babel-plugin-webpack-alias", {"config": "<rootDir>/webpack.config.js"}]]}}}
-{"presets": ["@vue/app"]}
-{"presets": ["@vue/app"]}
-{"presets": ["@vue/app"]}
-{"presets": ["@vue/app"]}
-{"presets": ["es2015", "stage-0", "react", "env"], "plugins": [["transform-runtime", {"helpers": false, "polyfill": false, "regenerator": true}], "transform-class-properties"]}
-{"env": {"test": {"plugins": ["transform-class-properties", "transform-object-rest-spread", "transform-es2015-modules-commonjs", "transform-es2015-classes"]}}}
-{"presets": [["env", {}]]}
-{"presets": [["env", {}]]}
-{"presets": [["env", {}]]}
-{"presets": [["env", {}]]}
-{"presets": [["env", {"modules": false}], "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": [["env", {"modules": false}], "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": [["env", {"modules": false}], "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": [["env", {"modules": false}], "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": [["env", {"modules": false}]], "plugins": ["external-helpers"]}
-{"presets": [["env", {"modules": false}]], "plugins": ["external-helpers"]}
-{"presets": ["env"], "plugins": ["transform-runtime"]}
-{"presets": ["env"], "plugins": ["transform-runtime"]}
-{"presets": ["env"], "plugins": ["transform-runtime"]}
-{"presets": ["env"], "plugins": ["transform-runtime"]}
-{"presets": ["react", "es2015"], "env": {"development": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"], ["react-transform", {"transforms": [{"transform": "react-transform-hmr", "imports": ["react"], "locals": ["module"]}, {"transform": "react-transform-catch-errors", "imports": ["react", "redbox-react"]}]}]]}, "production": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"]]}}}
-{"presets": ["react", "es2015"], "env": {"development": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"], ["react-transform", {"transforms": [{"transform": "react-transform-hmr", "imports": ["react"], "locals": ["module"]}, {"transform": "react-transform-catch-errors", "imports": ["react", "redbox-react"]}]}]]}, "production": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"]]}}}
-{"presets": ["react", "es2015"], "env": {"development": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"], ["react-transform", {"transforms": [{"transform": "react-transform-hmr", "imports": ["react"], "locals": ["module"]}, {"transform": "react-transform-catch-errors", "imports": ["react", "redbox-react"]}]}]]}, "production": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"]]}}}
-{"presets": ["react", "es2015"], "env": {"development": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"], ["react-transform", {"transforms": [{"transform": "react-transform-hmr", "imports": ["react"], "locals": ["module"]}, {"transform": "react-transform-catch-errors", "imports": ["react", "redbox-react"]}]}]]}, "production": {"plugins": [["transform-object-rest-spread"], ["transform-react-display-name"]]}}}
-{"presets": ["es2015"], "plugins": ["transform-object-rest-spread", "transform-decorators-legacy"]}
-{"presets": ["es2015"], "plugins": ["transform-object-rest-spread", "transform-decorators-legacy"]}
-{"presets": ["es2015"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["es2015"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["es2015"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["es2015"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": [["@babel/preset-env", {"targets": {"node": "current"}, "modules": "commonjs", "debug": false}], "@babel/preset-flow"], "plugins": [["transform-define", {"process.env.NODE_ENV": "production"}], "@babel/plugin-transform-runtime", "@babel/plugin-transform-strict-mode", "@babel/plugin-transform-modules-commonjs", "@babel/plugin-proposal-class-properties"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-object-assign", "@babel/plugin-proposal-object-rest-spread", "react-hot-loader/babel"]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-object-assign", "@babel/plugin-proposal-object-rest-spread", "react-hot-loader/babel"]}
-{"presets": [["@babel/preset-env", {"modules": false, "loose": true, "targets": {"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]}}]], "plugins": ["transform-vue-jsx", "@babel/plugin-transform-runtime"], "env": {"test": {"presets": [["@babel/preset-env", {"targets": {"node": "current"}}]]}}}
-{"presets": [["@babel/preset-env", {"targets": {"ios": 9}, "shippedProposals": true}], "@babel/preset-typescript"], "plugins": ["@babel/plugin-transform-runtime"]}
-{"presets": [["@babel/preset-env", {"modules": false, "targets": "> 0.25%, not dead"}]]}
-{"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-react-jsx", "@babel/plugin-proposal-object-rest-spread", "react-hot-loader/babel"], "env": {"production": {"plugins": ["transform-react-remove-prop-types"]}}}
-{"presets": ["@babel/preset-env", "@babel/preset-react"], "plugins": ["@babel/plugin-transform-react-jsx", "@babel/plugin-proposal-object-rest-spread", "react-hot-loader/babel"], "env": {"production": {"plugins": ["transform-react-remove-prop-types"]}}}
-{"presets": ["env", "flow"]}
-{"presets": ["env", "flow"]}
-{"presets": ["env", "flow"]}
-{"presets": ["env", "flow"]}
-{"presets": [["env", {"targets": {"node": "6", "uglify": true}}]], "plugins": ["transform-runtime"]}
-{"presets": [["env", {"targets": {"node": "6", "uglify": true}}]], "plugins": ["transform-runtime"]}
-{"presets": [["env", {"targets": {"node": "6", "uglify": true}}]], "plugins": ["transform-runtime"]}
-{"presets": ["es2015"], "plugins": ["transform-react-jsx"], "env": {"test": {"plugins": ["rewire"]}}}
-{"presets": ["es2015"], "plugins": ["transform-react-jsx"], "env": {"test": {"plugins": ["rewire"]}}}
-{"presets": [["es2015"]]}
-{"presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["@babel/preset-env"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": [["env", {"modules": false}], "stage-0"]}
-{"presets": [["env", {"modules": false}], "stage-0"]}
-{"presets": [["@babel/preset-react", {"runtime": "automatic"}]]}
-{"presets": [["@babel/preset-react", {"runtime": "automatic"}]]}
-{"presets": [["@babel/preset-react", {"runtime": "automatic"}]]}
-{"presets": [["@babel/preset-react", {"runtime": "automatic"}]]}
-{"presets": [["env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]}}], "stage-2"], "plugins": ["transform-vue-jsx", "transform-runtime", ["component", {"libraryName": "element-ui", "styleLibraryName": "theme-chalk"}]]}
-{"presets": [["env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]}}], "stage-2"], "plugins": ["transform-vue-jsx", "transform-runtime", ["component", {"libraryName": "element-ui", "styleLibraryName": "theme-chalk"}]]}
-{"presets": [["env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]}}], "stage-2"], "plugins": ["transform-vue-jsx", "transform-runtime", ["component", {"libraryName": "element-ui", "styleLibraryName": "theme-chalk"}]]}
-{"presets": [["env", {"modules": false, "targets": {"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]}}], "stage-2"], "plugins": ["transform-vue-jsx", "transform-runtime", ["component", {"libraryName": "element-ui", "styleLibraryName": "theme-chalk"}]]}
-{"presets": [["env", {"modules": false, "useBuiltIns": "entry"}], "stage-2"], "plugins": ["transform-runtime", "lodash"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": [["env", {"modules": false, "useBuiltIns": "entry"}], "stage-2"], "plugins": ["transform-runtime", "lodash"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": [["env", {"modules": false, "useBuiltIns": "entry"}], "stage-2"], "plugins": ["transform-runtime", "lodash"], "env": {"test": {"plugins": ["istanbul"]}}}
-{"presets": ["es2015", "stage-0", "react"], "plugins": [["transform-decorators-legacy"]]}
-{"presets": ["es2015", "stage-0", "react"], "plugins": [["transform-decorators-legacy"]]}
-{"presets": [["es2015", {"modules": false}]], "plugins": ["transform-runtime"]}
-{"presets": [["es2015", {"modules": false}]], "plugins": ["transform-runtime"]}
-{"presets": ["es2015", "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["es2015", "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["es2015", "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["es2015", "stage-2"], "plugins": ["transform-runtime"], "comments": false}
-{"presets": ["react", "es2015", "stage-1"], "minified": true, "comments": false}
-{"presets": [["@babel/preset-env", {"targets": {"ie": "11"}}], "@babel/preset-typescript", "@babel/preset-react"], "plugins": ["@babel/plugin-proposal-numeric-separator", "@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-private-methods", "@babel/plugin-proposal-private-property-in-object", "@babel/plugin-proposal-object-rest-spread"]}
-{"presets": ["@babel/preset-react"], "plugins": []}
-{"presets": ["@babel/preset-react"], "plugins": []}
-{"presets": ["@babel/preset-react"], "plugins": []}
-{"presets": ["@babel/preset-react"], "plugins": []}
-{"presets": ["react", "es2015"], "plugins": ["transform-class-properties", "react-hot-loader/babel", "transform-object-assign"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": ["react-native"], "plugins": ["transform-decorators-legacy"]}
-{"presets": [["@babel/preset-env", {"useBuiltIns": "usage", "corejs": "3.6.5", "targets": {"chrome": "91"}}], ["@babel/preset-react", {"runtime": "automatic"}]]}
-{"stage": 0, "loose": ["es6.modules", "es6.classes"]}
-{"stage": 0, "loose": ["es6.modules", "es6.classes"]}
-{"stage": 0, "loose": ["es6.modules", "es6.classes"]}
-{"stage": 0, "loose": ["es6.modules", "es6.classes"]}
-{"presets": ["@babel/env", "@babel/react"]}
-{"presets": ["@babel/env", "@babel/react"]}
-{"presets": ["@babel/env", "@babel/react"]}
-{"presets": ["@babel/env", "@babel/react"]}
