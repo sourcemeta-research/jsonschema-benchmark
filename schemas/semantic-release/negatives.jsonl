@@ -1,0 +1,31 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"branches": null}
+{"branches": {"name": "", "channel": null}}
+{"branches": {"name": "", "prerelease": null}}
+{"branches": {"name": "", "range": null}}
+{"branches": {"name": null}}
+{"branches": {}}
+{"branches": {"name": "", "no-such-prop": null}}
+{"branches": [null]}
+{"branches": [{"name": "", "channel": null}]}
+{"branches": [{"name": "", "prerelease": null}]}
+{"branches": [{"name": "", "range": null}]}
+{"branches": [{"name": null}]}
+{"branches": [{}]}
+{"branches": [{"name": "", "no-such-prop": null}]}
+{"ci": null}
+{"dryRun": null}
+{"extends": null}
+{"extends": [null]}
+{"plugins": null}
+{"plugins": [null]}
+{"repositoryUrl": null}
+{"tagFormat": null}

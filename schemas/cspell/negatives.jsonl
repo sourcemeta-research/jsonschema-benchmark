@@ -1,0 +1,228 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"un": "expected"}
+{"$schema": null}
+{"allowCompoundWords": null}
+{"cache": null}
+{"cache": {"cacheFormat": null}}
+{"cache": {"cacheLocation": null}}
+{"cache": {"cacheStrategy": null}}
+{"cache": {"useCache": null}}
+{"cache": {"no-such-prop": null}}
+{"caseSensitive": null}
+{"description": null}
+{"dictionaries": null}
+{"dictionaryDefinitions": null}
+{"enableFiletypes": ["-", "-"]}
+{"enableFiletypes": null}
+{"enableFiletypes": [null]}
+{"enableGlobDot": null}
+{"enabled": null}
+{"enabledLanguageIds": null}
+{"enabledLanguageIds": [null]}
+{"failFast": null}
+{"features": null}
+{"features": {"weighted-suggestions": null}}
+{"features": {"no-such-prop": null}}
+{"files": null}
+{"files": [null]}
+{"flagWords": null}
+{"flagWords": [null]}
+{"gitignoreRoot": null}
+{"gitignoreRoot": [null]}
+{"globRoot": null}
+{"id": null}
+{"ignorePaths": null}
+{"ignorePaths": [null]}
+{"ignoreRegExpList": null}
+{"ignoreRegExpList": [null]}
+{"ignoreWords": null}
+{"ignoreWords": [null]}
+{"import": null}
+{"import": [null]}
+{"includeRegExpList": null}
+{"includeRegExpList": [null]}
+{"language": null}
+{"languageId": null}
+{"languageId": [null]}
+{"languageSettings": null}
+{"languageSettings": [null]}
+{"languageSettings": [{"languageId": "-", "allowCompoundWords": null}]}
+{"languageSettings": [{"languageId": "-", "caseSensitive": null}]}
+{"languageSettings": [{"languageId": "-", "description": null}]}
+{"languageSettings": [{"languageId": "-", "dictionaries": null}]}
+{"languageSettings": [{"languageId": "-", "dictionaryDefinitions": null}]}
+{"languageSettings": [{"languageId": "-", "enabled": null}]}
+{"languageSettings": [{"languageId": "-", "flagWords": null}]}
+{"languageSettings": [{"languageId": "-", "flagWords": [null]}]}
+{"languageSettings": [{"languageId": "-", "id": null}]}
+{"languageSettings": [{"languageId": "-", "ignoreRegExpList": null}]}
+{"languageSettings": [{"languageId": "-", "ignoreRegExpList": [null]}]}
+{"languageSettings": [{"languageId": "-", "ignoreWords": null}]}
+{"languageSettings": [{"languageId": "-", "ignoreWords": [null]}]}
+{"languageSettings": [{"languageId": "-", "includeRegExpList": null}]}
+{"languageSettings": [{"languageId": "-", "includeRegExpList": [null]}]}
+{"languageSettings": [{"languageId": "-", "local": null}]}
+{"languageSettings": [{"languageId": "-", "local": [null]}]}
+{"languageSettings": [{"languageId": "-", "locale": null}]}
+{"languageSettings": [{"languageId": "-", "locale": [null]}]}
+{"languageSettings": [{"languageId": "-", "name": null}]}
+{"languageSettings": [{"languageId": "-", "noSuggestDictionaries": null}]}
+{"languageSettings": [{"languageId": "-", "patterns": null}]}
+{"languageSettings": [{"languageId": "-", "patterns": [null]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": "", "description": null}]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"pattern": ""}]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"name": null, "pattern": ""}]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": null}]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"name": ""}]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": [null]}]}]}
+{"languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": "", "no-such-prop": null}]}]}
+{"languageSettings": [{"languageId": "-", "suggestWords": null}]}
+{"languageSettings": [{"languageId": "-", "suggestWords": [null]}]}
+{"languageSettings": [{"languageId": "-", "words": null}]}
+{"languageSettings": [{"languageId": "-", "words": [null]}]}
+{"languageSettings": [{}]}
+{"languageSettings": [{"languageId": null}]}
+{"languageSettings": [{"languageId": [null]}]}
+{"languageSettings": [{"languageId": "-", "no-such-prop": null}]}
+{"loadDefaultConfiguration": null}
+{"maxDuplicateProblems": null}
+{"maxNumberOfProblems": null}
+{"minWordLength": null}
+{"name": null}
+{"noConfigSearch": null}
+{"noSuggestDictionaries": null}
+{"numSuggestions": null}
+{"overrides": null}
+{"overrides": [null]}
+{"overrides": [{"filename": "", "allowCompoundWords": null}]}
+{"overrides": [{"filename": "", "caseSensitive": null}]}
+{"overrides": [{"filename": "", "description": null}]}
+{"overrides": [{"filename": "", "dictionaries": null}]}
+{"overrides": [{"filename": "", "dictionaryDefinitions": null}]}
+{"overrides": [{"filename": "", "enableFiletypes": ["-", "-"]}]}
+{"overrides": [{"filename": "", "enableFiletypes": null}]}
+{"overrides": [{"filename": "", "enableFiletypes": [null]}]}
+{"overrides": [{"filename": "", "enabled": null}]}
+{"overrides": [{"filename": "", "enabledLanguageIds": null}]}
+{"overrides": [{"filename": "", "enabledLanguageIds": [null]}]}
+{"overrides": [{"filename": "", "flagWords": null}]}
+{"overrides": [{"filename": "", "flagWords": [null]}]}
+{"overrides": [{"filename": "", "id": null}]}
+{"overrides": [{"filename": "", "ignoreRegExpList": null}]}
+{"overrides": [{"filename": "", "ignoreRegExpList": [null]}]}
+{"overrides": [{"filename": "", "ignoreWords": null}]}
+{"overrides": [{"filename": "", "ignoreWords": [null]}]}
+{"overrides": [{"filename": "", "includeRegExpList": null}]}
+{"overrides": [{"filename": "", "includeRegExpList": [null]}]}
+{"overrides": [{"filename": "", "language": null}]}
+{"overrides": [{"filename": "", "languageId": null}]}
+{"overrides": [{"filename": "", "languageId": [null]}]}
+{"overrides": [{"filename": "", "languageSettings": null}]}
+{"overrides": [{"filename": "", "languageSettings": [null]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "allowCompoundWords": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "caseSensitive": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "description": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "dictionaries": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "dictionaryDefinitions": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "enabled": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "flagWords": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "flagWords": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "id": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "ignoreRegExpList": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "ignoreRegExpList": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "ignoreWords": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "ignoreWords": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "includeRegExpList": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "includeRegExpList": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "local": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "local": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "locale": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "locale": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "name": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "noSuggestDictionaries": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": "", "description": null}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"pattern": ""}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"name": null, "pattern": ""}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": null}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"name": ""}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": [null]}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "patterns": [{"name": "", "pattern": "", "no-such-prop": null}]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "suggestWords": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "suggestWords": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "words": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "words": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": null}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": [null]}]}]}
+{"overrides": [{"filename": "", "languageSettings": [{"languageId": "-", "no-such-prop": null}]}]}
+{"overrides": [{"filename": "", "loadDefaultConfiguration": null}]}
+{"overrides": [{"filename": "", "maxDuplicateProblems": null}]}
+{"overrides": [{"filename": "", "maxNumberOfProblems": null}]}
+{"overrides": [{"filename": "", "minWordLength": null}]}
+{"overrides": [{"filename": "", "name": null}]}
+{"overrides": [{"filename": "", "noSuggestDictionaries": null}]}
+{"overrides": [{"filename": "", "numSuggestions": null}]}
+{"overrides": [{"filename": "", "patterns": null}]}
+{"overrides": [{"filename": "", "patterns": [null]}]}
+{"overrides": [{"filename": "", "patterns": [{"name": "", "pattern": "", "description": null}]}]}
+{"overrides": [{"filename": "", "patterns": [{"pattern": ""}]}]}
+{"overrides": [{"filename": "", "patterns": [{"name": null, "pattern": ""}]}]}
+{"overrides": [{"filename": "", "patterns": [{"name": "", "pattern": null}]}]}
+{"overrides": [{"filename": "", "patterns": [{"name": ""}]}]}
+{"overrides": [{"filename": "", "patterns": [{"name": "", "pattern": [null]}]}]}
+{"overrides": [{"filename": "", "patterns": [{"name": "", "pattern": "", "no-such-prop": null}]}]}
+{"overrides": [{"filename": "", "pnpFiles": null}]}
+{"overrides": [{"filename": "", "pnpFiles": [null]}]}
+{"overrides": [{"filename": "", "suggestWords": null}]}
+{"overrides": [{"filename": "", "suggestWords": [null]}]}
+{"overrides": [{"filename": "", "suggestionNumChanges": null}]}
+{"overrides": [{"filename": "", "suggestionsTimeout": null}]}
+{"overrides": [{"filename": "", "usePnP": null}]}
+{"overrides": [{"filename": "", "words": null}]}
+{"overrides": [{"filename": "", "words": [null]}]}
+{"overrides": [{"filename": null}]}
+{"overrides": [{}]}
+{"overrides": [{"filename": [null]}]}
+{"overrides": [{"filename": "", "no-such-prop": null}]}
+{"patterns": null}
+{"patterns": [null]}
+{"patterns": [{"name": "", "pattern": "", "description": null}]}
+{"patterns": [{"pattern": ""}]}
+{"patterns": [{"name": null, "pattern": ""}]}
+{"patterns": [{"name": "", "pattern": null}]}
+{"patterns": [{"name": ""}]}
+{"patterns": [{"name": "", "pattern": [null]}]}
+{"patterns": [{"name": "", "pattern": "", "no-such-prop": null}]}
+{"pnpFiles": null}
+{"pnpFiles": [null]}
+{"readonly": null}
+{"reporters": null}
+{"reporters": [null]}
+{"reporters": [[null]]}
+{"reporters": [["", -3.1415927, {}]]}
+{"reporters": [[null, -3.1415927]]}
+{"showStatus": null}
+{"spellCheckDelayMs": null}
+{"suggestWords": null}
+{"suggestWords": [null]}
+{"suggestionNumChanges": null}
+{"suggestionsTimeout": null}
+{"useGitignore": null}
+{"usePnP": null}
+{"userWords": null}
+{"userWords": [null]}
+{"validateDirectives": null}
+{"version": null}
+{"words": null}
+{"words": [null]}
+{"no-such-prop": null}

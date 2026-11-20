@@ -1,0 +1,105 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"FileOptions": null}
+{"FileOptions": {"ExcludeSearchPatterns": null}}
+{"FileOptions": {"ExcludeSearchPatterns": [null]}}
+{"FileOptions": {"SystemExcludeSearchPatterns": null}}
+{"FileOptions": {"SystemExcludeSearchPatterns": [null]}}
+{"FormattingOptions": null}
+{"FormattingOptions": {"EnableEditorConfigSupport": null}}
+{"FormattingOptions": {"IndentBlock": null}}
+{"FormattingOptions": {"IndentBraces": null}}
+{"FormattingOptions": {"IndentSwitchCaseSection": null}}
+{"FormattingOptions": {"IndentSwitchCaseSectionWhenBlock": null}}
+{"FormattingOptions": {"IndentSwitchSection": null}}
+{"FormattingOptions": {"IndentationSize": null}}
+{"FormattingOptions": {"LabelPositioning": null}}
+{"FormattingOptions": {"NewLine": null}}
+{"FormattingOptions": {"NewLineForCatch": null}}
+{"FormattingOptions": {"NewLineForClausesInQuery": null}}
+{"FormattingOptions": {"NewLineForElse": null}}
+{"FormattingOptions": {"NewLineForFinally": null}}
+{"FormattingOptions": {"NewLineForMembersInAnonymousTypes": null}}
+{"FormattingOptions": {"NewLineForMembersInObjectInit": null}}
+{"FormattingOptions": {"NewLinesForBracesInAccessors": null}}
+{"FormattingOptions": {"NewLinesForBracesInAnonymousMethods": null}}
+{"FormattingOptions": {"NewLinesForBracesInAnonymousTypes": null}}
+{"FormattingOptions": {"NewLinesForBracesInControlBlocks": null}}
+{"FormattingOptions": {"NewLinesForBracesInLambdaExpressionBody": null}}
+{"FormattingOptions": {"NewLinesForBracesInMethods": null}}
+{"FormattingOptions": {"NewLinesForBracesInObjectCollectionArrayInitializers": null}}
+{"FormattingOptions": {"NewLinesForBracesInProperties": null}}
+{"FormattingOptions": {"NewLinesForBracesInTypes": null}}
+{"FormattingOptions": {"SpaceAfterCast": null}}
+{"FormattingOptions": {"SpaceAfterColonInBaseTypeDeclaration": null}}
+{"FormattingOptions": {"SpaceAfterComma": null}}
+{"FormattingOptions": {"SpaceAfterControlFlowStatementKeyword": null}}
+{"FormattingOptions": {"SpaceAfterDot": null}}
+{"FormattingOptions": {"SpaceAfterMethodCallName": null}}
+{"FormattingOptions": {"SpaceAfterSemicolonsInForStatement": null}}
+{"FormattingOptions": {"SpaceBeforeColonInBaseTypeDeclaration": null}}
+{"FormattingOptions": {"SpaceBeforeComma": null}}
+{"FormattingOptions": {"SpaceBeforeDot": null}}
+{"FormattingOptions": {"SpaceBeforeOpenSquareBracket": null}}
+{"FormattingOptions": {"SpaceBeforeSemicolonsInForStatement": null}}
+{"FormattingOptions": {"SpaceBetweenEmptyMethodCallParentheses": null}}
+{"FormattingOptions": {"SpaceBetweenEmptyMethodDeclarationParentheses": null}}
+{"FormattingOptions": {"SpaceBetweenEmptySquareBrackets": null}}
+{"FormattingOptions": {"SpaceWithinCastParentheses": null}}
+{"FormattingOptions": {"SpaceWithinExpressionParentheses": null}}
+{"FormattingOptions": {"SpaceWithinMethodCallParentheses": null}}
+{"FormattingOptions": {"SpaceWithinMethodDeclarationParenthesis": null}}
+{"FormattingOptions": {"SpaceWithinOtherParentheses": null}}
+{"FormattingOptions": {"SpaceWithinSquareBrackets": null}}
+{"FormattingOptions": {"SpacesIgnoreAroundVariableDeclaration": null}}
+{"FormattingOptions": {"SpacingAfterMethodDeclarationName": null}}
+{"FormattingOptions": {"SpacingAroundBinaryOperator": null}}
+{"FormattingOptions": {"TabSize": null}}
+{"FormattingOptions": {"UseTabs": null}}
+{"FormattingOptions": {"WrappingKeepStatementsOnSingleLine": null}}
+{"FormattingOptions": {"WrappingPreserveSingleLine": null}}
+{"ImplementTypeOptions": null}
+{"ImplementTypeOptions": {"InsertionBehavior": null}}
+{"ImplementTypeOptions": {"PropertyGenerationBehavior": null}}
+{"Plugins": null}
+{"Plugins": {"LocationPaths": null}}
+{"Plugins": {"LocationPaths": [null]}}
+{"RenameOptions": null}
+{"RenameOptions": {"RenameInComments": null}}
+{"RenameOptions": {"RenameInStrings": null}}
+{"RenameOptions": {"RenameOverloads": null}}
+{"RoslynExtensionsOptions": null}
+{"RoslynExtensionsOptions": {"DocumentAnalysisTimeoutMs": null}}
+{"RoslynExtensionsOptions": {"EnableAnalyzersSupport": null}}
+{"RoslynExtensionsOptions": {"EnableDecompilationSupport": null}}
+{"RoslynExtensionsOptions": {"LocationPaths": null}}
+{"RoslynExtensionsOptions": {"LocationPaths": [null]}}
+{"cake": null}
+{"cake": {"bakeryPath": null}}
+{"cake": {"enabled": null}}
+{"msbuild": null}
+{"msbuild": {"Configuration": null}}
+{"msbuild": {"CscToolExe": null}}
+{"msbuild": {"CscToolPath": null}}
+{"msbuild": {"EnablePackageAutoRestore": null}}
+{"msbuild": {"MSBuildExtensionsPath": null}}
+{"msbuild": {"MSBuildSDKsPath": null}}
+{"msbuild": {"Platform": null}}
+{"msbuild": {"RoslynTargetsPath": null}}
+{"msbuild": {"TargetFrameworkRootPath": null}}
+{"msbuild": {"ToolsVersion": null}}
+{"msbuild": {"VisualStudioVersion": null}}
+{"msbuild": {"enabled": null}}
+{"msbuild": {"loadProjectsOnDemand": null}}
+{"script": null}
+{"script": {"defaultTargetFramework": null}}
+{"script": {"enableScriptNuGetReferences": null}}
+{"script": {"enabled": null}}
+{"script": {"rspFilePath": null}}

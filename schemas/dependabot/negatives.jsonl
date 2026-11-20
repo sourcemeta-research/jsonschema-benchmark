@@ -1,0 +1,52 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{}
+{"un": "expected"}
+{"update_configs": null, "version": 1}
+{"version": 1}
+{"update_configs": [null], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "allowed_updates": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "allowed_updates": [null]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "allowed_updates": [{"match": null}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "allowed_updates": [{"match": {"dependency_name": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "allowed_updates": [{"match": {"dependency_type": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "allowed_updates": [{"match": {"update_type": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "automerged_updates": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "automerged_updates": [null]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "automerged_updates": [{"match": null}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "automerged_updates": [{"match": {"dependency_name": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "automerged_updates": [{"match": {"dependency_type": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "automerged_updates": [{"match": {"update_type": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "commit_message": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "commit_message": {"include_scope": null}}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "commit_message": {"prefix": null}}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "commit_message": {"prefix_development": null}}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_assignees": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_assignees": [null]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_labels": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_labels": [null]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_milestone": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_reviewers": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "default_reviewers": [null]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "ignored_updates": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "ignored_updates": [null]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "ignored_updates": [{"match": null}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "ignored_updates": [{"match": {"dependency_name": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "ignored_updates": [{"match": {"version_requirement": null}}]}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "target_branch": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": "live", "version_requirement_updates": null}], "version": 1}
+{"update_configs": [{"directory": null, "package_manager": "javascript", "update_schedule": "live"}], "version": 1}
+{"update_configs": [{"package_manager": "javascript", "update_schedule": "live"}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": null, "update_schedule": "live"}], "version": 1}
+{"update_configs": [{"directory": "", "update_schedule": "live"}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript", "update_schedule": null}], "version": 1}
+{"update_configs": [{"directory": "", "package_manager": "javascript"}], "version": 1}
+{"update_configs": [], "version": null}
+{"update_configs": []}

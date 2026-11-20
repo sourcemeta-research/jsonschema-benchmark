@@ -1,0 +1,117 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"bench": null}
+{"bench": {"exclude": null}}
+{"bench": {"exclude": [null]}}
+{"bench": {"files": null}}
+{"bench": {"files": {"exclude": null}}}
+{"bench": {"files": {"exclude": [null]}}}
+{"bench": {"files": {"include": null}}}
+{"bench": {"files": {"include": [null]}}}
+{"bench": {"include": null}}
+{"bench": {"include": [null]}}
+{"compilerOptions": null}
+{"compilerOptions": {"allowJs": null}}
+{"compilerOptions": {"allowUnreachableCode": null}}
+{"compilerOptions": {"allowUnusedLabels": null}}
+{"compilerOptions": {"checkJs": null}}
+{"compilerOptions": {"exactOptionalPropertyTypes": null}}
+{"compilerOptions": {"experimentalDecorators": null}}
+{"compilerOptions": {"jsx": null}}
+{"compilerOptions": {"jsxFactory": null}}
+{"compilerOptions": {"jsxFragmentFactory": null}}
+{"compilerOptions": {"jsxImportSource": null}}
+{"compilerOptions": {"keyofStringsOnly": null}}
+{"compilerOptions": {"lib": ["", ""]}}
+{"compilerOptions": {"lib": null}}
+{"compilerOptions": {"lib": [null]}}
+{"compilerOptions": {"noErrorTruncation": null}}
+{"compilerOptions": {"noFallthroughCasesInSwitch": null}}
+{"compilerOptions": {"noImplicitAny": null}}
+{"compilerOptions": {"noImplicitOverride": null}}
+{"compilerOptions": {"noImplicitReturns": null}}
+{"compilerOptions": {"noImplicitThis": null}}
+{"compilerOptions": {"noImplicitUseStrict": null}}
+{"compilerOptions": {"noStrictGenericChecks": null}}
+{"compilerOptions": {"noUncheckedIndexedAccess": null}}
+{"compilerOptions": {"noUnusedLocals": null}}
+{"compilerOptions": {"noUnusedParameters": null}}
+{"compilerOptions": {"strict": null}}
+{"compilerOptions": {"strictBindCallApply": null}}
+{"compilerOptions": {"strictFunctionTypes": null}}
+{"compilerOptions": {"strictNullChecks": null}}
+{"compilerOptions": {"strictPropertyInitialization": null}}
+{"compilerOptions": {"suppressExcessPropertyErrors": null}}
+{"compilerOptions": {"suppressImplicitAnyIndexErrors": null}}
+{"exclude": null}
+{"exclude": [null]}
+{"fmt": null}
+{"fmt": {"exclude": null}}
+{"fmt": {"exclude": [null]}}
+{"fmt": {"files": null}}
+{"fmt": {"files": {"exclude": null}}}
+{"fmt": {"files": {"exclude": [null]}}}
+{"fmt": {"files": {"include": null}}}
+{"fmt": {"files": {"include": [null]}}}
+{"fmt": {"include": null}}
+{"fmt": {"include": [null]}}
+{"fmt": {"indentWidth": null}}
+{"fmt": {"lineWidth": null}}
+{"fmt": {"options": null}}
+{"fmt": {"options": {"indentWidth": null}}}
+{"fmt": {"options": {"lineWidth": null}}}
+{"fmt": {"options": {"proseWrap": null}}}
+{"fmt": {"options": {"semiColons": null}}}
+{"fmt": {"options": {"singleQuote": null}}}
+{"fmt": {"options": {"useTabs": null}}}
+{"fmt": {"proseWrap": null}}
+{"fmt": {"semiColons": null}}
+{"fmt": {"singleQuote": null}}
+{"fmt": {"useTabs": null}}
+{"importMap": null}
+{"imports": null}
+{"lint": null}
+{"lint": {"exclude": null}}
+{"lint": {"exclude": [null]}}
+{"lint": {"files": null}}
+{"lint": {"files": {"exclude": null}}}
+{"lint": {"files": {"exclude": [null]}}}
+{"lint": {"files": {"include": null}}}
+{"lint": {"files": {"include": [null]}}}
+{"lint": {"include": null}}
+{"lint": {"include": [null]}}
+{"lint": {"report": null}}
+{"lint": {"rules": null}}
+{"lint": {"rules": {"exclude": ["", ""]}}}
+{"lint": {"rules": {"exclude": null}}}
+{"lint": {"rules": {"exclude": [null]}}}
+{"lint": {"rules": {"include": ["", ""]}}}
+{"lint": {"rules": {"include": null}}}
+{"lint": {"rules": {"include": [null]}}}
+{"lint": {"rules": {"tags": ["", ""]}}}
+{"lint": {"rules": {"tags": null}}}
+{"lint": {"rules": {"tags": [null]}}}
+{"lock": null}
+{"nodeModulesDir": null}
+{"scopes": null}
+{"tasks": null}
+{"tasks": {"A": null}}
+{"tasks": {"no-such-prop": null}}
+{"test": null}
+{"test": {"exclude": null}}
+{"test": {"exclude": [null]}}
+{"test": {"files": null}}
+{"test": {"files": {"exclude": null}}}
+{"test": {"files": {"exclude": [null]}}}
+{"test": {"files": {"include": null}}}
+{"test": {"files": {"include": [null]}}}
+{"test": {"include": null}}
+{"test": {"include": [null]}}
+{"vendor": null}

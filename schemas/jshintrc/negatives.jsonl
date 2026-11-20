@@ -1,0 +1,79 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{"asi": null}
+{"bitwise": null}
+{"boss": null}
+{"browser": null}
+{"browserify": null}
+{"couch": null}
+{"curly": null}
+{"debug": null}
+{"devel": null}
+{"dojo": null}
+{"elision": null}
+{"eqeqeq": null}
+{"eqnull": null}
+{"esversion": null}
+{"evil": null}
+{"expr": null}
+{"extends": null}
+{"forin": null}
+{"freeze": null}
+{"funcscope": null}
+{"futurehostile": null}
+{"globals": null}
+{"iterator": null}
+{"jasmine": null}
+{"jquery": null}
+{"lastsemic": null}
+{"latedef": null}
+{"leanswitch": null}
+{"loopfunc": null}
+{"maxcomplexity": null}
+{"maxdepth": null}
+{"maxerr": null}
+{"maxparams": null}
+{"maxstatements": null}
+{"mocha": null}
+{"module": null}
+{"mootools": null}
+{"moz": null}
+{"noarg": null}
+{"nocomma": null}
+{"node": null}
+{"nonbsp": null}
+{"nonew": null}
+{"nonstandard": null}
+{"noreturnawait": null}
+{"notypeof": null}
+{"noyield": null}
+{"overrides": null}
+{"phantom": null}
+{"plusplus": null}
+{"proto": null}
+{"prototypejs": null}
+{"regexpu": null}
+{"rhino": null}
+{"scripturl": null}
+{"shadow": null}
+{"shelljs": null}
+{"singleGroups": null}
+{"strict": null}
+{"supernew": null}
+{"trailingcomma": null}
+{"typed": null}
+{"undef": null}
+{"unused": null}
+{"validthis": null}
+{"varstmt": null}
+{"withstmt": null}
+{"worker": null}
+{"wsh": null}
+{"yui": null}

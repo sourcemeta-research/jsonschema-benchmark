@@ -1,0 +1,28 @@
+null
+true
+false
+-42
+3.1415927
+""
+"unexpected"
+[]
+[1, "expected"]
+{}
+{"un": "expected"}
+{"dependencies": null, "digest": "", "generated": "1970-01-01T00:00:00"}
+{"digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [null], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": null, "repository": "https://json.org/", "version": ""}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"repository": "https://json.org/", "version": ""}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": "", "repository": null, "version": ""}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": "", "repository": "not a uri", "version": ""}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": "", "version": ""}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": "", "repository": "https://json.org/", "version": null}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": "", "repository": "https://json.org/"}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [{"name": "", "repository": "https://json.org/", "version": "", "no-such-prop": null}], "digest": "", "generated": "1970-01-01T00:00:00"}
+{"dependencies": [], "digest": null, "generated": "1970-01-01T00:00:00"}
+{"dependencies": [], "generated": "1970-01-01T00:00:00"}
+{"dependencies": [], "digest": "", "generated": null}
+{"dependencies": [], "digest": "", "generated": "not a datetime"}
+{"dependencies": [], "digest": ""}
+{"dependencies": [], "digest": "", "generated": "1970-01-01T00:00:00", "no-such-prop": null}
